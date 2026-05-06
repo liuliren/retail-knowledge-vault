@@ -1,7 +1,41 @@
+# vault .gitignore
+# 扩展 2026-05-06 / W18 D004 战役 #1 落地状态首次 git 立基线
+# 目标：vault 总 6.7G → 仓库 <50MB（仅追踪 markdown + 治理类小附件）
+
+# ── 系统 / 包管理（原始保留）─────────────────────────────────
 .DS_Store
 *.log
 .env
 .venv/
 node_modules/
 __pycache__/
+
+# ── Claude Code 工作目录（原始保留 + _镜像图.md 例外）────────
 .claude/
+!.claude/_镜像图.md
+
+# ── 大原始素材目录（避免仓库膨胀）────────────────────────────
+90_素材暂存与待整理/
+**/99_原始素材/
+**/09_原始素材/
+
+# ── 二进制 / 大文件（不适合 text-diff 跟踪）─────────────────
+*.zip
+*.pdf
+*.xls
+*.xlsx
+*.dwg
+*.mov
+*.mp4
+*.heic
+
+# ── 备份 / 临时 ─────────────────────────────────────────────
+*.bak.*
+*.tmp
+*~
+Thumbs.db
+
+# ── Obsidian 个人工作空间（路径含本机，无需共享）─────────────
+.obsidian/workspace*.json
+.obsidian/cache/
+.obsidian/.trash/
