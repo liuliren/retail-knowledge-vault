@@ -39,3 +39,20 @@ Thumbs.db
 .obsidian/workspace*.json
 .obsidian/cache/
 .obsidian/.trash/
+
+# Large / raw files
+*.zip
+*.rar
+*.7z
+*.mp4
+*.mov
+*.mkv
+*.avi
+*.heic
+*.psd
+*.ai
+*.dmg
+
+# Local raw material folders
+90_素材暂存与待整理/
+99_归档/
