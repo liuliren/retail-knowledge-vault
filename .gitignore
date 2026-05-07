@@ -15,17 +15,25 @@
 
 # Large raw assets
 90_素材暂存与待整理/
+09_门店案例与项目复盘/乐易购花厅坊店/99_原始素材/
+
+# Archives
 **/*.zip
 **/*.7z
 **/*.rar
+
+# Media
 **/*.mp4
 **/*.mov
 **/*.avi
 **/*.mkv
-**/*.psd
-**/*.ai
+**/*.jpg
+**/*.jpeg
+**/*.png
+**/*.heic
+**/*.webp
 
-# Large office/raw files - 默认不上传
+# Office / raw files
 **/*.pptx
 **/*.ppt
 **/*.key
@@ -33,6 +41,7 @@
 **/*.xlsx
 **/*.xls
 **/*.csv
+**/*.dwg
 
 # Python / system
 __pycache__/
