@@ -8,3 +8,5 @@
 | 2026-05-09 | v1.1 | 文件拆分 | 花厅坊_SKU.csv → 花厅坊_SKU_raw.csv + 花厅坊_SKU_mapped.csv（双层）| Claude | raw 不覆盖 / mapped 工作流 |
 | 2026-05-09 | v1.1 | 新增文件 | 02_商品库使用规则.md / 03_商品库维护SOP.md / _future/embedding_plan.md / _future/sqlite_upgrade_plan.md / _maintenance/keyword_rule.csv | Claude | 4 文件套 + 治理升级 |
 | 2026-05-09 | v1.1 | 样例填充 | B/A/raw/mapped 各 3-5 样例（共 ~25 行 / 不大规模填充）| Claude | v1.1 边界 |
+| 2026-05-09 | v1.1 | CSV 跟踪修正 | .gitignore 加 6 条精确白名单 / 结构层 CSV 上 git / raw/mapped 仍忽略 | Claude | dc8cf98 commit |
+| 2026-05-09 | v1.1 后续建议入库 | 文档治理 | CSV 跟踪修正后 6 条建议分级入库（P0×2 / P1×2 / P2×2）：补充客户数据 git 安全边界（README §4.1 / 02 §3.4-3.5）+ 跨设备同步规则（03 §7）+ embedding 文件评估项（embedding_plan §5.5）+ _anonymized/ Year 2+ 预留（sqlite_upgrade_plan §5.5）+ G11 v0.3 候选检查项（G11 §6.5）。**不启动 W23+ 数据接入 / 不导入真实客户数据** | 6 哥+Claude | W19 后续建议入库 |
