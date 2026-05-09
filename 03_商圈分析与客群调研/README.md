@@ -2,6 +2,7 @@
 title: 03_商圈分析与客群调研 目录说明
 version: v1.0
 status: active
+quadrant: II
 owner: 六哥
 created: 2026-05-01
 updated: 2026-05-01

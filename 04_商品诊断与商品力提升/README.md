@@ -2,6 +2,7 @@
 title: 04_商品诊断与商品力提升 目录说明
 version: v1.0
 status: active
+quadrant: II
 owner: 六哥
 created: 2026-05-01
 updated: 2026-05-01

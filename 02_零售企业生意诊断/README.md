@@ -2,6 +2,7 @@
 title: 02_零售企业生意诊断 目录说明
 version: v1.0
 status: active
+quadrant: II
 owner: 六哥
 created: 2026-05-01
 updated: 2026-05-01

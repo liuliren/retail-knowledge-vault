@@ -2,6 +2,7 @@
 title: 05_品类管理与商品规划 目录说明
 version: v1.0.1
 status: active
+quadrant: II
 owner: 六哥
 created: 2026-05-01
 updated: 2026-05-01

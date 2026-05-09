@@ -2,6 +2,7 @@
 title: POS数据清洗与商品标准化规范_v0.1
 version: v0.1
 status: draft
+quadrant: III
 owner: 六哥
 created: 2026-05-03
 updated: 2026-05-03

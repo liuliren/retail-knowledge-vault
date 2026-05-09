@@ -363,7 +363,7 @@ def build_archive_from_sales(sales_main: List[dict]) -> List[dict]:
             "匹配依据": r.get("匹配依据", ""),
             "是否有动销": "是",
             "数据来源": r["数据来源文件"],
-            "备注": "零动销 SKU 待二访 P1-B B.7 补采",
+            "备注": "",  # v0.1.3: 本轮 archive 全部为有动销 SKU（line 340 注释已说明）/ 零动销 SKU 待 P1-B B.7 单独补采 / 不在本字段
         })
     return archive
 
