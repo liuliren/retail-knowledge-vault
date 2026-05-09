@@ -46,7 +46,7 @@ related:
 3. 工程化 §15               文件/目录/版本工程
 4. Claude Code 协作 §17.1-10  vault 内容协作
 5. 工程操作纪律 §17.11+     Bash/Git/工具操作
-6. Memory 治理 §18+         记忆机制治理 ⭐ 5/9 新建
+6. Memory 治理 §17.20+      记忆机制治理 ⭐ 5/9 新建
 ```
 
 ---
@@ -208,7 +208,7 @@ vault KB 关键文件 §"memory 触发记录"段（新增）
 ```
 §13.20 数据治理       「数据维度」反幻觉
 §17.11+ 工程操作纪律  「工程操作维度」反幻觉
-§18+ Memory 治理      「记忆维度」反幻觉 ⭐ 新
+§17.20+ Memory 治理   「记忆维度」反幻觉 ⭐ 新
 
 共同根因：「细节差异叠加 = 系统性错误」
 共同方法：4 层治理底盘
@@ -225,7 +225,7 @@ vault KB 关键文件 §"memory 触发记录"段（新增）
 - ☐ 14 文件 frontmatter 全部加 priority / lifecycle / hit_count / vault_links / expires
 - ☐ 5-8 关键 KB 文件加 §"memory 触发记录"段
 - ☐ G10 Memory 治理审计 SOP v0.1 落地
-- ☐ CLAUDE.md §18 Memory 治理写入
+- ☐ CLAUDE.md §17.20+ Memory 治理写入
 
 ---
 

@@ -236,7 +236,7 @@ G01 关注**素材分类 + 落地**；G08 关注**数据契约 + 一致性 + Aud
 - ☐ 沉淀 [[数据一致性追溯案例库]] ≥ 3 案例
 - ☐ frontmatter `data_source` + `fact_layer` 字段在 vault 全量 ≥ 90% 完整
 - ☐ G03 lint 自动扫规则集成（W19+ 充实 5 条规则）
-- ☐ 启明 / 高彬 sign off 至少 1 次
+- ☐ 6 哥 sign off 至少 1 次（vault 内部数据治理验收 / 客户侧数据口径可由启明/高彬业务确认 / 但不作为内部 SOP sign off 人）
 
 ---
 
