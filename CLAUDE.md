@@ -608,6 +608,47 @@ related:
 9. 生成系统 PRD 时，应兼顾：可开发、可配置、可测试、有字段依赖、有验收标准。
 10. 每次重要输出后，给出后续建议，但不要擅自执行未确认的大规模变更。
 
+### 17.20 vault Memory 治理体系（2026-05-09 新增 / vault 第 6 大治理支柱）⭐⭐⭐
+
+> **战略定位**：vault 第 6 大治理支柱（前 5 大：反幻觉 §13 / 一致性 §14 / 工程化 §15 / Claude Code 协作 §17.1-10 / 工程操作纪律 §17.11+）。
+>
+> **触发**：5/9 用户提议探讨 memory 机制升级 / "形成简洁、有体系且高效的处理方式" / Q1-Q4 全选 A。
+>
+> **完整体系**：[[Memory治理体系_v1.0]]（vault 顶级运营标准 ⭐⭐⭐）
+
+**三层架构**：
+
+```
+L1 Hot Memory（当前会话工作记忆）   LLM context window 自动维护
+L2 Project Memory（vault 项目热）   ~/.claude/.../memory/（白盒 .md）
+L3 Knowledge Base（vault 长期）     vault 主体 + 双向打通
+```
+
+**6 项升级**（W20 已全部落地）：
+
+1. 子目录化（00_user / 01_feedback{P0/P1/P2/archived} / 02_project{active/archived} / 03_reference / 99_meta）
+2. MEMORY.md 索引升级（5 段分组 + 元数据 + 检索预算）
+3. lifecycle 字段（priority / lifecycle / hit_count / vault_links / expires）
+4. 评分与衰减（30 天半衰期 / dormant / archived_candidate 自动转换）
+5. 双向打通 KB（关键 vault 文件加 §"memory 触发记录"段）
+6. 检索机制（P0 全量 + 索引 + keyword match P1 / token 预算 ≤ 5K）
+
+**4 层治理底盘**（与 §13.16-20 / §17.11+ 协同）：
+
+| 层 | 内容 | 落地 |
+|---|---|---|
+| L1 操作契约 | memory 写入前 frontmatter 必填 | pre-flight checklist |
+| L2 规则集 | 6 项升级 | [[Memory治理体系_v1.0]] |
+| L3 自动检查 | lint 脚本 / decay 自动算（W22+）| 占位 |
+| L4 Constitutional 自检 | 月度 G10 审计 + 评分快照 | [[G10_Memory治理审计]] |
+
+**强制范围**：vault 任何 memory 创建 / 修改 / 归档 一律必查 / 错误立即沉淀 / Tesla 不容忍同主题分散重复。
+
+**与 vault 6 大支柱协同**：
+- §13.16-20 数据治理 + §17.11+ 工程操作纪律 + §17.20 Memory 治理 = 共同根因「细节差异叠加 = 系统性错误」反幻觉教训 / 不同维度（数据/工程/记忆）/ 共同 4 层治理底盘。
+
+---
+
 ### 17.X vault 工程操作纪律体系（2026-05-09 新增 / vault 第 5 大治理支柱）⭐⭐⭐
 
 > **战略定位**：vault 第 5 大治理支柱（前 4 大：反幻觉 §13 / 一致性 §14 / 工程化 §15 / Claude Code 协作 §17.1-10）。
