@@ -2,6 +2,7 @@
 title: 09_门店案例与项目复盘 目录说明
 version: v1.0
 status: active
+quadrant: IV
 owner: 六哥
 created: 2026-05-01
 updated: 2026-05-01

@@ -1,0 +1,7 @@
+# SKU 属性提取算法 v0.1 — 无外部依赖
+# 仅使用 Python 标准库（re, dataclasses, csv, unittest）
+# 最低 Python 版本: 3.10
+
+# 可选 — 如需读 .xlsx 输入做批处理：
+# openpyxl==3.1.5
+# xlrd==2.0.2
