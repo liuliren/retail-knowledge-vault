@@ -1,0 +1,6 @@
+skeleton_id,category_l1,category_l2,category_l3,category_l4,category_l4_code,representative_brands,common_keywords,exclude_keywords,common_specs,common_package_types,business_role,is_essential_category,price_band_definition,common_display_notes,match_priority,source_type,status,created_date,updated_date,remark
+B-10103-01,02_食品,调味品,酱油,生抽,10103,海天|千禾|李锦记|厨邦,生抽|酱油|头道,老抽|蒸鱼|凉拌,500ml|1L|1.5L,bottle_glass|bottle_plastic,essential,true,low<10|mid10-30|high>30,常温区|不与生鲜混陈,100,v4_skeleton,active,2026-05-09,2026-05-09,样例-民生刚需
+B-20201-01,02_食品,饮料,碳酸饮料,可乐,20201,可口可乐|百事可乐,可乐|cola|可口|百事,健怡|无糖|零度,330ml|600ml|2L,can|bottle_plastic,traffic,false,low<5|mid5-15|high>15,黄金层|端架,90,v4_skeleton,active,2026-05-09,2026-05-09,样例-流量品
+B-30101-01,03_百货,纸品,卷纸,卷筒纸,30101,清风|心相印|维达|Tempo,卷纸|卷筒|抽纸,湿巾|纸巾|手帕,4层|10卷|3层,bag|box,essential,true,low<20|mid20-50|high>50,常温区|不潮湿,80,v4_skeleton,active,2026-05-09,2026-05-09,样例-民生刚需大件
+B-10302-01,02_食品,休闲食品,果冻布丁,果冻,10302,喜之郎|蜡笔小新|亲亲,果冻|布丁,饼干|糖果,10袋|16袋|1kg,bag|box,supplementary,false,low<8|mid8-20|high>20,儿童区|端架,60,v4_skeleton,active,2026-05-09,2026-05-09,样例-儿童零食
+B-20302-01,02_食品,水饮料,矿泉水,纯净水,20302,农夫山泉|怡宝|百岁山|娃哈哈,矿泉水|纯净水|天然水,苏打水|功能饮料,500ml|1.5L|2L|4L,bottle_plastic,traffic,true,low<3|mid3-10|high>10,常温区|端架|整箱陈列,95,v4_skeleton,active,2026-05-09,2026-05-09,样例-民生流量

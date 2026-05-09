@@ -1,0 +1,6 @@
+rule_id,pattern,rule_type,target_type,target_id,category_l4_code,brand,spec_hint,priority,confidence,source_type,source_client,status,created_date,remark
+KR-001,海天500,keyword,sku,A-00001,10103,海天,500ml,100,high,manual,hcp,active,2026-05-09,样例-客户简写映射标准 SKU
+KR-002,海天生抽王1.9L,keyword,sku,A-00004,10103,海天,1900ml,100,high,manual,hcp,active,2026-05-09,样例-家庭装映射
+KR-003,可乐.*330,regex,sku,A-00002,20201,可口可乐,330ml,90,high,manual,hcp,active,2026-05-09,样例-正则
+KR-004,农夫.*550,regex,sku,A-00003,20302,农夫山泉,550ml,90,high,manual,hcp,active,2026-05-09,样例-正则
+KR-005,清风.*10卷,fuzzy,sku,A-00005,30101,清风,10卷,80,medium,manual,hcp,active,2026-05-09,样例-模糊

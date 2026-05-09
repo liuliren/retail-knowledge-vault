@@ -44,6 +44,18 @@
 **/*.csv
 **/*.dwg
 
+# 商品库结构层 CSV 白名单（vault 数据资产 / 上 git / 5/9 用户决策）
+# 原则：结构资产入 git（顾问可复用 / 跨客户共享）/ 客户真实数据保持忽略
+# 允许：A 标准 SKU seed / B 品类骨架 / C 客户接入模板 / _maintenance 全部
+# 禁止：C_client_specific/*_raw.csv（客户原始数据 / 隐私）
+# 禁止：C_client_specific/*_mapped.csv（客户匹配结果 / 含销售/毛利等敏感字段）
+!13_数据分析与工具脚本/商品库_v0.1/A_core_sku_seed.csv
+!13_数据分析与工具脚本/商品库_v0.1/B_category_skeleton.csv
+!13_数据分析与工具脚本/商品库_v0.1/C_client_specific/_客户SKU模板.csv
+!13_数据分析与工具脚本/商品库_v0.1/_maintenance/brand_alias.csv
+!13_数据分析与工具脚本/商品库_v0.1/_maintenance/package_unit.csv
+!13_数据分析与工具脚本/商品库_v0.1/_maintenance/keyword_rule.csv
+
 # Python / system
 __pycache__/
 *.pyc

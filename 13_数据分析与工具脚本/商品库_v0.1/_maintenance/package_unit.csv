@@ -1,0 +1,11 @@
+unit_canonical,aliases,category,convert_to_base
+ml,毫升|ML|cc|c.c.|cm3,volume,1.0
+L,升|l|liter|litre,volume,1000.0
+g,克|gram|gm,weight,1.0
+kg,千克|公斤|KG|kilogram,weight,1000.0
+个,件|pcs|pc|each,count,1.0
+盒,box|BOX,count,1.0
+袋,bag|BAG|包,count,1.0
+瓶,bottle|btl|BTL,count,1.0
+罐,can|CAN|listy,count,1.0
+箱,case|carton|CTN,count,1.0

@@ -1,0 +1,6 @@
+sku_id,barcode,standard_product_name,brand_name,category_l4_code,spec_value,spec_unit,package_type,flavor,series_name,package_for_family,is_premium,is_gift_pack,source_type,source_name,source_confidence,status,created_date,updated_date,embedding_id,remark
+A-00001,6901028180108,海天金标生抽 500ml 玻璃瓶,海天,10103,500.0,ml,bottle_glass,金标,金标系列,false,false,false,manual,v1.1_seed,high,active,2026-05-09,2026-05-09,,样例-标准 SKU
+A-00002,6924743919365,可口可乐 330ml 罐装,可口可乐,20201,330.0,ml,can,经典,Coca-Cola Classic,false,false,false,manual,v1.1_seed,high,active,2026-05-09,2026-05-09,,样例-碳酸饮料
+A-00003,6920202888888,农夫山泉 550ml 瓶装,农夫山泉,20302,550.0,ml,bottle_plastic,天然水,经典,false,false,false,manual,v1.1_seed,high,active,2026-05-09,2026-05-09,,样例-纯净水
+A-00004,6901028180207,海天生抽王 1.9L 家庭装,海天,10103,1900.0,ml,bottle_plastic,金标王,金标系列,true,false,false,manual,v1.1_seed,high,active,2026-05-09,2026-05-09,,样例-家庭装
+A-00005,6920000000001,清风原木纯品 4 层 10 卷 卷纸,清风,30101,10.0,卷,bag,原木纯品,原木系列,true,false,false,manual,v1.1_seed,high,active,2026-05-09,2026-05-09,,样例-民生用品
