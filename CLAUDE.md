@@ -608,6 +608,52 @@ related:
 9. 生成系统 PRD 时，应兼顾：可开发、可配置、可测试、有字段依赖、有验收标准。
 10. 每次重要输出后，给出后续建议，但不要擅自执行未确认的大规模变更。
 
+### 17.11 Bash 工具 cwd 纪律（2026-05-09 新增 / "致命错误：不是 Git 仓库" 事件触发）⭐
+
+> **触发**：5/9 W19 Python 脚本读 /tmp 数据时用 `cd /tmp && python3 ...` 切走 Bash cwd / 后续 `git add -A && git commit` 在 /tmp 跑 / 报"致命错误：不是 Git 仓库"。
+
+**根因**：Bash 工具的工作目录在命令之间**持久化**。一次 `cd <path>` 会影响所有后续 Bash 命令 / 直到下一次 `cd` 切回。
+
+**硬约束**：
+
+1. **绝不在 Bash 层用 `cd /tmp` 等切走 cwd**（vault 是 cwd / 切走后 git / Read / Write 全部失效）
+2. **Python / Shell 脚本读外部目录** → 在脚本内部 `os.chdir()` 或用绝对路径 / **不在 Bash 层 cd**
+3. **git 命令必要时用 `git -C <repo> ...`** 而不是 `cd <repo> && git ...`（避免 cwd 副作用）
+4. **如必须 cd**（极少数 / 用户明确要求）→ 命令末尾必须 `cd -` 或 `cd <vault>` 切回
+5. **执行可疑的目录敏感命令前**（git / Read / Write）→ 先 `pwd` 验证 cwd 在 vault
+
+**反例**（5/9 错误做法）：
+```bash
+# ❌ 这条命令副作用：把 Bash cwd 永久切到 /tmp
+cd /tmp && python3 << 'EOF'
+import openpyxl
+wb = openpyxl.load_workbook("/tmp/01_门店数据材料_xlsx/...")
+EOF
+# 后续 git 在 /tmp 跑 → "致命错误：不是 Git 仓库"
+```
+
+**正例**：
+```bash
+# ✅ 方式 1：Python 脚本内部 chdir / Bash cwd 不变
+python3 << 'EOF'
+import os
+os.chdir("/tmp/01_门店数据材料_xlsx")
+import openpyxl
+wb = openpyxl.load_workbook("滞销商品.xlsx")
+EOF
+
+# ✅ 方式 2：直接用绝对路径 / 不切 cwd
+python3 << 'EOF'
+import openpyxl
+wb = openpyxl.load_workbook("/tmp/01_门店数据材料_xlsx/滞销商品.xlsx")
+EOF
+
+# ✅ 方式 3：git 用 -C 选项
+git -C /Users/davidliu/KnowledgeBase/retail-knowledge-vault add -A
+```
+
+**关联**：[[CLAUDE.md]] §13.20 数据一致性追溯（同样是"细节差异叠加 = 系统性错误"的反例 / 但维度不同：§13.20 是数据维 / §17.11 是工程操作维）。
+
 ---
 
 ## 18. Ingest / Query / Lint 三个 first-class 操作
