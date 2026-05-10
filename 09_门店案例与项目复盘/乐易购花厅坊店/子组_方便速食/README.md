@@ -55,7 +55,7 @@ related:
 
 | # | 问题 | 待 |
 |---|---|---|
-| 1 | 4/25 调改具体哪一天？ | 启明 sign off（W20-Day4 §3 P0 ①）|
+| 1 | 4/25 调改具体哪一天？ | ✅ 已 confirm 4/25 晚上（六哥 5/10 / fact_layer: client_told）/ 启明现场补 sign off 单据待 5/13 |
 | 2 | 方便面 -7.5pp 原因 | 启明 sign off（W20-Day4 §3 P0 ②）|
 | 3 | 56 SKU B 类是否允许二次精筛 | 启明 sign off（W20-Day4 §3 P0 ⑤）|
 | 4 | 释放排面方向（冲调/糕点/即食）| 启明 sign off（W20-Day4 §3 P0 ⑥）|
