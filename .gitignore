@@ -65,6 +65,10 @@
 !13_数据分析与工具脚本/商品库_v0.1/_maintenance/package_unit.csv
 !13_数据分析与工具脚本/商品库_v0.1/_maintenance/keyword_rule.csv
 
+# Allow approved empty Excel templates（vault 结构资产 / 0 真实客户数据 / 单文件白名单）
+# 原则：保留 **/*.xlsx 全局忽略 / 仅显式白名单空模板
+!09_门店案例与项目复盘/乐易购花厅坊店/03_商品诊断/2026-05-13_花厅坊商品基础档案Excel空模板_v0.1.xlsx
+
 # Python / system
 __pycache__/
 *.pyc
