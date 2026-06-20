@@ -32,7 +32,7 @@ tags:
 | 2 | [[SKU动作建议表_模板定义_v0.1]] | [[SKU动作建议表_Excel工具版_使用说明_v0.1]] / [[SKU动作建议表_Excel工具版_脱敏试填说明_v0.1]] | 核心动作承接（10动作/10角色/11误判防线）|
 | 3 | [[周复盘表_模板定义_v0.1]] | `周复盘表_Excel工具版_v0.1.xlsx`(tool_file) + [[周复盘表_Excel工具版_使用说明_v0.1]](internal_only) | 7/15/30天复盘，14项接口入结项 |
 | 4 | [[结项报告_模板定义_v0.1]] | — | 项目收口，承接后续产品 |
-| 4.5 | [[DisplayMap调整表_模板定义_v0.1]] | — | 陈列动作承接（SKU动作表/诊断报告的陈列下游 → 周复盘/结项）；internal_only |
+| 4.5 | [[DisplayMap调整表_模板定义_v0.1]] | `DisplayMap调整表_Excel工具版_v0.1.xlsx`(tool_file) + [[DisplayMap调整表_Excel工具版_使用说明_v0.1]](internal_only) | 陈列动作承接（SKU动作表/诊断报告的陈列下游 → 周复盘/结项）；internal_only |
 
 > Excel 工具版实体文件 `SKU动作建议表_Excel工具版_v0.1.xlsx` 同目录（被 .gitignore 忽略，不入库，磁盘可用）。
 

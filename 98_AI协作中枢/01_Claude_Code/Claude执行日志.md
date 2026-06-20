@@ -652,3 +652,29 @@
 - **边界**:未重写/覆盖/改周复盘Excel及使用说明;未改SKU表Excel/各模板定义/Product-012/.gitignore/RetailOS/总纲;未新建文件;未动真实数据
 - **质量检查**:27项全过
 - **下一步**:Template-005.2 DisplayMap Excel / Pack-002.3商品诊断报告Word / Product-008私域文案
+
+---
+
+## 2026-06-20｜P0.5-Template-005.3｜DisplayMap Excel工具版生成(Batch1第二件)
+
+- **新建Excel**：`…/模板库/DisplayMap调整表_Excel工具版_v0.1.xlsx`(6sheet/38字段/16下拉/3脱敏示例含待陈列数据场景)
+- **新建使用说明**：`…/模板库/DisplayMap调整表_Excel工具版_使用说明_v0.1.md`(internal_only)
+- **6 sheet**：README/①DisplayMap主表(5字段组A-E,38列)/②陈列动作字典(12类)/③待陈列数据字典(9类"缺什么不做什么判断")/④字段说明(38字段)/⑤脱敏示例
+- **下拉16**：是否进入DisplayMap/当前SKU动作(10类沿用)/商品角色(10类沿用)/问题来源/问题类型/证据来源/数据可信度/4个是否YNC/陈列动作类型(12类沿用)/待陈列数据标记(10项)/实际完成状态/复盘结论/下一步动作(陈列处置非SKU枚举)
+- **复用周复盘Excel范式**:openpyxl/冻结/筛选/分区配色/字典/脱敏
+- **索引补链2**:模板库README(4.5行)+产品README(陈列承接行)
+- **边界**:未改SKU表/周复盘Excel/各模板定义/交付物总清单(留008.5)/.gitignore/RetailOS/总纲;未新增SKU动作·商品角色·误判枚举;缺数据强制"待陈列数据";无真实数据/无宏/无外链
+- **质量检查**:32项全过;敏感命中0
+- **.gitignore**:xlsx被忽略=磁盘可用未入git
+- **Batch1两件表格Excel齐备**(周复盘+DisplayMap)
+- **下一步**:Template-008.5总清单补DisplayMap Excel / Pack-002.3商品诊断报告Word / Product-008私域文案
+
+---
+
+## 2026-06-20｜P0.5-Template-008.5｜交付物总清单补DisplayMap Excel
+
+- **仅改1文件**：`…/30天商品提效包/社区超市30天商品提效包_交付物总清单_v0.1.md`
+- **补链**：①件数23→25(22md+3xlsx含本件)；②E区5→7件；③总表+2行(20 DisplayMap Excel tool_file/21使用说明internal,原20-23顺延22-25)；④阶段10填实(SKU表+DisplayMap模板24+DisplayMap Excel20+说明21+店长执行);⑤三视图shareable6/internal16/tool3;⑥内部禁发+DisplayMap Excel及说明;⑦对外可发声明DisplayMap Excel不可发;⑧交付前检查+陈列Excel项;⑨版本提醒补DisplayMap Excel(gitignore/待陈列数据口径,Batch1表格类齐备);⑩下一步去除已完成005.3;⑪版本记录加补链4
+- **边界**:未重写/覆盖/改DisplayMap Excel及说明/周复盘Excel/SKU表Excel/各模板定义/Product-012/.gitignore/RetailOS/总纲;未新建文件;未动真实数据
+- **质量检查**:29项全过
+- **下一步**:Pack-002.3商品诊断报告Word / Product-008私域文案 / Pack-003客户PDF话术卡 / Git-Commit-002
