@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>晟果新零售 · 品类管理操作系统 V5.0 · 大湾区版</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a3a32;
+    --ink-soft: #2a4a42;
+    --ink-deep: #0f2620;
+    --amber: #c89b3c;
+    --amber-soft: #e8c878;
+    --amber-pale: #f5e9c8;
+    --terra: #a94442;
+    --paper: #faf7f2;
+    --paper-2: #f3ede2;
+    --paper-3: #ebe2d0;
+    --text: #2c2825;
+    --text-soft: #6a635a;
+    --text-mute: #9a9388;
+    --rule: #d8d0c0;
+    --rule-soft: #e8e0d0;
+    --green: #6B8E23;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans SC', -apple-system, sans-serif;
+    background: var(--paper);
+    color: var(--text);
+    line-height: 1.7;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+  .serif { font-family: 'Noto Serif SC', serif; }
+  .num { font-family: 'Cormorant Garamond', serif; font-weight: 500; }
+  
+  /* ============ Hero ============ */
+  .hero {
+    min-height: 100vh;
+    background: var(--ink);
+    color: var(--paper);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 8vw 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(200,155,60,0.18) 0%, transparent 70%);
+  }
+  .hero-deco {
+    position: absolute;
+    bottom: 4rem;
+    right: 8vw;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12rem;
+    font-weight: 300;
+    color: rgba(200,155,60,0.08);
+    line-height: 0.8;
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--amber-soft), transparent);
+  }
+  .hero-tag {
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-tag::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--amber);
+  }
+  .hero h1 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: clamp(2.5rem, 6vw, 5.2rem);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+    position: relative;
+    z-index: 2;
+  }
+  .hero h1 .em {
+    color: var(--amber);
+    font-style: italic;
+    font-weight: 700;
+  }
+  .hero-sub {
+    font-family: 'Noto Serif SC', serif;
+    font-size: clamp(1rem, 1.6vw, 1.4rem);
+    color: rgba(250,247,242,0.8);
+    max-width: 780px;
+    margin-bottom: 4rem;
+    font-weight: 400;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(200,155,60,0.3);
+    position: relative;
+    z-index: 2;
+  }
+  .meta-item .label {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.5rem;
+  }
+  .meta-item .value {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.05rem;
+    color: var(--paper);
+  }
+  
+  section { padding: 8rem 8vw; max-width: 1500px; margin: 0 auto; }
+  section.full { max-width: none; margin: 0; }
+  
+  .sec-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.3em;
+    color: var(--amber);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .sec-num::before { content: ''; width: 24px; height: 1px; background: var(--amber); }
+  .sec-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+  .sec-title .em { color: var(--terra); font-style: italic; }
+  .sec-lead {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.15rem;
+    color: var(--text-soft);
+    max-width: 820px;
+    margin-bottom: 5rem;
+  }
+  
+  /* 系统架构 */
+  .arch-layers { display: grid; gap: 1.5rem; }
+  .arch-layer {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-left: 6px solid var(--amber);
+    padding: 2rem 2.5rem;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .arch-layer.s1 { border-left-color: var(--terra); }
+  .arch-layer.s2 { border-left-color: var(--amber); }
+  .arch-layer.s3 { border-left-color: var(--ink); }
+  .arch-layer.s4 { border-left-color: var(--text-soft); }
+  .arch-layer-head .name { font-family: 'Noto Serif SC', serif; font-size: 1.5rem; color: var(--ink); font-weight: 700; margin-bottom: 0.3rem; }
+  .arch-layer-head .en { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: var(--text-soft); font-style: italic; margin-bottom: 0.5rem; }
+  .arch-layer-head .role { font-size: 0.75rem; color: var(--text-mute); letter-spacing: 0.05em; }
+  .arch-sheets { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+  .arch-sheet { background: var(--paper-2); padding: 1rem 1.2rem; border-radius: 2px; }
+  .arch-sheet .id { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--amber); line-height: 1; font-weight: 600; }
+  .arch-sheet .ttl { font-family: 'Noto Serif SC', serif; font-size: 1rem; color: var(--ink); font-weight: 700; margin: 0.4rem 0 0.3rem; }
+  .arch-sheet .desc { font-size: 0.82rem; color: var(--text-soft); line-height: 1.55; }
+  
+  /* 主数据底座 */
+  .data-base { background: var(--ink); color: var(--paper); padding: 6rem 8vw; }
+  .data-base .sec-num { color: var(--amber); }
+  .data-base .sec-num::before { background: var(--amber); }
+  .data-base .sec-title { color: var(--paper); }
+  .data-base .sec-lead { color: rgba(250,247,242,0.75); }
+  .pyramid-stats {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
+    padding: 3rem 0;
+    border-top: 1px solid rgba(200,155,60,0.3);
+    border-bottom: 1px solid rgba(200,155,60,0.3);
+    margin-bottom: 4rem;
+  }
+  .pyramid-stat { text-align: center; }
+  .pyramid-stat .lab { font-size: 0.75rem; letter-spacing: 0.2em; color: var(--amber); text-transform: uppercase; margin-bottom: 0.8rem; }
+  .pyramid-stat .n { font-family: 'Cormorant Garamond', serif; font-size: 4.5rem; font-weight: 600; color: var(--paper); line-height: 1; }
+  .pyramid-stat .meaning { font-size: 0.85rem; color: rgba(250,247,242,0.6); margin-top: 0.8rem; }
+  .l1-tree { display: grid; gap: 3rem; }
+  .l1-block { background: rgba(250,247,242,0.04); border-left: 3px solid var(--amber); padding: 2rem 2.5rem; }
+  .l1-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(200,155,60,0.2); }
+  .l1-name { font-family: 'Noto Serif SC', serif; font-size: 1.8rem; color: var(--amber-soft); font-weight: 700; }
+  .l1-stats { font-family: 'Cormorant Garamond', serif; color: rgba(250,247,242,0.6); font-size: 0.95rem; }
+  .l1-stats .big { font-size: 1.4rem; color: var(--paper); font-weight: 600; }
+  .l2-row { display: grid; grid-template-columns: 180px 1fr; gap: 2rem; padding: 1.2rem 0; border-bottom: 1px dashed rgba(200,155,60,0.15); }
+  .l2-row:last-child { border: none; }
+  .l2-name { font-family: 'Noto Serif SC', serif; color: var(--paper); font-weight: 500; font-size: 1rem; }
+  .l2-name .l3-count { display: block; font-size: 0.75rem; color: var(--amber); margin-top: 0.2rem; font-family: 'Cormorant Garamond', serif; font-weight: 400; }
+  .l3-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .l3-tag {
+    background: rgba(250,247,242,0.08);
+    color: rgba(250,247,242,0.9);
+    padding: 0.4rem 0.9rem;
+    font-size: 0.85rem;
+    border-radius: 2px;
+    border: 1px solid rgba(200,155,60,0.15);
+  }
+  .l3-tag .l4-num { color: var(--amber); font-family: 'Cormorant Garamond', serif; margin-left: 0.4rem; font-weight: 600; }
+  .l3-tag.gba { border-color: var(--amber); background: rgba(200,155,60,0.12); }
+  
+  /* 核心能力 */
+  .capabilities { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 2rem; }
+  .cap-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 2.5rem;
+    position: relative;
+    transition: all 0.3s;
+  }
+  .cap-card:hover { border-color: var(--amber); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(26,58,50,0.08); }
+  .cap-card .num-deco {
+    position: absolute; top: 1.5rem; right: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.5rem; color: var(--paper-3);
+    line-height: 1; font-weight: 400; pointer-events: none;
+  }
+  .cap-card h3 { font-family: 'Noto Serif SC', serif; font-size: 1.5rem; color: var(--ink); margin-bottom: 0.4rem; font-weight: 700; }
+  .cap-card .en-name { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--text-soft); font-size: 0.95rem; margin-bottom: 1.5rem; }
+  .cap-card .features { list-style: none; }
+  .cap-card .features li {
+    padding: 0.8rem 0;
+    border-bottom: 1px dashed var(--rule);
+    color: var(--text);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  .cap-card .features li::before { content: '◇'; position: absolute; left: 0; color: var(--amber); font-size: 0.9rem; }
+  .cap-card .features li:last-child { border: none; }
+  .cap-card .features li strong { color: var(--ink); font-weight: 700; }
+  
+  /* 品类细分 */
+  .l3-detail { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border-top: 2px solid var(--ink); }
+  .l3-detail-cell {
+    padding: 1.8rem 1.5rem;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    transition: background 0.2s;
+  }
+  .l3-detail-cell:hover { background: var(--paper-2); }
+  .l3-detail-cell.gba { background: var(--paper-2); }
+  .l3-detail-cell.gba:hover { background: var(--amber-pale); }
+  .l3-detail-cell .l3-h { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.6rem; }
+  .l3-detail-cell .l3-h .name { font-family: 'Noto Serif SC', serif; font-size: 1.15rem; color: var(--ink); font-weight: 700; }
+  .l3-detail-cell .l3-h .star { color: var(--amber); font-size: 1.1rem; }
+  .l3-detail-cell .meta { font-family: 'Cormorant Garamond', serif; color: var(--text-soft); font-size: 0.9rem; margin-bottom: 0.8rem; }
+  .role-tag {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    margin-bottom: 0.4rem;
+  }
+  .role-tag.profit { background: var(--terra); }
+  .role-tag.traffic { background: var(--ink); }
+  .role-tag.image { background: var(--amber); }
+  .role-tag.fill { background: var(--text-soft); }
+  .l3-detail-cell .samples { font-size: 0.82rem; color: var(--text-soft); line-height: 1.55; margin-top: 0.6rem; }
+  .l2-group-head {
+    grid-column: 1 / -1;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 1.2rem 2rem;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .l2-group-head .ttl { font-weight: 600; }
+  .l2-group-head .info { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: var(--amber-soft); }
+  
+  /* 大湾区 */
+  .gba-section { background: var(--paper-2); padding: 8rem 8vw; }
+  .gba-regions { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 1.5rem; margin-bottom: 5rem; }
+  .gba-region {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 2rem 1.8rem;
+    border-top: 4px solid var(--ink);
+    position: relative;
+  }
+  .gba-region.r1 { border-top-color: var(--terra); }
+  .gba-region.r2 { border-top-color: var(--ink); }
+  .gba-region.r3 { border-top-color: var(--amber); }
+  .gba-region.r4 { border-top-color: var(--green); }
+  .gba-region .name { font-family: 'Noto Serif SC', serif; font-size: 1.5rem; color: var(--ink); font-weight: 700; margin-bottom: 0.3rem; }
+  .gba-region .cities { font-size: 0.85rem; color: var(--text-soft); margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed var(--rule); }
+  .gba-region .cities strong { color: var(--terra); font-weight: 700; }
+  .gba-region .row { display: flex; gap: 0.8rem; padding: 0.7rem 0; font-size: 0.88rem; border-bottom: 1px dashed var(--rule-soft); }
+  .gba-region .row:last-child { border: none; }
+  .gba-region .row .lab { color: var(--amber); font-weight: 600; min-width: 80px; }
+  .gba-region .row .val { color: var(--text); line-height: 1.5; }
+  
+  .zh-callout {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 2.5rem 3rem;
+    margin-top: 2rem;
+    border-radius: 2px;
+    border-left: 4px solid var(--amber);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  .zh-callout .icon { font-family: 'Cormorant Garamond', serif; font-size: 4rem; color: var(--amber); line-height: 1; font-weight: 500; }
+  .zh-callout .ttl { font-family: 'Noto Serif SC', serif; font-size: 1.4rem; color: var(--paper); margin-bottom: 0.5rem; font-weight: 700; }
+  .zh-callout .desc { color: rgba(250,247,242,0.8); font-size: 0.92rem; line-height: 1.7; }
+  
+  .solar-terms { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; background: var(--paper); border-top: 1px solid var(--rule); }
+  .term-cell { padding: 1.3rem 1.2rem; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .term-cell .term-name { font-family: 'Noto Serif SC', serif; font-size: 1.05rem; color: var(--terra); font-weight: 700; margin-bottom: 0.3rem; }
+  .term-cell .theme { font-size: 0.8rem; color: var(--text-soft); margin-bottom: 0.5rem; font-style: italic; }
+  .term-cell .l3s { font-size: 0.78rem; color: var(--ink); line-height: 1.5; }
+  
+  /* 运营标准 */
+  .ops-standards { background: var(--paper); border: 1px solid var(--rule); }
+  .ops-header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 1rem 1.5rem;
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1.5fr 2fr;
+    gap: 1rem;
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .ops-row {
+    padding: 1.2rem 1.5rem;
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1.5fr 2fr;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    font-size: 0.92rem;
+    align-items: center;
+  }
+  .ops-row:last-child { border: none; }
+  .ops-row:nth-child(even) { background: var(--paper-2); }
+  .ops-row .cat { font-family: 'Noto Serif SC', serif; color: var(--ink); font-weight: 600; }
+  .ops-row .val { color: var(--text); font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 500; }
+  .ops-row .val.highlight { color: var(--terra); font-weight: 600; }
+  .ops-row .note { color: var(--text-soft); font-size: 0.85rem; }
+  .ops-summary { background: var(--paper-2); padding: 1.5rem 2rem; margin-top: 2rem; border-left: 3px solid var(--amber); }
+  .ops-summary .ttl { font-family: 'Noto Serif SC', serif; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+  .ops-summary .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-top: 1rem; }
+  .ops-summary .item .lab { font-size: 0.78rem; color: var(--text-soft); letter-spacing: 0.1em; }
+  .ops-summary .item .v { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--terra); font-weight: 600; }
+  
+  /* 使用场景 */
+  .scenes { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border-top: 2px solid var(--amber); }
+  .scene-cell { padding: 2.5rem 2rem; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); background: var(--paper); }
+  .scene-cell .stage { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; color: var(--amber); letter-spacing: 0.15em; margin-bottom: 0.5rem; }
+  .scene-cell h4 { font-family: 'Noto Serif SC', serif; font-size: 1.3rem; color: var(--ink); margin-bottom: 0.8rem; font-weight: 700; }
+  .scene-cell p { font-size: 0.88rem; color: var(--text-soft); line-height: 1.65; margin-bottom: 1rem; }
+  .scene-cell .tools { font-size: 0.78rem; color: var(--text-mute); padding-top: 0.8rem; border-top: 1px dashed var(--rule); }
+  .scene-cell .tools strong { color: var(--terra); }
+  
+  /* Footer */
+  footer { background: var(--ink-deep); color: rgba(250,247,242,0.7); padding: 4rem 8vw 3rem; }
+  .foot-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(200,155,60,0.2); }
+  .foot-brand { font-family: 'Noto Serif SC', serif; font-size: 1.5rem; color: var(--paper); font-weight: 700; margin-bottom: 0.3rem; }
+  .foot-en { font-family: 'Cormorant Garamond', serif; color: var(--amber); font-style: italic; margin-bottom: 1.5rem; }
+  .foot-desc { font-size: 0.9rem; line-height: 1.7; max-width: 500px; }
+  .foot-col h4 { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--amber); margin-bottom: 1rem; }
+  .foot-col p { font-size: 0.88rem; margin-bottom: 0.5rem; }
+  .foot-bottom { padding-top: 2rem; display: flex; justify-content: space-between; font-size: 0.8rem; }
+  
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero h1, .hero-sub, .hero-meta { animation: fadeUp 0.8s ease-out backwards; }
+  .hero-sub { animation-delay: 0.2s; }
+  .hero-meta { animation-delay: 0.4s; }
+  
+  @media (max-width: 900px) {
+    .hero { padding: 4rem 6vw 3rem; }
+    section { padding: 5rem 6vw; }
+    .arch-layer { grid-template-columns: 1fr; gap: 1.5rem; }
+    .pyramid-stats { grid-template-columns: repeat(2, 1fr); }
+    .l2-row { grid-template-columns: 1fr; gap: 0.8rem; }
+    .ops-header, .ops-row { grid-template-columns: 1fr; gap: 0.3rem; }
+    .ops-header { display: none; }
+    .ops-row { padding: 1rem; }
+    .ops-row .cat { font-size: 1rem; }
+    .zh-callout { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem; }
+    .foot-top { grid-template-columns: 1fr; }
+    .foot-bottom { flex-direction: column; gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-deco num">V5</div>
+  <div class="hero-tag">CATEGORY MANAGEMENT SYSTEM</div>
+  <h1 class="serif">面向大湾区社区生活超市的<br><span class="em">品类管理操作系统</span></h1>
+  <p class="hero-sub">一套覆盖战略规划、营销运营、一线执行、数据治理的完整品类管理工具集 —— 把陈列、采购、营销、绩效统一在同一份语言之下。</p>
+  <div class="hero-meta">
+    <div class="meta-item"><div class="label">Version</div><div class="value serif">V5.0 定稿</div></div>
+    <div class="meta-item"><div class="label">Scope</div><div class="value serif">1000–2000㎡ 社区超市</div></div>
+    <div class="meta-item"><div class="label">Region</div><div class="value serif">粤港澳大湾区</div></div>
+    <div class="meta-item"><div class="label">Provider</div><div class="value serif">晟果新零售咨询</div></div>
+    <div class="meta-item"><div class="label">Released</div><div class="value serif">2026.05</div></div>
+  </div>
+</header>
+
+<!-- 01 系统架构 -->
+<section>
+  <div class="sec-num">01 · ARCHITECTURE</div>
+  <h2 class="sec-title serif">系统由 <span class="em">12 张工作表</span> 协同构成</h2>
+  <p class="sec-lead serif">每一张表承担一项明确职能。从最底层的主数据，到最顶层的战略画像，自下而上构成完整的品类管理闭环。</p>
+  
+  <div class="arch-layers">
+    <div class="arch-layer s1">
+      <div class="arch-layer-head">
+        <div class="name serif">战略决策层</div>
+        <div class="en">Strategic Layer</div>
+        <div class="role">面向品类经理 · 高管视图</div>
+      </div>
+      <div class="arch-sheets">
+        <div class="arch-sheet">
+          <div class="id num">①</div>
+          <div class="ttl serif">架构总览</div>
+          <div class="desc">三 L1 战略地图 · 68 L3 聚合统计 · 商品角色与价格带分布</div>
+        </div>
+        <div class="arch-sheet">
+          <div class="id num">③</div>
+          <div class="ttl serif">L3 战略画像</div>
+          <div class="desc">68 L3 × 11 个战略维度 · 战略角色 / 生命周期 / 季节性 / 主导客群 / 战略策略</div>
+        </div>
+        <div class="arch-sheet">
+          <div class="id num">⑤</div>
+          <div class="ttl serif">角色×价格矩阵</div>
+          <div class="desc">商品角色四象限 · 价格带四档 · 引流款 / 利润款 / 形象款 / 补充款 组合诊断</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="arch-layer s2">
+      <div class="arch-layer-head">
+        <div class="name serif">营销运营层</div>
+        <div class="en">Marketing & Localization Layer</div>
+        <div class="role">面向营销 / 会员 / 本地化</div>
+      </div>
+      <div class="arch-sheets">
+        <div class="arch-sheet">
+          <div class="id num">④</div>
+          <div class="ttl serif">双标签字典</div>
+          <div class="desc">场景 S1–S10 + 客群 C1–C10 · 驱动陈列联动 / 会员营销 / 品类诊断</div>
+        </div>
+        <div class="arch-sheet">
+          <div class="id num">⑥</div>
+          <div class="ttl serif">大湾区深度本地化</div>
+          <div class="desc">粤港澳四区域差异 · 24 节气联动 · 地标品牌名册 · 跨区辐射城市说明</div>
+        </div>
+        <div class="arch-sheet">
+          <div class="id num">⑦</div>
+          <div class="ttl serif">52 周促销节奏表</div>
+          <div class="desc">全年 52 周品类节奏 · 节假日 / 节气联动 · 主推 L3 / 活动主题 / 备货建议</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="arch-layer s3">
+      <div class="arch-layer-head">
+        <div class="name serif">执行管理层</div>
+        <div class="en">Execution & KPI Layer</div>
+        <div class="role">面向采购 / 店长 / 营运</div>
+      </div>
+      <div class="arch-sheets">
+        <div class="arch-sheet">
+          <div class="id num">⑧</div>
+          <div class="ttl serif">SKU 诊断与行动模板</div>
+          <div class="desc">68 L3 宽度诊断框架 · P0–P3 行动优先级 · 配合门店实测填入</div>
+        </div>
+        <div class="arch-sheet">
+          <div class="id num">⑨</div>
+          <div class="ttl serif">一线营运分岗 SOP</div>
+          <div class="desc">按 L3 的陈列 / 促销 / 库存 / KPI 标准 · 按岗位的日周月年作业 SOP</div>
+        </div>
+        <div class="arch-sheet">
+          <div class="id num">⑩</div>
+          <div class="ttl serif">KPI 指标体系</div>
+          <div class="desc">7 大类 20 项指标 · 公式 / 基准 / 目标 / 责任人 · 用于绩效考核</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="arch-layer s4">
+      <div class="arch-layer-head">
+        <div class="name serif">数据治理层</div>
+        <div class="en">Data Foundation Layer</div>
+        <div class="role">面向 IT / 系统对接</div>
+      </div>
+      <div class="arch-sheets">
+        <div class="arch-sheet">
+          <div class="id num">⓪</div>
+          <div class="ttl serif">封面导航</div>
+          <div class="desc">版本信息 · 系统概览 · 工作表导航 · 版本变更记录</div>
+        </div>
+        <div class="arch-sheet">
+          <div class="id num">②</div>
+          <div class="ttl serif">主数据品类框架</div>
+          <div class="desc">385 条 L4 主数据 · 13 字段 · 直接导入 ERP / POS / 会员系统</div>
+        </div>
+        <div class="arch-sheet">
+          <div class="id num">⑪</div>
+          <div class="ttl serif">字段命名规范</div>
+          <div class="desc">字段定义 · L4 命名 SOP · 商品属性维度（形态 / 包装规格 / 工艺）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 主数据底座 -->
+<section class="data-base full">
+  <div style="max-width:1500px; margin:0 auto;">
+    <div class="sec-num">02 · MASTER DATA</div>
+    <h2 class="sec-title serif">主数据底座 · <span class="em" style="color:var(--amber-soft)">385 条 L4 全景</span></h2>
+    <p class="sec-lead serif">三层金字塔结构，从顶层大类到底层细类，MECE 完备、可直接对接 POS 与会员系统。</p>
+    
+    <div class="pyramid-stats">
+      <div class="pyramid-stat">
+        <div class="lab">L1 大类</div>
+        <div class="n num">3</div>
+        <div class="meaning">休闲食品 · 水饮料 · 基础食品</div>
+      </div>
+      <div class="pyramid-stat">
+        <div class="lab">L2 中类</div>
+        <div class="n num">16</div>
+        <div class="meaning">按消费场景与温区聚合</div>
+      </div>
+      <div class="pyramid-stat">
+        <div class="lab">L3 小类</div>
+        <div class="n num">68</div>
+        <div class="meaning">品类管理最小聚合单位</div>
+      </div>
+      <div class="pyramid-stat">
+        <div class="lab">L4 细类</div>
+        <div class="n num">385</div>
+        <div class="meaning">直接对应 SKU 采购清单</div>
+      </div>
+    </div>
+    
+    <div class="l1-tree">
+      <div class="l1-block">
+        <div class="l1-head">
+          <div class="l1-name serif">休闲食品</div>
+          <div class="l1-stats"><span class="big num">4</span> 中类 · <span class="big num">28</span> 小类 · <span class="big num">252</span> 细类</div>
+        </div>
+        <div class="l2-row">
+          <div class="l2-name">休闲零食<span class="l3-count">14 L3 · 167 L4</span></div>
+          <div class="l3-tags">
+            <span class="l3-tag">膨化零食<span class="l4-num">18</span></span>
+            <span class="l3-tag">肉类零食<span class="l4-num">12</span></span>
+            <span class="l3-tag">海味零食<span class="l4-num">10</span></span>
+            <span class="l3-tag">豆干素食零食<span class="l4-num">13</span></span>
+            <span class="l3-tag">坚果炒货<span class="l4-num">17</span></span>
+            <span class="l3-tag gba">蜜饯果脯<span class="l4-num">14</span></span>
+            <span class="l3-tag gba">果蔬干<span class="l4-num">20</span></span>
+            <span class="l3-tag gba">凉果类<span class="l4-num">10</span></span>
+            <span class="l3-tag">儿童零食<span class="l4-num">8</span></span>
+            <span class="l3-tag">糖玩类<span class="l4-num">8</span></span>
+            <span class="l3-tag">糖果<span class="l4-num">14</span></span>
+            <span class="l3-tag">巧克力<span class="l4-num">10</span></span>
+            <span class="l3-tag gba">果冻布丁<span class="l4-num">9</span></span>
+            <span class="l3-tag">健康轻食类<span class="l4-num">4</span></span>
+          </div>
+        </div>
+        <div class="l2-row">
+          <div class="l2-name">饼干糕点<span class="l3-count">4 L3 · 33 L4</span></div>
+          <div class="l3-tags">
+            <span class="l3-tag gba">中式糕点<span class="l4-num">12</span></span>
+            <span class="l3-tag">蛋糕派类<span class="l4-num">8</span></span>
+            <span class="l3-tag">面包烘焙<span class="l4-num">4</span></span>
+            <span class="l3-tag">西式饼干<span class="l4-num">9</span></span>
+          </div>
+        </div>
+        <div class="l2-row">
+          <div class="l2-name">冲调食品<span class="l3-count">7 L3 · 30 L4</span></div>
+          <div class="l3-tags">
+            <span class="l3-tag">代餐冲饮<span class="l4-num">3</span></span>
+            <span class="l3-tag">咖啡类<span class="l4-num">5</span></span>
+            <span class="l3-tag">奶粉类<span class="l4-num">5</span></span>
+            <span class="l3-tag">奶茶冲饮<span class="l4-num">4</span></span>
+            <span class="l3-tag">植物蛋白冲饮<span class="l4-num">4</span></span>
+            <span class="l3-tag">速溶茶<span class="l4-num">6</span></span>
+            <span class="l3-tag">袋泡茶<span class="l4-num">3</span></span>
+          </div>
+        </div>
+        <div class="l2-row">
+          <div class="l2-name">休闲速食<span class="l3-count">3 L3 · 20 L4</span></div>
+          <div class="l3-tags">
+            <span class="l3-tag">养生即食羹<span class="l4-num">6</span></span>
+            <span class="l3-tag">方便主食<span class="l4-num">11</span></span>
+            <span class="l3-tag">罐装即食粥<span class="l4-num">3</span></span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="l1-block">
+        <div class="l1-head">
+          <div class="l1-name serif">水饮料</div>
+          <div class="l1-stats"><span class="big num">8</span> 中类 · <span class="big num">27</span> 小类 · <span class="big num">58</span> 细类</div>
+        </div>
+        <div class="l2-row">
+          <div class="l2-name">包装饮用水<span class="l3-count">3 L3 · 6 L4</span></div>
+          <div class="l3-tags"><span class="l3-tag">天然水</span><span class="l3-tag">含气水</span><span class="l3-tag">处理水</span></div>
+        </div>
+        <div class="l2-row">
+          <div class="l2-name">碳酸饮料<span class="l3-count">3 L3 · 6 L4</span></div>
+          <div class="l3-tags"><span class="l3-tag">可乐型碳酸</span><span class="l3-tag">健康碳酸</span><span class="l3-tag">果味碳酸</span></div>
+        </div>
+        <div class="l2-row">
+          <div class="l2-name">茶饮料<span class="l3-count">3 L3 · 12 L4</span></div>
+          <div class="l3-tags"><span class="l3-tag gba">凉茶植物饮</span><span class="l3-tag">含糖即饮茶</span><span class="l3-tag">无糖即饮茶</span></div>
+        </div>
+        <div class="l2-row">
+          <div class="l2-name">果蔬汁<span class="l3-count">4 L3 · 10 L4</span></div>
+          <div class="l3-tags"><span class="l3-tag">100%纯果汁</span><span class="l3-tag">NFC鲜榨</span><span class="l3-tag">果汁饮料</span><span class="l3-tag">果蔬复合</span></div>
+        </div>
+        <div class="l2-row">
+          <div class="l2-name">即饮咖啡<span class="l3-count">2 L3 · 4 L4</span></div>
+          <div class="l3-tags"><span class="l3-tag">即饮奶咖</span><span class="l3-tag">即饮黑咖</span></div>
+        </div>
+        <div class="l2-row">
+          <div class="l2-name">功能饮料<span class="l3-count">4 L3 · 6 L4</span></div>
+          <div class="l3-tags"><span class="l3-tag">能量型</span><span class="l3-tag">运动补水</span><span class="l3-tag">电解质水</span><span class="l3-tag">维生素强化</span></div>
+        </div>
+        <div class="l2-row">
+          <div class="l2-name">乳品<span class="l3-count">5 L3 · 10 L4</span></div>
+          <div class="l3-tags"><span class="l3-tag">乳酸菌饮料</span><span class="l3-tag">低温白奶</span><span class="l3-tag">低温酸奶</span><span class="l3-tag">常温白奶</span><span class="l3-tag">常温酸奶</span></div>
+        </div>
+        <div class="l2-row">
+          <div class="l2-name">植物奶<span class="l3-count">3 L3 · 6 L4</span></div>
+          <div class="l3-tags"><span class="l3-tag gba">豆奶</span><span class="l3-tag">谷物坚果奶</span><span class="l3-tag gba">椰奶</span></div>
+        </div>
+      </div>
+      
+      <div class="l1-block">
+        <div class="l1-head">
+          <div class="l1-name serif">基础食品</div>
+          <div class="l1-stats"><span class="big num">4</span> 中类 · <span class="big num">13</span> 小类 · <span class="big num">75</span> 细类</div>
+        </div>
+        <div class="l2-row">
+          <div class="l2-name">粮油<span class="l3-count">3 L3 · 15 L4</span></div>
+          <div class="l3-tags"><span class="l3-tag">米面主食</span><span class="l3-tag">食用油</span><span class="l3-tag">米线粉丝</span></div>
+        </div>
+        <div class="l2-row">
+          <div class="l2-name">调味品<span class="l3-count">3 L3 · 15 L4</span></div>
+          <div class="l3-tags"><span class="l3-tag">基础调味</span><span class="l3-tag">干调料</span><span class="l3-tag gba">酱料</span></div>
+        </div>
+        <div class="l2-row">
+          <div class="l2-name">南北干货<span class="l3-count">5 L3 · 38 L4</span></div>
+          <div class="l3-tags"><span class="l3-tag">海产干货</span><span class="l3-tag gba">煲汤料</span><span class="l3-tag">菌菇干货</span><span class="l3-tag">豆制品干货</span><span class="l3-tag">豆类杂粮</span></div>
+        </div>
+        <div class="l2-row">
+          <div class="l2-name">腌制品<span class="l3-count">2 L3 · 9 L4</span></div>
+          <div class="l3-tags"><span class="l3-tag gba">腌菜类</span><span class="l3-tag">酱菜类</span></div>
+        </div>
+      </div>
+    </div>
+    
+    <p style="margin-top:3rem; font-size:0.88rem; color:rgba(250,247,242,0.55); text-align:center; font-style:italic;">
+      标记 <span style="color:var(--amber); border:1px solid var(--amber); padding:2px 8px; border-radius:2px;">琥珀色边框</span> 的 L3 包含大湾区 ★ 特色项目
+    </p>
+  </div>
+</section>
+
+<!-- 03 核心能力 -->
+<section>
+  <div class="sec-num">03 · CORE CAPABILITIES</div>
+  <h2 class="sec-title serif">四大核心能力 · <span class="em">系统提供什么</span></h2>
+  <p class="sec-lead serif">主数据只是基础。系统真正的价值在于其上层的四组分析与运营工具 —— 让品类管理不止于分类。</p>
+  
+  <div class="capabilities">
+    <div class="cap-card">
+      <div class="num-deco">01</div>
+      <h3 class="serif">商品角色配比</h3>
+      <div class="en-name">Role × Price Matrix</div>
+      <ul class="features">
+        <li><strong>引流款</strong> 35–40%：高频高动销，价格敏感，拉客刚需</li>
+        <li><strong>利润款</strong> 35–40%：稳定毛利，主力贡献，中等动销</li>
+        <li><strong>形象款</strong> 10–15%：高客单高毛利，凸显门店档次</li>
+        <li><strong>补充款</strong> 10–15%：长尾低频，提升品类丰富度</li>
+        <li>价格带四档：经济 / 大众 / 优选 / 精选 · 各档独立陈列与定价</li>
+      </ul>
+    </div>
+    <div class="cap-card">
+      <div class="num-deco">02</div>
+      <h3 class="serif">场景客群双标签</h3>
+      <div class="en-name">Scene + Customer Tagging</div>
+      <ul class="features">
+        <li>10 个营销场景：<strong>S1 即食解馋</strong> / S2 佐餐下饭 / S3 待客送礼 / S4 儿童哄娃 …</li>
+        <li>10 个客群画像：<strong>C1 儿童</strong> / C2 上班族 / C5 蓝领工人 / C8 老广家庭 / C9 健康轻食 …</li>
+        <li>每一条 L4 主数据均有场景 × 客群双标签</li>
+        <li>驱动陈列联动 · 会员定向营销 · 品类组合诊断</li>
+      </ul>
+    </div>
+    <div class="cap-card">
+      <div class="num-deco">03</div>
+      <h3 class="serif">52 周节奏管理</h3>
+      <div class="en-name">Annual Promo Calendar</div>
+      <ul class="features">
+        <li>全年 52 周品类主推节奏 · <strong>春节 / 情人节 / 清明 / 中秋 / 圣诞</strong> 等关键节庆</li>
+        <li>24 节气与品类联动（雨水祛湿 / 大暑龟苓膏 / 立秋煲汤 …）</li>
+        <li>每周提供主推 L3、活动主题、备货建议</li>
+        <li>采购、店长、陈列员、营业员共用一份节奏表</li>
+      </ul>
+    </div>
+    <div class="cap-card">
+      <div class="num-deco">04</div>
+      <h3 class="serif">大湾区深度本地化</h3>
+      <div class="en-name">GBA Localization</div>
+      <ul class="features">
+        <li>四区域差异：<strong>广府核心 / 港澳枢纽 / 深莞新城 / 潮客特色</strong></li>
+        <li>11 项大湾区 ★ 特色品标识（凉果 / 陈皮 / 龙眼干 / 龟苓膏 / 米通 / 脆饼 …）</li>
+        <li>地标品牌名册：王老吉、维他奶、李锦记、美心、陈李济、佳宝 …</li>
+        <li>跨区辐射城市说明（V5.0 新增） · 涵盖珠海等双特征城市</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 04 品类细分图谱 -->
+<section>
+  <div class="sec-num">04 · CATEGORY DETAILS</div>
+  <h2 class="sec-title serif">休闲食品品类细分 · <span class="em">L3 战略画像</span></h2>
+  <p class="sec-lead serif">14 个休闲零食 L3 + 4 个饼干糕点 L3 + 7 个冲调食品 L3 + 3 个休闲速食 L3 的核心特征一览。每个 L3 都有清晰的角色定位、客群、季节性与战略策略。</p>
+  
+  <div class="l3-detail">
+    <div class="l2-group-head"><span class="ttl">休闲食品 / 休闲零食</span><span class="info">14 L3 · 167 L4</span></div>
+    
+    <div class="l3-detail-cell">
+      <div class="l3-h"><span class="name serif">膨化零食</span></div>
+      <div class="meta">18 L4 · C3·C5</div>
+      <div><span class="role-tag traffic">流量入口</span><span class="role-tag">全年</span></div>
+      <div class="samples">薯片 / 薯条 / 玉米棒 / 米饼 / 虾片 / 锅巴 / 豌豆脆 / 干脆面</div>
+    </div>
+    <div class="l3-detail-cell">
+      <div class="l3-h"><span class="name serif">肉类零食</span></div>
+      <div class="meta">12 L4 · C5·C7</div>
+      <div><span class="role-tag profit">利润支柱</span><span class="role-tag">夏夜</span></div>
+      <div class="samples">凤爪 / 鸭脖 / 鸭翅 / 牛肉干 / 猪肉脯 / 即食香肠</div>
+    </div>
+    <div class="l3-detail-cell">
+      <div class="l3-h"><span class="name serif">海味零食</span></div>
+      <div class="meta">10 L4 · C5·C7·C8</div>
+      <div><span class="role-tag profit">利润支柱</span><span class="role-tag">年货</span></div>
+      <div class="samples">即食海苔 / 鱿鱼丝 / 蟹柳 / 虾干 / 鳕鱼肠</div>
+    </div>
+    <div class="l3-detail-cell">
+      <div class="l3-h"><span class="name serif">豆干素食零食</span></div>
+      <div class="meta">13 L4 · C3·C5</div>
+      <div><span class="role-tag traffic">流量入口</span><span class="role-tag">全年</span></div>
+      <div class="samples">麻辣豆干 / 辣条 / 魔芋爽 / 素毛肚 / 面筋</div>
+    </div>
+    <div class="l3-detail-cell">
+      <div class="l3-h"><span class="name serif">坚果炒货</span></div>
+      <div class="meta">17 L4 · C7·C8</div>
+      <div><span class="role-tag profit">利润支柱</span><span class="role-tag">秋冬·年节</span></div>
+      <div class="samples">每日坚果 / 开心果 / 夏威夷果 / 葵花籽 / 板栗 / 核桃仁</div>
+    </div>
+    <div class="l3-detail-cell gba">
+      <div class="l3-h"><span class="name serif">蜜饯果脯</span><span class="star">★</span></div>
+      <div class="meta">14 L4 · C2·C5·C8</div>
+      <div><span class="role-tag profit">利润支柱</span><span class="role-tag">年节·秋冬</span></div>
+      <div class="samples">山楂果干 / 话梅 / 西梅干 / 九制陈皮★ / 陈皮丹★</div>
+    </div>
+    <div class="l3-detail-cell gba">
+      <div class="l3-h"><span class="name serif">果蔬干</span><span class="star">★</span></div>
+      <div class="meta">20 L4 · C2·C9</div>
+      <div><span class="role-tag profit">利润支柱</span><span class="role-tag">全年·秋冬</span></div>
+      <div class="samples">冻干水果 / 芒果干 / 蔓越莓干 / 龙眼干★ / 荔枝干★ / 椰子脆</div>
+    </div>
+    <div class="l3-detail-cell gba">
+      <div class="l3-h"><span class="name serif">凉果类</span><span class="star">★</span></div>
+      <div class="meta">10 L4 · C5·C8</div>
+      <div><span class="role-tag profit">利润支柱</span><span class="role-tag">全年</span></div>
+      <div class="samples">九制陈皮 / 加应子 / 嘉应子 / 杨梅干 / 话梅 / 黄皮干 / 甘草橄榄</div>
+    </div>
+    <div class="l3-detail-cell">
+      <div class="l3-h"><span class="name serif">儿童零食</span></div>
+      <div class="meta">8 L4 · C1·C4</div>
+      <div><span class="role-tag fill">补充·儿童</span><span class="role-tag">全年</span></div>
+      <div class="samples">奶酪棒 / 奶贝 / 奶片 / 婴儿米饼 / 磨牙棒</div>
+    </div>
+    <div class="l3-detail-cell">
+      <div class="l3-h"><span class="name serif">糖玩类</span></div>
+      <div class="meta">8 L4 · C1·C4</div>
+      <div><span class="role-tag fill">补充·儿童</span><span class="role-tag">儿童节</span></div>
+      <div class="samples">DIY 果冻 / 出奇蛋 / 创意造型糖 / 玩具糖 / 知育果子</div>
+    </div>
+    <div class="l3-detail-cell">
+      <div class="l3-h"><span class="name serif">糖果</span></div>
+      <div class="meta">14 L4 · C1·C4·C8</div>
+      <div><span class="role-tag traffic">流量入口</span><span class="role-tag">年节·情人节</span></div>
+      <div class="samples">口香糖 / 棒棒糖 / 软糖 / 奶糖硬糖★ / 益生菌软糖</div>
+    </div>
+    <div class="l3-detail-cell">
+      <div class="l3-h"><span class="name serif">巧克力</span></div>
+      <div class="meta">10 L4 · C2·C7·C8</div>
+      <div><span class="role-tag image">形象款</span><span class="role-tag">情人节·圣诞</span></div>
+      <div class="samples">牛奶 / 黑 / 白巧克力 / 夹心 / 果仁 / 生巧 / 巧克力礼盒</div>
+    </div>
+    <div class="l3-detail-cell gba">
+      <div class="l3-h"><span class="name serif">果冻布丁</span><span class="star">★</span></div>
+      <div class="meta">9 L4 · C1·C4</div>
+      <div><span class="role-tag fill">补充款</span><span class="role-tag">夏季·年节</span></div>
+      <div class="samples">可吸果冻 / 果肉果冻 / 蒟蒻 / 布丁 / 龟苓膏★</div>
+    </div>
+    <div class="l3-detail-cell">
+      <div class="l3-h"><span class="name serif">健康轻食类</span></div>
+      <div class="meta">4 L4 · C2·C9</div>
+      <div><span class="role-tag image">形象款</span><span class="role-tag">春夏</span></div>
+      <div class="samples">即食麦片 / 燕麦棒 / 能量棒 / 蛋白棒</div>
+    </div>
+    
+    <div class="l2-group-head"><span class="ttl">休闲食品 / 饼干糕点</span><span class="info">4 L3 · 33 L4</span></div>
+    
+    <div class="l3-detail-cell gba">
+      <div class="l3-h"><span class="name serif">中式糕点</span><span class="star">★</span></div>
+      <div class="meta">12 L4 · C7·C8</div>
+      <div><span class="role-tag profit">利润支柱</span><span class="role-tag">中秋·春节</span></div>
+      <div class="samples">月饼 / 凤梨酥 / 蛋黄酥 / 沙琪玛 / 麻花 / 脆饼★</div>
+    </div>
+    <div class="l3-detail-cell">
+      <div class="l3-h"><span class="name serif">蛋糕派类</span></div>
+      <div class="meta">8 L4 · C1·C2·C4</div>
+      <div><span class="role-tag profit">利润款</span><span class="role-tag">全年</span></div>
+      <div class="samples">蛋黄派 / 瑞士卷 / 麻薯 / 芝士蛋糕 / 华夫饼</div>
+    </div>
+    <div class="l3-detail-cell">
+      <div class="l3-h"><span class="name serif">面包烘焙</span></div>
+      <div class="meta">4 L4 · C1·C2·C3</div>
+      <div><span class="role-tag profit">利润支柱</span><span class="role-tag">早餐·全年</span></div>
+      <div class="samples">手撕面包 / 面包干 / 吐司 / 贝果</div>
+    </div>
+    <div class="l3-detail-cell">
+      <div class="l3-h"><span class="name serif">西式饼干</span></div>
+      <div class="meta">9 L4 · C2·C4</div>
+      <div><span class="role-tag profit">利润款</span><span class="role-tag">全年</span></div>
+      <div class="samples">夹心饼干 / 威化饼干 / 曲奇 / 苏打饼干 / 粗粮饼干 / 儿童饼干</div>
+    </div>
+    
+    <div class="l2-group-head"><span class="ttl">休闲食品 / 冲调食品</span><span class="info">7 L3 · 30 L4</span></div>
+    
+    <div class="l3-detail-cell">
+      <div class="l3-h"><span class="name serif">代餐冲饮</span></div>
+      <div class="meta">3 L4 · C2·C9</div>
+      <div><span class="role-tag image">形象款</span></div>
+      <div class="samples">代餐粉 / 冲泡燕麦片 / 谷物冲饮</div>
+    </div>
+    <div class="l3-detail-cell">
+      <div class="l3-h"><span class="name serif">咖啡类</span></div>
+      <div class="meta">5 L4 · C2·C3</div>
+      <div><span class="role-tag profit">利润款</span><span class="role-tag">办公季</span></div>
+      <div class="samples">速溶咖啡 / 挂耳咖啡 / 冷萃咖啡液 / 拿铁速溶</div>
+    </div>
+    <div class="l3-detail-cell">
+      <div class="l3-h"><span class="name serif">奶粉类</span></div>
+      <div class="meta">5 L4 · C1·C7</div>
+      <div><span class="role-tag image">形象款</span></div>
+      <div class="samples">婴幼儿奶粉 / 儿童奶粉 / 学生奶粉 / 中老年奶粉</div>
+    </div>
+    <div class="l3-detail-cell">
+      <div class="l3-h"><span class="name serif">奶茶冲饮</span></div>
+      <div class="meta">4 L4 · C2·C4</div>
+      <div><span class="role-tag profit">利润款</span></div>
+      <div class="samples">港式奶茶 / 速溶奶茶 / 网红奶茶粉 / 蒙古咸奶茶</div>
+    </div>
+    <div class="l3-detail-cell">
+      <div class="l3-h"><span class="name serif">植物蛋白冲饮</span></div>
+      <div class="meta">4 L4 · C7·C9</div>
+      <div><span class="role-tag profit">利润款</span><span class="role-tag">秋冬</span></div>
+      <div class="samples">杏仁粉 / 核桃粉 / 豆浆粉 / 黑芝麻糊</div>
+    </div>
+    <div class="l3-detail-cell">
+      <div class="l3-h"><span class="name serif">速溶茶</span></div>
+      <div class="meta">6 L4 · C2·C9</div>
+      <div><span class="role-tag fill">补充款</span></div>
+      <div class="samples">速溶红茶 / 速溶花茶 / 柠檬茶冲饮 / 蜂蜜柚子茶</div>
+    </div>
+    <div class="l3-detail-cell">
+      <div class="l3-h"><span class="name serif">袋泡茶</span></div>
+      <div class="meta">3 L4 · C2·C9</div>
+      <div><span class="role-tag image">形象款</span><span class="role-tag">女性·办公</span></div>
+      <div class="samples">花草茶 / 水果茶 / 蜂蜜柚子茶袋泡</div>
+    </div>
+    
+    <div class="l2-group-head"><span class="ttl">休闲食品 / 休闲速食</span><span class="info">3 L3 · 20 L4</span></div>
+    <div class="l3-detail-cell">
+      <div class="l3-h"><span class="name serif">养生即食羹</span></div>
+      <div class="meta">6 L4 · C7·C8·C9</div>
+      <div><span class="role-tag image">形象款</span><span class="role-tag">送礼·养生</span></div>
+      <div class="samples">即食燕窝粥 / 即食桃胶羹 / 即食莲子百合羹 / 即食银耳羹</div>
+    </div>
+    <div class="l3-detail-cell">
+      <div class="l3-h"><span class="name serif">方便主食</span></div>
+      <div class="meta">11 L4 · C2·C3</div>
+      <div><span class="role-tag traffic">流量入口</span></div>
+      <div class="samples">袋装方便面 / 自热米饭 / 自热火锅 / 螺蛳粉 / 速食意面 / 午餐肉</div>
+    </div>
+    <div class="l3-detail-cell">
+      <div class="l3-h"><span class="name serif">罐装即食粥</span></div>
+      <div class="meta">3 L4 · C2·C7</div>
+      <div><span class="role-tag fill">补充款</span></div>
+      <div class="samples">罐装八宝粥 / 罐装绿豆粥 / 罐装黑米粥</div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 大湾区差异化 -->
+<section class="gba-section full">
+  <div style="max-width:1500px; margin:0 auto;">
+    <div class="sec-num">05 · GBA LOCALIZATION</div>
+    <h2 class="sec-title serif">大湾区差异化武器 · <span class="em">四区 + 24 节气 + 地标品牌</span></h2>
+    <p class="sec-lead serif">在大湾区做社区超市，本地化能力决定差异化空间。系统从四个区域、24 个节气、20 个地标品牌三个维度，把"本地"做成可被采购、陈列、营销直接使用的工具。</p>
+    
+    <div class="gba-regions">
+      <div class="gba-region r1">
+        <div class="name serif">广府核心</div>
+        <div class="cities">广州 · 佛山 · 中山 · 江门 · 肇庆 · <strong>珠海</strong></div>
+        <div class="row"><span class="lab">饮食文化</span><span class="val">传统粤菜 · 凉茶 · 煲汤 · 中式糕点</span></div>
+        <div class="row"><span class="lab">客群特征</span><span class="val">老广家庭采购 · 重视传统 · 节气敏感 · 凉果煲汤复购高</span></div>
+        <div class="row"><span class="lab">重点品类</span><span class="val">凉果类 · 煲汤料 · 中式糕点 · 凉茶植物饮 · 腌菜类 · 豆奶</span></div>
+      </div>
+      <div class="gba-region r2">
+        <div class="name serif">港澳枢纽</div>
+        <div class="cities">香港 · 澳门</div>
+        <div class="row"><span class="lab">饮食文化</span><span class="val">港式茶餐厅 · 港式奶茶 · 进口零食 · 即食速食</span></div>
+        <div class="row"><span class="lab">客群特征</span><span class="val">都市快节奏 · 进口品偏好 · 下午茶文化 · 港珠澳大桥辐射珠海跨境消费</span></div>
+        <div class="row"><span class="lab">重点品类</span><span class="val">即饮咖啡 · 港式奶茶冲饮 · 西式饼干 · 进口巧克力 · NFC 鲜榨</span></div>
+      </div>
+      <div class="gba-region r3">
+        <div class="name serif">深莞新城</div>
+        <div class="cities">深圳 · 东莞</div>
+        <div class="row"><span class="lab">饮食文化</span><span class="val">健康轻食 · 进口品 · 新消费品 · 便利速食</span></div>
+        <div class="row"><span class="lab">客群特征</span><span class="val">年轻白领 · 健康关注 · 新趋势主导 · 尝鲜意愿强</span></div>
+        <div class="row"><span class="lab">重点品类</span><span class="val">健康轻食类 · 养生即食羹 · 代餐冲饮 · NFC 鲜榨 · 谷物坚果奶</span></div>
+      </div>
+      <div class="gba-region r4">
+        <div class="name serif">潮客特色</div>
+        <div class="cities">潮汕 · 惠州 · 客家</div>
+        <div class="row"><span class="lab">饮食文化</span><span class="val">潮汕咸菜 · 客家梅菜 · 甘草水果 · 地方腌制</span></div>
+        <div class="row"><span class="lab">客群特征</span><span class="val">传统饮食保留 · 地方特产强势 · 腌制品复购 · 凉果偏好</span></div>
+        <div class="row"><span class="lab">重点品类</span><span class="val">腌菜类(潮汕咸菜/梅菜) · 凉果类 · 豆类杂粮 · 椰奶</span></div>
+      </div>
+    </div>
+    
+    <div class="zh-callout">
+      <div class="icon num">★</div>
+      <div>
+        <div class="ttl serif">珠海 · 跨区双特征城市</div>
+        <div class="desc">珠海以「广府核心」为主属性 — 本地家庭依然走广府逻辑（凉茶/煲汤/中式糕点）；同时受港珠澳大桥与拱北口岸跨境消费辐射，西式饼干 / 即饮咖啡 / 进口巧克力的购买意愿明显高于其他广府城市。客群结构由<strong style="color:var(--amber-soft)">老广家庭 + 年轻白领（横琴自贸区/IT/生医） + 跨境流动客群</strong>共同构成 — 推荐采取"广府品类 + 港澳品类"<strong style="color:var(--amber-soft)">双线品类组合</strong>策略。</div>
+      </div>
+    </div>
+    
+    <h3 style="font-family:'Noto Serif SC', serif; font-size:1.8rem; color:var(--ink); margin:5rem 0 1rem;">24 节气与品类联动</h3>
+    <p style="color:var(--text-soft); margin-bottom:2rem; max-width:780px; font-size:0.95rem;">从立春的春困乏力到大寒的年货高峰 — 24 个节气节点都对应明确的品类主推与营销主题。这里展示 8 个核心节点。</p>
+    
+    <div class="solar-terms">
+      <div class="term-cell"><div class="term-name serif">雨水</div><div class="theme">祛湿养脾 · 南方阴雨</div><div class="l3s">煲汤料 · 豆类杂粮 · 菌菇干货<br>薏米 · 赤小豆 · 五指毛桃</div></div>
+      <div class="term-cell"><div class="term-name serif">清明</div><div class="theme">祭祖 · 甘草凉果 · 青团</div><div class="l3s">凉果类 · 中式糕点 · 腌菜类<br>甘草梅 · 青团 · 梅菜</div></div>
+      <div class="term-cell"><div class="term-name serif">立夏</div><div class="theme">凉茶下火 · 立夏吃蛋</div><div class="l3s">凉茶植物饮 · 含气水 · 乳品<br>王老吉 · 苏打水</div></div>
+      <div class="term-cell"><div class="term-name serif">夏至</div><div class="theme">凉粉龟苓膏 · 消暑</div><div class="l3s">凉茶植物饮 · 果冻布丁 · 乳品<br>龟苓膏 · 豆奶 · 凉茶</div></div>
+      <div class="term-cell"><div class="term-name serif">立秋</div><div class="theme">煲汤启动 · 沙参玉竹</div><div class="l3s">煲汤料 · 南北干货<br>沙参 · 玉竹 · 百合 · 莲子</div></div>
+      <div class="term-cell"><div class="term-name serif">寒露</div><div class="theme">老火汤 · 鱼汤</div><div class="l3s">煲汤料 · 南北干货<br>陈皮 · 党参 · 当归</div></div>
+      <div class="term-cell"><div class="term-name serif">冬至</div><div class="theme">汤圆腊味 · 节气大餐</div><div class="l3s">腌制品 · 中式糕点 · 南北干货<br>汤圆 · 腊味 · 腊肠</div></div>
+      <div class="term-cell"><div class="term-name serif">大寒</div><div class="theme">年味年糕 · 年货高峰</div><div class="l3s">中式糕点 · 糖果 · 巧克力 · 坚果<br>年糕 · 礼盒 · 腊味</div></div>
+    </div>
+    
+    <h3 style="font-family:'Noto Serif SC', serif; font-size:1.8rem; color:var(--ink); margin:5rem 0 1rem;">大湾区地标品牌名册</h3>
+    <p style="color:var(--text-soft); margin-bottom:2rem; max-width:780px; font-size:0.95rem;">20 个心智品牌覆盖核心品类，是社区超市与折扣店竞争的关键差异化武器。</p>
+    
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(360px, 1fr)); gap:0; border-top:1px solid var(--rule);">
+      <div style="background:var(--paper); padding:1.5rem; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);">
+        <div style="color:var(--amber); font-size:0.78rem; letter-spacing:0.1em; margin-bottom:0.4rem;">饮料 · 凉茶</div>
+        <div style="font-family:'Noto Serif SC',serif; color:var(--ink); font-weight:600;">王老吉 · 加多宝 · 和其正 · 邓老凉茶</div>
+        <div style="font-size:0.82rem; color:var(--text-soft); margin-top:0.4rem;">广东特产 · 夏季旺销 · 餐饮联动</div>
+      </div>
+      <div style="background:var(--paper); padding:1.5rem; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);">
+        <div style="color:var(--amber); font-size:0.78rem; letter-spacing:0.1em; margin-bottom:0.4rem;">饮料 · 豆奶</div>
+        <div style="font-family:'Noto Serif SC',serif; color:var(--ink); font-weight:600;">维他奶(港) · 豆本豆</div>
+        <div style="font-size:0.82rem; color:var(--text-soft); margin-top:0.4rem;">大湾区豆奶心智品牌 · 早餐刚需</div>
+      </div>
+      <div style="background:var(--paper); padding:1.5rem; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);">
+        <div style="color:var(--amber); font-size:0.78rem; letter-spacing:0.1em; margin-bottom:0.4rem;">调味品 · 酱油蚝油</div>
+        <div style="font-family:'Noto Serif SC',serif; color:var(--ink); font-weight:600;">李锦记(港) · 海天(佛山) · 珠江桥牌</div>
+        <div style="font-size:0.82rem; color:var(--text-soft); margin-top:0.4rem;">大湾区品牌 · 全国心智</div>
+      </div>
+      <div style="background:var(--paper); padding:1.5rem; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);">
+        <div style="color:var(--amber); font-size:0.78rem; letter-spacing:0.1em; margin-bottom:0.4rem;">糕点 · 中式</div>
+        <div style="font-family:'Noto Serif SC',serif; color:var(--ink); font-weight:600;">美心(港) · 广州酒家 · 莲香楼 · 陶陶居</div>
+        <div style="font-size:0.82rem; color:var(--text-soft); margin-top:0.4rem;">百年老字号 · 节庆主推</div>
+      </div>
+      <div style="background:var(--paper); padding:1.5rem; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);">
+        <div style="color:var(--amber); font-size:0.78rem; letter-spacing:0.1em; margin-bottom:0.4rem;">凉果 · 陈皮</div>
+        <div style="font-family:'Noto Serif SC',serif; color:var(--ink); font-weight:600;">陈李济 · 嘉应制果 · 佳宝 · 华味亨</div>
+        <div style="font-size:0.82rem; color:var(--text-soft); margin-top:0.4rem;">凉果传统品牌 · 老广心智</div>
+      </div>
+      <div style="background:var(--paper); padding:1.5rem; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);">
+        <div style="color:var(--amber); font-size:0.78rem; letter-spacing:0.1em; margin-bottom:0.4rem;">糕点 · 西式港派</div>
+        <div style="font-family:'Noto Serif SC',serif; color:var(--ink); font-weight:600;">嘉顿(港) · 美心(港) · 圣安娜(港)</div>
+        <div style="font-size:0.82rem; color:var(--text-soft); margin-top:0.4rem;">港式茶餐厅文化延伸</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 运营标准 -->
+<section>
+  <div class="sec-num">06 · OPERATING STANDARDS</div>
+  <h2 class="sec-title serif">运营标准 · <span class="em">库存周转 / 毛利 KPI 基准</span></h2>
+  <p class="sec-lead serif">V5.0 基于 2026 年大湾区社区超市实际经营环境（受赵一鸣等折扣店冲击后）重新设定的 KPI 基准 — 贴近现实可达性，而非理想化数字。</p>
+  
+  <div class="ops-standards">
+    <div class="ops-header">
+      <div>大类</div>
+      <div>库存周转典型区间</div>
+      <div>综合毛利率区间</div>
+      <div>说明</div>
+    </div>
+    <div class="ops-row">
+      <div class="cat">常温休闲零食</div>
+      <div class="val">20-30 天</div>
+      <div class="val">18-25%</div>
+      <div class="note">膨化 / 肉类 / 海味 / 豆干 / 坚果 / 糖果 / 巧克力 / 果蔬干 / 蜜饯果脯 / 凉果 · 节前 10-15 天加密</div>
+    </div>
+    <div class="ops-row">
+      <div class="cat">短保烘焙</div>
+      <div class="val">3-10 天</div>
+      <div class="val">18-22%</div>
+      <div class="note">蛋糕派类 · 面包烘焙 · 损耗控制 <span style="color:var(--terra)">&lt;5%</span> 关键</div>
+    </div>
+    <div class="ops-row">
+      <div class="cat">中式糕点（含礼盒）</div>
+      <div class="val">25-35 天</div>
+      <div class="val">22-28%</div>
+      <div class="note">节前 15-20 天集中备货 · 节前毛利可上探 28-32%</div>
+    </div>
+    <div class="ops-row">
+      <div class="cat">冲调食品</div>
+      <div class="val">30-45 天</div>
+      <div class="val">22-30%</div>
+      <div class="note">咖啡 / 奶茶 / 麦片 / 袋泡茶 · 复购率为核心 KPI</div>
+    </div>
+    <div class="ops-row">
+      <div class="cat">休闲速食</div>
+      <div class="val">25-45 天</div>
+      <div class="val">12-22%</div>
+      <div class="note">方便面 / 自热 / 罐装粥 · 动销率 &gt;80% 为主</div>
+    </div>
+    <div class="ops-row">
+      <div class="cat">包装饮用水 · 碳酸饮料</div>
+      <div class="val">5-15 天</div>
+      <div class="val highlight">8-15%</div>
+      <div class="note">引流款定位 · 毛利让位价格竞争 · 夏季加密</div>
+    </div>
+    <div class="ops-row">
+      <div class="cat">茶饮料 · 果蔬汁 · 即饮咖啡</div>
+      <div class="val">10-25 天</div>
+      <div class="val">14-22%</div>
+      <div class="note">NFC 鲜榨短保 7-10 天 · 损耗严控</div>
+    </div>
+    <div class="ops-row">
+      <div class="cat">乳品 · 植物奶</div>
+      <div class="val">低温 3-7 天 / 常温 15-25 天</div>
+      <div class="val">12-22%</div>
+      <div class="note">低温损耗 &lt;3% · 复购率 &gt;50% 是健康指标</div>
+    </div>
+    <div class="ops-row">
+      <div class="cat">粮油米面</div>
+      <div class="val">45-60 天</div>
+      <div class="val highlight">5-12%</div>
+      <div class="note">引流款定位 · 毛利让位价格竞争</div>
+    </div>
+    <div class="ops-row">
+      <div class="cat">调味品 · 南北干货</div>
+      <div class="val">30-60 天</div>
+      <div class="val">12-30%</div>
+      <div class="note">煲汤料 / 海产干货可至 22-30% · 干调料慢周转高毛利</div>
+    </div>
+    <div class="ops-row">
+      <div class="cat" style="color:var(--terra);">大湾区 ★ 特色项</div>
+      <div class="val">25-45 天</div>
+      <div class="val highlight">25-32%</div>
+      <div class="note">凉果 / 煲汤料 / 陈皮制品 / 龟苓膏 / 米通 · 差异化定价空间</div>
+    </div>
+  </div>
+  
+  <div class="ops-summary">
+    <div class="ttl">综合毛利目标</div>
+    <div class="grid">
+      <div class="item"><div class="lab">休闲食品</div><div class="v num">22-26%</div></div>
+      <div class="item"><div class="lab">水饮料</div><div class="v num">13-18%</div></div>
+      <div class="item"><div class="lab">基础食品</div><div class="v num">12-18%</div></div>
+      <div class="item"><div class="lab">全店综合</div><div class="v num">18-22%</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 使用场景 -->
+<section>
+  <div class="sec-num">07 · USE CASES</div>
+  <h2 class="sec-title serif">五大使用场景 · <span class="em">系统在哪些环节发挥作用</span></h2>
+  <p class="sec-lead serif">从新店规划到日常考核，系统在零售经营的全生命周期发挥作用。</p>
+  
+  <div class="scenes">
+    <div class="scene-cell">
+      <div class="stage">STAGE 01</div>
+      <h4 class="serif">新店品类规划</h4>
+      <p>新店开业前，按 1000–2000㎡ 标准，参考 L3 宽度上下限完成首批 SKU 建仓。</p>
+      <div class="tools">主用工具：<strong>② 主数据 · ① 架构总览 · ⑧ 诊断模板</strong></div>
+    </div>
+    <div class="scene-cell">
+      <div class="stage">STAGE 02</div>
+      <h4 class="serif">老店调改诊断</h4>
+      <p>对老店做 L3 宽度诊断，识别"空缺-紧急 / 严重失衡 / 基本合理"三种状态，输出 P0-P3 行动清单。</p>
+      <div class="tools">主用工具：<strong>⑧ SKU 诊断 · ⑨ 营运 SOP · ⑩ KPI 体系</strong></div>
+    </div>
+    <div class="scene-cell">
+      <div class="stage">STAGE 03</div>
+      <h4 class="serif">年度品类规划</h4>
+      <p>年度复盘后，按品类委员会决议调整品类结构、引入新品、淘汰末位 SKU。</p>
+      <div class="tools">主用工具：<strong>③ L3 战略画像 · ⑤ 角色×价格 · ⑥ 大湾区本地化</strong></div>
+    </div>
+    <div class="scene-cell">
+      <div class="stage">STAGE 04</div>
+      <h4 class="serif">日常选品采购</h4>
+      <p>采购员按 52 周节奏表预订当周主推品；按场景客群双标签做新品评估。</p>
+      <div class="tools">主用工具：<strong>⑦ 52 周节奏 · ④ 双标签字典 · ② 主数据</strong></div>
+    </div>
+    <div class="scene-cell">
+      <div class="stage">STAGE 05</div>
+      <h4 class="serif">绩效与考核</h4>
+      <p>店长按月按 L3 跟踪库存周转、毛利率、动销率、损耗率，对照⑩ KPI 指标体系完成绩效考核。</p>
+      <div class="tools">主用工具：<strong>⑩ KPI 指标体系 · ⑨ 分岗 SOP</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="foot-top">
+    <div>
+      <div class="foot-brand serif">晟果新零售咨询</div>
+      <div class="foot-en">SG New Retail Consulting</div>
+      <div class="foot-desc">服务大湾区社区生活超市的品类管理咨询机构。我们相信，好的品类系统不只是结构清晰 — 它应该让陈列说话、让采购精准、让营销有节奏、让一线有据可依。</div>
+    </div>
+    <div class="foot-col">
+      <h4>系统包含</h4>
+      <p>主数据品类框架</p>
+      <p>L3 战略画像</p>
+      <p>双标签字典</p>
+      <p>角色×价格矩阵</p>
+      <p>大湾区深度本地化</p>
+      <p>52 周促销节奏表</p>
+    </div>
+    <div class="foot-col">
+      <h4>适用场景</h4>
+      <p>新店品类规划</p>
+      <p>老店调改诊断</p>
+      <p>年度品类规划</p>
+      <p>日常选品采购</p>
+      <p>绩效与考核</p>
+      <p>陈列重构设计</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 晟果新零售咨询 · 大湾区社区超市品类管理操作系统 V5.0 定稿版</span>
+    <span class="num">Version 5.0 · Released 2026.05</span>
+  </div>
+</footer>
+
+</body>
+</html>
