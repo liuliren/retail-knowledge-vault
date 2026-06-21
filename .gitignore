@@ -86,3 +86,13 @@ __pycache__/
 .venv/
 venv/
 .env
+
+# ===== 工作区清理 2026-06-20：外部剪藏与基础设施（不入知识库版本控制）=====
+# 外部剪藏：视为临时外部素材，本地可用但不版本化
+Clippings/
+# 基础设施 / 运行时 / Agent 配置：工具文件，非知识资产
+.agents/
+.obsidian/
+SYSTEM_RUNTIME/
+obsidian-codex-bridge
+AGENTS.md
