@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>蒙特梭利幼小衔接海报 B - 测评邀请卡</title>
+  <style>
+    :root {
+      --bg: #f8f3ea;
+      --ink: #1f211d;
+      --forest: #193f33;
+      --sage: #dfe8dd;
+      --orange: #d66f45;
+      --sand: #ead6b7;
+      --line: rgba(31, 33, 29, .16);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #ddd7cd;
+      color: var(--ink);
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+    }
+
+    .poster {
+      width: 1080px;
+      height: 1440px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(25, 63, 51, .06) 1px, transparent 1px) 0 0 / 54px 54px,
+        linear-gradient(rgba(25, 63, 51, .06) 1px, transparent 1px) 0 0 / 54px 54px,
+        var(--bg);
+      padding: 68px 76px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 24px;
+    }
+
+    .brand {
+      color: var(--forest);
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
+
+    .tag {
+      padding: 12px 18px;
+      background: var(--forest);
+      color: #fffaf0;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .hero {
+      position: relative;
+      padding-top: 54px;
+      min-height: 432px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      width: 820px;
+      font-size: 84px;
+      line-height: 1.02;
+      letter-spacing: 0;
+      font-weight: 900;
+    }
+
+    .hero h1 em {
+      color: var(--orange);
+      font-style: normal;
+    }
+
+    .lead {
+      margin: 24px 0 0;
+      width: 680px;
+      font-size: 29px;
+      line-height: 1.48;
+      color: #5e574f;
+      font-weight: 600;
+    }
+
+    .material {
+      position: absolute;
+      right: -24px;
+      bottom: 6px;
+      width: 330px;
+      height: 260px;
+    }
+
+    .rod {
+      position: absolute;
+      right: 0;
+      height: 23px;
+      border-radius: 2px;
+      background: var(--orange);
+      box-shadow: inset 0 -6px 0 rgba(83, 47, 30, .16);
+    }
+
+    .rod:nth-child(1) { width: 300px; top: 8px; background: #1f5748; }
+    .rod:nth-child(2) { width: 264px; top: 42px; }
+    .rod:nth-child(3) { width: 228px; top: 76px; background: #d5a84f; }
+    .rod:nth-child(4) { width: 192px; top: 110px; background: #1f5748; }
+    .rod:nth-child(5) { width: 156px; top: 144px; }
+    .rod:nth-child(6) { width: 120px; top: 178px; background: #d5a84f; }
+
+    .pain {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .pain-row {
+      display: grid;
+      grid-template-columns: 126px 1fr;
+      min-height: 96px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, .58);
+    }
+
+    .pain-row strong {
+      display: grid;
+      place-items: center;
+      background: var(--sage);
+      color: var(--forest);
+      font-size: 42px;
+      font-family: Georgia, serif;
+    }
+
+    .pain-row span {
+      align-self: center;
+      padding: 0 34px;
+      font-size: 31px;
+      line-height: 1.28;
+      font-weight: 780;
+    }
+
+    .method {
+      margin-top: 32px;
+      padding: 28px 34px;
+      background: var(--forest);
+      color: #fffaf0;
+    }
+
+    .method-title {
+      font-family: "Songti SC", "STSong", serif;
+      font-size: 40px;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .method-grid {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .method-card {
+      border-top: 1px solid rgba(255, 250, 240, .34);
+      padding-top: 18px;
+      min-height: 108px;
+    }
+
+    .method-card b {
+      display: block;
+      color: #f3c77e;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .method-card span {
+      display: block;
+      font-size: 20px;
+      line-height: 1.35;
+      color: rgba(255, 250, 240, .84);
+      font-weight: 600;
+    }
+
+    .info { display: none; }
+
+    .info div {
+      padding: 22px 18px;
+      background: #fffaf0;
+      border: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .info b {
+      display: block;
+      color: var(--orange);
+      font-size: 32px;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .info span {
+      color: #655c52;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .footer {
+      position: absolute;
+      left: 76px;
+      right: 76px;
+      bottom: 54px;
+      display: grid;
+      grid-template-columns: 1fr 164px;
+      align-items: center;
+      gap: 30px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .cta b {
+      display: block;
+      font-size: 40px;
+      line-height: 1.12;
+      color: var(--orange);
+    }
+
+    .cta span {
+      display: block;
+      margin-top: 10px;
+      color: #5e574f;
+      font-size: 23px;
+      line-height: 1.35;
+    }
+
+    .qr {
+      width: 164px;
+      height: 164px;
+      border: 2px solid var(--forest);
+      background:
+        linear-gradient(45deg, transparent 44%, rgba(25, 63, 51, .2) 45% 55%, transparent 56%) 0 0 / 32px 32px,
+        #fffaf0;
+      display: grid;
+      place-items: center;
+      color: var(--forest);
+      font-size: 20px;
+      line-height: 1.25;
+      text-align: center;
+      font-weight: 800;
+    }
+  </style>
+</head>
+<body>
+  <main class="poster" role="img" aria-label="蒙特梭利幼小衔接入学能力测评邀请海报">
+    <header class="topbar">
+      <div class="brand">蒙特梭利幼小衔接 · 语数思维小班</div>
+      <div class="tag">测评预约</div>
+    </header>
+
+    <section class="hero">
+      <h1>开学前，先做一次<em>入学准备度</em>测评</h1>
+      <p class="lead">看清孩子在数学、拼音识字、阅读表达和课堂适应上的真实状态。</p>
+      <div class="material" aria-hidden="true">
+        <i class="rod"></i><i class="rod"></i><i class="rod"></i>
+        <i class="rod"></i><i class="rod"></i><i class="rod"></i>
+      </div>
+    </section>
+
+    <section class="pain">
+      <div class="pain-row"><strong>?</strong><span>会数数，但不理解数量关系</span></div>
+      <div class="pain-row"><strong>?</strong><span>拼音、识字、阅读表达还不系统</span></div>
+      <div class="pain-row"><strong>?</strong><span>坐不住、听指令弱、纸面任务慢</span></div>
+    </section>
+
+    <section class="method">
+      <div class="method-title">不是刷题式提前学，而是用蒙氏操作建立底层能力。</div>
+      <div class="method-grid">
+        <div class="method-card"><b>数学思维</b><span>数棒、串珠、百板，把抽象数量变得可看可摸。</span></div>
+        <div class="method-card"><b>语文基础</b><span>拼音砂字板、活动字母箱、阅读小书，先表达再书写。</span></div>
+        <div class="method-card"><b>学习习惯</b><span>听指令、等待、整理、检查，逐步适应小学课堂。</span></div>
+      </div>
+    </section>
+
+    <section class="info">
+      <div><b>5-6.5岁</b><span>中大班 / 幼升小</span></div>
+      <div><b>6-8人</b><span>精品小班建议</span></div>
+      <div><b>课后反馈</b><span>家长看得见变化</span></div>
+    </section>
+
+    <footer class="footer">
+      <div class="cta">
+        <b>扫码预约测评</b>
+        <span>联系方式、二维码、校区地址待补｜也可替换为暑期班开课时间</span>
+      </div>
+      <div class="qr">二维码<br>占位</div>
+    </footer>
+  </main>
+</body>
+</html>
