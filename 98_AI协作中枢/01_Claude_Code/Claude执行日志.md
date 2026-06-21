@@ -738,3 +738,15 @@
 - **边界**:未生成客户版Word/PDF;未改内部Word模板/Excel/RetailOS/总纲/三力总纲/.gitignore
 - **质量检查**:19项见报告全过
 - **下一步**:Product-008.1文案精修 / Pack-003.1客户版Word / Git-Commit-004 / P1-B Wiki治理
+
+---
+
+## 2026-06-20｜P0.5-Product-Pack-009｜私域文案精修 + 商品诊断客户版Word + 阶段提交
+
+- **A 私域精修版**：`…/30天商品提效包/社区超市30天商品提效包_私域获客发布包_精修版_v0.1.md`(shareable_draft,12节,老零售人口吻去AI味)
+- **B 客户版Word**：`…/模板库/商品诊断报告_客户版Word模板_v0.1.docx`(client_ready,12章/11表/9占位符,无内部使用/无internal_only/无RetailOS·M-DEC·三力·M1-M8/无DisplayMap(改货架调整)/无业绩承诺/无真实数据) + 使用说明md(internal_only)
+- **C 总清单31→34**:B区6→7(精修版)/I区1→3改名"对外交付转换/客户版"(客户版Word+说明);总表+3行(31精修版/32客户版Word/33说明,本件34);client_safety→shareable6+shareable_draft2+client_ready1/internal22/tool3;阶段8补客户版Word;版本记录补链7
+- **README**:产品README补精修版+客户版Word;模板库README行1补客户版Word
+- **边界**:未生成PDF/结项客户版;未改内部Word模板/Excel/RetailOS/总纲/三力/.gitignore;无真实数据
+- **质量检查**:28项见报告全过
+- **commit**:见下方Git-Commit-004
