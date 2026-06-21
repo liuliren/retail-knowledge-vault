@@ -715,3 +715,26 @@
 - **边界**:未生成客户版/PDF;未改Excel/SKU表/诊断报告模板定义/RetailOS/总纲/.gitignore;无真实数据
 - **质量检查**:28项见报告全过
 - **下一步**:Pack-003报告Word客户版/PDF / Product-008私域文案 / Git-Commit-003
+
+---
+
+## 2026-06-20｜P0.5-Template-Pack-003｜报告类Word客户版/PDF规划
+
+- **新建规划md**：`…/模板库/报告类Word客户版PDF规划_v0.1.md`(internal_only,15节)
+- **内容**:三层关系(内部版/客户版Word/客户版PDF) + 删除清单 + 保留清单 + 术语客户化改写10项 + 商品诊断报告17→12章映射 + 结项报告18→12章映射 + 禁止承诺清单+替代表达 + 脱敏检查12项 + PDF QC13项 + 命名规则 + 后续4子任务(003.1-003.4)
+- **同步**:模板库README+产品README 各补规划指针;交付物总清单按"无专位不强行重构"未改(规划件为新增第30件,留后续008.x补)
+- **边界**:只生成1规划md;未生成客户版Word/PDF;未改内部Word模板/使用说明/Excel/RetailOS/总纲/三力总纲/.gitignore;无真实数据
+- **质量检查**:20项见报告全过
+- **下一步**:Pack-003.1诊断报告客户版Word / 003.2结项客户版Word / Product-008私域文案 / P1-B Wiki治理
+
+---
+
+## 2026-06-20｜P0.5-Product-008｜私域获客发布包生成+总清单补链+沉淀
+
+- **新建获客包**：`…/30天商品提效包/社区超市30天商品提效包_私域获客发布包_v0.1.md`(shareable_draft,17节:总原则/禁用替代/7卖点/朋友圈A痛点·B案例·C产品三版/私聊开场5/回复跟进10/预约看店3/一句话10/口播3版/FAQ10/不可说清单/发布前检查/7天节奏)
+- **总清单29→31**:补Pack-003规划件(I对外交付转换规划区,internal_only,#30)+Product-008获客包(B区,shareable_draft,#29);新增I区;B区5→6;client_safety→shareable6+shareable_draft1/internal21/tool3;阶段1补获客包;对外可发+获客包;内部禁发+规划件;版本记录补链6
+- **README**:产品README补获客包入口
+- **对外安全**:无内部术语(RetailOS/M-DEC/三力/M1-M8/Claude/Git/Obsidian)/无业绩承诺/无真实客户·SKU·条码·销售额/无花厅坊
+- **边界**:未生成客户版Word/PDF;未改内部Word模板/Excel/RetailOS/总纲/三力总纲/.gitignore
+- **质量检查**:19项见报告全过
+- **下一步**:Product-008.1文案精修 / Pack-003.1客户版Word / Git-Commit-004 / P1-B Wiki治理
