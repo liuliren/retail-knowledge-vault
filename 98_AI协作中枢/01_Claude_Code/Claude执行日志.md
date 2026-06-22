@@ -1025,3 +1025,15 @@
 - **E 批处理规范固化**：新建`高效批处理任务规范_v1.0`(active+签字)——独立成文不改CLAUDE正文(最小不冲突);合批7类/禁合批10类/git纪律(禁add .·区分作者·写未触碰)。
 - **未execute/未改Codex脚本逻辑/未改§3.1 active/未碰真实数据/未碰外部dirty(知识库总索引·未命名.base/.canvas)/未批量搬迁**。
 - commit：见下方。下一步:ABC-Rule-Confirm-001(六哥确认九宫格)+CODEX-Data-Merge-Full-001。
+
+---
+
+## 2026-06-22｜P1-GOV-Cleanup-Batch-009｜孤儿二轮治理 + dirty清障预审 + 总索引职责补链 + 输出区重复件处理
+- **A 工作树审查**：`知识库总索引.md`(dirty=linter tags重排,语义等价,来源可解释)｜`进化新思路/`(3份新战略稿,untracked,不提交)｜三工具+supplier dry-run(execute-blocked,排除)。`未命名.base/.canvas`**已不存在**(六哥已清理)。
+- **B 孤儿二轮治理**：新建`孤儿文档豁免与暂缓登记表_P1-GOV-Orphan-Exemption-001_v0.1`——豁免6(封存/打印/客户敏感/原始说明)、暂缓7(F待判)、已脱孤7(A类Batch-007已挂链);不追求归零(CLAUDE §8)。
+- **C 总索引职责补链**：dirty来源可解释(linter tags)→补三导航职责声明+互链(主定义索引/知识树MOC/Wiki治理方案/分工表);未重构、未覆盖手动内容。
+- **D 输出区v2.0重复件**：原件已不存在→**同名歧义已消除**,正式目录01_版本完整(frontmatter齐/无敏感/SOP链接正常),无需动作。
+- **E 未命名.base/.canvas**：已不存在,无需动作。
+- **F 进化新思路/预审**：3份(零售知识系统V2迭代方案/ChatGPT分析/P1-MEM-Schema prompt)=六哥新战略源料,非敏感,与知识体系强相关;**本轮不提交**,P1-MEM-Schema prompt已正式下发为新任务。建议:V2方案+分析归为源料/输出区。
+- **未触碰**：未execute/未改Codex脚本/未改§3.1 active/未碰真实数据/未提交进化新思路与dry-run/未还原外部dirty/未批量移动删除重命名。
+- commit：见下方 `chore: 收口孤儿治理并预审dirty文件`。
