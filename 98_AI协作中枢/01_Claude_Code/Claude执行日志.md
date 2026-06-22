@@ -1115,3 +1115,13 @@
 - **⚠ 签字门(未擅动)**：CLAUDE.md 加一行引用 = §3①改治理总纲,**需六哥签字**;Schema文件改名v0.1.1 = §3④,需签字。二者均未执行,报告中标出待签。
 - **未触碰**：未改CLAUDE.md/未改M-DEC正文/未改RetailOS·M1-M8/未execute/未碰真实数据。
 - commit：见下方 `docs: 落档迭代方案v2.0并升级Schema至v0.1.1`。
+
+---
+
+## 2026-06-22｜CODEX-Tools-Ready-Batch-012｜工具源码入库 + 测试自洽 + full dry-run输入方案 + execute前置登记
+- **A 源码入库**：test 仅 import abc_classifier(已跟踪)+ir_calculator+safety_stock;后两者审为纯源码(纯函数/无文件读取/无真实数据条码)→**入库**。排除:retail_tools_dryrun.py(dry-run runner)/supplier脚本/_dryrun_preview结果(execute线)。
+- **B 测试自洽**：clean checkout 后3依赖全跟踪,`python3 -m unittest test_retail_tools` → **8 tests OK**;新建 `tools/README_测试自检.md`(命令/8用例覆盖/禁用真实数据/dry-run与execute分离/blocked原因)。
+- **C full dry-run输入方案**：按SSOT**更新现有**`全量合并版execute前置方案_CODEX-Data-Merge-Full-001`(不建重复件)——字段对齐abc_classifier输出(身份/需复核/复核原因,共26字段)+新增C4数据来源方案(现场导出真实=唯一execute来源/合成只验逻辑/脱敏演示/四类禁用)。
+- **D execute前置登记**：新建`Codex执行前置状态登记表_v0.1`(active+签字)——10项前置;方法/脚本/测试/源码/方案/脱敏=绿,**数据线(#6全量数据+#8 dry-run审阅+#9签字)=红**;结论**当前不允许execute**。
+- **未触碰**：未execute/未写回/未处理真实xls·csv/未提交dry-run结果与supplier blocked产物/未改注册表§3.1/未改M-DEC·RetailOS·M1-M8。
+- commit：见下方 `chore: 完善Codex工具测试自洽与执行前置`。
