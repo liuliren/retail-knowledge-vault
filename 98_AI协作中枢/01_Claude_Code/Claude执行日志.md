@@ -1105,3 +1105,13 @@
 - **commit 边界**：仅提交授权的 abc_classifier.py + test_retail_tools.py;ir_calculator.py/safety_stock.py(test import 依赖,本轮未授权改)仍 untracked → flag 待后续统一跟踪;dry-run runner/结果/supplier 脚本继续排除。
 - **未触碰**：未execute/未写回/未碰真实xls·csv/未改注册表§3.1/未改M-DEC·RetailOS·M1-M8正文/未批量改链接。
 - commit：见下方 `fix: 同步ABC九宫格裁决脚本口径`。
+
+---
+
+## 2026-06-22｜迭代方案v2.0落档 + Schema升v0.1.1
+- **落档** `零售知识系统迭代方案_v2.0`(candidate)：六哥定稿,保真第一人称原文+加frontmatter;路线Phase0-3触发驱动;8项相对v1修正;反模式9条。
+- **Schema升v0.1.1**：纳入v2.0指定8改动——①两轴(层级⊥状态)+failed状态;②failed是资产(进lint教训视图,严禁删/淡化);③晋升=上层新建页回指不改原记录;④晋升门槛加排除共因(同供应商/季节/区域/口径不算独立);⑤捕获路径(5秒→30秒inbox→周末triage三出口);⑥query gap-analysis诚实标注未知;⑦命名约定;⑧候选池grandfather+拒dream cycle+IssueTag先5个。文件名留v0.1(改名§3④待签字),frontmatter version=v0.1.1。
+- **交叉链**：迭代方案↔Schema↔Wiki治理方案;治理README §2加两行。
+- **⚠ 签字门(未擅动)**：CLAUDE.md 加一行引用 = §3①改治理总纲,**需六哥签字**;Schema文件改名v0.1.1 = §3④,需签字。二者均未执行,报告中标出待签。
+- **未触碰**：未改CLAUDE.md/未改M-DEC正文/未改RetailOS·M1-M8/未execute/未碰真实数据。
+- commit：见下方 `docs: 落档迭代方案v2.0并升级Schema至v0.1.1`。
