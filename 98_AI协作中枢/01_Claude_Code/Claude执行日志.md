@@ -937,3 +937,16 @@
 - 任务队列变更记录已追加（CLAUDE v2.2 / G03_Lint 派单 / 本会话治理止血链小结）。
 - **未触碰**：§10/§11 正文未扩写、其它 CLAUDE 章节未动、active 文件状态未批量改、xls/csv 未碰。
 - commit：见下方。
+
+---
+
+## 2026-06-22｜P1-GOV-CLAUDE-v2.2｜CLAUDE.md §10/§11 分层批准（精化）
+
+- 采用 **Plan A**（不采用 Plan B）。
+- **§10 世界级交付标准 = active**（咨询：金字塔/MECE/假设驱动/So-What/质量门；知识工程：SSOT/链接=CI/状态机/不可变源/Schema/原子化互联），作为后续交付/治理/模板/审计的正式质量标准。
+- **§11 卡帕西闭环 wiki = target_framework**，新增 §11.0 落地状态表，逐项标注：MOC=implemented、Dataview=partially_implemented、Kanban=optional、G03_Lint v2=planned、链接CI=planned、状态机=partially_implemented、Schema=planned、7环/Publish-Feedback=target_framework。
+- 新增 §11.5 承接说明：active 签字机制待 P0-GOV-Signature-Batch-001 分批补；G03_Lint v2=planned 本轮不生成脚本。
+- 版本行升 v2.2（措辞改为分层落地）。
+- **⚠ 未决一致性问题**：上一轮(41da10c)已派 Codex 卡 CODEX-2026-06-22-02(G03_Lint)，与本轮 §11.2 标 planned 不一致。本轮 spec 禁止动收件箱，未撤卡——留待六哥裁决（让 Codex 跑视为立项 / 或撤卡保持 planned）。
+- **未执行**：active 签字批处理、派 Codex、断链修复、改 M-DEC/总纲/正文。
+- 本轮仅改 CLAUDE.md + 本日志。下一步建议 P0-GOV-Signature-Batch-001。
