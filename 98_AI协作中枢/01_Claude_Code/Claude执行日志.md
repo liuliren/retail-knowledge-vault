@@ -1037,3 +1037,13 @@
 - **F 进化新思路/预审**：3份(零售知识系统V2迭代方案/ChatGPT分析/P1-MEM-Schema prompt)=六哥新战略源料,非敏感,与知识体系强相关;**本轮不提交**,P1-MEM-Schema prompt已正式下发为新任务。建议:V2方案+分析归为源料/输出区。
 - **未触碰**：未execute/未改Codex脚本/未改§3.1 active/未碰真实数据/未提交进化新思路与dry-run/未还原外部dirty/未批量移动删除重命名。
 - commit：见下方 `chore: 收口孤儿治理并预审dirty文件`。
+
+---
+
+## 2026-06-22｜P1-MEM-Schema-001｜M-DEC长期记忆系统Schema预览稿
+- **新建** `00_入口与总索引/03_治理规范/晟果新零售M-DEC长期记忆系统Schema_预览_v0.1.md`(draft)。
+- 吸收 V2 思想最简正确版：**provenance 取代 confidence score** / **supersession 取代 decay** / **signoff 人工写入闸门** / **四级记忆层**(现场观察working/单店决策episodic/跨店规律semantic/标准动作procedural) / 实体类型 / 命名边 / 回填(2-4周) / 晋升路径(≥3独立场景+签字)。
+- **附 M-DEC-013 试填样例**(脱敏·仅示例,不改原文不改status)：单小类长尾结构治理候选,来源3条脱敏实跑,candidate,需跨店验证暂不可晋升。
+- **拒绝**：confidence score / decay / 自动写入 / 向量库 / 图数据库 / 复杂hooks。
+- **未触碰**：CLAUDE.md / M-DEC-010·013正文 / 总纲 / 三力 / RetailOS / M1-M8 / 30天包 / Codex脚本 / 真实数据 / 外部dirty。
+- commit：见下方 `docs: 新增M-DEC长期记忆系统Schema预览稿`。下一步:P1-MEM-Schema-Review-001(人工审阅)。
