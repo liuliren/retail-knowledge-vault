@@ -8,6 +8,8 @@ created: 2026-05-06
 updated: 2026-05-06
 module: 16_客户与战役档案
 project: 花厅坊样板
+aliases:
+  - M-DEC-005
 tags:
   - 中层方法论
   - 错品类

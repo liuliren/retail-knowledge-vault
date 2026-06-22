@@ -912,3 +912,18 @@
 - **未处理（按 spec）**：M-DEC-005/006 alias、P1 缺件（5月重构方案/客户结构/工具件）、feedback 14 类正文、252 active 签字、CLAUDE.md §10/§11。
 - **未触碰**：M-DEC 正文规则/文件移动删除重命名/xls·csv/.gitignore。
 - **commit**：见下方独立 commit（仅 M-DEC-007 文件 + 分级表 + 本日志）。
+
+---
+
+## 2026-06-22｜P0/P1-GOV-Batch-002｜M-DEC短链收口 + 3张治理审计表
+
+- **工作树起点**：6e0f16f（干净）。
+- **M-DEC-005/006 alias**：两真实文件 frontmatter 各加 `aliases`（005 解 19 引 / 006 解 27 引），仅 +2 行/件，未动正文、无重复占位。全族审计：007+006+005 已收口 125 引；001/002/003(15引)+010(1引) 待下轮；008/009/011/012/013 无短链引用无需处理。
+- **新建 4 张治理表**（均 draft，只审计不执行）：
+  1. 断链分级审计表_P0-GOV-Link-Audit-002（M-DEC 族收口结果）
+  2. 高频P1断链判定表_P1-GOV-Link-Triage-001（13 项：改引用6/封存6/暂缓2/补件0）
+  3. active签字机制审计表_P0-GOV-Signature-Audit-001（261 active/2 签字/259 无签字/签字率0.8%；精确列 15 个 P0 高危）
+  4. CLAUDE_v2.2审批准备稿_P1-GOV-CLAUDE-Review-Prep-001（建议 Plan A 分层批准；3 个拍板点）
+- **未处理（按 spec / 待签字）**：M-DEC-001/002/003/010 alias、P1 改引用/封存执行、252+ active 批量签字、CLAUDE.md 实际升 v2.2。
+- **未触碰**：CLAUDE.md（仅读）、任何 active 文件 status、M-DEC 正文规则、文件移动删除重命名、xls·csv、.gitignore。
+- **commit**：见下方独立 commit。
