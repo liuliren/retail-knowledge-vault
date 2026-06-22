@@ -1071,3 +1071,15 @@
 - **D ABC补丁预览**：新建`ABC九宫格裁决转正式补丁预览_v0.1`(candidate/preview)。9格全标签+每格业务解释+SKU动作映射+C+乙需复核字段;明确"观察品"非最终裁决仅Codex fallback;转正后须另开CODEX-ABC-Rule-Fix-001。**未改§3.1 active、未改脚本。**
 - **未触碰**：未升active/未改M-DEC正文/未新增active M-DEC/未改注册表§3.1 active/未改Codex脚本/未execute/未碰真实xls·csv/未处理客户敏感孤儿(饼干货盘暂缓)/未批量移动删除孤儿。
 - commit：见下方 `chore: 推进Schema候选化与源料孤儿治理`。
+
+---
+
+## 2026-06-22｜ABC-Rule-Confirm-001｜ABC九宫格裁决转正式§3.1
+- **§3.1 落盘 active**：注册表 §3.1 从**四裁决扩展为九宫格裁决**(补 B 行 3 格潜力利润品/常规品/流量补充·控利 + C+乙长尾利润·待裁决);保留历史四裁决说明并注明已扩展。
+- **每格业务解释 + SKU 动作映射**(优先/可选动作 + 需复核点)写入 §3.1;SKU 动作表 Excel/模板正文未改(只在说明层定义)。
+- **"观察品"废止为最终裁决标签**：仅历史 Codex fallback;如需观察走"需复核/待裁决/观察原因"字段;C+乙 默认 `需复核`=是,进误判防线后落最终裁决,不长期停留。
+- **signoff**：frontmatter 加 `signoff_3_1`(approved_by 六哥/2026-06-22/scope=仅§3.1口径active,不令整表active不代表脚本已改不代表可execute);版本记录追加 §3.1 active 行。**整表仍 draft。**
+- **T-02 行**输出口径改"9 格裁决"并标⚠待 CODEX-ABC-Rule-Fix-001 同步;补丁预览标"已落盘"。
+- **Codex 影响说明**(本轮不改脚本)：fallback"观察品"应废止;后续按九宫格输出;需复核格输出复核字段;脚本改动另开 CODEX-ABC-Rule-Fix-001;修改完成前不允许 full execute。
+- **未触碰**：未改 Codex 脚本/未 execute/未碰真实 xls·csv/未新增改 M-DEC/未改 RetailOS·M1-M8 正文/未批量改全库链接术语/未把"观察品"写成最终裁决。
+- commit：见下方 `docs: 确认ABC九宫格裁决口径`。
