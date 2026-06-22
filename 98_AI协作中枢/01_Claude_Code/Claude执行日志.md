@@ -1093,3 +1093,15 @@
 - **C+甲 异常复核提醒**：检查毛利额是否由异常进价/异常售价/退货/联营口径/一次性销售造成,确认无异常再按利润品保护,防"假高毛利"误当金矿。
 - **未触碰**：未改九宫格标签/未改§3.1 active状态/未改Codex脚本/未execute/未碰真实xls·csv/未新增M-DEC/未改RetailOS·M1-M8正文/未批量改全库术语。
 - commit：见下方 `docs: 修正ABC九宫格毛利贡献表述`。
+
+---
+
+## 2026-06-22｜CODEX-ABC-Rule-Fix-001｜修正abc_classifier九宫格裁决逻辑
+- **§3.1↔脚本核对**：原 `decide_identity` 仅 5 格命名(核心引擎/流量品/利润品/双低)+ `return "观察品"` fallback,缺 B 行 3 格 + C+乙 → 与 active §3.1 九宫格不一致 → 修。
+- **abc_classifier 修改点**：①新增 `NINE_GRID` 9 格映射,`decide_identity` 改 dict 查表,**未知组合返回 `invalid_combination`**(不再观察品);②新增 `decide_review` → C+乙 needs_review=True+review_reason,其余 8 格 False;③`apply_abc` 增 `需复核`/`复核原因` 列;④参数/注释明确 `sales_contribution_class`/`gross_profit_contribution_class`,注明毛利维按**毛利额累计贡献**非毛利率;⑤毛利额缺失由 销额×毛利率 推算"毛利额"本身(分档仍按毛利额)加注释澄清。
+- **"观察品"处理**：最终输出层面**废止**;未知组合→`invalid_combination`;需观察→needs_review/review_reason 字段。
+- **毛利额贡献口径**：变量/注释/列均体现毛利额贡献,新增 test 证毛利额最大者判甲(误用毛利率会判错)。
+- **测试**：test_retail_tools 扩为 8 用例——9 格全覆盖/废观察品/未知组合非fallback/C+乙复核其余False/毛利额非毛利率/列存在;`python3 -m unittest` **8 passed**。
+- **commit 边界**：仅提交授权的 abc_classifier.py + test_retail_tools.py;ir_calculator.py/safety_stock.py(test import 依赖,本轮未授权改)仍 untracked → flag 待后续统一跟踪;dry-run runner/结果/supplier 脚本继续排除。
+- **未触碰**：未execute/未写回/未碰真实xls·csv/未改注册表§3.1/未改M-DEC·RetailOS·M1-M8正文/未批量改链接。
+- commit：见下方 `fix: 同步ABC九宫格裁决脚本口径`。

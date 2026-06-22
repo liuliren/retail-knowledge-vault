@@ -1,0 +1,90 @@
+#!/usr/bin/env python3
+"""Minimal unit tests for P1-3 retail tools."""
+
+import unittest
+
+import pandas as pd
+
+from abc_classifier import (
+    NINE_GRID,
+    apply_abc,
+    decide_identity,
+    decide_review,
+)
+from ir_calculator import calculate_ir
+from safety_stock import classify_age
+
+
+# 九宫格预期裁决（注册表 §3.1 active）
+NINE_GRID_EXPECTED = {
+    ("A", "甲"): "核心引擎",
+    ("A", "乙"): "核心引擎",
+    ("A", "丙"): "流量品",
+    ("B", "甲"): "潜力利润品",
+    ("B", "乙"): "常规品",
+    ("B", "丙"): "流量补充·控利",
+    ("C", "甲"): "利润品",
+    ("C", "乙"): "长尾利润·待裁决",
+    ("C", "丙"): "双低",
+}
+
+
+class RetailToolsTest(unittest.TestCase):
+    def test_abc_identity(self):
+        df = pd.DataFrame({"销售金额": [60, 30, 10], "毛利额": [30, 10, 60]})
+        out = apply_abc(df)
+        self.assertIn("销额ABC", out.columns)
+        self.assertIn("毛利ABC", out.columns)
+        self.assertIn("身份", out.columns)
+        self.assertIn("需复核", out.columns)
+        self.assertIn("复核原因", out.columns)
+
+    def test_nine_grid_full_coverage(self):
+        """9 格裁决必须全部覆盖且与 §3.1 一致。"""
+        for (sales, profit), expected in NINE_GRID_EXPECTED.items():
+            with self.subTest(cell=f"{sales}+{profit}"):
+                self.assertEqual(decide_identity(sales, profit), expected)
+
+    def test_no_observation_label(self):
+        """废止「观察品」：9 格输出中不得出现。"""
+        outputs = {decide_identity(s, p) for (s, p) in NINE_GRID_EXPECTED}
+        self.assertNotIn("观察品", outputs)
+
+    def test_unknown_combination_not_fallback_observation(self):
+        """未知组合返回 invalid_combination，而非「观察品」。"""
+        self.assertEqual(decide_identity("X", "甲"), "invalid_combination")
+        self.assertEqual(decide_identity("A", "丁"), "invalid_combination")
+
+    def test_c_yi_needs_review(self):
+        """C+乙 必须 needs_review=True，其余格默认 False。"""
+        needs, reason = decide_review("C", "乙")
+        self.assertTrue(needs)
+        self.assertIn("长尾利润·待裁决", reason)
+        for (sales, profit) in NINE_GRID_EXPECTED:
+            if (sales, profit) == ("C", "乙"):
+                continue
+            with self.subTest(cell=f"{sales}+{profit}"):
+                self.assertFalse(decide_review(sales, profit)[0])
+
+    def test_profit_dimension_uses_gross_profit_amount(self):
+        """毛利维按毛利额累计贡献分档，不是毛利率：高销低毛利率但毛利额最大者应为甲。"""
+        # SKU1 销额低但毛利额最高 → 毛利额贡献甲；若误用毛利率会判错。
+        df = pd.DataFrame({"销售金额": [10, 30, 60], "毛利额": [60, 30, 10]})
+        out = apply_abc(df).sort_index()
+        self.assertEqual(out.loc[0, "毛利ABC"], "甲")  # 毛利额最大 → 甲
+        self.assertEqual(NINE_GRID[("A", "甲")], "核心引擎")
+
+    def test_ir_formula(self):
+        result = calculate_ir(pd.Series([0.25]), pd.Series([4])).iloc[0]
+        self.assertAlmostEqual(result, 2.25)
+
+    def test_age_grade(self):
+        self.assertEqual(classify_age(30), "正常")
+        self.assertEqual(classify_age(60), "预警")
+        self.assertEqual(classify_age(90), "滞销")
+        self.assertEqual(classify_age(91), "重滞")
+
+
+if __name__ == "__main__":
+    unittest.main()
+
