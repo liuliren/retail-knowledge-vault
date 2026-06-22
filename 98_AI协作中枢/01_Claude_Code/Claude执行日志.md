@@ -899,3 +899,16 @@
 - **未触碰**：科学零售总纲/三力总纲/RetailOS/M1-M8/M-DEC 正式规则正文/任何文件移动删除重命名/.gitignore/真实 xls·csv。
 - **本轮不 commit**（待用户授权 P0-GOV-Hotfix-Commit）。
 - 下一步候选：①Hotfix-Commit ②active 签字审计表 ③高频断链分级表 ④CLAUDE §10/§11 审批。
+
+---
+
+## 2026-06-22｜P0-GOV-Link-Audit-001｜高频断链分级表 + M-DEC-007 alias 止血
+
+- **扫描范围**：全库 `[[wikilink]]` vs 真实 .md 文件名（排 99_归档/Clippings），共 345 个未解析目标。
+- **M-DEC-007 判断**：真实文件存在（`16_…/花厅坊样板/M-DEC-007_商品动销综合诊断与调整SOP_v0.1_候选.md`），断链真因=短链 `[[M-DEC-007]]` 不匹配 `_候选` 全名（79 引/28 文件）。
+- **alias 修复**：在该真实文件 frontmatter 追加 `aliases: [M-DEC-007]`（仅 2 行新增，未动正文，无重复文件）。`[[M-DEC-007]]` 现可解析。
+- **断链分级表**：新建 `00_入口与总索引/03_治理规范/断链分级审计表_P0-GOV-Link-Audit-001_v0.1.md`（P0/P1/P2/P3 + 处理建议 + 本轮是否处理）。
+- **关键发现**：`[[CLAUDE.md]]`(415 引) 为 .md 后缀误报（Obsidian 可解析），非真断链；M-DEC-005/006 与 007 同病，建议下轮同法加 alias。
+- **未处理（按 spec）**：M-DEC-005/006 alias、P1 缺件（5月重构方案/客户结构/工具件）、feedback 14 类正文、252 active 签字、CLAUDE.md §10/§11。
+- **未触碰**：M-DEC 正文规则/文件移动删除重命名/xls·csv/.gitignore。
+- **commit**：见下方独立 commit（仅 M-DEC-007 文件 + 分级表 + 本日志）。
