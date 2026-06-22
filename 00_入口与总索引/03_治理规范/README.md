@@ -46,6 +46,7 @@ tags:
 | [[知识库治理规范]] | 目录/文件/版本/引用治理总则 |
 | [[文档工程化标准]] | 工程化与 frontmatter 相关标准 |
 | [[M-DEC中层决策资产晋级机制_v0.1]] | M-DEC 生命周期与晋级专项 |
+| [[晟果新零售M-DEC长期记忆系统Schema_预览_v0.1]] | M-DEC 长期记忆系统 Schema（candidate·provenance/supersession/signoff/四级记忆层）|
 | [[Memory治理体系_v1.0]] | AI 记忆治理专项 |
 | [[逻辑一致性检查清单]] | 逻辑一致性质量专项 |
 | [[变更影响检查清单]] | 变更影响评估专项 |

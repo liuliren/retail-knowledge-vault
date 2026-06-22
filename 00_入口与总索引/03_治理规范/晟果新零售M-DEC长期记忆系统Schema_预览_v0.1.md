@@ -1,7 +1,7 @@
 ---
 title: 晟果新零售M-DEC长期记忆系统Schema
 version: v0.1
-status: draft
+status: candidate
 owner: 六哥
 created: 2026-06-22
 updated: 2026-06-22
@@ -16,9 +16,15 @@ related:
 tags: [M-DEC, 长期记忆, schema, provenance, supersession, signoff, 科学零售]
 ---
 
-# 晟果新零售M-DEC长期记忆系统Schema v0.1 预览稿
+# 晟果新零售M-DEC长期记忆系统Schema v0.1（candidate）
 
-> **draft 预览稿**。本文件提炼自《零售知识系统 V2 迭代方案》（[[进化新思路]]源料），采「最简正确版」：吸收 V2 的**问题意识**，拒绝其**工程复杂度**。**不改 CLAUDE.md、不改任何 M-DEC 正文、不上自动化**。
+> **candidate（2026-06-22 P1-GOV-Batch-011 升级）**。本文件提炼自《零售知识系统 V2 迭代方案》（已归档 [[99_原始素材/战略源料/2026-06-22_进化新思路/README]]），采「最简正确版」：吸收 V2 的**问题意识**，拒绝其**工程复杂度**。**不改 CLAUDE.md、不改任何 M-DEC 正文、不上自动化**。
+
+> **🔖 candidate 状态说明（P1-GOV-Batch-011）**：
+> - ✅ **已通过结构审阅**（P1-GOV-Control-010 §B：五原则与 CLAUDE/治理零冲突、四级记忆层与 status 状态机正交不打架、模板可执行）；
+> - ⚠ **未完成真实 M-DEC trial**（尚无实跑验证）；
+> - ❌ **不具备 active 条件**；
+> - **升 active 的两个前置**：① P1-MEM-MDEC-Trial-001（≥1 条真实 M-DEC 跑完 working→episodic→回填全流程）；② 六哥 signoff（CLAUDE §3②）。
 
 ## 0. 文件定位
 1. 本文件是 M-DEC 长期记忆系统的 **Schema 预览稿**；
