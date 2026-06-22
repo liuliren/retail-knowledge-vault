@@ -2,7 +2,7 @@
 title: 品类建模（51）- 商品组合 22 折扣价值链
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486529&idx=1&sn=87111b4777d2a180c25ef374443b6fae&chksm=9b06be7fac713769fd9630cc6058dc2733962a28e21283b389075c17d3a5424f00dcc2a5854c&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 再次讨论“折扣”在零售门店经营的“业务流程与价值链”语义

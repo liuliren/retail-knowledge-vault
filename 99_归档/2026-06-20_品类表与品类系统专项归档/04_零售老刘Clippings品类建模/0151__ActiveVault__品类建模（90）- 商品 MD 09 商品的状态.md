@@ -2,7 +2,7 @@
 title: 品类建模（90）- 商品 MD 09 商品的状态
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486902&idx=1&sn=33a9ff38655eb84d3d036e5009d6d1a0&chksm=9b06bf88ac71369ecb8935bbb8ced89c67b8658bbf2232c9e2e56b5f130470f176941e6834a0&cur_album_id=4031473318086803470&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description:

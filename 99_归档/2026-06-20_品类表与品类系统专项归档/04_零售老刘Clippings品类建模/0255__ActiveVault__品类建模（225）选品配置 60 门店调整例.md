@@ -2,7 +2,7 @@
 title: 品类建模（225）选品配置 60 门店调整例
 source: https://mp.weixin.qq.com/s/Dpl7yTqnPeXk8rjNBWKVqQ
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: （本节共 3622 个字 短篇 推荐阅读）序言：本节介绍一个门店基于宽类窄品执行的故事。

@@ -2,7 +2,7 @@
 title: 品类建模（27）- 量化指标 21（购物篮 篮子属性）
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486300&idx=1&sn=c0f9f213c0835d6caa20d9b56e0a3968&chksm=9b06b962ac713074be69e4e0465a47adb4028dc1fe8004cf28b5d69db4b9df6153d97510180c&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 三大商品群（分类）结构等语义讨论。

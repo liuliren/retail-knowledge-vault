@@ -2,7 +2,7 @@
 title: 品类建模（180）商品陈列 16 VMD运用
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487688&idx=1&sn=cbe44674e043d118cdefd1f7d8b04093&chksm=9b06a2f6ac712be0d4d14ed712489170bcb68c945539aca058d5d6ffee0cbc868fae19823072&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节讨论VMD中在零售陈列中的部分运用语义。

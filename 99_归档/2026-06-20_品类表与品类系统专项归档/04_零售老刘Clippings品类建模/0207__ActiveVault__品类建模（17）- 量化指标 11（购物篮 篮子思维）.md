@@ -2,7 +2,7 @@
 title: 品类建模（17）- 量化指标 11（购物篮 篮子思维）
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486206&idx=1&sn=6e892c5df070fcc9bd324a49a433d2d9&chksm=9b06b8c0ac7131d6a86f27c87cacc3126ce6e44b3e49fd54899a91eb2621cd6425dfde7d76b5&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节继续讨论“购物篮式”思维

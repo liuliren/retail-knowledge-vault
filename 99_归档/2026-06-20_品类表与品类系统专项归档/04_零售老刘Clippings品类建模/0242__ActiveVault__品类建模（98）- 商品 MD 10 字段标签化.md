@@ -2,7 +2,7 @@
 title: 品类建模（98）- 商品 MD 10 字段标签化
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486954&idx=1&sn=1c4234f1654a5abf128cf04dd7a51ca4&chksm=9b06bfd4ac7136c2ce7d3b0f1c876615ac4ed2b7dae9d747ece409fefa705efac909d86e8717&cur_album_id=4031473318086803470&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论商品信息表（包括其他关联维度表）的另一现实意义上的运用：标签化语义。

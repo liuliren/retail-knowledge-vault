@@ -2,7 +2,7 @@
 title: 品类建模（158）- 商品 MD 25 商品需求链
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487470&idx=1&sn=26e4d6cb4d986916743bd99337cc31c4&chksm=9b06bdd0ac7134c6e92556d3bd7fdb477f73d8cb0fe8a78033d1a022f3e2ed4c56b7cf6c5f3f&cur_album_id=4031473318086803470&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论商品需求链语义。

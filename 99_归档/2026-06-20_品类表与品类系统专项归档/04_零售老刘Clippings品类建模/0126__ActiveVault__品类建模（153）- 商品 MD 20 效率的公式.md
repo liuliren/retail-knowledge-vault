@@ -2,7 +2,7 @@
 title: 品类建模（153）- 商品 MD 20 效率的公式
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487412&idx=1&sn=a540ac3b8013d0c17cd85dd70ab0e2cf&chksm=9b06bd8aac71349c5e1aaa01f3a83e4c3164b64df6c79a694bf8b921acbcb236f6cb95189d35&cur_album_id=4031473318086803470&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节在上序言：本节在上一节基础上，继续讨论价值与效率的另一个语义：效率公式。

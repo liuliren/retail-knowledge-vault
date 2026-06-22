@@ -2,7 +2,7 @@
 title: 品类建模（187）商品陈列 23 灯带的纵横
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487795&idx=1&sn=23afdfda7f9705b751735aca71308455&chksm=9b06a30dac712a1bf91d3e887e974f060e52e9de551c796dc46872a2b9bc6911940c5de1e7e2&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节讨论照明中的灯带与布局设计语义。灯带设计的两种布局方式。

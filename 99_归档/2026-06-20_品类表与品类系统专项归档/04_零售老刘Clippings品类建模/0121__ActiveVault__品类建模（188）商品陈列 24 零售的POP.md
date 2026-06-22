@@ -2,7 +2,7 @@
 title: 品类建模（188）商品陈列 24 零售的POP
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487796&idx=1&sn=7bcb1b0905fc450c5cc9475db8650f0d&chksm=9b06a30aac712a1cbaf355cf588304067969a0dd47e638402473059312a32846d6c0751126b9&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节讨论零售经营中的POP（零售POP）的关系与运用语义。

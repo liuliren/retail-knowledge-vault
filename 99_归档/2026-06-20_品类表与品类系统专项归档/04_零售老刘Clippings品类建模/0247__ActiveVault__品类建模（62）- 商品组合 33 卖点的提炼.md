@@ -2,7 +2,7 @@
 title: 品类建模（62）- 商品组合 33 卖点的提炼
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486650&idx=1&sn=645561bb561da3d94c68a31e5b2e9e34&chksm=9b06be84ac713792ef54ff66fbb4e8c9753311186a640975bbb0ffe2e5afb542268f58167c0f&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description:

@@ -2,7 +2,7 @@
 title: 品类建模（95）- 商品促销 04 促销的风险
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486930&idx=1&sn=2007cefc71be6ccab65898b1bf422b5b&chksm=9b06bfecac7136fa2f7e5f9fb78e9f49b7f692f3626b86cf9b0055301ef3388c3f7e7ddcb065&cur_album_id=4031475776737476609&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节继续讨论促销的风险语义。进一步强调促销的风险意识。

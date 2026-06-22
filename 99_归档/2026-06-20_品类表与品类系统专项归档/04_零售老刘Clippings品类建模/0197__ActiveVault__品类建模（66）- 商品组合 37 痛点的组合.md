@@ -2,7 +2,7 @@
 title: 品类建模（66）- 商品组合 37 痛点的组合
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486672&idx=1&sn=37465e5e8a66e66226bdf5608a9bc39c&chksm=9b06beeeac7137f84023718c0ad2c4916831e1eb581b2903bf6756e9812cf1754651a1c5cee0&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节主要讨论痛点的组合语义，顾客痛点与门店经营的协合，以及顾客欲望与需求的博弈子啊门店商品组合中的运用语义等。

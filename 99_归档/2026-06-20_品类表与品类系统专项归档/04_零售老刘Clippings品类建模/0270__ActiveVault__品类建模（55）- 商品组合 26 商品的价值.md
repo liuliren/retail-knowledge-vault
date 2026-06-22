@@ -2,7 +2,7 @@
 title: 品类建模（55）- 商品组合 26 商品的价值
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486574&idx=1&sn=78607eeed67d322bc0628bbbb183d1a7&chksm=9b06be50ac713746c7ffe1dd82db68f3404d34bc7bb4f74e364244f44f60c4ff0e3605abc8d3&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节内容主要讨论商品组合，在零售实体经营中的“价值”语义逻辑。

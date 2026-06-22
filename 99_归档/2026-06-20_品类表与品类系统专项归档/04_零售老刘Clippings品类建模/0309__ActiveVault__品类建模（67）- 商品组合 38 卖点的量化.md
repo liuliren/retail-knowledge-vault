@@ -2,7 +2,7 @@
 title: 品类建模（67）- 商品组合 38 卖点的量化
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486677&idx=1&sn=169fa54a2ff7169eae1a480fdb091c93&chksm=9b06beebac7137fd2b52e52f436afc190ccfa6c350133ccfb9237a28858fc095025437997c36&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节主要介绍卖点的4个量化指标语义。

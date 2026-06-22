@@ -2,7 +2,7 @@
 title: 品类建模（一） 弥足的品类模式
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247485897&idx=1&sn=d706da45f3d689425052f889f1515507&chksm=9b06bbf7ac7132e162057d9f6cecbc8ade0725290ecdb1f78a1551d90fad71e40ae67816b454&cur_album_id=4239878941940301836&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节接着聊下后续的品类建模的主要思考方向。主要的目的就是一个，那就是弄清楚：什么才是有用的零售分析。

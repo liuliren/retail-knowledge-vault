@@ -2,7 +2,7 @@
 title: 品类建模（109）商品 MD 12  静态的标签
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487049&idx=1&sn=45ab08e39b671a2e17244c26ce170e02&chksm=9b06bc77ac7135618d2f3c12e1e23534c95805826a760be3a819e72e43e08dfe6744388a1d12&cur_album_id=4031473318086803470&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论商品的“静态标签化”在语义。

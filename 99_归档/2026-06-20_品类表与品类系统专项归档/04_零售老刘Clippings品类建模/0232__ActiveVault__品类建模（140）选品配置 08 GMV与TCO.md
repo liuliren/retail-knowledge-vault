@@ -2,7 +2,7 @@
 title: 品类建模（140）选品配置 08 GMV与TCO
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487320&idx=1&sn=23c77bee6b3da7a0ed5021febaaaf654&chksm=9b06bd66ac713470cfad2ac066790a8a140514bd41e56d556530639277aa5e87ccd608b0e974&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节是上一节语义的延伸，讨论供应链计划的两大关键度量：GMV与TCO的语义。

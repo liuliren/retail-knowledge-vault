@@ -2,7 +2,7 @@
 title: 品类建模（24）- 量化指标 18（购物篮 篮子元组）
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486279&idx=1&sn=bcc75d20a497c55f02667c7305f63c35&chksm=9b06b979ac71306f1ae2050143d1947ac1c6670e81431c9f80ef74986f967c1f158e74aafd27&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description:

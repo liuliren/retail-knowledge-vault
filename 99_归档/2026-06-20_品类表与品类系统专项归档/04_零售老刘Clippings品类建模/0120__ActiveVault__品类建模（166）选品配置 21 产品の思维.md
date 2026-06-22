@@ -2,7 +2,7 @@
 title: 品类建模（166）选品配置 21 产品の思维
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487562&idx=1&sn=04d9bc04e95b7bfb7e97418f1b157ddc&chksm=9b06a274ac712b62db6e36cfdd5148afbf8b13b091f8dd3de122b9981e378945a9135fd7b3a6&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论“产品式思维”或“商品式思维”。

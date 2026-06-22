@@ -2,7 +2,7 @@
 title: 品类建模（02） 品类语义 - 需求与选择
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247485925&idx=1&sn=fd59072f91462ed5e310ed9bb9b34baa&chksm=9b06bbdbac7132cd449fc73246c79c1d984a37c60062d665c64e4c31dc4ff6cfd532d530f8e2&cur_album_id=4239878941940301836&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 上节我们讨论了品类维度与品类度量，本节内容主要讨论：品类的“建模语义”下的“品类维度”，进一步了解什么是“需求”与“选品”。

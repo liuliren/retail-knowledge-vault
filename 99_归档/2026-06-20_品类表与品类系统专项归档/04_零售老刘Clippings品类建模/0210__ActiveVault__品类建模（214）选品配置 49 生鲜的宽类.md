@@ -2,7 +2,7 @@
 title: 品类建模（214）选品配置 49 生鲜的宽类
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247488094&idx=1&sn=66d25abf4b1adb1600d208487fd199f0&chksm=9b06a060ac712976d6830b1420c7d3955a2d8a1ca141495fc57a948f3ac470789c43b4548315&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 在上一节基础上，继续讨论生鲜课类的业务逻辑语义。

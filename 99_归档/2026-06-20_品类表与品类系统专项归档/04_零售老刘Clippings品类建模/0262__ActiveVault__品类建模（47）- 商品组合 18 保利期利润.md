@@ -2,7 +2,7 @@
 title: 品类建模（47）- 商品组合 18 保利期利润
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486490&idx=1&sn=cb8dcbbb1fff3ae5b3445566770a6806&chksm=9b06be24ac713732bb6d9200ba8707c0d8ebf082e29acf9cbb3950c6c17f8375f62f1ef6f41a&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节主要讨论与利润有关的两大概念：商品库龄和商品保利期，以及这两者的一些业务语义。

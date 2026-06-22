@@ -2,7 +2,7 @@
 title: 品类建模（41）- 商品组合 12 毛利模型成本
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486434&idx=1&sn=dc77afe63a280663130cc4a4f3fbc4b2&chksm=9b06b9dcac7130cab6652d37785b874a050314a91f46ccfeb32340aceea6eda66699188cb3c3&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节继续拆解毛利成本的语义结构。即：毛利

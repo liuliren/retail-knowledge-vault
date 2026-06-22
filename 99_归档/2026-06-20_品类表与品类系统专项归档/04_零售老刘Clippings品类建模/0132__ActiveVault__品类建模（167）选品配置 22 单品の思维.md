@@ -2,7 +2,7 @@
 title: 品类建模（167）选品配置 22 单品の思维
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487563&idx=1&sn=8c1f10b68b5c3f4d33ebb729f4b45927&chksm=9b06a275ac712b637fcd9cab8320f5c6194bc5e66397cd9a8de6a09563bd3863f33cc5013ac4&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论基于零售商的“单品思维”语义。

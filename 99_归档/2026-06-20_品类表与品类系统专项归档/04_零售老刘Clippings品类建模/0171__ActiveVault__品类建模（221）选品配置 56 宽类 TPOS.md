@@ -2,7 +2,7 @@
 title: 品类建模（221）选品配置 56 宽类 TPOS
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247488156&idx=1&sn=c4fb127a88987b61fc6ae061325ae883&chksm=9b06a0a2ac7129b43ca55bd47cd07f66b11e0a43c603105ff063c1261fe26846f1001561d592&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本借主要讨论选品中的一个工具：TPOS语义。

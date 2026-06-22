@@ -2,7 +2,7 @@
 title: 品类建模（156）- 商品 MD 23 商品语义层
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487455&idx=1&sn=711b917256d716b118a820ca1b69a0f7&chksm=9b06bde1ac7134f73f44d704ace3e4407b73ca7b5a9edcf6a77c9a8bdd2ebc411e70f6bd9ec1&cur_album_id=4031473318086803470&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节主要讨论：零售语义层。

@@ -2,7 +2,7 @@
 title: 品类建模（159）- 商品 MD 26 核心的逻辑
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487474&idx=1&sn=7a5145a45f2e077f6dd4c798f30dcea8&chksm=9b06bdccac7134da4c3ecc413ebe7a38a38aac2199c00512288eea6f876a79bf4b88eb8baa3d&cur_album_id=4031473318086803470&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论一个价值语义：商品的核心逻辑。

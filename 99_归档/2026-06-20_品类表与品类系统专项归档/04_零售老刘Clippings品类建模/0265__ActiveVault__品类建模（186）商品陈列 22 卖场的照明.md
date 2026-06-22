@@ -2,7 +2,7 @@
 title: 品类建模（186）商品陈列 22 卖场的照明
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487773&idx=1&sn=131c5051dff00cc29f1e11a0515e6ab2&chksm=9b06a323ac712a35c7b1c002c4a1e710ac90a342a967074fd8c9979fa0dfd2d7c57e2cd8030b&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节讨论视觉焦点运用中的卖场照明语义。

@@ -2,7 +2,7 @@
 title: 品类建模（213）选品配置 48 可得性实例
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247488088&idx=1&sn=20b5c21664ac9b28d080bc148a871352&chksm=9b06a066ac7129707d17fd18d43985422e83a52c515aa249c889e6cd34065266a129eecd5cb8&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节在上一节基础上，讨论宽类窄品模型的几个可得性实例语义。

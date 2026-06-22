@@ -2,7 +2,7 @@
 title: 品类建模（219）选品配置 54 课类的宽类
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247488154&idx=1&sn=3f3619f9d32c932ed67d868398da3d87&chksm=9b06a0a4ac7129b2adf1de93790b4f419cdbba631d5a95869fe77eafa9ec83d722febbea21f8&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论生鲜与非生鲜（食百）的宽类翟品的语义。

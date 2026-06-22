@@ -2,7 +2,7 @@
 title: 品类建模（184）商品陈列 20 入口新语义
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487897&idx=1&sn=41eec19b3fbe8ec176781387b1013623&chksm=9b06a3a7ac712ab15324fa357b6783b9dc069468f91f0482fb3c8a07f5ff0b1ce97d40ce9269&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节讨论VP运用的“入口”逻辑与场景运用语义。

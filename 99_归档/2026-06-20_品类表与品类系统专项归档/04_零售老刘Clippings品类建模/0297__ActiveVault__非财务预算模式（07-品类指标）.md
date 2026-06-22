@@ -2,7 +2,7 @@
 title: 非财务预算模式（07-品类指标）
 source: https://mp.weixin.qq.com/s/HIOGkufNEC589kZTIT26QA
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论了部门、品类指标的设计建模，运用毛利贡献率指标，明确指标完成需要关注的重点品类，为指导业务服务。

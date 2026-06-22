@@ -2,7 +2,7 @@
 title: 品类建模（58）- 商品组合 29 属性结构层
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486609&idx=1&sn=6629eab4c6fc83a8825949b5eb25d8d1&chksm=9b06beafac7137b97618a3af0370333f4c6b85996bcae465c2806bcb959a642fb6d7c5453c9e&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节介绍实际业务经营中的一类“商品组合”方式。即：商品组合的“属性结构层”和“业务体现”等。

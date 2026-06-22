@@ -2,7 +2,7 @@
 title: 品类建模（137）- 商品 MD 14 预制品标签
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487294&idx=1&sn=34459059362d4dce1da812f41f47cdec&chksm=9b06bd00ac713416fcb1a6d56a578e12b8f0185dfa9c76383118e855b12512fef41f60e3106d&cur_album_id=4031473318086803470&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论商品属性中的另一种结构分类标签：初品、预制品、标品语义。

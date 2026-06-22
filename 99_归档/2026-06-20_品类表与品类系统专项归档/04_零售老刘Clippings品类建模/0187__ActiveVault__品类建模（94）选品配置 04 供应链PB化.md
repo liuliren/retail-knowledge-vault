@@ -2,7 +2,7 @@
 title: 品类建模（94）选品配置 04 供应链PB化
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486925&idx=1&sn=ee01907dc45cb12fff73ede906c64960&chksm=9b06bff3ac7136e56a2883ed98ac7abc33720557db20fd218d7fec752214b64d290b06bf9f64&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节继续讨论“供应链效率”的又一个语义：供应链的PB化。

@@ -2,7 +2,7 @@
 title: 品类建模（176）选品配置 31 SKU的定量
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487657&idx=1&sn=de6f5a2fbc94e06b3ba1d8cee13ef678&chksm=9b06a297ac712b8116e44a5aa3485c2c858615a7ad07a2a99e13ef116c464a791702081eed43&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论SKU的定量逻辑语义。这是后续合理SKU数计算的逻辑依据。

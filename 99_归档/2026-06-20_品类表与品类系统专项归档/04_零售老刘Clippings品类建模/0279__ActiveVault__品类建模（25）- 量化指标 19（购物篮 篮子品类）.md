@@ -2,7 +2,7 @@
 title: 品类建模（25）- 量化指标 19（购物篮 篮子品类）
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486287&idx=1&sn=132af60d4b9e4640335fb39cd1f3b2a7&chksm=9b06b971ac71306759d73ab7857a983317f9d55545277e4563364a6bb73c6d2703161d469f56&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论另一个需求元组粒度 - 品类：篮子需求品类，即：购物篮中的品类角色语义。

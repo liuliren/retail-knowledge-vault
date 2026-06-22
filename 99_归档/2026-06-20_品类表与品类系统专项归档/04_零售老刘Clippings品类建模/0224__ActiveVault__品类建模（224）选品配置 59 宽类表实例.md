@@ -2,7 +2,7 @@
 title: 品类建模（224）选品配置 59 宽类表实例
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247488160&idx=1&sn=6c6d64fe6881b95cd4e76c56793c50b6&chksm=9b06a09eac7129883a66e9a226b31b472127deaf8b869e43734d20d743ca0dd483836f13aa24&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节在上一节基础上，讨论宽类表的不分制作实例语义。

@@ -2,7 +2,7 @@
 title: 品类建模（99）商品陈列 05 卖场式陈列
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486968&idx=1&sn=d7bd1f76eac7fd80ef99a2dbec8afc7d&chksm=9b06bfc6ac7136d00dd6e5ed536700079d09dadae84052cbfc628d7db1b465917dede7d2ebc0&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 卖场式陈列

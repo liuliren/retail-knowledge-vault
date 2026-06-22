@@ -2,7 +2,7 @@
 title: 品类建模（101）选品配置 06 系统供应链
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486985&idx=1&sn=5d39c0983d5d7c52f5e0a0458f445a2a&chksm=9b06bc37ac7135211fd51141c0e2952cbf3585a863a936f05ca2d3ee0e43a132519dbb61ec82&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节继续本系列上节的内容，讨论更进一步的“系统化供应链”语义。

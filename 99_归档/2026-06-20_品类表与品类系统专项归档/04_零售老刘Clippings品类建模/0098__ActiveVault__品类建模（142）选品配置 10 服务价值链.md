@@ -2,7 +2,7 @@
 title: 品类建模（142）选品配置 10 服务价值链
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487332&idx=1&sn=db6bddeb4be9d51f60b06c6a1e3c32c5&chksm=9b06bd5aac71344c74d4b02e5b794acc9139ed995609a3c4c3182d1975f84f7e89ad17c57a5f&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节主要讨论供应链语义中的“供应链服务价值”。

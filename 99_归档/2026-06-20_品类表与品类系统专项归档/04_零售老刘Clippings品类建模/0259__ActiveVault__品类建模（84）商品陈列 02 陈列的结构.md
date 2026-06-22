@@ -2,7 +2,7 @@
 title: 品类建模（84）商品陈列 02 陈列的结构
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486824&idx=1&sn=d566d4a93f14a843751f37463477ba65&chksm=9b06bf56ac713640c422d2d83ce79256999cd5c3ae7e456f887d9d54c0515dba1c8b9abaae27&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节首先从陈列的结构了解开始。

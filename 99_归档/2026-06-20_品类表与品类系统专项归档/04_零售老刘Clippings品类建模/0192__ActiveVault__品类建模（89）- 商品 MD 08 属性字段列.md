@@ -2,7 +2,7 @@
 title: 品类建模（89）- 商品 MD 08 属性字段列
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486888&idx=1&sn=3f27d0aefcb3a32f07aceb4121271b94&chksm=9b06bf96ac713680f2cc9ef793a25dc6ea6b931d7bf8a9ed3d75710e85c835e853b6071f8368&cur_album_id=4031473318086803470&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节继续商品信息表的语义结构，讨论商品属性的业务与数据的属性字段列。

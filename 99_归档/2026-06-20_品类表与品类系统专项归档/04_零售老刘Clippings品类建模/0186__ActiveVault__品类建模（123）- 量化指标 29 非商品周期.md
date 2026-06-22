@@ -2,7 +2,7 @@
 title: 品类建模（123）- 量化指标 29 非商品周期
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487177&idx=1&sn=6c6804319386b9b8ce9cb75e3141ade6&chksm=9b06bcf7ac7135e158377ecd6c963a7994229f45af96ee78495c550b21b83868f19a649d0590&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论非商品维度的“生命周期”语义。

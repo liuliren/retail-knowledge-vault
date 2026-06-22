@@ -2,7 +2,7 @@
 title: 品类建模（231）商品陈列 38 类做了嫁衣
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247488219&idx=1&sn=77cc74902e928fa02241d2ffe531b08f&chksm=9b06a0e5ac7129f309555378e53449f78be9a380c3afd0d03f6c93dbca3906b0c1b16661ef64&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节在上一节“落位和陈列”语义基础上，讨论类的陈列之后的一个隐性语义。

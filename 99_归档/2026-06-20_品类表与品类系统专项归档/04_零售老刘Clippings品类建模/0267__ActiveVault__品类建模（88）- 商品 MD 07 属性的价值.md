@@ -2,7 +2,7 @@
 title: 品类建模（88）- 商品 MD 07 属性的价值
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486880&idx=1&sn=0a211ae77f10c4d0584394d7aa31f4e3&chksm=9b06bf9eac713688aaf5151fefcd0164d24db2905995ffe386e56bb2db5f3388e6245f7931c0&cur_album_id=4031473318086803470&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节开始讨论：如何做出一份较为标准（符合企业现在或未来经营的商品维度结构表和商品信息表），以及相应的语义。

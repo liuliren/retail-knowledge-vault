@@ -2,7 +2,7 @@
 title: 品类建模（117）商品陈列 11　Z定律の纵横
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487117&idx=1&sn=84f84c558543d193b6ef507ae2748855&chksm=9b06bcb3ac7135a5a3dde84617910ffc04c0cbc2d3a51325cb4b5ca47aeaec16b698db8a9772&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论：“Z定律”的两种经典运用方式：横向式陈列和纵向式 陈列语义。

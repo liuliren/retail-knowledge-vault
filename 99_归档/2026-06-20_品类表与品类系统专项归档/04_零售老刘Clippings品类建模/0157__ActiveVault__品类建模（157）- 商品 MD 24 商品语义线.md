@@ -2,7 +2,7 @@
 title: 品类建模（157）- 商品 MD 24 商品语义线
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487463&idx=1&sn=0ac4272f0c6477080d3153813353d0b7&chksm=9b06bdd9ac7134cfd080c6e454b824b524e823281f70d4dfd3d6c057c74b17f16f14e98ca351&cur_album_id=4031473318086803470&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节继续另一个商品语义：商品语义线。

@@ -2,7 +2,7 @@
 title: 品类建模（206）选品配置 41 扩宽类窄品
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487982&idx=1&sn=74d1ff3e8b585a51dfe32f4d4b3c99dd&chksm=9b06a3d0ac712ac6e9f01da6b03e985d28031873bcbbd9130c9eb993fbb7d9e44ee8eb04d318&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节在上一节基础上，扩展一下宽类窄品的结构语义。

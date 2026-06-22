@@ -2,7 +2,7 @@
 title: 品类建模（178）商品陈列 14 3P与三原则
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487672&idx=1&sn=8fbabec262b40eb407e9e09bae44f5d8&chksm=9b06a286ac712b909b5f48dbca5b23b540c574e6ca439d220234ae8879b796fbc9e289f0505e&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节进一步了解VMD的VP、PP、IP（3P）以及相关的三大陈列原则语义。

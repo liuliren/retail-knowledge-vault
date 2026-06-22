@@ -2,7 +2,7 @@
 title: 品类建模（31）- 商品组合 01 商品群关系
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486341&idx=1&sn=7c10c48b4b32b42b9444fb73c9d9afcb&chksm=9b06b9bbac7130ad449f9c96231792cb2450778763ebdcca9ea37eb0aacd14eeb24180e3b76d&scene=178&cur_album_id=4032598383209709579&search_click_id=#rd
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description:

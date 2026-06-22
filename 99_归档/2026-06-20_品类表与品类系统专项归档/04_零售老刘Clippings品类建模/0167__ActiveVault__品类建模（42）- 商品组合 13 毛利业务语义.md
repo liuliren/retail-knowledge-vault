@@ -2,7 +2,7 @@
 title: 品类建模（42）- 商品组合 13 毛利业务语义
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486442&idx=1&sn=1816a62a32f9b29aed09a30631791e32&chksm=9b06b9d4ac7130c22746b9ed7653e98a0177b6d70d10cf319f69da24fd413d483c4021999d80&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论毛利在业务经营活动中的语义表现方式，例如利润表、毛利率、净利率和ROE（净资产收益率）等语义指标。

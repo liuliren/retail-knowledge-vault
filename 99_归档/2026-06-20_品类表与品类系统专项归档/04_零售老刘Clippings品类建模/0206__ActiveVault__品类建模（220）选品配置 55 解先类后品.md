@@ -2,7 +2,7 @@
 title: 品类建模（220）选品配置 55 解先类后品
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247488155&idx=1&sn=90f990bdc27b5de85413070444888b80&chksm=9b06a0a5ac7129b3cdb09ccd8b1bd1c0881cb27b20a1b95235b0023cdc18e7933cabdeae5f5b&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节在上一节基础上，讨论“类先于品”的部分场景语义。

@@ -2,7 +2,7 @@
 title: 品类建模（228）商品陈列 35 类品的POP
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247488199&idx=1&sn=359e5c8f418ab23a47f6024c206342a9&chksm=9b06a0f9ac7129ef2d5df70852b4d13360f93939fb36087f2a19a0717320bc49440e24d2f39f&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节基于宽类窄品、视觉引导的三大黄金焦点VP/PP/IP、以及两者的共同维度：

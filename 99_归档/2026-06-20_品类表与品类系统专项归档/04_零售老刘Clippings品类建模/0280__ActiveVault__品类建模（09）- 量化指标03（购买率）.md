@@ -2,7 +2,7 @@
 title: 品类建模（09）- 量化指标03（购买率）
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486091&idx=1&sn=d0fe11c03800f0d7a0153595816b81cb&chksm=9b06b8b5ac7131a347f87664feac40064c2027bde7cc68620ca2c87d67f9fc044fef5c4e171b&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 购买率分析的三大关联性数据区域。同时以此作为一个结合Excel单元格数据，“灵活”处理数据分析并建模的一种方式（模式）。

@@ -2,7 +2,7 @@
 title: 品类建模（59）- 商品组合 30 属性的匹配
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486622&idx=1&sn=b08e9a4fc13a18e69b70dc02b59e3699&chksm=9b06bea0ac7137b69719d36cb7b6e628d6348e5dedc89291c353232f299bf347b8147b64c677&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description:

@@ -2,7 +2,7 @@
 title: 品类建模（106）商品陈列 09 主动线效率
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487019&idx=1&sn=ea93b44aca3f58b3f450f5f46f6e691c&chksm=9b06bc15ac713503595d876a4889231b95f8397bcf158ec6b846eb2e3cd644c50defb5ea16e3&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节继续上节内容，讨论卖场主动线的（效率）量化语义。包括动线的“空间效率”和“成本效率”。

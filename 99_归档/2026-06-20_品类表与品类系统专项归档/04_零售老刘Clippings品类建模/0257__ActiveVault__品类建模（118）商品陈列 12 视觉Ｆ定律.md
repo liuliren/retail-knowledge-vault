@@ -2,7 +2,7 @@
 title: 品类建模（118）商品陈列 12　视觉Ｆ定律
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487133&idx=1&sn=c76b943549abb1e3796c0d878367d45c&chksm=9b06bca3ac7135b5a219a0eab647972dacca36a27a5996a331b26bc1975c2e89f00899df1cdc&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节继续讨论与“Z定律”类似的另一定律：F定律 语义。

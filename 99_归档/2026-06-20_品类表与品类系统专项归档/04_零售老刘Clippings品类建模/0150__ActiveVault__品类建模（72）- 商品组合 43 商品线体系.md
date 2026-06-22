@@ -2,7 +2,7 @@
 title: 品类建模（72）- 商品组合 43 商品线体系
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486706&idx=1&sn=369eb673d90e4212522b17a99dbdfdd1&chksm=9b06beccac7137da0d256461d32be80f8d81c963b50fc4cbba58f3f9fcd4ca4095fecaa8fadd&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节简单讨论一下商品组合的“组合商品线”语

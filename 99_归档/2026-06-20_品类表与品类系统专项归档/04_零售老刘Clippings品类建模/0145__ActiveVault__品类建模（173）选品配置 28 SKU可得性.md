@@ -2,7 +2,7 @@
 title: 品类建模（173）选品配置 28 SKU可得性
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487624&idx=1&sn=52387c36912ec03b3a8272d907e12534&chksm=9b06a2b6ac712ba00b4a3239aaea7fe52fae187f15cc8e333db29d9f7359b1b54bb7cd4eb8c5&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论单品管理中的“可得与不可得性”语义。

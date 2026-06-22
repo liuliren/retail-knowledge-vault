@@ -2,7 +2,7 @@
 title: 品类建模（23）- 量化指标 17（购物篮 篮子主义）
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486268&idx=1&sn=07de10f1d2b3716f4292109e049da5bb&chksm=9b06b902ac713014be1d9cba64431a66e749a987cda22dc0dfea22a4ec922b84692dd1341499&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论以沃尔玛为例的长期主义下的“篮子战略”，以及一些超市的短期“篮子策略”的基本语义上区别。

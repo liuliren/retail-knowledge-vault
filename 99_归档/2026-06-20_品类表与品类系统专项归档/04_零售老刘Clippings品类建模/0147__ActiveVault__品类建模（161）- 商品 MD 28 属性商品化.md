@@ -2,7 +2,7 @@
 title: 品类建模（161）- 商品 MD 28 属性商品化
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487508&idx=1&sn=bd848e21beb013a2e46f0bbfa4717fba&chksm=9b06a22aac712b3c50ef866c461c7a145a997c600149f8dacaba4e75c1e1f49c8714c8121310&cur_album_id=4031473318086803470&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节主要讨论商品以及商品组合中涉及的：“商品化”语义。

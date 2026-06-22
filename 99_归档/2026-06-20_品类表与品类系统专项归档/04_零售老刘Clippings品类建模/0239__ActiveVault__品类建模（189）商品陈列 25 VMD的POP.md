@@ -2,7 +2,7 @@
 title: 品类建模（189）商品陈列 25 VMD的POP
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487805&idx=1&sn=cb1530280bad6f179ba442745db73de3&chksm=9b06a303ac712a15343ac36446c727d74b14868544605672466a13d16ffcbb9dccd338573dc2&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节讨论VMD与POP的关系与运用语义。

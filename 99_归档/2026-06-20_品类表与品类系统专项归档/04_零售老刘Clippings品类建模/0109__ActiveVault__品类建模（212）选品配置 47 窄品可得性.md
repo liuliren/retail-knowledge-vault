@@ -2,7 +2,7 @@
 title: 品类建模（212）选品配置 47 窄品可得性
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247488079&idx=1&sn=674bec880c871b2bbaea570d9ebe80f5&chksm=9b06a071ac712967926023ce0b33543f8b4a2e3865380bc02e0420078a15c5d30dcd972e215b&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论基于“宽类窄品”的结构层的属性可继承性，以及由此派生出“可得性”。

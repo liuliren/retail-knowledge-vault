@@ -2,7 +2,7 @@
 title: 品类建模（193）商品陈列 29 POP与3P层
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487872&idx=1&sn=f4ae844607cdafb0d2e744e956007a90&chksm=9b06a3beac712aa8d71c088209ea8ec248634c8ee82de4ad1ed2f1fd7ce9ad48b3a3300a5ff1&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节讨论另一个POP与3P的“POP协同”语义。

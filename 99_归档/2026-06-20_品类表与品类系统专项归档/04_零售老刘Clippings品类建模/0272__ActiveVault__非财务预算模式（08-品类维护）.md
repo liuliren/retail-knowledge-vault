@@ -2,7 +2,7 @@
 title: 非财务预算模式（08-品类维护）
 source: https://mp.weixin.qq.com/s/_XJQmRye55Zu4STbpuvdsw
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 一次系统商品结构调整的经历分享。不争论商品结构到底重不重要。

@@ -2,7 +2,7 @@
 title: 品类建模（04）品类结构 - 需求单元（一）
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247485990&idx=1&sn=7dac44be91521b3c5866a7e174cab634&chksm=9b06b818ac71310e73d657488d88dc0ed16eb0c7502098232e96dae8f6c6befc25cc4666c0f2&cur_album_id=4239878941940301836&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节内容主要讨论 “品类建模” 系列中，较为重要，且较为“晦涩难懂”的部分：什么是品类结构 -单元。

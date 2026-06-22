@@ -2,7 +2,7 @@
 title: 品类建模（201）选品配置 36 SKU数语义
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487954&idx=1&sn=b320c7dd80651c3ce433961a4b40cd6a&chksm=9b06a3ecac712afab47065d0c0e34cb17d680ccdcbea65317c7bba90d738afaf755dd91187b8&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论SKU数的整体性维度结构语义。

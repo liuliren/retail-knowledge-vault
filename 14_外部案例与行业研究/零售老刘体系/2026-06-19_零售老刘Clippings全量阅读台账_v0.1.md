@@ -13,15 +13,15 @@ confidence: medium
 定位: retail-knowledge-vault/Clippings/ 315 篇(原322,7副本已清)「零售老刘」文章的全量阅读台账。每篇有阅读状态、所属簇、对应M模块、优先级。本台账=二遍通读的索引底座,不下结论、不吸收,只盘点。
 fact_layer:
   observed:
-    - "Clippings/ 当前 315 篇 .md(原322,7副本已清,基准=315),作者均 [[零售老刘]](公众号「零售数据化企划」),frontmatter 含 title/created/description"
-    - "Clippings/ 为扁平目录(无子文件夹);无「邀请政策」文件夹(用户口述疑为语音误识)"
-    - "12 篇已在前轮 M1~M8 模块卡/M-DEC 中被引用(integrated);其余 310 篇仅 skimmed(标题+摘要级)"
+    - Clippings/ 当前 315 篇 .md(原322,7副本已清,基准=315),作者均 [[零售老刘]](公众号「零售数据化企划」),frontmatter 含 title/created/description
+    - Clippings/ 为扁平目录(无子文件夹);无「邀请政策」文件夹(用户口述疑为语音误识)
+    - 12 篇已在前轮 M1~M8 模块卡/M-DEC 中被引用(integrated);其余 310 篇仅 skimmed(标题+摘要级)
   inferred:
     - "[推断] 所属簇/对应M模块/优先级 = 顾问按文件名系列前缀+description 初判,精读后可调"
     - "[推断] 花厅坊相关性 = 按优先级初判,待精读确认"
   pending:
-    - "P0 36 篇精读后,逐簇出二遍吸收笔记 + 回填模块卡"
-    - "是否已进吸收笔记列:仅 integrated 确认;skimmed 的精确引用核对待精读"
+    - P0 36 篇精读后,逐簇出二遍吸收笔记 + 回填模块卡
+    - 是否已进吸收笔记列:仅 integrated 确认;skimmed 的精确引用核对待精读
 source_attribution: 全部文章原创归属「零售老刘 / 零售数据化企划」公众号;本台账为学习索引/非原创/对外引用须标来源
 related:
   - "[[2026-06-18_零售老刘体系吸收_01_库存订货簇_v0.1]]"
@@ -33,7 +33,13 @@ related:
   - "[[2026-06-19_零售老刘体系吸收_07_绩效经营簇_v0.1]]"
   - "[[2026-06-19_零售老刘体系吸收_08_数据建模簇_v0.1]]"
   - "[[00_科学零售知识体系总纲]]"
-tags: [零售老刘, Clippings, 阅读台账, 二遍通读, inventory, 外部养料]
+tags:
+  - 零售老刘
+  - Clippings
+  - 阅读台账
+  - 二遍通读
+  - inventory
+  - 外部养料
 ---
 
 # 零售老刘 Clippings 全量阅读台账 v0.1

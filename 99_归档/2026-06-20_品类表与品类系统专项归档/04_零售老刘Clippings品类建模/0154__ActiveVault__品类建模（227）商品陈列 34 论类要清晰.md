@@ -2,7 +2,7 @@
 title: 品类建模（227）商品陈列 34 论类要清晰
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247488193&idx=1&sn=9d31a3018ba1c4c764853954e6bf6e77&chksm=9b06a0ffac7129e97f87454b341aa5ac8b4ca8aca1b168f5a947dedbce94cbb0feb687ede5c2&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节讨论“类+品”模型的另一个核心语义：类要清晰。

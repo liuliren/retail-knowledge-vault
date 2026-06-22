@@ -2,7 +2,7 @@
 title: 品类度量（07） – 量化指标01（购买率）
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486055&idx=1&sn=f78f83a5e37a973f96f2e5417677a500&chksm=9b06b859ac71314fe1c3ea067c669abc1a0f1b1ce4d5adbb9838762e0ec7117acfdb80bccc29&scene=178&cur_album_id=4070868752030728194&search_click_id=#rd
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节开始，讨论一些“品类建模”实践中运用的维度和度量，以及由其组合构成的实用“业务分析”表和小系统...

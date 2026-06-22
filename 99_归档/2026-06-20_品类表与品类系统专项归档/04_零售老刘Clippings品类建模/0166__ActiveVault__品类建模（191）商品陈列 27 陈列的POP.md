@@ -2,7 +2,7 @@
 title: 品类建模（191）商品陈列 27 陈列的POP
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487837&idx=1&sn=48cb36c0c3831e5b2b88692972da9636&chksm=9b06a363ac712a75cfd7fb8100c7e0ef6130de71b328ea8fed058f0467d6e330d081c0e9ea8f&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节在上一节基础上。继续讨论陈列POP语义。

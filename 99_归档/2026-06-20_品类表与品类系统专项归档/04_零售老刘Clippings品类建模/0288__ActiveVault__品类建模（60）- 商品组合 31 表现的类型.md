@@ -2,7 +2,7 @@
 title: 品类建模（60）- 商品组合 31 表现的类型
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486628&idx=1&sn=6aefab1ebd6befebd55c7b4f937500fa&chksm=9b06be9aac71378cf64c4e2256e6bb72869b162b5106edf2bc4cc160c08245634c1b5f956210&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节主要介绍“商品组合”在系统内的几种类型与设置，以及在系统里的其他几种语义设置等。

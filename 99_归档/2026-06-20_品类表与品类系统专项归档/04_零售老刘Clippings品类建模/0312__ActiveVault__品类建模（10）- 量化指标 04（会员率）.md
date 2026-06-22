@@ -2,7 +2,7 @@
 title: 品类建模（10）- 量化指标 04（会员率）
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486110&idx=1&sn=710bece76642e09890ac99d74fd1f5c3&chksm=9b06b8a0ac7131b66f048ce13149b8075b2e9e3b8344263c815c612f5771a1f0212a4e9ad55b&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节插播，简单聊下：会员的购买率。

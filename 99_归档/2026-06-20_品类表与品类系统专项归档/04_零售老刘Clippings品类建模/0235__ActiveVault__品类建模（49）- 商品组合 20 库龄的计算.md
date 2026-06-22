@@ -2,7 +2,7 @@
 title: 品类建模（49）- 商品组合 20 库龄的计算
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486518&idx=1&sn=5554ed0fdc3f8cdec9b65eff64eda819&chksm=9b06be08ac71371e90eb5e4a986543c14e9a5df8a2d1df08a8cd5403bc62d719480a991669ef&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节主要介绍库龄的有关计算方法。例如，库龄在不同业务场景中的计算。

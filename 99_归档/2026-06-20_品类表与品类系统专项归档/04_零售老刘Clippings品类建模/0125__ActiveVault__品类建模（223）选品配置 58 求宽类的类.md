@@ -2,7 +2,7 @@
 title: 品类建模（223）选品配置 58 求宽类的类
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247488158&idx=1&sn=95a88511225be5157ec0ac87c64130b8&chksm=9b06a0a0ac7129b68ec9e3ef509163eaa9da95f827c6aa77fba69788aa4ce4c0b43d8f182384&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论如何得出一份属于自身门店需求的“Item类表”语义。

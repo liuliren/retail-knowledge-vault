@@ -2,7 +2,7 @@
 title: 品类建模（33）- 商品组合 04 品项的构成
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486360&idx=1&sn=f82db15991c578e776746610fb742241&chksm=9b06b9a6ac7130b013667c63388fa151b8bff9bf0216031665aaa648a358d6ec1cfa989adbd6&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节主要讨论商品组合的结构比的业务语义与分析。

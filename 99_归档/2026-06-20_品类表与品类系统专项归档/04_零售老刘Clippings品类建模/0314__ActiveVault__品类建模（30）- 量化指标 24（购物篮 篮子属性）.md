@@ -2,7 +2,7 @@
 title: 品类建模（30）- 量化指标 24（购物篮 篮子属性）
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486332&idx=1&sn=caa4c19b16e7890453d1997e60885b1b&chksm=9b06b942ac71305475ec902f1bbe2a9feebf985c23589160cc6c0563b93a05d8d5bacbdec618&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论：生鲜商品组合的“重量属性”，以及小规格属性商品的购物篮表现等。

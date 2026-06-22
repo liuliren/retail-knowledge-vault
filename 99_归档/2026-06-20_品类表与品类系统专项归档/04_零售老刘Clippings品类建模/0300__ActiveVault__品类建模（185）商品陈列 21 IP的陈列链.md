@@ -2,7 +2,7 @@
 title: 品类建模（185）商品陈列 21 IP的陈列链
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487755&idx=1&sn=cdc469a43610a172e88b192391e19332&chksm=9b06a335ac712a23289b2aa34c842cd622541fcf0fe675e27ced0550c7523002467b7a40d4ae&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节讨论商品组合下的IP陈列（展示）业务语义。

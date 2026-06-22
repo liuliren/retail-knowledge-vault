@@ -2,7 +2,7 @@
 title: 品类建模（170）选品配置 25 生命性关系
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487592&idx=1&sn=938f2f9dbb6c6fe104583aeb7827d7af&chksm=9b06a256ac712b4062b1cc62306fe9690d0e35dc2bd1aeae4ee45e86f010fd7f79b0bf913643&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论单品的“生命性与关系”语义。

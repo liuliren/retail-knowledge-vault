@@ -2,7 +2,7 @@
 title: 品类建模（108）- 商品促销 05 有效的促销
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487036&idx=1&sn=b7219e1014f0a2f0641aa6dec0ed56c8&chksm=9b06bc02ac7135143aca9dfec0a8de1d11c650124bb9ecfecc6a7d23db5656a208aaf20bac8f&cur_album_id=4031475776737476609&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论促销的一个现实性业务语义：有效促销或有用的促销

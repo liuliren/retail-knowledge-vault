@@ -2,7 +2,7 @@
 title: 品类建模（216）选品配置 51 顾客类为先
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247488103&idx=1&sn=5bc910412cfdea844afbdd474cd2e36f&chksm=9b06a059ac71294fa38127a9142d5f250f6adc3a90aecbb71be70fb8effc4cf70b0937939891&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节专题讨论宽类窄品的另一个核心语义：基于顾客（客流）的“类为先”。

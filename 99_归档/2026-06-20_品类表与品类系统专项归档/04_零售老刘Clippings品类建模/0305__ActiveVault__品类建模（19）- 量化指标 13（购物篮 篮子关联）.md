@@ -2,7 +2,7 @@
 title: 品类建模（19）- 量化指标 13（购物篮 篮子关联）
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486237&idx=1&sn=7586a8498d52ab37c21f49ba0eacab3c&chksm=9b06b923ac713035be38550cddccc91128c46aadbd04ecc3e0b906e6430571fbe3bad44b84f6&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论：购物篮语义度量与购物篮三度

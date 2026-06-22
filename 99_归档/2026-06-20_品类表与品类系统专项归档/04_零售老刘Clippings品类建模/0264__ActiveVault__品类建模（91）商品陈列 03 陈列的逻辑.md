@@ -2,7 +2,7 @@
 title: 品类建模（91）商品陈列 03 陈列的逻辑
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486909&idx=1&sn=90f065c7f739f7ade74c25f68264a718&chksm=9b06bf83ac713695005d74e9af681dd9233e2f03b0bade6eb0ca827608b4093f975dc8b38c45&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 商品陈列的逻辑语义。

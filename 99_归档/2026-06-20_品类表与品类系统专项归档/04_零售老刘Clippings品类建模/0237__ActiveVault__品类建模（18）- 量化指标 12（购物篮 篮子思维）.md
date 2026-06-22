@@ -2,7 +2,7 @@
 title: 品类建模（18）- 量化指标 12（购物篮 篮子思维）
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486216&idx=1&sn=dd2c6ca3c557b4d986732789ea39389b&chksm=9b06b936ac713020d6a534f41be640c250f8909d975e123266e40b68f32a2eddaca29f769158&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节内容讨论“单品式”思维与“购物篮思维”的不同场景的特点与区别。

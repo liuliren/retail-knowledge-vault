@@ -2,7 +2,7 @@
 title: 品类建模（70）- 商品组合 41 战略与战术
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486695&idx=1&sn=96f14e197b63692da52a511879132436&chksm=9b06bed9ac7137cf451d2a6ed48de0045cbae76ce760ffb19b8c586c270b33797542d9d7e93b&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节内容讨论零售实体门店的战略战术的维度结构语义

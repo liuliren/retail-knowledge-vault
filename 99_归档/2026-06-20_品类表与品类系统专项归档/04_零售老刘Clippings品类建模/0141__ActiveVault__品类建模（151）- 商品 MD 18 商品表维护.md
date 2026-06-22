@@ -2,7 +2,7 @@
 title: 品类建模（151）- 商品 MD 18 商品表维护
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487399&idx=1&sn=36974283470c8e18301bcb8b9254b3b5&chksm=9b06bd99ac71348fe22b5d3de0197c2489b269f8fae37f628b6d731d1f399b9da8318581eb1e&cur_album_id=4031473318086803470&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节介绍商品表的维护语义。这里的商品表，包括“商品信息表”和“商品结构表”。

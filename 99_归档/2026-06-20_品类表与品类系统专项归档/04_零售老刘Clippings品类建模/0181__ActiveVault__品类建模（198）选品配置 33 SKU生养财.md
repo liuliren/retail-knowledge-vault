@@ -2,7 +2,7 @@
 title: 品类建模（198）选品配置 33 SKU生养财
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487917&idx=1&sn=3dd431f2db5cc3cabf1ad12b0280b976&chksm=9b06a393ac712a857bb1d509198fc69083cc9987c9918143dd46885b7b39467e6ed1a7a06283&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论SKU数与零售经营中的“深言管”语义。

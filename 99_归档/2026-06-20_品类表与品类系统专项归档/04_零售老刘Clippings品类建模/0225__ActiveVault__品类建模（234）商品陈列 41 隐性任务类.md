@@ -2,7 +2,7 @@
 title: 品类建模（234）商品陈列 41 隐性任务类
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247488235&idx=1&sn=bec9ccb840366e5a5d0ef0aa89c29ef2&chksm=9b06a0d5ac7129c3ab47f7f5f0c3c4acb65d558cc68e6a66c6d827a7c60ebf3bf088da6c32dd&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节在上一节基础上讨论“顾客任务”在业务上的“任务类”语义。

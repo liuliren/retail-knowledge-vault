@@ -2,7 +2,7 @@
 title: 品类建模（230）商品陈列 37 落位和陈列
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247488213&idx=1&sn=30180bb0cf98187f76309b2155bf19d2&chksm=9b06a0ebac7129fd8bbc5f67d1a7536a9d064fd7413cddfc8004878bdda8e8170635bf30c4f5&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节继续讨论基于类的陈列语义中的两大核心语义：落位与陈列。

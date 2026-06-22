@@ -2,7 +2,7 @@
 title: 品类建模（195）商品陈列 31 POP整体性
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487903&idx=1&sn=e9864ea538d532537b8938e8de71c79e&chksm=9b06a3a1ac712ab7f0b422776887501beb99e9b24b90ecad7d155989503e5419870693f34707&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节讨论POP的“整体性”语义。

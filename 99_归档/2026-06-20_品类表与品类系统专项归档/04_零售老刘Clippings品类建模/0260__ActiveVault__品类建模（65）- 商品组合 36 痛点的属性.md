@@ -2,7 +2,7 @@
 title: 品类建模（65）- 商品组合 36 痛点的属性
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486667&idx=1&sn=79a779b288b2823724906e53714fd9d2&chksm=9b06bef5ac7137e3f92db26ada26f91a012744e326c812f090370022f5056ebde6b43b15ea07&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论痛点的一些属性语义，例如，痛点的万能公式、痛点本身的属性维度结构等。

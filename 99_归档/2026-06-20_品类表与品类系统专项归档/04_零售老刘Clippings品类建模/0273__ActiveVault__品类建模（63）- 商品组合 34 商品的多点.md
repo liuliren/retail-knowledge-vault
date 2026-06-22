@@ -2,7 +2,7 @@
 title: 品类建模（63）- 商品组合 34 商品的多点
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486655&idx=1&sn=7b4d187cdaa9155decae5bb07d9b4fd0&chksm=9b06be81ac7137972558b8f07443f8f4c1d1cd7da0327e1f29c1650e013a1a58e2e450a9a1c0&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节就着买点和卖点的讨论，不妨也聊聊这个问题，但重点还是基于语义结构。

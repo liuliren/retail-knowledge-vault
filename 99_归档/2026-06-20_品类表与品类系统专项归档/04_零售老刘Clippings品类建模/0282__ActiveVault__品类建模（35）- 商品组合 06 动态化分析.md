@@ -2,7 +2,7 @@
 title: 品类建模（35）- 商品组合 06 动态化分析
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486387&idx=1&sn=ed70d2a459e30b391310fb318dd7f120&chksm=9b06b98dac71309b33d72cdbb3e17cf80e88775d00427b90637cb036a0573ff6e05da630dee9&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节继续商品组合的动态化调整计算语义

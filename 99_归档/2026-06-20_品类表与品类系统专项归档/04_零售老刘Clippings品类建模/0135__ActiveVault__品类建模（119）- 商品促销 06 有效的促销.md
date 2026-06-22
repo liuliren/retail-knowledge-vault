@@ -2,7 +2,7 @@
 title: 品类建模（119）- 商品促销 06 有效的促销
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487142&idx=1&sn=ed591c75832ba492be2a0c966d1aa1dc&chksm=9b06bc98ac71358ec7f49278a18a7eb7c68298f1d962d57769acfccab1a184c1057d6c049292&cur_album_id=4031475776737476609&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论促销的一个现实性、业务语义：有效促销

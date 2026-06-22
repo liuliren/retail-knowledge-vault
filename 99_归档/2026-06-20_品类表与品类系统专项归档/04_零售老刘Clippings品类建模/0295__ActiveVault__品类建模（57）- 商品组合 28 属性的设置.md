@@ -2,7 +2,7 @@
 title: 品类建模（57）- 商品组合 28 属性的设置
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486602&idx=1&sn=35627521f8ba6c78703cf86eec05010c&chksm=9b06beb4ac7137a2c5704264f639907f8320760d34f06d12033d123504e063dad1879e4e68e4&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节继续介绍“商品组合”的另外一些关键性基础“语义”，以及相关的属性维度的设置等。

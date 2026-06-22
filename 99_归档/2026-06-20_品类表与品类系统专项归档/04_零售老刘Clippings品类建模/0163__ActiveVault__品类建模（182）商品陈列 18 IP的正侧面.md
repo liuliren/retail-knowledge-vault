@@ -2,7 +2,7 @@
 title: 品类建模（182）商品陈列 18 IP的正侧面
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487709&idx=1&sn=33e25b169675b803ff33083bbea6164f&chksm=9b06a2e3ac712bf56d82145125f9059a2b35fed403a3a3bac14b1bdfacc1df357dccc0688cc2&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节介绍IP中的正侧面定义、逻辑以及运用等方面的语义。

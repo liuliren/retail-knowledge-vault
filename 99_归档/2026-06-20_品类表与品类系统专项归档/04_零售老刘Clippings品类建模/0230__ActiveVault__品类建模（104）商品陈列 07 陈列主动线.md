@@ -2,7 +2,7 @@
 title: 品类建模（104）商品陈列 07 陈列主动线
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487008&idx=1&sn=d344e0a85be459e41e0017e09620273a&chksm=9b06bc1eac713508f6d9bf391d76ebf62e3a1a95d990f4c0f1f2eddb5aad739c1425df0d0524&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节内容简单讨论卖场布局与陈列中的“主动线设计”语义。

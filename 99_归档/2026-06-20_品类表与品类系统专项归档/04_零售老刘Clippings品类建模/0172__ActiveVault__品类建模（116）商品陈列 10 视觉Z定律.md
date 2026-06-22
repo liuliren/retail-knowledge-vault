@@ -2,7 +2,7 @@
 title: 品类建模（116）商品陈列 10 视觉Z定律
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487108&idx=1&sn=55a426f69b66f1557b831a057db6269c&chksm=9b06bcbaac7135ac63206b76424b940ae1c48b8b77c83734fab3285e475649bff04c067b4187&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论陈列中的一个有用的语义：Z定律。以及陈列中的分类陈列方法。

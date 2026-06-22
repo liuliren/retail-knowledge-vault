@@ -2,7 +2,7 @@
 title: 品类建模（120）- 量化指标 26 需求与熵增
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487148&idx=1&sn=83513dac6c56604c2fa300acaeb86f01&chksm=9b06bc92ac71358475f10da8a2018bffe872491399882a03c664da18d64d28c8476bbe0350e5&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论零售经营中的一个终极本质问题：需求与熵增现象 语义。

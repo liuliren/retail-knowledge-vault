@@ -2,7 +2,7 @@
 title: 品类建模（232）商品陈列 39 任务业务层
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247488233&idx=1&sn=a4802f50944f5a15c2d0282407c6aebb&chksm=9b06a0d7ac7129c17e7a2940298e4e9cf5f1633f098299ef413b178592d8419851d44d4b826b&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节是基于前面两节的补充或扩展语义。本节的标题是：基于顾客任务的高层级陈列等业务语义。

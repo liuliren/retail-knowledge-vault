@@ -2,7 +2,7 @@
 title: 品类建模（105）商品陈列 08 主动线效率
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487013&idx=1&sn=976c1ad07174881f3e34afae8c588514&chksm=9b06bc1bac71350d9eabf3a86575af34382d5c5e6d402d8bb00b2e9652e748a9a431588c1915&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节继续上节内容，讨论卖场主动线的（效率）量化语义。

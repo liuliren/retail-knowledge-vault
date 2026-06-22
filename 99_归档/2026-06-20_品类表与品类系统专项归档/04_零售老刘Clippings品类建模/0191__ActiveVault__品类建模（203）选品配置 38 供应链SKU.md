@@ -2,7 +2,7 @@
 title: 品类建模（203）选品配置 38 供应链SKU
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487957&idx=1&sn=f845b58d8d7a6b498e57f7aba12c5c90&chksm=9b06a3ebac712afde9c1df3f66af57e2c2f66052676ad9580d273a1070a7224ff10eb9d2b753&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 基于上一节内容，本节进一步讨论合理SKU数基于整个供应链的语义。

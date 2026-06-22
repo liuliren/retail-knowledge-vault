@@ -2,7 +2,7 @@
 title: 品类建模（21）- 量化指标 15（购物篮 篮子关联）
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486253&idx=1&sn=32c305a3e0eec83bf1723cb55cdcba31&chksm=9b06b913ac713005c9d4828e1912364d72778f6409fbea72735e6e43646f575f6a93a2112963&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节继续讨论购物篮分析中的另一些相关性语义问题。

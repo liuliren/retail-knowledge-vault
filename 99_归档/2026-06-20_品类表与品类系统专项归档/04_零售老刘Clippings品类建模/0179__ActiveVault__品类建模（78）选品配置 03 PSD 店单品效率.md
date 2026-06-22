@@ -2,7 +2,7 @@
 title: 品类建模（78）选品配置 03 PSD 店单品效率
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486760&idx=1&sn=e68c20a079dde6b08f631d51715a8f1a&chksm=9b06bf16ac713600372baeb60b981178ac4c395ccf4f43b60922c9da698af08a599eb6a3c33f&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论零售经营中的一个核心指标：PSD的一些相关语义。（序言字越少，内容越可能值得一看。）

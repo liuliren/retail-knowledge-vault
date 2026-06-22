@@ -2,7 +2,7 @@
 title: 品类建模（75）选品配置 01 选品定生死
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486725&idx=1&sn=a92dcc61254ad4205244343ff3a662c0&chksm=9b06bf3bac71362d71805921694780a4b5c5dc761f1a2f7b92c924ccc067208fbef9f77cb07d&scene=178&cur_album_id=4050511208510881811&search_click_id=#rd
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节简单讨论一下：零售经营中，选品的重要性。

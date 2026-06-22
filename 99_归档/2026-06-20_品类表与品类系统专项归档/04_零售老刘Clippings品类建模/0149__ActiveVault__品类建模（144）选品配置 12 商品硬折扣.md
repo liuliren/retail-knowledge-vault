@@ -2,7 +2,7 @@
 title: 品类建模（144）选品配置 12 商品硬折扣
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487344&idx=1&sn=84cf3177785a9c02c60ee0a11573b19e&chksm=9b06bd4eac7134582de50f60167f7dc7177dc5e1c309e843b589dcef98106711cc6609beb2dd&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论“硬折扣”语义。

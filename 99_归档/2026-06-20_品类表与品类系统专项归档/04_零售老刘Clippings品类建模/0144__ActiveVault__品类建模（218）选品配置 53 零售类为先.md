@@ -2,7 +2,7 @@
 title: 品类建模（218）选品配置 53 零售类为先
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247488107&idx=1&sn=edfb3baa3eaf4cae4ab80cdedb002807&chksm=9b06a055ac712943ef2d022d6e74535781a234ee9eebcbc0a77ecf88318b7927750ed4aa11cd&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[零售老刘]]"
+  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节中部分零售超市案例语义来自网上公开信息。
