@@ -1125,3 +1125,14 @@
 - **D execute前置登记**：新建`Codex执行前置状态登记表_v0.1`(active+签字)——10项前置;方法/脚本/测试/源码/方案/脱敏=绿,**数据线(#6全量数据+#8 dry-run审阅+#9签字)=红**;结论**当前不允许execute**。
 - **未触碰**：未execute/未写回/未处理真实xls·csv/未提交dry-run结果与supplier blocked产物/未改注册表§3.1/未改M-DEC·RetailOS·M1-M8。
 - commit：见下方 `chore: 完善Codex工具测试自洽与执行前置`。
+
+---
+
+## 2026-06-22｜迭代方案v3.0落档(取代v2.0) + Schema升v0.1.2(resulting四象限)
+- **落档** `零售知识系统迭代方案_v3.0`(candidate,保真六哥定稿)：三证据柱(AI工程/决策科学/笔记纪律)实证论证+据证据2微调+技术债哨兵。**取代v2.0**。
+- **v2.0 superseded**(按supersession原则保留不删)：frontmatter status→superseded+superseded_by/at/reason;头部加被取代提示。
+- **Schema升v0.1.2**(同步微调一·resulting)：①§3.4状态轴扩**resulting四象限**(active/果差但决策稳/侥幸/failed,全留不删);②§8回填按四象限定状态,铁律=**只有决策错才动规则,外因坏果不动规则**;③§12 lint加**技术债哨兵月度自检**+侥幸教训视图。微调二(前瞻把握度字段)按v3.0**留待v0.2、0B不加**(未加)。
+- **交叉链**：v3.0↔v2.0(supersedes)↔Schema↔Wiki治理;README §2更新(v3.0当前层/v2.0标superseded/Schema v0.1.2)。
+- **遵元层提醒**：v3.0自述为文档迭代终点→后续只去0B试跑M-DEC-013,不再加文档。
+- **未触碰**：未改CLAUDE.md(引用行仍待签)/未改M-DEC正文/未改RetailOS·M1-M8/未execute/未碰真实数据/未删v2.0。
+- commit：见下方 `docs: 迭代方案升v3.0并同步Schema resulting四象限`。
