@@ -101,3 +101,8 @@ AGENTS.md
 # 窄模式：仅忽略两个输出区子目录，不影响 01_Claude_Code/Claude执行日志.md 与 02_Codex/Codex执行日志.md
 98_AI协作中枢/01_Claude_Code/Claude输出区/
 98_AI协作中枢/02_Codex/Codex输出区/
+
+# ===== 2026-06-22（6-19 审计建议）：原始导出目录兜底 =====
+# 说明：明细 *.csv / *.xlsx 已被上方全局规则覆盖；此处仅补目录级兜底，
+# 防止 raw_exports/ 内非 csv/xlsx 的导出件（txt/json 等）误入 git。
+**/raw_exports/
