@@ -151,7 +151,7 @@
 | 科学零售知识树 MOC | `implemented` | 已建 `00_入口与总索引/科学零售知识树_MOC.md` |
 | Dataview 自动列件 | `partially_implemented` | MOC 查询区块已写，依赖 Obsidian Dataview 插件 |
 | Kanban 看板 | `optional` | 可选，非当前强制要求 |
-| G03_Lint v2 六查体检 | `planned` | 待 Codex 立项，**尚未实现**（不得写作已完成）|
+| G03_Lint v2 六查体检 | `in_progress` | Codex 任务卡 CODEX-2026-06-22-02 已入队待执行（脚本未完成前不得写作已实现）|
 | 链接完整性 CI | `planned` | 当前有审计表，尚未自动化 |
 | 状态机进入条件 | `partially_implemented` | 规则已立，active 签字机制尚未落地 |
 | Schema 校验 | `planned` | 待后续脚本/规则落地 |
@@ -160,13 +160,13 @@
 ### 11.1 知识生命周期 7 环闭环 · `target_framework`
 `① Ingest 进料(冻结) → ② Compile 编译 → ③ Link 互联+回填MOC → ④ Lint 体检 → ⑤ Distill 蒸馏M-DEC → ⑥ Publish 发布(签字门) → ⑦ Feedback 实跑回流` → 回 ①。
 
-### 11.2 G03_Lint v2（自动体检·闭环红绿灯）· `planned`
-> ⚠ planned：待 Codex 立项实现，**本轮未生成脚本、不改代码仓库**。
+### 11.2 G03_Lint v2（自动体检·闭环红绿灯）· `in_progress`
+> 🔄 in_progress：Codex 任务卡 **CODEX-2026-06-22-02 已入队待执行**；脚本完成前不得标 implemented。
 设想：一条命令扫全库，产出 `00_入口与总索引/05_审计与档案/lint_仪表盘_最新.md` + 阻断清单，月度跑：
 **①断链查 ②孤儿查（正式目录无入链）③状态查（active 无 signoff）④Schema 查（缺必填字段）⑤敏感查（正文 EAN-13 条码 / 进价裸值 = 红线）⑥版本查（文件名 ≠ frontmatter 版本）。** 纯文本扫描，不碰客户数据。
 
 ### 11.3 状态机进入条件（写死）· `partially_implemented`
-> 规则已立；自动强校验待 G03_Lint（planned）。
+> 规则已立；自动强校验待 G03_Lint（in_progress）。
 - `→ candidate`：内容完整 + 自检（结论先行 / fact_layer 齐 / 0 断链）。
 - `→ active`：≥3 案例或 ≥2 客户验证 **+ 六哥签字**（治理 §3②）。
 - `→ deprecated`：过时；移 99_归档 **需签字**（§3④），优先用 status 标注不滥用物理 mv。
@@ -177,6 +177,6 @@
 
 ### 11.5 承接说明
 - **active 签字机制**：目前处于**待治理**状态。v2.2 批准后，需另开 **P0-GOV-Signature-Batch-001** 对 P0 active 文件分批补签字字段；**不批量降 draft、不无差别修改 261 个 active 文件**。
-- **G03_Lint v2**：为 `planned` 状态，后续可派 Codex 立项实现六查体检；本轮不生成脚本、不改代码仓库。
+- **G03_Lint v2**：为 `in_progress` 状态（Codex 卡 CODEX-2026-06-22-02 已入队待执行）；脚本由 Codex 实现，本轮不生成脚本。
 
 > 📌 §10/§11 已于 **2026-06-22 经六哥签字（Plan A 分层批准）升 v2.2**：**§10 = active**（标准即刻生效）；**§11 = target 目标架构**（各条标落地状态，进度见 [[2026-06-22_知识库全面审计与世界级升级蓝图_v0.1]]、审批记录见 [[CLAUDE_v2.2审批准备稿_P1-GOV-CLAUDE-Review-Prep-001_v0.1]]）。

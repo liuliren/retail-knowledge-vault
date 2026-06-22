@@ -2,6 +2,7 @@
 title: Retail OS v2.0 选品/引进层（商业交付版·加法层）
 version: v2.0
 status: active
+signoff: 六哥 2026-06-22（P0/P1-GOV-Batch-004：P0 active 签字门补齐·内容状态确认，不代表重新审定全文）
 owner: 六哥
 created: 2026-06-20
 updated: 2026-06-20

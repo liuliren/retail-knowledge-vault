@@ -950,3 +950,18 @@
 - **⚠ 未决一致性问题**：上一轮(41da10c)已派 Codex 卡 CODEX-2026-06-22-02(G03_Lint)，与本轮 §11.2 标 planned 不一致。本轮 spec 禁止动收件箱，未撤卡——留待六哥裁决（让 Codex 跑视为立项 / 或撤卡保持 planned）。
 - **未执行**：active 签字批处理、派 Codex、断链修复、改 M-DEC/总纲/正文。
 - 本轮仅改 CLAUDE.md + 本日志。下一步建议 P0-GOV-Signature-Batch-001。
+
+---
+
+## 2026-06-22｜P0/P1-GOV-Batch-004｜signoff口径统一 + P0签字门 + 条码复查 + M-DEC alias收尾
+
+- **签字字段统一 = `signoff`**（沿用既有单行格式 `signoff: 六哥 <日期>（<依据>）`，不用 approved_by 一族；理由：CLAUDE §11.3/G03_Lint状态查/既有已签件均认 signoff）。
+- **P0 签字门补齐（12/15 签，3 待确认）**：
+  - 已签(12)：00_科学零售知识体系总纲 + M1~M8(8) + Retail_OS_v1.0商业交付版 + Retail_OS_v2.0选品引进层交付版 + M-DEC-010(注明正文已载06-19 sign off，补frontmatter字段)。
+  - 待确认(3·不补签)：L4_零售知识体系到M-DEC候选池(候选池性质) / W20-Day2纪要(过程纪要·"启明未sign off") / M-DEC-009-012实跑证据更新(证据更新非主定义)。理由：避免给过程记录/候选件伪造批准。
+  - 每文件仅 frontmatter +1 行 signoff，未动正文/status/标题。
+- **G03_Lint v2 状态校准**：CLAUDE §11.0表/§11.2/§11.3/§11.5 planned→**in_progress**；收件箱 CODEX-2026-06-22-02 标 in_progress·已立项待执行（不撤卡）。链接CI/Schema 仍 planned(未派单)。
+- **条码红线二次复查**：git tracked md 真实 69-EAN13 = **0**（脱敏成果保持，无新动作）。
+- **M-DEC alias 收尾**：001/002/003/010 真实文件各加 aliases（解 6+5+4+1 引）；无重复文件、未改正文/status。
+- **未触碰**：236全量断链/P1 6项/M-DEC正文/总纲三力RetailOS正文/30天包/xls·csv·docx/.gitignore/文件移动删除重命名；audit表本轮未改(不在允许清单，留待刷新)。
+- commit：见下方。

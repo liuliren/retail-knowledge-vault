@@ -2,6 +2,9 @@
 title: M-DEC-010 休食小类价格带结构预警
 version: v1.0
 status: active
+signoff: 六哥 2026-06-19（正文已载 active sign off；2026-06-22 P0/P1-GOV-Batch-004 补 frontmatter 字段）
+aliases:
+  - M-DEC-010
 owner: 六哥
 created: 2026-06-19
 updated: 2026-06-19
