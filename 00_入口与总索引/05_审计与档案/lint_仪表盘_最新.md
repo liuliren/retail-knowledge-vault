@@ -1,8 +1,8 @@
 # G03_Lint v2 知识库体检仪表盘
 
-- 扫描时间：2026-06-23 08:46:11 EDT
+- 扫描时间：2026-06-23 10:55:18 EDT
 - Vault：`/Users/davidliu/KnowledgeBase/retail-knowledge-vault`
-- 扫描文件总数：579
+- 扫描文件总数：581
 - 排除目录：`.git, 99_归档, Clippings`
 
 ## 顶部指标卡
@@ -17,6 +17,9 @@
 | 版本不一致数 | 60 |
 | candidate 越权签字数 | 0 |
 | execute 前置登记表 | 存在·已声明阻断 |
+| provenance warning | 0 |
+| supersession warning | 0 |
+| failed 记录 warning | 0 |
 
 ## 1. 断链查
 
@@ -149,16 +152,28 @@
 - 登记表：`00_入口与总索引/03_治理规范/Codex执行前置状态登记表_v0.1.md` → 存在
 - 是否声明「不允许 execute」：是（闸门关闭）
 
+## 9. provenance 弱检测（warning）
+
+无
+
+> 弱检测：优先目录(治理/方法论/04/05/16)的 candidate/active 缺来源信号。warning，不 fatal，不自动修。
+
+## 10. supersession 弱检测（warning）
+
+无
+
+> 弱检测：status=superseded/deprecated 但无 superseded_by/replaced_by/被取代:: 目标。warning。
+
+## 11. failed 记录保护弱检测（warning）
+
+无
+
+> failed/侥幸/果差但决策稳/blocked 是资产；须留原因/回填点/下一步。warning，**严禁据此删除 failed 记录**。
+
 ## 阻断项
 
 - 无红线敏感命中。
-
-## 预备规则（未实现·设计登记）
-
-- **provenance 缺失**：active/candidate 的 M-DEC 应有 `来源::` 证据链（语义检查，待实现）。
-- **supersession 链**：标 superseded 必须有 superseded_by 指向且目标存在（跨文件状态机，待实现）。
-- **failed 记录追踪**：decision_status=failed/侥幸/果差但决策稳 进教训视图，严禁删除（待实现）。
-> 以上为预备规则，本版只登记设计，不实现；避免误伤、先跑稳低风险检查。
+- warning 级（不阻断）：provenance 0 / supersession 0 / failed 0。
 
 ## 运行说明
 

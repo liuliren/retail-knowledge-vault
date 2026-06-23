@@ -1205,3 +1205,13 @@
 - 目的:验证捕获路径(Phase0B唯一缺口),只抓working/episodic,**不升active、不改M-DEC-013、不新增active M-DEC**。
 - **未触碰**：未改M-DEC-013原文·status/未升active/未改Schema active/未改RetailOS·M1-M8/未execute/未碰真实数据。
 - commit：见下方 `docs: 生成花厅坊现场决策捕获包`。
+
+---
+
+## 2026-06-23｜P1-GOV-G03Lint-Rules-002｜实现provenance/supersession/failed语义lint规则
+- **A 规则设计(弱检测·只warning·frontmatter驱动避免正文误报)**：①provenance=优先目录(治理/方法论/04/05/16)的candidate/active缺所有来源信号(source_type/related/source_attribution/正文来源依据原典);②supersession=status superseded/deprecated但无superseded_by/replaced_by/被取代::目标;③failed=decision_status/status为failed/侥幸/果差但决策稳/blocked但缺原因/回填点/下一步。排除99_原始素材/执行日志/输出区/90_素材。
+- **B 实现**：lint新增3结果组+3指标卡+仪表盘§9/§10/§11(各Top20)+阻断项warning汇总行;只warning不fatal不自动修。
+- **C 运行**：lint 11查;基线 **prov_warn=0 / sup_warn=0 / failed_warn=0**(优先目录均有来源;superseded件均带superseded_by如v2.0;无failed状态件)。验证有效非空跑(v2.0 superseded因带target正确放行)。其余指标:active无签字230/candidate越权0/红线0。
+- **D 债务队列更新**：#3升「11查已实现」+3a/3b/3c warning基线0;#9「已实现」;补累计签字17/active无签字230。
+- **未触碰**：未自动修/未改业务正文/未改status/未补signoff/未删failed/未execute/未碰真实数据/未改M-DEC·RetailOS·M1-M8。
+- commit：见下方 `feat: 实现provenance/supersession/failed语义lint规则`。

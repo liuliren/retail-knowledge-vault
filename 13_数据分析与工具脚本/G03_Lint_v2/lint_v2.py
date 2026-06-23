@@ -27,6 +27,23 @@ STATUS_EXEMPT_PATTERNS = ("案例", "记录", "导航", "索引", "README")
 EXECUTE_PRECOND_FILE = "00_入口与总索引/03_治理规范/Codex执行前置状态登记表_v0.1.md"
 CANDIDATE_APPROVED_RE = re.compile(r"approval_status:\s*approved|approved_by:")
 
+# ── 语义规则（弱检测·只 warning）──
+# 语义检测豁免：冻结源料 + 历史日志 + 输出区草稿（不误伤）
+SEMANTIC_EXCLUDES = ("99_原始素材", "Claude执行日志", "Codex执行日志", "Claude输出区", "Codex输出区", "90_素材")
+# provenance 检测优先目录
+PROVENANCE_ROOTS = ("00_入口与总索引/03_治理规范/", "01_科学零售方法论/", "04_", "05_", "16_客户与战役档案/")
+# provenance frontmatter 键（存其一即视为有来源）
+PROVENANCE_FM_KEYS = ("provenance", "source", "source_attribution", "definition_source", "related")
+# provenance 正文标志词
+PROVENANCE_BODY_TERMS = ("来源", "依据", "原典", "evidence", "provenance", "source_attribution")
+# supersession：frontmatter 标记被取代的键/值
+SUPERSESSION_STATUSES = ("superseded", "deprecated", "replaced")
+SUPERSESSION_TARGET_KEYS = ("superseded_by", "replaced_by", "superseded_reason", "归档说明")
+# failed 资产：需附原因的状态值
+FAILED_STATES = ("failed", "侥幸", "果差但决策稳", "blocked")
+FAILED_REASON_KEYS = ("failure_reason", "blocked_reason", "pending_reason", "superseded_reason", "lessons")
+FAILED_REASON_BODY = ("失败原因", "阻塞原因", "回填点", "下一步", "外因", "教训")
+
 WIKI_LINK_RE = re.compile(r"(?<!!)\[\[([^\]\n]+)\]\]")
 EAN13_RE = re.compile(r"(?<![0-9])(69[0-9]{11})(?![0-9])")
 GENERAL_13_RE = re.compile(r"(?<![0-9])([0-9]{13})(?![0-9])")
@@ -309,6 +326,47 @@ def main() -> int:
         ptext = precond_path.read_text(encoding="utf-8", errors="replace")
         precond_blocks_execute = "不允许 execute" in ptext or "不允许execute" in ptext
 
+    # ── 语义规则（弱检测·只 warning，不 fatal，不自动修）──
+    def _semantic_skip(doc: MarkdownDoc) -> bool:
+        return any(p in doc.rel for p in SEMANTIC_EXCLUDES)
+
+    def _fm_has(doc: MarkdownDoc, keys: tuple[str, ...]) -> bool:
+        return any(str(doc.frontmatter.get(k, "")).strip() not in ("", "[]") for k in keys)
+
+    # 9. provenance 弱检测：优先目录 + status candidate/active，缺所有来源信号
+    provenance_warnings: list[tuple[str, str]] = []
+    for doc in docs:
+        if _semantic_skip(doc) or not doc.rel.startswith(PROVENANCE_ROOTS):
+            continue
+        if str(doc.frontmatter.get("status", "")).strip() not in ("candidate", "active"):
+            continue
+        has_fm = _fm_has(doc, PROVENANCE_FM_KEYS) or str(doc.frontmatter.get("source_type", "")).strip() != ""
+        has_body = any(term in doc.body for term in PROVENANCE_BODY_TERMS)
+        if not (has_fm or has_body):
+            provenance_warnings.append((doc.rel, "缺 source/来源/依据/原典/related 等来源信号"))
+
+    # 10. supersession 弱检测：标记被取代但无替代目标
+    supersession_warnings: list[tuple[str, str]] = []
+    for doc in docs:
+        if _semantic_skip(doc):
+            continue
+        status_val = str(doc.frontmatter.get("status", "")).strip().lower()
+        if status_val in SUPERSESSION_STATUSES:
+            if not _fm_has(doc, SUPERSESSION_TARGET_KEYS) and "被取代::" not in doc.body:
+                supersession_warnings.append((doc.rel, f"status={status_val} 但缺 superseded_by/replaced_by/被取代:: 目标"))
+
+    # 11. failed 记录保护弱检测：failed/侥幸/果差但决策稳/blocked 状态缺原因说明
+    failed_record_warnings: list[tuple[str, str]] = []
+    for doc in docs:
+        if _semantic_skip(doc):
+            continue
+        ds = str(doc.frontmatter.get("decision_status", "")).strip()
+        st = str(doc.frontmatter.get("status", "")).strip()
+        if ds in FAILED_STATES or st in FAILED_STATES:
+            has_reason = _fm_has(doc, FAILED_REASON_KEYS) or any(t in doc.body for t in FAILED_REASON_BODY)
+            if not has_reason:
+                failed_record_warnings.append((doc.rel, f"状态={ds or st} 但缺 原因/回填点/下一步（failed 是资产，须留因）"))
+
     timestamp = dt.datetime.now().astimezone().strftime("%Y-%m-%d %H:%M:%S %Z")
     lines: list[str] = []
     lines.extend(
@@ -333,6 +391,9 @@ def main() -> int:
         ["版本不一致数", len(version_mismatches)],
         ["candidate 越权签字数", len(candidate_approved)],
         ["execute 前置登记表", "存在·已声明阻断" if (precond_exists and precond_blocks_execute) else ("存在" if precond_exists else "缺失")],
+        ["provenance warning", len(provenance_warnings)],
+        ["supersession warning", len(supersession_warnings)],
+        ["failed 记录 warning", len(failed_record_warnings)],
     ]
     lines.extend(render_table(["指标", "数量"], metrics))
 
@@ -381,6 +442,24 @@ def main() -> int:
     lines.append(f"- 登记表：`{EXECUTE_PRECOND_FILE}` → {'存在' if precond_exists else '**缺失**'}")
     lines.append(f"- 是否声明「不允许 execute」：{'是（闸门关闭）' if precond_blocks_execute else '否（需复核）'}")
 
+    lines.extend(["", "## 9. provenance 弱检测（warning）", ""])
+    prov_rows = [[rel, reason] for rel, reason in provenance_warnings[:20]]
+    lines.extend(render_table(["文件", "原因"], prov_rows))
+    lines.append("")
+    lines.append("> 弱检测：优先目录(治理/方法论/04/05/16)的 candidate/active 缺来源信号。warning，不 fatal，不自动修。")
+
+    lines.extend(["", "## 10. supersession 弱检测（warning）", ""])
+    sup_rows = [[rel, reason] for rel, reason in supersession_warnings[:20]]
+    lines.extend(render_table(["文件", "原因"], sup_rows))
+    lines.append("")
+    lines.append("> 弱检测：status=superseded/deprecated 但无 superseded_by/replaced_by/被取代:: 目标。warning。")
+
+    lines.extend(["", "## 11. failed 记录保护弱检测（warning）", ""])
+    fail_rows = [[rel, reason] for rel, reason in failed_record_warnings[:20]]
+    lines.extend(render_table(["文件", "原因"], fail_rows))
+    lines.append("")
+    lines.append("> failed/侥幸/果差但决策稳/blocked 是资产；须留原因/回填点/下一步。warning，**严禁据此删除 failed 记录**。")
+
     lines.extend(["", "## 阻断项", ""])
     if sensitive_hits:
         lines.append("- 阻断级：敏感查存在命中。需先复核并处理红线项。")
@@ -388,12 +467,10 @@ def main() -> int:
         lines.append("- 无红线敏感命中。")
     if candidate_approved:
         lines.append("- 阻断级：存在 candidate 越权签字，需处理。")
-
-    lines.extend(["", "## 预备规则（未实现·设计登记）", ""])
-    lines.append("- **provenance 缺失**：active/candidate 的 M-DEC 应有 `来源::` 证据链（语义检查，待实现）。")
-    lines.append("- **supersession 链**：标 superseded 必须有 superseded_by 指向且目标存在（跨文件状态机，待实现）。")
-    lines.append("- **failed 记录追踪**：decision_status=failed/侥幸/果差但决策稳 进教训视图，严禁删除（待实现）。")
-    lines.append("> 以上为预备规则，本版只登记设计，不实现；避免误伤、先跑稳低风险检查。")
+    lines.append(
+        f"- warning 级（不阻断）：provenance {len(provenance_warnings)} / "
+        f"supersession {len(supersession_warnings)} / failed {len(failed_record_warnings)}。"
+    )
 
     lines.extend(["", "## 运行说明", ""])
     lines.append("- 本报告由 `13_数据分析与工具脚本/G03_Lint_v2/lint_v2.py` 生成。")
@@ -408,7 +485,9 @@ def main() -> int:
         f"broken={len(broken_targets)} orphan={len(orphan_docs)} "
         f"active_no_signoff={len(active_without_signoff)} "
         f"missing_fields={len(missing_fields)} redline={len(sensitive_hits)} "
-        f"version_mismatch={len(version_mismatches)}"
+        f"version_mismatch={len(version_mismatches)} "
+        f"prov_warn={len(provenance_warnings)} sup_warn={len(supersession_warnings)} "
+        f"failed_warn={len(failed_record_warnings)}"
     )
     return 0
 
