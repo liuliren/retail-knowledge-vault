@@ -1186,3 +1186,14 @@
 - **复查**：diff仅signoff块、0删除、未动正文;lint active无签字231→230、candidate越权0、红线0。
 - **未触碰**：未改正文/未改方案A/未重构治理/未收编旧13份治理文件/未移动删除/未批量签/未升active/未execute/未碰真实数据。
 - commit：见下方 `chore: 补齐Wiki治理方案签字`。
+
+---
+
+## 2026-06-23｜P1-MEM-MDEC-Trial-Review-001｜审阅M-DEC-013 trial + 现场补验清单
+- **A trial审阅**：10项审阅,trial有效且高质量(验层级/provenance/晋升门槛/resulting/supersession,用真实样本拦下伪晋升);唯一缺口=捕获路径未验(M-DEC-013是回溯成型决策非现场速记)。
+- **B 不能升active**：6阻塞(同店三小类共因/未达3独立场景/缺第二客户/捕获未验/无回填结果/无signoff)+解除条件。重申failed/pending/blocked都是资产,不为推进强行active。
+- **C 现场补验清单**(新建`M-DEC-013现场补验清单_Phase0B_v0.1`)：10捕获项+30秒口述模板(现场照说)+捕获纪律(5秒→30秒inbox→周末triage,拍板当下写判断防后见之明)。
+- **D 后续路径**：4路径(捕获补验/独立场景跨店/回填resulting四象限/签字);晋升=上层新建回指不改原文。
+- **E Schema反哺建议**(只建议)：模板加两轴字段示例/捕获须新现场样本验/留Schema v0.2,本轮不改Schema active。
+- **未触碰**：未改M-DEC-013原文·status/未升active/未改Schema active/未改RetailOS·M1-M8/未execute/未碰真实数据。
+- commit：见下方 `docs: 审阅M-DEC-013 trial并出现场补验清单`。
