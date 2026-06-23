@@ -12,7 +12,7 @@ related:
   - "[[高效批处理任务规范_v1.0]]"
   - "[[ABC九宫格裁决口径扩展预览_CODEX-Execute-Decision-001_v0.1]]"
   - "[[全量合并版execute前置方案_CODEX-Data-Merge-Full-001_v0.1]]"
-  - "[[晟果新零售M-DEC长期记忆系统Schema_预览_v0.1]]"
+  - "[[晟果新零售M-DEC长期记忆系统Schema_预览_v0.1.2]]"
   - "[[孤儿文档豁免与暂缓登记表_P1-GOV-Orphan-Exemption-001_v0.1]]"
 ---
 

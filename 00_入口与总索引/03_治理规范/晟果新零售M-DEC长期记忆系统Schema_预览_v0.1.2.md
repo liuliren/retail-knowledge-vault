@@ -2,6 +2,9 @@
 title: 晟果新零售M-DEC长期记忆系统Schema
 version: v0.1.2
 status: candidate
+aliases:
+  - 晟果新零售M-DEC长期记忆系统Schema_预览_v0.1
+  - 晟果新零售M-DEC长期记忆系统Schema_预览_v0.1.1
 owner: 六哥
 created: 2026-06-22
 updated: 2026-06-22
