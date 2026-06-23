@@ -1197,3 +1197,11 @@
 - **E Schema反哺建议**(只建议)：模板加两轴字段示例/捕获须新现场样本验/留Schema v0.2,本轮不改Schema active。
 - **未触碰**：未改M-DEC-013原文·status/未升active/未改Schema active/未改RetailOS·M1-M8/未execute/未碰真实数据。
 - commit：见下方 `docs: 审阅M-DEC-013 trial并出现场补验清单`。
+
+---
+
+## 2026-06-23｜P1-MEM-Phase0B-Field-Capture-Pack-001｜花厅坊现场决策捕获包
+- **生成** `花厅坊现场决策捕获包_Phase0B_v0.1`(手机可用轻量工具,刻意做短)：①使用场景②5秒速记模板③30秒口述模板④拍照/观察/访谈规则(条码价签打码)⑤working/episodic现场分流(candidate回来再判)⑥回来贴Claude的整理Prompt(复制即用)⑦2-4周回填提醒模板(resulting四象限)⑧三铁律(当下记判断/不当场升规则/失败也记)。
+- 目的:验证捕获路径(Phase0B唯一缺口),只抓working/episodic,**不升active、不改M-DEC-013、不新增active M-DEC**。
+- **未触碰**：未改M-DEC-013原文·status/未升active/未改Schema active/未改RetailOS·M1-M8/未execute/未碰真实数据。
+- commit：见下方 `docs: 生成花厅坊现场决策捕获包`。
