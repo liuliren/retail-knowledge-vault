@@ -2,6 +2,12 @@
 title: 晟果新零售科学零售 Wiki 知识体系治理方案
 version: v1.0
 status: active
+signoff:
+  approved_by: 六哥
+  approved_at: 2026-06-23
+  approval_basis: "P0-GOV-Signature-Single-004：Wiki治理方案v1.0单文件签字补齐"
+  approval_scope: "确认当前 active 治理统领状态；不代表重新审定全文，不改变方案A：增量统领，不收编旧治理文件"
+  approval_status: approved
 owner: 六哥
 created: 2026-06-20
 updated: 2026-06-20

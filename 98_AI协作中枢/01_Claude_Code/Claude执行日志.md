@@ -1177,3 +1177,12 @@
 - **复查**：6文件diff仅signoff块、0删除、未动正文;lint active无签字237→231、candidate越权0、红线0;未超授权(签6=上限)。
 - **未触碰**：未批量签/未签candidate·M-DEC·客户敏感/未升active/未改正文/未execute/未碰真实数据/未顶层approved_*。
 - commit：见下方 `chore: 补齐中确定性active治理文件签字`。
+
+---
+
+## 2026-06-23｜P0-GOV-Signature-Single-004｜Wiki治理方案v1.0单文件signoff补齐
+- **核验**：`晟果新零售科学零售Wiki知识体系治理方案_v1.0` → status active/无existing signoff/source_type governance/internal_only/非candidate·M-DEC → 合格。
+- **补签**：嵌套signoff块(approved_by六哥/2026-06-23/Single-004依据/scope=确认当前active治理统领,不重审全文,不改方案A增量统领,不收编旧治理文件)。
+- **复查**：diff仅signoff块、0删除、未动正文;lint active无签字231→230、candidate越权0、红线0。
+- **未触碰**：未改正文/未改方案A/未重构治理/未收编旧13份治理文件/未移动删除/未批量签/未升active/未execute/未碰真实数据。
+- commit：见下方 `chore: 补齐Wiki治理方案签字`。
