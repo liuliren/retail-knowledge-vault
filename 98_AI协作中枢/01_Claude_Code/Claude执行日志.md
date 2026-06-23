@@ -1147,3 +1147,13 @@
 - **E signoff候选审计**：新建(高确定性10治理基础件/中确定性6需补字段/暂不签candidate·M-DEC·客户敏感·争议;建议每批≤10首批签10)。只审计不签。
 - **未触碰**：未execute/未碰真实xls·csv/未改Codex脚本·abc_classifier/未改注册表§3.1/未升Schema·M-DEC active/未批量签signoff/未批量改全库链接(仅4处定向修复)。
 - commit：见下方 `chore: 完成记忆规则签字小修与数据接入前置`。
+
+---
+
+## 2026-06-22｜P0-GOV-Signature-Batch-002｜首批高确定性active文件signoff补齐
+- **候选读取**：据下一批active签字候选审计表§1高确定性10件;逐一核验 status=active/无existing signoff/有frontmatter/非candidate·M-DEC·客户敏感 → **10件全符合**。
+- **补签10件**：治理规范README/文件命名规范/文档工程化标准/知识库治理规范/反幻觉检查清单/变更影响检查清单/逻辑一致性检查清单/pre-flight_check_checklist_v1.0/工程操作纪律手册_v1.0/标签体系说明。
+- **字段**：嵌套`signoff:`块(approved_by 六哥/approved_at 2026-06-22/approval_basis/approval_scope=确认当前active不重审全文/approval_status approved);键为signoff非顶层approved_*(合规#10)。
+- **复查**：10文件各+6行、**0删除、新增仅signoff块、未动正文方法论**;未超10;无candidate/M-DEC/客户敏感被签。
+- **未触碰**：未批量签全库/未升任何文件active/未改正文口径/未碰真实数据·脚本·execute。中确定性6件留P0-GOV-Signature-Batch-003。
+- commit：见下方 `chore: 补齐首批active治理文件签字`。

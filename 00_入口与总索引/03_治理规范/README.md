@@ -2,6 +2,12 @@
 title: 治理规范 README
 version: v0.1
 status: active
+signoff:
+  approved_by: 六哥
+  approved_at: 2026-06-22
+  approval_basis: "P0-GOV-Signature-Batch-002：首批高确定性 active 治理基础件签字补齐"
+  approval_scope: "确认当前 active 状态；不代表重新审定全文，不改变正文方法论口径"
+  approval_status: approved
 source_type: index
 priority: P1
 client_safety: internal_only
