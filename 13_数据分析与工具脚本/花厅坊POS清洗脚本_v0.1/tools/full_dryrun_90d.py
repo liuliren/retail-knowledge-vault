@@ -14,7 +14,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from abc_classifier import apply_abc
+from abc_classifier import apply_abc, assign_gross_margin_rate_tier, assign_goldmine
 from ir_calculator import apply_ir
 from safety_stock import apply_safety_stock
 
@@ -36,6 +36,12 @@ def main() -> int:
 
     # 1. ABC 九宫格（口径 §3.1 active；列名适配：销售额/毛利额）
     df = apply_abc(df, sales_col="销售额", profit_col="毛利额")
+
+    # 1b. §3.1.1 C 行毛利率复核闸 + 金矿候选（不改 9 格标签）
+    df["gross_margin_rate_tier"] = assign_gross_margin_rate_tier(df, rate_col="毛利率", cat_col="类别名称")
+    gm_cand, gm_reason = assign_goldmine(df)
+    df["goldmine_candidate"] = gm_cand
+    df["goldmine_reason"] = gm_reason
 
     # 2. IR（毛利率 × ITO估算）
     df, ir_meta = apply_ir(df, margin_col="毛利率", ito_col="ITO估算")
@@ -63,6 +69,18 @@ def main() -> int:
     nr = int(df["需复核"].fillna(False).astype(bool).sum())
     print(f"\n[需复核(C+乙)]={nr} ({nr/n*100:.1f}%)")
     print(f"[观察品出现]={int((df['身份']=='观察品').sum())}（应为0，已废止）")
+
+    # §3.1.1 金矿候选分布
+    print("\n[毛利率分层 gross_margin_rate_tier]")
+    for k, v in df["gross_margin_rate_tier"].value_counts().items():
+        print(f"  {k}: {v} ({v/n*100:.1f}%)")
+    nc = int((df["销额ABC"] == "C").sum())
+    gm = int(df["goldmine_candidate"].sum())
+    print(f"[金矿候选 goldmine_candidate]={gm}  占C行={gm/nc*100:.1f}% (C行={nc})")
+    print("[金矿排除原因分布(C行)]")
+    for k, v in df.loc[df["销额ABC"] == "C", "goldmine_reason"].value_counts().items():
+        short = (k[:24] + "…") if len(str(k)) > 25 else k
+        print(f"  {short}: {v}")
 
     # IR 覆盖
     ir_ok = int(pd.to_numeric(df.get("IR"), errors="coerce").notna().sum()) if "IR" in df else 0

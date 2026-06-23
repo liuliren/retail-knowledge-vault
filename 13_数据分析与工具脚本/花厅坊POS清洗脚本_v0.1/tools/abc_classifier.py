@@ -68,6 +68,70 @@ def decide_review(
     return False, ""
 
 
+def assign_gross_margin_rate_tier(
+    df: pd.DataFrame,
+    rate_col: str = "毛利率",
+    cat_col: str = "类别名称",
+    min_samples: int = 20,
+) -> pd.Series:
+    """毛利率分层 high/mid/low/unavailable（§3.1.1·方案B）。
+
+    优先小类 P75/P25；小类有效样本 < min_samples 时降级全店 P75/P25；
+    毛利率缺失/不可计算 → unavailable。
+    """
+    rate = pd.to_numeric(df[rate_col], errors="coerce") if rate_col in df.columns else pd.Series(pd.NA, index=df.index)
+    store_valid = rate.dropna()
+    store_p75 = store_valid.quantile(0.75) if len(store_valid) else float("nan")
+    store_p25 = store_valid.quantile(0.25) if len(store_valid) else float("nan")
+    if cat_col in df.columns:
+        grp = rate.groupby(df[cat_col])
+        cnt = grp.transform(lambda s: s.notna().sum())
+        cat_p75 = grp.transform(lambda s: s.quantile(0.75))
+        cat_p25 = grp.transform(lambda s: s.quantile(0.25))
+    else:
+        cnt = pd.Series(0, index=df.index)
+        cat_p75 = pd.Series(float("nan"), index=df.index)
+        cat_p25 = pd.Series(float("nan"), index=df.index)
+    use_cat = cnt >= min_samples
+    p75 = cat_p75.where(use_cat, store_p75)
+    p25 = cat_p25.where(use_cat, store_p25)
+    tier = pd.Series("unavailable", index=df.index, dtype="object")
+    valid = rate.notna() & p75.notna()
+    tier[valid & (rate >= p75)] = "high"
+    tier[valid & (rate <= p25)] = "low"
+    tier[valid & (rate > p25) & (rate < p75)] = "mid"
+    return tier
+
+
+def assign_goldmine(
+    df: pd.DataFrame,
+    sales_abc_col: str = "销额ABC",
+    tier_col: str = "gross_margin_rate_tier",
+    shortage_col: str = "缺货标记",
+    new_col: str = "新品标记",
+) -> tuple[pd.Series, pd.Series]:
+    """C 行毛利率复核闸 → (goldmine_candidate bool, goldmine_reason str)（§3.1.1）。
+
+    candidate=True ⇔ 销额C + tier=high + 非缺货 + 非新品保护（促销缺字段不自动排除，记入 reason）。
+    goldmine_candidate 是复核字段，非最终裁决标签。
+    """
+    n = len(df)
+    sales = df[sales_abc_col].astype(str) if sales_abc_col in df.columns else pd.Series("", index=df.index)
+    tier = df[tier_col].astype(str) if tier_col in df.columns else pd.Series("unavailable", index=df.index)
+    shortage = df[shortage_col].fillna(False).astype(bool) if shortage_col in df.columns else pd.Series(False, index=df.index)
+    newp = df[new_col].fillna(False).astype(bool) if new_col in df.columns else pd.Series(False, index=df.index)
+    is_c = sales.eq("C")
+    cand = is_c & tier.eq("high") & ~shortage & ~newp
+    reason = pd.Series("", index=df.index, dtype="object")
+    reason[~is_c] = "非C行"
+    reason[is_c & tier.eq("unavailable")] = "毛利率不可用/数据异常"
+    reason[is_c & ~tier.eq("high") & ~tier.eq("unavailable")] = "毛利率未达阈值"
+    reason[is_c & tier.eq("high") & shortage] = "缺货排除"
+    reason[is_c & tier.eq("high") & ~shortage & newp] = "新品保护排除"
+    reason[cand] = "销售贡献C；毛利率达阈值(小类/全店P75)；未触发缺货/新品排除；促销字段缺失需人工复核"
+    return cand, reason
+
+
 def apply_abc(
     df: pd.DataFrame, sales_col: str = "销售金额", profit_col: str = "毛利额"
 ) -> pd.DataFrame:

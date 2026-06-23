@@ -1273,3 +1273,14 @@
 - **签字**：frontmatter 追加 goldmine_rule_signoff(六哥/2026-06-23/scope仅§3.1.1口径,不代表代码同步·dry-run重跑·允许写回);版本记录追加 §3.1.1 active 行。未覆盖原 signoff_3_1。
 - **未触碰**：未改abc_classifier.py/未改dry-run runner/未重跑dry-run/未写回/未提交结果表脱敏表xls/未写条码进价供应商/未出正式裁决·诊断/未改M-DEC·RetailOS·M1-M8。
 - commit：见下方 `docs: 确认ABC九宫格金矿候选口径`。
+
+---
+
+## 2026-06-23｜CODEX-ABC-Goldmine-Rule-Fix-001｜新增C行毛利率闸与金矿候选字段（六哥签字）
+- **代码实现**：abc_classifier.py 新增 `assign_gross_margin_rate_tier`(小类P75/P25,样本<20降全店,缺失unavailable)+`assign_goldmine`(销额C+tier high+非缺货+非新品→candidate;促销缺字段记reason不自动排除);full_dryrun_90d.py 接入并输出金矿分布。**原9格标签/decide_identity未改。**
+- **测试**：test_retail_tools 加9金矿用例(tier小类P75/小类<20降级/缺失unavailable/C+high命中/非C/mid-low/缺货/新品/unavailable排除);`python3 -m unittest` **17 passed**。
+- **重跑dry-run**：10232 SKU;9格不变(双低8478等)/invalid=0/观察品=0/条码脱敏。**金矿候选1686(占C行19.9%)**;tier high2737/mid4317/low2586/unavailable592;C行排除(未达阈值5638/不可用592/缺货408/新品154)。促销缺失统一记reason需人工复核。
+- **报告**：`花厅坊90天金矿候选dry-run分布`(纯统计无SKU明细);结果表→gitignored processed/未入git。
+- **状态更新**：execute前置金矿口径方法+代码已闭环;债务队列#5a完成、#5待review。
+- **未触碰**：未改§3.1正文/未改9格标签/未引观察品/未真实写回/未出正式裁决·诊断/未提交结果表脱敏表xls/未写条码进价供应商/未改M-DEC·RetailOS·M1-M8。
+- commit：见下方 `feat: add goldmine candidate gate to ABC dry-run`。

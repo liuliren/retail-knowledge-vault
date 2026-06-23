@@ -8,6 +8,8 @@ import pandas as pd
 from abc_classifier import (
     NINE_GRID,
     apply_abc,
+    assign_goldmine,
+    assign_gross_margin_rate_tier,
     decide_identity,
     decide_review,
 )
@@ -83,6 +85,78 @@ class RetailToolsTest(unittest.TestCase):
         self.assertEqual(classify_age(60), "预警")
         self.assertEqual(classify_age(90), "滞销")
         self.assertEqual(classify_age(91), "重滞")
+
+
+class GoldmineTest(unittest.TestCase):
+    def _cat_df(self, n_per_cat=25):
+        # 构造一个小类，毛利率有梯度，便于 P75/P25 分层
+        rates = [i / 100 for i in range(n_per_cat)]  # 0.00..0.24
+        return pd.DataFrame({
+            "类别名称": ["膨化"] * n_per_cat,
+            "毛利率": rates,
+            "销额ABC": ["C"] * n_per_cat,
+            "缺货标记": [False] * n_per_cat,
+            "新品标记": [False] * n_per_cat,
+        })
+
+    def test_tier_category_p75(self):
+        df = self._cat_df(25)  # 小类样本≥20 → 用小类 P75
+        df["gross_margin_rate_tier"] = assign_gross_margin_rate_tier(df)
+        # 最高毛利率行应 high，最低应 low
+        self.assertEqual(df.sort_values("毛利率").iloc[-1]["gross_margin_rate_tier"], "high")
+        self.assertEqual(df.sort_values("毛利率").iloc[0]["gross_margin_rate_tier"], "low")
+
+    def test_tier_small_category_fallback(self):
+        # 小类样本<20 → 降级全店分位（这里只验不报错且能产出非 unavailable）
+        df = pd.DataFrame({
+            "类别名称": ["A"] * 5 + ["B"] * 5,
+            "毛利率": [0.1, 0.2, 0.3, 0.4, 0.5, 0.05, 0.15, 0.25, 0.35, 0.45],
+            "销额ABC": ["C"] * 10, "缺货标记": [False] * 10, "新品标记": [False] * 10,
+        })
+        tier = assign_gross_margin_rate_tier(df, min_samples=20)
+        self.assertIn("high", set(tier))
+
+    def test_tier_unavailable_when_rate_missing(self):
+        df = pd.DataFrame({"类别名称": ["x"], "毛利率": [None], "销额ABC": ["C"]})
+        tier = assign_gross_margin_rate_tier(df)
+        self.assertEqual(tier.iloc[0], "unavailable")
+
+    def test_goldmine_c_high_no_exclusion_true(self):
+        df = pd.DataFrame({"销额ABC": ["C"], "gross_margin_rate_tier": ["high"],
+                           "缺货标记": [False], "新品标记": [False]})
+        cand, _ = assign_goldmine(df)
+        self.assertTrue(bool(cand.iloc[0]))
+
+    def test_goldmine_non_c_false(self):
+        for s in ("A", "B"):
+            df = pd.DataFrame({"销额ABC": [s], "gross_margin_rate_tier": ["high"],
+                               "缺货标记": [False], "新品标记": [False]})
+            self.assertFalse(bool(assign_goldmine(df)[0].iloc[0]))
+
+    def test_goldmine_mid_low_false(self):
+        for t in ("mid", "low"):
+            df = pd.DataFrame({"销额ABC": ["C"], "gross_margin_rate_tier": [t],
+                               "缺货标记": [False], "新品标记": [False]})
+            self.assertFalse(bool(assign_goldmine(df)[0].iloc[0]))
+
+    def test_goldmine_shortage_excluded(self):
+        df = pd.DataFrame({"销额ABC": ["C"], "gross_margin_rate_tier": ["high"],
+                           "缺货标记": [True], "新品标记": [False]})
+        cand, reason = assign_goldmine(df)
+        self.assertFalse(bool(cand.iloc[0]))
+        self.assertIn("缺货", reason.iloc[0])
+
+    def test_goldmine_newproduct_excluded(self):
+        df = pd.DataFrame({"销额ABC": ["C"], "gross_margin_rate_tier": ["high"],
+                           "缺货标记": [False], "新品标记": [True]})
+        self.assertFalse(bool(assign_goldmine(df)[0].iloc[0]))
+
+    def test_goldmine_unavailable_false(self):
+        df = pd.DataFrame({"销额ABC": ["C"], "gross_margin_rate_tier": ["unavailable"],
+                           "缺货标记": [False], "新品标记": [False]})
+        cand, reason = assign_goldmine(df)
+        self.assertFalse(bool(cand.iloc[0]))
+        self.assertIn("不可用", reason.iloc[0])
 
 
 if __name__ == "__main__":
