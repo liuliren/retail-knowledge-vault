@@ -28,7 +28,7 @@ related:
 | 3b | supersession warning | **0** | superseded 件均带 superseded_by | 常态监控 | P3 |
 | 3c | failed 记录 warning | **0** | 暂无 failed/侥幸状态文件 | 现场回填出现 failed 时须留因 | P3 |
 | 4 | M-DEC Schema trial（0B）| 预演完成 | 捕获路径未充分验证（需新现场决策）| 花厅坊新现场决策补验 → 0C 三问 → v0.2 | P1 |
-| 5 | Codex execute 数据线 | blocked | 全量真实数据未到 + dry-run 未审 + 未签字 | 按现场导出清单导数据 → full dry-run | P0 |
+| 5 | Codex execute 数据线 | **推进**(脱敏合并表已生成)| full dry-run 未跑 + 未签字 | 六哥签字→CODEX-Full-DryRun-Execute-001→审→approval | P0 |
 | 6 | 饼干货盘敏感核查 | 暂缓 | 含真实货盘，挂链前需核敏感 | 核敏感→脱敏达标挂链/否则豁免 | P2 |
 | 7 | 第二客户验证（M-DEC-013 等）| 等待 | 同店三小类=共因，缺独立场景 | 第二客户/门店独立复现 → 升 active | P1 |
 | 8 | source_type 缺失 | 部分清理 | lint 缺字段 183（含 source_type 等）| 随签字批/编辑顺手补 | P2 |

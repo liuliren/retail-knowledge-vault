@@ -27,11 +27,13 @@ related:
 | 3 | 测试可跑（clean checkout）| ✅ 依赖已入库 | ✅ | abc_classifier/ir_calculator/safety_stock/test 均 tracked；`Ran 8 tests OK` | — |
 | 4 | 工具源码入库 | ✅ 测试必需源码已入 | ✅ | Batch-012 入库 ir_calculator/safety_stock | dry-run runner 不入(execute线) |
 | 5 | full dry-run 输入方案具备 | ✅ 方案就绪 | ✅(方案) | [[全量合并版execute前置方案_CODEX-Data-Merge-Full-001_v0.1]] 26字段+20样本+C4来源 | 待真实数据接入 |
-| 6 | 全量真实数据具备 | ❌ 仅 10 行 smoke | ❌ | 缺流量品/利润品+全异常分支+库龄/ITO | **现场导出全量+用户确认** |
-| 7 | 真实条码脱敏具备 | ✅ git 红线=0 | ✅ | lint 仪表盘 红线命中=0 | 新数据接入时持续脱敏 |
-| 8 | dry-run 已审阅 | ❌ 未跑 full dry-run | ❌ | 当前仅 smoke dry-run | 数据到位→CODEX-Full-DryRun-Review-001 |
-| 9 | 用户 execute signoff | ❌ 未签 | ❌ | —— | 6/8 全绿后→CODEX-Execute-Approval-001 签字 |
-| 10 | **execute 是否允许** | **❌ 关闭** | ❌ | 6/8/9 未满足 | —— |
+| 6 | 全量真实数据具备 | ✅ **脱敏合并表已生成** | ✅ | Batch-015 merge：全店 10,232 行(非smoke);毛利/库存100%/采购周期98.9%/库龄99.8% | —— |
+| 7 | 真实条码脱敏具备 | ✅ 合并表全脱敏+git 红线=0 | ✅ | 条码全 `{{EAN13_已脱敏}}`;供应商107代号;进价仅xlsx内部列;xlsx未入git | 持续 |
+| 8 | dry-run 已审阅 | 🔄 **预审通过·待跑** | ◑ | full dry-run 前置预审完成(可进);full dry-run 本身未跑 | **六哥签字→CODEX-Full-DryRun-Execute-001** |
+| 9 | 用户 execute signoff | ❌ 未签 | ❌ | —— | full dry-run 审完→CODEX-Execute-Approval-001 签字 |
+| 10 | **execute(真实写回) 是否允许** | **❌ 关闭** | ❌ | 8(dry-run跑+审)/9(签字) 未满足 | —— |
+
+> 🔄 **Batch-015 推进**：数据线从「缺全量」→「**脱敏合并表已生成(全店10232行)+full dry-run预审通过**」。当前仅差 **full dry-run 执行(需签字)→审阅→execute 签字**。已知降级:ITO67%/负毛利0样本/促销缺/品类单层(dry-run 按 blocked 呈现)。
 
 ## 2. 结论
 - **当前不允许 execute。** 方法层（§3.1）/ 执行层（脚本）/ 测试层 三者已就绪（#1-#5、#7 绿）；

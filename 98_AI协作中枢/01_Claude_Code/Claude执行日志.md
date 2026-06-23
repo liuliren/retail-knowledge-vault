@@ -1226,3 +1226,17 @@
 - **就绪评估**：数据足但**未合并→full dry-run暂不就绪**。前置=合并+脱敏+统一90天窗(=merge execute步,需签字门#6-#9)。
 - **下一步**：不直接进Full-DryRun-Review;先merge(供应商汇总为主干左连档案+库存,按货号join,派生库龄/ITO/缺货/清仓,脱敏)→写回脱敏合并表需六哥签字。
 - commit：见下方 `docs: 花厅坊全量数据只读接入审查`。
+
+---
+
+## 2026-06-23｜CODEX-Data-Workstream-Batch-015｜90天脱敏合并+full dry-run预审
+- **A 输入确认**：主干 供应商销售汇总_90天(~10232全店)+商品档案(采购周期/建档)+滞销商品(最近销售/进货/引进日期);统一90天窗,按货号左连。
+- **B merge脚本**：新建`tools/merge_full_90d.py`(只读输入/写gitignored processed/带日期戳/缺字段blocked/不打印敏感值)。
+- **C/D/E 合并+脱敏+派生**：**跑通**——10232行无膨胀;脱敏(条码全占位不读真实条码/供应商107→SUP_xxx/进价仅xlsx内部列);派生(到货天数=采购周期98.9%/库龄99.8%非blocked/ITO估67%/缺货1683/负毛利0/新品887/需复核占位)。
+- **F 输出**：脱敏xlsx→processed/(**gitignored未入git**);字段映射+质量检查+full dry-run预审合并报告md(入git,无敏感值)+下一轮execute Prompt md。
+- **G 质量检查**：毛利/毛利率/库存100%;采购周期98.9%;库龄99.8%;条码全脱敏;无膨胀。⚠QC警示:负毛利清仓=0(数据实情,POS汇总层无负毛利→dry-run负毛利分支无样本)/库存最近销售日期仅24%匹配(滞销表范围)/促销无字段/品类单层。
+- **H full dry-run预审**：**可进CODEX-Full-DryRun-Execute-001**(核心字段齐/脱敏完成/未入git),但full dry-run=execute类**仍需六哥签字**;降级按blocked呈现不阻断。
+- **I 下一轮Prompt**：生成`CODEX-Full-DryRun-Execute-001_Prompt_v0.1`(读脱敏表/跑9格+库存IR/结果gitignored/只提交审阅md/不出正式裁决/需签字)。
+- **J 状态更新**：execute前置#6数据✅(合并表已生成)/#7脱敏✅/#8 dry-run🔄预审通过待跑;债务队列#5「推进」。
+- **未触碰**：未跑full dry-run/未写回/未提交xls·csv·脱敏表/未改abc_classifier·§3.1/未出正式裁决·诊断结论/未改M-DEC·RetailOS·M1-M8/未补signoff。
+- commit：见下方 `feat: 90天全量脱敏合并与full dry-run预审`。
