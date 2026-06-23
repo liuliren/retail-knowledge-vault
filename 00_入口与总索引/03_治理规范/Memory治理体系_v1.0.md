@@ -2,6 +2,12 @@
 title: vault Memory 治理体系 v1.0（第 6 大治理支柱 / W20 落地方案）
 version: v1.0
 status: active
+signoff:
+  approved_by: 六哥
+  approved_at: 2026-06-23
+  approval_basis: "P0-GOV-Signature-Batch-003：中确定性 active 治理文件字段补齐后签字"
+  approval_scope: "确认当前 active 状态；不代表重新审定全文，不改变正文方法论口径"
+  approval_status: approved
 owner: 六哥
 source_type: governance
 created: 2026-05-09

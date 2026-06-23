@@ -1167,3 +1167,13 @@
 - **D 治理债务队列**：新建`治理债务队列_P1-GOV-Debt-Queue_v0.1`(10队列+优先级+execute阻塞依赖图)。
 - **未触碰**：未补signoff/未批量签/未签candidate·M-DEC·客户敏感/未execute/未碰真实数据/未改M-DEC·RetailOS·M1-M8正文/未升active/lint只检测不自动修。
 - commit：见下方 `chore: 扩展lint规则并预备中确定性签字候选`。
+
+---
+
+## 2026-06-23｜P0-GOV-Signature-Batch-003｜中确定性active文件signoff补齐
+- **数量差异处理**：Batch-014「就绪」实为**7个文件**(审计§2合并行展开),批次名为「6个」→ 按任务指示**最多签6,留1待授权**。
+- **签6**：核心概念主定义索引/知识库总索引/术语口径统一表_v1.0/Memory治理体系_v1.0/工程操作错误案例库/数据一致性追溯案例库(均active/source_type齐/无existing signoff/internal_only非客户敏感)。嵌套signoff块(approved_by六哥/2026-06-23/Batch-003依据/scope确认当前active不重审)。
+- **留1待授权**：`晟果新零售科学零售Wiki知识体系治理方案_v1.0`——审计§2标「权重高·单独核」(治理总入口),**本轮未签,等六哥单独授权第7个**。
+- **复查**：6文件diff仅signoff块、0删除、未动正文;lint active无签字237→231、candidate越权0、红线0;未超授权(签6=上限)。
+- **未触碰**：未批量签/未签candidate·M-DEC·客户敏感/未升active/未改正文/未execute/未碰真实数据/未顶层approved_*。
+- commit：见下方 `chore: 补齐中确定性active治理文件签字`。
