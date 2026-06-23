@@ -1298,3 +1298,14 @@
 - **状态更新**：execute前置#9 review结论B暂缓;债务队列#5 review已做+#5b金矿泛化待处理。
 - **未触碰**：未改§3.1/§3.1.1/abc_classifier/runner/未重跑/未写回/未出正式裁决/未提交结果表脱敏表xls/未写条码进价供应商/未改M-DEC·RetailOS·M1-M8。
 - commit：见下方 `docs: review full dry-run goldmine candidates`。
+
+---
+
+## 2026-06-23｜CODEX-Goldmine-Sample-Pack-001｜生成金矿候选人工抽样复核包
+- **抽样**：新建`tools/goldmine_sample_pack.py`(只读dry-run结果,从1686候选分层抽100,脱敏SKU hash)。5层:Top高毛利率20/高库存金额20/久未动销重滞20/多小类均衡30/促销缺失风险10;去重100唯一,覆盖66小类,全C行候选。
+- **输出**：明细表→gitignored `processed/review/`(**不入git**);tracked说明md(无SKU明细,含字段说明+人工判断/建议动作模板+二级闸决策口径)。
+- **脱敏**：仅sku_display_id(sha1 hash),无货号/进价/真实条码;品名/经营数值仅在gitignored明细。
+- **决策口径**：真金矿占比高→可不上P85(避免误杀小众好货,呼应六哥顾虑);伪金矿(死货/积压/促销)占比高→上P85+近90天动销;分层差异大→用动销/库龄而非单纯抬P85。
+- **状态更新**：债务队列#5b抽样包已出待人工复核。
+- **未触碰**：未改§3.1/§3.1.1/abc_classifier/runner/未重跑/未写回/未出正式裁决/未提交结果表脱敏表抽样明细xls/未写条码进价供应商/未改M-DEC·RetailOS·M1-M8。
+- commit：见下方 `docs: 生成金矿候选人工复核抽样说明`。
