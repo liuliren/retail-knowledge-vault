@@ -28,7 +28,8 @@ related:
 | 3b | supersession warning | **0** | superseded 件均带 superseded_by | 常态监控 | P3 |
 | 3c | failed 记录 warning | **0** | 暂无 failed/侥幸状态文件 | 现场回填出现 failed 时须留因 | P3 |
 | 4 | M-DEC Schema trial（0B）| 预演完成 | 捕获路径未充分验证（需新现场决策）| 花厅坊新现场决策补验 → 0C 三问 → v0.2 | P1 |
-| 5 | Codex execute 数据线 | **dry-run已按新口径重跑** | review未做 + 真实写回未签 | CODEX-Full-DryRun-Review-001→Execute-Approval签字 | P0 |
+| 5 | Codex execute 数据线 | **review已做·结论B暂缓** | 候选泛化(P75机械捞top quartile) + 写回未签 | 抽样复核→大概率P85+动销二级闸→重跑→再review→approval | P0 |
+| 5b | 金矿候选泛化(P75辨别力) | 新增·待处理 | 候选19.9%C行散布157小类每类~20%=机械top quartile;促销污染+unavailable592 | CODEX-Goldmine-Sample-Pack-001抽样→P0-ABC-Goldmine-Rule-Tighten-001 | P1 |
 | 5a | 金矿口径(方法+代码) | ✅**已闭环** | —— | §3.1.1签字+代码同步(金矿候选1686/占C行19.9%);仅余review/写回 | 完成 |
 | 6 | 饼干货盘敏感核查 | 暂缓 | 含真实货盘，挂链前需核敏感 | 核敏感→脱敏达标挂链/否则豁免 | P2 |
 | 7 | 第二客户验证（M-DEC-013 等）| 等待 | 同店三小类=共因，缺独立场景 | 第二客户/门店独立复现 → 升 active | P1 |
