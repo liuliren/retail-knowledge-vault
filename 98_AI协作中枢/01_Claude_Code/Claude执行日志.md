@@ -1157,3 +1157,13 @@
 - **复查**：10文件各+6行、**0删除、新增仅signoff块、未动正文方法论**;未超10;无candidate/M-DEC/客户敏感被签。
 - **未触碰**：未批量签全库/未升任何文件active/未改正文口径/未碰真实数据·脚本·execute。中确定性6件留P0-GOV-Signature-Batch-003。
 - commit：见下方 `chore: 补齐首批active治理文件签字`。
+
+---
+
+## 2026-06-23｜P1-GOV-G03Lint-Batch-014｜Lint规则扩展 + 中确定性签字候选预备 + 治理债务队列
+- **A lint 规则审查**：现有 6 查(断链/孤儿/active无签字/缺字段/敏感红线/版本)。缺:candidate越权approved、execute前置、provenance、supersession链、failed追踪。source_type缺失已含缺字段查。
+- **B lint 扩展(低风险实现2)**：①**candidate越权签字查**(status=candidate带approved=越权);②**execute前置状态查**(登记表存在性+是否声明不允许execute)。豁免99_原始素材冻结源料与执行日志。预备未实现3:provenance/supersession链/failed追踪(语义/跨文件,仅设计登记)。跑通仪表盘:**active无签字247→237(确认10签字识别)/candidate越权0/execute前置存在·已声明阻断/红线0/孤儿11**。
+- **C 中确定性6件字段补齐**：核心概念主定义索引/知识库总索引/术语表/Wiki治理方案 字段完整;**3件补source_type**(Memory治理体系=governance、工程操作错误案例库=reference、数据一致性追溯案例库=reference)。**未补signoff、未改正文** → Batch-003 就绪。
+- **D 治理债务队列**：新建`治理债务队列_P1-GOV-Debt-Queue_v0.1`(10队列+优先级+execute阻塞依赖图)。
+- **未触碰**：未补signoff/未批量签/未签candidate·M-DEC·客户敏感/未execute/未碰真实数据/未改M-DEC·RetailOS·M1-M8正文/未升active/lint只检测不自动修。
+- commit：见下方 `chore: 扩展lint规则并预备中确定性签字候选`。

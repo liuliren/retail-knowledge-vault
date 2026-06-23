@@ -3,6 +3,7 @@ title: vault Memory 治理体系 v1.0（第 6 大治理支柱 / W20 落地方案
 version: v1.0
 status: active
 owner: 六哥
+source_type: governance
 created: 2026-05-09
 updated: 2026-05-09
 module: 00_入口与总索引/03_治理规范

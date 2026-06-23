@@ -17,10 +17,15 @@ from typing import Iterable
 
 
 DEFAULT_EXCLUDES = {"99_归档", "Clippings", ".git"}
+# 红线/越权检测豁免冻结源料与历史日志（只检测正式件，不误伤不可变源/留痕）
+SIGNOFF_AUDIT_EXCLUDES = ("99_原始素材", "Claude执行日志", "Codex执行日志")
 FORMAL_ROOTS = ("01_", "04_", "09_", "10_", "16_")
 REQUIRED_FIELDS = ("title", "version", "status", "owner", "source_type")
 SIGNOFF_FIELDS = ("signoff", "signed", "signed_off")
 STATUS_EXEMPT_PATTERNS = ("案例", "记录", "导航", "索引", "README")
+# execute 前置状态登记表（存在性检查目标）
+EXECUTE_PRECOND_FILE = "00_入口与总索引/03_治理规范/Codex执行前置状态登记表_v0.1.md"
+CANDIDATE_APPROVED_RE = re.compile(r"approval_status:\s*approved|approved_by:")
 
 WIKI_LINK_RE = re.compile(r"(?<!!)\[\[([^\]\n]+)\]\]")
 EAN13_RE = re.compile(r"(?<![0-9])(69[0-9]{11})(?![0-9])")
@@ -281,6 +286,29 @@ def main() -> int:
         if name_version and not version_equal(name_version, doc.frontmatter.get("version")):
             version_mismatches.append((doc.rel, name_version, str(doc.frontmatter.get("version", ""))))
 
+    # 7. candidate 越权签字查：status=candidate 却带 approved 签字（candidate 不得 approved）
+    def _signoff_audit_skip(doc: MarkdownDoc) -> bool:
+        return any(p in doc.rel for p in SIGNOFF_AUDIT_EXCLUDES)
+
+    candidate_approved: list[tuple[str, str]] = []
+    for doc in docs:
+        if _signoff_audit_skip(doc):
+            continue
+        if str(doc.frontmatter.get("status", "")).strip() != "candidate":
+            continue
+        fm_end = doc.text.find("\n---", 4) if doc.text.startswith("---\n") else -1
+        fm_raw = doc.text[4:fm_end] if fm_end != -1 else ""
+        if CANDIDATE_APPROVED_RE.search(fm_raw):
+            candidate_approved.append((doc.rel, str(doc.frontmatter.get("title", ""))))
+
+    # 8. execute 前置状态登记表存在性 + 是否声明「不允许 execute」
+    precond_path = root / EXECUTE_PRECOND_FILE
+    precond_exists = precond_path.exists()
+    precond_blocks_execute = False
+    if precond_exists:
+        ptext = precond_path.read_text(encoding="utf-8", errors="replace")
+        precond_blocks_execute = "不允许 execute" in ptext or "不允许execute" in ptext
+
     timestamp = dt.datetime.now().astimezone().strftime("%Y-%m-%d %H:%M:%S %Z")
     lines: list[str] = []
     lines.extend(
@@ -303,6 +331,8 @@ def main() -> int:
         ["缺字段文件数", len(missing_fields)],
         ["红线命中文件项", len(sensitive_hits)],
         ["版本不一致数", len(version_mismatches)],
+        ["candidate 越权签字数", len(candidate_approved)],
+        ["execute 前置登记表", "存在·已声明阻断" if (precond_exists and precond_blocks_execute) else ("存在" if precond_exists else "缺失")],
     ]
     lines.extend(render_table(["指标", "数量"], metrics))
 
@@ -341,15 +371,34 @@ def main() -> int:
     version_rows = [[path, name_version, fm_version] for path, name_version, fm_version in version_mismatches[:20]]
     lines.extend(render_table(["文件", "文件名版本", "frontmatter version"], version_rows))
 
+    lines.extend(["", "## 7. candidate 越权签字查", ""])
+    cand_rows = [[rel, title] for rel, title in candidate_approved[:20]]
+    lines.extend(render_table(["文件", "title"], cand_rows))
+    lines.append("")
+    lines.append("> 规则：status=candidate 不得带 approved 签字（candidate 不得 approved）。命中=越权，需降签字或升 active 后再签。")
+
+    lines.extend(["", "## 8. execute 前置状态查", ""])
+    lines.append(f"- 登记表：`{EXECUTE_PRECOND_FILE}` → {'存在' if precond_exists else '**缺失**'}")
+    lines.append(f"- 是否声明「不允许 execute」：{'是（闸门关闭）' if precond_blocks_execute else '否（需复核）'}")
+
     lines.extend(["", "## 阻断项", ""])
     if sensitive_hits:
         lines.append("- 阻断级：敏感查存在命中。需先复核并处理红线项。")
     else:
         lines.append("- 无红线敏感命中。")
+    if candidate_approved:
+        lines.append("- 阻断级：存在 candidate 越权签字，需处理。")
+
+    lines.extend(["", "## 预备规则（未实现·设计登记）", ""])
+    lines.append("- **provenance 缺失**：active/candidate 的 M-DEC 应有 `来源::` 证据链（语义检查，待实现）。")
+    lines.append("- **supersession 链**：标 superseded 必须有 superseded_by 指向且目标存在（跨文件状态机，待实现）。")
+    lines.append("- **failed 记录追踪**：decision_status=failed/侥幸/果差但决策稳 进教训视图，严禁删除（待实现）。")
+    lines.append("> 以上为预备规则，本版只登记设计，不实现；避免误伤、先跑稳低风险检查。")
 
     lines.extend(["", "## 运行说明", ""])
     lines.append("- 本报告由 `13_数据分析与工具脚本/G03_Lint_v2/lint_v2.py` 生成。")
     lines.append("- 脚本只扫描 Markdown，不读取 Excel/CSV，不修改被扫描文件。")
+    lines.append("- signoff/红线/越权审计豁免：`99_原始素材`（冻结源料）与执行日志（历史留痕）。")
 
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text("\n".join(lines) + "\n", encoding="utf-8")
