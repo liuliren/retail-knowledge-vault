@@ -100,6 +100,16 @@ def main() -> int:
     out["库存数量"] = to_num(bb[col(bb, "库存数量")]) if col(bb, "库存数量") else pd.NA
     out["库存成本金额"] = to_num(bb[col(bb, "当前库存成本金额", "库存成本")]) if col(bb, "当前库存成本金额", "库存成本") else pd.NA
     out["销售成本"] = to_num(bb[col(bb, "销售成本")]) if col(bb, "销售成本") else pd.NA
+    # 毛利额/毛利率 派生兜底：源「毛利」「毛利率」列在本导出中全空 → 由 销售额−销售成本 派生（标准定义）。
+    gp_raw = to_num(out["毛利额"]).fillna(0)
+    if float(gp_raw.abs().sum()) == 0 and col(bb, "销售成本"):
+        out["毛利额"] = to_num(out["销售额"]) - to_num(out["销售成本"])
+        qc.append("毛利额=派生(销售额−销售成本)[源毛利列全空]")
+    gr_raw = to_num(out["毛利率"]).fillna(0)
+    if float(gr_raw.abs().sum()) == 0:
+        sa = to_num(out["销售额"])
+        out["毛利率"] = (to_num(out["毛利额"]) / sa).where(sa != 0)
+        qc.append("毛利率=派生(毛利额/销售额)[源毛利率列全空]")
     out["日均销量"] = to_num(bb[col(bb, "日均销量")]) if col(bb, "日均销量") else pd.NA
     out["售价"] = to_num(bb[col(bb, "档案售价", "零售价")]) if col(bb, "档案售价", "零售价") else pd.NA
     # 进价：内部列（不进 md/git）

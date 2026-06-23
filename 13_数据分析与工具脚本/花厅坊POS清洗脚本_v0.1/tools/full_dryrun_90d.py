@@ -1,0 +1,101 @@
+#!/usr/bin/env python3
+"""花厅坊 90 天脱敏合并表 full dry-run（CODEX-Full-DryRun-Execute-001）.
+
+只读脱敏合并表（gitignored processed/），跑 ABC 九宫格 + IR + 安全库存，
+输出 dry-run 结果到 gitignored processed/，打印纯统计摘要（无逐 SKU 明细/无敏感值）。
+不读原始 xls、不写回真实数据、不出正式裁决。
+"""
+from __future__ import annotations
+
+import argparse
+import glob
+import os
+from pathlib import Path
+
+import pandas as pd
+
+from abc_classifier import apply_abc
+from ir_calculator import apply_ir
+from safety_stock import apply_safety_stock
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--vault", default=".")
+    ap.add_argument("--proc", default="09_门店案例与项目复盘/乐易购花厅坊店/99_原始素材/01_门店数据材料/processed")
+    args = ap.parse_args()
+    procdir = Path(args.vault).resolve() / args.proc
+    cands = sorted(procdir.glob("花厅坊_90天全量合并_脱敏_*.xlsx"))
+    if not cands:
+        print("BLOCKED: 未找到脱敏合并表")
+        return 2
+    src = cands[-1]
+    df = pd.read_excel(src)
+    n = len(df)
+    print(f"=== DRY-RUN (无敏感值) 输入={src.name} 行数={n} ===")
+
+    # 1. ABC 九宫格（口径 §3.1 active；列名适配：销售额/毛利额）
+    df = apply_abc(df, sales_col="销售额", profit_col="毛利额")
+
+    # 2. IR（毛利率 × ITO估算）
+    df, ir_meta = apply_ir(df, margin_col="毛利率", ito_col="ITO估算")
+
+    # 3. 安全库存 / 库龄（库存数量 / 库龄天数 / 销额ABC）
+    df, ss_meta = apply_safety_stock(
+        df, daily_sales_col="日均销量", inventory_col="库存数量",
+        abc_col="销额ABC", age_col="库龄天数",
+    )
+
+    # ── 纯统计摘要（不出逐 SKU） ──
+    print("\n[9格身份分布]")
+    for k, v in df["身份"].value_counts().items():
+        print(f"  {k}: {v} ({v/n*100:.1f}%)")
+    inval = int((df["身份"] == "invalid_combination").sum())
+    print(f"  invalid_combination={inval}（应为0）")
+
+    print("\n[销额ABC分布]")
+    for k, v in df["销额ABC"].value_counts().items():
+        print(f"  {k}: {v}")
+    print("[毛利ABC分布]")
+    for k, v in df["毛利ABC"].value_counts().items():
+        print(f"  {k}: {v}")
+
+    nr = int(df["需复核"].fillna(False).astype(bool).sum())
+    print(f"\n[需复核(C+乙)]={nr} ({nr/n*100:.1f}%)")
+    print(f"[观察品出现]={int((df['身份']=='观察品').sum())}（应为0，已废止）")
+
+    # IR 覆盖
+    ir_ok = int(pd.to_numeric(df.get("IR"), errors="coerce").notna().sum()) if "IR" in df else 0
+    print(f"\n[IR可算]={ir_ok}/{n} ({ir_ok/n*100:.1f}%) status={ir_meta.get('status')}")
+
+    # 安全库存 / 库龄
+    if "库龄级" in df:
+        print("[库龄级分布]")
+        for k, v in df["库龄级"].value_counts().items():
+            print(f"  {k}: {v}")
+    if "补货信号" in df:
+        print("[补货信号分布]")
+        for k, v in df["补货信号"].value_counts().items():
+            print(f"  {k}: {v}")
+    print(f"[安全库存meta] age={ss_meta.get('age_status')} cov={ss_meta.get('safety_stock_coverage')}")
+
+    # blocked / 降级 汇总
+    print("\n[blocked/降级]")
+    print(f"  ITO blocked={int((pd.to_numeric(df.get('ITO估算'),errors='coerce').isna()).sum())}/{n}")
+    print(f"  库龄 blocked={int((df.get('库龄_状态')=='blocked_缺库龄').sum()) if '库龄_状态' in df else 'NA'}")
+    print(f"  促销=unavailable（全表无促销字段）")
+    print(f"  负毛利样本={int(df.get('负毛利清仓标记').sum()) if '负毛利清仓标记' in df else 'NA'}（POS汇总层实情）")
+
+    # 红线自检：条码全脱敏
+    bc_ok = bool((df["条码脱敏"] == "{{EAN13_已脱敏}}").all()) if "条码脱敏" in df else False
+    print(f"\n[红线] 条码全脱敏={bc_ok}")
+
+    # 输出 dry-run 结果（gitignored）——含内部进价列，仅本地
+    out = procdir / f"花厅坊_90天_dryrun结果_v0.1_{src.stem.split('_')[-1]}.xlsx"
+    df.to_excel(out, index=False)
+    print(f"\n[输出] {out.name}（gitignored，不入 git）")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

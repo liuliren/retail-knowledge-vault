@@ -29,11 +29,11 @@ related:
 | 5 | full dry-run 输入方案具备 | ✅ 方案就绪 | ✅(方案) | [[全量合并版execute前置方案_CODEX-Data-Merge-Full-001_v0.1]] 26字段+20样本+C4来源 | 待真实数据接入 |
 | 6 | 全量真实数据具备 | ✅ **脱敏合并表已生成** | ✅ | Batch-015 merge：全店 10,232 行(非smoke);毛利/库存100%/采购周期98.9%/库龄99.8% | —— |
 | 7 | 真实条码脱敏具备 | ✅ 合并表全脱敏+git 红线=0 | ✅ | 条码全 `{{EAN13_已脱敏}}`;供应商107代号;进价仅xlsx内部列;xlsx未入git | 持续 |
-| 8 | dry-run 已审阅 | 🔄 **预审通过·待跑** | ◑ | full dry-run 前置预审完成(可进);full dry-run 本身未跑 | **六哥签字→CODEX-Full-DryRun-Execute-001** |
-| 9 | 用户 execute signoff | ❌ 未签 | ❌ | —— | full dry-run 审完→CODEX-Execute-Approval-001 签字 |
-| 10 | **execute(真实写回) 是否允许** | **❌ 关闭** | ❌ | 8(dry-run跑+审)/9(签字) 未满足 | —— |
+| 8 | dry-run 已跑+审阅 | ✅ **已跑(10232)·已审** | ◑ | full dry-run 管线跑通(0 invalid/0观察品/脱敏达标);审阅暴露**方法论张力(金矿检不出)** | 先裁决金矿口径,再 review/approval |
+| 9 | 用户 execute signoff(真实写回) | ❌ 未签 | ❌ | —— | **方法论裁决后**→CODEX-Execute-Approval-001 签字 |
+| 10 | **execute(真实写回) 是否允许** | **❌ 关闭** | ❌ | 9 未签 + 方法论(金矿口径)未裁决 | —— |
 
-> 🔄 **Batch-015 推进**：数据线从「缺全量」→「**脱敏合并表已生成(全店10232行)+full dry-run预审通过**」。当前仅差 **full dry-run 执行(需签字)→审阅→execute 签字**。已知降级:ITO67%/负毛利0样本/促销缺/品类单层(dry-run 按 blocked 呈现)。
+> ✅ **Full-DryRun-Execute-001 已执行**：管线跑通全店 10,232 SKU(0 invalid/0 观察品/条码脱敏)。修复源毛利列全空→派生毛利额。**⚠ 暴露方法论张力**:毛利额贡献维下 C 行全丙、利润品/长尾待裁决=0,「低销高毛利率金矿」检不出 → **真实写回前须先裁决金矿口径**(是否加毛利率维),见 [[花厅坊90天full_dryrun审阅_CODEX-Full-DryRun-Execute-001_v0.1]]。
 
 ## 2. 结论
 - **当前不允许 execute。** 方法层（§3.1）/ 执行层（脚本）/ 测试层 三者已就绪（#1-#5、#7 绿）；
