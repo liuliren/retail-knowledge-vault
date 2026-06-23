@@ -1264,3 +1264,12 @@
 - **拆下一轮2任务**：P0-ABC-Goldmine-Rule-Confirm-001(签字补丁§3.1)→CODEX-ABC-Goldmine-Rule-Fix-001(代码同步+重跑)。
 - **未触碰**：未改§3.1 active/未改abc_classifier/未跑dry-run/未写回/未出正式裁决/未提交结果表脱敏表xls/未写条码进价供应商/未改M-DEC·RetailOS·M1-M8/未补signoff。
 - commit：见下方 `docs: 评审ABC九宫格利润金矿口径`。
+
+---
+
+## 2026-06-23｜P0-ABC-Goldmine-Rule-Confirm-001｜§3.1新增C行毛利率闸补丁（六哥签字·方案B）
+- **用户裁决**：采纳方案B(保九宫格+C行毛利率闸);阈值优先小类P75,样本<20降全店P75;金矿候选=复核字段非裁决;原9格不改;先改§3.1再改代码;不写回。
+- **§3.1修改**：新增 §3.1.1 C行毛利率复核闸——①毛利额贡献≠毛利率澄清;②利润金矿不再仅C+甲/乙识别;③C行毛利率闸(销额C+毛利率≥小类P75[样本<20→全店P75]+排除缺货/新品/促销/异常→「低销高毛利率·金矿候选」);④金矿候选=复核字段非最终裁决;⑤新增字段定义(gross_margin_rate_tier/goldmine_candidate/goldmine_reason)+口径;⑥一线解释;⑦原九宫格9格不改(只叠加)。
+- **签字**：frontmatter 追加 goldmine_rule_signoff(六哥/2026-06-23/scope仅§3.1.1口径,不代表代码同步·dry-run重跑·允许写回);版本记录追加 §3.1.1 active 行。未覆盖原 signoff_3_1。
+- **未触碰**：未改abc_classifier.py/未改dry-run runner/未重跑dry-run/未写回/未提交结果表脱敏表xls/未写条码进价供应商/未出正式裁决·诊断/未改M-DEC·RetailOS·M1-M8。
+- commit：见下方 `docs: 确认ABC九宫格金矿候选口径`。
