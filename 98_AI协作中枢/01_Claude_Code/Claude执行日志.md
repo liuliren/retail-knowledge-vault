@@ -1411,3 +1411,14 @@
 - **结论:不进Execute-Approval**——老库存处置=经营判断须六哥+现场定,不能代码自动裁决。下一步Sample-Pack-003分层抽样逐桶判。
 - 未触碰:未改代码/§3.1.x/未重跑/未写回/未出正式裁决/未提交结果表脱敏表xls/未写条码进价供应商/未改M-DEC·RetailOS·M1-M8/未碰外部dirty。
 - commit:见下方 docs: review goldmine pool disposition structure。
+
+---
+
+## 2026-06-24｜CODEX-Goldmine-Sample-Pack-003｜金矿候选池5桶分层抽样
+- 新建tools/goldmine_sample_pack_003.py(只读scope dry-run结果,按Review-003五桶分层抽样,脱敏hash)。桶判据严格复刻Review-003优先级(A新货/B老+销量≥12/C老+库存金额≥P75非快销/D库龄>365非快销非高库存/E其余)。
+- 全池5桶:B控补货529/D清库228/E人工复核186/C缩面161/A保留17;成本复核横切(毛利率>0.85)全池仅4。
+- 抽样58条(≤60):A8/B15/C12/D16/E7;**强制纳入成本复核横切4条**(否则未抽中)。
+- 输出明细→gitignored review/(不入git);tracked说明md(无SKU明细+逐桶人工判方法+桶口径临时非规则)。
+- 桶口径=Review-003临时待验证,**不固化为方法论规则,不出B/D正式明细,不进Execute-Approval,不写回,不改§3.1.x**。
+- 未触碰:abc_classifier/merge/runner/§3.1.x/真实数据/结果表脱敏表抽样xls入git/条码进价供应商/M-DEC·RetailOS·M1-M8/CLAUDE.md/外部dirty。
+- commit:见下方 docs: 金矿候选池5桶分层抽样说明。
