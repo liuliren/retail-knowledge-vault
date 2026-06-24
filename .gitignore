@@ -108,6 +108,10 @@ AGENTS.md
 # 依据 GIT-HYGIENE-001 审查 + GIT-HYGIENE-002 裁决（2026-06-24，六哥签字）；本地文件保留，仅移出跟踪
 98_AI协作中枢/01_Claude_Code/Claude执行日志.md
 
+# 客户私有区（C/D 区）：客户诊断/经营判断/派生结论/明细/抽样/原始数据，永不进普通 git
+# 依据 SENSITIVE-GOV-001 + SENSITIVE-HISTORY-PLAN-001 + SENSITIVE-PRIVATE-001（2026-06-24）
+_client_private/
+
 # ===== 2026-06-22（6-19 审计建议）：原始导出目录兜底 =====
 # 说明：明细 *.csv / *.xlsx 已被上方全局规则覆盖；此处仅补目录级兜底，
 # 防止 raw_exports/ 内非 csv/xlsx 的导出件（txt/json 等）误入 git。
