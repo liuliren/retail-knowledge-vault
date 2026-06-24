@@ -10,10 +10,11 @@ client_safety: internal_only
 source_type: reference
 ---
 
-# goldmine 客户配置模板 v0.1（方案A·脱敏参数化）
+# goldmine 客户配置模板 v0.1（SENSITIVE-PRIVATE-003）
 
-> SENSITIVE-PRIVATE-003 方案 A:tracked goldmine 工具**不硬编码客户名/路径/文件名**,客户耦合外置于本配置。
-> **真实配置存 gitignored 私有区 `_client_private/<客户>/goldmine/client_config_<客户>_goldmine.yaml`,不入 git。本文件仅模板(占位),不写真实客户路径/明细路径。**
+> 本文件保留为**治理说明 + 模板示意**。
+> **真实配置、配置加载器、配置 yaml 模板现统一存 gitignored 私有区 `_client_private/<客户>/goldmine/`，不入普通 Git。**
+> 当前 tracked 区仅保留本说明文档，用于记录边界与后续通用化方向。
 
 ## 1. 用法
 ```bash
@@ -37,19 +38,20 @@ fresh_archive_glob: <生鲜档案文件名通配>  # 客户级数据质量排除
 output_prefix: <客户名>_90天            # 各明细/结果表前缀
 ```
 
-## 2b. 为什么 goldmine 脚本不回 Git(方案 B+)
+## 2b. 当前裁决（2026-06-24 收口版）
 1. 提交 `373aad2`「客户专用明细与 goldmine 脚本移出 git 跟踪」**继续有效,本轮不反转**;
 2. goldmine/merge/full_dryrun 脚本贴客户数据结构,**维持在 `_client_private/`(gitignored)**,不重新加入 Git;
-3. **tracked 区只保留**:通用配置加载器 `client_config.py` + 本模板 + 说明;
-4. 私有副本已**参数化**(读 client_config,去花厅坊硬编码路径/输出名),仅本地客户项目用;
-5. **第二客户复用**:复制本模板生成新私有 yaml,私有脚本零改动跑;
-6. 如需把 goldmine 做成**通用 tracked 工具**,须另开 SENSITIVE-PRIVATE-004(从私有脚本重抽象无客户痕迹版本),**不得简单把私有脚本加回 Git**。
+3. `client_config.py` 与 `client_config_template_goldmine.yaml` 虽不含真实客户值,但仍属于**客户配置框架临时件**,含客户字段、私有路径约定与 goldmine 口径参数,**本轮一并移出普通 Git**,落 `_client_private/花厅坊/goldmine/`;
+4. **tracked 区只保留**:本模板说明文档(治理用途),不保留客户配置代码/模板;
+5. **第二客户复用**:复制私有模板生成新 yaml,仅在私有区运行;
+6. 如需把 goldmine 做成**通用 tracked 工具**,须另开 SENSITIVE-PRIVATE-004(从私有脚本重抽象无客户痕迹版本),**不得简单把私有脚本或配置框架加回 Git**。
 
 ## 3. 边界
 - 真实配置(含客户名/路径/ERP 文件名)**只存私有区,gitignored,绝不入 git**;
-- tracked 脚本只保留**通用占位 + CLI/env 读取**,无任何客户硬编码;
+- 配置加载器与配置 yaml 模板**当前也不入普通 Git**;
 - 本模板**不写真实路径/明细路径/敏感值**;
-- 配置驱动 ⇒ 第二客户只需新建一份私有 yaml,**脚本零改动**复用。
+- 若未来要恢复 tracked,前提是完成 SENSITIVE-PRIVATE-004 去客户化抽象并重新审查。
 
 ## 版本记录
-| v0.1 | 2026-06-24 | SENSITIVE-PRIVATE-003 方案A:goldmine 客户配置模板(8字段占位)+用法。真实配置存_client_private gitignored不入git;tracked脚本通用参数化无客户硬编码;第二客户复用零改脚本 |
+| v0.1 | 2026-06-24 | 建立 goldmine 客户配置模板与边界说明。 |
+| v0.1a | 2026-06-24 | 收口裁决：`client_config.py` + `client_config_template_goldmine.yaml` 一并移出普通 Git，tracked 区仅保留治理说明文档。 |
