@@ -14,7 +14,11 @@ from pathlib import Path
 
 import pandas as pd
 
-from abc_classifier import apply_abc, assign_gross_margin_rate_tier, assign_goldmine
+from abc_classifier import (
+    apply_abc, assign_gross_margin_rate_tier, assign_goldmine,
+    assign_cost_reliable, assign_recently_sold, assign_data_quality_scope,
+    assign_exclusion_pool,
+)
 from ir_calculator import apply_ir
 from safety_stock import apply_safety_stock
 
@@ -37,11 +41,20 @@ def main() -> int:
     # 1. ABC 九宫格（口径 §3.1 active；列名适配：销售额/毛利额）
     df = apply_abc(df, sales_col="销售额", profit_col="毛利额")
 
-    # 1b. §3.1.1 C 行毛利率复核闸 + 金矿候选（不改 9 格标签）
+    # 1b. §3.1.1 毛利率分层 + §3.1.2 成本/动销闸 + §3.1.3 数据质量范围筛选（不改 9 格标签）
     df["gross_margin_rate_tier"] = assign_gross_margin_rate_tier(df, rate_col="毛利率", cat_col="类别名称")
+    df["cost_reliable"] = assign_cost_reliable(df)
+    df["recently_sold"] = assign_recently_sold(df)
+    scope_status, scope_reason = assign_data_quality_scope(df)  # 读 client_excluded + cost_reliable
+    df["data_quality_scope_status"] = scope_status
+    df["data_quality_scope_reason"] = scope_reason
+    df["client_specific_exclusion"] = df.get("client_excluded", False)
     gm_cand, gm_reason = assign_goldmine(df)
     df["goldmine_candidate"] = gm_cand
     df["goldmine_reason"] = gm_reason
+    df["exclusion_pool"] = assign_exclusion_pool(df)
+    df["cost_missing_review_pool"] = df["exclusion_pool"].eq("cost_missing")
+    df["dead_stock_review_pool"] = df["exclusion_pool"].eq("dead_stock")
 
     # 2. IR（毛利率 × ITO估算）
     df, ir_meta = apply_ir(df, margin_col="毛利率", ito_col="ITO估算")
@@ -74,13 +87,25 @@ def main() -> int:
     print("\n[毛利率分层 gross_margin_rate_tier]")
     for k, v in df["gross_margin_rate_tier"].value_counts().items():
         print(f"  {k}: {v} ({v/n*100:.1f}%)")
+    # §3.1.3 数据质量范围 + §3.1.2 池
+    print("\n[数据质量范围 data_quality_scope_status]")
+    for k, v in df["data_quality_scope_status"].value_counts().items():
+        print(f"  {k}: {v} ({v/n*100:.1f}%)")
+    elig = int((df["data_quality_scope_status"] == "eligible").sum())
     nc = int((df["销额ABC"] == "C").sum())
+    nc_elig = int(((df["销额ABC"] == "C") & (df["data_quality_scope_status"] == "eligible")).sum())
     gm = int(df["goldmine_candidate"].sum())
-    print(f"[金矿候选 goldmine_candidate]={gm}  占C行={gm/nc*100:.1f}% (C行={nc})")
-    print("[金矿排除原因分布(C行)]")
-    for k, v in df.loc[df["销额ABC"] == "C", "goldmine_reason"].value_counts().items():
-        short = (k[:24] + "…") if len(str(k)) > 25 else k
-        print(f"  {short}: {v}")
+    print(f"\n[金矿候选 goldmine_candidate]={gm}  占eligible-C行={gm/max(nc_elig,1)*100:.1f}% (eligible-C={nc_elig}/C={nc})")
+    print("[复核池 exclusion_pool]")
+    for k, v in df["exclusion_pool"].value_counts().items():
+        print(f"  {k}: {v}")
+    print(f"  cost_missing_review_pool={int(df['cost_missing_review_pool'].sum())}  dead_stock_review_pool={int(df['dead_stock_review_pool'].sum())}  client_specific_excluded={int((df['exclusion_pool']=='client_specific_excluded').sum())}")
+
+    # 阶段对比
+    print("\n[阶段对比]")
+    print("  初始P75(未scope筛选): 分析10232/C8478/金矿1686/数据异常35%/死货13%")
+    print("  剔生鲜(drop版,历史): 分析9424/C5708/金矿1168/数据异常11%/死货34%")
+    print(f"  §3.1.2+§3.1.3(scope+两闸): 分析{n}/eligible{elig}/eligible-C{nc_elig}/金矿{gm}")
 
     # IR 覆盖
     ir_ok = int(pd.to_numeric(df.get("IR"), errors="coerce").notna().sum()) if "IR" in df else 0
@@ -109,7 +134,7 @@ def main() -> int:
     print(f"\n[红线] 条码全脱敏={bc_ok}")
 
     # 输出 dry-run 结果（gitignored）——含内部进价列，仅本地
-    out = procdir / f"花厅坊_90天_dryrun结果_剔生鲜_v0.2_{src.stem.split('_')[-1]}.xlsx"
+    out = procdir / f"花厅坊_90天_dryrun结果_scope_v0.3_{src.stem.split('_')[-1]}.xlsx"
     df.to_excel(out, index=False)
     print(f"\n[输出] {out.name}（gitignored，不入 git）")
     return 0

@@ -1364,3 +1364,15 @@
 - 对下一轮代码要求：CODEX-Goldmine-Rule-Tighten-Fix-001须用客户级开关/client_specific_excluded,禁止硬编码fresh_excluded=永久排除。
 - 本轮只改方法文档口径,未改代码/未重跑/未写回。未碰外部dirty(52周MD等session起脏文件)。
 - commit：见下方 docs: 修正生鲜剔除为客户级数据质量筛选。
+
+---
+
+## 2026-06-24｜CODEX-Goldmine-Rule-Tighten-Fix-001｜同步数据质量范围筛选与金矿二级闸（六哥签字）
+- 代码实现：abc_classifier 新增 assign_cost_reliable/assign_recently_sold/assign_data_quality_scope/assign_exclusion_pool;assign_goldmine 加三闸(scope eligible + 成本可信 + 近90天动销);缺列pass-through保旧测试。merge 生鲜由drop改为 client_excluded 标记(保留入表·客户配置驱动·非硬编码永久排除)。runner 输出 scope/池/阶段对比。
+- §3.1.3落地：data_quality_scope_status(eligible/client_specific_excluded/cost_unreliable/requires_manual_scope_review)+client_specific_exclusion;生鲜=客户级配置标记,单测验证「同样水果在成本可靠客户下仍 eligible」(非品类硬排除)。
+- 测试：27 passed(原17+新10:scope/cost/recently/优先级/生鲜非通用)。
+- 重跑：全表10232不膨胀;scope eligible8599(84%)/cost_unreliable825/生鲜client_specific_excluded808;**金矿候选1686→16**(占eligible-C 0.2%);池dead_stock8089/cost_missing825;9格不变/invalid0/观察品0/条码脱敏。
+- ⚠口径限制：recently_sold用库龄≤90代理「近90天动销」(最近销售日期仅24%覆盖);店内89%重滞→候选收至16;Review-002议是否改用销售日期/放宽库龄。
+- 结果表scope_v0.3→gitignored未入git。
+- 未触碰：未改§3.1/§3.1.1/§3.1.2/§3.1.3文本/未改9格标签/未真实写回/未出正式裁决/未提交结果表脱敏表抽样xls/未写条码进价供应商/未改M-DEC·RetailOS·M1-M8/未动CLAUDE.md/未碰外部dirty。
+- commit：见下方 feat: tighten goldmine gate with scope cost and movement checks。

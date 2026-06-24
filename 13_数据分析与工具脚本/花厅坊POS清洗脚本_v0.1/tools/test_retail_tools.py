@@ -8,8 +8,11 @@ import pandas as pd
 from abc_classifier import (
     NINE_GRID,
     apply_abc,
+    assign_cost_reliable,
+    assign_data_quality_scope,
     assign_goldmine,
     assign_gross_margin_rate_tier,
+    assign_recently_sold,
     decide_identity,
     decide_review,
 )
@@ -157,6 +160,58 @@ class GoldmineTest(unittest.TestCase):
         cand, reason = assign_goldmine(df)
         self.assertFalse(bool(cand.iloc[0]))
         self.assertIn("不可用", reason.iloc[0])
+
+
+class ScopeAndTightenTest(unittest.TestCase):
+    def _row(self, **kw):
+        base = dict(销额ABC="C", gross_margin_rate_tier="high", 缺货标记=False, 新品标记=False,
+                    cost_reliable=True, recently_sold=True,
+                    data_quality_scope_status="eligible")
+        base.update(kw)
+        return pd.DataFrame([base])
+
+    def test_full_eligible_candidate_true(self):
+        self.assertTrue(bool(assign_goldmine(self._row())[0].iloc[0]))
+
+    def test_client_specific_excluded_false(self):
+        cand, reason = assign_goldmine(self._row(data_quality_scope_status="client_specific_excluded"))
+        self.assertFalse(bool(cand.iloc[0]))
+        self.assertIn("client_specific_excluded", reason.iloc[0])
+
+    def test_cost_unreliable_scope_false(self):
+        self.assertFalse(bool(assign_goldmine(self._row(data_quality_scope_status="cost_unreliable"))[0].iloc[0]))
+
+    def test_cost_not_reliable_false(self):
+        self.assertFalse(bool(assign_goldmine(self._row(cost_reliable=False))[0].iloc[0]))
+
+    def test_not_recently_sold_false(self):
+        self.assertFalse(bool(assign_goldmine(self._row(recently_sold=False))[0].iloc[0]))
+
+    def test_cost_reliable_rule(self):
+        df = pd.DataFrame({"销售成本": [10, 0, 5, 5], "毛利率": [0.3, 0.3, None, 0.99]})
+        cr = assign_cost_reliable(df)
+        self.assertEqual(list(cr), [True, False, False, False])  # 正常/成本0/毛利缺/毛利>0.95
+
+    def test_recently_sold_rule(self):
+        df = pd.DataFrame({"销量": [4, 3, 10, 10], "库龄天数": [30, 30, 90, 120]})
+        rs = assign_recently_sold(df)
+        self.assertEqual(list(rs), [True, False, True, False])  # ≥4&≤90 / 销量<4 / 边界90 / 库龄>90
+
+    def test_scope_priority_client_over_cost(self):
+        df = pd.DataFrame({"client_excluded": [True], "cost_reliable": [False]})
+        status, _ = assign_data_quality_scope(df)
+        self.assertEqual(status.iloc[0], "client_specific_excluded")  # 客户排除优先于成本
+
+    def test_scope_eligible_when_clean(self):
+        df = pd.DataFrame({"client_excluded": [False], "cost_reliable": [True]})
+        status, _ = assign_data_quality_scope(df)
+        self.assertEqual(status.iloc[0], "eligible")
+
+    def test_fresh_not_universal_excluded(self):
+        # 生鲜不靠品类名硬排除：同样是"水果"，client_excluded=False 时仍 eligible
+        df = pd.DataFrame({"类别名称": ["水果"], "client_excluded": [False], "cost_reliable": [True]})
+        status, _ = assign_data_quality_scope(df)
+        self.assertEqual(status.iloc[0], "eligible")
 
 
 if __name__ == "__main__":

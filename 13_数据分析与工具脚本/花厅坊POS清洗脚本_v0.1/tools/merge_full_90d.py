@@ -217,15 +217,19 @@ def main() -> int:
                 fresh_cats = set(str(c).strip() for c in fa[fcat].astype(str) if str(c).strip())
         except Exception:
             pass
+    # §3.1.3：生鲜不 drop，改为「客户级数据质量排除」标记(花厅坊/乐购当前生鲜成本口径异常)。
+    # 此为当前客户配置(源=生鲜商品档案),非通用永久排除;下游 scope filter 据此置 client_specific_excluded。
     is_fresh = out["货号"].isin(fresh_codes) | out["类别名称"].astype(str).str.strip().isin(fresh_cats)
     n_fresh = int(is_fresh.sum())
-    out = out[~is_fresh].copy()
-    qc.append(f"剔除生鲜(内购无成本)={n_fresh}行[源:生鲜商品档案,类别{len(fresh_cats)}/货号{len(fresh_codes)}]")
-    qc.append(f"剔除生鲜后分析行数={len(out)}")
+    out["client_excluded"] = is_fresh.values
+    out["client_excluded_reason"] = ""
+    out.loc[out["client_excluded"], "client_excluded_reason"] = "花厅坊/乐购当前生鲜成本口径异常(client_specific_excluded·非通用永久规则)"
+    qc.append(f"客户级数据质量排除(生鲜)标记={n_fresh}行[保留入表·scope筛选·非drop;源:生鲜档案 类别{len(fresh_cats)}/货号{len(fresh_codes)}]")
+    qc.append(f"全表分析行数={len(out)}(生鲜入表但 scope=client_specific_excluded)")
 
     # ── 输出（gitignored）──
     stamp = REF_DATE.strftime("%Y%m%d")
-    out_path = outdir / f"花厅坊_90天全量合并_脱敏_剔生鲜_v0.2_{stamp}.xlsx"
+    out_path = outdir / f"花厅坊_90天全量合并_脱敏_scope_v0.3_{stamp}.xlsx"
     # 写出含内部进价列（xlsx 在 gitignored 目录，允许）
     out.to_excel(out_path, index=False)
 

@@ -120,16 +120,82 @@ def assign_goldmine(
     tier = df[tier_col].astype(str) if tier_col in df.columns else pd.Series("unavailable", index=df.index)
     shortage = df[shortage_col].fillna(False).astype(bool) if shortage_col in df.columns else pd.Series(False, index=df.index)
     newp = df[new_col].fillna(False).astype(bool) if new_col in df.columns else pd.Series(False, index=df.index)
+    # §3.1.2/§3.1.3 三闸（缺列时 pass-through，保旧测试兼容）
+    scope = df["data_quality_scope_status"].astype(str) if "data_quality_scope_status" in df.columns else pd.Series("eligible", index=df.index)
+    cost_ok = df["cost_reliable"].fillna(True).astype(bool) if "cost_reliable" in df.columns else pd.Series(True, index=df.index)
+    sold_ok = df["recently_sold"].fillna(True).astype(bool) if "recently_sold" in df.columns else pd.Series(True, index=df.index)
+    eligible = scope.eq("eligible")
     is_c = sales.eq("C")
-    cand = is_c & tier.eq("high") & ~shortage & ~newp
+    cand = eligible & is_c & tier.eq("high") & cost_ok & sold_ok & ~shortage & ~newp
     reason = pd.Series("", index=df.index, dtype="object")
+    # 原因（优先级：scope > 非C > tier > 成本 > 死货 > 缺货/新品 > 命中）
     reason[~is_c] = "非C行"
     reason[is_c & tier.eq("unavailable")] = "毛利率不可用/数据异常"
     reason[is_c & ~tier.eq("high") & ~tier.eq("unavailable")] = "毛利率未达阈值"
-    reason[is_c & tier.eq("high") & shortage] = "缺货排除"
-    reason[is_c & tier.eq("high") & ~shortage & newp] = "新品保护排除"
-    reason[cand] = "销售贡献C；毛利率达阈值(小类/全店P75)；未触发缺货/新品排除；促销字段缺失需人工复核"
+    reason[is_c & tier.eq("high") & ~cost_ok] = "成本/毛利率不可靠，进cost_missing_review_pool"
+    reason[is_c & tier.eq("high") & cost_ok & ~sold_ok] = "90天销量<4或库龄>90，进dead_stock_review_pool"
+    reason[is_c & tier.eq("high") & cost_ok & sold_ok & shortage] = "缺货排除"
+    reason[is_c & tier.eq("high") & cost_ok & sold_ok & ~shortage & newp] = "新品保护排除"
+    reason[~eligible & (scope == "client_specific_excluded")] = "当前客户/门店数据质量范围排除(client_specific_excluded)"
+    reason[~eligible & (scope == "cost_unreliable")] = "成本不可信(数据质量范围外)"
+    reason[cand] = "数据质量eligible；销售贡献C；毛利率达P75；成本可信；90天销量≥4且库龄≤90；未触发缺货/新品；促销字段缺失需人工复核"
     return cand, reason
+
+
+def assign_cost_reliable(
+    df: pd.DataFrame, cost_col: str = "销售成本", rate_col: str = "毛利率"
+) -> pd.Series:
+    """成本/毛利率是否可信（§3.1.2）。false ⇔ 成本≤0/缺 或 毛利率缺/不可算/>0.95。"""
+    cost = pd.to_numeric(df.get(cost_col), errors="coerce") if cost_col in df.columns else pd.Series(float("nan"), index=df.index)
+    rate = pd.to_numeric(df.get(rate_col), errors="coerce") if rate_col in df.columns else pd.Series(float("nan"), index=df.index)
+    reliable = (cost > 0) & rate.notna() & (rate <= 0.95)
+    return reliable.fillna(False).astype(bool)
+
+
+def assign_recently_sold(
+    df: pd.DataFrame, qty_col: str = "销量", age_col: str = "库龄天数",
+    min_qty: int = 4, max_age: int = 90,
+) -> pd.Series:
+    """近90天有效动销（§3.1.2）。true ⇔ 销量≥min_qty 且 库龄≤max_age。"""
+    qty = pd.to_numeric(df.get(qty_col), errors="coerce") if qty_col in df.columns else pd.Series(float("nan"), index=df.index)
+    age = pd.to_numeric(df.get(age_col), errors="coerce") if age_col in df.columns else pd.Series(float("nan"), index=df.index)
+    return ((qty >= min_qty) & (age <= max_age)).fillna(False).astype(bool)
+
+
+def assign_data_quality_scope(
+    df: pd.DataFrame, client_excluded_col: str = "client_excluded",
+    cost_reliable_col: str = "cost_reliable",
+) -> tuple[pd.Series, pd.Series]:
+    """§3.1.3 数据质量范围筛选 → (data_quality_scope_status, reason)。
+
+    优先级：client_specific_excluded(当前客户配置,如花厅坊生鲜) > cost_unreliable(成本不可信)
+    > eligible。requires_manual_scope_review 预留人工(本函数不自动判)。
+    **客户级配置驱动,不硬编码品类永久排除。**
+    """
+    n = len(df)
+    client_ex = df[client_excluded_col].fillna(False).astype(bool) if client_excluded_col in df.columns else pd.Series(False, index=df.index)
+    cost_ok = df[cost_reliable_col].fillna(False).astype(bool) if cost_reliable_col in df.columns else assign_cost_reliable(df)
+    status = pd.Series("eligible", index=df.index, dtype="object")
+    reason = pd.Series("成本/毛利率可信，纳入毛利率型判断", index=df.index, dtype="object")
+    status[~cost_ok] = "cost_unreliable"
+    reason[~cost_ok] = "成本缺失/≤0或毛利率不可算/>0.95"
+    status[client_ex] = "client_specific_excluded"
+    reason[client_ex] = "当前客户/门店数据质量范围排除（如花厅坊生鲜成本口径异常）·非通用永久规则"
+    return status, reason
+
+
+def assign_exclusion_pool(df: pd.DataFrame) -> pd.Series:
+    """排除池（§3.1.2/§3.1.3）。优先级 client_specific_excluded>cost_missing>dead_stock>none。"""
+    scope = df.get("data_quality_scope_status", pd.Series("eligible", index=df.index)).astype(str)
+    cost_ok = df.get("cost_reliable", pd.Series(True, index=df.index)).fillna(False).astype(bool)
+    sold_ok = df.get("recently_sold", pd.Series(True, index=df.index)).fillna(False).astype(bool)
+    pool = pd.Series("none", index=df.index, dtype="object")
+    pool[(scope == "eligible") & cost_ok & ~sold_ok] = "dead_stock"
+    pool[(scope == "eligible") & ~cost_ok] = "cost_missing"
+    pool[scope == "cost_unreliable"] = "cost_missing"
+    pool[scope == "requires_manual_scope_review"] = "requires_manual_scope_review"
+    pool[scope == "client_specific_excluded"] = "client_specific_excluded"
+    return pool
 
 
 def apply_abc(
