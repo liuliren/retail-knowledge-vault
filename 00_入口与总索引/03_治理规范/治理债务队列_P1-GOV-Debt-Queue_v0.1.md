@@ -43,7 +43,8 @@ related:
 | 9 | provenance / supersession lint | **已实现**（Batch-Rules-002）| —— | 弱检测落地，基线全 0 | P3 |
 | 10 | 真实 EAN-13 红线持续监控 | 绿（红线=0）| —— | lint 每轮扫，新数据接入时保持 0 | P1 常态 |
 
-| 5i | goldmine脚本归属(敏感治理)| **方案B+落地** | —— | 脚本维持私有(373aad2);tracked加client_config加载器+模板;私有副本已参数化;真实配置gitignored。如需通用化另开PRIVATE-004 | P3 |
+| 5i | goldmine脚本归属(敏感治理)| ✅**方案B+落地·敏感线收口** | —— | 脚本维持私有(373aad2);tracked加client_config加载器+模板;私有副本已参数化;真实配置gitignored | 完成 |
+| 5j | SENSITIVE-PRIVATE-004 Goldmine Harness通用化重建 | **暂缓登记** | 刚脱管,先稳定;避免立即重建通用Harness再碰边界 | **触发条件:第二客户接入 或 确认goldmine产品化** 后启动;届时从私有脚本重抽象无客户痕迹通用版,不简单加回git | P3 |
 
 ## 2. 本轮（Batch-014）进展
 - lint 加 2 低风险检测（candidate 越权 approved / execute 前置存在性）→ 已实现并跑通；
