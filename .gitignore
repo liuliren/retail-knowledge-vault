@@ -98,9 +98,15 @@ obsidian-codex-bridge
 AGENTS.md
 
 # AI 输出区过程产物（草稿/中间报告，需确认后才提炼为正式资产，不入正式知识库主线）
-# 窄模式：仅忽略两个输出区子目录，不影响 01_Claude_Code/Claude执行日志.md 与 02_Codex/Codex执行日志.md
+# 窄模式：仅忽略两个输出区子目录。
+# 2026-06-24 GIT-HYGIENE-002 反转旧决策：Claude执行日志.md 经审查含客户诊断数据（门店毛利率/PSD/品类诊断），
+# 改为不入 git（见下方“客户诊断类聚合执行日志”规则）；Codex执行日志.md 经只读审查无客户诊断内容，维持 tracked。
 98_AI协作中枢/01_Claude_Code/Claude输出区/
 98_AI协作中枢/02_Codex/Codex输出区/
+
+# 客户诊断类聚合执行日志：含门店毛利率/PSD/品类诊断结论（client_confidential），不入普通 git 历史
+# 依据 GIT-HYGIENE-001 审查 + GIT-HYGIENE-002 裁决（2026-06-24，六哥签字）；本地文件保留，仅移出跟踪
+98_AI协作中枢/01_Claude_Code/Claude执行日志.md
 
 # ===== 2026-06-22（6-19 审计建议）：原始导出目录兜底 =====
 # 说明：明细 *.csv / *.xlsx 已被上方全局规则覆盖；此处仅补目录级兜底，
