@@ -1353,3 +1353,14 @@
 - **签字**：frontmatter加goldmine_tighten_rule_signoff(六哥/2026-06-24/scope仅§3.1.2口径,不代表代码同步·重跑·写回);版本记录加§3.1.2 active行。未覆盖前序signoff。
 - **未触碰**：未改abc_classifier/merge/runner/未重跑/未写回/未出正式裁决/未提交结果表脱敏表抽样xls/未写条码进价供应商/未改M-DEC·RetailOS·M1-M8/未动CLAUDE.md。
 - commit：见下方 `docs: 确认金矿候选成本与动销二级闸`。
+
+---
+
+## 2026-06-24｜P0-ABC-Goldmine-Scope-Clarification-001｜修正生鲜剔除为客户级数据质量筛选机制
+- 裁决：生鲜成本缺失不得上升为通用方法论默认假设;「生鲜永久排除」过度泛化,降级为客户级/门店级数据质量筛选。是否参与毛利率金矿判断由数据质量定,不由品类名定。
+- §3.1.3新增：数据质量范围筛选机制 data_quality_scope_filter(eligible/client_specific_excluded/cost_unreliable/requires_manual_scope_review)+字段(data_quality_scope_status/reason/client_specific_exclusion);仅eligible进金矿判断。
+- 花厅坊特例(非通用)：生鲜=client_specific_excluded(成本口径异常,后续可重纳);尚美日化=cost_unreliable/requires_manual_scope_review;包装食品成本可信=eligible。体系化超市生鲜成本可靠则eligible。
+- 修正表述：§3.1.2「生鲜已除」+评审§A「生鲜永久排除」→降级为「花厅坊/乐购当前数据因成本口径异常暂排(client_specific_excluded),非通用永久规则」。
+- 对下一轮代码要求：CODEX-Goldmine-Rule-Tighten-Fix-001须用客户级开关/client_specific_excluded,禁止硬编码fresh_excluded=永久排除。
+- 本轮只改方法文档口径,未改代码/未重跑/未写回。未碰外部dirty(52周MD等session起脏文件)。
+- commit：见下方 docs: 修正生鲜剔除为客户级数据质量筛选。
