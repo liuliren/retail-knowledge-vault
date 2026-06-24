@@ -46,6 +46,9 @@ related:
 | 5i | goldmine脚本归属(敏感治理)| ✅**方案B+落地·敏感线收口** | —— | 脚本维持私有(373aad2);tracked加client_config加载器+模板;私有副本已参数化;真实配置gitignored | 完成 |
 | 5j | SENSITIVE-PRIVATE-004 Goldmine Harness通用化重建 | **暂缓登记** | 刚脱管,先稳定;避免立即重建通用Harness再碰边界 | **触发条件:第二客户接入 或 确认goldmine产品化** 后启动;届时从私有脚本重抽象无客户痕迹通用版,不简单加回git | P3 |
 
+| 11b | 全面审计(FULL-AUDIT) | **暂缓登记** | 当前关键轴健康(红线0/越权0/语义0/execute阻断),无需立即 | **触发:①月度治理审计 ②第二客户接入前 ③大规模方法论/目录调整前 ④execute写回流程重开前** | P2 |
+| 11c | P2 housekeeping(轻量) | **暂缓登记** | 非瓶颈,不打断主线 | 少量治理md补source_type + triage 2新孤儿 + Schema文件名/frontmatter版本对齐;择机一次清 | P2 |
+
 ## 2. 本轮（Batch-014）进展
 - lint 加 2 低风险检测（candidate 越权 approved / execute 前置存在性）→ 已实现并跑通；
 - lint 最新：active无签字 **237**、candidate越权 **0**、execute前置 **存在·已声明阻断**、红线 **0**、孤儿 **11**；
