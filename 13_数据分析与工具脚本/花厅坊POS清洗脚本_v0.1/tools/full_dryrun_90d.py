@@ -16,8 +16,8 @@ import pandas as pd
 
 from abc_classifier import (
     apply_abc, assign_gross_margin_rate_tier, assign_goldmine,
-    assign_cost_reliable, assign_recently_sold, assign_data_quality_scope,
-    assign_exclusion_pool,
+    assign_cost_reliable, assign_recently_sold, assign_old_inventory_risk,
+    assign_data_quality_scope, assign_exclusion_pool,
 )
 from ir_calculator import apply_ir
 from safety_stock import apply_safety_stock
@@ -44,7 +44,8 @@ def main() -> int:
     # 1b. §3.1.1 毛利率分层 + §3.1.2 成本/动销闸 + §3.1.3 数据质量范围筛选（不改 9 格标签）
     df["gross_margin_rate_tier"] = assign_gross_margin_rate_tier(df, rate_col="毛利率", cat_col="类别名称")
     df["cost_reliable"] = assign_cost_reliable(df)
-    df["recently_sold"] = assign_recently_sold(df)
+    df["recently_sold"] = assign_recently_sold(df)           # Fix-002 销量优先
+    df["old_inventory_risk"] = assign_old_inventory_risk(df)  # Fix-002 库龄>90 风险标签(不排除金矿)
     scope_status, scope_reason = assign_data_quality_scope(df)  # 读 client_excluded + cost_reliable
     df["data_quality_scope_status"] = scope_status
     df["data_quality_scope_reason"] = scope_reason
@@ -101,11 +102,19 @@ def main() -> int:
         print(f"  {k}: {v}")
     print(f"  cost_missing_review_pool={int(df['cost_missing_review_pool'].sum())}  dead_stock_review_pool={int(df['dead_stock_review_pool'].sum())}  client_specific_excluded={int((df['exclusion_pool']=='client_specific_excluded').sum())}")
 
+    # Fix-002 老库存风险 + 金矿拆分
+    oir = int(df["old_inventory_risk"].sum())
+    rs = int(df["recently_sold"].sum())
+    gm_oir = int((df["goldmine_candidate"] & df["old_inventory_risk"]).sum())
+    gm_new = gm - gm_oir
+    print(f"\n[Fix-002] recently_sold(销量≥4)={rs}  old_inventory_risk(库龄>90)={oir}")
+    print(f"  金矿候选={gm}  其中老库存风险={gm_oir}  新货={gm_new}")
+
     # 阶段对比
     print("\n[阶段对比]")
-    print("  初始P75(未scope筛选): 分析10232/C8478/金矿1686/数据异常35%/死货13%")
-    print("  剔生鲜(drop版,历史): 分析9424/C5708/金矿1168/数据异常11%/死货34%")
-    print(f"  §3.1.2+§3.1.3(scope+两闸): 分析{n}/eligible{elig}/eligible-C{nc_elig}/金矿{gm}")
+    print("  初始P75: 金矿1686/dead_stock— /数据异常35%")
+    print("  Fix-001(销量≥4且库龄≤90): 金矿16/dead_stock8089/cost_missing825/client_excluded808")
+    print(f"  Fix-002(销量优先+库龄转风险): 金矿{gm}(老库存{gm_oir}/新货{gm_new})/dead_stock{int(df['dead_stock_review_pool'].sum())}/cost_missing{int(df['cost_missing_review_pool'].sum())}/client_excluded{int((df['exclusion_pool']=='client_specific_excluded').sum())}/old_inv_risk{oir}")
 
     # IR 覆盖
     ir_ok = int(pd.to_numeric(df.get("IR"), errors="coerce").notna().sum()) if "IR" in df else 0

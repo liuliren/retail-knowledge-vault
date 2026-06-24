@@ -138,7 +138,11 @@ def assign_goldmine(
     reason[is_c & tier.eq("high") & cost_ok & sold_ok & ~shortage & newp] = "新品保护排除"
     reason[~eligible & (scope == "client_specific_excluded")] = "当前客户/门店数据质量范围排除(client_specific_excluded)"
     reason[~eligible & (scope == "cost_unreliable")] = "成本不可信(数据质量范围外)"
-    reason[cand] = "数据质量eligible；销售贡献C；毛利率达P75；成本可信；90天销量≥4且库龄≤90；未触发缺货/新品；促销字段缺失需人工复核"
+    reason[cand] = "数据质量eligible；销售贡献C；毛利率达P75；成本可信；90天销量≥4(动销)；未触发缺货/新品；促销字段缺失需人工复核"
+    # Fix-002：库龄>90 不再排除金矿，仅在候选 reason 标注老库存风险
+    if "old_inventory_risk" in df.columns:
+        oir = df["old_inventory_risk"].fillna(False).astype(bool)
+        reason[cand & oir] = reason[cand & oir].astype(str) + "；⚠老库存风险(库龄>90)需关注清库/缩面/补货"
     return cand, reason
 
 
@@ -153,13 +157,26 @@ def assign_cost_reliable(
 
 
 def assign_recently_sold(
-    df: pd.DataFrame, qty_col: str = "销量", age_col: str = "库龄天数",
-    min_qty: int = 4, max_age: int = 90,
+    df: pd.DataFrame, qty_col: str = "销量", min_qty: int = 4,
 ) -> pd.Series:
-    """近90天有效动销（§3.1.2）。true ⇔ 销量≥min_qty 且 库龄≤max_age。"""
+    """近90天有效动销（§3.1.2·Fix-002 销量优先）。true ⇔ 90天销量≥min_qty。
+
+    Fix-002：去掉「库龄≤90」一票否决（库龄≠动销，误杀老库存但仍卖的货）；
+    库龄改由 assign_old_inventory_risk 作风险标签。
+    """
     qty = pd.to_numeric(df.get(qty_col), errors="coerce") if qty_col in df.columns else pd.Series(float("nan"), index=df.index)
+    return (qty >= min_qty).fillna(False).astype(bool)
+
+
+def assign_old_inventory_risk(
+    df: pd.DataFrame, age_col: str = "库龄天数", max_age: int = 90,
+) -> pd.Series:
+    """老库存风险标签（§3.1.2·Fix-002）。true ⇔ 库龄>max_age。
+
+    **仅风险标签,不排除 goldmine_candidate**;供人工复核提示清库/缩面/补货。
+    """
     age = pd.to_numeric(df.get(age_col), errors="coerce") if age_col in df.columns else pd.Series(float("nan"), index=df.index)
-    return ((qty >= min_qty) & (age <= max_age)).fillna(False).astype(bool)
+    return (age > max_age).fillna(False).astype(bool)
 
 
 def assign_data_quality_scope(

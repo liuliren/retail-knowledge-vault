@@ -30,7 +30,7 @@ related:
 | 6 | 全量真实数据具备 | ✅ **脱敏合并表已生成** | ✅ | Batch-015 merge：全店 10,232 行(非smoke);毛利/库存100%/采购周期98.9%/库龄99.8% | —— |
 | 7 | 真实条码脱敏具备 | ✅ 合并表全脱敏+git 红线=0 | ✅ | 条码全 `{{EAN13_已脱敏}}`;供应商107代号;进价仅xlsx内部列;xlsx未入git | 持续 |
 | 8 | dry-run 已跑+审阅 | ✅ **已跑(10232)·已审** | ◑ | full dry-run 管线跑通(0 invalid/0观察品/脱敏达标);审阅暴露**方法论张力(金矿检不出)** | 先裁决金矿口径,再 review/approval |
-| 9 | 用户 execute signoff(真实写回) | ❌ 未签 | ❌ | §3.1.2+§3.1.3代码已同步重跑(金矿1686→16);Review-002未做 | CODEX-Full-DryRun-Review-002→Execute-Approval签字 |
+| 9 | 用户 execute signoff(真实写回) | ❌ 未签 | ❌ | Fix-002已改动销闸重跑(金矿16→1121待复核池) | CODEX-Full-DryRun-Review-003→Execute-Approval签字 |
 | 10 | **execute(真实写回) 是否允许** | **❌ 关闭** | ❌ | 9 未签 + 方法论(金矿口径)未裁决 | —— |
 
 > ✅ **Full-DryRun-Execute-001 已执行**：管线跑通全店 10,232 SKU(0 invalid/0 观察品/条码脱敏)。修复源毛利列全空→派生毛利额。**⚠ 暴露方法论张力**:毛利额贡献维下 C 行全丙、利润品/长尾待裁决=0,「低销高毛利率金矿」检不出 → **真实写回前须先裁决金矿口径**(是否加毛利率维),见 [[花厅坊90天full_dryrun审阅_CODEX-Full-DryRun-Execute-001_v0.1]]。

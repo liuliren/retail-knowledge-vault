@@ -1376,3 +1376,27 @@
 - 结果表scope_v0.3→gitignored未入git。
 - 未触碰：未改§3.1/§3.1.1/§3.1.2/§3.1.3文本/未改9格标签/未真实写回/未出正式裁决/未提交结果表脱敏表抽样xls/未写条码进价供应商/未改M-DEC·RetailOS·M1-M8/未动CLAUDE.md/未碰外部dirty。
 - commit：见下方 feat: tighten goldmine gate with scope cost and movement checks。
+
+---
+
+## 2026-06-24｜CODEX-Full-DryRun-Review-002｜审三闸收窄后金矿候选与动销闸口径
+- 管线完好:10232不膨胀/9格不变/invalid0/观察品0/scope生效/生鲜client_specific_excluded非硬排/保P75。
+- 16候选画像干净:15小类/毛利率0.23-0.54/销量4-18/库龄48-86(真金矿样)但占eligible-C仅0.2%疑过严。
+- **核心发现·dead_stock 8089误杀**:销量<4(真不足)仅2394(30%);**销量≥4但库龄>90=5679(70%疑误杀)**;销量≥10仍被切3564;最近销售90天内但库龄>90确认误杀480;**库龄闸单独误杀1323个(high+成本可信+销量≥4)**→真金矿池本应≈1339被压到16。
+- 动销闸评审:当前库龄≤90代理动销=误判;**荐方案C(recently_sold⇔销量≥4;库龄>90转old_inventory_risk风险标签,不排除金矿)**;B销售日期优先但仅23%覆盖。
+- 暂缓Sample-Pack-002(16是库龄子集非真池),先改闸重跑再抽样。
+- **结论C:不进Execute-Approval**,先Fix-002改动销闸。
+- 状态更新:债务#5e降级Review-002过严;execute前置#9指向Fix-002。
+- 未触碰:未改代码/§3.1.x/未重跑/未写回/未提交结果表脱敏表xls/未写条码进价供应商/未改M-DEC·RetailOS·M1-M8/未动CLAUDE.md/未碰外部dirty。
+- commit:见下方 docs: review tightened goldmine candidates。
+
+---
+
+## 2026-06-24｜CODEX-Goldmine-Rule-Tighten-Fix-002｜动销闸改销量优先+库龄转风险标签（六哥签字·方案C）
+- 代码:assign_recently_sold改销量优先(销量≥4,去库龄一票否决);新增assign_old_inventory_risk(库龄>90,仅标签不排除金矿);assign_goldmine候选reason加老库存风险标注;dead_stock只由销量<4触发(assign_exclusion_pool用recently_sold)。
+- 测试:31 passed(更新recently_sold为销量优先+新增old_inventory_risk/销量≥4库龄>90可金矿/dead_stock只低销)。
+- 重跑:**金矿16→1121**(占eligible-C15.0%,老库存风险1104/新货17);**dead_stock8089→2394**(正好=Review-002真动销不足数,证明只由销量触发);old_inventory_risk9117/recently_sold7003;cost_missing825/client_excluded808不变;9格/invalid0/观察品0/P75不变。
+- 保留:原ABC九宫格/P75/scope客户配置/生鲜client_specific_excluded非永久/成本池/新品缺货促销异常排除。
+- 判断:金矿恢复合理待复核池;dead_stock回归本义;old_inventory_risk成功作标签;无异常膨胀。**非正式裁决**。
+- 未触碰:未改§3.1.x正文/未真实写回/未进Execute-Approval/未出正式裁决/未提交结果表脱敏表xls/未写条码进价供应商/未改M-DEC·RetailOS·M1-M8/未改CLAUDE.md/未碰外部dirty。
+- commit:见下方 fix: 金矿候选动销闸调整为销量优先。下一步仅CODEX-Full-DryRun-Review-003。

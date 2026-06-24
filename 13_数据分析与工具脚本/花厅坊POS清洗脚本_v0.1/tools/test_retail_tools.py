@@ -10,8 +10,10 @@ from abc_classifier import (
     apply_abc,
     assign_cost_reliable,
     assign_data_quality_scope,
+    assign_exclusion_pool,
     assign_goldmine,
     assign_gross_margin_rate_tier,
+    assign_old_inventory_risk,
     assign_recently_sold,
     decide_identity,
     decide_review,
@@ -193,9 +195,10 @@ class ScopeAndTightenTest(unittest.TestCase):
         self.assertEqual(list(cr), [True, False, False, False])  # 正常/成本0/毛利缺/毛利>0.95
 
     def test_recently_sold_rule(self):
+        # Fix-002 销量优先：仅看销量≥4，不再受库龄影响
         df = pd.DataFrame({"销量": [4, 3, 10, 10], "库龄天数": [30, 30, 90, 120]})
         rs = assign_recently_sold(df)
-        self.assertEqual(list(rs), [True, False, True, False])  # ≥4&≤90 / 销量<4 / 边界90 / 库龄>90
+        self.assertEqual(list(rs), [True, False, True, True])  # 库龄120不再致False
 
     def test_scope_priority_client_over_cost(self):
         df = pd.DataFrame({"client_excluded": [True], "cost_reliable": [False]})
@@ -212,6 +215,40 @@ class ScopeAndTightenTest(unittest.TestCase):
         df = pd.DataFrame({"类别名称": ["水果"], "client_excluded": [False], "cost_reliable": [True]})
         status, _ = assign_data_quality_scope(df)
         self.assertEqual(status.iloc[0], "eligible")
+
+
+class Fix002MovementGateTest(unittest.TestCase):
+    def test_old_inventory_risk_rule(self):
+        df = pd.DataFrame({"库龄天数": [30, 90, 91, 200]})
+        oir = assign_old_inventory_risk(df)
+        self.assertEqual(list(oir), [False, False, True, True])  # >90 才 risk
+
+    def test_qty_ge4_age_gt90_recently_sold_true(self):
+        # 销量≥4且库龄>90：recently_sold=True, old_inventory_risk=True
+        df = pd.DataFrame({"销量": [10], "库龄天数": [120]})
+        self.assertTrue(bool(assign_recently_sold(df).iloc[0]))
+        self.assertTrue(bool(assign_old_inventory_risk(df).iloc[0]))
+
+    def test_qty_ge4_age_gt90_can_be_goldmine(self):
+        # 销量≥4库龄>90 仍可金矿候选(库龄不再排除)
+        df = pd.DataFrame([{
+            "销额ABC": "C", "gross_margin_rate_tier": "high", "缺货标记": False,
+            "新品标记": False, "cost_reliable": True, "recently_sold": True,
+            "data_quality_scope_status": "eligible", "old_inventory_risk": True,
+        }])
+        cand, reason = assign_goldmine(df)
+        self.assertTrue(bool(cand.iloc[0]))
+        self.assertIn("老库存风险", reason.iloc[0])
+
+    def test_dead_stock_only_by_low_sales(self):
+        # 销量≥4但库龄>90 不进 dead_stock；销量<4 才进
+        df = pd.DataFrame([
+            {"data_quality_scope_status": "eligible", "cost_reliable": True, "recently_sold": True},   # 销量足
+            {"data_quality_scope_status": "eligible", "cost_reliable": True, "recently_sold": False},  # 销量<4
+        ])
+        pool = assign_exclusion_pool(df)
+        self.assertEqual(pool.iloc[0], "none")
+        self.assertEqual(pool.iloc[1], "dead_stock")
 
 
 if __name__ == "__main__":
