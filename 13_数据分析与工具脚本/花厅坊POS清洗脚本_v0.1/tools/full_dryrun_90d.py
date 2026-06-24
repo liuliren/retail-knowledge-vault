@@ -25,11 +25,11 @@ def main() -> int:
     ap.add_argument("--proc", default="09_门店案例与项目复盘/乐易购花厅坊店/99_原始素材/01_门店数据材料/processed")
     args = ap.parse_args()
     procdir = Path(args.vault).resolve() / args.proc
-    cands = sorted(procdir.glob("花厅坊_90天全量合并_脱敏_*.xlsx"))
+    cands = list(procdir.glob("花厅坊_90天全量合并_脱敏_*.xlsx"))
     if not cands:
         print("BLOCKED: 未找到脱敏合并表")
         return 2
-    src = cands[-1]
+    src = max(cands, key=os.path.getmtime)  # 取最新（剔生鲜版）
     df = pd.read_excel(src)
     n = len(df)
     print(f"=== DRY-RUN (无敏感值) 输入={src.name} 行数={n} ===")
@@ -109,7 +109,7 @@ def main() -> int:
     print(f"\n[红线] 条码全脱敏={bc_ok}")
 
     # 输出 dry-run 结果（gitignored）——含内部进价列，仅本地
-    out = procdir / f"花厅坊_90天_dryrun结果_v0.1_{src.stem.split('_')[-1]}.xlsx"
+    out = procdir / f"花厅坊_90天_dryrun结果_剔生鲜_v0.2_{src.stem.split('_')[-1]}.xlsx"
     df.to_excel(out, index=False)
     print(f"\n[输出] {out.name}（gitignored，不入 git）")
     return 0

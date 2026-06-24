@@ -201,9 +201,31 @@ def main() -> int:
     out["需复核"] = pd.NA
     out["复核原因"] = ""
 
+    # ── 剔除生鲜（内购无进货成本→毛利率不可信，六哥 2026-06-24 裁决）──
+    # 生鲜界定：货号∈生鲜商品档案 或 类别名称∈生鲜档案类别集。
+    fresh_codes: set[str] = set()
+    fresh_cats: set[str] = set()
+    fp = next(base.glob("*生鲜商品档案表*.xls*"), None)
+    if fp is not None:
+        try:
+            fa = read_xls(fp)
+            fk = col(fa, "货号", "商品编码")
+            if fk:
+                fresh_codes = set(fa[fk].astype(str).str.strip())
+            fcat = col(fa, "类别名称", "类别")
+            if fcat:
+                fresh_cats = set(str(c).strip() for c in fa[fcat].astype(str) if str(c).strip())
+        except Exception:
+            pass
+    is_fresh = out["货号"].isin(fresh_codes) | out["类别名称"].astype(str).str.strip().isin(fresh_cats)
+    n_fresh = int(is_fresh.sum())
+    out = out[~is_fresh].copy()
+    qc.append(f"剔除生鲜(内购无成本)={n_fresh}行[源:生鲜商品档案,类别{len(fresh_cats)}/货号{len(fresh_codes)}]")
+    qc.append(f"剔除生鲜后分析行数={len(out)}")
+
     # ── 输出（gitignored）──
     stamp = REF_DATE.strftime("%Y%m%d")
-    out_path = outdir / f"花厅坊_90天全量合并_脱敏_v0.1_{stamp}.xlsx"
+    out_path = outdir / f"花厅坊_90天全量合并_脱敏_剔生鲜_v0.2_{stamp}.xlsx"
     # 写出含内部进价列（xlsx 在 gitignored 目录，允许）
     out.to_excel(out_path, index=False)
 

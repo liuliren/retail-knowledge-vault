@@ -20,11 +20,13 @@ def main() -> int:
     ap.add_argument("--proc", default="09_门店案例与项目复盘/乐易购花厅坊店/99_原始素材/01_门店数据材料/processed")
     args = ap.parse_args()
     rev = Path(args.vault).resolve() / args.proc / "review"
-    src = sorted(rev.glob("花厅坊_90天_goldmine_candidate_人工复核抽样包_v0.1.xlsx"))
+    src = list(rev.glob("花厅坊_90天_goldmine_candidate_人工复核抽样包_*.xlsx"))
+    src = [p for p in src if "机器预判" not in p.name]
     if not src:
         print("BLOCKED: 无抽样包")
         return 2
-    df = pd.read_excel(src[-1])
+    import os
+    df = pd.read_excel(max(src, key=os.path.getmtime))  # 取最新（剔生鲜版）
     n = len(df)
 
     rate = pd.to_numeric(df.get("毛利率"), errors="coerce")
@@ -60,7 +62,7 @@ def main() -> int:
     if "人工判断" not in df.columns:
         df["人工判断"] = ""
 
-    out = rev / "花厅坊_90天_goldmine_candidate_人工复核抽样包_机器预判_v0.1.xlsx"
+    out = rev / "花厅坊_90天_goldmine_candidate_人工复核抽样包_机器预判_剔生鲜_v0.2.xlsx"
     df.to_excel(out, index=False)
 
     print(f"抽样行数={n}")

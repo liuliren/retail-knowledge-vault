@@ -25,11 +25,12 @@ def main() -> int:
     ap.add_argument("--proc", default="09_门店案例与项目复盘/乐易购花厅坊店/99_原始素材/01_门店数据材料/processed")
     args = ap.parse_args()
     procdir = Path(args.vault).resolve() / args.proc
-    res = sorted(procdir.glob("花厅坊_90天_dryrun结果_*.xlsx"))
+    res = list(procdir.glob("花厅坊_90天_dryrun结果_*.xlsx"))
     if not res:
         print("BLOCKED: 无 dry-run 结果表")
         return 2
-    df = pd.read_excel(res[-1])
+    import os
+    df = pd.read_excel(max(res, key=os.path.getmtime))  # 取最新（剔生鲜版）
     cand = df[df["goldmine_candidate"] == True].copy()  # noqa: E712
     cand["sku_display_id"] = cand["货号"].map(sid)
     print(f"金矿候选总数={len(cand)}")
@@ -70,7 +71,7 @@ def main() -> int:
 
     outdir = procdir / "review"
     outdir.mkdir(parents=True, exist_ok=True)
-    out = outdir / "花厅坊_90天_goldmine_candidate_人工复核抽样包_v0.1.xlsx"
+    out = outdir / "花厅坊_90天_goldmine_candidate_人工复核抽样包_剔生鲜_v0.2.xlsx"
     pack.to_excel(out, index=False)
 
     print(f"实际抽样={len(pack)} 去重后唯一={pack['sku_display_id'].nunique()}")
