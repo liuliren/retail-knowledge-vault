@@ -1,9 +1,10 @@
 ---
 title: Claude 双宪法边界声明
 version: v0.1
-status: draft
+status: active
 owner: 六哥
 created: 2026-06-24
+updated: 2026-06-24
 module: 00_入口与总索引/03_治理规范
 task_id: P1-CLAUDE-Constitution-Boundary-001
 summary: 裁定 /Users/CLAUDE.md(全局宪法)与 retail CLAUDE.md(项目宪法)的作用域、优先级与冲突裁决，止住双规则漂移。
@@ -14,6 +15,12 @@ tags:
   - agent_rules
 source_type: governance
 confidence: high
+signoff:
+  approved_by: 六哥
+  approved_at: 2026-06-24
+  approval_basis: P1-CLAUDE-Boundary-Active-Versioning-002
+  approval_scope: 确认 /Users/CLAUDE.md 与 retail CLAUDE.md 的作用域、优先级、冲突裁决与红线继承规则；不代表重写任一宪法；不代表批量修改 summary 或业务正文。
+  approval_status: approved
 ---
 
 # Claude 双宪法边界声明（P1-CLAUDE-Constitution-Boundary-001）
