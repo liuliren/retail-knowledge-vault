@@ -43,6 +43,8 @@ related:
 | 9 | provenance / supersession lint | **已实现**（Batch-Rules-002）| —— | 弱检测落地，基线全 0 | P3 |
 | 10 | 真实 EAN-13 红线持续监控 | 绿（红线=0）| —— | lint 每轮扫，新数据接入时保持 0 | P1 常态 |
 
+| 5i | goldmine脚本归属(敏感治理)| **方案B+落地** | —— | 脚本维持私有(373aad2);tracked加client_config加载器+模板;私有副本已参数化;真实配置gitignored。如需通用化另开PRIVATE-004 | P3 |
+
 ## 2. 本轮（Batch-014）进展
 - lint 加 2 低风险检测（candidate 越权 approved / execute 前置存在性）→ 已实现并跑通；
 - lint 最新：active无签字 **237**、candidate越权 **0**、execute前置 **存在·已声明阻断**、红线 **0**、孤儿 **11**；
