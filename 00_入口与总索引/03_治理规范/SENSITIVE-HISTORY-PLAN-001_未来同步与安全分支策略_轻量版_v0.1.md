@@ -45,9 +45,10 @@ tags:
 2. **`main` = 本地私有工作分支**:含全部历史与客户内容,**默认永不 push**;备份靠本地/外部盘,不靠 origin。
 3. **需要备份/共享方法论时** → 走 `public-safe` 分支(§4),只推它。
 4. 红线:**任何 push 前必须人工确认目标分支不含 C/D 内容**。
+5. **关于逐 commit L2/L3 分类**:因 `main` 永不 push、`public-safe` 由 **A/B 文件快照**构建(非 cherry-pick commit),**逐个分类 235 个 commit 的 L2/L3 对推送决策无影响**,故本方案不做 commit 级分类。仅当未来改走"按 commit 同步"模式时,才需补 commit 级 L2/L3 审计。
 
 ## 4. safe-main / public-safe 分支方案(待执行)
-- 名称:`public-safe`(curated,仅 A/B)。
+- 名称:`public-safe`(curated,仅 A/B)。**别名 `safe-main` / `sync-safe` 视为同义**,本方案统一用 `public-safe`,避免混淆。
 - 构建方式:**orphan 分支 + 干净快照**(不 cherry-pick 混杂 commit):
   `git checkout --orphan public-safe` → 清空工作区 → 只复制 A/B 区文件 → 提交为单一干净基线 → 后续仅同步 A/B 增量。
 - 用途:方法论/治理规范的可分享版本;真要对外时推到**另建的独立 public 仓**(见 §8),**绝不把本仓设 public**。
