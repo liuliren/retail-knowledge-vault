@@ -1,6 +1,7 @@
 # CLAUDE.md — 晟果新零售 / 六哥零售 科学零售知识库 · 治理总纲 v2.0
 
 > 本库是咨询作业系统后台，不是笔记仓库。任何 Agent 读写前先读本文。
+> 本文为 retail vault **项目宪法**；仅在本 vault 内生效。与全局宪法 `/Users/CLAUDE.md` 冲突时，按 [[Claude双宪法边界声明_P1-CLAUDE-Constitution-Boundary-001_v0.1]] 裁决（全局红线 > 项目红线 > 项目细则 > 单次 Prompt）。
 > 本文与六哥共同演化；每次修改记入 `98_AI协作中枢/00_总控/当前任务队列.md` 变更记录。
 > 版本：v2.2（2026-06-22 批准世界级交付标准与卡帕西闭环 wiki 分层治理框架。§10 active；§11 target_framework / partially_implemented / planned / optional 分层落地。六哥签字·Plan A）｜ v2.1（2026-06-22 §1 护城河升级为模型/Harness/驭马人三层动态视角，六哥签字）｜ v2.0（2026-06-22 合并新宪法 8 原则；从 v1.x 操作规则升级而来）。
 
@@ -89,8 +90,9 @@
 
 ## 7. 操作回路（已落地的一等公民）
 
-- **G01_Ingest** — 新原始源进库 → 一句话摘要 + 标签 → 冻结归档 → 编译 / 扩方法论页 → 补 wikilink → 更新索引。
-- **G02_Query** / **G03_Lint** — 检索 / 健康检查（孤儿页、断链、矛盾、陈旧、空缺、权限越界）。
+- **G01_Ingest** — 新原始源进库 → 一句话摘要 + 标签 → 冻结归档 → 编译 / 扩方法论页 → 补 wikilink → 更新索引。**编译出的每个方法论/概念页 frontmatter 必填 `summary:`(≤40 字一句话),供分层检索的"廉价首遍"使用。**
+- **G02_Query**（**编译层优先铁律**)— 检索默认**只读编译层**:先读 MOC/索引 + 各页 `summary:`,不够再翻概念页正文;**`99_原始素材`/xls/csv/大文档(raw)非经六哥显式授权,不读入上下文**。这是 token 复利(省 70–90%)的唯一来源,与 §6 D 层 `raw_sensitive` 只读冻结互为表里。*(来源:Karpathy LLM Wiki + Asteri_eth raw/Wiki/agent_rules · SRC-20260624)*
+- **G03_Lint** — 健康检查（孤儿页、断链、矛盾、陈旧、空缺、权限越界、**缺 summary**）。
 - **M-DEC 回路** — 现象 → 决策 → 推理 → 预期；结果已知后回填 actual / lessons，蒸馏进方法论模块（candidate → active 需签字）。
 - **G04–G11** — 战役章程 / 阶段门 / AAR / 月度审计 / 数据治理 / 工程纪律 / Memory 治理 / 商品库治理。
 - 临时产出先入 `98_AI协作中枢/01_Claude_Code/Claude输出区/`，确认后再移正式目录。
@@ -135,6 +137,7 @@
 3. **状态机受控**：`draft → candidate → active → deprecated` 单向流转，每态有进入条件（见 §11.3）；升 active = 签字门。
 4. **不可变源 + 可重编译**（卡帕西）：`99_原始素材`/`90_素材` 进库即冻结；方法论 wiki 可随模型进步重编译。
 5. **Schema 校验 + 可观测**：frontmatter 必填字段规范化；月度 lint 仪表盘度量孤儿率 / 断链数 / 签字率 / 红线数。
+6. **分层检索（tiered retrieval）**：每页 frontmatter 必带 `summary:`(≤40 字);检索走"标题/标签/摘要 → 正文"的廉价首遍,**查询只读编译层、不碰 raw**(见 §7 G02 编译层优先铁律)。这是把 token 成本压到 raw 体积 <5% 的工程手段。
 6. **原子化 + 密集互联**（Andy Matuschak evergreen notes）：一 note 一概念、概念导向命名、建即挂链，不留孤儿。
 
 ---
