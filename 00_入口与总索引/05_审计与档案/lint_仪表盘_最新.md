@@ -1,8 +1,8 @@
 # G03_Lint v2 知识库体检仪表盘
 
-- 扫描时间：2026-06-24 12:39:53 EDT
+- 扫描时间：2026-06-24 13:02:01 EDT
 - Vault：`/Users/davidliu/KnowledgeBase/retail-knowledge-vault`
-- 扫描文件总数：627
+- 扫描文件总数：629
 - 排除目录：`.git, 99_归档, Clippings`
 
 ## 顶部指标卡
@@ -10,9 +10,9 @@
 | 指标 | 数量 |
 |:--|:--|
 | 断链目标数 | 364 |
-| 孤儿文件数 | 13 |
+| 孤儿文件数 | 11 |
 | active 无签字数 | 230 |
-| 缺字段文件数 | 201 |
+| 缺字段文件数 | 196 |
 | 红线命中文件项 | 0 |
 | 版本不一致数 | 60 |
 | candidate 越权签字数 | 0 |
@@ -57,8 +57,6 @@
 | 09_门店案例与项目复盘/乐易购花厅坊店/03_商品诊断/2026-06-19_T03饼干_积压清理动作封存包_v0.1.md | T03饼干 积压清理动作封存包 v0.1 |
 | 09_门店案例与项目复盘/乐易购花厅坊店/03_商品诊断/2026-06-19_T03饼干_门店现场确认任务清单_v0.1_A4打印版.md |  |
 | 10_咨询交付模板/30天商品提效包/模板库/饼干样板品类商品机会库_真实货盘回填_v0.1.md | 饼干样板品类商品机会库_真实货盘回填 |
-| 10_咨询交付模板/30天商品提效包/社区超市30天商品提效包_私域获客发布包_v0.1_脱敏.md | 社区超市30天商品提效包 私域获客发布包 |
-| 10_咨询交付模板/30天商品提效包/社区超市30天商品提效包_私域获客发布包_精修版_v0.1_脱敏.md | 社区超市30天商品提效包 私域获客发布包 精修版 |
 | 16_客户与战役档案/_模板/02_战役进展模板.md | 战役进展模板 |
 | 16_客户与战役档案/_模板/04_风险登记表模板.md | 风险登记表模板 |
 | 16_客户与战役档案/_模板/06_交付物清单模板.md | 交付物清单模板 |
@@ -97,13 +95,6 @@
 | .agents/skills/project-handoff/SKILL.md | title, version, status, owner, source_type |
 | .claude/skills/project-compact-governance/SKILL.md | title, version, status, owner, source_type |
 | .claude/skills/project-handoff/SKILL.md | title, version, status, owner, source_type |
-| 00_入口与总索引/03_治理规范/CODEX-SENSITIVE-GATE-001_Codex提交前客户数据保密闸_v0.1.md | source_type |
-| 00_入口与总索引/03_治理规范/SENSITIVE-GOV-001_客户数据脱敏与Git保密治理规范_v0.1.md | source_type |
-| 00_入口与总索引/03_治理规范/SENSITIVE-HISTORY-PLAN-001_未来同步与安全分支策略_轻量版_v0.1.md | source_type |
-| 00_入口与总索引/03_治理规范/SENSITIVE-PRIVATE-002-A_候选文件内容级研判_v0.1.md | source_type |
-| 00_入口与总索引/03_治理规范/_client_private_README说明_v0.1.md | source_type |
-| 00_入口与总索引/03_治理规范/pre-flight_check_checklist_v1.0.md | source_type |
-| 00_入口与总索引/03_治理规范/工程操作纪律手册_v1.0.md | source_type |
 | 00_入口与总索引/04_作战指挥/2026-05-09_商品库立项方案_v1.0.md | source_type |
 | 00_入口与总索引/05_审计与档案/2026-05-09_vault全量审计与数据审计1月期机制_v1.0.md | source_type |
 | 00_入口与总索引/05_审计与档案/2026-05-W19_vault全量审计_punch_list_v1.0.md | source_type |
@@ -113,6 +104,13 @@
 | 00_入口与总索引/05_审计与档案/lint_仪表盘_最新.md | title, version, status, owner, source_type |
 | 00_入口与总索引/2026-05-13_GOV-NAMING-002_M-DEC编号与LVS字段专项规范设计稿_v0.1.md | owner |
 | 00_入口与总索引/2026-05-13_命名规范冲突清单_v0.1.md | owner |
+| 00_入口与总索引/2026-05-13_命名规范总纲_v0.1.md | owner |
+| 00_入口与总索引/2026-05-13_命名规范索引_v0.1.md | owner |
+| 00_入口与总索引/2026-05-17_vault_v3.0顶层结构设计稿_v1.0.md | source_type |
+| 00_入口与总索引/claude官方文档学习.md | title, version, status, owner, source_type |
+| 01_科学零售方法论/README.md | source_type |
+| 02_零售企业生意诊断/4D诊断映射表_IF-01.md | title, version, status, owner, source_type |
+| 02_零售企业生意诊断/5分钟门店诊断卡_T-08.md | title, version, status, owner, source_type |
 
 ## 5. 敏感查（红线）
 

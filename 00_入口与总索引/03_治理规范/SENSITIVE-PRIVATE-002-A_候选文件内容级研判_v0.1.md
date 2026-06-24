@@ -4,6 +4,7 @@ title: 候选客户明细与 goldmine 脚本内容级研判
 version: v0.1
 status: draft
 owner: 六哥
+source_type: reference
 created: 2026-06-24
 module: 00_入口与总索引/03_治理规范
 client_safety: internal_only

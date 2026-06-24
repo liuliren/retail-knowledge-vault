@@ -4,6 +4,7 @@ title: 客户数据脱敏与 Git 保密治理规范
 version: v0.1
 status: draft
 owner: 六哥零售 / 晟果新零售
+source_type: governance
 scope: retail-vault / AI协作 / Git同步 / 客户数据治理
 created: 2026-06-24
 updated: 2026-06-24

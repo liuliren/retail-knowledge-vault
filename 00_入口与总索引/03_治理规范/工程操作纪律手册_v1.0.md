@@ -9,6 +9,7 @@ signoff:
   approval_scope: "确认当前 active 状态；不代表重新审定全文，不改变正文方法论口径"
   approval_status: approved
 owner: 六哥
+source_type: governance
 created: 2026-05-09
 updated: 2026-05-09
 module: 00_入口与总索引/03_治理规范

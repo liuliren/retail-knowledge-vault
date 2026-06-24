@@ -4,6 +4,7 @@ title: Codex 提交前客户数据保密闸
 version: v0.1
 status: draft
 owner: 六哥
+source_type: governance
 created: 2026-06-24
 updated: 2026-06-24
 module: 00_入口与总索引/03_治理规范

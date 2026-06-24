@@ -4,6 +4,7 @@ title: 未来同步与安全分支策略（轻量版 · 不改写历史）
 version: v0.1
 status: draft
 owner: 六哥
+source_type: governance
 created: 2026-06-24
 updated: 2026-06-24
 module: 00_入口与总索引/03_治理规范
