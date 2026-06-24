@@ -1344,3 +1344,12 @@
 - **F 下一轮Prompt**：CODEX-Goldmine-Rule-Tighten-Fix-001(代码加两闸+字段+测试+重跑),需六哥签字后发。
 - **未触碰**：未改§3.1/§3.1.1/abc_classifier/merge/runner/未重跑/未写回/未出正式裁决/未提交结果表脱敏表抽样xls/未写条码进价供应商/未改M-DEC·RetailOS·M1-M8/未动CLAUDE.md。
 - commit：见下方 `docs: 评审金矿候选二级闸与成本异常排除`。
+
+---
+
+## 2026-06-24｜P0-ABC-Goldmine-Rule-Tighten-Confirm-001｜确认金矿候选成本可信闸与动销闸（六哥签字）
+- **用户4裁决**：①成本缺失不进金矿→cost_missing_review_pool;②联营(尚美日化)暂不单列,统一入该池;③动销闸=销量≥4/90天且库龄≤90,死货进dead_stock_pool;④暂不上P85保留P75(留v0.3)。
+- **§3.1.2新增**：成本可信闸(成本缺/毛利率不可靠/>0.95→不进金矿)+近90天动销闸(销量≥4且库龄≤90)+暂不上P85+完整金矿规则(9条)+新字段(cost_reliable/recently_sold/exclusion_pool/cost_missing_review_pool/dead_stock_review_pool)+一线解释。原9格+§3.1.1不变。
+- **签字**：frontmatter加goldmine_tighten_rule_signoff(六哥/2026-06-24/scope仅§3.1.2口径,不代表代码同步·重跑·写回);版本记录加§3.1.2 active行。未覆盖前序signoff。
+- **未触碰**：未改abc_classifier/merge/runner/未重跑/未写回/未出正式裁决/未提交结果表脱敏表抽样xls/未写条码进价供应商/未改M-DEC·RetailOS·M1-M8/未动CLAUDE.md。
+- commit：见下方 `docs: 确认金矿候选成本与动销二级闸`。
