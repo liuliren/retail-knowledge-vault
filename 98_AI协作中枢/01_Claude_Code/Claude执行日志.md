@@ -1422,3 +1422,13 @@
 - 桶口径=Review-003临时待验证,**不固化为方法论规则,不出B/D正式明细,不进Execute-Approval,不写回,不改§3.1.x**。
 - 未触碰:abc_classifier/merge/runner/§3.1.x/真实数据/结果表脱敏表抽样xls入git/条码进价供应商/M-DEC·RetailOS·M1-M8/CLAUDE.md/外部dirty。
 - commit:见下方 docs: 金矿候选池5桶分层抽样说明。
+
+---
+
+## 2026-06-24｜CODEX-Goldmine-Bucket-B-Detail-001｜B控补货完整明细(六哥确认B桶口径OK)
+- 新建tools/goldmine_bucketB_detail.py(只读scope dry-run,取B桶=金矿候选∩老库存∩90天销量≥12,脱敏hash出完整明细)。
+- B明细529行/78小类→gitignored review/(不入git);控补货信号(预计可售天数=库存/日均):库存偏紧适量补120/健康小批勤补170/可售偏长控量206/缺日均现场判33;中位37天。
+- tracked说明md(无SKU明细+采购怎么用+复核工作清单非裁决声明)。
+- 性质:控补货复核工作清单,非正式SKU裁决/非商品诊断;不进Execute-Approval/不写回ERP·POS/不改§3.1.x。
+- 未触碰:abc_classifier/merge/runner/§3.1.x/真实数据/结果表脱敏表B明细xls入git/条码进价供应商/M-DEC·RetailOS·M1-M8/CLAUDE.md/外部dirty。C/D/E桶待六哥逐桶判后再出。
+- commit:见下方 docs: B控补货完整明细说明。
