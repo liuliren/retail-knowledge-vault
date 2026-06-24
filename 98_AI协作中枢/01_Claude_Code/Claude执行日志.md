@@ -1432,3 +1432,13 @@
 - 性质:控补货复核工作清单,非正式SKU裁决/非商品诊断;不进Execute-Approval/不写回ERP·POS/不改§3.1.x。
 - 未触碰:abc_classifier/merge/runner/§3.1.x/真实数据/结果表脱敏表B明细xls入git/条码进价供应商/M-DEC·RetailOS·M1-M8/CLAUDE.md/外部dirty。C/D/E桶待六哥逐桶判后再出。
 - commit:见下方 docs: B控补货完整明细说明。
+
+---
+
+## 2026-06-24｜CODEX-Goldmine-Bucket-D-Detail-001｜D清库完整明细(六哥授权)
+- 新建tools/goldmine_bucketD_detail.py(只读scope dry-run,取D桶=金矿候选∩老库存∩库龄>365∩非快销∩非高库存金额,脱敏hash出完整明细;桶判据复刻Review-003优先级,P75同口径)。
+- D明细228行/70小类→gitignored review/(不入git);清库信号:促销清114(金额≥D桶中位)/自然汰换轻促114(金额低);库龄中位420天(上限~423,由进货/建档日期推算);占用资金聚合≈5578。
+- tracked说明md(无SKU明细+采购怎么用+B/D对照:B卖得动管补货·D卖不动清回笼+复核工作清单非裁决声明)。
+- 性质:清库复核工作清单,非正式SKU裁决/非诊断;不进Execute-Approval/不写回ERP·POS/不改§3.1.x。
+- 未触碰:abc_classifier/merge/runner/§3.1.x/真实数据/结果表脱敏表B·D明细xls入git/条码进价供应商/M-DEC·RetailOS·M1-M8/CLAUDE.md/外部dirty。C缩面/E复核待授权。
+- commit:见下方 docs: D清库完整明细说明。
