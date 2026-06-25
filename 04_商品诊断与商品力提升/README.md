@@ -1,5 +1,6 @@
 ---
 title: 04_商品诊断与商品力提升 目录说明
+summary: "目录说明:沉淀SKU诊断/单品管理/商品力提升标准方法,'30天商品提效'类项目核心工具库。"
 version: v1.0
 status: active
 quadrant: II

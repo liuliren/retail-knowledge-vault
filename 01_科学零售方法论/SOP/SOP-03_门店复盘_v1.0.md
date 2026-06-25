@@ -1,5 +1,6 @@
 ---
 title: SOP-03 门店复盘（含知识回流闭环）
+summary: "SOP-03门店复盘(含知识回流闭环):单案例只记candidate,跨案例验证后才升通用。"
 version: v1.0
 status: draft
 owner: 六哥

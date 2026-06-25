@@ -1,5 +1,6 @@
 ---
 title: SOP-02 陈列规划
+summary: "SOP-02陈列规划:按销额/毛利等级把核心引擎放黄金位(视线带0.6-1.8m/货架右上区)的落位SOP。"
 version: v1.0
 status: draft
 owner: 六哥

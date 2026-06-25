@@ -1,5 +1,6 @@
 ---
 title: 05_营销与活动
+summary: "营销与活动模块:整合原07营销活动+v3.2活动与营销机制增强。"
 version: v1.1
 status: active
 owner: 六哥

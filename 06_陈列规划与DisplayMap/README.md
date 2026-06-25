@@ -1,5 +1,6 @@
 ---
 title: 04_陈列与空间
+summary: "陈列与空间模块:整合原06陈列规划+GPT04+A1-A5工具+v3.2陈列增强。"
 version: v1.1
 status: active
 owner: 六哥

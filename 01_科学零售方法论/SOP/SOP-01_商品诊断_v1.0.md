@@ -1,5 +1,6 @@
 ---
 title: SOP-01 商品诊断
+summary: "SOP-01商品诊断:输出SKU身份/角色,喂给SOP-02陈列落位的标准作业流程。"
 version: v1.0
 status: draft
 owner: 六哥

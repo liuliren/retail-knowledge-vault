@@ -1,5 +1,6 @@
 ---
 title: 01_科学零售方法论 目录说明
+summary: "目录说明:存放科学零售底层理论与稳定方法论,02-08各业务模块的上游依据。"
 version: v1.0
 status: active
 owner: 六哥

@@ -1,5 +1,6 @@
 ---
 title: 05_品类管理与商品规划 目录说明
+summary: "目录说明:沉淀品类结构/角色/价格带/组货/配置/规划标准方法,'品类升级'类项目核心工具库。"
 version: v1.0.1
 status: active
 quadrant: II

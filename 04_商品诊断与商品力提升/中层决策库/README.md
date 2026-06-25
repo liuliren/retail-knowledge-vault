@@ -1,5 +1,6 @@
 ---
 title: 中层决策库 README — M-DEC 编号体系与命名规范
+summary: "L4中层决策库说明:M-DEC编号体系与命名规范;中层决策框架是三层方法论中当前最稀缺的一层。"
 version: v0.1
 status: active
 owner: 六哥

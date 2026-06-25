@@ -1,5 +1,6 @@
 ---
 title: 06_经营分析
+summary: "经营分析模块:沿用原08经营分析与数据看板。"
 version: v1.1
 status: active
 owner: 六哥

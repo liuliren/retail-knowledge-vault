@@ -1,5 +1,6 @@
 ---
 title: 科学零售知识体系 README
+summary: "科学零售知识体系目录README:L1痛点/L2骨架/L3武器/L4决策的组织说明与导航。"
 version: v0.1
 status: active
 source_type: index
