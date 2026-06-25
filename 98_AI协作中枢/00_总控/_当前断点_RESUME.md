@@ -23,10 +23,12 @@ tags: [记忆, 断点, 启动, 进度]
 - **已完成**:`/单品类诊断` skill + 巧克力诊断卡;**记忆模块收口**;**Skills 路线图**([[Skills路线图_v0.1]],scale=技能化·4波)。金矿候选review已移_client_private加固。
 - **已完成 Skills 波1**(诊断增强:角色闸+ABCZ);**Scale 评估**([[RetailOS_v2.0_Scale评估报告_v0.1]]):花厅坊vs沙埔大道2店真实跑通(同skill零改)→ 跨店稳定YES·复制力高·**产品化条件性YES**(距SaaS差3关:ERP标准化/生鲜/Display→Sales净证)。
 
+- **已完成 Data Adapter v1.0**([[RetailOS_DataAdapter_v1.0_设计与SaaS评估]]):adapter.py 把任意门店ERP→统一13字段schema+质量分级,2店实证(花厅坊88/A·沙埔大道64/B自动检列错位)。架构升v2.1(底部加Data Layer)。**SaaS第一阻碍=schema混乱已破。**
+
 ## ▶️ 下一步 3 条（撬动性·少而深）
-1. **攻产品化首阻碍:ERP数据标准化**(每店schema列错位→sanitize自动容错,而非每店手改)。
-2. **生鲜验证**(占社区超市40-50%销额·最硬·未测)/ Display→Sales净证(需干净归因数据)。
-3. **G4-A 的 Z 签字** + 巧克力诊断卡 8 款汰换签字(六哥的10%)。
+1. **攻 SaaS 第二阻碍:L3/L4 品类映射自动化**(adapter已归一字段,但分类仍需每店品类表)。
+2. **生鲜验证**(40-50%销额·最硬)/ Display→Sales 7天净证。
+3. **G4-A 的 Z 签字** + 巧克力8款汰换签字(六哥的10%)。
 
 ## 🔑 唯一收敛点（六哥的 Z）
 G4-A 调改取舍签字 + 各 candidate 方法页升 active 的签字。AI 已把 90% 备好。

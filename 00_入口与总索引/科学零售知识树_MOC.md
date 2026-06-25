@@ -66,6 +66,7 @@ tags: [MOC, 知识树, 科学零售, 导航]
 **客户交付层**：[[报告导出系统_report-export_v1.0]]（诊断→1页 PDF/PNG 诊断卡·发店长老板·candidate）
 **端到端诊断 skill**：`/单品类诊断`（脱敏→分层→失真→诊断卡一条龙·商品化90%引擎）｜首个产物 [[巧克力_单品类诊断卡_v0.1]]（品牌密度型·candidate）
 **Scale 评估**：[[RetailOS_v2.0_Scale评估报告_v0.1]]（花厅坊vs沙埔大道2店真实·跨店稳定YES·复制力高·产品化条件性YES·candidate）
+**Data Adapter(ERP标准化层)**：[[RetailOS_DataAdapter_v1.0_设计与SaaS评估]]（任意门店ERP→统一13字段schema+质量评分A/B/C·2店实证88/64·架构v2.1五层·SaaS地基·candidate）
 
 ---
 
