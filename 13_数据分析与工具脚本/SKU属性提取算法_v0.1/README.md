@@ -1,5 +1,7 @@
 ---
 title: SKU 属性提取算法 v0.1
+aliases:
+  - SKU属性提取算法_v0.1
 version: v0.1
 status: active
 owner: 六哥
