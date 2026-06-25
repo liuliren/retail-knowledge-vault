@@ -2,7 +2,7 @@
 title: 品类建模（96）选品配置 05 门店供应链
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486940&idx=1&sn=2a2286f9557c838e2a666f64841354df&chksm=9b06bfe2ac7136f46e4862026648141ead404100581d0b0945b617f9f2ba20f633b0a1314e22&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节继续简单讨论基于零售“供应链”的语义结构。仅讨论零售门店的“供应链”语义。

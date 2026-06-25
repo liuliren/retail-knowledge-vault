@@ -2,7 +2,7 @@
 title: 品类建模（229）商品陈列 36 类纵向陈列
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247488205&idx=1&sn=4052a7c01c52f5c538e17c1fd04197d8&chksm=9b06a0f3ac7129e55a1106ddfb9e3c134ace9ed2cc8454cd72a303cd3711ffce95921b90cd88&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节基于类优先、类要清晰等语义逻辑，讨论其在陈列中的原则、方式：以及纵向陈列语义。

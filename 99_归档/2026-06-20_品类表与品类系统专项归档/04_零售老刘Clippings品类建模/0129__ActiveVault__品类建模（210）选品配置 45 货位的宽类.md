@@ -2,7 +2,7 @@
 title: 品类建模（210）选品配置 45 货位的宽类
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247488042&idx=1&sn=f34a82fc5a0aa28790039e7ed34d1c98&chksm=9b06a014ac712902f1db3baa0cae50ec6b85f94ef5aa8daa150dc3d11a2138ee73b8ba359361&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节继续讨论“宽类窄品”基于货位结构运用的语义。本节的标题应为：“场结构下货位的宽类”。

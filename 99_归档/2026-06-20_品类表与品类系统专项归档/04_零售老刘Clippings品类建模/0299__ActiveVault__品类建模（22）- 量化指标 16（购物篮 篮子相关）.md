@@ -2,7 +2,7 @@
 title: 品类建模（22）- 量化指标 16（购物篮 篮子相关）
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486262&idx=1&sn=98772ee3ca7bcf7173cc75c1cc363da7&chksm=9b06b908ac71301ee5bd8d4bffed1afe1817df3ea7d18943328dc11e839b412d240a3d11057b&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节主要讨论一些购物篮中，“零、负关联”的业务场景运用，以及部分建模语义。

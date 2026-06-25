@@ -2,7 +2,7 @@
 title: 品类建模（81）- 商品促销 01 广义的促销
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486798&idx=1&sn=89c30c945e9d863de9b5e52693f632d5&chksm=9b06bf70ac713666a1665f750e308bc352695faeb827cfa4b9e8bc59dd178f56375142e9c717&scene=178&cur_album_id=4031475776737476609&search_click_id=#rd
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节开始《商品促销系列》

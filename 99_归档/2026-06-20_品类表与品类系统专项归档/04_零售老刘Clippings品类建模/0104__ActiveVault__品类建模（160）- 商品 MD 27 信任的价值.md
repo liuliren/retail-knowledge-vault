@@ -2,7 +2,7 @@
 title: 品类建模（160）- 商品 MD 27 信任的价值
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487482&idx=1&sn=d0dd70fe4359c136fe86436f919a7c94&chksm=9b06bdc4ac7134d28a86e99ff8bc63fbd01eb15725a5c55faf7ff7e7e3d94a138da3c5bdaa18&cur_album_id=4031473318086803470&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节介绍另一个价值语义：信任价值。

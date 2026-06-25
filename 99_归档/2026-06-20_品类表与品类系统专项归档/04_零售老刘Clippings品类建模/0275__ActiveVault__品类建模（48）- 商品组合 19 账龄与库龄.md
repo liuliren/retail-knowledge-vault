@@ -2,7 +2,7 @@
 title: 品类建模（48）- 商品组合 19 账龄与库龄
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486498&idx=1&sn=ebb5407fad61cbc970ad17093636d571&chksm=9b06be1cac71370a5df99e910ac5bdd65af92d881c1ad2aeae159ced69dd1a8307f7ad3adfa5&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节主要讨论商品的账龄与库龄的语义区别，以及运用场景计算与解释等。

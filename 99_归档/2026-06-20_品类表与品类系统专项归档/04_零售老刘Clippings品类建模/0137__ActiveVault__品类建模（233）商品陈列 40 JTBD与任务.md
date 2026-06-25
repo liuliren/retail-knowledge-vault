@@ -2,7 +2,7 @@
 title: 品类建模（233）商品陈列 40 JTBD与任务
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247488234&idx=1&sn=0b0e0ef8edc240e3a738e062e311c10a&chksm=9b06a0d4ac7129c216a28b05a6019ab072eadcdb979fb83a255b7bf4c6428b372a444f7d3a98&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 基于上一节 的内容，继续讨论顾客的“任务”与零售门店业务间的逻辑关联“

@@ -2,7 +2,7 @@
 title: 品类建模（73）- 商品组合 44 商品线结构
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486713&idx=1&sn=b454455d5bcd410a3b1b371301f05493&chksm=9b06bec7ac7137d176e0029871de9a6d809a5e0aae546719b5a0e3adf674456231ecf576909d&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节在上节的基础上，继续讨论商品线的结构语义，商品线的主要内容、特征、以及运用等。

@@ -2,7 +2,7 @@
 title: 品类建模（175）选品配置 30 SKU鄙视链
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487636&idx=1&sn=c26e3369f8236eda6eef653d20c163e1&chksm=9b06a2aaac712bbcbcc169ef61db626e2b2f96fbbb9fe0ba592a29ff960005d83ba4e19fb052&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论基于SKU的零售鄙视链语义

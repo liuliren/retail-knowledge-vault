@@ -2,7 +2,7 @@
 title: 品类建模（38）- 商品组合 09 计量化分析
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486408&idx=1&sn=62ff16f4f539dbb418d06750fa28e230&chksm=9b06b9f6ac7130e014bb4895e6cc1054a67a0f91cf9d597596ae148a0b11cad5710c41620ea0&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论商品组合的一些计量化语义体系，以及部分品类管理指标项的权重分配设计。

@@ -2,7 +2,7 @@
 title: 品类建模（196）商品陈列 32 注意力体系
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487904&idx=1&sn=1bfb1958a097ee47c6c7ed3a7b8503d1&chksm=9b06a39eac712a88bc1a4b918af279a516bfbaae3c0444d30dd117ca6b3684f1c7748b516cac&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节讨论零售POP的“注意力（注意力经济学）”语义。

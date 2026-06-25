@@ -2,7 +2,7 @@
 title: 品类建模（34）- 商品组合 05 动态化调整
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486375&idx=1&sn=1fc079820a9d7dbcf953c068f26f26d8&chksm=9b06b999ac71308fe9b26e6fc027fd7072c2a56c3b37f48f53e0d74d935a57c98bf01795b22b&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节简单讨论商品品项结构的部分动态调整与更新语义。以及商品规划 与 品类规划 的语义区别。

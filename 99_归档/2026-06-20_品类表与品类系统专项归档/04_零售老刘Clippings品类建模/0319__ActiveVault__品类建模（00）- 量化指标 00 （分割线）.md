@@ -2,7 +2,7 @@
 title: 品类建模（00）- 量化指标 00  （分割线）
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486125&idx=1&sn=ac7cea86622d9c48d9d76431af55398a&chksm=9b06b893ac713185b5affd85d18d30e45f38215aa3427472846701b32dd4013711d793bb22b9&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节为分割线。休息一下，看过来。

@@ -2,7 +2,7 @@
 title: 品类建模（39）- 商品组合 10 计量化计算
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486419&idx=1&sn=cfb4b89385370d7c7b262ad6f445eb12&chksm=9b06b9edac7130fb001ddbc449153b0924872837e6791139cec1c840aa7e640cd746d150b363&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 介绍商品组合计量化分析的部分常见模型及语义逻辑。例如，二八原则，毛利目标模型等。

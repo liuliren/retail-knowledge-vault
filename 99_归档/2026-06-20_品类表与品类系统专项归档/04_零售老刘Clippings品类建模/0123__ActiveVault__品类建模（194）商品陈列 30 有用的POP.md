@@ -2,7 +2,7 @@
 title: 品类建模（194）商品陈列 30 有用的POP
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487881&idx=1&sn=e5b0f7a85c7e5c07dc7d933d63f1b374&chksm=9b06a3b7ac712aa15ab6a2eff5708aa5833814fbbd872972cb88dc8b693005a424b5084ebaaa&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节简单讨论什么是有用的POP语义。

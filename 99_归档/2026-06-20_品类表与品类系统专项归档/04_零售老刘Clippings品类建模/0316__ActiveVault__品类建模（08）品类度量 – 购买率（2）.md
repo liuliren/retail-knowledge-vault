@@ -2,7 +2,7 @@
 title: 品类建模（08）品类度量 – 购买率（2）
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486074&idx=1&sn=966ce14f9a38f9351e9390bb92e9fa51&chksm=9b06b844ac713152c272cbee4f95e85694b9be31ec77798e1c579e4531eefdff0f2659612d50&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节主要讨论：简易购买率分析系统制作步骤

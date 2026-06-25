@@ -2,7 +2,7 @@
 title: 品类建模（155）- 商品 MD 22 商品价值层
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487430&idx=1&sn=91ba061798cd809079d4068aefc0ddaa&chksm=9b06bdf8ac7134ee6ef1246c4e578aadd44df76d1ab3adc0dd3f5aaa9e52211222952fe749ed&cur_album_id=4031473318086803470&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论商品的价值，最终要体现为商品价值语义。

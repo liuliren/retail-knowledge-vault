@@ -2,7 +2,7 @@
 title: 品类建模（15）- 量化指标 09（购物篮 篮子语义）
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486195&idx=1&sn=8698c2663705c6de8e493c46230507e7&chksm=9b06b8cdac7131db4405ab2554d552c522605ab96345952bebb62ca9096536a95acd2070ea84&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节开始讨论零售中的购物篮 篮子语义等。

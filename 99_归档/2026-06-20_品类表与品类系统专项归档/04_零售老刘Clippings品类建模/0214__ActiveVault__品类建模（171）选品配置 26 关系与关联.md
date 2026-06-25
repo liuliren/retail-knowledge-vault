@@ -2,7 +2,7 @@
 title: 品类建模（171）选品配置 26 关系与关联
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487612&idx=1&sn=d50c6de80366bb7e7d4405feb08853fd&chksm=9b06a242ac712b546e47a595f2385af154becd2ab5b795460ec636ed33c12e61b668b5ae22e7&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: （本节讨论单品的关系与关联语义。

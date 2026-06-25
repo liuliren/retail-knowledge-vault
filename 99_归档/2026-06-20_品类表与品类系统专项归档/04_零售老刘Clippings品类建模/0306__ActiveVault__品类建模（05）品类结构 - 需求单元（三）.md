@@ -2,7 +2,7 @@
 title: 品类建模（05）品类结构 - 需求单元（三）
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486027&idx=1&sn=82ef93206105cc66a23c599b50d1b425&chksm=9b06b875ac713163f6d98fa4724d476460b9a8745f11396ae6ce72e7f3a096757478e02ad0d8&cur_album_id=4239878941940301836&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节主要讨论分析实践中较为重要的两类单元：一个是场结构的货位BAY，一个是零售中的最细的维度“粒度”单元。

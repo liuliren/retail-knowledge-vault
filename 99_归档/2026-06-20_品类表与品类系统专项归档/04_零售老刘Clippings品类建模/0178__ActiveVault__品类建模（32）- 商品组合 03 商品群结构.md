@@ -2,7 +2,7 @@
 title: 品类建模（32）- 商品组合 03 商品群结构
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486349&idx=1&sn=5d4cc291eff8f59ccee413364714619f&chksm=9b06b9b3ac7130a5814ab9e502885026f008e3b20d4b5f7c5e10cfefe32175fe82383d9a0f81&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description:

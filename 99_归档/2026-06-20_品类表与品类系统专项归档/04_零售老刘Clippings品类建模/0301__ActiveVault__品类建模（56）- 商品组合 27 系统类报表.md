@@ -2,7 +2,7 @@
 title: 品类建模（56）- 商品组合 27 系统类报表
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486589&idx=1&sn=579f08283b65d98800a330dff3fc26b6&chksm=9b06be43ac713755ee673cebb0d4bc176e978e2de0337e34258ce35beb56cf4ac23deaa5239a&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节内容主要讨论商品组合的日常经营中，涉及的系统维护、分析报表支持等。

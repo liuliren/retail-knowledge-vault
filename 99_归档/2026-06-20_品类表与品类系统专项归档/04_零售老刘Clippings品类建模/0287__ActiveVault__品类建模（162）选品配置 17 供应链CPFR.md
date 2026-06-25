@@ -2,7 +2,7 @@
 title: 品类建模（162）选品配置 17 供应链CPFR
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487515&idx=1&sn=b242eef547ea3eab9b71771d80257a5d&chksm=9b06a225ac712b33654ab8b1ccc0ba50b0256aa2bda4d46f7a2555f16930b10db2f364bef0cc&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: （本节共 2691 个字 短篇 参考性阅读）序言：本节介绍供应链中的“CPFR”语义。

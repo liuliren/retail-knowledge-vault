@@ -2,7 +2,7 @@
 title: 品类建模（102）商品陈列 06 陈列的原点
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486991&idx=1&sn=3412619ee497ce39903added7f84fdbc&chksm=9b06bc31ac713527aeb37815875d04f8af694782c196c7aed5ffd7972a61cb0fa8ca9994ead7&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论陈列的一些维度语义结构（依据）。例如，陈列的原点语义、定义陈列的业务维度结构等。

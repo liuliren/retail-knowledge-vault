@@ -2,7 +2,7 @@
 title: 品类建模（100）- 量化指标 25 零售度量系
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486980&idx=1&sn=a17af36ecd7c7f45e485ce335e6472d1&chksm=9b06bc3aac71352c4b33eb0d833056ea0f3c122fe0e50a5b06a1211e1ac9324adac768dcbbef&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节开始是《量化指标》的第二部分，包含三个小系列（《量化购物篮》、《基础度量》、《复合指标》）

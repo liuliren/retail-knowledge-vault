@@ -2,7 +2,7 @@
 title: 品类建模（68）- 商品组合 39 零售的战略
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486688&idx=1&sn=a2a2d51a3ca6f0826750640143e32938&chksm=9b06bedeac7137c8618a8faa37dce6755d84d833dcabb863fb5290f9f78302a365bd6d7fd258&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节我们扯一下，商品管理中的战略与战术问题。

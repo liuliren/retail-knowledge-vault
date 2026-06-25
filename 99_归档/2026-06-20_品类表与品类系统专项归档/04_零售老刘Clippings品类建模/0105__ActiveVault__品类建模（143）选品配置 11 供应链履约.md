@@ -2,7 +2,7 @@
 title: 品类建模（143）选品配置 11 供应链履约
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487338&idx=1&sn=aea9437aa85dbb9b043b9fa6afbb4141&chksm=9b06bd54ac71344274b3cdb5766ba91b8ad19289009adc91fb0fff8fdab5e80002b29c42c47e&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论供应链的另一个“服务供应链”语义：供应链履约。

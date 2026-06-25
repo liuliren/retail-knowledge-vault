@@ -2,7 +2,7 @@
 title: 品类建模（190）商品陈列 26 卖场的POP
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487828&idx=1&sn=c01a00171198d542467e053d30266792&chksm=9b06a36aac712a7c2400cc8652e267486dac56dc6dd91e795793121c9d1af2a36566bdd0fd5c&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节在上节基础上，简单讨论门店POP的逻辑和功能性表现语义。

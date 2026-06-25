@@ -2,7 +2,7 @@
 title: 品类建模（208）选品配置 43 解宽类语义
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487996&idx=1&sn=5d669c366e29a743a36689c71a30e919&chksm=9b06a3c2ac712ad4bb2ba122f45def2f3b6705f15648610765f4f7dffd2e6c51df6cfa0b7185&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节在上一节基础上，继续讨论类与品在不同经营语境下的逻辑关系。

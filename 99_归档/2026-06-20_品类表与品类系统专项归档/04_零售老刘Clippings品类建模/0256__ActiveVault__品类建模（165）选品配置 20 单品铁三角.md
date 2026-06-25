@@ -2,7 +2,7 @@
 title: 品类建模（165）选品配置 20 单品铁三角
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487561&idx=1&sn=934b9ef38765c952e9d45fb446fa6aea&chksm=9b06a277ac712b6113f0ffe5924b4a920830b1d0c06cb119cfe16b63a18530eec78f76022c11&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论从产品到单品的供应链“铁三角”语义。

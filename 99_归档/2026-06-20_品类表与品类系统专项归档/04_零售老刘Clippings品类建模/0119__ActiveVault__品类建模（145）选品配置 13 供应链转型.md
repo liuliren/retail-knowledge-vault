@@ -2,7 +2,7 @@
 title: 品类建模（145）选品配置 13 供应链转型
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487349&idx=1&sn=c10f57368feea3d34c8f65e6caeeaee6&chksm=9b06bd4bac71345df2704d7c0ad5f5042d427fb940c454afc0c8db5ff3789f826b37dcfe1d16&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论供应链系统管理中的“供应链转型”语义。

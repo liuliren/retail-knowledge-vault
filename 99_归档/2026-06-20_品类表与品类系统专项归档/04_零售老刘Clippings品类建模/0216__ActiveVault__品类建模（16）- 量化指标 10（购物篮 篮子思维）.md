@@ -2,7 +2,7 @@
 title: 品类建模（16）- 量化指标 10（购物篮 篮子思维）
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486201&idx=1&sn=fb915205edba69cb74286ee2ad7e59a4&chksm=9b06b8c7ac7131d12f975980515030d24cfe89d6949f594e0db8fa63375cc4680d9f3398452d&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 重点讨论“购物思维的形成语义，以及影响购物篮的变量是什么”。

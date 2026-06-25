@@ -2,7 +2,7 @@
 title: 品类建模（122）- 量化指标 28 商品的周期
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487166&idx=1&sn=e05384c66e81e0b0385724a72b8786a6&chksm=9b06bc80ac713596575bc7f71245a74608d6c2372fdfa0538c09e0ba93d0ed74faa218154dcc&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节以零售业中商品的常见生命周期属性为例，介绍不同生命周期的相关“语义”。

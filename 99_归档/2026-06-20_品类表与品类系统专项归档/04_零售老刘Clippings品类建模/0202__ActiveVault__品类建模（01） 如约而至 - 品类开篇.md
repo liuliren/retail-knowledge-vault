@@ -2,7 +2,7 @@
 title: 品类建模（01） 如约而至 - 品类开篇
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247485904&idx=1&sn=950a51a02d2cc87c4ed02641c27c8c96&chksm=9b06bbeeac7132f8b3908f65df79c5a89bed6dc2b9100b35afe73230fa0ce06dd61e3cba03fb&cur_album_id=4239878941940301836&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 序言：如约而至，终于可以开始“品类管理”系列了。希望以全新的方式讨论“品类管理”。本节内容为补充部分。

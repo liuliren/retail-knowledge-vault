@@ -2,7 +2,7 @@
 title: 品类建模（199）选品配置 34 约束与计算
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487918&idx=1&sn=f7a78d8d0885575b85d4e4ae5d3f74ba&chksm=9b06a390ac712a8690dc73074c8ddac0984f9f8a3514d4260208747b8a06f189f1b000e89bef&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节衔接上一篇，继续讨论“SKU数约束与计算”语义。

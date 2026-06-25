@@ -2,7 +2,7 @@
 title: 品类建模（205）选品配置 40 解宽类窄品
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487976&idx=1&sn=d2e24f64b7cd0c073a11812dbdd77070&chksm=9b06a3d6ac712ac0d2bd2706ff7a7cb4cfd9913c41c1b3c7a6a5ddfcde22f4595d2930696473&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节在上一节基础上，进一步就“宽类窄品”补充部分语义。

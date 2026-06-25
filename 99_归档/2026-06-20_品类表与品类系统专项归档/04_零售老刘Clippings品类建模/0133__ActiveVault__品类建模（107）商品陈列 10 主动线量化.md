@@ -2,7 +2,7 @@
 title: 品类建模（107）商品陈列 10 主动线量化
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487031&idx=1&sn=aed06a9419879b920428fba28216cb3d&chksm=9b06bc09ac71351f38915b4eeaa1db0774286cd2c6746092c9fda99cb1506f1299f6b051be33&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 动线效率的业务量化计算与场景运用语义。

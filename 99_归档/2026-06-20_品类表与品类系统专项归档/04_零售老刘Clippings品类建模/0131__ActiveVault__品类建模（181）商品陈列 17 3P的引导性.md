@@ -2,7 +2,7 @@
 title: 品类建模（181）商品陈列 17 3P的引导性
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487700&idx=1&sn=da81428092534d7d1eb68dadb3474e0c&chksm=9b06a2eaac712bfcc25f52a6d8af54a28ac649178aaf52727653c0460179bbd4a1386f6eb0b4&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节讨论VMD的3P视觉焦点的引用语义。

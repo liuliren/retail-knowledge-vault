@@ -2,7 +2,7 @@
 title: 品类建模（92）- 商品促销 03 促销的现状
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486914&idx=1&sn=bb132c93bf34f5cf328fdaf35ea9e624&chksm=9b06bffcac7136ea72a8d8cad9c96bd1806a50d13f92cd1e473c59454d19857fede51b004de0&cur_album_id=4031475776737476609&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节内容讨论目前促销（传统促销）的现状、问题等语义。

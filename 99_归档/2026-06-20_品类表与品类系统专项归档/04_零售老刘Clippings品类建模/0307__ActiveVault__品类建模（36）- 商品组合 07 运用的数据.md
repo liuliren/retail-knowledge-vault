@@ -2,7 +2,7 @@
 title: 品类建模（36）- 商品组合 07 运用的数据
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486395&idx=1&sn=fd6b18692ffc09ef6d357288105f5064&chksm=9b06b985ac713093b1a730f0c2d4fddbb355dfbbd7f47457a6ddb9ac1320cb74ac64ac0bc2c4&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description:

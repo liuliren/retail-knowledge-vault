@@ -2,7 +2,7 @@
 title: 品类建模（45）- 商品组合 16 利润表语义
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486460&idx=1&sn=54f3b8b768b1d198de46de98e423ce5c&chksm=9b06b9c2ac7130d48f1adde0acfde154f634d26833583e158d4ad85c5edeae83fbe81ae3b1ad&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节主要介绍零售财务利润表的一些结构语义、运用场景等。

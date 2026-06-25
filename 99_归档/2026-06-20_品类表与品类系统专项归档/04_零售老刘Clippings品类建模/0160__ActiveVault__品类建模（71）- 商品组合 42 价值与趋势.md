@@ -2,7 +2,7 @@
 title: 品类建模（71）- 商品组合 42 价值与趋势
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486700&idx=1&sn=103be1670f3e6ba6e383345786d89eed&chksm=9b06bed2ac7137c4ff828b9a1a07963087698c43e0c54a21abfe44c4471a8e8e6bf3c9761923&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节简单讨论，零售实体门店在商品组合管理上的未来特征与发展趋势，以及涉及的语义结构等。

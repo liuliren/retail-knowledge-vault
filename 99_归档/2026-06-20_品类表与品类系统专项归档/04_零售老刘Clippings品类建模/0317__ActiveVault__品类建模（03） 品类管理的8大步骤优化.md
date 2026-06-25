@@ -2,7 +2,7 @@
 title: 品类建模（03） 品类管理的8大步骤优化
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247485972&idx=1&sn=b4fb5ef246b8cf2deb44e9933a28ee08&chksm=9b06b82aac71313c1f35c7f7a79ef96ac3b536889eb7c8701b34c3e9884e73113e758b9c1106&cur_album_id=4239878941940301836&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 序言：本节内容，主要分享在“品类管理”及建模过程中，本人对“品类管理”的8大步骤的修改（仅适合本人，不涉及专业理论。

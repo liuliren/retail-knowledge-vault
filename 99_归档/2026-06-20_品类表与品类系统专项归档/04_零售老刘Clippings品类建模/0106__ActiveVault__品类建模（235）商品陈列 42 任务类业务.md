@@ -2,7 +2,7 @@
 title: 品类建模（235）商品陈列 42 任务类业务
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247488247&idx=1&sn=5ff181aa27d7c9cc0bbd3a380ae62397&chksm=9b06a0c9ac7129dfb98f052424b7277049e3756e0bc1f070d55be456280eaa9c45382b31e341&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: （本节共 6686 个字 长篇 建议阅读）序言：本节继续讨论任务与任务类在具体业务上的逻辑语义结构。

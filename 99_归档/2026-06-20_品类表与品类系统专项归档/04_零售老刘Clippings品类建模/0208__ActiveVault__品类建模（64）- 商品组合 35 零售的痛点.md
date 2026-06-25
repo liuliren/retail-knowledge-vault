@@ -2,7 +2,7 @@
 title: 品类建模（64）- 商品组合 35 零售的痛点
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486661&idx=1&sn=8e1727c41c486a53b8b75f47ff32b9bc&chksm=9b06befbac7137ed800726b4b2fd0ed5e629535360f3be90be8cafa5b6ddf3c66a02668cc847&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节内容具体讨论零售经营中的痛点语义。

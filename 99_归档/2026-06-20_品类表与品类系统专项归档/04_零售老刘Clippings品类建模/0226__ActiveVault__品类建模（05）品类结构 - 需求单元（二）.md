@@ -2,7 +2,7 @@
 title: 品类建模（05）品类结构 - 需求单元（二）
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486003&idx=1&sn=f8aeba011d63e2cee61adb7b10487d0d&chksm=9b06b80dac71311bc594ca5a48b03bfb833a54297662ffd30ed1ec1931fa6b6213f34983d92b&cur_album_id=4239878941940301836&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 品类结构单元（二），再次讨论“商品配置”与“选品”。

@@ -2,7 +2,7 @@
 title: 品类建模（76）选品配置 02 选品效率化
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486731&idx=1&sn=409d5b8ee6588b4ddd172d4b95ffb285&chksm=9b06bf35ac7136235ce5d2b1c8d258b63cbe3f3114835a8278e3bf265043de9987713aa7f4bc&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节以“长安的荔枝”故事，引起选品与供应链的底层逻辑语义关系

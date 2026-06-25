@@ -2,7 +2,7 @@
 title: 品类建模（168）选品配置 23 单品の单元
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487567&idx=1&sn=e44dfa1d5640c8c49366aea390dff8d5&chksm=9b06a271ac712b67d0018cf27d1887ee9e8ece6ece191f38097231ad876330714025eb86907a&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节介绍另一个商品语义：单品单元。

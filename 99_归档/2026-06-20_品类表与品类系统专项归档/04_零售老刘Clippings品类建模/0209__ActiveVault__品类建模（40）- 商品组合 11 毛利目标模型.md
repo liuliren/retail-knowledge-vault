@@ -2,7 +2,7 @@
 title: 品类建模（40）- 商品组合 11 毛利目标模型
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486426&idx=1&sn=2589e21a842332e11e4fbe155abc5267&chksm=9b06b9e4ac7130f27430f44de38b7dc9434e0bf172ab8ab00d8237ef701b358e3558f2ae83a2&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description:

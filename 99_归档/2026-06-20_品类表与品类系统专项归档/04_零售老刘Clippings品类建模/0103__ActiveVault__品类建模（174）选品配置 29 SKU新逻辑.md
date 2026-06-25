@@ -2,7 +2,7 @@
 title: 品类建模（174）选品配置 29 SKU新逻辑
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487630&idx=1&sn=e5577f88a06a112f61fda8b3188c655f&chksm=9b06a2b0ac712ba6dc0a53cbc7c6656af40d71f77063d567eda265cb17b492d4b7e6331b648e&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论基于单品语义的延展（新逻辑结构）。

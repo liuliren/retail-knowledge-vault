@@ -2,7 +2,7 @@
 title: 品类建模（85）- 商品 MD 04 商品价值层
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486832&idx=1&sn=eec3f8a79b9d5cae4433736ea53aaf12&chksm=9b06bf4eac7136587da524436771782fa34cf2d85b4e50ff669e32ae875ca5ef5496f68e9e25&cur_album_id=4031473318086803470&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本文讨论零售经营的“商品价值层”语义。

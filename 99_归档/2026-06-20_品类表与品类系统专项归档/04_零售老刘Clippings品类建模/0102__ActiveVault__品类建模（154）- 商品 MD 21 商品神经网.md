@@ -2,7 +2,7 @@
 title: 品类建模（154）- 商品 MD 21 商品神经网
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487422&idx=1&sn=1fc6f1c8089cc2cae045f33ae7fa541d&chksm=9b06bd80ac713496303d8f9ecfc1c78e9726e4d50403f802ad221662e7197a1c8cd4e3bdfeb5&cur_album_id=4031473318086803470&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论一个基于商品表“DNA基因组”引伸的经营逻辑：“商品神经网”语义

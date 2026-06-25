@@ -2,7 +2,7 @@
 title: 品类建模（110）- 商品 MD 13 动态的标签
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487056&idx=1&sn=1680d4f2de606786bbb9200552f622ea&chksm=9b06bc6eac713578080d986d4d0ad445ba9cf0c80fb92043ed1b6f7c505a6e7b304c515face0&cur_album_id=4031473318086803470&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节继续讨论另一种动态的标签化语义（与业务、营销等作业具有“强关联”。

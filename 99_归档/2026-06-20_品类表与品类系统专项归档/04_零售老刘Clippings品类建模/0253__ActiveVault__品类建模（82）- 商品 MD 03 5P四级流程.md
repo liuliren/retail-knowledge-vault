@@ -2,7 +2,7 @@
 title: 品类建模（82）- 商品 MD 03 5P四级流程
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486805&idx=1&sn=7b4c42cdaf91c1e6fdaa0494ee5f0590&chksm=9b06bf6bac71367d84decd5ae9397be5a8af96b0e31d56ce46c9dbbd969e888cb2752a704c56&cur_album_id=4031473318086803470&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节内容讨论5P运行的4级流程

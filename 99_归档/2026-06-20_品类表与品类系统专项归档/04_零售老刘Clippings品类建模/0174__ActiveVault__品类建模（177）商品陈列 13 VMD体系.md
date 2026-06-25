@@ -2,7 +2,7 @@
 title: 品类建模（177）商品陈列 13 VMD体系
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487666&idx=1&sn=1fdf10eda7840f63e2cc8382a1230e60&chksm=9b06a28cac712b9ad28012f629125e64f18530139e103b8fe586e0ccedf6f6441f45a2506ca6&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节介绍陈列的“VMD视觉体系”语义。

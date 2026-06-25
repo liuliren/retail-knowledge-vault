@@ -2,7 +2,7 @@
 title: 品类建模（一） –  品类的昨天、今天和明天
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247485884&idx=1&sn=de1450fc2820c216a76e0762b73b0138&chksm=9b06bb82ac7132942cd8d936ae78af1624794a2d511036facbb11408d090031a19d01eb52d73&scene=178&cur_album_id=4239878941940301836&search_click_id=#rd
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 序言：本系列前面几节，可能因为涉及“品类语义”，因此，需要首先理清点“脉络”。总之是，遵循从“抽象业务”到“量化建模”的主线。

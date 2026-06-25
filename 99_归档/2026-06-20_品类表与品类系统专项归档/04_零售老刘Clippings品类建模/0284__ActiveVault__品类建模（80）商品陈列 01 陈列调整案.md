@@ -2,7 +2,7 @@
 title: 品类建模（80）商品陈列 01 陈列调整案
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486787&idx=1&sn=74e32978da541fe266b101cdc8fadc10&chksm=9b06bf7dac71366b93a3bc0964d4830cded9d00641f5029773f8efe1fc3f4bd89468b227c54d&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 从本节开始《商品陈列系列》。

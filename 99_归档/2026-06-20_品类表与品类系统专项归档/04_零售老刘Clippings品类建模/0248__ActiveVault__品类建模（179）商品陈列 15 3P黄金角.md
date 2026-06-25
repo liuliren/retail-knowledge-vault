@@ -2,7 +2,7 @@
 title: 品类建模（179）商品陈列 15 3P黄金角
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487687&idx=1&sn=278b4b8295425c70555c2c84c6af2e29&chksm=9b06a2f9ac712bef67a264e2f10f2bbc45ec03161c98c3e57d59f8da814f869dfc2e39559019&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节继续简单讨论VMD基于陈列的另一个视觉逻辑依据：3P焦点或黄金三角。

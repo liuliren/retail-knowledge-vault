@@ -2,7 +2,7 @@
 title: 品类建模（197）选品配置 32 SKU数约束
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487906&idx=1&sn=a89e42e542aed5c57f740b7f097372bf&chksm=9b06a39cac712a8a7a280a8980c0bacfd71d7744a152b605bcd43883a8c1f6aaec5da66ec91d&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论SKU数的约束语义。约束是确定合理SKU数的前提条件和核心过程。

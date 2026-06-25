@@ -2,7 +2,7 @@
 title: 品类建模（192）商品陈列 28 POP的运用
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487864&idx=1&sn=94068ffcb098484cebb9daea897a41f4&chksm=9b06a346ac712a5052e4491c7ac8c8bbad0156b0a4ef67909462abbc927a53d5ba05ec00c2a8&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-16
 description: 本节讨论“POP（陈列POP）”运用语义。

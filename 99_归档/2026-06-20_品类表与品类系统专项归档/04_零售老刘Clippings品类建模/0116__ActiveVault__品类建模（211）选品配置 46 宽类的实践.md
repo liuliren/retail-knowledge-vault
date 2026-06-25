@@ -2,7 +2,7 @@
 title: 品类建模（211）选品配置 46 宽类的实践
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247488069&idx=1&sn=67695d84fc281fb25aebe520a77f3729&chksm=9b06a07bac71296d1778c08ddd96c2efc5c38907ff8eb7537df507d6410e6e6796b57f1c35c5&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论几个基于宽类的运用场景与实例语义。

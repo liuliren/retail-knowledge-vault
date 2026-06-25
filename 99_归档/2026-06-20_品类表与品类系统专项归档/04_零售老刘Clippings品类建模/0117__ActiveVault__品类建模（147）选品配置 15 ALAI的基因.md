@@ -2,7 +2,7 @@
 title: 品类建模（147）选品配置 15 ALAI的基因
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487367&idx=1&sn=14c5f652af9ddc4a83803604f4acac60&chksm=9b06bdb9ac7134afef618e2886e3ae7f0052742d439a6c68f10105e2ab5daed3726cb3bd6351&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节以介绍ALDI（奥乐齐）为切入点，讨论极致SKU等选品逻辑思维语义。

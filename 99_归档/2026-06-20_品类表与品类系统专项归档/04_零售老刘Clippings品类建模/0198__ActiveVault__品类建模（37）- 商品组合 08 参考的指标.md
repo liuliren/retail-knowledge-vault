@@ -2,7 +2,7 @@
 title: 品类建模（37）- 商品组合 08 参考的指标
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486403&idx=1&sn=f5187c88dc7eeeebe09a15fa6795542a&chksm=9b06b9fdac7130ebcb2e4177b853b5dc4a214c46d3690aa182130e247c70ecac0c391dcac1ff&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 商品组合的结构在布局调整等业务场景中的一些参考指标。以及品类管理中几个需要重点理解的语义。

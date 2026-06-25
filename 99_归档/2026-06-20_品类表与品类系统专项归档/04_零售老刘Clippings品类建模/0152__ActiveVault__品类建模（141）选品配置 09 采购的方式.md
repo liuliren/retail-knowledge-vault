@@ -2,7 +2,7 @@
 title: 品类建模（141）选品配置 09 采购的方式
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487326&idx=1&sn=4397e49fb09f6d49c07f25129d4e0dd4&chksm=9b06bd60ac7134760bfe10bf74e3244a588a6fb1d5d027d36e019ed4337dbea262bee9d168cb&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论零售门店供应链方式，主要是采购方式的演变以及逻辑依据语义。

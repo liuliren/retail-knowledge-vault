@@ -2,7 +2,7 @@
 title: 品类建模（169）选品配置 24 Item与SKU
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487575&idx=1&sn=0df1ec55da0bece7bcd6252e13e9dca4&chksm=9b06a269ac712b7fc87dfb767dbd6479dc7d63ae4249b321bf8b890a20bd907ff0db4de6d264&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论单品的另一个语义：Item与SKU语义。

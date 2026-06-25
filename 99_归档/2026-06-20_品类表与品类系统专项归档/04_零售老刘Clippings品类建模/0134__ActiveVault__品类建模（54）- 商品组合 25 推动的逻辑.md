@@ -2,7 +2,7 @@
 title: 品类建模（54）- 商品组合 25 推动的逻辑
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486569&idx=1&sn=9eceda1a9a3516a1323d1b6f8c31b373&chksm=9b06be57ac713741c0d1a73a45931d9e41a0fbe57f2b25bff29092d4efb96ce3767df3a8975f&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description:

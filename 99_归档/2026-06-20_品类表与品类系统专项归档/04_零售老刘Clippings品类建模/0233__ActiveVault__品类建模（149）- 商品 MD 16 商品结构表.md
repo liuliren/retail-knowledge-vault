@@ -2,7 +2,7 @@
 title: 品类建模（149）- 商品 MD 16 商品结构表
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487384&idx=1&sn=8866747e2020e8410852a3355cc54815&chksm=9b06bda6ac7134b00b03faeee79bc8ae8e8a831984c1c3ddf4292c88546992cc5955b16aa25d&cur_album_id=4031473318086803470&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论零售超市（实体门店）商品表的“商品结构表”语义。

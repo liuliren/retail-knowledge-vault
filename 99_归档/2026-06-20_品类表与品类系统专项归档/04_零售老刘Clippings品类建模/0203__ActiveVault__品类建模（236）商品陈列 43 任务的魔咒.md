@@ -2,7 +2,7 @@
 title: 品类建模（236）商品陈列 43 任务的魔咒
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247488252&idx=1&sn=0def5c3eedf811ced2a49591b9dbcc24&chksm=9b06a0c2ac7129d4c682e9a6275dd7d4e2dab6a73a80b08541758b9b9a112c500c92cc30b43f&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论任务或任务类基于零售管理者维度关联的“矛盾或不协调”语义。

@@ -2,7 +2,7 @@
 title: 品类建模（139）选品配置 07 供需主计划
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487313&idx=1&sn=0f78021588d01238da34e452f551461e&chksm=9b06bd6fac71347952d802ad9ab5960f2c38b80bbcb7d61c1ebb28d13d893ba5e980f25368b9&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论系统化供应链中的供应链控制力语义。 商品选品配置的业务关联线、商品管理的系统性链条。

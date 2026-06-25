@@ -2,7 +2,7 @@
 title: 品类建模（52）- 商品组合 23 结构比思维
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486542&idx=1&sn=8d20eb5373ac650b64e2940d1c9c8f43&chksm=9b06be70ac713766b4220dd8789f8c8612620e85b05d772333d52234e1a0f4f7db3b0629f36a&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节主要讨论商品组合的品类结构占比与关联的业务场景。不同品类的比值体现的不同业务类型与特点等。

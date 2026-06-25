@@ -2,7 +2,7 @@
 title: 品类建模（152）- 商品 MD 19 效率与价值
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487406&idx=1&sn=785975f1da2fa2d64cc18e314ee97d69&chksm=9b06bd90ac7134861028564d1dc9514349c65b645129315ba642ba76a5ef57df9511c9b6e12a&cur_album_id=4031473318086803470&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论商品表的效率与价值语义。

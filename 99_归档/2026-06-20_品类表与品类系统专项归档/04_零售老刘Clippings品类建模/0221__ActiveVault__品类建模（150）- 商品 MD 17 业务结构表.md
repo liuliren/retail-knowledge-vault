@@ -2,7 +2,7 @@
 title: 品类建模（150）- 商品 MD 17 业务结构表
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487392&idx=1&sn=a3d91a4e3fafcefc969f0239b0371260&chksm=9b06bd9eac7134884875a23e52e4b67467e9b48c1c8f53a26dc0457a7fc4a13ada925d28c7ad&cur_album_id=4031473318086803470&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节继续讨论商品结构表的构成（维度）结构语义。

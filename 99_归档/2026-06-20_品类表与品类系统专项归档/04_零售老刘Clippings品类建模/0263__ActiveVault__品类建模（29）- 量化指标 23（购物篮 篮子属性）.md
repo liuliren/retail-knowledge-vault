@@ -2,7 +2,7 @@
 title: 品类建模（29）- 量化指标 23（购物篮 篮子属性）
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486317&idx=1&sn=ebb3d34e9df20ede3f25c8b7f1606620&chksm=9b06b953ac713045759e1b5f2446bcd0bc7cb4359ae1bc12a0e8717265188b38792d78bb2f45&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description:

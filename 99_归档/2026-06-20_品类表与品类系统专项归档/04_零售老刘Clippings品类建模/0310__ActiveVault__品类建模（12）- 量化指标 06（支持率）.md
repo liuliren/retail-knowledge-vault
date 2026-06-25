@@ -2,7 +2,7 @@
 title: 品类建模（12）- 量化指标 06（支持率）
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486154&idx=1&sn=30e7019804e0e0341b2611b3f5107b47&chksm=9b06b8f4ac7131e29b353cf80742f131412780802ec37603c0d8623bee4ba9b04cc940321c54&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节接着上一节的“支持率”介绍，讨论实际的建模分析场景。

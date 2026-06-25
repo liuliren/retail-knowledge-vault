@@ -2,7 +2,7 @@
 title: 品类建模（172）选品配置 27 单品の管理
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487617&idx=1&sn=c9bde46e7b6def2892ac6f1e32c550aa&chksm=9b06a2bfac712ba93b2e87092363267d84e50ab8b7d7f38acba95f29a72aa497567368dd05b6&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论单品管理的“管理”语义。

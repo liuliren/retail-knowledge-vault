@@ -2,7 +2,7 @@
 title: 品类建模（43）- 商品组合 14 财务三大报表
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486447&idx=1&sn=9e48eb15fbb7b018702d58161768f563&chksm=9b06b9d1ac7130c745940395410f1156457dade535b18720ecfa9c425478f01235d44a62f051&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节在上节内容基础上，主要介绍商品组合的结果性指标：即财务分析中的三大报表：资产负债表、利润表和现金流量表。

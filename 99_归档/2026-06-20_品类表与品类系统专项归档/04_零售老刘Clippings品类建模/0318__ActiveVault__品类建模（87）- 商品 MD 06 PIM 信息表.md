@@ -2,7 +2,7 @@
 title: 品类建模（87）- 商品 MD 06 PIM 信息表
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486854&idx=1&sn=c1b18080e23dfb0238cc8a321f10fc8d&chksm=9b06bfb8ac7136aeafe47a1e9fbc41fcd7b57c24a289d484b983ffaa7405b088049c3775004c&cur_album_id=4031473318086803470&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 简单来说，零售的PIM（信息管理系统），是研究其如何解决“业务神经中枢”的问题。

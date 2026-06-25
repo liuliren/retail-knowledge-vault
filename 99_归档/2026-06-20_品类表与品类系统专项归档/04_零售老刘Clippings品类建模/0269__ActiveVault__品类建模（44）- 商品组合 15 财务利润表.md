@@ -2,7 +2,7 @@
 title: 品类建模（44）- 商品组合 15 财务利润表
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486453&idx=1&sn=ca6bb90c594065d858d3825e05bb783d&chksm=9b06b9cbac7130dd408b9809a0a862c4f9275f41f6a4fac98e66e18e8b1bd686ff159058e08b&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节简单介绍，基于毛利关联性较强的三大财务报表之一的利润表。

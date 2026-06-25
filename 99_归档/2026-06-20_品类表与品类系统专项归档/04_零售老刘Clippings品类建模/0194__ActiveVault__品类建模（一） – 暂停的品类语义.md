@@ -2,7 +2,7 @@
 title: 品类建模（一） – 暂停的品类语义
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247485890&idx=1&sn=d24e45042efa71d3fed5a9d13004b7b8&chksm=9b06bbfcac7132ea667ef9c3293cd8f7b753a7f2bde66d3a691f23de9b429be10aceb7c46a02&cur_album_id=4239878941940301836&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 暂停的品类语义。出于各种原因，本系列在本节后，还有一节，然后会暂停2个月左右的连续更新，还请海涵。

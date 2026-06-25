@@ -2,7 +2,7 @@
 title: 品类建模（204）选品配置 39 论宽类窄品
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487966&idx=1&sn=67b4ce08712a5c6fbb3d94e24dc2a76f&chksm=9b06a3e0ac712af6b3f34de79abd04aa1726017f17a5147136de1fb5e4bc966ef79e9cd0c9f6&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节以及后面几节，讨论SKU数管理中的“宽类窄品”语义。

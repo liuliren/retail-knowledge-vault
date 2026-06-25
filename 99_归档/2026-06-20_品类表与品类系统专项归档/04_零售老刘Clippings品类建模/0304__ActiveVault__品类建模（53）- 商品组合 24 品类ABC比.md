@@ -2,7 +2,7 @@
 title: 品类建模（53）- 商品组合 24 品类ABC比
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486562&idx=1&sn=131a6f55007345ff77bccd85dc3d3bc3&chksm=9b06be5cac71374a6b8a67d5aa01968799e99fd5ba2b7576ee630a40da32c7e0ac4e94f37578&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节内容介绍商品组合中，商品结构的标准指标（常见的基于ABC分析指标），以及由此标准品类结构，在促销选品。

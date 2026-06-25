@@ -2,7 +2,7 @@
 title: 品类建模（207）选品配置 42 Item与宽类
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487990&idx=1&sn=cf4d2cb06137993a2b7c20dc14a0f890&chksm=9b06a3c8ac712aded311c6a7d8a00890c88111b8d595a2503e21dcfd25e655cb8c75f6221dfc&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论宽类的类的最后一个加强版语义：类与品在不同经营语境下的逻辑关系

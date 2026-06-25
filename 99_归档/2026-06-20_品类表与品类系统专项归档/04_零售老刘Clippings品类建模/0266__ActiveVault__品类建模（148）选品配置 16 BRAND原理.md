@@ -2,7 +2,7 @@
 title: 品类建模（148）选品配置 16 BRAND原理
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487375&idx=1&sn=40273ee0715988e94726291159c2cadb&chksm=9b06bdb1ac7134a78d06be8ae7092e9cb1f5b3d4cd74645d11a1c5f98090b5d2ce617884f3c3&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论实际经营中与一个“卷供应链”相关的PB类商品语义。

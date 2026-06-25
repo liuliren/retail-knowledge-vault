@@ -2,7 +2,7 @@
 title: 品类建模（93）选品配置 03 供应链效率
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486919&idx=1&sn=c727f131e72b0207489dc2ff30fd4cd4&chksm=9b06bff9ac7136ef7dbc469bc900149614b663d5635a82139bd0c1cd17cbacd6a6cbf9c84b52&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description:

@@ -2,7 +2,7 @@
 title: 品类建模（103）- 商品 MD 11 零售MD事件
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486999&idx=1&sn=107332d00f7931b61d75fd5122cd8abd&chksm=9b06bc29ac71353f79f09fd65c22231432c4bc870f7e5fb4aa3f992aaa540c893e2373df53f2&cur_album_id=4031473318086803470&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论零售经营中的“MD事件”语义。

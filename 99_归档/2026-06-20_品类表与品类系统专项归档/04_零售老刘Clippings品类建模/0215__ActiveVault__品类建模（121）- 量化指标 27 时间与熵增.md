@@ -2,7 +2,7 @@
 title: 品类建模（121）- 量化指标 27 时间与熵增
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487158&idx=1&sn=d0744d279b0138c48d60a0c3930cf41d&chksm=9b06bc88ac71359e9346aebb8eea938f1b34dae1311fdcc8447c7a0a21c308e5bef893361ab2&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论时间维度在零售“熵增”上的部分语义以及业务场景。

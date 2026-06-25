@@ -2,7 +2,7 @@
 title: 品类建模（61）- 商品组合 32 卖点与买点
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486642&idx=1&sn=4bfe9be4db99ea48b8767e18ef25cc85&chksm=9b06be8cac71379a9200a9ea7c95365bdd08fbe107aa84dc31bfa5ffa53bdd460c39740b304d&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节内容讨论零售门店实际经营中的一个误区：错把卖点当买点。

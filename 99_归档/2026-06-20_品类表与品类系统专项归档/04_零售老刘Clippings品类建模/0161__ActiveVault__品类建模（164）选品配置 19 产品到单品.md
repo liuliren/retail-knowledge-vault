@@ -2,7 +2,7 @@
 title: 品类建模（164）选品配置 19 产品到单品
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487560&idx=1&sn=19bcf0260590be6a941a76b2882b53d1&chksm=9b06a276ac712b6069e21d3d36ff27ea9f432fc85e0ecc68f9fb4da798b8f12b2232323c01ce&cur_album_id=4050511208510881811&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节继续讨论产品、商品、单品的逻辑线：从产品到单品的语义。

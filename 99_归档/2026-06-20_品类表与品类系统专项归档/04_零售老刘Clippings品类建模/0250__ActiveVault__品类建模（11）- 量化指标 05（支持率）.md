@@ -2,7 +2,7 @@
 title: 品类建模（11）- 量化指标 05（支持率）
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486116&idx=1&sn=ab3f465a24fc532d215cdcb6e56d6676&chksm=9b06b89aac71318cee2d74f3f5252d376cfe35931e3735eb6844c1d33b0ad0b3031f6b816c2e&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节 简单讨论与 “购买率” 有关 “支持率” 与 “串岗率” 的问题。

@@ -2,7 +2,7 @@
 title: 品类建模（138）- 商品 MD 15 一日三餐类
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487306&idx=1&sn=889e71aa6de392ab8984f051fe8a51eb&chksm=9b06bd74ac7134625c3ba0714372b1fa4f9b3416ff1d666206f666dac8893b3851a23ba28751&cur_album_id=4031473318086803470&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节讨论商品的“一日三餐”属性标签语义，关键词有：新鲜、主食类等。

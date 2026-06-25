@@ -1,5 +1,5 @@
 ---
-title: 零售老刘 Clippings 全量阅读台账 v0.1
+title: 老刘_Clippings 全量阅读台账 v0.1
 version: v0.1
 status: active
 owner: 六哥

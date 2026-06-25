@@ -2,7 +2,7 @@
 title: 品类建模（26）- 量化指标 20（购物篮 篮子属性）
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486295&idx=1&sn=b6b807c10d43ab71ecc2ad8945435939&chksm=9b06b969ac71307f8470c2f2e5749cf20c7b8535ce4bb62cb91d23b9135264f9250a4ea5ae60&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 因为购物篮的基本构成单元是单品，因此，我们基于商品属性，将“篮子品类”的属性称为：篮子属性。

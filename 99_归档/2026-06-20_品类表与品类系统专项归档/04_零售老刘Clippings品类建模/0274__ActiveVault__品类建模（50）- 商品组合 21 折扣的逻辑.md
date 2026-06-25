@@ -2,7 +2,7 @@
 title: 品类建模（50）- 商品组合 21 折扣的逻辑
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486523&idx=1&sn=fc598513a41530ebf444b2c52a12a068&chksm=9b06be05ac71371313c90a0c15f1c2c2f53fc6f0730c8cfdd0198f1dcd009ccd923f05ae67a8&cur_album_id=4032598383209709579&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节简单讨论一下，零售门店中存在的“折扣”现象，并在前面几节的语义基础上，扩展其“逻辑”语义

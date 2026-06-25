@@ -2,7 +2,7 @@
 title: 品类建模（14）- 量化指标 08（购买次数）
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247486189&idx=1&sn=85f6c58d530011580bbd8783dbebe63b&chksm=9b06b8d3ac7131c52f084cb608048be0cff39d57d315d7ee4b32a7efbc3c4d91072718e074cd&cur_album_id=4070868752030728194&scene=189#wechat_redirect
 author:
-  - "[[2026-06-19_零售老刘Clippings全量阅读台账_v0.1]]"
+  - "[[Clippings全量阅读台账_v0.1]]"
 published:
 created: 2026-06-18
 description: 本节继续聊会员购买次数的问题
