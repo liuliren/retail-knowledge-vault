@@ -25,6 +25,7 @@ tags: [记忆, 断点, 启动, 进度]
 
 - **已完成 Data Adapter v1.0**([[RetailOS_DataAdapter_v1.0_设计与SaaS评估]]):adapter.py 把任意门店ERP→统一13字段schema+质量分级,2店实证(花厅坊88/A·沙埔大道64/B自动检列错位)。架构升v2.1(底部加Data Layer)。**SaaS第一阻碍=schema混乱已破。**
 
+- **已完成 `/ingest` skill(编译层自动化·Input OS核心)**:raw→helper结构化+路由+台账→LLM编译L3概念页;零售老刘227《论类要清晰》实证。
 - **已完成 SaaS 第二阻碍 L3/L4 映射**:category_mapper.py 关键词→L3+复杂类标L4;花厅坊89%/沙埔大道(无类目)67%,补词即升(自我进化)。
 - **已签 A**(T3隔离:性爱生活→个人库80_敏感+Clippings .no-ingest);**输入系统架构** + **体系个人知识库方案**已落([[输入系统架构_v0.1]] / [[体系个人知识库与内容板块_方案_v0.1]])。
 
