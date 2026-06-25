@@ -116,3 +116,11 @@ _client_private/
 # 说明：明细 *.csv / *.xlsx 已被上方全局规则覆盖；此处仅补目录级兜底，
 # 防止 raw_exports/ 内非 csv/xlsx 的导出件（txt/json 等）误入 git。
 **/raw_exports/
+
+# Knowledge vault automation generated runtime: snapshots, dashboards, logs and launchd preview.
+13_数据分析与工具脚本/知识库自动化_v1/runtime/
+
+# ===== 2026-06-25 RECONCILIATION-COMMIT-SAFETY-002 §4：客户原始素材兜底 =====
+# D 层 raw_sensitive（§6）：09_原始素材 目录（如归档门店的原始导出）永不进 git。
+# 注：targeted 规则，刻意不用宽 *原始素材/，以免覆盖下方花厅坊 99_原始素材 历史索引白名单。
+**/09_原始素材/
