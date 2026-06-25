@@ -72,8 +72,10 @@ def classify(m):
     return cx, layer, flaws
 
 if __name__=="__main__":
-    d=sys.argv[1]
-    for p in sorted(glob.glob(os.path.join(d,"*_脱敏SKU表_v0.1.csv"))):
+    arg=sys.argv[1]
+    # 入参可为单个csv文件或目录(目录则分析其下所有脱敏表)
+    paths=[arg] if os.path.isfile(arg) else sorted(glob.glob(os.path.join(arg,"*_脱敏SKU表_v0.1.csv")))
+    for p in paths:
         m=analyze(p); cx,layer,flaws=classify(m)
         print(f"\n{'='*60}\n【{m['cat']}】 SKU={m['n']}  销额={m['total']}  品牌族数={m['brand_n']}")
         print(f"  价格带: {m['pmin']}-{m['pmax']} (跨度{m['span']:.0f}x, p25/p50/p75={m['p25']}/{m['p50']}/{m['p75']})")
