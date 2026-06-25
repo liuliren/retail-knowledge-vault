@@ -94,7 +94,7 @@ def main():
     c_amt  = cidx(H, "金额小计", "销售金额")
     c_date = cidx(H, "销售日期")
     c_rtl  = cidx(H, "零售价", "售价")
-    c_cost = cidx(H, "进价", "成本价")
+    c_cost = cidx(H, "进价", "档案进价", "成本价")
     c_spec = cidx(H, "规格")
     c_cat  = cidx(H, "类别名称", "类别")
 
@@ -128,6 +128,8 @@ def main():
         # 零售价:优先列值,缺则用实收单价(销额/销量)
         unit_price = (d["amt"] / d["qty"]) if d["qty"] > 0 else 0.0
         price = d["retail"] if d["retail"] > 0 else unit_price
+        # 销量:某些门店ERP销量列错位/为空 → 有零售价时用 销额/价 反推(跨店robust)
+        qty_out = d["qty"] if d["qty"] > 0 else (round(d["amt"]/price, 1) if price > 0 else 0.0)
         out_rows.append({
             "SKU序号": f"S{n:03d}",
             "品名": clean_name(d["name"]),
@@ -135,7 +137,7 @@ def main():
             "类别": d["cat"] or a.category,
             "单价": round(price, 2),
             "规格": d["spec"],
-            "销量": round(d["qty"], 1),
+            "销量": round(qty_out, 1),
             "销额": round(d["amt"], 2),
             "动销天数": len(d["days"]) if c_date is not None else "NA",
             "毛利率档": margin_band(price, d["cost"]),
