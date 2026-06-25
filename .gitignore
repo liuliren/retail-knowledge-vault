@@ -124,3 +124,7 @@ _client_private/
 # D 层 raw_sensitive（§6）：09_原始素材 目录（如归档门店的原始导出）永不进 git。
 # 注：targeted 规则，刻意不用宽 *原始素材/，以免覆盖下方花厅坊 99_原始素材 历史索引白名单。
 **/09_原始素材/
+.gstack/
+
+# 生成物:PDF/PNG 报告(md为源,可重渲染)
+output/
