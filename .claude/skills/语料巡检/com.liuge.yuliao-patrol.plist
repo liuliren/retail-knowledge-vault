@@ -17,8 +17,16 @@
     <string>/Users/davidliu/.nvm/versions/node/v20.20.2/bin/node</string>
     <string>/Users/davidliu/.nvm/versions/node/v20.20.2/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe</string>
     <string>-p</string>
+    <string>--permission-mode</string>
+    <string>acceptEdits</string>
     <string>/语料巡检</string>
   </array>
+  <!--
+    权限提示:headless(-p)无人值守跑时,文件写入用 acceptEdits 自动放行,但 scan.sh / git 等 Bash
+    仍会被权限拦。要全自动,先把这些命令加进 .claude/settings.json 的 allow 清单
+    (用 /update-config 或 /fewer-permission-prompts),不要图省事用 --dangerously-skip-permissions。
+  -->
+
 
   <key>WorkingDirectory</key>
   <string>/Users/davidliu/KnowledgeBase/retail-knowledge-vault</string>
