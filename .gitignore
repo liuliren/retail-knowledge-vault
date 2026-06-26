@@ -25,6 +25,10 @@
 !.claude/skills/project-handoff/SKILL.md
 !.claude/skills/深度精读/
 !.claude/skills/深度精读/SKILL.md
+!.claude/skills/语料巡检/
+!.claude/skills/语料巡检/SKILL.md
+!.claude/skills/语料巡检/scan.sh
+!.claude/skills/语料巡检/com.liuge.yuliao-patrol.plist
 
 # 临时解压/检查目录（客户敏感资料预览用 / 不入 git）
 .tmp_inspect/

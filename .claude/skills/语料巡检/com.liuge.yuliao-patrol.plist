@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  语料巡检 · 每日定时任务（macOS launchd）
+  默认每天 09:00 与 18:00 各跑一次 /语料巡检（headless）。
+  加载: cp 本文件 ~/Library/LaunchAgents/ && launchctl load ~/Library/LaunchAgents/com.liuge.yuliao-patrol.plist
+  停用: launchctl unload ~/Library/LaunchAgents/com.liuge.yuliao-patrol.plist
+  改时间/次数: 编辑下面的 StartCalendarInterval（可加多组 <dict> 表示一天多次）。
+  日志: ~/Library/Logs/yuliao-patrol.{out,err}.log
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.liuge.yuliao-patrol</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/davidliu/.nvm/versions/node/v20.20.2/bin/node</string>
+    <string>/Users/davidliu/.nvm/versions/node/v20.20.2/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe</string>
+    <string>-p</string>
+    <string>/语料巡检</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/davidliu/KnowledgeBase/retail-knowledge-vault</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/Users/davidliu/.nvm/versions/node/v20.20.2/bin:/usr/local/bin:/usr/bin:/bin</string>
+  </dict>
+
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict>
+      <key>Hour</key><integer>9</integer>
+      <key>Minute</key><integer>0</integer>
+    </dict>
+    <dict>
+      <key>Hour</key><integer>18</integer>
+      <key>Minute</key><integer>0</integer>
+    </dict>
+  </array>
+
+  <key>StandardOutPath</key>
+  <string>/Users/davidliu/Library/Logs/yuliao-patrol.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/davidliu/Library/Logs/yuliao-patrol.err.log</string>
+
+  <key>RunAtLoad</key>
+  <false/>
+</dict>
+</plist>
