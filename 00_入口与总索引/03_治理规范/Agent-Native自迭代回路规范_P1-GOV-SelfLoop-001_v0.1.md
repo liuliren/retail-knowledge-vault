@@ -2,9 +2,10 @@
 id: P1-GOV-SelfLoop-001
 title: Agent-Native 自迭代回路规范
 version: v0.1
-status: candidate
+status: active
 owner: 六哥
 created: 2026-06-26
+signoff: 六哥 2026-06-26（4决策点全签:升active·§7补丁纳入宪法v2.4·模型分层调度仅单品类诊断试点·动作台账落点98_AI协作中枢/00_总控/_动作台账.csv）
 module: 00_入口与总索引/03_治理规范
 client_safety: internal_methodology
 summary: 把六哥5元能力(模型分层调度/Skill闭环/动作≥3次孵化Skill/Skill复盘迭代/知识库总回路)收成"三层嵌套回路+模型横切"的agent_rules层治理规范;短硬可检查,焊接CLAUDE.md §7/§11与token经济学范式
@@ -25,7 +26,7 @@ related:
 
 > 🧱 **本规范属 agent_rules 层**(KB-BUILD-001):短、硬、可检查,不写散文。它是设计简报 [[Agent-Native自迭代回路规范_设计简报_P1-GOV-SelfLoop-001_v0.1]] 的正式展开版,简报降为设计记录。
 > 📐 **不造轮子**:本规范不重定义已有机制,只把 4 个机制焊接进 CLAUDE.md §7(操作回路)、§11(七环闭环)、KB-BUILD-001(token 经济学)、M-DEC 回路。冲突按双宪法边界(全局红线 > 项目红线 > 项目细则 > Prompt)。
-> 🖊 status: candidate → 升 active 须六哥 Z(CLAUDE.md §3①②)。
+> ✅ status: **active**(六哥 2026-06-26 签·4 决策点全过)。§6 补丁已纳入 CLAUDE.md v2.4。
 
 ---
 
@@ -167,11 +168,11 @@ related:
 ## 7. 反模式(必避)
 ① 把判断相(裁决/签字)下放给 Sonnet/脚本「省钱」(破护城河);② skill 跑完不复盘就收工(无 D/E 相);③ 动作重复多次却不入台账、不提孵化(治理失效);④ 自动建 skill 不报六哥(越签字门);⑤ 新料只追加不回改旧页(知识库退化成日志);⑥ 发现旧页错认知就地悄改(破可追溯);⑦ 把单次救火误判为「规律动作」去孵化 skill(三判据没过)。
 
-## 8. 待六哥的 Z(10%)
-1. 本规范 candidate → active。
-2. §6 的 **CLAUDE.md §7 补丁**(G12_SkillForge / Skill 闭环铁律 / 模型分层调度)是否纳入项目宪法。
-3. 模型分层调度:**仅单品类诊断试点** vs 全 skill 推行?
-4. 动作台账落点:`98_AI协作中枢/00_总控/_动作台账.csv` 是否合适。
+## 8. 六哥的 Z(已签·2026-06-26)
+1. ✅ 本规范 candidate → **active**。
+2. ✅ §6 **CLAUDE.md §7 补丁纳入宪法**(v2.4:G12_SkillForge / Skill 闭环铁律 / 模型分层调度)。
+3. ✅ 模型分层调度 **仅单品类诊断试点**(验证后再扩)。
+4. ✅ 动作台账落点 **`98_AI协作中枢/00_总控/_动作台账.csv`** 确认。
 
 ## 关联
 [[CLAUDE.md]] · [[Agent-Native自迭代回路规范_设计简报_P1-GOV-SelfLoop-001_v0.1]] · [[KB-BUILD-001_raw-wiki-agent_rules与token经济学范式_v0.1]] · [[M-DEC中层决策资产晋级机制_v0.1]] · [[方便食品_单品类诊断卡_v0.1]] · [[_当前断点_RESUME]]
