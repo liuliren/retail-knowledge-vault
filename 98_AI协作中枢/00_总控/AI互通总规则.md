@@ -1,16 +1,3 @@
-
-VAULT="/Users/davidliu/KnowledgeBase/retail-knowledge-vault"
-
-cd "$VAULT" || exit 1
-
-mkdir -p "98_AI协作中枢/00_总控"
-mkdir -p "98_AI协作中枢/01_Claude_Code/Claude输出区"
-mkdir -p "98_AI协作中枢/01_Claude_Code/Claude记忆区"
-mkdir -p "98_AI协作中枢/02_Codex/Codex输出区"
-mkdir -p "98_AI协作中枢/03_共享上下文"
-mkdir -p ".claude"
-
-cat > "98_AI协作中枢/00_总控/AI互通总规则.md" <<'EOF'
 # AI互通总规则
 
 ## 一、总原则
