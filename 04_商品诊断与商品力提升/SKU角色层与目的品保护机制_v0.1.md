@@ -2,7 +2,8 @@
 id: KB-METHOD-SKU-ROLE-001
 title: SKU 角色层与目的品保护机制 v0.1
 version: v0.1.6
-status: candidate
+status: active
+signoff: 六哥 2026-06-26（零售老刘321篇逐字工程收官升 active·§11.3 实证以花厅坊「方便食品」品类诊断为首个验证案例·进行中）
 owner: 六哥
 source_type: method
 created: 2026-06-25
