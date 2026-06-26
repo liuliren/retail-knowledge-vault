@@ -1,12 +1,14 @@
 ---
-title: 数据清洗匹配 retail_clean v0.1
-summary: 门店数据清洗+跨文件条码匹配的健壮参数化 python 模块, 库存订货/单品类诊断共用地基
+title: 数据清洗匹配 retail_clean v0.2
+summary: 门店数据清洗+跨文件条码匹配+派生指标(ABC/周转/呆滞)的健壮参数化 python 模块, 库存订货/单品类诊断共用地基
 status: draft
 client_safety: internal_methodology
 fact_layer: observed
 ---
 
-# retail_clean v0.1 — 数据底座 N1
+# retail_clean v0.2 — 数据底座 N1
+
+> 版本: v0.1 清洗+匹配地基 → **v0.2 增派生指标层** (ABC/周转/呆滞/缺货/毛利率), 订货包与诊断 skill 共用同一套口径, 不再各自手撸。
 
 > 把花厅坊/乐易购门店数据的「清洗 + 跨文件匹配」硬化成一个 robust、参数化、可复用的 python 模块。
 > 这是 [[社区超市库存订货优化包]] 与 [[单品类诊断]] 共用的**确定性地基**——LLM 不再每次看表猜字段、手撸列序号。
@@ -34,6 +36,28 @@ fact_layer: observed
 | `clean_store_file` | `(path, source_type, sheet=0, drop_rules=None, field_candidates=None, require_barcode=True)` | 高层封装: 读→定位→解析→剔除, 一步出干净记录 + meta。 |
 
 `source_type` ∈ `{"inventory","sales","archive"}`, 各自有默认字段候选表 (`INVENTORY_FIELDS` / `SALES_FIELDS` / `ARCHIVE_FIELDS`)。
+
+### 2.1 v0.2 派生指标层 (订货/诊断共用口径, 阈值参数化)
+
+| 函数 | 签名 | 职责 |
+|---|---|---|
+| `compute_period_days` | `(sales_records, default=None)` | 由明细日期跨度推算统计天数 (花厅坊方便食品自动得 94, 与样板一致)。 |
+| `compute_abc` | `(records, value_key="period_value", a_cut=0.7, b_cut=0.9)` | 累计占比 ABC 分层 (默认按库存期间销售额, 同 run_inv 口径)。 |
+| `enrich_turnover` | `(records, period_days, asof_date=None, stale_gap_days=30, slow_dos=90)` | 补 日均动销/DOS/毛利率/呆滞/慢周转/缺货疑似 (进价依赖项仅参考)。 |
+| `summarize` | `(records)` | 出聚合诊断口径 (ABC 分布/呆滞款数+积压/慢周转/缺货/积压成本), 无裸值。 |
+| `build_dataset` | `(inventory_path, sales_path, archive_path=None, base, period_days=None, asof_date=None, ...)` | **端到端单入口**: 清洗三源→聚合→join→ABC+周转派生→汇总, skill 实际调用方式。 |
+
+```python
+# 订货包 / 单品类诊断 skill 的单一入口 —— 一行出全量诊断记录
+from datetime import date
+records, report = rc.build_dataset(
+    inventory_path="库存积压报表_xxx.xls",
+    sales_path="xxx_商品明细.xls",
+    archive_path=None,                 # 可选第三源
+    base="inventory", asof_date=date(2026, 5, 8))
+# report["summary"] → {有效SKU, ABC, 呆滞款数, 呆滞积压成本, 慢周转款数, 缺货疑似款数, ...}
+# records 每条含: abc / daily_velocity / dos / margin_rate / is_stale / is_slow / is_stockout_suspect
+```
 
 ## 3. 用法
 
@@ -91,9 +115,13 @@ rc.drop_anomalies(records, rules={"drop_negative_inventory": True,
 库存积压报表: 表头r3, 原始54行→解析52→有效52, 剔除: 无
 商品销售明细: 表头r6, 明细2236行→聚合167条码
 跨文件匹配  : 全集52, 命中明细31 (join率60%), cost_reliability='仅参考'
-样例统计    : 有效SKU=52  负库存=0  库存积压成本≈5827元(仅参考)
-基线对齐    : 有效SKU 52==52 ✅   负库存 0==0 ✅   ← 与 run_inv.py 样板一致
+派生指标层  : 统计天数94(明细跨度自动算) ABC=A11/B10/C31 呆滞17款≈812元 慢周转48款 缺货0
+build_dataset单入口: 与分步结果完全一致
+全量基线对齐 run_inv.py (9 项断言全 ✅):
+  有效SKU 52  负库存 0  ABC 11/10/31  呆滞17款·812元  慢周转48款  缺货0
 ```
+
+v0.2 不只复现样板的 52 SKU·0 负库存, 而是**逐项复现 run_inv.py 全量诊断口径** (ABC/呆滞/慢周转/缺货), 证明派生层可安全替代各 skill 的自撸算法。
 
 ## 7. 铁律 (CLAUDE.md §6/§7)
 

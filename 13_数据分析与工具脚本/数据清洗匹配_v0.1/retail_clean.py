@@ -402,7 +402,10 @@ def join_by_barcode(sales=None, inventory=None, archive=None, base="inventory"):
             "inventory": i.get("inventory"),
             "last_buy_date": str(i.get("last_buy_date") or "")[:10],
             "last_sale_date": str(i.get("last_sale_date") or "")[:10],
-            # 销售侧
+            "period_qty": i.get("period_qty"),         # 库存报表期间销量 (ABC/缺货判定)
+            "period_value": i.get("period_value"),     # 库存报表期间销售额
+            "period_margin": i.get("period_margin"),   # 库存报表期间毛利
+            # 销售侧 (明细聚合)
             "sale_qty": s.get("sale_qty"),
             "sale_value": s.get("sale_value"),
             "active_days": s.get("active_days"),
@@ -466,6 +469,135 @@ def clean_store_file(path, source_type, sheet=0, drop_rules=None,
         "drop_log": drop_log,
     }
     return kept, meta
+
+
+# ════════════════════════════════════════════════════════════════════════════
+# v0.2 派生指标层 (订货包 + 单品类诊断共用的同一套口径; 替代各 skill 自撸)
+# 口径与 run_inv.py 样板对齐, 参数化阈值. 进价依赖项一律标"仅参考"(坑⑤).
+# ════════════════════════════════════════════════════════════════════════════
+def compute_period_days(sales_records, default=None):
+    """从销售明细日期跨度推算统计天数 (含首尾). 不足 2 个有效日期则返回 default."""
+    from datetime import date
+    ds = []
+    for r in sales_records:
+        s = str(r.get("sale_date") or "")[:10]
+        if re.fullmatch(r"\d{4}-\d{2}-\d{2}", s):
+            try:
+                ds.append(date(*map(int, s.split("-"))))
+            except ValueError:
+                pass
+    if len(ds) < 2:
+        return default
+    return (max(ds) - min(ds)).days + 1
+
+
+def compute_abc(records, value_key="period_value", a_cut=0.7, b_cut=0.9, out_key="abc"):
+    """按 value_key 降序累计占比打 ABC 标 (A<=a_cut, B<=b_cut, 余 C). 原地写 out_key.
+
+    默认用库存报表期间销售额 (period_value), 与 run_inv.py 样板口径一致.
+    """
+    tot = sum((to_num(r.get(value_key)) or 0) for r in records) or 1
+    cum = 0.0
+    for r in sorted(records, key=lambda x: -(to_num(x.get(value_key)) or 0)):
+        cum += (to_num(r.get(value_key)) or 0)
+        ratio = cum / tot
+        r[out_key] = "A" if ratio <= a_cut else ("B" if ratio <= b_cut else "C")
+    return records
+
+
+def enrich_turnover(records, period_days, asof_date=None,
+                    stale_gap_days=30, slow_dos=90):
+    """逐 SKU 补派生指标 (原地). 阈值参数化.
+
+    新增字段:
+      daily_velocity      : 日均动销 = 明细销量 / period_days
+      dos                 : 周转天数 = 当前库存 / 日均 (无动销且有货=9999, 无货=0)
+      margin_rate         : 毛利率 = 期间毛利 / 期间销售额 (仅参考·进价不准)
+      last_sale_gap_days  : 距 asof_date 的未动销天数
+      is_stale            : 呆滞 = gap>stale_gap_days 且 有货
+      is_slow             : 慢周转 = dos>slow_dos 且 有货
+      is_stockout_suspect : 缺货疑似 = 当前库存=0 且 期间有销
+    asof_date: datetime.date; 缺省取明细范围末日所在概念, 这里若 None 则不算 gap.
+    """
+    from datetime import date
+    for r in records:
+        cur = to_num(r.get("inventory")) or 0
+        sq = to_num(r.get("sale_qty")) or 0
+        daily = (sq / period_days) if (period_days and sq) else 0.0
+        r["daily_velocity"] = round(daily, 3)
+        r["dos"] = round(cur / daily, 1) if daily > 0 else (9999 if cur > 0 else 0)
+        pv = to_num(r.get("period_value"))
+        pm = to_num(r.get("period_margin"))
+        r["margin_rate"] = round(pm / pv, 3) if (pv and pv > 0 and pm is not None) else None
+        gap = None
+        ls = str(r.get("last_sale_date") or "")[:10]
+        if asof_date and re.fullmatch(r"\d{4}-\d{2}-\d{2}", ls):
+            try:
+                gap = (asof_date - date(*map(int, ls.split("-")))).days
+            except ValueError:
+                gap = None
+        r["last_sale_gap_days"] = gap
+        r["is_stale"] = bool(gap is not None and gap > stale_gap_days and cur > 0)
+        r["is_slow"] = bool(isinstance(r["dos"], (int, float)) and r["dos"] > slow_dos and cur > 0)
+        r["is_stockout_suspect"] = bool(cur == 0 and (to_num(r.get("period_qty")) or 0) > 0)
+    return records
+
+
+def summarize(records):
+    """聚合诊断口径汇总 (供报告/数据边界声明; 不含裸值)."""
+    n = len(records)
+    abc = defaultdict(int)
+    for r in records:
+        abc[r.get("abc", "?")] += 1
+    stale = [r for r in records if r.get("is_stale")]
+    return {
+        "有效SKU": n,
+        "ABC": {k: abc[k] for k in ("A", "B", "C") if k in abc},
+        "呆滞款数": len(stale),
+        "呆滞积压成本": round(sum(r.get("backlog_cost") or 0 for r in stale), 0),
+        "慢周转款数": sum(1 for r in records if r.get("is_slow")),
+        "缺货疑似款数": sum(1 for r in records if r.get("is_stockout_suspect")),
+        "库存积压成本合计": round(sum(r.get("backlog_cost") or 0 for r in records), 0),
+        "cost_reliability": "仅参考(进价不准·见 花厅坊数据质量坑)",
+    }
+
+
+def build_dataset(inventory_path=None, sales_path=None, archive_path=None,
+                  base="inventory", period_days=None, asof_date=None,
+                  stale_gap_days=30, slow_dos=90, drop_rules=None):
+    """端到端编排 (订货包/诊断 skill 的单一入口):
+    清洗三源 → 聚合明细 → 条码 join → ABC + 周转/呆滞/缺货 派生 → 汇总.
+
+    返回 (records, report): report 含各源 meta / join stats / period_days / summarize.
+    任一路径可缺 (如只做诊断不接档案). period_days 缺省由明细日期跨度推算.
+    """
+    report = {}
+    inv = sal_agg = None
+    arc = {}
+    if inventory_path:
+        inv, report["inventory_meta"] = clean_store_file(inventory_path, "inventory",
+                                                         drop_rules=drop_rules)
+    sales_rec = []
+    if sales_path:
+        sales_rec, report["sales_meta"] = clean_store_file(sales_path, "sales")
+        sal_agg = aggregate_sales_by_barcode(sales_rec)
+    if archive_path:
+        arc_rec, report["archive_meta"] = clean_store_file(archive_path, "archive")
+        arc = {r["barcode"]: r for r in arc_rec}
+
+    if period_days is None:
+        period_days = compute_period_days(sales_rec, default=None)
+    report["period_days"] = period_days
+
+    merged, join_stats = join_by_barcode(sales=sal_agg, inventory=inv, archive=arc, base=base)
+    report["join_stats"] = join_stats
+
+    if period_days:
+        enrich_turnover(merged, period_days, asof_date=asof_date,
+                        stale_gap_days=stale_gap_days, slow_dos=slow_dos)
+    compute_abc(merged, value_key="period_value")
+    report["summary"] = summarize(merged)
+    return merged, report
 
 
 if __name__ == "__main__":

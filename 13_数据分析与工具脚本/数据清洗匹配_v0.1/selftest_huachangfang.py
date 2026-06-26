@@ -90,14 +90,50 @@ def main():
         print(f"      {mask(r['barcode'])}  {r['name'][:14]:<14} "
               f"销{r.get('sale_qty')}  动销{r.get('active_days')}天  库存{r.get('inventory')}")
 
-    # ── 6. 断言: 对齐样板基线 ──
+    # ── 6. v0.2 派生指标层 (ABC / 周转 / 呆滞 / 缺货) ──
+    from datetime import date
+    period_days = rc.compute_period_days(sales_rec, default=94)
+    rc.enrich_turnover(merged, period_days, asof_date=date(2026, 5, 8),
+                       stale_gap_days=30, slow_dos=90)
+    rc.compute_abc(merged, value_key="period_value")
+    summ = rc.summarize(merged)
+    print("\n[6] 派生指标层 v0.2")
+    print(f"    统计天数(明细跨度)={period_days}  (样板 run_inv PERIOD=94)")
+    print(f"    ABC: {summ['ABC']}")
+    print(f"    呆滞={summ['呆滞款数']}款 积压≈{summ['呆滞积压成本']:.0f}元  "
+          f"慢周转(DOS>90)={summ['慢周转款数']}款  缺货疑似={summ['缺货疑似款数']}款")
+
+    # ── 7. 端到端单入口编排 (build_dataset, skill 实际调用方式) ──
+    merged2, report = rc.build_dataset(
+        inventory_path=INV_FILE, sales_path=SALES_FILE, archive_path=ARCHIVE_FILE,
+        base="inventory", asof_date=date(2026, 5, 8))
+    s2 = report["summary"]
+    print("\n[7] build_dataset 单入口编排")
+    print(f"    period_days={report['period_days']}  summary={s2['ABC']} "
+          f"呆滞{s2['呆滞款数']}款 慢周转{s2['慢周转款数']}款")
+
+    # ── 8. 断言: 对齐 run_inv.py 全量基线 ──
     print("\n" + "=" * 72)
-    ok_sku = len(merged) == EXPECT_SKU
-    ok_neg = neg_inv == EXPECT_NEG_INV
-    print(f"基线对齐: 有效SKU {len(merged)} == {EXPECT_SKU}? {'✅' if ok_sku else '❌'}   "
-          f"负库存 {neg_inv} == {EXPECT_NEG_INV}? {'✅' if ok_neg else '❌'}")
+    checks = [
+        ("有效SKU", len(merged), EXPECT_SKU),
+        ("负库存", neg_inv, EXPECT_NEG_INV),
+        ("ABC-A", summ["ABC"].get("A", 0), 11),
+        ("ABC-B", summ["ABC"].get("B", 0), 10),
+        ("ABC-C", summ["ABC"].get("C", 0), 31),
+        ("呆滞款数", summ["呆滞款数"], 17),
+        ("呆滞积压(元)", int(summ["呆滞积压成本"]), 812),
+        ("慢周转款数", summ["慢周转款数"], 48),
+        ("单入口一致", len(merged2), len(merged)),
+    ]
+    all_ok = True
+    for name, got, exp in checks:
+        ok = got == exp
+        all_ok = all_ok and ok
+        print(f"  {name:<12} {got} == {exp}? {'✅' if ok else '❌'}")
     print("=" * 72)
-    return 0 if (ok_sku and ok_neg) else 2
+    print("全量基线对齐 run_inv.py:", "✅ 通过" if all_ok else "❌ 有偏差")
+    print("=" * 72)
+    return 0 if all_ok else 2
 
 
 if __name__ == "__main__":
