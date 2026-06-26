@@ -1,12 +1,19 @@
 ---
-name: ingest
-description: 编译层自动化(Input OS核心)。把 L1 raw 内容(Clipping/文章/转录)编译成 L2/L3 概念页(带summary+标签+wikilink)→ 挂 MOC → 登记台账。LLM 只在进料时编译一次,查询时0成本。触发:ingest这篇/消化Clippings/编译进wiki/把X收进知识库。
+name: ingest-retail-deprecated
+description: 【已废弃·改用根层跨库版 /ingest】本 retail 局部版已被根层 .claude/skills/ingest 取代(2026-06-26·B案)。canonical 在根层,全库生效。本文件不再触发,保留仅防误用。
 allowed-tools: Bash, Read, Write, Edit
+status: deprecated
 ---
 
-# /ingest skill（编译层自动化 · Input OS 核心)
+# ⚠️ /ingest（retail 局部版 · 已废弃 2026-06-26）
 
-> **这是什么**:[[输入系统架构_v0.1]] 的执行引擎。把 raw 内容(L1)**编译一次**成可检索的概念页(L3),之后查询只读编译层、0 raw。
+> **本 skill 已废弃**。canonical 跨库版在 **`/Users/davidliu/KnowledgeBase/.claude/skills/ingest/SKILL.md`**(全库生效·进料中枢为输入源·路由到任意子库·带机制A相位+机制B复盘闭环)。
+> **为何废弃**:本版长在 retail、路径 retail 中心,违背"一处定义全库通用 + 进料 infra 系统级"(B案)+ SSOT(同名概念一处权威定义)。
+> **请用根层版**。删除本文件需六哥签(§3④)。
+
+---
+> 以下为历史内容(失效·勿用):
+> [[输入系统架构_v0.1]] 的执行引擎。把 raw 内容(L1)**编译一次**成可检索的概念页(L3),之后查询只读编译层、0 raw。
 > **铁律**:LLM 编译在**进料时**发生(一次性);raw 冻结 `.no-ingest`,查询永不读 raw。**理解前移到编译,LLM 只推理不阅读。**
 > **跨库通用**:retail / growth / build / 家庭库共用一套方法(这就是"输入问题解决后形成的那套方法")。
 
