@@ -257,6 +257,14 @@ def main():
 
         # L3/L4 (store-agnostic 路由: 店覆盖→通用精确→二级→品名→兜底; 复杂类标需 L4)
         l3, l3_method = cm.infer_l3(name, raw_cat, store_id=STORE_ID)
+
+        # 主数据最细层 (文体: 玩具六分 / 文具三分) → l3_sub; category_l3 硬取 V4 锚(保单本体)
+        l3_sub, leaf_v4, needs_rev = cm.infer_leaf(name, raw_cat)
+        if l3_sub:                              # 玩具/文具 SKU
+            l3_method = "文体细分(默认)" if needs_rev else "文体细分"
+            l3 = leaf_v4                        # 硬覆盖: 有锚用锚, 无锚→待确认(不回退到误判品名)
+        needs_review = "Y" if needs_rev else ""
+
         l4 = "需L4决策组" if l3 in cm.COMPLEX_L3 else ""
         l3_conf = cm.METHOD_CONFIDENCE.get(l3_method, 0.0) if l3 else 0.0
 
@@ -350,6 +358,8 @@ def main():
             cal.append("无销售数据")
         if bcc_status == "mismatch":
             cal.append("品牌类目冲突")
+        if needs_review:
+            cal.append("文体细分待确认")
         # 角色判断永远归人 (机器只弱建议)
         cal.append("角色待定")
         calibrate = ";".join(cal)
@@ -365,6 +375,9 @@ def main():
             "category_l3_method": l3_method,
             "category_l3_confidence": l3_conf,
             "category_l4": l4,
+            "l3_sub": l3_sub,                 # 主数据最细层(文体: 玩具六分/文具三分)
+            "needs_review": needs_review,     # leaf 无关键词命中→默认桶, 待人工确认
+            "store_type": "",                # 店型字段位(预留, 多店后填: 全品类/生鲜型/综合型)
             "brand_name": brand,
             "brand_confidence": brand_conf,
             "brand_cat_check": bcc_status,
@@ -522,9 +535,21 @@ def compute_stats(master, inv_meta, detail_meta, sales_agg,
     for m in queue:
         queue_abc[m["abc_class"]] += 1
 
+    # N3.0 ④ 主数据最细层(文体细分)分布 + needs_review
+    leaf_dist = defaultdict(lambda: defaultdict(int))   # raw_cat → leaf → 数
+    leaf_review = defaultdict(int)
+    for m in master:
+        sub = m.get("l3_sub", "")
+        if sub:
+            leaf_dist[m["raw_category_name"]][sub] += 1
+            if m.get("needs_review") == "Y":
+                leaf_review[m["raw_category_name"]] += 1
+    leaf_dist = {k: dict(v) for k, v in leaf_dist.items()}
+
     return {
         "total_sku": len(master),
         "fill_l3": fill_l3, "fill_rawcat": fill_rawcat,
+        "leaf_dist": leaf_dist, "leaf_review": dict(leaf_review),
         "fill_brand": fill_brand, "fill_priceband": fill_pb,
         "fill_spec": fill_spec, "fill_price": fill_price, "join_detail": join_detail,
         "by_cat": dict(by_cat), "calib_types": dict(calib_types),
@@ -669,6 +694,24 @@ def write_report(s):
     a("|---|---|")
     for k, v in sorted(s["queue_reasons"].items(), key=lambda x: -x[1]):
         a(f"| {k} | {v} |")
+    a("")
+
+    a("## 4.6 主数据最细层 · 文体细分（玩具六分 / 文具三分 · 六哥 2026-06-26 定稿）")
+    a("")
+    a("> **主数据永远保最细**：玩具按购买动机六分、文具三分，落 `l3_sub` 字段（**不污染 V4 主 L3 单本体**）。"
+      "玩具动机切法与 V4「类型」L3 非同维度 → 玩具 `category_l3` 留待确认、细分只活在 `l3_sub`；"
+      "文具三分恰好对齐 V4 文具书写 L3（笔类/本册/修正工具），故有 V4 锚。无法归类 → 基础玩具/基础文具 + `needs_review`。")
+    a("")
+    a("| 源类目 | l3_sub 分布 | needs_review |")
+    a("|---|---|---|")
+    for cat in ("玩具", "文具"):
+        dist = s["leaf_dist"].get(cat, {})
+        if dist:
+            ds = "、".join(f"{k} {v}" for k, v in sorted(dist.items(), key=lambda x: -x[1]))
+            a(f"| {cat} | {ds} | {s['leaf_review'].get(cat, 0)} |")
+    a("")
+    a("> needs_review 多为**混入该货架的非文体噪声**（如文具架里的饰品手链/桌游/迷你家具玩具、玩具架里的补鞋胶）"
+      "或少数难判品——已逐条标 `needs_review=Y`，等六哥一眼裁定，SKU 一个不丢。")
     a("")
 
     a("## 5. 给六哥的数据标注待办清单（按字段/品类聚合·不逐条堆）")
