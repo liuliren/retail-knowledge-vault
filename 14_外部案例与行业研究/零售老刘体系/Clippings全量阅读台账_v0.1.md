@@ -1,16 +1,16 @@
 ---
 title: 老刘_Clippings 全量阅读台账 v0.1
 version: v0.1
-status: active
+status: 历史索引（工程完结·只读不再维护）
 owner: 六哥
 created: 2026-06-19
-updated: 2026-06-19
+updated: 2026-06-26
 module: 14_外部案例与行业研究/零售老刘体系
 quadrant: IV
 client_safety: internal_only
 source_type: research
 confidence: medium
-定位: 「零售老刘」文章全量阅读台账。⚠️ 原文已于 2026-06-26 迁出 retail 子库 → 进料中枢 `/Users/davidliu/KnowledgeBase/Clippings/零售/零售老刘/`(B 案:子库零 raw);本台账(阅读成果索引)留 retail。每篇有阅读状态、所属簇、对应M模块、优先级。本台账=二遍通读的索引底座,不下结论、不吸收,只盘点。
+定位: 「零售老刘」文章全量阅读台账。🏁 **工程完结·历史索引(2026-06-26)**:零售老刘 321 篇逐字精读工程已 100% 完成,吸收成果在本目录簇笔记+精读卡;本台账退化为**历史阅读索引**(只读·不再维护)。原文已迁进料中枢 `/Users/davidliu/KnowledgeBase/Clippings/零售/零售老刘(+品类建模系列)/`(B案子库零raw)。**关联清理**:545 篇 raw 曾因 `author` 字段错填 `[[本台账]]` 形成假枢纽,已由 `app.json` 把中枢排除出图谱**中和**(现仅 56 个正当引用)。每篇有阅读状态/簇/M模块/优先级,二遍通读索引底座。
 fact_layer:
   observed:
     - Clippings/ 当前 315 篇 .md(原322,7副本已清,基准=315),作者均 [[零售老刘]](公众号「零售数据化企划」),frontmatter 含 title/created/description
