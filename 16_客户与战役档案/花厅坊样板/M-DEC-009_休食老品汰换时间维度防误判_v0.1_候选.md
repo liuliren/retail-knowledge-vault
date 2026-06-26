@@ -1,5 +1,6 @@
 ---
 title: M-DEC-009 休食老品汰换的时间维度防误判(候选)
+aliases: ["M-DEC-009"]
 version: v0.1
 status: candidate
 owner: 六哥

@@ -1,5 +1,6 @@
 ---
 title: M-DEC-012 小类增长率分群与资源再分配(候选)
+aliases: ["M-DEC-012"]
 version: v0.1
 status: candidate
 owner: 六哥

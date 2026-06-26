@@ -1,5 +1,6 @@
 ---
 title: M-DEC-011 黄金位×ABC陈列错配诊断(候选)
+aliases: ["M-DEC-011"]
 version: v0.2
 status: candidate
 owner: 六哥

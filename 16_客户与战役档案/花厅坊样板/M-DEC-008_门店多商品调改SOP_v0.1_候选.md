@@ -1,5 +1,6 @@
 ---
 title: M-DEC-008 门店多商品调改SOP v0.1 候选
+aliases: ["M-DEC-008"]
 version: v0.2
 status: draft
 owner: 六哥

@@ -1,5 +1,6 @@
 ---
 title: M-DEC-013 单小类长尾结构治理（C+D 尾部瘦身判据）
+aliases: ["M-DEC-013"]
 version: v0.1
 status: candidate
 owner: 六哥
