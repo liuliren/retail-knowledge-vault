@@ -147,9 +147,9 @@ related:
 ## 5. 落地状态表(权威·禁把未建写成已建)
 | 机制 | 落地物 | 状态 | 说明 |
 |---|---|---|---|
-| A 模型分层调度 | skill 模板 Step 模型标签 | `planned` | 先单品类诊断试点 |
+| A 模型分层调度 | skill 模板 Step 模型标签 | `implemented(单品类诊断)` | 单品类诊断 v0.2 每 Step 已标相位 + 「模型分工」表;余 skill 待扩 |
 | A 红线 | 判断相不下放 | `active(规则即生效)` | 护城河红线,即刻守 |
-| B Skill 闭环 | 单品类诊断 Step6 + _复盘台账.md | `in_progress` | 本轮可建,方便食品为首例 |
+| B Skill 闭环 | 单品类诊断 Step6 + _复盘台账.md | `implemented(单品类诊断)` | Step6 已补;_复盘台账.md 批01=方便食品已跑(2026-06-26);余 skill 待扩 |
 | C 动作台账 | _动作台账.csv schema | `规则已立` | schema 本规范定义,可即用 |
 | C 自动计数 | G03_Lint 第7查 | `planned` | 挂 G03_Lint v2(in_progress) |
 | D 总回路 | §11.1 七环 + 两笔增量 | `target_framework` | 焊接现有框架,增量待签 |

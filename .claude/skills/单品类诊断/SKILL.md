@@ -2,12 +2,25 @@
 name: 单品类诊断
 description: 端到端单品类商品诊断。给一个品类(raw .xls 或品类名),一条指令跑完 脱敏→分层失真分析→可发客户的诊断卡(md+PDF)。用于花厅坊等门店的单小类商品力诊断、汰换、陈列调改。触发词:诊断 X 类 / 测 X 类 / 出 X 的诊断卡 / category diagnosis。
 allowed-tools: Bash, Read, Write, Edit
+version: v0.2
 ---
 
 # 单品类诊断 skill（端到端 · 商品化90%引擎）
 
 > **这是什么**:把"拉数→脱敏→分层判级→失真型→诊断卡"固化成一条指令。AI 跑可商品化的 90%,六哥只做最后的**调改取舍 + 签字背书**(10%)。
 > **护城河**:本 skill 是 Harness(会随模型贬值);六哥的 Z 签字是驭马人层(不贬值)。skill 产出 = candidate,**升 active / 发客户须六哥签字**(CLAUDE.md §3②③)。
+
+## 模型分工(机制A 试点 · [[Agent-Native自迭代回路规范_P1-GOV-SelfLoop-001_v0.1]] §1)
+> 优先级铁律:`脚本 > Sonnet(机械相) > Opus(判断相)`。判断相**不得下放**(护城河红线)。每个 Step 头部标相位。
+
+| Step | 相位 | 用 | 为什么 |
+|---|---|---|---|
+| 1 脱敏/算指标 | 〔脚本〕 | diagnose.sh(0模型) | 完全确定性,脱敏+指标纯计算 |
+| 2 套方法论解读 | 〔Opus〕 | 主控 | 失真型判定/角色闸复核=判断相,讲不清不签字 |
+| 3 写诊断卡 | 〔Opus主+Sonnet辅〕 | Opus 定结论+调改取舍;格式/表格套模板可委派 Sonnet | 一句话结论+So-What=判断相;红黄绿表填充=机械相 |
+| 4 渲染 PDF | 〔脚本〕 | make-pdf | 确定性渲染 |
+| 5 收口 | 〔Sonnet〕 | git add/更 MOC/更 RESUME=机械相;报六哥待签事项=如实转述 | IO 与台账类 |
+| 6 复盘迭代 | 〔Opus(D+识别)+Sonnet(落字)〕 | D 复盘+E"改什么"=Opus;E"落字改模板"=Sonnet | 复盘提炼=判断相 |
 
 ## 何时用
 - 六哥说"诊断/测 X 类"、"出 X 的诊断卡"、"X 类要不要汰换/调陈列"。
@@ -22,7 +35,7 @@ allowed-tools: Bash, Read, Write, Edit
 
 ## 步骤
 
-### Step 1 — 跑 orchestrator(脱敏→自检→分析)
+### Step 1 〔脚本〕 — 跑 orchestrator(脱敏→自检→分析)
 ```bash
 bash "/Users/davidliu/KnowledgeBase/retail-knowledge-vault/.claude/skills/单品类诊断/diagnose.sh" \
   "<raw.xls绝对路径>" "<品类名>"
@@ -30,13 +43,14 @@ bash "/Users/davidliu/KnowledgeBase/retail-knowledge-vault/.claude/skills/单品
 输出:SKU数/销额/价格带分位/集中度CR5/品牌密度HHI/动销/**复杂度判级**/**推荐分层**/**失真型预判**。
 > 若脱敏自检报"条码残留 ❌"→ 停止,检查 sanitize.py 列映射,勿继续。
 
-### Step 2 — 套方法论解读(判断层)
+### Step 2 〔Opus〕 — 套方法论解读(判断层)
 据 Step1 指标 + **增强表**(`<品类>_增强SKU表`:每SKU带 ABCZ/综合评分/角色/受保护/汰换建议),对照三件方法论页:
 - **分层**:[[复杂类分层计算引擎_v1.0]] — 简单/中复杂→L3;价格带分裂/品牌密度→L4。
 - **失真型**:[[多品类压力测试报告_v2.0]] §④ 6类失真库(结构过密/价格带遮蔽/SKU冗余/动销错配/行为驱动/品牌遮蔽)。
 - **角色闸(已自动跑)**:enrich.py 已按五角色(引流/利润/形象/补充/季节)+ GBA锁定(A级×top品牌族)标记**受保护**,产出**净可汰清单**。Agent 复核角色判得对否,**净可汰款逐一列进诊断卡**(可签)。见 [[SKU角色层与目的品保护机制_v0.1]]。
+  - ⚖️ **豁免率自检(批01复盘E-迭代加入·防漏杀)**:若受保护款占比 **>30%**(如方便食品 53/167=32%),回看一遍是否**过度保护**——把本该汰的形象/补充款也豁免了(漏杀)。误杀防的是"砍错",漏杀放的是"该砍没砍",两头都要核。豁免率异常高时在诊断卡注明,提示六哥这是保守判。
 
-### Step 3 — 写诊断卡(5 段强结构)
+### Step 3 〔Opus主+Sonnet辅〕 — 写诊断卡(5 段强结构)
 新建 `04_商品诊断与商品力提升/<品类>_单品类诊断卡_v0.1.md`,frontmatter 必填 `summary:`(≤40字),status `candidate`。正文 5 段(结论先行/MECE/编号/可执行):
 1. **一句话结论**(≤20字,如"砍长尾28款·补高端锚点6款")。
 2. **红黄绿健康表**(销额集中度/价格带/动销/毛利,各打红黄绿)。
@@ -44,7 +58,7 @@ bash "/Users/davidliu/KnowledgeBase/retail-knowledge-vault/.claude/skills/单品
 4. **三步调改动作**(每步:动作+SKU范围+预期,挂 So-What)。
 5. **门店执行**(店长照着做:陈列/补货/汰换清单,0术语)。
 
-### Step 4 — 渲染诊断卡 PDF
+### Step 4 〔脚本〕 — 渲染诊断卡 PDF
 ```bash
 P="$HOME/.claude/skills/gstack/make-pdf/dist/pdf"
 "$P" generate "<诊断卡.md绝对路径>" \
@@ -52,10 +66,24 @@ P="$HOME/.claude/skills/gstack/make-pdf/dist/pdf"
 ```
 (output/ 已 gitignore;PDF 留盘,md 入库为源。)
 
-### Step 5 — 收口
+### Step 5 〔Sonnet〕 — 收口
 - 精确 `git add` 诊断卡 md(+ 挂 MOC L5 客户交付层)。
 - 更新 [[_当前断点_RESUME]]。
 - 报六哥:一句话结论 + 红灯项 + **待签字的调改取舍**。
+
+### Step 6 〔Opus(D+识别) + Sonnet(落字)〕 — 复盘迭代(机制B 铁律 · 不做=未闭环)
+> 任何 skill 跑完功能闭环(Step1-5)**必须**追加 D 复盘 + E 迭代两相,否则视为**未完成**(SelfLoop-001 §2 / CLAUDE.md §7 Skill 闭环铁律)。= 把 M-DEC「actual→lessons」套在 skill 执行本身上,让 skill 自进化。
+
+**D 复盘〔Opus〕** — 跑完即答固定 4 问(≤5 行):
+1. 哪一步卡了 / 返工了?
+2. 有没有误判?(诊断类:角色闸**误杀/漏杀**?脱敏**残留**?fact_layer 标错?)
+3. 产物达交付标准吗?(§10 世界级:结论先行 / MECE / fact_layer / 0 断链)
+4. 哪条铁律被触发 / 差点被破?
+
+**E 迭代〔Opus 识别改什么 + Sonnet 落字〕**:
+- 把 lessons **回写本 skill 模板**(改判据 / 补铁律 / 调步骤 / 加调模型标签)→ skill `version` +0.1。
+- 在 `_复盘台账.md` 记一行(日期 · 对象 · 改了什么 · 为什么)。
+- 🚫 红线:复盘提炼是判断相,不下放给脚本/Sonnet 代判;Sonnet 只做"落字改模板"的机械动作。
 
 ## 复用资产
 - 脱敏+分析:[[脱敏测试链路_v0.1]](sanitize.py / analyze.py)。
@@ -64,3 +92,7 @@ P="$HOME/.claude/skills/gstack/make-pdf/dist/pdf"
 
 ## 已跑案例
 - 波次2(品牌密度型):巧克力/糖果/酒水 → [[疯狂测试波次2_品牌密度型_测试示例诊断_v0.1]]。
+- 花厅坊·方便食品(品牌遮蔽型):[[方便食品_单品类诊断卡_v0.1]] → **首个跑满 Step6 复盘闭环的对象**,复盘记录见 `_复盘台账.md` 批01。
+
+## 复盘台账
+- `_复盘台账.md`:每次诊断 Step6 复盘迭代的记录(机制B 闭环铁律)。
