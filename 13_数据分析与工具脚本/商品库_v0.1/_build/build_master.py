@@ -118,6 +118,58 @@ def load_known_brands():
     return brands
 
 
+# ── N3.0: 品牌→预期大类先验 + L3→L1 维度表(品牌×类目一致性校验用)────────────────
+def load_brand_domains():
+    """brand_canonical → set(预期 L1)。空 expected_l1 = 不参与校验。"""
+    out = {}
+    alpath = os.path.join(LIB, "_maintenance", "brand_alias.csv")
+    if os.path.exists(alpath):
+        for r in csv.DictReader(open(alpath, encoding="utf-8-sig")):
+            b = (r.get("brand_canonical") or "").strip()
+            dom = (r.get("expected_l1") or "").strip()
+            if b and dom:
+                out[b] = set(d.strip() for d in dom.split("|") if d.strip())
+    return out
+
+
+def load_l3_to_l1():
+    """V4.0 标准 L3 → L1 大类(dim_category SSOT)。"""
+    out = {}
+    p = os.path.join(LIB, "_maintenance", "dim_category_l3_l1.csv")
+    if os.path.exists(p):
+        for r in csv.DictReader(open(p, encoding="utf-8-sig")):
+            if r.get("l3"):
+                out[r["l3"].strip()] = (r.get("l1") or "").strip()
+    return out
+
+
+def check_brand_cat(brand, l3, brand_domains, l3_to_l1):
+    """品牌×类目一致性。返回 (status, note)。
+    valid=落在预期大类 / mismatch=错挂(需纠偏) / '' = 无法校验(品牌无先验或L3空)。"""
+    if not brand or not l3:
+        return "", ""
+    dom = brand_domains.get(brand)
+    if not dom:
+        return "", ""                      # 品牌无先验 → 不校验
+    l1 = l3_to_l1.get(l3, "")
+    if not l1:
+        return "", ""
+    if l1 in dom:
+        return "valid", ""
+    return "mismatch", f"{brand}预期{'/'.join(sorted(dom))}≠实属{l1}"
+
+
+ABC_WEIGHT = {"A": 3, "B": 2, "C": 1}
+
+
+def calib_score(abc, cat_conf, brand_conf, has_brand, bcc_status):
+    """人工校准优先级: 高价值(ABC) × 低置信 × 冲突加权。越大越该先给六哥看。"""
+    need = (1.0 - (cat_conf or 0.0)) + (1.0 - (brand_conf if has_brand else 0.0))
+    if bcc_status == "mismatch":
+        need += 2.0
+    return round(ABC_WEIGHT.get(abc, 1) * need, 3)
+
+
 def price_band(price):
     if price is None or price <= 0:
         return ""
@@ -137,6 +189,8 @@ def main():
 
     known_brands = load_known_brands()
     extractor = SKUAttributeExtractor(known_brands=known_brands)
+    brand_domains = load_brand_domains()      # N3.0: 品牌→预期大类先验
+    l3_to_l1 = load_l3_to_l1()                # N3.0: V4 L3→L1 (dim_category)
 
     # ── 1. 清洗全部库存报表 → SKU 全集 (每条带 inv_category) ──────────────────
     inv_records = []          # list[dict] 带 inv_category
@@ -201,9 +255,10 @@ def main():
         raw_cat = r.get("l3_category", "")
         s = sales_agg.get(bc, {})
 
-        # L3/L4 (源类目优先, 否则品名推断; 复杂类标需 L4 决策组)
-        l3, l3_method = cm.infer_l3(name, raw_cat)
+        # L3/L4 (store-agnostic 路由: 店覆盖→通用精确→二级→品名→兜底; 复杂类标需 L4)
+        l3, l3_method = cm.infer_l3(name, raw_cat, store_id=STORE_ID)
         l4 = "需L4决策组" if l3 in cm.COMPLEX_L3 else ""
+        l3_conf = cm.METHOD_CONFIDENCE.get(l3_method, 0.0) if l3 else 0.0
 
         # 品牌 / 规格
         attrs = extractor.extract(name)
@@ -211,6 +266,9 @@ def main():
         brand_conf = round(attrs.brand.confidence, 2)
         spec = attrs.spec.value if attrs.spec else ""
         spec_conf = round(attrs.spec.confidence, 2)
+
+        # 品牌×类目一致性校验 (N3.0)
+        bcc_status, bcc_note = check_brand_cat(brand, l3, brand_domains, l3_to_l1)
 
         # 价格 (库存报表售价优先; 缺则销额÷销量反推)
         price = r.get("price")
@@ -290,6 +348,8 @@ def main():
             cal.append("缺规格")
         if not has_detail and not (period_qty or period_value):
             cal.append("无销售数据")
+        if bcc_status == "mismatch":
+            cal.append("品牌类目冲突")
         # 角色判断永远归人 (机器只弱建议)
         cal.append("角色待定")
         calibrate = ";".join(cal)
@@ -303,9 +363,12 @@ def main():
             "raw_category_name": raw_cat,
             "category_l3": l3,
             "category_l3_method": l3_method,
+            "category_l3_confidence": l3_conf,
             "category_l4": l4,
             "brand_name": brand,
             "brand_confidence": brand_conf,
+            "brand_cat_check": bcc_status,
+            "brand_cat_note": bcc_note,
             "spec_value": spec,
             "spec_confidence": spec_conf,
             "price": price if price is not None else "",
@@ -324,6 +387,9 @@ def main():
             "margin_rate": margin_rate if margin_rate is not None else "",  # 仅参考
             "backlog_cost": backlog_cost if backlog_cost is not None else "",  # 仅参考
             "abc_class": "",          # 全集排序后回填
+            "calib_score": "",        # 校准优先级(ABC×低置信×冲突), ABC 后回填
+            "calib_rank": "",         # 校准队列名次, 排序后回填
+            "_bcc": bcc_status,       # 内部: 算 calib_score 用, 不写出
             "dos_days": dos if dos is not None else "",
             "dos_basis": dos_basis,
             "is_slow_moving": "Y" if slow else "N",
@@ -348,9 +414,17 @@ def main():
         ratio = cum / total_val
         m["abc_class"] = "A" if ratio <= 0.70 else ("B" if ratio <= 0.90 else "C")
 
+    # ── 4.5 校准队列 (N3.0): 按 ABC×低置信×冲突 排优先级, 只把头部推给六哥 ──────────
+    for m in master:
+        m["calib_score"] = calib_score(
+            m["abc_class"], m["category_l3_confidence"],
+            m["brand_confidence"], bool(m["brand_name"]), m["_bcc"])
+    for rank, m in enumerate(sorted(master, key=lambda x: -x["calib_score"]), 1):
+        m["calib_rank"] = rank
+
     # ── 5. 写草表 CSV (含裸值; 目录 *.csv 已 gitignore) ──────────────────────
     os.makedirs(OUT_DIR, exist_ok=True)
-    fields = [k for k in master[0].keys() if k != "_best_value"] if master else []
+    fields = [k for k in master[0].keys() if k not in ("_best_value", "_bcc")] if master else []
     with open(OUT_CSV, "w", newline="", encoding="utf-8-sig") as f:
         w = csv.DictWriter(f, fieldnames=fields)
         w.writeheader()
@@ -423,6 +497,31 @@ def compute_stats(master, inv_meta, detail_meta, sales_agg,
         for k, v in (meta.get("drop_log") or {}).items():
             drop_summary[k] += v
 
+    # N3.0 ① 品牌×类目校验分布
+    bcc = defaultdict(int)
+    for m in master:
+        bcc[m["brand_cat_check"] or "未校验"] += 1
+    bcc_checked = bcc.get("valid", 0) + bcc.get("mismatch", 0)
+    bcc_valid_rate = bcc.get("valid", 0) / bcc_checked if bcc_checked else 0.0
+
+    # N3.0 ② 置信度均值(已映射部分)
+    l3c = [m["category_l3_confidence"] for m in master if m["category_l3"]]
+    bc = [m["brand_confidence"] for m in master if m["brand_name"]]
+    sc = [m["spec_confidence"] for m in master if m["spec_value"]]
+    avg = lambda xs: round(sum(xs) / len(xs), 2) if xs else 0.0
+
+    # N3.0 ③ 校准队列: 头部(rank<=队列阈值)构成 + 全集分桶
+    QUEUE_TOP = sum(1 for m in master if m["abc_class"] in ("A", "B"))  # 队列聚焦 A/B 量级
+    queue = sorted(master, key=lambda x: -x["calib_score"])[:QUEUE_TOP]
+    queue_reasons = defaultdict(int)
+    for m in queue:
+        for x in m["待校准"].split(";"):
+            if x and x != "角色待定":
+                queue_reasons[x] += 1
+    queue_abc = defaultdict(int)
+    for m in queue:
+        queue_abc[m["abc_class"]] += 1
+
     return {
         "total_sku": len(master),
         "fill_l3": fill_l3, "fill_rawcat": fill_rawcat,
@@ -434,6 +533,10 @@ def compute_stats(master, inv_meta, detail_meta, sales_agg,
         "detail_unique_bc": len(sales_agg), "inv_dups": inv_dups,
         "sales_collisions": sales_collisions, "drop_summary": dict(drop_summary),
         "n_known_brands": len(known_brands),
+        "bcc": dict(bcc), "bcc_checked": bcc_checked, "bcc_valid_rate": bcc_valid_rate,
+        "avg_l3_conf": avg(l3c), "avg_brand_conf": avg(bc), "avg_spec_conf": avg(sc),
+        "queue_size": len(queue), "queue_reasons": dict(queue_reasons),
+        "queue_abc": dict(queue_abc),
     }
 
 
@@ -535,6 +638,37 @@ def write_report(s):
     }
     for k, v in sorted(s["calib_types"].items(), key=lambda x: -x[1]):
         a(f"| {k} | {v} | {desc.get(k, '')} |")
+    a("")
+
+    a("## 4.5 N3.0 升级：置信度 / 品牌×类目校验 / 校准队列")
+    a("")
+    a("> 本节是把系统从 **coverage（覆盖率）** 升级到 **confidence（置信度）** 的落地：每个机器结论都带"
+      "置信度，且只把\"高价值 × 低置信 × 冲突\"的推到六哥面前，其余自动放行——这是把人工真正压到 10% 的机制。")
+    a("")
+    a("**① 每字段置信度（已映射部分均值）**")
+    a("")
+    a("| 字段 | 平均置信度 | 口径 |")
+    a("|---|---|---|")
+    a(f"| 类目 L3 | {s['avg_l3_conf']:.2f} | 路由方法→置信度（精确0.95/二级0.90/源类目0.78/品名0.72/兜底0.50）|")
+    a(f"| 品牌 | {s['avg_brand_conf']:.2f} | 已知品牌库前缀匹配 0.95 / 启发式更低 |")
+    a(f"| 规格 | {s['avg_spec_conf']:.2f} | 正则位置规则 |")
+    a("")
+    a("**② 品牌×类目一致性校验（N3.0 新能力）**")
+    a("")
+    a(f"对有\"品牌大类先验\"的 SKU 做 brand×category 校验，共校验 **{s['bcc_checked']}** 个："
+      f"一致 **{s['bcc'].get('valid', 0)}**、**冲突（错挂）{s['bcc'].get('mismatch', 0)}**、"
+      f"未校验 {s['bcc'].get('未校验', 0)}（品牌无先验或 L3 空）；一致率 **{s['bcc_valid_rate']:.0%}**。")
+    a("冲突项（如\"蒙牛→日用百货\"式错挂）已写入 `brand_cat_note` 列并进校准队列优先位，需六哥/纠偏。")
+    a("")
+    a("**③ 校准队列（按 ABC×低置信×冲突 排序的人工优先级）**")
+    a("")
+    a(f"队列聚焦头部 **{s['queue_size']}** 个（A/B 量级）；`calib_rank` 列给全集名次，六哥从 rank=1 往下看即可。")
+    a("队列头部待办构成（去角色待定）：")
+    a("")
+    a("| 待办类型 | 队列内 SKU 数 |")
+    a("|---|---|")
+    for k, v in sorted(s["queue_reasons"].items(), key=lambda x: -x[1]):
+        a(f"| {k} | {v} |")
     a("")
 
     a("## 5. 给六哥的数据标注待办清单（按字段/品类聚合·不逐条堆）")
