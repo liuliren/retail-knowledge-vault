@@ -1,7 +1,7 @@
 ---
 title: ABC分级订货系数表 模板定义
 summary: A/B/C各自补货周期+订货系数(A+20%/B−10%/C−25%加权·非一刀切)及用法
-status: candidate
+status: active
 owner: 六哥
 created: 2026-06-26
 client_safety: internal_methodology

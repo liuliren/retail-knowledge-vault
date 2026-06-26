@@ -1,7 +1,7 @@
 ---
 title: 缺货治理与防误杀SOP 模板定义
 summary: 店长照做:看再订货点/低于即补/谁负责;含追加式订货防误杀(真畅销vs假滞销)
-status: candidate
+status: active
 owner: 六哥
 created: 2026-06-26
 client_safety: internal_methodology
