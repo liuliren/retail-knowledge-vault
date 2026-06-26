@@ -10,7 +10,7 @@ quadrant: IV
 client_safety: internal_only
 source_type: research
 confidence: medium
-定位: retail-knowledge-vault/Clippings/ 315 篇(原322,7副本已清)「零售老刘」文章的全量阅读台账。每篇有阅读状态、所属簇、对应M模块、优先级。本台账=二遍通读的索引底座,不下结论、不吸收,只盘点。
+定位: 「零售老刘」文章全量阅读台账。⚠️ 原文已于 2026-06-26 迁出 retail 子库 → 进料中枢 `/Users/davidliu/KnowledgeBase/Clippings/零售/零售老刘/`(B 案:子库零 raw);本台账(阅读成果索引)留 retail。每篇有阅读状态、所属簇、对应M模块、优先级。本台账=二遍通读的索引底座,不下结论、不吸收,只盘点。
 fact_layer:
   observed:
     - Clippings/ 当前 315 篇 .md(原322,7副本已清,基准=315),作者均 [[零售老刘]](公众号「零售数据化企划」),frontmatter 含 title/created/description
