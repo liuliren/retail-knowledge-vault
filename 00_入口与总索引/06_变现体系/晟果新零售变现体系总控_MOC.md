@@ -1,8 +1,9 @@
 ---
 title: 晟果新零售变现体系总控 MOC
 summary: 把全库串成6层变现链路的商业总控枢纽，从方法论到内容获客一图可达
-status: candidate
+status: active
 owner: 六哥
+signoff: 六哥 2026-06-26 授权批量会签(内部治理项·非对外交付)
 created: 2026-06-26
 client_safety: internal_methodology
 module: 00_入口与总索引/06_变现体系
