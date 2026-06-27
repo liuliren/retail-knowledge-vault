@@ -3,7 +3,7 @@ title: 当前断点 RESUME（开机只读·导航层·≤1屏）
 version: live
 status: active
 owner: 六哥
-updated: 2026-06-26
+updated: 2026-06-27
 module: 98_AI协作中枢/00_总控
 client_safety: internal_only
 aliases: [当前断点, RESUME, 启动断点]
@@ -24,9 +24,16 @@ tags: [记忆, 断点, 启动, 导航]
 2. 主库+根层无 git 仓(已快照备份)→ 待六哥定"治理层建仓"。
 3. ✅ 红线交付 3/3 全完成(方便食品/巧克力/库存订货客户版·均签发店长)。
 
+## 🆕 06-27 完成:生图系统 v0.2.1 固化(canonical)
+- ingest Clippings/图片生成 那套(design_tokens SSOT + A诊断卡/B动作卡双模板 + render.py + IssueTag)进 `.claude/skills/report-export/cards/`。
+- 重写 `gen_card.py` 为 **Card Compiler**(JSON→A/B HTML·不渲染);**render.py(Python playwright)= 唯一渲染器**(已装·full_page自动算高)。
+- 3 品类各出 A+B(方便食品/库存订货/巧克力·`report_output/卡片测试/C_*`);B 色值统一到 tokens;SKU 定"流汁宽面"。
+- **IssueTag 升正式方法论页** `04_/SKU汰换标签体系_IssueTag_v0.1.md`(9标签4类 + selection_guardrail 撤⇄选镜像IP + cull_tags;case=judgment_sample)。
+- ⚠️ 发现污染:`Montessori-guochuanyu-vault/03_项目/郭老师/环境布置/` 混进零售卡模板(误拷·未删·待六哥处置)。
+
 ## ▶️ 下一步指针（≤3）
-1. 母模板已成立/验证;可用同模板出巧克力等品类"留/汰/观"决策单(六哥点)。
-2. 勾 [[_回签包_v0.4_ChecklistOS]](唯一执行清单)。
+1. 生图系统可选 v0.3(编译器自动派生B/feedback自动聚类/IssueTag接H-Score)——六哥说"升级v0.3"才做。
+2. 母模板+生图已成立;新品类一份 `_data/<品类>_card.json` 即出 A+B 两卡。
 3. a9bc556 带 category_mapper/N3.0 线(六哥侧信道·单worker);主控只收口+canonical。
 
 ## 📌 活跃文件指针

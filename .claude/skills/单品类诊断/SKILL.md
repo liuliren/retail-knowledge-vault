@@ -66,6 +66,9 @@ python3 ".claude/skills/单品类诊断/gen_decision_sheet.py" "<品类>_增强S
 4. **三步调改动作**(每步:动作+SKU范围+预期,挂 So-What)。
 5. **门店执行**(店长照着做:陈列/补货/汰换清单,0术语)。
 
+> **客户卡(E层·微信直发)走生图系统 v0.2.1**(canonical):据本卡数据填一份 `report-export/cards/_data/<品类>_card.json`(一份喂 A 诊断卡/客户 + B 动作卡/店长),`gen_card.py` 编译 → `render.py` 渲染。详见 [[报告导出系统_report-export_v1.0]]。
+> 铁律:**reason_groups 的 tag 取自 [[SKU汰换标签体系_IssueTag_v0.1]],不自创**;`selection_guardrail` 同步回写选品门槛(撤⇄选镜像);**补·差异化是六哥 10% 判断(green anchor),不下放**;case 标 `judgment_sample`(signal 待真 POS 校准)。
+
 ### Step 4 〔脚本〕 — 渲染诊断卡 PDF
 ```bash
 P="$HOME/.claude/skills/gstack/make-pdf/dist/pdf"
