@@ -4,3 +4,6 @@
 2026-06-26,产品包样板诊断(元模式),品类诊断≥4+库存订货1=门店诊断引擎候选,判断,部分(单品类诊断skill),元模式已过3次频次门→建议下一步评估"门店诊断引擎"统一skill
 2026-06-27,出品类决策单(找增强表→抽净可汰→出六哥决策单),方便食品+巧克力(已跑2次),脚本,已固化(机制C),≥步骤稳定/输入同构/必复现→固化为单品类诊断skill Step2.5 gen_decision_sheet.py·建skill动作六哥问即签
 2026-06-27,生图卡片固化(ingest生图系统+编译器+IssueTag),方便食品/库存订货/巧克力各A+B卡,判断+脚本,已固化(report-export v0.2.1),L1 tokens-SSOT/L2双模板/L3 gen_card编译器/L4 render.py/L5 feedback·一份data出A+B·reason_groups取自IssueTag
+2026-06-27,生图系统v0.3升级(编译器自动派生+SSOT校验/feedback聚类引擎/IssueTag升选品决策系统),report-export+选品决策系统_v0.1,判断+脚本,已固化,gen_card自动派生B+check_ssot/feedback_engine.py聚类/issuetag_engine.py选品准入校验(撤⇄选镜像)
+2026-06-27,休食区诊断卡测试(新品类验证),花厅坊饼干A+B(据active M-DEC-010中价82%过密),判断+脚本,验证通过,系统泛化:撤长尾→价格带结构故事·色=语义不变标签随诊断走·judgment_sample
+2026-06-27,全面梳理总图(哲学底座到全线进程),5层全景(哲学/操作系统/业务全线/开放回路/战略),判断,产出,后台agent盘点+主控写哲学与战略解读·揪出5矛盾过期点待收口
