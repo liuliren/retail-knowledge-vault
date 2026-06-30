@@ -17,7 +17,7 @@ hot_files:
 open_loops:
   - 简史两篇→待六哥签字→公众号 [/Users/davidliu/六哥自媒体/公众号/]
   - M4首发→已签字→待手动贴公众号后台 [Claude输出区/2026-06-27_M4首发成稿...]
-  - 零售老刘精读→进行中 [14_外部案例/零售老刘体系/_逐字精读进度_321.md]
+  - 零售老刘精读→✅全收口(321篇·批01-62·数据底座+单品管理已升active·2026-06-30六哥签字)
   - 客户名授权链→待六哥填代号 [David-Liu-Vault/80_个人资料_敏感/客户名称对外使用授权链清单.md]
 
 system:
@@ -31,6 +31,7 @@ system:
     - 深度精读: P1补丁（links_to字段+RESUME覆盖式STATE+G4-A降级）
   Token-Limited-Protocol: v2.0 ✅（CLAUDE.md §3 已签字纳入）
   kb-compile: v1.0 ✅（2026-06-29签字）
+  Skill审计: ✅完成（P1+P2全部提交·a0f4683语料巡检·6c064f3 review+draft）
 
 ## 🅿️ Parking
 第2店(沙浦大道)接入·治理硬化phase·N3.0完整结构·M5 stub·Codex HOLD·周报系统
