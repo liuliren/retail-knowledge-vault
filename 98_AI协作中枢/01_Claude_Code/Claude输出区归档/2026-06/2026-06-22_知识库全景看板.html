@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>晟果科学零售 · 知识库全景看板</title>
+<style>
+  :root{
+    --bg:#0f1216; --panel:#171c23; --panel2:#1d242d; --line:#2a333f;
+    --ink:#e8edf2; --sub:#9aa7b4; --accent:#e0782e; --accent2:#3a7bd5;
+    --green:#3fb950; --yellow:#d29922; --red:#f85149; --grey:#6e7781;
+    --i:#7c5cff; --ii:#3a7bd5; --iii:#3fb950; --iv:#d29922;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,"PingFang SC","Microsoft YaHei",Segoe UI,sans-serif;line-height:1.6;font-size:14px}
+  .wrap{max-width:1180px;margin:0 auto;padding:24px 20px 80px}
+  header h1{font-size:24px;font-weight:700;letter-spacing:.5px}
+  header .meta{color:var(--sub);font-size:12.5px;margin-top:6px}
+  header .accentbar{height:3px;width:64px;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:3px;margin:14px 0 18px}
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+  .tab{padding:9px 16px;background:var(--panel);border:1px solid var(--line);border-radius:8px;cursor:pointer;color:var(--sub);font-weight:600;font-size:13.5px;transition:.15s}
+  .tab:hover{border-color:var(--accent)}
+  .tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .view{display:none;animation:fade .25s}
+  .view.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:16px}
+  .card h2{font-size:16px;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+  .card .desc{color:var(--sub);font-size:12.5px;margin-bottom:14px}
+  .grid{display:grid;gap:12px}
+  .g3{grid-template-columns:repeat(3,1fr)} .g2{grid-template-columns:repeat(2,1fr)} .g4{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:820px){.g3,.g2,.g4{grid-template-columns:1fr}}
+  .box{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:14px}
+  .box h3{font-size:13.5px;margin-bottom:6px;color:var(--ink)}
+  .box .tag{font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.5px}
+  .box ul{list-style:none;margin-top:8px}
+  .box li{font-size:12.5px;color:var(--sub);padding:3px 0 3px 14px;position:relative}
+  .box li::before{content:"–";position:absolute;left:0;color:var(--accent)}
+  .pill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:11px;font-weight:700;margin-left:6px}
+  .p-green{background:rgba(63,185,80,.15);color:var(--green)} .p-yellow{background:rgba(210,153,34,.15);color:var(--yellow)}
+  .p-red{background:rgba(248,81,73,.15);color:var(--red)} .p-grey{background:rgba(110,119,129,.18);color:#aeb6bf}
+  .flow{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:12.5px;color:var(--sub)}
+  .flow b{color:var(--ink)} .flow .ar{color:var(--accent);font-weight:700}
+  table{width:100%;border-collapse:collapse;font-size:12.5px}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--accent2);font-weight:600;font-size:12px}
+  td .mut{color:var(--sub)}
+  .quad{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .quad .q{border-radius:10px;padding:13px;border:1px solid var(--line)}
+  .q-I{background:rgba(124,92,255,.08);border-color:rgba(124,92,255,.4)}
+  .q-II{background:rgba(58,123,213,.08);border-color:rgba(58,123,213,.4)}
+  .q-III{background:rgba(63,185,80,.08);border-color:rgba(63,185,80,.4)}
+  .q-IV{background:rgba(210,153,34,.08);border-color:rgba(210,153,34,.4)}
+  .q h4{font-size:13px;margin-bottom:4px}
+  .q .lvl{font-size:11px;font-weight:700;letter-spacing:.5px}
+  .q.q-I .lvl{color:var(--i)} .q.q-II .lvl{color:var(--ii)} .q.q-III .lvl{color:var(--iii)} .q.q-IV .lvl{color:var(--iv)}
+  .q p{font-size:12px;color:var(--sub);margin-top:5px}
+  .kpi{display:flex;gap:10px;flex-wrap:wrap}
+  .kpi .k{flex:1;min-width:130px;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:12px}
+  .kpi .k .n{font-size:20px;font-weight:700} .kpi .k .l{font-size:11.5px;color:var(--sub);margin-top:2px}
+  .note{font-size:11.5px;color:var(--sub);border-left:3px solid var(--accent);padding:6px 0 6px 12px;margin-top:10px;background:rgba(224,120,46,.05)}
+  .mdline{font-size:12.5px;color:var(--sub);padding:5px 0;border-bottom:1px dashed var(--line)}
+  .mdline b{color:var(--ink)}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--sub);margin-top:10px}
+  .legend span{display:flex;align-items:center;gap:5px}
+  .dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+  footer{color:var(--grey);font-size:11.5px;text-align:center;margin-top:30px;border-top:1px solid var(--line);padding-top:16px}
+  .timeline{position:relative;margin-left:8px;border-left:2px solid var(--line);padding-left:18px}
+  .tl{position:relative;padding:6px 0}
+  .tl::before{content:"";position:absolute;left:-25px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--grey)}
+  .tl.done::before{background:var(--green)} .tl.now::before{background:var(--yellow);box-shadow:0 0 0 4px rgba(210,153,34,.2)}
+  .tl .d{font-size:11px;color:var(--accent2);font-weight:700} .tl .t{font-size:12.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>晟果科学零售 · 知识库全景看板</h1>
+    <div class="meta">方法论体系 · 花厅坊战役推进 · 治理规范 ｜ 整理基线 2026-06-22 ｜ 1364 篇 md / 19 一级目录 ｜ 结论以被引用主文件为准</div>
+    <div class="accentbar"></div>
+  </header>
+
+  <div class="tabs">
+    <div class="tab active" data-v="m">① 方法论体系</div>
+    <div class="tab" data-v="b">② 花厅坊战役</div>
+    <div class="tab" data-v="g">③ 治理规范</div>
+  </div>
+
+  <!-- ============ 方法论 ============ -->
+  <section class="view active" id="v-m">
+    <div class="card">
+      <h2>🧭 体系骨架</h2>
+      <div class="desc">三力(纵向业务支柱) + 经营控制链(横向穿透) + 数据底座(基础设施)，三者正交、维度不同、不可混淆。</div>
+      <div class="grid g3">
+        <div class="box"><span class="tag">纵向 · 三力</span><h3>商品力 / 组织力 / 运营力</h3>
+          <ul><li>商品力：卖什么/卖给谁/怎么卖</li><li>组织力：谁来做/怎么做/如何保障</li><li>运营力：如何持续/如何改善</li></ul></div>
+        <div class="box"><span class="tag">横向 · 经营控制链</span><h3>金额 → 数量 → 品质</h3>
+          <ul><li>金额=结果量化语言(目标层)</li><li>数量=动作量化语言(执行层)</li><li>品质=真实性/可持续校验(校验层)</li><li>经营复盘=反馈(待建)</li></ul></div>
+        <div class="box"><span class="tag">基础设施</span><h3>数据与系统能力底座</h3>
+          <ul><li>明确"不是第四力"</li><li>支撑放大三力，非独立驱动</li><li>含命名治理(唯一已升 v1.0)</li></ul></div>
+      </div>
+      <div class="note">⚠️ 全体系反复强调："数据≠第四力"；判断商品力不能单凭销量；参考值一律标"待样板验证"。</div>
+    </div>
+
+    <div class="card">
+      <h2>📦 商品力四大下游模块</h2>
+      <div class="desc">从结构层到时间维度，输出"商品结构图"而非 SKU 清单。</div>
+      <div class="grid g4">
+        <div class="box"><span class="tag">结构层</span><h3>品类管理</h3>
+          <ul><li>品类=战略业务单元(≠系统分类)</li><li>八环节闭环</li><li>角色 6 类:目标/常规/季节便利/形象/流量/利润</li></ul></div>
+        <div class="box"><span class="tag">SKU 层</span><h3>单品管理</h3>
+          <ul><li>ABCD 分类 + ABC-Z 异常</li><li>引进/淘汰/替换/调整 4 动作</li><li>淘汰前须排除活动/陈列/缺货/价格</li></ul></div>
+        <div class="box"><span class="tag">空间维度</span><h3>商品配置理论</h3>
+          <ul><li>CDT 决策树 + HS 矩阵 + IPC 配置图</li><li>P域(60-80%)/M域(20-40%)</li><li>新店 CDT→HS→IPC；老店反向</li></ul></div>
+        <div class="box"><span class="tag">时间维度</span><h3>52周MD</h3>
+          <ul><li>商品经营计划(非促销日历)</li><li>波段:何时引进清退/配哪价格带</li><li>只传时间节点+主题+资源优先级</li></ul></div>
+      </div>
+      <div class="note">商品配置理论(渥美俊一《商品構成》, 术语待核验)是体系最深方法论：HS 差异系数 = 毛利额占比÷SKU数占比(&lt;1 查删减/&gt;1 评估扩充)，但承担购买完整性/价格形象的低毛利 SKU 不能仅凭系数删减。经营数学工具(GMROI/TF/TL-TH/Si)均待建独立定义。</div>
+    </div>
+
+    <div class="card">
+      <h2>🏷️ 陈列资源命名治理 <span class="pill p-green">v1.0 · 已验证</span></h2>
+      <div class="desc">体系中唯一升到 active/high 的方法论，因经花厅坊实战验证。</div>
+      <div class="flow" style="margin-bottom:10px"><b>编码公式</b><span class="ar">→</span> {客户/门店}-{区域代号}-{资源类型编号}-{面位}-{子组}-{层位}-{排面位}-L{品类}</div>
+      <div class="mdline"><b>公司级 11 区域代号(lock)：</b>XS休食 · JS酒水 · TW调味 · LY粮油 · RH日化家清 · SX生鲜 · LD冷冻冷藏(待确认) · SY收银 · RK入口 · TD主通道 · TC特陈区</div>
+      <div class="mdline"><b>alias 机制：</b>HS→XS、MLY→LY 标 deprecated(历史可读/新文件禁用/不批量回改)</div>
+      <div class="mdline"><b>成熟度 L0-L5：</b>未命名→快采→标准命名→映射完成→数据可分析→系统化(整店等级=各区最低值)</div>
+      <div class="mdline"><b>反幻觉边界：</b>G1-G4/T01-T08 是单店取值，<b>不进公司级固定值</b>；公司级只保留"方法"</div>
+    </div>
+  </section>
+
+  <!-- ============ 战役 ============ -->
+  <section class="view" id="v-b">
+    <div class="card">
+      <h2>⚔️ 花厅坊样板战役 #1</h2>
+      <div class="desc">客户(client_told)：乐易购花厅坊店，陈氏家族 4 店连锁之一。战役期 W18(5/05 启动)→W22(约 5/31)。单兵期(六哥)。</div>
+      <div class="kpi">
+        <div class="k"><div class="n" style="color:var(--accent)">+30%</div><div class="l">7月销售额 vs 2025年7月(且毛利额不缩水)</div></div>
+        <div class="k"><div class="n" style="color:var(--yellow)">≤3万</div><div class="l">6/30 前休食库存去化目标(R13)</div></div>
+        <div class="k"><div class="n" style="color:var(--green)">L4</div><div class="l">战略定位:生产中层方法论(M-DEC)的工厂</div></div>
+        <div class="k"><div class="n" style="color:var(--accent2)">三端</div><div class="l">v0.5 扩为 商品+营运+制度流程 联调</div></div>
+      </div>
+      <div class="note">vault 内部时间声明：必读索引标"真实当前=2026-05-19"(曾系统日期偏移 11 天)，但存在 5/30、5/31 业务文件全保留作 audit trail。战役档案多处 frontmatter 版本表与正文脱节(决策记录正文已到 D018) — 引用以正文为准。</div>
+    </div>
+
+    <div class="card">
+      <h2>📅 里程碑</h2>
+      <div class="timeline">
+        <div class="tl done"><div class="d">5/07</div><div class="t">M1.0 6 表+引进表+表E lock</div></div>
+        <div class="tl done"><div class="d">5/08</div><div class="t">M1.1 基础数据文档搭建日</div></div>
+        <div class="tl done"><div class="d">5/09</div><div class="t">M1.2 数据装载 + sign off</div></div>
+        <div class="tl now"><div class="d">5/10</div><div class="t">M1.3 休食其它品类调改启动(启明选 D 糕点) 🟡</div></div>
+        <div class="tl"><div class="d">5/16</div><div class="t">M1.7 全量数据装载</div></div>
+        <div class="tl"><div class="d">5/23</div><div class="t">M2 一周效果验证(4 维数据)</div></div>
+        <div class="tl"><div class="d">5/30</div><div class="t">M3 14 天深度复盘 + G05 阶段门</div></div>
+        <div class="tl"><div class="d">6/03</div><div class="t">M4 样板对外可讲 + ≥4 客户接触</div></div>
+        <div class="tl"><div class="d">6/30</div><div class="t">M5 第一个新客户签约(战役 #2 启动)</div></div>
+      </div>
+      <div class="note">暂停判据：5/13 销售环比降 ≥10%。失败判据：M-DEC 三条全推翻。OUT(不做)：其他门店/软件开发/30-80万大项目/供应链全面重谈。</div>
+    </div>
+
+    <div class="card">
+      <h2>🧱 各子组调改进展(5/18 实扫)</h2>
+      <table>
+        <tr><th>子组/货架</th><th>状态</th><th>要点</th></tr>
+        <tr><td>G3-B 方便速食</td><td><span class="pill p-green">🟢</span></td><td>第一轮 v0.5 数据填实+17 照片+53 积压 SKU 框架；约 4/25 调改；5/27 升 v0.6</td></tr>
+        <tr><td>G4-A 冲调</td><td><span class="pill p-yellow">🟡 paused</span></td><td>32 照片+5/13 试点预案 v0.2；5/19 产 58 张调改后照片;5/27 G05 前置成果成熟(非正式完成报告)</td></tr>
+        <tr><td>G4-B 水饮</td><td><span class="pill p-red">🔴</span></td><td>0 照片/0 方案；与 G4-A 同货架两面不混(端架 T06/T07 严禁混淆)</td></tr>
+        <tr><td>G1-A 凉果儿童</td><td><span class="pill p-green">已 lock</span></td><td>DisplayMap B3a V1.1 lock</td></tr>
+        <tr><td>G1-B / G2-A</td><td><span class="pill p-red">🔴</span></td><td>仅 V1.0 草图，主品类需现场实测后定 V1.1</td></tr>
+        <tr><td>G2-B 糖巧坚果 + G3-A 素食海味肉零食</td><td><span class="pill p-yellow">🟡</span></td><td>DisplayMap B3c V1.1 lock，6 子格已定</td></tr>
+        <tr><td>糕点(D 糕点扩品)</td><td><span class="pill p-green">🟢 active</span></td><td>5/10 启动(六哥拍板)；承接 5/11 烘焙撤场窗口；扩品 151→~250 SKU 待启明 sign off</td></tr>
+        <tr><td>大包装区(M-DEC-002)</td><td><span class="pill p-yellow">🟡 占位</span></td><td>触发=方便速食+冲调后</td></tr>
+      </table>
+      <div class="note">归因反幻觉警示(inferred)：全店 30天 vs 60天日均普涨 +20-40%，方便食品 +29.7% 实际净增约 +10-12%(60-70% 是大盘溢出)；引流款牺牲毛利模式不可机械复制。客户验证日志 5/11 后断档(R14)。</div>
+    </div>
+
+    <div class="card">
+      <h2>🧩 中层决策资产 M-DEC(001-008)</h2>
+      <div class="desc">候选层 → 5/13-5/20 战役#1 实战 → G05 → 6/30 跨战役#2 → 升 v1.0 落 04_/中层决策库/。禁止以 v0.1 直接进通用方法论层。</div>
+      <table>
+        <tr><th>编号</th><th>主题</th><th>状态/象限</th></tr>
+        <tr><td>001</td><td>6 组角色拆分判据(Z1-Z6)</td><td>v0.1 候选 · III</td></tr>
+        <tr><td>002</td><td>大包装区瘦身比例(须先数据底盘)</td><td>v0.1 候选 · III</td></tr>
+        <tr><td>003</td><td>调改商品供应链落实节奏(现金 vs 账期)</td><td>v0.1 候选 · III</td></tr>
+        <tr><td>005</td><td>错品类货架重建 SOP</td><td>v0.1 候选 · <b style="color:var(--iv)">IV</b></td></tr>
+        <tr><td>006</td><td>陈列层数确认与区域落位 SOP</td><td>v0.1 候选 · III</td></tr>
+        <tr><td>007</td><td>商品动销综合诊断与调整 SOP(7 步)</td><td>v0.1 候选 · III</td></tr>
+        <tr><td>008</td><td>门店多商品调改 SOP(串 005/006/007)</td><td><span class="pill p-green">v0.2 draft</span> · III</td></tr>
+      </table>
+      <div class="note">M-DEC-004(夜班节奏 SOP)无独立文件，内容沉淀在 09_中层方法论沉淀.md(案例库 #002 已澄清非"编号缺位")。</div>
+    </div>
+
+    <div class="card">
+      <h2>👪 客户组织结构(陈氏家族 · 全 client_told)</h2>
+      <div class="desc">家族关系按"协同+信任"默认，不代入西方权力斗争剧本。顾问 observed 字段为空。</div>
+      <div class="grid g2">
+        <div class="box"><span class="tag">家族治理层(3 支)</span>
+          <ul><li>陈海鹏(叔叔/集团操盘/花厅坊牵头，7月参观=验收)</li><li>娜姐(夫人/老板娘)</li><li>启明父亲(大股东/主管平沙店)</li><li><b style="color:var(--ink)">启明</b>(二代/花厅坊老板兼水果采购/最终决策权)</li><li>千千姐=芊姐(堂妹/沙埔大道店财务+采购)</li><li>阿健(芊姐子/花厅坊蔬菜区理货员+自媒体)</li></ul></div>
+        <div class="box"><span class="tag">花厅坊运营层(5/8 共识)</span>
+          <ul><li>执行店长 彭新华(非家族)</li><li>副店长 高彬(娜姐表弟)</li><li>主管 张力("离职难替代")</li><li>财务 佳妮(休食采购/现场执行责任人/"有悟性可带教")</li><li>文员 尧长莲(多职捆绑待拆分)</li><li>理货员组(含阿健)</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 治理 ============ -->
+  <section class="view" id="v-g">
+    <div class="card">
+      <h2>🏛️ 七大治理支柱(事件驱动反向生长)</h2>
+      <table>
+        <tr><th>#</th><th>支柱</th><th>锚点</th><th>建立</th></tr>
+        <tr><td>1</td><td>反幻觉</td><td>§13(含 13.16-20)</td><td class="mut">基线</td></tr>
+        <tr><td>2</td><td>逻辑一致性</td><td>§14</td><td class="mut">基线</td></tr>
+        <tr><td>3</td><td>工程化</td><td>§15</td><td class="mut">基线</td></tr>
+        <tr><td>4</td><td>Claude Code 协作</td><td>§17.1-10</td><td class="mut">基线</td></tr>
+        <tr><td>5</td><td><b>工程操作纪律</b>(Bash/Git/工具)</td><td>§17.X</td><td><span class="pill p-yellow">5/09</span> cd /tmp 错误触发</td></tr>
+        <tr><td>6</td><td><b>Memory 治理</b></td><td>§17.20+</td><td><span class="pill p-yellow">5/09</span> 用户提议</td></tr>
+        <tr><td>7</td><td><b>跨任务边界纪律</b></td><td>§17.21</td><td><span class="pill p-yellow">5/19</span> 命名→商品匹配临界案例</td></tr>
+      </table>
+      <div class="note">5/6 支柱共同根因：「细节差异叠加 = 系统性错误」。三维度(数据 §13.20 / 工程 §17.11+ / 记忆 §17.20+)共享 4 层治理底盘(操作契约/规则集/自动检查(多 W21+ 占位)/Constitutional 自检)+共同原则「evidence + 数学逻辑验证 + 用户 confirm + 案例沉淀」。</div>
+    </div>
+
+    <div class="card">
+      <h2>🎯 四象限治理(§19 · 顶层最高纲领)</h2>
+      <div class="desc">任何元素必须归一象限，frontmatter 强制 quadrant。双向防火墙：防 SOP 杀创造性 + 防创造性瓦解标准。</div>
+      <div class="quad">
+        <div class="q q-I"><span class="lvl">I · 内核稳固</span><h4>不变 + 可复制</h4><p>反幻觉/逻辑一致性/文档工程化/三回归原则/三力骨架/品牌内核 — 变更门槛<b>最高</b></p></div>
+        <div class="q q-II"><span class="lvl">II · 内核灵活</span><h4>不变 + 权变</h4><p>老板访谈话术/现场危机判断/表达色调/"这次客户特殊"通道 — 权变后必复盘</p></div>
+        <div class="q q-III"><span class="lvl">III · 外延复制</span><h4>变化 + 可复制</h4><p>SOP 套件 S01-S08+G01-G06/销售包模板/数据清洗规范/DisplayMap/看板 — 须 SOP 化</p></div>
+        <div class="q q-IV"><span class="lvl">IV · 外延权变</span><h4>变化 + 权变</h4><p>创造性方案/区域文化差异/客户家族关系/行业趋势/工具栈 — 每次发挥后强制 AAR</p></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🛡️ 反幻觉硬约束(§13.16-20 · 4 层治理底盘)</h2>
+      <div class="grid g2">
+        <div class="box"><span class="tag">§13.16 客户视角防火墙</span><ul><li>不写"客户内部谁操作 X"为事实(除非亲口告知)</li><li>"启明导出"→"客户方提供"</li></ul></div>
+        <div class="box"><span class="tag">§13.17 推断标注强制</span><ul><li>推断/假设/估计须前缀 [推断]/[假设]/[待确认]</li><li>数据估算标精度 ±X%</li></ul></div>
+        <div class="box"><span class="tag">§13.18 类比边界</span><ul><li>用类比须明示"这是类比"+清单化保留/删除</li><li>中国家族企业默认协同+信任</li></ul></div>
+        <div class="box"><span class="tag">§13.19 用户订正优先</span><ul><li>订正版优先，旧版作 audit-log 留存</li><li>沉淀 feedback memory 跨会话不再犯</li></ul></div>
+      </div>
+      <div class="note">§13.20 数据一致性追溯(7 条)：遇不一致<b>立即停止</b>(不"圆"数据)→追溯每数字 evidence→≥3 解释假设带数学验证→找内部一致性最高解释→标[推断]→用户 confirm→沉淀案例库。教训：<b>客流 ≠ 客单数 ≠ 客单价</b>。</div>
+    </div>
+
+    <div class="card">
+      <h2>🧭 三回归(§20 · 反假忙碌)</h2>
+      <div class="flow" style="margin-bottom:10px"><b>回归到人</b><span class="ar">·</span><b>回归到价值</b><span class="ar">·</span><b>回归到结果</b></div>
+      <div class="grid g3">
+        <div class="box"><h3>回归到人</h3><ul><li>本期几个真人因我们的工作变好？</li></ul></div>
+        <div class="box"><h3>回归到价值</h3><ul><li>客户能"自己说出来"的价值是什么？</li><li>说不出来=还没产生价值</li></ul></div>
+        <div class="box"><h3>回归到结果</h3><ul><li>离回款/样板可讲/新客户各近几步？</li></ul></div>
+      </div>
+      <div class="note">三个永远拷问：①跟交付/签约/保留有何直接关系？②哪个真人因此变好？③属哪个象限？— <b>答得清,干；答不清,停。</b> 实测 5/18 W20-Day7 判定"已触红线"(14 commit+393 照片但离目标 0 步)→强制 5/19 切回主线。</div>
+    </div>
+
+    <div class="card">
+      <h2>⚙️ 工程操作纪律 6 大类 + 操作三公民</h2>
+      <div class="grid g3">
+        <div class="box"><span class="tag">类1 目录路径</span><ul><li>绝不 cd /tmp 切走 cwd</li><li>git 用 git -C</li></ul></div>
+        <div class="box"><span class="tag">类2 Git</span><ul><li>破坏性命令须确认</li><li>不 --no-verify / --amend 已 push</li></ul></div>
+        <div class="box"><span class="tag">类3 文件</span><ul><li>Read 先于 Edit/Write</li><li>不擅自创建 .md/README</li></ul></div>
+        <div class="box"><span class="tag">类4 数据</span><ul><li>每数字带 evidence</li><li>不一致≥3 解释+数学验证</li></ul></div>
+        <div class="box"><span class="tag">类5 进程</span><ul><li>长任务 background</li><li>失败≥3 次必停查根因</li></ul></div>
+        <div class="box"><span class="tag">类6 工具</span><ul><li>优先 dedicated(Read 非 cat)</li><li>不 find / 用 Glob/Grep</li></ul></div>
+      </div>
+      <div class="flow" style="margin-top:12px"><b>三个一等公民(§18)</b><span class="ar">→</span> Ingest(G01 进库) <span class="ar">·</span> Query(G02 调用) <span class="ar">·</span> Lint(G03 每周巡检)</div>
+      <div class="note">第 7 支柱 §17.21：一个 prompt 默认只完成一个主任务闭环；主任务完成必须先回报不得自动启动下一个；跨象限任务必须单独 prompt+单独 commit+单独审计。</div>
+    </div>
+
+    <div class="card">
+      <h2>📊 6 大标准基线 + Vault 健康现状</h2>
+      <div class="grid g2">
+        <div class="box"><span class="tag">§22.5 六维自检</span><ul><li>McKinsey — 顶级咨询品质(Issue tree/Pyramid)</li><li>IBM — 企业工程化(Audit Trail)</li><li>Oracle — 数据架构(PK/FK/Single Source)</li><li>Apple — 用户中心+工艺</li><li>Tesla — 工业化迭代(同类错误不再犯)</li><li>Anthropic — AI 协作哲学(Constitutional)</li></ul></div>
+        <div class="box"><span class="tag">Vault 健康仪表(5/18 ≈7.1/10)</span><ul><li>🔴 沉淀验证比 ~55:1-61:1(目标≤10:1)</li><li>🔴 客户验证度 ~1.4%(目标≥40%)</li><li>🔴 fact_layer 覆盖率 仅 6%</li><li>红色不过周；每周 G03 Lint 更新</li></ul></div>
+      </div>
+      <div class="note">fact_layer(v1.3 起强制 4 元字段 observed/client_told/inferred/pending)是数据契约，但覆盖率 6% 是机制设计与落地间最大 gap。M-DEC 晋级:L1 v0.1 候选→L2 v0.5→L3 v0.8→L4 v1.0(物理迁移仅 v0.8→v1.0 经 G05)。</div>
+    </div>
+  </section>
+
+  <footer>
+    晟果新零售咨询 / 六哥零售 · 科学零售知识库 ｜ 本看板为既有 vault 文件的二次整理与导航，具体结论以被引用主文件为准 ｜ v0.1 / 2026-06-22
+  </footer>
+</div>
+<script>
+  const tabs=document.querySelectorAll('.tab'),views=document.querySelectorAll('.view');
+  tabs.forEach(t=>t.addEventListener('click',()=>{
+    tabs.forEach(x=>x.classList.remove('active'));views.forEach(v=>v.classList.remove('active'));
+    t.classList.add('active');document.getElementById('v-'+t.dataset.v).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }));
+</script>
+</body>
+</html>
