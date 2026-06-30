@@ -92,7 +92,7 @@ git diff --check
 
 ```
 1. /clear（必须 / 不允许带污染上下文进高风险任务）
-2. handoff（调用 project-handoff skill 生成 handoff_*.md）
+2. handoff（调用 handoff skill 生成 handoff_*.md）
 3. 闸门 prompt（参 README §4.2 / 用户主动复读 + 显式确认 6 项）
 ```
 
@@ -122,7 +122,7 @@ git diff --check
 
 ## 输出交接摘要的标准结构
 
-`/compact` 或 `/clear` 前 / 必须输出以下结构（推荐落 `13_数据分析与工具脚本/_claude_context/handoff_<timestamp>.md` / 由 project-handoff skill 配套）：
+`/compact` 或 `/clear` 前 / 必须输出以下结构（推荐落 `13_数据分析与工具脚本/_claude_context/handoff_<timestamp>.md` / 由 handoff skill 配套）：
 
 ```markdown
 # 会话交接摘要 <timestamp>
@@ -167,12 +167,12 @@ git diff --check
 - ❌ compact 时忘记 v0.6 4 前置阻塞（库存 / 0206% / sign off / 数据等级）
 - ❌ compact 时遗失 .gitignore 治理边界（**/*.xlsx 全局忽略 + 单文件白名单）
 
-## 与 project-handoff skill 协同
+## 与 handoff skill 协同
 
 | skill | 职责 |
 |---|---|
-| **project-compact-governance（本 skill）** | 决定**何时** compact / clear / 手动 vs 自动 / 检查工作区状态 |
-| **project-handoff** | 生成具体 handoff 文档 / 写 vault / 输出新会话启动 prompt |
+| **compact（本 skill）** | 决定**何时** compact / clear / 手动 vs 自动 / 检查工作区状态 |
+| **handoff** | 生成具体 handoff 文档 / 写 vault / 输出新会话启动 prompt |
 
 工作流：
 ```
@@ -180,7 +180,7 @@ git diff --check
     ↓
 本 skill 触发 / 给判断 + 建议
     ↓
-若建议 compact / clear → 调用 project-handoff skill 生成 handoff 文档
+若建议 compact / clear → 调用 handoff skill 生成 handoff 文档
     ↓
 用户决定 /compact 或 /clear
 ```

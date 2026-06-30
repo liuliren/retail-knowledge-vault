@@ -1,11 +1,11 @@
 ---
-name: 单品类诊断
+name: diagnose
 description: 端到端单品类商品诊断。给一个品类(raw .xls 或品类名),一条指令跑完 脱敏→分层失真分析→可发客户的诊断卡(md+PDF)。用于花厅坊等门店的单小类商品力诊断、汰换、陈列调改。触发词:诊断 X 类 / 测 X 类 / 出 X 的诊断卡 / category diagnosis。
 allowed-tools: Bash, Read, Write, Edit
 version: v0.3
 ---
 
-# 单品类诊断 skill（端到端 · 商品化90%引擎）
+# /diagnose skill（端到端 · 商品化90%引擎）
 
 > **这是什么**:把"拉数→脱敏→分层判级→失真型→诊断卡"固化成一条指令。AI 跑可商品化的 90%,六哥只做最后的**调改取舍 + 签字背书**(10%)。
 > **护城河**:本 skill 是 Harness(会随模型贬值);六哥的 Z 签字是驭马人层(不贬值)。skill 产出 = candidate,**升 active / 发客户须六哥签字**(CLAUDE.md §3②③)。
@@ -37,7 +37,7 @@ version: v0.3
 
 ### Step 1 〔脚本〕 — 跑 orchestrator(脱敏→自检→分析)
 ```bash
-bash "/Users/davidliu/KnowledgeBase/retail-knowledge-vault/.claude/skills/单品类诊断/diagnose.sh" \
+bash "/Users/davidliu/KnowledgeBase/retail-knowledge-vault/.claude/skills/diagnose/diagnose.sh" \
   "<raw.xls绝对路径>" "<品类名>"
 ```
 输出:SKU数/销额/价格带分位/集中度CR5/品牌密度HHI/动销/**复杂度判级**/**推荐分层**/**失真型预判**。
@@ -53,7 +53,7 @@ bash "/Users/davidliu/KnowledgeBase/retail-knowledge-vault/.claude/skills/单品
 ### Step 2.5 〔脚本〕 — 出六哥决策单(机制C 固化·已跑方便食品/巧克力)
 把净可汰候选做成六哥可填的决策单(母模板 [[品类决策母模板_v0.1]] 的操作化):
 ```bash
-python3 ".claude/skills/单品类诊断/gen_decision_sheet.py" "<品类>_增强SKU表.csv" "<品类名>" \
+python3 ".claude/skills/diagnose/gen_decision_sheet.py" "<品类>_增强SKU表.csv" "<品类名>" \
   "09_门店案例与项目复盘/乐易购花厅坊店/03_商品诊断/花厅坊<品类>_汰换决策单_v0.1.md"
 ```
 > 六哥逐行填 **留/汰/观**(≤10秒/款)→ **取舍是六哥 Z(红线·不代签)**。填完据此出 Step3 诊断卡 + 店长版客户卡(脱敏·发店长前六哥再签)。
@@ -94,6 +94,11 @@ P="$HOME/.claude/skills/gstack/make-pdf/dist/pdf"
 **E 迭代〔Opus 识别改什么 + Sonnet 落字〕**:
 - 把 lessons **回写本 skill 模板**(改判据 / 补铁律 / 调步骤 / 加调模型标签)→ skill `version` +0.1。
 - 在 `_复盘台账.md` 记一行(日期 · 对象 · 改了什么 · 为什么)。
+- **🔁 方法论回流 3 步 checklist（M3 promote 规程 · 六哥 2026-06-27 认）** — 诊断卡验证了 active 方法论页时,必须把验证**回流到那些页**(否则方法论页"进行中"永远闭不了环):
+  1. **诊断卡端**:填「🎓 方法论实证记录(§11.3)」= 本卡验证了哪几页 active + 各一句 lesson。
+  2. **方法论页端**:在被验证页加「🎓 M-DEC 验证案例·<品类>」小块(observed 结果 + inferred lesson;**lesson 是六哥的 10% · 标"待六哥确认"**)。
+  3. **翻 signoff**:该页 signoff 的"进行中"→"已验证(+N 客户验证案例)"。
+  ⚠️ 第 2/3 步 = **改 active 方法论页 = 六哥签字门**:AI 只**起草回填块**,六哥签了才写入。手动满 3 次顺跑后再谈 skill 化(G12 · 别过早造 promote 引擎)。首跑实例:2026-06-27 方便食品 + 巧克力 → 数量管理 / SKU角色层 / 品类管理 三页(M3 回流收口)。
 - 🚫 红线:复盘提炼是判断相,不下放给脚本/Sonnet 代判;Sonnet 只做"落字改模板"的机械动作。
 
 ## 复用资产

@@ -1,5 +1,5 @@
 ---
-description: Generate a structured handoff document and resume prompt before /compact or /clear. Use when project-compact-governance recommends compact/clear, when the user asks for a "handoff", "交接", "新会话 prompt", "session summary", or when explicitly asked to prepare for a fresh Claude Code session.
+description: Generate a structured handoff document and resume prompt before /compact or /clear. Use when compact recommends compact/clear, when the user asks for a "handoff", "交接", "新会话 prompt", "session summary", or when explicitly asked to prepare for a fresh Claude Code session.
 allowed-tools: Bash(git status:*), Bash(git log:*), Bash(git diff:*), Bash(ls:*), Read, Write
 ---
 
@@ -11,7 +11,7 @@ allowed-tools: Bash(git status:*), Bash(git log:*), Bash(git diff:*), Bash(ls:*)
 
 ## 触发场景
 
-- project-compact-governance skill 建议 compact / clear
+- compact skill 建议 compact / clear
 - 用户主动要求"handoff" / "交接" / "新会话 prompt" / "整理上下文"
 - 长会话（≥ 4h / ≥ 8 commits / 任务阶段完整收口）
 - 跨业务模块切换（数据底座 → 治理 / 业务 → 工具）
@@ -36,7 +36,7 @@ git diff --check
 
 否则：先输出工作区异常报告 / 等用户处理 / 不生成 handoff。
 
-## 强制边界（与 project-compact-governance §强制边界 完全一致）
+## 强制边界（与 compact §强制边界 完全一致）
 
 ```
 ❌ 不清洗真实数据
@@ -104,7 +104,7 @@ tags:
 
 ### §3 强制边界（务必复制到新会话）
 
-完整复制 project-compact-governance §强制边界。
+完整复制 compact §强制边界。
 
 ### §4 关键 fact_layer.client_told（反幻觉）
 
@@ -166,7 +166,7 @@ tags:
 
 ## 不执行 / 不替代
 
-- ❌ 不替代 project-compact-governance（决策何时 compact）
+- ❌ 不替代 compact（决策何时 compact）
 - ❌ 不自动 /compact 或 /clear（用户主动）
 - ❌ 不替代用户最终选择
 - ❌ 不修改既有项目文件
@@ -184,4 +184,4 @@ tags:
 
 | 版本 | 日期 | 说明 |
 |---|---|---|
-| v1.0 | 2026-05-10 W20-Day1 | 初版 / TOOLING-CTX-002 / 与 project-compact-governance 协同 |
+| v1.0 | 2026-05-10 W20-Day1 | 初版 / TOOLING-CTX-002 / 与 compact 协同 |
