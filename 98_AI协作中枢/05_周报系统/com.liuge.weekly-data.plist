@@ -12,11 +12,11 @@
     <string>/Users/davidliu/KnowledgeBase/retail-knowledge-vault/98_AI协作中枢/05_周报系统/weekly_data.sh</string>
   </array>
 
-  <!-- 每周日 07:00 北京时间 = UTC 23:00 (周六) -->
+  <!-- 每周日 07:00 北京时间 = UTC 周六 23:00 (Weekday=6) -->
   <key>StartCalendarInterval</key>
   <dict>
     <key>Weekday</key>
-    <integer>0</integer>
+    <integer>6</integer>
     <key>Hour</key>
     <integer>23</integer>
     <key>Minute</key>

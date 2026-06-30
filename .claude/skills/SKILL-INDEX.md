@@ -17,6 +17,7 @@ updated: 2026-06-30
 | `/compact` | compact、压缩上下文、该compact了、context太长了 |
 | `/handoff` | handoff、交接、新会话prompt、整理上下文 |
 | `/merge` | merge、两个文件对比、文档合并、去重、副本裁定 |
+| `weekly_data.sh` | 生成周报数据、采集本周数据、周报采集、手动跑周报 |
 
 **自动调用规则**：用户说出触发词 → 无需打 `/`，直接加载并执行对应 skill。
 
