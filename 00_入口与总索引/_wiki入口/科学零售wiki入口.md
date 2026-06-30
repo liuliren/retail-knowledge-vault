@@ -1,20 +1,20 @@
 ---
 title: 晟果科学零售 wiki 主入口（Karpathy 风格 LLM 知识图谱中心）
 version: v1.0
-status: active
+status: deprecated
+deprecated_at: 2026-06-30
+deprecated_reason: "内容停留在 2026-05-07，已与当前知识体系（6月新建34个KB页/RetailOS/M4体系等）严重脱节，不再作为 vault 入口。详见《导航层全量审计报告·2026-06-30》。"
 owner: 六哥
 created: 2026-05-07
 updated: 2026-05-07
 module: 00_入口与总索引/_wiki入口
 project: 晟果新零售咨询 / 六哥零售
 tags:
+  - deprecated
+  - 历史入口
   - wiki主入口
-  - Karpathy风格
-  - LLM知识图谱
-  - 全vault导航
-  - 5大标准融合
-source_type: index
-confidence: high
+source_type: archive
+confidence: low
 quadrant: I
 client_safety: internal_only
 related:
@@ -22,6 +22,23 @@ related:
   - "[[2026-05-07_vault战略重构方案_v1.0]]"
   - "[[2026-05-07_McKinsey审计报告_v1.0]]"
   - "[[2026-05-07_封存断链清单_v1.0]]"
+---
+
+# ⚠️ 已废弃 · 历史存档（勿用作当前入口）
+
+> **此文件已于 2026-06-30 降级为 `deprecated`，不再作为 vault 唯一入口或知识查询入口。**
+>
+> 内容截止 2026-05-07（战役 #1 W18-W22 阶段），不含 6 月以来新建的 KB 知识体系、RetailOS、M4 内容体系、行业研究编译成果等。
+>
+> **当前有效入口（替代本文件）**：
+> - 开机恢复 → `98_AI协作中枢/00_总控/_当前断点_RESUME.md`
+> - 知识图谱查询 → `00_入口与总索引/晟果零售知识库_维基主页_v1.0.md`
+> - 方法论全景树 → `00_入口与总索引/科学零售知识树_MOC.md`
+> - 核心概念 SSOT → `00_入口与总索引/02_方法论索引/核心概念主定义索引.md`
+> - 当前战场状态 → `00_入口与总索引/04_作战指挥/当前重点项目看板.md`
+>
+> 以下为 2026-05-07 原文历史存档，仅供追溯，**不得引用为当前状态**。
+
 ---
 
 # 🧭 晟果科学零售 wiki 主入口
