@@ -39,7 +39,17 @@ when_to_use: >
 - `month` → 当前月
 - 指定周次 → 该周的日期范围
 
-### Step 2 · 采集三类数据
+### Step 2 · 读取周报数据文件（优先）
+
+```bash
+WEEK=$(TZ="Asia/Shanghai" date "+%Y-W%V")
+DATA_FILE="/Users/davidliu/KnowledgeBase/retail-knowledge-vault/98_AI协作中枢/05_周报系统/数据存档/_周报数据_${WEEK}.md"
+[ -f "$DATA_FILE" ] && cat "$DATA_FILE" || echo "周报数据文件不存在，切换手动采集模式"
+```
+
+> 若文件存在 → 直接读取（数据已预采集）；若不存在 → 执行下方 Step 2B 手动采集。
+
+### Step 2B · 手动采集三类数据（周报数据文件缺失时）
 
 **① 完成记录（从 RESUME + 日志）**
 ```bash
