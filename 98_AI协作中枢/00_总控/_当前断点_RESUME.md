@@ -1,51 +1,44 @@
 ---
-title: 当前断点 RESUME（开机只读·导航层·≤1屏）
-version: live
-status: active
-owner: 六哥
-updated: 2026-06-27
-module: 98_AI协作中枢/00_总控
-client_safety: internal_only
-aliases: [当前断点, RESUME, 启动断点]
-tags: [记忆, 断点, 启动, 导航]
+title: 当前断点 RESUME（开机只读·≤300tokens）
+version: v2.0
+format: STATE-MACHINE
+protocol: Token-Limited Context Protocol v2.0（2026-06-30 启用）
+updated: 2026-06-30
 ---
 
-# 🧭 当前断点 RESUME
+## STATE [2026-06-30 · 收口]
+task: 2026-06-30 治理大日 收口完成 → 下一主线：简史两篇签字发布 + 花厅坊交付推进
 
-> **导航层**(Task系统v1.0):只做指针,不存任务细节/清单内容。开机读这一张接上,不重读全库。
-> **三层分流**:对话=决策(≤3 Yes/No)· 清单=执行([[_回签包_v0.4_ChecklistOS]])· 本文=导航(≤1屏)。收口时覆盖更新。
+hot_files:
+  - 六哥自媒体/公众号/即时零售十年简史_上篇_发布版.md [待六哥签字]
+  - 六哥自媒体/公众号/即时零售十年简史_下篇_发布版.md [待六哥签字]
+  - 98_AI协作中枢/01_Claude_Code/Claude输出区/2026-06-27_M4首发成稿_方便食品长尾幻觉_v1.0.md [已签·待贴公众号]
 
-## ⏱ 今日完成（2026-06-26·详见 [[2026-06-26_全量工作总清单与状态审计]]）
-- 7 大线:自迭代回路 / 输入系统B案(进料中枢独立·retail零raw) / 系统架构(AI操作层+6宪章+宪法层级+三控制面) / 商业闭环6/6(产品包10件+花厅坊样板) / 数据底座(商品基础表2372·标准L3 79.5%·单本体纠错后·两层Normalizer) / 治理(链接债/标签/消歧) / 记忆治理。
-- 系统级升级:Task系统v1.0(Decision Gate/Checklist OS/RESUME收敛)+ 任务前置契约协议。retail 本日 86+ commit。
+open_loops:
+  - 简史两篇→待六哥签字→公众号 [/Users/davidliu/六哥自媒体/公众号/]
+  - M4首发→已签字→待手动贴公众号后台 [Claude输出区/2026-06-27_M4首发成稿...]
+  - 零售老刘精读→进行中 [14_外部案例/零售老刘体系/_逐字精读进度_321.md]
+  - 客户名授权链→待六哥填代号 [David-Liu-Vault/80_个人资料_敏感/客户名称对外使用授权链清单.md]
 
-## 🚧 当前阻塞（≤3·卡六哥输入）
-1. ✅ **#1花厅坊方便食品红线交付完成**(21汰/2观·锚点莫小仙·店长版签发)=首笔完整交付·母模板验证成立。活跃线:#4六哥自填中·#6沙浦即插已验。
-2. 主库+根层无 git 仓(已快照备份)→ 待六哥定"治理层建仓"。
-3. ✅ 红线交付 3/3 全完成(方便食品/巧克力/库存订货客户版·均签发店长)。
+system:
+  context_level: mid
+  花厅坊: 62天（8/31红线）
+  品类底座: ✅完成（htf_final_l3.csv + htf_final_l4.csv·2372行）
+  输入系统: ✅冻结（P0/P1完成·不再扩展·残留项按需处理）
+    - process-inbox: v0.2（三关过滤器·职责收敛）
+    - ingest: v1.4（helper退役·Claude显式写台账）
+    - 精读卡消化出口: v0.1（links_to锚点·五类出口）
+    - 深度精读: P1补丁（links_to字段+RESUME覆盖式STATE+G4-A降级）
+  Token-Limited-Protocol: v2.0 ✅（CLAUDE.md §3 已签字纳入）
+  kb-compile: v1.0 ✅（2026-06-29签字）
 
-## 🆕 06-27 完成:生图系统 v0.2.1 固化(canonical)
-- ingest Clippings/图片生成 那套(design_tokens SSOT + A诊断卡/B动作卡双模板 + render.py + IssueTag)进 `.claude/skills/report-export/cards/`。
-- 重写 `gen_card.py` 为 **Card Compiler**(JSON→A/B HTML·不渲染);**render.py(Python playwright)= 唯一渲染器**(已装·full_page自动算高)。
-- 3 品类各出 A+B(方便食品/库存订货/巧克力·`report_output/卡片测试/C_*`);B 色值统一到 tokens;SKU 定"流汁宽面"。
-- **IssueTag 升正式方法论页** `04_/SKU汰换标签体系_IssueTag_v0.1.md`(9标签4类 + selection_guardrail 撤⇄选镜像IP + cull_tags;case=judgment_sample)。
-- ⚠️ 发现污染:`Montessori-guochuanyu-vault/03_项目/郭老师/环境布置/` 混进零售卡模板(误拷·未删·待六哥处置)。
+## 🅿️ Parking
+第2店(沙浦大道)接入·治理硬化phase·N3.0完整结构·M5 stub·Codex HOLD·周报系统
+> 触发:auto | 改动文件:/Users/davidliu/KnowledgeBase/retail-knowledge-vault/00_入口与总索引/科学零售知识树_MOC.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/01_科学零售方法论/KB-CAT-CDT-001_CDT应用与子格落位方法_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/01_科学零售方法论/KB-CAT-DX-MISMATCH-001_销售陈列错配诊断_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/01_科学零售方法论/KB-CAT-ROLE-5WAY-001_五分法品类角色分配方法_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/01_科学零售方法论/KB-CAT-TIMEEFF-001_时间效率主轴评价指标体系_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/01_科学零售方法论/KB-CAT-ZONE-SOP-001_区域调改五步法_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/01_科学零售方法论/KB-CONCEPT-GOODS-001_商品完备性与顾客需求层_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/01_科学零售方法论/KB-DISPLAY-BRAND-001_品牌墙设计方法_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/01_科学零售方法论/KB-DX-FRAMEWORK-001_社区生鲜超市品类诊断框架_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/01_科学零售方法论/KB-DX-MATH-001_零售数学诊断工具体系_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/01_科学零售方法论/KB-DX-QUESTION-001_诊断题库完整版_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/01_科学零售方法论/KB-DX-WIDTH-001_品类宽度诊断方法论_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/01_科学零售方法论/KB-FRESH-001_生鲜护城河经营方法论_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/01_科学零售方法论/KB-GBA-TPOS-001_大湾区TPOS本地化_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/01_科学零售方法论/KB-METHOD-4TACTICS-001_四大战术动作总框架_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/01_科学零售方法论/KB-METHOD-CHAIN-001_晟果科学零售五层经营链_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/01_科学零售方法论/KB-SELECTION-TOOLS-001_选品核心工具体系_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/01_科学零售方法论/KB-SHOPPER-TASK-001_购物任务图谱_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/01_科学零售方法论/KB-SKU-ROLE-001_SKU四维角色体系_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/01_科学零售方法论/KB-ZONE-SNACK-ROLE-001_休食区区域级角色定位说明书（通用模板）_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/05_品类管理与商品规划/2026-05-09_品类表治理决议_v1.0.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/05_品类管理与商品规划/KB-CAT-ARCH-001_全品类双投影架构_v1.0.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/05_品类管理与商品规划/KB-CAT-ROLE-GBA-001_大湾区品类角色特化_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/14_外部案例与行业研究/KB-RETAIL-BASKET-001_购物篮与关联分析_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/14_外部案例与行业研究/KB-RETAIL-BMODEL-001_零售商业模式谱系_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/14_外部案例与行业研究/KB-RETAIL-CINV-001_消費投资与行业研究_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/14_外部案例与行业研究/KB-RETAIL-CONSUMER-001_消費者行为洞察_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/14_外部案例与行业研究/KB-RETAIL-DISPLAY-001_商品陈列体系_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/14_外部案例与行业研究/KB-RETAIL-INV-001_库存管理_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/14_外部案例与行业研究/KB-RETAIL-KPI-001_量化指标与数据分析_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/14_外部案例与行业研究/KB-RETAIL-MD-001_选品配置与商品MD_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/14_外部案例与行业研究/KB-RETAIL-MIX-001_商品组合与品类结构_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/14_外部案例与行业研究/KB-RETAIL-PRODUCT-001_商品力研究_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/14_外部案例与行业研究/KB-RETAIL-PROMO-001_商品促销策略_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/14_外部案例与行业研究/KB-RETAIL-SCM-001_供应链与采购_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/14_外部案例与行业研究/KB-RETAIL-STORE-001_店型研究框架_v0.1.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/98_AI协作中枢/00_总控/_当前断点_RESUME.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/98_AI协作中枢/00_総控/_当前断点_RESUME.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/98_AI协作中枢/01_Claude_Code/Claude输出区/2026-06-30_KB页全量索引与方法论目录_v1.0.md /Users/davidliu/KnowledgeBase/retail-knowledge-vault/98_AI协作中枢/01_Claude_Code/Claude输出区/2026-06-30_T03饼干_商品诊断报告_花厅坊_v0.1.md  | 用户指令数:223
 
-## 🆕 06-27(下午)生图 v0.3 + 全面梳理
-- **生图 v0.3 完成**:gen_card 自动派生B+SSOT校验 / `feedback_engine.py` 聚类 / **IssueTag 升选品决策系统**(`13_/选品决策系统_v0.1/issuetag_engine.py` 选品准入校验·撤⇄选镜像)。
-- **休食测试**:饼干 A+B(据 active M-DEC-010 中价82%过密)→ 系统泛化成立(撤长尾↔价格带结构,色=语义不变)。
-- **全面梳理总图**:[[2026-06-27_全面梳理总图_哲学底座到全线进程_v0.1]](5层全景·开机可读这张看全局)。
-
-## ▶️ 下一步指针（≤3）
-1. **收口 5 个矛盾/过期点**(梳理 §4.3):ChecklistOS/RESUME/审计三处状态打架、L3 数字81vs84、店长卡改名、子组看板过期——本周同步一次。
-2. **战略重心转向变现**(梳理 §5.2):马具够用,北极星=5客户+30万 → M4内容获客/销售包实战 > 再造工具。
-3. a9bc556 带 category_mapper/N3.0 线(六哥侧信道·单worker);第2店数据=N3.0/Normalizer/选品库总开关。
-
-## 📌 活跃文件指针
-- 执行清单 [[_回签包_v0.4_ChecklistOS]] · 主计划 [[_主实施计划_商业闭环_v0.1]] · 全量记录 [[2026-06-26_全量工作总清单与状态审计]]
-- 根层 AI操作层 [[_系统级AI操作中枢_MOC]](宪法/skills/进料/回路/[[Task系统v1.0_DecisionGate_ChecklistOS_RESUME收敛|Task系统v1.0]]/[[任务前置契约协议_v0.1]])
-- 数据底座:`13_/数据清洗匹配_v0.1/retail_clean.py` · `…/商品基础表草表/` · N3.0草案(输出区)
-- 方法论 active:[[数量管理]] [[SKU角色层与目的品保护机制_v0.1]] [[品类管理]]
-
-## 🅿️ Parking（不丢不现做）
-第2店(沙浦大道)接入 · 治理硬化phase(pending trigger=第2店数据) · N3.0完整结构(待第2店) · M5 stub补实 · Codex HOLD · 周报系统
+最近改动:
+- /Users/davidliu/KnowledgeBase/retail-knowledge-vault/14_外部案例与行业研究/KB-RETAIL-STORE-001_店型研究框架_v0.1.md
+- /Users/davidliu/KnowledgeBase/retail-knowledge-vault/98_AI协作中枢/00_总控/_当前断点_RESUME.md
+- /Users/davidliu/KnowledgeBase/retail-knowledge-vault/98_AI协作中枢/00_総控/_当前断点_RESUME.md
+- /Users/davidliu/KnowledgeBase/retail-knowledge-vault/98_AI协作中枢/01_Claude_Code/Claude输出区/2026-06-30_KB页全量索引与方法论目录_v1.0.md
+- /Users/davidliu/KnowledgeBase/retail-knowledge-vault/98_AI协作中枢/01_Claude_Code/Claude输出区/2026-06-30_T03饼干_商品诊断报告_花厅坊_v0.1.md
