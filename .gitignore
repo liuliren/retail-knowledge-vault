@@ -34,6 +34,7 @@
 !.claude/skills/diagnose/diagnose.sh
 !.claude/skills/diagnose/gen_decision_sheet.py
 !.claude/skills/diagnose/_复盘台账.md
+!.claude/skills/SKILL-INDEX.md
 !.claude/skills/ingest/
 !.claude/skills/ingest/SKILL.md
 !.claude/skills/review/

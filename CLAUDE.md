@@ -59,6 +59,7 @@
 ## 4. 必读文件（每次任务前 · 按顺序）
 
 0. **`98_AI协作中枢/00_总控/_当前断点_RESUME.md`** — 🧭 **开机只读断点**:上次到哪 / 下一步 3 条 / 活跃文件指针 / parking。**重切先读这一张,不重读全库**(治"重切就重读大量信息")。收口时覆盖更新它。
+0.5. **`.claude/skills/SKILL-INDEX.md`** — ⚡ **Skill 路由表（≤200tokens）**:列出所有可用 skill 及触发词。session 启动后加载此文件；用户说出触发词时**无需打 `/`，自动调用对应 skill**。Skill body 按需懒加载，禁止预读。
 1. `98_AI协作中枢/00_总控/AI互通总规则.md`
 2. `98_AI协作中枢/00_总控/当前任务队列.md`
 3. `98_AI协作中枢/03_共享上下文/当前项目上下文.md`
@@ -89,6 +90,8 @@
 
 > 字段沿用 `client_safety` / `source_attribution` / `confidence` / `fact_layer(observed/inferred/pending)`。**不引入 T0–T3 双轨制。**
 
+> **客户真名对外用名门(2026-06-27 六哥签字·P1-GOV-ClientNameAuth-001)**:C 层(client_confidential)客户的真名,进入 E 层(client_shareable)或媒体层前,须经 [[客户名称对外使用授权链清单]](David-Liu-Vault 敏感区·按代号 key)核验(✅ 且场景覆盖);未授权 / 查不到 / 场景不覆盖 → **默认脱敏泛化**(fail-safe)。授权分场景:正面战果稿可点名 ≠ 批评/诊断向稿可点名。此为全局 §7 客户机密铁律在本库的执行细则,冲突按更严格执行。
+
 ---
 
 ## 7. 操作回路（已落地的一等公民）
@@ -116,12 +119,13 @@
 
 ## 9. 个人知识库 Vault 定位（双库正交，不造轮子）
 
-新建的「个人知识库 Vault」**不与本库抢同一块地**，也不复制方法论：
+「life-vault」**与本库并列，正交不重叠**（2026-06-28 迁移完成，六哥签字）：
 
 - **本库（retail-knowledge-vault）** = 「晟果这门生意」：方法论、客户战役、交付、数据工具、自媒体下游。
-- **个人 Vault** = 「六哥这个人」：本库装不下的 growth（心智模型 / 阅读）、build（vibe coding / AI 实验）、以及 T2/T3 私人层（计划复盘 / 健康 / 财务 / 关系，本地优先）。
+- **life-vault**（`/Users/davidliu/KnowledgeBase/life-vault/`）= 「六哥这个人」：日/周/月计划、时间账本、个人财务、健康精力、个人成长（个人OS/读书/心智模型）。
 
-方法论只在本库一处沉淀；个人 Vault 通过 wikilink / 引用指过来，绝不拷贝。
+**两库正交铁律**：本库目录中严禁出现 `daily/`、`weekly/`、`timelog/`、`finance/`、`health/` 等个人生活目录；life-vault 中严禁出现 M-DEC、客户数据、交付件。违规即越界，须立即迁移。
+方法论只在本库一处沉淀；life-vault 通过 wikilink 引用，绝不拷贝。
 
 ---
 
