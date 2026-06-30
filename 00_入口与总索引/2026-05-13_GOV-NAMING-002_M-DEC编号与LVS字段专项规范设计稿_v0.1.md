@@ -1,7 +1,9 @@
 ---
 title: 2026-05-13_GOV-NAMING-002_M-DEC编号与LVS字段专项规范设计稿_v0.1
 version: v0.1
-status: draft
+status: archived
+archived_at: 2026-06-30
+archived_reason: "历史 M-DEC 编号规范设计稿（2026-05-13），未升 stable，作历史参考保留。"
 quadrant: governance
 project: cross_client
 client: cross_client
