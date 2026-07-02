@@ -1,5 +1,5 @@
 ---
-title: 花厅坊全量数据现场导出接入清单 CODEX-Data-Merge-Full-001
+title: 样板客户全量数据现场导出接入清单 CODEX-Data-Merge-Full-001
 version: v0.1
 status: draft
 owner: 六哥

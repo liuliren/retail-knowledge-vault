@@ -1,5 +1,5 @@
 ---
-title: 花厅坊90天 full dry-run 审阅 CODEX-Full-DryRun-Execute-001
+title: 样板客户90天 full dry-run 审阅 CODEX-Full-DryRun-Execute-001
 version: v0.1
 status: draft
 owner: 六哥
