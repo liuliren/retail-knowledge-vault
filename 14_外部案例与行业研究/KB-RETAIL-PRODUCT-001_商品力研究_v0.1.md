@@ -28,6 +28,8 @@ summary: 商品力=物理品质×消费认知×运营场景三维共振；溢价
 links_to:
   - KB-FRESH-001
   - KB-DX-FRAMEWORK-001
+aliases:
+  - "KB-RETAIL-PRODUCT-001_商品力研究"
 ---
 
 # 商品力研究

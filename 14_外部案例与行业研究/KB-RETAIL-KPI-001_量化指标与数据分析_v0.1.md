@@ -14,6 +14,8 @@ links_to:
   - KB-DX-MATH-001
   - KB-DX-FRAMEWORK-001
   - KB-METHOD-CHAIN-001
+aliases:
+  - "KB-RETAIL-KPI-001_零售经营KPI基准对照表_v0.1"
 ---
 
 # 量化指标与数据分析

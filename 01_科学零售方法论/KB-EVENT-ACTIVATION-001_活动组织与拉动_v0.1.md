@@ -37,6 +37,8 @@ related:
   - "[[KB-DX-TRAFFIC-001_客流人效诊断方法论_v0.1]]"
   - "[[S06_营销活动配套]]"
   - "[[52周MD]]"
+aliases:
+  - "KB-EVENT-ACTIVATION-001"
 ---
 
 # 活动组织与拉动

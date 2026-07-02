@@ -24,6 +24,9 @@ related_kb:
   - KB-SKU-STATE-001
   - KB-DX-FULLSTORE-001
   - KB-ACTION-GUIDE-001
+aliases:
+  - "KB-SEASON-MATRIX-001_节令矩阵_v0.1"
+  - "KB-SEASON-MATRIX-001"
 ---
 
 # KB-SEASON-MATRIX-001 大湾区节令品类影响矩阵

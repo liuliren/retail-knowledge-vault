@@ -12,6 +12,8 @@ related:
   - "[[KB-CAT-ROLE-5WAY-001_五分法品类角色分配方法_v0.1]]"
   - "[[KB-CAT-CDT-001_CDT应用与子格落位方法_v0.1]]"
   - "[[KB-CAT-ZONE-SOP-001_区域调改五步法_v0.1]]"
+aliases:
+  - "KB-DISPLAY-BRAND-001_品牌陈列_v0.1"
 ---
 
 ## 核心论点

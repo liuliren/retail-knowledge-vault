@@ -11,7 +11,7 @@ source_type: reference
 related:
   - "[[治理总控待决任务表_P1-GOV-Control-010_v0.1]]"
   - "[[Codex执行前置状态登记表_v0.1]]"
-  - "[[下一批active签字候选审计表_P0-GOV-Signature-Batch-002_v0.1]]"
+  - "`下一批active签字候选审计表_P0-GOV-Signature-Batch-002_v0.1`(已删·见SignoffLedger)"
 ---
 
 # 治理债务队列 v0.1（P1-GOV-Debt-Queue）

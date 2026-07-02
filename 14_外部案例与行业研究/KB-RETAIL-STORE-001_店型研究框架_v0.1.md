@@ -37,6 +37,8 @@ links_to:
   - KB-METHOD-CHAIN-001
   - KB-DX-FRAMEWORK-001
   - KB-CAT-ROLE-GBA-001
+aliases:
+  - "KB-RETAIL-STORE-001_店型研究框架"
 ---
 
 # 店型研究框架

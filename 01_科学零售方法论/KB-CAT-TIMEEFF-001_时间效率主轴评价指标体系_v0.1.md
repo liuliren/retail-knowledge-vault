@@ -13,6 +13,8 @@ related:
   - "[[KB-CAT-ZONE-SOP-001_区域调改五步法_v0.1]]"
   - "[[KB-DX-FRAMEWORK-001_社区生鲜超市品类诊断框架_v0.1]]"
   - "[[KB-ZONE-SNACK-ROLE-001_休食区区域级角色定位说明书（通用模板）_v0.1]]"
+aliases:
+  - "KB-CAT-TIMEEFF-001_时节效率路由_v0.1"
 ---
 
 ## 核心论点

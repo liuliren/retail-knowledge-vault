@@ -33,7 +33,7 @@ related:
 | 9 | 用户 execute signoff(真实写回) | ❌ 未签 | ❌ | Review-003:1121池5桶建议,老库存处置须六哥+现场定 | 认可5桶→Sample-Pack-003分层抽样→处置定后再议写回 |
 | 10 | **execute(真实写回) 是否允许** | **❌ 关闭** | ❌ | 9 未签 + 方法论(金矿口径)未裁决 | —— |
 
-> ✅ **Full-DryRun-Execute-001 已执行**：管线跑通全店 10,232 SKU(0 invalid/0 观察品/条码脱敏)。修复源毛利列全空→派生毛利额。**⚠ 暴露方法论张力**:毛利额贡献维下 C 行全丙、利润品/长尾待裁决=0,「低销高毛利率金矿」检不出 → **真实写回前须先裁决金矿口径**(是否加毛利率维),见 [[花厅坊90天full_dryrun审阅_CODEX-Full-DryRun-Execute-001_v0.1]]。
+> ✅ **Full-DryRun-Execute-001 已执行**：管线跑通全店 10,232 SKU(0 invalid/0 观察品/条码脱敏)。修复源毛利列全空→派生毛利额。**⚠ 暴露方法论张力**:毛利额贡献维下 C 行全丙、利润品/长尾待裁决=0,「低销高毛利率金矿」检不出 → **真实写回前须先裁决金矿口径**(是否加毛利率维),见 `花厅坊90天full_dryrun审阅_CODEX-Full-DryRun-Execute-001_v0.1`(已删·见SignoffLedger)。
 > ✅ **金矿口径已闭环(方法+代码)**：§3.1.1 C 行毛利率闸签字(P0-ABC-Goldmine-Rule-Confirm-001)→ **代码同步(CODEX-ABC-Goldmine-Rule-Fix-001)**:abc_classifier 加毛利率分层+金矿闸,17 单测过,重跑 10232 SKU **捞出金矿候选 1686(占 C 行 19.9%)**,9 格不变。见 [[花厅坊90天金矿候选dry-run分布_CODEX-ABC-Goldmine-Rule-Fix-001_v0.1]]。**dry-run 已按新口径重跑;review/approval 待办;真实写回仍暂缓。**
 
 ## 2. 结论

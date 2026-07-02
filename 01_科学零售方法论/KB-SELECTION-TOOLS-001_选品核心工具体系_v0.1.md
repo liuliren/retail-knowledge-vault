@@ -17,6 +17,9 @@ related:
   - "[[KB-DX-MATH-001_零售数学诊断工具体系_v0.1]]"
   - "[[KB-SHOPPER-TASK-001_购物任务图谱_v0.1]]"
   - "[[KB-CAT-ROLE-5WAY-001_五分法品类角色分配方法_v0.1]]"
+aliases:
+  - "KB-SELECTION-TOOLS-001_选品核心工具_v0.1"
+  - "KB-SELECTION-TOOLS-001"
 ---
 
 ## 核心论点

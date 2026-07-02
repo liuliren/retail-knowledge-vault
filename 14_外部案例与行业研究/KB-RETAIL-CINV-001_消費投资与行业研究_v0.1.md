@@ -22,6 +22,8 @@ links_to:
   - KB-METHOD-CHAIN-001
   - KB-DX-FRAMEWORK-001
   - KB-FRESH-001
+aliases:
+  - "KB-RETAIL-CINV-001_消費投资与行业研究"
 ---
 
 # 消費投资与行业研究

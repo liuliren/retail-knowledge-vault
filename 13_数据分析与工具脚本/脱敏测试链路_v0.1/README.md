@@ -8,6 +8,8 @@ module: 13_数据分析与工具脚本
 source_type: data_tool
 client_safety: internal_only
 tags: [脱敏, 测试链路, 疯狂测试, 工程化资产]
+aliases:
+  - "脱敏测试链路_v0.1"
 ---
 
 # 脱敏测试链路 v0.1

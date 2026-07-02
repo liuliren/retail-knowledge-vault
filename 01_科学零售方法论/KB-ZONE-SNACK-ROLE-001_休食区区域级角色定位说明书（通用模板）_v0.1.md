@@ -16,6 +16,8 @@ related:
   - "[[KB-CAT-TIMEEFF-001_时间效率主轴评价指标体系_v0.1]]"
   - "[[KB-SHOPPER-TASK-001_购物任务图谱_v0.1]]"
   - "[[KB-GBA-TPOS-001_大湾区TPOS本地化_v0.1]]"
+aliases:
+  - "KB-ZONE-SNACK-ROLE-001"
 ---
 
 ## 文件定位

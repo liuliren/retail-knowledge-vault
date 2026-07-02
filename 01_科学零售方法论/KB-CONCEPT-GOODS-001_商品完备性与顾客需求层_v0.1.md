@@ -14,6 +14,8 @@ related:
   - "[[KB-GBA-TPOS-001_大湾区TPOS本地化_v0.1]]"
   - "[[KB-METHOD-CHAIN-001_晟果科学零售五层经营链_v0.1]]"
   - "[[KB-SHOPPER-TASK-001_购物任务图谱_v0.1]]"
+aliases:
+  - "KB-CONCEPT-GOODS-001"
 ---
 
 ## 核心论点

@@ -207,7 +207,7 @@ save_brands("共享库_v0.2", extractor.brand_extractor.known_brands)
 ### 关联下游
 - 商品主数据骨架库 v0.x（Phase 2 起跨客户共享库）
 - 11_系统产品与PRD（Phase 3 产品化）
-- `.claude/skills/数据清洗/` 镜像（Phase 2 W21，参 [[_镜像图]] §2.2）
+- `.claude/skills/数据清洗/` 镜像（Phase 2 W21，参 `_镜像图` §2.2）
 
 ### 关联案例
 - 花厅坊战役 #1（首套实战 + ground truth）

@@ -39,6 +39,10 @@ related:
   - "[[KB-SKU-ROLE-001_SKU四维角色体系_v0.1]]"
   - "[[全店经营诊断卡_模板定义_v0.1]]"
   - "[[KB-DX-QUESTION-001_诊断题库完整版_v0.1]]"
+aliases:
+  - "7D诊断系统"
+  - "7D诊断"
+  - "KB-DX-FULLSTORE-001"
 ---
 
 # 全店7D诊断框架 2.0 · v0.1（draft·待签字）

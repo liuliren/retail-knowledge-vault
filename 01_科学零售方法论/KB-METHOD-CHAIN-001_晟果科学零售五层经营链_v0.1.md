@@ -15,6 +15,8 @@ related:
   - "[[KB-DX-FRAMEWORK-001_社区生鲜超市品类诊断框架_v0.1]]"
   - "[[KB-METHOD-4TACTICS-001_四大战术动作总框架_v0.1]]"
   - "[[KB-DX-WIDTH-001_品类宽度诊断方法论_v0.1]]"
+aliases:
+  - "KB-METHOD-CHAIN-001"
 ---
 
 ## 核心论点（总公式）
