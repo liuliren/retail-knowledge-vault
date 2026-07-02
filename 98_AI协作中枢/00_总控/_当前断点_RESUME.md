@@ -44,6 +44,7 @@ completed_2026-07-02_晚:
   - ✅ P0-1 V6.0主数据落盘(复制入05·V4.0标deprecated·README加SSOT声明)
   - ✅ P0-2 tools/retail_space_engine/data客户数据就地隔离(.no-ingest+README+只读)
   - ✅ P0-3 git全量封板(92a429f S4清仓+65bdca6会话编辑+58f1637 P0+c331d77裁决①A归档120删+裁决②全收206件正式知识层入git·工作区归零)
+  - ✅ 审计报告签字归档→05_审计与档案(status:active·signoff:六哥·附5commit+裁决①路径说明)·台账登账·输出区留来源指针
 
 ## 🅿️ Parking
 ~~硬锁至8/31: N3.0~~ → ✅ 2026-07-02 六哥口头指令解锁(架构调整恢复可议,但仍建议伴随交付节奏)
