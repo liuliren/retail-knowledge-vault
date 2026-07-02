@@ -43,6 +43,10 @@ def render(spec, out):
     ax = fig.add_axes([0, 0, 1, 1]); ax.axis("off"); ax.set_xlim(0, 10.8); ax.set_ylim(0, h)
     y = h - 0.55
     ax.text(0.55, y, spec.get("title", ""), fontsize=21, fontweight="bold", color=INK, va="center")
+    if spec.get("badge"):  # 角标: 内部/DRAFT/绝密等,防误传载体标识
+        bcol = WARN if spec["badge"] in ("DRAFT", "草案") else MUTE
+        ax.text(10.25, y, spec["badge"], fontsize=11, color="white", va="center", ha="right",
+                bbox=dict(boxstyle="round,pad=0.35", facecolor=bcol, edgecolor="none"))
     if spec.get("subtitle"):
         y -= 0.52
         ax.text(0.55, y, spec["subtitle"], fontsize=11.5, color=MUTE, va="center")
