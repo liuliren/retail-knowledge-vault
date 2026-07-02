@@ -3,7 +3,7 @@
 > 本库是咨询作业系统后台，不是笔记仓库。任何 Agent 读写前先读本文。
 > 本文为 retail vault **项目宪法**；仅在本 vault 内生效。与全局宪法 `/Users/CLAUDE.md` 冲突时，按 [[Claude双宪法边界声明_P1-CLAUDE-Constitution-Boundary-001_v0.1]] 裁决（全局红线 > 项目红线 > 项目细则 > 单次 Prompt）。
 > 本文与六哥共同演化；每次修改记入 `98_AI协作中枢/00_总控/当前任务队列.md` 变更记录。
-> 版本：v2.4（2026-06-26 §7 纳入自迭代回路三条:G12_SkillForge 动作孵化治理 / Skill 闭环铁律 / 模型分层调度。细则见 [[Agent-Native自迭代回路规范_P1-GOV-SelfLoop-001_v0.1]]。六哥 4 决策点签字）｜ v2.3（2026-06-25 §4 必读加「_当前断点_RESUME」置首 + 跨会话记忆两库收口至 Claude记忆区。六哥指令授权）｜ v2.2（2026-06-22 批准世界级交付标准与卡帕西闭环 wiki 分层治理框架。§10 active；§11 target_framework / partially_implemented / planned / optional 分层落地。六哥签字·Plan A）｜ v2.1（2026-06-22 §1 护城河升级为模型/Harness/驭马人三层动态视角，六哥签字）｜ v2.0（2026-06-22 合并新宪法 8 原则；从 v1.x 操作规则升级而来）。
+> 版本：v2.5（2026-07-02 §7 G03_Lint + §11.2 纳入⑦输出区滞留查；关联 [[GOV-LINT-OutputArea-002_输出区滞留扫描规则_draft_v0.1]]（draft·待标准审议）；六哥 continue 指令授权）｜ v2.4（2026-06-26 §7 纳入自迭代回路三条:G12_SkillForge 动作孵化治理 / Skill 闭环铁律 / 模型分层调度。细则见 [[Agent-Native自迭代回路规范_P1-GOV-SelfLoop-001_v0.1]]。六哥 4 决策点签字）｜ v2.3（2026-06-25 §4 必读加「_当前断点_RESUME」置首 + 跨会话记忆两库收口至 Claude记忆区。六哥指令授权）｜ v2.2（2026-06-22 批准世界级交付标准与卡帕西闭环 wiki 分层治理框架。§10 active；§11 target_framework / partially_implemented / planned / optional 分层落地。六哥签字·Plan A）｜ v2.1（2026-06-22 §1 护城河升级为模型/Harness/驭马人三层动态视角，六哥签字）｜ v2.0（2026-06-22 合并新宪法 8 原则；从 v1.x 操作规则升级而来）。
 
 ---
 
@@ -98,7 +98,7 @@
 
 - **G01_Ingest** — 新原始源进库 → 一句话摘要 + 标签 → 冻结归档 → 编译 / 扩方法论页 → 补 wikilink → 更新索引。**编译出的每个方法论/概念页 frontmatter 必填 `summary:`(≤40 字一句话),供分层检索的"廉价首遍"使用。**
 - **G02_Query**（**编译层优先铁律**)— 检索默认**只读编译层**:先读 MOC/索引 + 各页 `summary:`,不够再翻概念页正文;**`99_原始素材`/xls/csv/大文档(raw)非经六哥显式授权,不读入上下文**。这是 token 复利(省 70–90%)的唯一来源,与 §6 D 层 `raw_sensitive` 只读冻结互为表里。*(来源:Karpathy LLM Wiki + Asteri_eth raw/Wiki/agent_rules · SRC-20260624)*
-- **G03_Lint** — 健康检查（孤儿页、断链、矛盾、陈旧、空缺、权限越界、**缺 summary**）。
+- **G03_Lint** — 健康检查（孤儿页、断链、矛盾、陈旧、空缺、权限越界、**缺 summary**、**⑦输出区滞留**）。⑦ 为 draft 规则，细则见 §11.2 及 [[GOV-LINT-OutputArea-002_输出区滞留扫描规则_draft_v0.1]]（待标准审议）。
 - **M-DEC 回路** — 现象 → 决策 → 推理 → 预期；结果已知后回填 actual / lessons，蒸馏进方法论模块（candidate → active 需签字）。
 - **G04–G11** — 战役章程 / 阶段门 / AAR / 月度审计 / 数据治理 / 工程纪律 / Memory 治理 / 商品库治理。
 - **G12_SkillForge（动作孵化治理）** — 重复动作进 `_动作台账.csv`；同类 ≥3 次且过「步骤稳定 / 频率周期 / 输入同构」三判据 → 生成规则草稿 + 提示六哥是否孵化 Skill；≥10 次强制提示。**不自动建 skill（建=改系统=须签字）。** 详见 [[Agent-Native自迭代回路规范_P1-GOV-SelfLoop-001_v0.1]]。
@@ -177,7 +177,7 @@
 ### 11.2 G03_Lint v2（自动体检·闭环红绿灯）· `in_progress`
 > 🔄 in_progress：Codex 任务卡 **CODEX-2026-06-22-02 已入队待执行**；脚本完成前不得标 implemented。
 设想：一条命令扫全库，产出 `00_入口与总索引/05_审计与档案/lint_仪表盘_最新.md` + 阻断清单，月度跑：
-**①断链查 ②孤儿查（正式目录无入链）③状态查（active 无 signoff）④Schema 查（缺必填字段）⑤敏感查（正文 EAN-13 条码 / 进价裸值 = 红线）⑥版本查（文件名 ≠ frontmatter 版本）。** 纯文本扫描，不碰客户数据。
+**①断链查 ②孤儿查（正式目录无入链）③状态查（active 无 signoff）④Schema 查（缺必填字段）⑤敏感查（正文 EAN-13 条码 / 进价裸值 = 红线）⑥版本查（文件名 ≠ frontmatter 版本）⑦输出区滞留查（`Claude输出区/` 根目录文件，距文件名日期前缀超 5 天且非 `_待签字` 后缀 → 列滞留清单；不自动执行删除或移动）。** 纯文本扫描，不碰客户数据。⑦ 为 **draft** 规则（待标准审议升 stable），见 [[GOV-LINT-OutputArea-002_输出区滞留扫描规则_draft_v0.1]]。
 
 ### 11.3 状态机进入条件（写死）· `partially_implemented`
 > 规则已立；自动强校验待 G03_Lint（in_progress）。
