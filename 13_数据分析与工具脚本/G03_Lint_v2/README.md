@@ -48,12 +48,25 @@ python3 13_数据分析与工具脚本/G03_Lint_v2/lint_v2.py
 
 ```bash
 python3 13_数据分析与工具脚本/G03_Lint_v2/lint_v2.py --output /tmp/lint.md
+python3 13_数据分析与工具脚本/G03_Lint_v2/lint_v2.py \
+  --output /tmp/lint.md \
+  --json-output /tmp/lint.json
 ```
+
+JSON 输出使用 `schema_version: "1"`，只包含指标、阻断类型和文件路径，不包含正文或敏感命中值。
 
 ## 安全边界
 
 - 只扫描 `.md` 文件。
 - 默认排除 `99_归档`、`Clippings`、`.git`。
+- 排除 `13_数据分析与工具脚本/知识库自动化_v1/runtime`，防止机器产物反向污染体检指标。
 - 敏感命中只输出文件、类型、计数和掩码，不输出条码真值。
 - 输出仪表盘可覆盖，其他文件不改。
+- 核心知识检查 `summary`；status 规范枚举为 `draft/candidate/active/deprecated/archived`，仅报告、不自动改写。
 
+## 测试
+
+```bash
+cd /Users/davidliu/KnowledgeBase/retail-knowledge-vault/13_数据分析与工具脚本/G03_Lint_v2
+python3 -m unittest discover -s tests -v
+```

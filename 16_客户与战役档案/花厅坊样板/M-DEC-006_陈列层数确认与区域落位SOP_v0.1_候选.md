@@ -31,6 +31,9 @@ related:
   - "[[16_客户与战役档案/花厅坊样板/M-DEC-005_错品类货架重建SOP_v0.1_候选]]"
   - "[[09_中层方法论沉淀]]"
 trigger_case: 2026-05-07 G4-A 首战 Claude "假设全 6 组都是 7 层" 反幻觉违规 → 用户强烈纠正 → memory feedback_display_layout_confirmation 入库
+domain: "D3 位置与陈列"
+category: "C3.1 空间落位与错配诊断"
+asset_type: "execution_sop"
 ---
 
 # M-DEC-006 陈列层数确认与区域落位 SOP v0.1（候选）

@@ -33,6 +33,9 @@ related:
   - "[[M-DEC-009_休食老品汰换时间维度防误判_v0.1_候选]]"
   - "[[运营力总纲]]"
 tags: [M-DEC, 花厅坊, 陈列, 黄金位, ABC错配, 零售老刘]
+domain: "D3 位置与陈列"
+category: "C3.1 空间落位与错配诊断"
+asset_type: "diagnostic_framework"
 ---
 
 # M-DEC-011 黄金位×ABC陈列错配诊断(候选)

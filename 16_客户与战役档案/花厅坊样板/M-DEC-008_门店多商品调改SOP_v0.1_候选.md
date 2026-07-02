@@ -27,6 +27,9 @@ related:
   - "[[52周MD]]"
   - "[[商品库_v0.1/01_字段字典]]"
   - "[[花厅坊_归档资料引用索引_v0.1]]"
+domain: "D5 诊断与作战执行"
+category: "C5.2 调改落地SOP"
+asset_type: "execution_sop"
 ---
 
 # M-DEC-008｜门店多商品调改SOP v0.1 候选

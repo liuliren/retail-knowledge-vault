@@ -6,8 +6,13 @@ RetailOS L3/L4 品类映射自动化 — 跨店标准化路由层(Normalizer 雏
 定位(N2.6 单本体化 + store-agnostic)
 ------------------------------------
 把任意门店 POS 的 raw_category_name + 品名 → 归一到 **唯一标准 L3 命名**:
-《晟果新零售品类系统 V4.0 大湾区版》(273 个标准 L3)。
+《晟果新零售品类系统 V6.0 大湾区版》(68 L3 / 385 L4)。
 这是门店制"跨店对标"的命脉:不归一到单一本体,多店报表口径会分裂(dual ontology drift)。
+
+T码对照(KB-CAT-ARCH-001·2026-06-27·六哥签字)
+T01=薯片膨化 / T02=糖果巧克力 / T03=饼干 / T04=蛋糕糕点
+T05=果干蜜饯 / T06=坚果炒货 / T07=肉干肉脯 / T08=鱼干海味
+本文件 L3 输出粒度更细(巧克力/硬糖软糖独立),若需 T码聚合见 KB-CAT-ARCH-001 §3。
 
 三层路由(Exact → Probabilistic → Fallback Guard)
 - store_overrides   : 每店私有覆盖(同名异类时用) — 最高优先
@@ -17,9 +22,9 @@ RetailOS L3/L4 品类映射自动化 — 跨店标准化路由层(Normalizer 雏
 - RAW_CAT_FALLBACK  : 泛类目兜底(品名都未命中时粗归)
 拿不准的 → 留空("待六哥确认类目"),不硬猜(防错误标注污染基础表)。
 
-⚠ 单本体铁律: 本文件所有 L3 输出值必须 ∈ V4.0 标准 L3 名集合。
+⚠ 单本体铁律: 本文件所有 L3 输出值必须 ∈ V6.0 标准 L3 名集合。
    不再产出 legacy snack-schema 名(膨化薯片/糖果果冻/饼干糕点/肉脯卤味/乳品饮料/酒水…)。
-   新加映射时,L3 名先去《完整品类表 L4拆分版》核对。
+   新加映射时,L3 名先去《品类系统V6.0·385条L4主数据》核对。
 
 L4 = 决策层构造(决策组),数据层只标"复杂类需 L4",不臆造 L4 内容。
 输入: adapter 标准 schema csv。输出: 补 l3_category(+L4 needed 标记)+ 覆盖率 + 未映射清单。
@@ -45,10 +50,11 @@ L3_KEYWORDS = [
   ("坚果类",   ["腰果","核桃","开心果","巴旦木","夏威夷","碧根果","每日坚果","坚果"]),
   ("混合炒货", ["炒货","板栗","栗"]),
   # 休闲零食 · 肉/海味/豆干素食
-  ("肉类零食", ["肉脯","猪肉脯","凤爪","鸡爪","鸡翅","鸡米","火腿肠","肉干","风干肉","手撕","牛板筋",
-               "鸭脖","鸭掌","卤蛋","郡肝","酱卤","卤味","无穷","鸭腿"]),
+  ("肉类零食", ["肉脯","猪肉脯","凤爪","鸡爪","鸡翅","鸡米","火腿肠","热狗肠","香肠","肘花肠",
+               "肉干","风干肉","手撕","牛板筋",
+               "鸭脖","鸭掌","卤蛋","郡肝","酱卤","卤味","无穷","鸭腿","鸡胸肉","鸭翅","鸭翅根"]),
   ("海味零食", ["海苔","紫菜","海带","鱿鱼","鱼仔","小鱼","海味"]),
-  ("豆干素食零食", ["素牛","豆干","魔芋","辣条","素毛肚","笋","蕨根"]),
+  ("豆干素食零食", ["素牛","豆干","魔芋","辣条","素毛肚","蕨根"]),
   # 蜜饯果干/凉果
   ("果干类",   ["葡萄干","芒果干","菠萝干","柠檬干","果干"]),
   ("蜜饯果脯类",["蜜饯","果脯"]),
@@ -58,17 +64,21 @@ L3_KEYWORDS = [
   ("奶粉冲调", ["奶粉"]),
   ("豆奶冲饮", ["豆浆粉","豆奶粉"]),
   ("咖啡冲饮", ["咖啡","拿铁"]),
-  ("传统冲饮", ["芝麻糊","藕粉","核桃粉","冲调"]),
+  ("袋泡茶",   ["袋泡茶","茶包","茶叶袋","伯爵茶","英式茶","立顿茶包","蜂蜜柚子茶","茉莉花茶",
+               "铁观音","普洱茶","龙井","乌龙茶","红茶","绿茶包"]),
+  ("传统冲饮", ["芝麻糊","藕粉","核桃粉","冲调",
+               "蜂蜜","菊花","金银花","蒲公英","黑枸杞","枸杞","玫瑰花茶","姜红糖","红糖姜",
+               "雪梨干","霸王花干","天麻片"]),
   # 方便速食
-  ("方便面",   ["方便面","桶面","泡面","干脆面","汤达人","拌面"]),
+  ("方便面",   ["方便面","桶面","泡面","干脆面","汤达人","拌面","车仔面"]),
   ("粉丝米线", ["螺蛳粉","米线","粉丝","酸辣粉","臭宝"]),
   ("自热速食", ["自热"]),
-  ("速食汤粥", ["八宝粥","速食粥"]),
+  ("速食汤粥", ["八宝粥","速食粥","芋圆","小米粥"]),
   # 饮料
   ("碳酸饮料", ["可乐","雪碧","芬达","汽水","碳酸"]),
   ("饮用水",   ["矿泉水","纯净水","饮用水","气泡水"]),
-  ("茶饮料",   ["冰红茶","绿茶","茶饮","奶茶"]),
-  ("果汁果味饮料",["果汁","果味饮料"]),
+  ("茶饮料",   ["冰红茶","绿茶","茶饮","奶茶","冻冻茶"]),
+  ("果汁果味饮料",["果汁","果味饮料","菠萝味"]),
   ("功能饮料", ["能量饮料","红牛","东鹏特饮","脉动"]),
   ("植物蛋白/谷物饮品",["豆奶","椰汁","核桃露","植物蛋白"]),
   # 乳品(粗)
@@ -77,10 +87,29 @@ L3_KEYWORDS = [
   # 酒类
   ("白酒",     ["白酒"]),
   ("啤酒",     ["啤酒","精酿"]),
-  ("葡萄酒",   ["红酒","葡萄酒","干红","干白"]),
+  ("葡萄酒",   ["红酒","葡萄酒","干红","干白","赤霞珠"]),
   ("黄酒米酒", ["黄酒","米酒","料酒","清酒","酒酿"]),
   ("低度酒/预调酒",["预调","果酒","洋酒","威士忌","利口酒"]),
+  # 调味 · 粮油(品名层补充·源类目不清时兜底)
+  ("佐餐调味", ["汤料","煲汤料","清补凉","霸王花","海底椰","茅根竹蔗","竹笋","笋干","笋片"]),
+  ("复合调味", ["面包糠","吉利丁","沙姜","白芷","肉蔻","火锅底料"]),
+  # 日化 · 清洁环境
+  ("驱虫除味", ["清新剂","固体清新","净味清新"]),
 ]
+
+# ── 品名强制覆盖(六哥 2026-06-29 签字·L4校准16项纠错·最高优先于源类目)─────────────
+# 用途: POS 源类目明确错填(如葡萄酒标白酒/卤味标啤酒)时,品名含关键词→强制纠正 L3。
+# 维护: 先问"是否确实是 POS 错填",确认后加; 勿过度泛化成通用词。
+NAME_OVERRIDES = [
+    ("葡萄酒",          ["赤霞珠", "金蝴蝶20年"]),       # 进口葡萄酒被错标白酒
+    ("肉类零食",        ["鸡胸肉", "鸭翅根", "鸭翅"]),   # 卤味熟食被错标果干/啤酒
+    ("茶饮料",          ["冻冻茶", "红茶味冻"]),           # 益正元茶饮被错标低度酒
+    ("果汁果味饮料",    ["菠萝味饮料"]),                   # 广啤菠萝饮料被错标啤酒
+    # 2026-06-30 Step3反哺(六哥签字) · 品牌强制覆盖
+    ("护发",            ["好迪清剂", "好迪弹力素"]),       # 好迪品牌=护发·POS源类目百货
+    ("餐具清洁",        ["威猛油污", "威猛重油污"]),       # 威猛(Mr.Muscle)品牌=餐具清洁
+]
+
 # 复杂类(需 L4 决策组分层) — 品牌密度/价格带分裂型(V4 命名)
 COMPLEX_L3 = {"巧克力","白酒","啤酒","葡萄酒","低度酒/预调酒","黄酒米酒",
               "麦片谷物","奶粉冲调","咖啡冲饮","传统冲饮","豆奶冲饮",
@@ -140,7 +169,9 @@ SYN = {"巧克力":"巧克力","软糖":"硬糖软糖","糖果":"硬糖软糖","
        "果干":"果干类","蜜饯":"蜜饯果脯类","凉果":"凉果类",
        "麦片":"麦片谷物","奶粉":"奶粉冲调",
        "方便面":"方便面","米线":"粉丝米线",
-       "白酒":"白酒","啤酒":"啤酒","葡萄酒":"葡萄酒","红酒":"葡萄酒","黄酒":"黄酒米酒"}
+       "白酒":"白酒","啤酒":"啤酒","葡萄酒":"葡萄酒","红酒":"葡萄酒","黄酒":"黄酒米酒",
+       # POS错标纠正(2026-06-29): 安睡裤=七度空间等卫生巾品牌夜用款被误标
+       "安睡裤":"卫生巾"}
 
 # ── 二级规则: 泛源类目 + 品名关键词 → V4 L3(scoped·只对登记的 raw_cat 生效, 零污染其他类)──
 # 用于"一个源类目对多个 L3"的爆炸类(六哥给切分维度后逐个开)。
@@ -156,8 +187,17 @@ SECONDARY_RULES = {
         ("基础调味", ["盐","盐焗粉","胡椒","花椒","五香粉","淀粉","芝麻","鸡精","鸡粉",
                      "味精","蒜头油","花椒油","香油","八角","桂皮","孜然"]),
     ],
-    # 文具 / 玩具: 待六哥给切分维度后开(占位, 暂空 → 全部落待确认)。
-    # "文具": [...],  "玩具": [...],
+    # 文具三分: 按 V6.0 L3 锚(书写/本册/修正工具); 无关键词命中→落未映射→needs_review。
+    # 2026-06-29 激活 (六哥已裁定 L4=细分类; 文具三分维度清晰)
+    "文具": [
+        ("修正工具", ["修正液","修正带","橡皮","涂改","改正"]),
+        ("本册",    ["软抄","抄本","笔记本","手账","田字本","语文本","数学本","拼音","纠错本","图画纸",
+                    "折纸","便利贴","收据","送货单","记事","洞洞本"]),
+        ("笔类",    ["中性笔","圆珠笔","铅笔","油笔","中油笔","马克笔","荧光笔","记号笔","油画棒","蜡笔",
+                    "笔芯","活动铅笔","双头笔","可擦笔","圆珠","签字笔","按动","彩色铅笔","绘画铅笔"]),
+    ],
+    # 玩具: V4 各 leaf 无干净 V6 锚 → 继续留待确认 (玩具潮玩 L3 切法不同)
+    # "玩具": [...],
 }
 
 # ── 主数据最细层(leaf): 文体用品细分(六哥 2026-06-26 定稿)──────────────────────
@@ -233,58 +273,148 @@ METHOD_CONFIDENCE = {
 
 
 def infer_l3(name, src_cat, store_id=None):
-    """归一到 V4.0 标准 L3。返回 (l3, method)。
+    """v2 全规则收集版 — 返回 (l3, method, confidence, conflict_flag, conflict_detail)。
 
-    store_id: 传入则先查该店私有覆盖(store-agnostic); 不传 = 纯通用基座。
+    不再首命中即返回：先收集类目路由与品名路由的全部候选，再仲裁并标记冲突。
+    conflict_flag=True 或 confidence<0.70 的 SKU 进人审尾巴。
+
+    冲突类型：
+      A类 — 类目路由(RAW_CAT_TO_L3/SYN) vs 品名关键词(L3_KEYWORDS) 指向不同L3
+      B类 — 同一品名命中多个L3_KEYWORDS规则(品名多义)
     """
-    # -1. 每店私有覆盖(同名异类) — 最高优先
+    nm = str(name)
+
+    # -2. 品名强制覆盖(六哥签字纠错·最高优先·无冲突概念·解决POS源类目错填)
+    for l3_target, kws in NAME_OVERRIDES:
+        if any(kw in nm for kw in kws):
+            return l3_target, "品名覆盖(源类目纠错)", 0.97, False, ""
+
+    # -1. 每店私有覆盖(同名异类)
     if store_id and src_cat:
         ov = STORE_OVERRIDES.get(store_id)
         if ov and src_cat in ov:
-            return ov[src_cat], "店覆盖"
-    # 0. 通用精确映射(报表类别名 → V4 L3)
+            return ov[src_cat], "店覆盖", 0.97, False, ""
+
+    # ── 路由A：类目驱动（收集一个结果，优先级：精确 > 二级 > SYN）──
+    cat_l3, cat_method = "", ""
     if src_cat and src_cat in RAW_CAT_TO_L3:
-        return RAW_CAT_TO_L3[src_cat], "源类目精确(V4)"
-    nm = str(name)
-    # 0.5 二级规则(scoped: 泛源类目 + 品名 → V4 L3) — 命中即归, 未命中落回下方通用链(不硬猜)
-    if src_cat and src_cat in SECONDARY_RULES:
+        cat_l3 = RAW_CAT_TO_L3[src_cat]
+        cat_method = "源类目精确(V4)"
+    if not cat_l3 and src_cat and src_cat in SECONDARY_RULES:
         for l3, kws in SECONDARY_RULES[src_cat]:
             if any(kw in nm for kw in kws):
-                return l3, "二级(源类目+品名)"
-    # 1. 品名关键词推断(先于 SYN: 让"果冻糖果/果干蜜饯"这类混合源类目按品名细分到正确 L3,
-    #    不被 SYN 的粗子串 lump 成单一 L3)
-    for l3, kws in L3_KEYWORDS:
-        if any(kw in nm for kw in kws):
-            return l3, "品名推断"
-    # 2. 源类目同义归一(子串)— 品名无关键词时, 用源类目粗归
-    if src_cat:
+                cat_l3, cat_method = l3, "二级(源类目+品名)"
+                break
+    if not cat_l3 and src_cat:
         for k, v in SYN.items():
             if k in src_cat:
-                return v, "源类目"
-    # 3. 通用大类兜底(品名/源类目都未命中时)
-    if src_cat and src_cat in RAW_CAT_FALLBACK:
-        return RAW_CAT_FALLBACK[src_cat], "源类目兜底"
-    return "", "未映射"
+                cat_l3, cat_method = v, "源类目"
+                break
+
+    # ── 路由B：品名关键词（全量收集，不短路）──
+    kw_hits = []
+    for l3, kws in L3_KEYWORDS:
+        if any(kw in nm for kw in kws):
+            kw_hits.append(l3)
+
+    # ── 决策与冲突仲裁 ──
+    if not cat_l3 and not kw_hits:
+        if src_cat and src_cat in RAW_CAT_FALLBACK:
+            return RAW_CAT_FALLBACK[src_cat], "源类目兜底", 0.50, False, ""
+        return "", "未映射", 0.0, False, ""
+
+    if cat_l3 and not kw_hits:
+        return cat_l3, cat_method, METHOD_CONFIDENCE.get(cat_method, 0.78), False, ""
+
+    if not cat_l3 and kw_hits:
+        if len(kw_hits) == 1:
+            return kw_hits[0], "品名推断", 0.72, False, ""
+        # B类冲突：同一品名命中多个关键词规则
+        detail = f"B类:品名多义→({'/'.join(kw_hits[:3])})"
+        return kw_hits[0], "品名推断", 0.62, True, detail
+
+    # 两路均命中 → 检查是否一致
+    if cat_l3 == kw_hits[0]:
+        # 两路一致：置信度取两者较高值（双重印证）
+        conf = max(METHOD_CONFIDENCE.get(cat_method, 0.78), 0.90)
+        return cat_l3, cat_method, conf, False, ""
+    else:
+        # A类冲突：类目路由 vs 品名关键词不一致
+        # 精确/二级类目优先于品名推断；SYN同义（粗归）则让位于品名推断
+        if cat_method in ("源类目精确(V4)", "二级(源类目+品名)"):
+            winner, winner_method = cat_l3, cat_method
+        else:
+            winner, winner_method = kw_hits[0], "品名推断"
+        detail = f"A类:类目→{cat_l3} vs 品名→{'/'.join(kw_hits[:2])}"
+        return winner, winner_method, 0.60, True, detail
 
 
 def main():
-    src, out = sys.argv[1], sys.argv[2]
+    if len(sys.argv) < 3:
+        print("用法: python category_mapper.py <输入CSV> <输出CSV> [尾巴CSV]")
+        sys.exit(1)
+    src = sys.argv[1]
+    out = sys.argv[2]
+    tail_out = sys.argv[3] if len(sys.argv) > 3 else out.replace(".csv", "_tail.csv")
+
     rows = list(csv.DictReader(open(src, encoding="utf-8-sig")))
-    src_method = defaultdict(int); l3_dist = defaultdict(int); unmapped = []
+    if not rows:
+        print("[警告] 输入文件无数据行"); return
+
+    src_method = defaultdict(int)
+    l3_dist = defaultdict(int)
+    unmapped_names = []
+    tail_rows = []
+
     for r in rows:
-        l3, method = infer_l3(r.get("product_name", ""), r.get("l3_category", ""))
-        r["l3_category"] = l3
-        r["l4_category"] = "需L4决策组" if l3 in COMPLEX_L3 else ""
-        src_method[method] += 1; l3_dist[l3 or "(未映射)"] += 1
-        if not l3: unmapped.append(r.get("product_name", "")[:18])
+        name = r.get("raw_product_name", "") or r.get("product_name", "")
+        raw_cat = r.get("raw_category_name", "") or r.get("inv_category", "") or r.get("l3_category", "")
+        store_id = r.get("store_id", "default")
+        l3, method, conf, conflict, detail = infer_l3(name, raw_cat, store_id)
+        r["l3_v3"] = l3
+        r["method_v3"] = method
+        r["confidence_v3"] = f"{conf:.2f}"
+        r["conflict_v3"] = "TRUE" if conflict else ""
+        r["conflict_detail_v3"] = detail
+        needs_review = conflict or not l3 or conf < 0.70
+        r["needs_review_v3"] = "TRUE" if needs_review else ""
+
+        src_method[method] += 1
+        l3_dist[l3 or "(未映射)"] += 1
+        if not l3:
+            unmapped_names.append(name[:20])
+        if needs_review:
+            tail_rows.append(r)
+
+    # 主输出：补充新列
+    base_fields = list(rows[0].keys())
+    new_cols = ["l3_v3", "method_v3", "confidence_v3", "conflict_v3", "conflict_detail_v3", "needs_review_v3"]
+    all_fields = base_fields + [c for c in new_cols if c not in base_fields]
     with open(out, "w", newline="", encoding="utf-8-sig") as f:
-        w = csv.DictWriter(f, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
-    n = len(rows); mapped = n - src_method["未映射"]
-    print(f"[L3映射] {os.path.basename(src)}  SKU={n}")
-    print(f"  覆盖率: {mapped}/{n} = {mapped/n*100:.0f}%  (来源: {dict(src_method)})")
-    print(f"  L3分布: {dict(sorted(l3_dist.items(), key=lambda x:-x[1]))}")
-    print(f"  复杂类(需L4): {[l for l in l3_dist if l in COMPLEX_L3]}")
-    print(f"  未映射 {len(unmapped)} 款样本: {unmapped[:8]}")
+        w = csv.DictWriter(f, fieldnames=all_fields, extrasaction="ignore")
+        w.writeheader(); w.writerows(rows)
+
+    # 人审尾巴 CSV（冲突 + 未映射 + 低置信<0.70）
+    if tail_rows:
+        for r in tail_rows:
+            r.setdefault("human_l3", "")  # 空列供人工填写
+        tail_fields = all_fields + (["human_l3"] if "human_l3" not in all_fields else [])
+        with open(tail_out, "w", newline="", encoding="utf-8-sig") as f:
+            w = csv.DictWriter(f, fieldnames=tail_fields, extrasaction="ignore")
+            w.writeheader(); w.writerows(tail_rows)
+
+    # 统计报告
+    n = len(rows)
+    mapped = n - src_method.get("未映射", 0)
+    n_conflict = sum(1 for r in rows if r.get("conflict_flag") == "TRUE")
+    print(f"\n[L3映射 v2] {os.path.basename(src)}  SKU={n}")
+    print(f"  覆盖率    : {mapped}/{n} = {mapped/n*100:.0f}%  (未映射: {src_method.get('未映射',0)}条)")
+    print(f"  冲突SKU   : {n_conflict}条  (A类:类目vs品名 / B类:品名多义)")
+    print(f"  待人审尾巴 : {len(tail_rows)}条 → {tail_out}")
+    print(f"  方法分布  : {dict(src_method)}")
+    print(f"  L3分布    : {dict(sorted(l3_dist.items(), key=lambda x:-x[1]))}")
+    print(f"  复杂类(需L4): {sorted(l for l in l3_dist if l in COMPLEX_L3)}")
+    print(f"  未映射样本  : {unmapped_names[:8]}")
 
 
 if __name__ == "__main__":

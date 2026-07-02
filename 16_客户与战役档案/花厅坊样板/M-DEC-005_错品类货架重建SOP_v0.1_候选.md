@@ -24,6 +24,9 @@ related:
   - "[[标准品类表]]"
   - "[[M-DEC-004_夜班连续战节奏SOP]]"
 trigger_case: G4-A 06 组品类断层(2026-05-06 二访发现)
+domain: "D3 位置与陈列"
+category: "C3.2 陈列重建与执行SOP"
+asset_type: "execution_sop"
 ---
 
 # M-DEC-005 错品类货架重建 SOP v0.1(候选)

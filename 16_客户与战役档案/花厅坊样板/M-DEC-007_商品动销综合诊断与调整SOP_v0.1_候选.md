@@ -38,6 +38,9 @@ related:
   - "[[16_客户与战役档案/花厅坊样板/M-DEC-005_错品类货架重建SOP_v0.1_候选]]"
   - "[[16_客户与战役档案/花厅坊样板/M-DEC-006_陈列层数确认与区域落位SOP_v0.1_候选]]"
 trigger_case: 2026-05-07 用户标记 vault 端到端商品动销 SOP Gap → CLAUDE.md §13.5 反幻觉红线只有禁令、无做法 → 立项填补
+domain: "D5 诊断与作战执行"
+category: "C5.1 跨域综合诊断"
+asset_type: "diagnostic_framework"
 ---
 
 # M-DEC-007 商品动销综合诊断与调整 SOP v0.1（候选）

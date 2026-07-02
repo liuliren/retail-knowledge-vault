@@ -12,6 +12,7 @@ updated: 2026-06-30
 | `/deep-read` | deep-read、深度精读、续读、接着读、精读下一批、读零售老刘 |
 | `/promote` | promote、蒸馏、提炼决策、回填lessons |
 | `/draft` | draft、起草、帮我写、写篇文章、出稿、公众号稿、视频号、小红书 |
+| `/publish` | publish、发文、配图上传、准备发布、走发布流程 |
 | `/diagnose` | diagnose、诊断、测X类、出诊断卡、category diagnosis |
 | `/review` | review、周复盘、月复盘、总结这周、帮我复盘 |
 | `/compact` | compact、压缩上下文、该compact了、context太长了 |

@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import json
 import os
 import re
 from collections import Counter, defaultdict
@@ -17,6 +18,7 @@ from typing import Iterable
 
 
 DEFAULT_EXCLUDES = {"99_归档", "Clippings", ".git"}
+AUTOMATION_RUNTIME = Path("13_数据分析与工具脚本/知识库自动化_v1/runtime")
 # 红线/越权检测豁免冻结源料与历史日志（只检测正式件，不误伤不可变源/留痕）
 SIGNOFF_AUDIT_EXCLUDES = ("99_原始素材", "Claude执行日志", "Codex执行日志")
 FORMAL_ROOTS = ("01_", "04_", "09_", "10_", "16_")
@@ -43,6 +45,13 @@ SUPERSESSION_TARGET_KEYS = ("superseded_by", "replaced_by", "superseded_reason",
 FAILED_STATES = ("failed", "侥幸", "果差但决策稳", "blocked")
 FAILED_REASON_KEYS = ("failure_reason", "blocked_reason", "pending_reason", "superseded_reason", "lessons")
 FAILED_REASON_BODY = ("失败原因", "阻塞原因", "回填点", "下一步", "外因", "教训")
+CANONICAL_STATUSES = {"draft", "candidate", "active", "deprecated", "archived"}
+SUMMARY_REQUIRED_SOURCE_TYPES = {
+    "method",
+    "methodology",
+    "decision_rule",
+    "product_definition",
+}
 
 WIKI_LINK_RE = re.compile(r"(?<!!)\[\[([^\]\n]+)\]\]")
 EAN13_RE = re.compile(r"(?<![0-9])(69[0-9]{11})(?![0-9])")
@@ -71,12 +80,22 @@ def parse_args() -> argparse.Namespace:
         default="00_入口与总索引/05_审计与档案/lint_仪表盘_最新.md",
         help="Dashboard output path, relative to vault unless absolute.",
     )
+    parser.add_argument(
+        "--json-output",
+        help="Optional structured JSON output path, relative to vault unless absolute.",
+    )
     return parser.parse_args()
 
 
 def should_exclude(path: Path, root: Path) -> bool:
-    rel_parts = path.relative_to(root).parts
-    return any(part in DEFAULT_EXCLUDES for part in rel_parts)
+    rel = path.relative_to(root)
+    if any(part in DEFAULT_EXCLUDES for part in rel.parts):
+        return True
+    try:
+        rel.relative_to(AUTOMATION_RUNTIME)
+        return True
+    except ValueError:
+        return False
 
 
 def iter_markdown(root: Path) -> Iterable[Path]:
@@ -237,12 +256,25 @@ def render_table(headers: list[str], rows: list[list[object]]) -> list[str]:
     return lines
 
 
+def atomic_write_json(path: Path, payload: dict[str, object]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    temporary.replace(path)
+
+
 def main() -> int:
     args = parse_args()
     root = Path(args.vault).resolve()
     output = Path(args.output)
     if not output.is_absolute():
         output = root / output
+    json_output = Path(args.json_output) if args.json_output else None
+    if json_output is not None and not json_output.is_absolute():
+        json_output = root / json_output
 
     docs = load_docs(root)
     title_index = build_title_index(docs)
@@ -367,6 +399,26 @@ def main() -> int:
             if not has_reason:
                 failed_record_warnings.append((doc.rel, f"状态={ds or st} 但缺 原因/回填点/下一步（failed 是资产，须留因）"))
 
+    # 12. summary 检测：只强检耐久知识，不对日志/原料/全部历史件批量施压
+    missing_summary: list[str] = []
+    for doc in docs:
+        if _semantic_skip(doc):
+            continue
+        source_type = str(doc.frontmatter.get("source_type", "")).strip()
+        summary_required = (
+            doc.rel.startswith("01_科学零售方法论/")
+            or source_type in SUMMARY_REQUIRED_SOURCE_TYPES
+        )
+        if summary_required and not str(doc.frontmatter.get("summary", "")).strip():
+            missing_summary.append(doc.rel)
+
+    # 13. status 枚举：非规范值只报告，不自动改写
+    invalid_status: list[tuple[str, str]] = []
+    for doc in docs:
+        status_value = str(doc.frontmatter.get("status", "")).strip()
+        if status_value and status_value not in CANONICAL_STATUSES:
+            invalid_status.append((doc.rel, status_value))
+
     timestamp = dt.datetime.now().astimezone().strftime("%Y-%m-%d %H:%M:%S %Z")
     lines: list[str] = []
     lines.extend(
@@ -376,7 +428,7 @@ def main() -> int:
             f"- 扫描时间：{timestamp}",
             f"- Vault：`{root}`",
             f"- 扫描文件总数：{len(docs)}",
-            f"- 排除目录：`{', '.join(sorted(DEFAULT_EXCLUDES))}`",
+            f"- 排除目录：`{', '.join(sorted(DEFAULT_EXCLUDES))}, {AUTOMATION_RUNTIME.as_posix()}`",
             "",
             "## 顶部指标卡",
             "",
@@ -394,6 +446,8 @@ def main() -> int:
         ["provenance warning", len(provenance_warnings)],
         ["supersession warning", len(supersession_warnings)],
         ["failed 记录 warning", len(failed_record_warnings)],
+        ["核心知识缺 summary", len(missing_summary)],
+        ["非规范 status", len(invalid_status)],
     ]
     lines.extend(render_table(["指标", "数量"], metrics))
 
@@ -460,6 +514,16 @@ def main() -> int:
     lines.append("")
     lines.append("> failed/侥幸/果差但决策稳/blocked 是资产；须留原因/回填点/下一步。warning，**严禁据此删除 failed 记录**。")
 
+    lines.extend(["", "## 12. 核心知识 summary 查", ""])
+    lines.extend(render_table(["文件"], [[rel] for rel in missing_summary[:20]]))
+    lines.append("")
+    lines.append("> 仅检查方法论、决策规则、产品定义与 `01_科学零售方法论`；按需回填，不批量改写全库。")
+
+    lines.extend(["", "## 13. status 枚举查", ""])
+    lines.extend(render_table(["文件", "当前 status"], [[rel, value] for rel, value in invalid_status[:20]]))
+    lines.append("")
+    lines.append("> 规范枚举：draft / candidate / active / deprecated / archived。非规范值只报告，不自动改写。")
+
     lines.extend(["", "## 阻断项", ""])
     if sensitive_hits:
         lines.append("- 阻断级：敏感查存在命中。需先复核并处理红线项。")
@@ -479,6 +543,69 @@ def main() -> int:
 
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    if json_output is not None:
+        structured_metrics = {
+            "broken": len(broken_targets),
+            "orphan": len(orphan_docs),
+            "active_no_signoff": len(active_without_signoff),
+            "missing_fields": len(missing_fields),
+            "redline": len(sensitive_hits),
+            "version_mismatch": len(version_mismatches),
+            "candidate_approved": len(candidate_approved),
+            "execute_precondition_exists": int(precond_exists),
+            "execute_precondition_blocks": int(precond_blocks_execute),
+            "prov_warn": len(provenance_warnings),
+            "sup_warn": len(supersession_warnings),
+            "failed_warn": len(failed_record_warnings),
+            "missing_summary": len(missing_summary),
+            "invalid_status": len(invalid_status),
+        }
+        atomic_write_json(
+            json_output,
+            {
+                "schema_version": "1",
+                "generated_at": timestamp,
+                "vault": str(root),
+                "scan": {
+                    "markdown_files": len(docs),
+                    "excluded": sorted(DEFAULT_EXCLUDES)
+                    + [AUTOMATION_RUNTIME.as_posix()],
+                },
+                "metrics": structured_metrics,
+                "blocked": bool(sensitive_hits or candidate_approved),
+                "block_reasons": [
+                    reason
+                    for condition, reason in (
+                        (bool(sensitive_hits), "sensitive_redline"),
+                        (bool(candidate_approved), "candidate_approved"),
+                    )
+                    if condition
+                ],
+                "findings": {
+                    "broken_targets": sorted(broken_targets),
+                    "orphan_files": [doc.rel for doc in orphan_docs],
+                    "active_without_signoff": [doc.rel for doc in active_without_signoff],
+                    "missing_fields": [
+                        {"path": doc.rel, "fields": missing}
+                        for doc, missing in missing_fields
+                    ],
+                    "sensitive_files": sorted({path for path, _, _, _ in sensitive_hits}),
+                    "version_mismatches": [
+                        {"path": path, "name_version": name_version, "frontmatter_version": fm_version}
+                        for path, name_version, fm_version in version_mismatches
+                    ],
+                    "candidate_approved": [rel for rel, _ in candidate_approved],
+                    "provenance_warnings": [rel for rel, _ in provenance_warnings],
+                    "supersession_warnings": [rel for rel, _ in supersession_warnings],
+                    "failed_record_warnings": [rel for rel, _ in failed_record_warnings],
+                    "missing_summary": missing_summary,
+                    "invalid_status": [
+                        {"path": rel, "status": value}
+                        for rel, value in invalid_status
+                    ],
+                },
+            },
+        )
     print(f"wrote {output}")
     print(
         "metrics: "
@@ -487,7 +614,8 @@ def main() -> int:
         f"missing_fields={len(missing_fields)} redline={len(sensitive_hits)} "
         f"version_mismatch={len(version_mismatches)} "
         f"prov_warn={len(provenance_warnings)} sup_warn={len(supersession_warnings)} "
-        f"failed_warn={len(failed_record_warnings)}"
+        f"failed_warn={len(failed_record_warnings)} "
+        f"missing_summary={len(missing_summary)} invalid_status={len(invalid_status)}"
     )
     return 0
 

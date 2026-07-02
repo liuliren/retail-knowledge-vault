@@ -16,6 +16,9 @@ tags:
   - pending
 confidence: low
 fact_layer: pending
+domain: "D5 诊断与作战执行"
+category: "C5.3 连续战节奏管理"
+asset_type: "execution_sop"
 ---
 
 # M-DEC-004 夜班连续战节奏SOP（占位 stub）

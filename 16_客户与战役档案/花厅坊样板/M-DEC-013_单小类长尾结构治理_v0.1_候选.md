@@ -35,6 +35,9 @@ related:
   - "[[2026-06-22_T01膨化_L3到Item到SKU实跑验证_v0.1]]"
   - "[[2026-06-22_T05果干蜜饯_L3到Item到SKU实跑验证_v0.1]]"
 tags: [M-DEC, 花厅坊, ABC, 长尾, 尾部治理, 宽类窄品, 候选]
+domain: "D1 品项广度与去留"
+category: "C1.2 退场/汰换判据"
+asset_type: "judgment_rule"
 ---
 
 # M-DEC-013 单小类长尾结构治理（C+D 尾部瘦身判据）🟡 CANDIDATE

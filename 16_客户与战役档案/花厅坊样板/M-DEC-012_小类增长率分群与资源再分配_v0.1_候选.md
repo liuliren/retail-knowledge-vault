@@ -32,6 +32,9 @@ related:
   - "[[M-DEC-009_休食老品汰换时间维度防误判_v0.1_候选]]"
   - "[[M-DEC-010_休食小类价格带结构预警_v1.0]]"
 tags: [M-DEC, 花厅坊, 品类结构, 增长率分群, 资源再分配, 零售老刘]
+domain: "D2 品项结构配比"
+category: "C2.3 占比与资源配置"
+asset_type: "diagnostic_framework"
 ---
 
 # M-DEC-012 小类增长率分群与资源再分配(候选)

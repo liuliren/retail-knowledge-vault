@@ -38,6 +38,9 @@ related:
   - "[[2026-05-09_花厅坊综合诊断分析报告_v2.0_品类单品维]]"
   - "[[金额管理]]"
 tags: [M-DEC, 花厅坊, 价格带, 价格带结构, 预警, 零售老刘]
+domain: "D2 品项结构配比"
+category: "C2.2 价格带结构管理"
+asset_type: "judgment_rule"
 ---
 
 # M-DEC-010 休食小类价格带结构预警 ✅ ACTIVE

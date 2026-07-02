@@ -3,7 +3,7 @@
 > 本库是咨询作业系统后台，不是笔记仓库。任何 Agent 读写前先读本文。
 > 本文为 retail vault **项目宪法**；仅在本 vault 内生效。与全局宪法 `/Users/CLAUDE.md` 冲突时，按 [[Claude双宪法边界声明_P1-CLAUDE-Constitution-Boundary-001_v0.1]] 裁决（全局红线 > 项目红线 > 项目细则 > 单次 Prompt）。
 > 本文与六哥共同演化；每次修改记入 `98_AI协作中枢/00_总控/当前任务队列.md` 变更记录。
-> 版本：v2.5（2026-07-02 §7 G03_Lint + §11.2 纳入⑦输出区滞留查；关联 [[GOV-LINT-OutputArea-002_输出区滞留扫描规则_draft_v0.1]]（draft·待标准审议）；六哥 continue 指令授权）｜ v2.4（2026-06-26 §7 纳入自迭代回路三条:G12_SkillForge 动作孵化治理 / Skill 闭环铁律 / 模型分层调度。细则见 [[Agent-Native自迭代回路规范_P1-GOV-SelfLoop-001_v0.1]]。六哥 4 决策点签字）｜ v2.3（2026-06-25 §4 必读加「_当前断点_RESUME」置首 + 跨会话记忆两库收口至 Claude记忆区。六哥指令授权）｜ v2.2（2026-06-22 批准世界级交付标准与卡帕西闭环 wiki 分层治理框架。§10 active；§11 target_framework / partially_implemented / planned / optional 分层落地。六哥签字·Plan A）｜ v2.1（2026-06-22 §1 护城河升级为模型/Harness/驭马人三层动态视角，六哥签字）｜ v2.0（2026-06-22 合并新宪法 8 原则；从 v1.x 操作规则升级而来）。
+> 版本：v2.6（2026-07-02 §11.3 升级为 checklist 版·含 SignoffLedger 强制要求·六哥签字）｜ v2.5（2026-07-02 §7 G03_Lint + §11.2 纳入⑦输出区滞留查；关联 [[GOV-LINT-OutputArea-002_输出区滞留扫描规则_draft_v0.1]]（draft·待标准审议）；六哥 continue 指令授权）｜ v2.4（2026-06-26 §7 纳入自迭代回路三条:G12_SkillForge 动作孵化治理 / Skill 闭环铁律 / 模型分层调度。细则见 [[Agent-Native自迭代回路规范_P1-GOV-SelfLoop-001_v0.1]]。六哥 4 决策点签字）｜ v2.3（2026-06-25 §4 必读加「_当前断点_RESUME」置首 + 跨会话记忆两库收口至 Claude记忆区。六哥指令授权）｜ v2.2（2026-06-22 批准世界级交付标准与卡帕西闭环 wiki 分层治理框架。§10 active；§11 target_framework / partially_implemented / planned / optional 分层落地。六哥签字·Plan A）｜ v2.1（2026-06-22 §1 护城河升级为模型/Harness/驭马人三层动态视角，六哥签字）｜ v2.0（2026-06-22 合并新宪法 8 原则；从 v1.x 操作规则升级而来）。
 
 ---
 
@@ -179,11 +179,29 @@
 设想：一条命令扫全库，产出 `00_入口与总索引/05_审计与档案/lint_仪表盘_最新.md` + 阻断清单，月度跑：
 **①断链查 ②孤儿查（正式目录无入链）③状态查（active 无 signoff）④Schema 查（缺必填字段）⑤敏感查（正文 EAN-13 条码 / 进价裸值 = 红线）⑥版本查（文件名 ≠ frontmatter 版本）⑦输出区滞留查（`Claude输出区/` 根目录文件，距文件名日期前缀超 5 天且非 `_待签字` 后缀 → 列滞留清单；不自动执行删除或移动）。** 纯文本扫描，不碰客户数据。⑦ 为 **draft** 规则（待标准审议升 stable），见 [[GOV-LINT-OutputArea-002_输出区滞留扫描规则_draft_v0.1]]。
 
-### 11.3 状态机进入条件（写死）· `partially_implemented`
-> 规则已立；自动强校验待 G03_Lint（in_progress）。
-- `→ candidate`：内容完整 + 自检（结论先行 / fact_layer 齐 / 0 断链）。
-- `→ active`：≥3 案例或 ≥2 客户验证 **+ 六哥签字**（治理 §3②）。
-- `→ deprecated`：过时；移 99_归档 **需签字**（§3④），优先用 status 标注不滥用物理 mv。
+### 11.3 状态机进入条件（写死·checklist 版）· `partially_implemented`
+> 规则已立；自动强校验待 G03_Lint（in_progress）。升级需过 checklist，必须落 SignoffLedger。
+
+**→ candidate（可自行升，无需签字）**
+- [ ] 正文完整（无占位符/TODO/待补 空节）
+- [ ] 结论先行（第一段即核心命题，非背景铺垫）
+- [ ] `fact_layer` 字段齐全（observed/inferred/pending 已标注）
+- [ ] 0 断链（所有 `[[wikilink]]` 目标存在）
+- [ ] `summary:` 字段已填（≤40字，供 G02 廉价检索）
+
+**→ active（必须六哥签字 + 落 SignoffLedger）**
+- [ ] 已过 candidate 全部 checklist
+- [ ] ≥3 个案例实证 OR ≥2 家客户门店验证（`fact_layer: observed`）
+- [ ] 六哥在文件 `signoff:` 字段签字（格式：`signoff: 六哥 YYYY-MM-DD`）
+- [ ] 签字事件已 append 到 SignoffLedger（`00_入口与总索引/03_治理规范/签字门台账_SignoffLedger_v0.1.md`）
+
+**→ deprecated（必须六哥签字 + 落 SignoffLedger）**
+- [ ] 在文件顶部 frontmatter 改 `status: deprecated`（优先于物理删除）
+- [ ] 加 `deprecated_reason:` 字段（≤40字，说明被什么取代）
+- [ ] 若需物理删除：六哥签字 → `apply-signoff.sh <清单>` 执行 → 落 SignoffLedger
+- [ ] 签字事件已 append 到 SignoffLedger
+
+> 落 SignoffLedger 格式：`| YYYY-MM-DD | 文件名 | 原状态→新状态 | 六哥 | 理由 |`
 
 ### 11.4 Wiki 知识树与看板（Obsidian 原生）· MOC `implemented` / Dataview `partially_implemented` / Kanban `optional`
 - **知识树**：`科学零售知识树_MOC.md`（已建）按 L1理念→L2骨架→L3(M1-M8)→L4工具/SOP→案例 挂全概念；Dataview 自动列件（依赖插件）；Graph view 作全景图。
