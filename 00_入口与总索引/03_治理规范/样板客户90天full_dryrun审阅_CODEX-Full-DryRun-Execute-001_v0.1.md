@@ -9,7 +9,7 @@ module: 00_入口与总索引/03_治理规范
 client_safety: internal_only
 source_type: reference
 related:
-  - "[[花厅坊90天全量合并_字段映射与质量预审_v0.1]]"
+  - "[[样板客户90天全量合并_字段映射与质量预审_v0.1]]"
   - "[[Codex执行前置状态登记表_v0.1]]"
   - "[[CODEX-Full-DryRun-Execute-001_Prompt_v0.1]]"
 ---
