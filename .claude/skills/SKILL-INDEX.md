@@ -19,6 +19,10 @@ updated: 2026-06-30
 | `/handoff` | handoff、交接、新会话prompt、整理上下文 |
 | `/merge` | merge、两个文件对比、文档合并、去重、副本裁定 |
 | `weekly_data.sh` | 生成周报数据、采集本周数据、周报采集、手动跑周报 |
+| `/trio` | trio、跑三件套、三件套分析、全套商品分析 |
+| `/abcz` | abcz、跑ABCZ、ABC分层、Z类清单 |
+| `/movement` | movement、跑动销、动销率、动销分析 |
+| `/priceband` | priceband、跑价格带、价格带分析、毛利试算 |
 
 **自动调用规则**：用户说出触发词 → 无需打 `/`，直接加载并执行对应 skill。
 

@@ -167,3 +167,12 @@ output/
 09_门店案例与项目复盘/乐易购花厅坊店/03_商品诊断/2026-05-13_花厅坊商品基础档案Excel空模板_v0.1.xlsx
 13_数据分析与工具脚本/花厅坊POS清洗脚本_v0.1/_dryrun_preview_v0.1.1_backup_20260504_0702UTC/
 13_数据分析与工具脚本/花厅坊POS清洗脚本_v0.1/_dryrun_preview_v0.1_backup_20260504_0635UTC/
+# 三件套skill白名单(2026-07-02 六哥授权建立)
+!.claude/skills/trio/
+!.claude/skills/trio/SKILL.md
+!.claude/skills/abcz/
+!.claude/skills/abcz/SKILL.md
+!.claude/skills/movement/
+!.claude/skills/movement/SKILL.md
+!.claude/skills/priceband/
+!.claude/skills/priceband/SKILL.md
