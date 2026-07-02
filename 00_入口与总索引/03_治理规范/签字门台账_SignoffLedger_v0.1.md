@@ -57,3 +57,4 @@ related:
 | 2026-07-02 21:39 | PostToolUse监听 | apply-signoff.sh | system | 已触发落账监听 |
 | 2026-07-02 补登 | D档删除·批量120项 | 99_归档/ 历史归档清理(M1战时封存/v1.1整合备份/v3.2历史版本/新基线封存/专项归档冗余等,完整清单见commit正文) | 六哥(2026-07-02会话裁决①A) | 快照留底:2026-06-20_专项归档.zip+_整理后.zip;台账原漏登,P0-KB-Upgrade-Fix-003补登 |
 | 2026-07-02 | 升active·签字归档 | 00_入口与总索引/05_审计与档案/2026-07-02_知识库全面升级审计报告_P1-AUDIT-KB-Upgrade-002_v0.1_已签字.md | 六哥(会话签字) | draft→active;正式主本落审计档案区,输出区留来源;P0五commit已附录 |
+| 2026-07-02 | D档·git历史重写 | 全仓库(filter-repo两轮): 移除dryrun明细24件+清洗输出csv/json11件+沙埔历史xls4件+空模板xlsx+ground_truth_700sku.csv(695条码) | 六哥(裁决B:先清洗再push) | 灾备bundle在_git_backups/;全部hash重写,映射见已签字审计报告附2 |

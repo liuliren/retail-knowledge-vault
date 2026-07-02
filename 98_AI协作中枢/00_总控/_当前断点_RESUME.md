@@ -43,7 +43,7 @@ completed_2026-07-02_晚:
   - ✅ KB全面审计(6代理并行·增量对账06-22蓝图)→审计报告v0.1在输出区
   - ✅ P0-1 V6.0主数据落盘(复制入05·V4.0标deprecated·README加SSOT声明)
   - ✅ P0-2 tools/retail_space_engine/data客户数据就地隔离(.no-ingest+README+只读)
-  - ✅ P0-3 git全量封板(92a429f S4清仓+65bdca6会话编辑+58f1637 P0+c331d77裁决①A归档120删+裁决②全收206件正式知识层入git·工作区归零)
+  - ✅ P0-3 git全量封板(03b392b S4清仓+7a98f79会话编辑+b192254 P0+7425f85裁决①A+ef158a2裁决②全收206件·hash为P1-0历史清洗重写后值)
   - ✅ 审计报告签字归档→05_审计与档案(status:active·signoff:六哥·附5commit+裁决①路径说明)·台账登账·输出区留来源指针
 
 ## 🅿️ Parking
