@@ -59,3 +59,4 @@ related:
 | 2026-07-02 | 升active·签字归档 | 00_入口与总索引/05_审计与档案/2026-07-02_知识库全面升级审计报告_P1-AUDIT-KB-Upgrade-002_v0.1_已签字.md | 六哥(会话签字) | draft→active;正式主本落审计档案区,输出区留来源;P0五commit已附录 |
 | 2026-07-02 | D档·git历史重写 | 全仓库(filter-repo两轮): 移除dryrun明细24件+清洗输出csv/json11件+沙埔历史xls4件+空模板xlsx+ground_truth_700sku.csv(695条码) | 六哥(裁决B:先清洗再push) | 灾备bundle在_git_backups/;全部hash重写,映射见已签字审计报告附2 |
 | 2026-07-02 | 建skill×4 | .claude/skills/{trio,abcz,movement,priceband}/SKILL.md + 13_数据分析与工具脚本/三件套引擎_v0.1/(共享执行层) | 六哥(会话指令授权) | 上线铁律三项已过:触发词✓/INDEX登记✓/gitignore白名单✓;引擎冒烟测试复现首算全部数字 |
+| 2026-07-02 | 建skill×2 | .claude/skills/{posclean,mdcard}/SKILL.md + POS清洗库_v0.1 + 图卡引擎_v0.1 | 六哥(会话指令授权) | 上线铁律三项过;posclean probe冒烟✓(自动抓出65536截断);mdcard首验3张卡(店方规范/Z类排查/标品专项) |

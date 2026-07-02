@@ -23,6 +23,8 @@ updated: 2026-06-30
 | `/abcz` | abcz、跑ABCZ、ABC分层、Z类清单 |
 | `/movement` | movement、跑动销、动销率、动销分析 |
 | `/priceband` | priceband、跑价格带、价格带分析、毛利试算 |
+| `/posclean` | posclean、清洗POS、POS清洗、清洗数据、探查数据 |
+| `/mdcard` | mdcard、出图卡、配图卡、生成图片、带图 |
 
 **自动调用规则**：用户说出触发词 → 无需打 `/`，直接加载并执行对应 skill。
 
