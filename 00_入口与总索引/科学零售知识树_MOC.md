@@ -1,4 +1,5 @@
 ---
+summary: 科学零售知识树全景MOC枢纽,从方法论到诊断一图可达
 title: 科学零售知识树 MOC（全景枢纽）
 version: v0.1
 status: draft

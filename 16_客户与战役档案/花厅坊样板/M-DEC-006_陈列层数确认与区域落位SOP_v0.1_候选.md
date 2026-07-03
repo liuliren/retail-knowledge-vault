@@ -1,7 +1,8 @@
 ---
 title: M-DEC-006 陈列层数确认与区域落位 SOP v0.1（候选 / 待 5/13-5/20 战役 #1 验证 + 6/30 跨战役 #2 验证）
 version: v0.1
-status: candidate_for_validation
+status: candidate
+summary: 陈列层数/排面/落位由货架物理+包装+品类三方定,四步实测确认+老板签,禁模板外推。
 owner: 六哥
 created: 2026-05-07
 updated: 2026-05-07

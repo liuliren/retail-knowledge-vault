@@ -2,7 +2,7 @@
 title: feedback_品类标准_大湾区品类表V4.0_唯一标准（占位 stub）
 summary: "记忆层反馈节点:大湾区品类表V4.0为品类划分唯一标准的纪律,待回填。"
 version: v0.1
-status: pending
+status: draft
 type: concept_stub
 created: 2026-06-26
 module: 01_科学零售方法论/M-DEC/feedback

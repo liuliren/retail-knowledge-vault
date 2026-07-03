@@ -1,7 +1,8 @@
 ---
 title: M-DEC-003 调改商品供应链落实节奏 v0.1（候选 / 现金 vs 账期 / 5/13-5/20 验证）
 version: v0.1
-status: candidate_for_validation
+status: candidate
+summary: 调改新品供应链落实节奏判据:现金采购vs账期双轨、下单提前期与到货率处置。
 owner: 六哥
 created: 2026-05-07
 updated: 2026-05-07

@@ -2,7 +2,7 @@
 title: feedback_world_class_consulting_standard（占位 stub）
 summary: "记忆层反馈节点:世界级咨询标准(金字塔/MECE/假设驱动/事实分层/质量门),对应§10.1。"
 version: v0.1
-status: pending
+status: draft
 type: concept_stub
 created: 2026-06-26
 module: 01_科学零售方法论/M-DEC/feedback

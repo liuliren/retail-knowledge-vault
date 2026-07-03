@@ -1,4 +1,5 @@
 ---
+summary: vault健康度PM仪表:孤儿/断链/陈旧/覆盖率一屏可视
 title: Vault健康仪表
 version: v0.5
 status: active

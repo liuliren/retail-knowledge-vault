@@ -2,7 +2,7 @@
 title: 顾客决策树CDT
 summary: "从顾客购买决策路径反推品类货架结构与商品分组的工具(Customer Decision Tree)。"
 version: v0.1
-status: pending
+status: draft
 type: concept_stub
 created: 2026-06-26
 module: 01_科学零售方法论

@@ -2,7 +2,7 @@
 title: feedback_扫描深度纪律_4路并行+深读客户验证日志（占位 stub）
 summary: "记忆层反馈节点:语料/数据扫描的深度纪律(4路并行+深读+客户验证日志),待回填。"
 version: v0.1
-status: pending
+status: draft
 type: concept_stub
 created: 2026-06-26
 module: 01_科学零售方法论/M-DEC/feedback

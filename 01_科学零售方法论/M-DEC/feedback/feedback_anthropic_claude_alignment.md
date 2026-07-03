@@ -2,7 +2,7 @@
 title: feedback_anthropic_claude_alignment（占位 stub）
 summary: "记忆层反馈节点:与Claude协作的对齐纪律(对齐六哥意图/不越权/批判性陪练),待回填。"
 version: v0.1
-status: pending
+status: draft
 type: concept_stub
 created: 2026-06-26
 module: 01_科学零售方法论/M-DEC/feedback

@@ -1,4 +1,5 @@
 ---
+summary: goldmine客户完整明细配置模板,本地私有不进普通Git
 title: goldmine 客户配置模板 SENSITIVE-PRIVATE-003
 version: v0.1
 status: draft

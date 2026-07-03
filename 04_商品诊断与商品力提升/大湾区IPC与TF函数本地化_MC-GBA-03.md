@@ -1,3 +1,15 @@
+---
+title: 大湾区 IPC 与 TF 函数本地化 MC-GBA-03
+summary: 大湾区IPC/TF本地化：按广佛真实收入校准IPC价格带与P/M域分界，让诊断反映本地客群真实支付意愿。
+version: v0.2
+status: draft
+owner: 六哥
+created: 2026-05-03
+module: 04_商品诊断与商品力提升
+source_type: method
+client_safety: internal_methodology
+---
+
 # 知识节点 MC-GBA-03:大湾区 IPC 与 TF 函数本地化
 
 > **节点类型**:补充节点(在 MC-06 IPC 通用框架 + MC-08 TF 函数基础上的大湾区特化版本)

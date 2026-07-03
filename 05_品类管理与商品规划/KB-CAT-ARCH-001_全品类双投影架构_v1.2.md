@@ -4,6 +4,7 @@ aliases:
   - KB-CAT-ARCH-001
   - 全品类双投影品类表
 version: v1.2
+summary: 全品类双投影单锚点架构：表A顾客视角/表B运营视角在L3 C码汇聚唯一锚点；归属按管理链路强度>物理形态裁决。
 status: stable
 owner: 六哥
 created: 2026-06-27

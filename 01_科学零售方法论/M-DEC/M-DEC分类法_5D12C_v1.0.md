@@ -1,5 +1,6 @@
 ---
 title: M-DEC 分类法 · 5 Domain / 12 Category · v1.0
+summary: M-DEC 按「改哪个经营杠杆」单轴归 5 域 12 类，域不随品类复杂而增、只在域内加条数——跨战役复用的分类骨架。
 aliases:
   - M-DEC分类法
   - 5D12C

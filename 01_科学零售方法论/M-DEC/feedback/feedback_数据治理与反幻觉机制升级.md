@@ -2,7 +2,7 @@
 title: feedback_数据治理与反幻觉机制升级（占位 stub）
 summary: "记忆层反馈节点:数据治理与反幻觉机制升级要点(fact_layer分层/数据边界),待回填。"
 version: v0.1
-status: pending
+status: draft
 type: concept_stub
 created: 2026-06-26
 module: 01_科学零售方法论/M-DEC/feedback

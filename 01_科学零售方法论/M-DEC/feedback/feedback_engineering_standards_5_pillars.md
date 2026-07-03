@@ -2,7 +2,7 @@
 title: feedback_engineering_standards_5_pillars（占位 stub）
 summary: "记忆层反馈节点:知识工程五支柱(SSOT/链接CI/状态机/不可变源/Schema校验),对应§10.2。"
 version: v0.1
-status: pending
+status: draft
 type: concept_stub
 created: 2026-06-26
 module: 01_科学零售方法论/M-DEC/feedback

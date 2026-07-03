@@ -1,7 +1,8 @@
 ---
 title: M-DEC-007 商品动销综合诊断与调整 SOP v0.1（候选 / 待 5/13-5/20 战役 #1 验证 + 6/30 跨战役 #2 验证）
 version: v0.1
-status: candidate_for_validation
+status: candidate
+summary: POS数据→多维交叉→动销分级→归因→调整→任务清单→闭环的7步端到端商品动销诊断SOP。
 owner: 六哥
 created: 2026-05-07
 updated: 2026-05-07

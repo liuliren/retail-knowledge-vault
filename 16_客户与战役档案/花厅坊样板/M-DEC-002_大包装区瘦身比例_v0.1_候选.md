@@ -1,7 +1,8 @@
 ---
 title: M-DEC-002 大包装区瘦身比例 v0.1（候选 / 数据驱动 / 待 5/13-5/20 验证）
 version: v0.1
-status: candidate_for_validation
+status: candidate
+summary: 货架面大包装区瘦身比例的数据驱动判据:先建数据底盘再决策,不凭老板印象。
 owner: 六哥
 created: 2026-05-07
 updated: 2026-05-07

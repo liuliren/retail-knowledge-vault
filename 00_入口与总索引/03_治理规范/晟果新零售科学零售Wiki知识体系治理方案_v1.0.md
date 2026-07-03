@@ -1,4 +1,5 @@
 ---
+summary: Wiki知识体系治理统领方案,增量统领不收编旧治理文件
 title: 晟果新零售科学零售 Wiki 知识体系治理方案
 version: v1.0
 status: active

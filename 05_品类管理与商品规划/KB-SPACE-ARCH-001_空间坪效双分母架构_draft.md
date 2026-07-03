@@ -1,6 +1,7 @@
 ---
 id: KB-SPACE-ARCH-001
 title: 花厅坊空间-商品-盈利分析系统架构
+summary: 空间坪效双分母：占地投影+陈列线性米交叉修正防误砍引流品；命门=SKU→货位桥表须现场手工盘两天。
 status: draft
 审议轮次: 1
 created: 2026-07-01

@@ -1,4 +1,5 @@
 ---
+summary: 三大导航枢纽(RESUME/看板/MOC)的职责边界与分工
 title: 三导航枢纽分工表 P1-GOV-Nav-Hub-001
 version: v0.1
 status: draft

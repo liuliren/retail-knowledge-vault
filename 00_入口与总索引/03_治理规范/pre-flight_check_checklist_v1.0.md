@@ -1,4 +1,5 @@
 ---
+summary: 任何工程操作前的自检清单,防cd/tmp类致命误操作
 title: pre-flight check checklist v1.0（操作前自检 / L1 操作契约）
 version: v1.0
 status: active

@@ -1,4 +1,5 @@
 ---
+summary: 样板客户现场决策的结构化捕获工具包(Phase0B)
 title: 样板客户现场决策捕获包（Phase 0B）
 version: v0.1
 status: draft

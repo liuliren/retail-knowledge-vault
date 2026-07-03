@@ -1,4 +1,5 @@
 ---
+summary: Wiki知识体系治理阶段的收口报告,记录治理成果与残留
 title: 晟果新零售科学零售 Wiki 治理阶段收口报告
 version: v0.1
 status: active

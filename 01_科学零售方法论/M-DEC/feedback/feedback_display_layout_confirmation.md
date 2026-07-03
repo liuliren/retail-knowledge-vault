@@ -2,7 +2,7 @@
 title: feedback_display_layout_confirmation（占位 stub）
 summary: "记忆层反馈节点:陈列布局须现场确认后再落地、防纸面臆断,待回填。"
 version: v0.1
-status: pending
+status: draft
 type: concept_stub
 created: 2026-06-26
 module: 01_科学零售方法论/M-DEC/feedback

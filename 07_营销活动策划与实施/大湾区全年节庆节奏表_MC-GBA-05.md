@@ -1,3 +1,17 @@
+---
+id: MC-GBA-05
+title: 大湾区全年节庆节奏表
+version: v0.2
+status: draft
+owner: 六哥
+created: 2026-05-03
+module: 07_营销活动策划与实施
+source_type: method
+client_safety: internal_only
+summary: 大湾区社区超市全年节庆节奏表:冬至大过年/腊味季/煲汤季,每节点预热-爆发-清仓期+备货指引+品类组合,按表上货不凭感觉
+tags: [大湾区, 节庆节奏, 营销日历, 社区超市, 备货指引]
+---
+
 # 知识节点 MC-GBA-05:大湾区全年节庆节奏表
 
 > **节点类型**:补充节点(在 MC-12 52 周 MD + MC-GBA-01 TPOS 时节维度基础上的全年节奏表)

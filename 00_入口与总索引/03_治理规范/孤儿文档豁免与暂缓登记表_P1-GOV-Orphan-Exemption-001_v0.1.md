@@ -1,4 +1,5 @@
 ---
+summary: 无入链文档的豁免与暂缓登记,区分意图性孤儿与真断链
 title: 孤儿文档豁免与暂缓登记表 P1-GOV-Orphan-Exemption-001
 version: v0.1
 status: draft

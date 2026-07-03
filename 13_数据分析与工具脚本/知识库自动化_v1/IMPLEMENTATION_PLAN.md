@@ -1,3 +1,15 @@
+---
+title: Knowledge Vault Automation Implementation Plan
+status: draft
+created: 2026-06-01
+updated: 2026-06-01
+module: 13_数据分析与工具脚本/知识库自动化_v1
+tags:
+  - 知识库自动化
+  - 实施计划
+  - G03_Lint
+---
+
 # Knowledge Vault Automation Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.

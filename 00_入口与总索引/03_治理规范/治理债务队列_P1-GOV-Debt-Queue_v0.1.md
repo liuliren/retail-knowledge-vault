@@ -1,4 +1,5 @@
 ---
+summary: 待清偿治理债务的登记队列,按优先级排治理待办
 title: 治理债务队列 P1-GOV-Debt-Queue
 version: v0.1
 status: draft

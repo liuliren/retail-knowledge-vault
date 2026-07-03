@@ -2,7 +2,7 @@
 title: feedback_mvp_first_validate_in_practice（占位 stub）
 summary: "记忆层反馈节点:先做MVP再实践验证、避免过度设计的纪律,待回填。"
 version: v0.1
-status: pending
+status: draft
 type: concept_stub
 created: 2026-06-26
 module: 01_科学零售方法论/M-DEC/feedback

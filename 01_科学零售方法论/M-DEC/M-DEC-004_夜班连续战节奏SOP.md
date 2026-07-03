@@ -2,7 +2,7 @@
 title: M-DEC-004 夜班连续战节奏SOP（占位 stub）
 summary: "决策层占位:夜班连续作战的节奏控制SOP,实体内容缺失待六哥补全。"
 version: v0.1
-status: pending
+status: draft
 type: concept_stub
 created: 2026-06-26
 module: 16_客户与战役档案/花厅坊样板

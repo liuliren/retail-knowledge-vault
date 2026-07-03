@@ -1,4 +1,5 @@
 ---
+summary: 输出区滞留资产的lint扫描规则,防临时产出长期滞留输出区
 title: 输出区滞留扫描规则 GOV-LINT-OutputArea-002
 version: v0.1
 status: draft

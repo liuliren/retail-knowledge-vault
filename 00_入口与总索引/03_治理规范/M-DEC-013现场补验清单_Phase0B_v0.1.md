@@ -1,4 +1,5 @@
 ---
+summary: M-DEC-013长期记忆Schema的现场补验清单(Phase0B)
 title: M-DEC-013 现场补验清单（Phase 0B）+ trial 审阅
 version: v0.1
 status: draft

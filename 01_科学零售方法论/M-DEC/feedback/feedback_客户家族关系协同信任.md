@@ -2,7 +2,7 @@
 title: feedback_客户家族关系协同信任（占位 stub）
 summary: "记忆层反馈节点:处理客户家族关系与协同信任的判断要点,待回填。"
 version: v0.1
-status: pending
+status: draft
 type: concept_stub
 created: 2026-06-26
 module: 01_科学零售方法论/M-DEC/feedback

@@ -1,3 +1,9 @@
+---
+title: G03_Lint v2 知识库体检仪表盘
+status: draft
+source_type: dashboard
+client_safety: internal_only
+---
 # G03_Lint v2 知识库体检仪表盘
 
 - 扫描时间：2026-06-24 13:02:01 EDT

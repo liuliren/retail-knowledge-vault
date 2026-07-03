@@ -1,3 +1,16 @@
+---
+title: Codex 工具测试自检说明（tools/）
+status: draft
+created: 2026-05-09
+updated: 2026-05-09
+module: 13_数据分析与工具脚本/花厅坊POS清洗脚本_v0.1
+tags:
+  - 零售工具
+  - 单元测试
+  - 自检
+summary: clean checkout 后如何自检 P1-3 零售工具（ABC/IR/安全库存/库龄），跑 test_retail_tools 8 用例验证口径一致。
+---
+
 # Codex 工具测试自检说明（tools/）
 
 > 本目录为 P1-3 零售工具源码（T-01/02 ABC、T-07 IR、T-09/10 安全库存/库龄）。本文件说明如何在 **clean checkout** 后自检测试。口径来源：[[零售工具注册表_v0.1]] §3.1（active）。

@@ -1,4 +1,5 @@
 ---
+summary: 治理规范目录导航,索引各治理文件用途与入口
 title: 治理规范 README
 version: v0.1
 status: active

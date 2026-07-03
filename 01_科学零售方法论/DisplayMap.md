@@ -2,7 +2,7 @@
 title: DisplayMap
 summary: "门店陈列资源的结构化地图,把货架/层/位与商品配置和ABC定位绑定的陈列规划载体。"
 version: v0.1
-status: pending
+status: draft
 type: concept_stub
 created: 2026-06-26
 module: 01_科学零售方法论
