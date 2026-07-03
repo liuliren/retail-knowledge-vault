@@ -1,5 +1,7 @@
 ---
 id: KB-RETAIL-BMODEL-001
+aliases:
+  - KB-RETAIL-BMODEL-001
 name: 零售商业模式谱系
 title: 零售商业模式谱系（硬折扣/会员制/区域龙头路径对比）
 status: draft

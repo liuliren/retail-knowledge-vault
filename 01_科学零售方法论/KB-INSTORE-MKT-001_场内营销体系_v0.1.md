@@ -40,7 +40,7 @@ related:
   - "[[KB-DX-FULLSTORE-001_全店7D诊断框架2.0_v0.1]]"
   - "[[KB-SKU-STATE-001_单品动态状态机_v0.1]]"
   - "[[KB-FRESH-001_生鲜护城河经营方法论_v0.1]]"
-  - "[[KB-CAT-ARCH-001_全品类双投影架构_v1.0]]"
+  - "[[KB-CAT-ARCH-001_全品类双投影架构_v1.2]]"
   - "[[KB-EVENT-ACTIVATION-001_活动组织与拉动_v0.1]]"
 ---
 

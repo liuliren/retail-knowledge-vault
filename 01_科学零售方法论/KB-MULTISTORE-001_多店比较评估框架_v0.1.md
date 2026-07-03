@@ -34,7 +34,7 @@ related:
   - "[[KB-DX-FULLSTORE-001_全店7D诊断框架2.0_v0.1]]"
   - "[[KB-DX-FRAMEWORK-001_社区生鲜超市品类诊断框架_v0.1]]"
   - "[[KB-RETAIL-KPI-001_量化指标与数据分析_v0.1]]"
-  - "[[KB-RETAIL-STORE-001_店型研究框架_v0.1]]"
+  - "[[KB-RETAIL-STORE-001_店型研究框架_v0.2]]"
   - "[[KB-GBA-TPOS-001_大湾区TPOS本地化_v0.1]]"
   - "[[KB-METHOD-CHAIN-001_晟果科学零售五层经营链_v0.1]]"
   - "[[M-DEC-007_商品动销综合诊断与调整SOP_v0.1_候选]]"

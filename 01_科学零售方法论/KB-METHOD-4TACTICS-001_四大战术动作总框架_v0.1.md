@@ -81,7 +81,7 @@ related:
 
 | 战术线 | 专页 |
 |---|---|
-| 选品 | [[KB-SELECTION-TOOLS-001_选品核心工具_v0.1]] · [[KB-CAT-ROLE-5WAY-001_五分法品类角色分配方法_v0.1]] · [[KB-CAT-ARCH-001_全品类双投影架构_v1.0]] |
+| 选品 | [[KB-SELECTION-TOOLS-001_选品核心工具_v0.1]] · [[KB-CAT-ROLE-5WAY-001_五分法品类角色分配方法_v0.1]] · [[KB-CAT-ARCH-001_全品类双投影架构_v1.2]] |
 | 定价 | [[价格带管理]]（待建·KB-PRICING-001）|
 | 陈列 | [[KB-CAT-CDT-001_CDT应用与子格落位方法_v0.1]] · [[KB-CAT-DX-MISMATCH-001_销售陈列错配诊断_v0.1]] · [[KB-CAT-ZONE-SOP-001_区域调改五步法_v0.1]] |
 | 活动 | [[KB-CAT-TIMEEFF-001_时节效率路由_v0.1]] |
