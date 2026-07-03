@@ -2,7 +2,9 @@
 id: KB-METRIC-DICT-001
 title: 经营指标字典（社区生鲜超市 · SSOT）
 version: v0.1
-status: draft
+status: deprecated
+deprecated_reason: "被 KB-METRIC-DICT-001_经营指标字典_v0.2 取代（六哥2026-07-03裁33项版为准·4组23项→5组33项）"
+superseded_by: "[[KB-METRIC-DICT-001_经营指标字典_v0.2]]"
 created: 2026-07-03
 source_type: gap_fill_compile
 client_safety: internal_only
