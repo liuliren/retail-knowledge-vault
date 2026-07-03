@@ -1,7 +1,7 @@
 ---
 summary: 中层决策DEC回填结果后蒸馏晋级为方法论资产的机制
 title: M-DEC 中层决策资产晋级机制
-version: v0.2
+version: v0.1
 status: draft
 owner: 六哥
 created: 2026-05-18

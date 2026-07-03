@@ -2,7 +2,7 @@
 title: 实践-验证-回流机制（PCV Loop）
 id: KB-METHOD-PCV-001
 summary: "知识库的核心运作机制：实践产生论断→论断经实践验证→验证结果回流更新方法论→再指导实践，循环不止。是方法论自我生长的发动机。"
-version: v0.2
+version: v0.1
 status: stable
 owner: 六哥
 created: 2026-07-01

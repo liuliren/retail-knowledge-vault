@@ -5,7 +5,9 @@ fact_layer: observed
 created: 2026-06-26
 source: N3.0 #6 第二店即插验证（沙埔大道休闲单类·跑 category_mapper.infer_l3，未改任何代码/花厅坊数据）
 summary: 用第二家店（沙埔大道·休闲单类）验证 store-agnostic Normalizer 通用层能否零改即插、需几条 override
-related: [[N3.0_跨店标准主数据底座_结构与推理链_草案_v0.1]]、[[花厅坊_商品基础表_覆盖与待校准_v0.2]]
+related:
+  - "[[N3.0_跨店标准主数据底座_结构与推理链_草案_v0.1]]"
+  - "[[花厅坊_商品基础表_覆盖与待校准_v0.2]]"
 ---
 
 # 沙埔大道店 · Normalizer 两层设计即插验证 v0.1

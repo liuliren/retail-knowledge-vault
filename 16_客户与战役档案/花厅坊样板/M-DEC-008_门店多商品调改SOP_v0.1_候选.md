@@ -1,7 +1,7 @@
 ---
 title: M-DEC-008 门店多商品调改SOP v0.1 候选
 aliases: ["M-DEC-008"]
-version: v0.2
+version: v0.1
 summary: 门店多商品调改中层决策SOP含§0.5经营目标6问与Step1-10闭环。
 status: draft
 owner: 六哥

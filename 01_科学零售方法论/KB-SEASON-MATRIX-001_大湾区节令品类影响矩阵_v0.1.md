@@ -1,7 +1,7 @@
 ---
 id: KB-SEASON-MATRIX-001
 title: 大湾区节令品类影响矩阵
-version: v0.1-rev1
+version: v0.1
 status: draft
 verification_status: critical_flaws_revised
 revision_note: |

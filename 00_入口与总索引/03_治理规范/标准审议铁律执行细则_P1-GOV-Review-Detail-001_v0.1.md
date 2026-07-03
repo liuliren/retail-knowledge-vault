@@ -1,7 +1,7 @@
 ---
 id: P1-GOV-Review-Detail-001
 title: 标准审议铁律执行细则（含批判审议五步法与思想铁律沉淀）
-version: v0.2
+version: v0.1
 status: draft
 审议轮次: 2
 created: 2026-07-02

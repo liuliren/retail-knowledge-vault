@@ -2,7 +2,7 @@
 id: T-MULTISTORE-DX-001
 title: 多店综合诊断报告 模板定义
 status: draft
-version: v0.1.1
+version: v0.1
 author: 晟果新零售咨询
 owner: 六哥
 created: 2026-06-30

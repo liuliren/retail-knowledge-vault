@@ -2,7 +2,7 @@
 title: M-DEC-011 黄金位×ABC陈列错配诊断(候选)
 summary: 黄金位与商品ABC错配诊断；黄金位喂C/D类或A类窝角落须换位。
 aliases: ["M-DEC-011"]
-version: v0.2
+version: v0.1
 status: candidate
 owner: 六哥
 created: 2026-06-19

@@ -3,7 +3,7 @@ report_type: kb-compile质量报告
 run: 3
 日期: 2026-06-29
 场景: 消費投资精读卡links_to修复 + 5个KB页CRITIC质量审查
-status: archived
+status: deprecated
 summary: Run3引入CRITIC角色按"直接可调用"原则审5个KB页产15条新命题，纠偏Run2只刷token/链接数的零知识产出
 ---
 

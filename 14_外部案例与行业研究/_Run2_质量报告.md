@@ -4,7 +4,7 @@ run: 2
 summary: 精读卡→KB双向链接校验：91张卡中77%缺links_to反向链接，5个KB页中1个双向通、1个半通、3个断链，优化建议指向卡→KB路由补充。
 日期: 2026-06-29
 场景: 精读卡池→KB双向链接校验（91张精读卡 × 5个KB页）
-status: 完成
+status: deprecated
 ---
 
 # kb-compile Run 2 质量报告
