@@ -87,17 +87,16 @@
 **/*.csv
 **/*.dwg
 
-# 商品库结构层 CSV 白名单（vault 数据资产 / 上 git / 5/9 用户决策）
+# 商品库结构层 CSV 白名单（vault 数据资产 / 上 git / 5/9 用户决策 / 2026-07-03 升模式级·修审计#8）
 # 原则：结构资产入 git（顾问可复用 / 跨客户共享）/ 客户真实数据保持忽略
-# 允许：A 标准 SKU seed / B 品类骨架 / C 客户接入模板 / _maintenance 全部
+# A/B/_maintenance 层 = 目录模式放行（新增结构 csv 自动入 git，不再静默漏掉）
+# C_client_specific = 保持默认忽略 fail-safe，仅空模板逐文件放行
 # 禁止：C_client_specific/*_raw.csv（客户原始数据 / 隐私）
 # 禁止：C_client_specific/*_mapped.csv（客户匹配结果 / 含销售/毛利等敏感字段）
-!13_数据分析与工具脚本/商品库_v0.1/A_core_sku_seed.csv
-!13_数据分析与工具脚本/商品库_v0.1/B_category_skeleton.csv
+!13_数据分析与工具脚本/商品库_v0.1/A_*.csv
+!13_数据分析与工具脚本/商品库_v0.1/B_*.csv
+!13_数据分析与工具脚本/商品库_v0.1/_maintenance/*.csv
 !13_数据分析与工具脚本/商品库_v0.1/C_client_specific/_客户SKU模板.csv
-!13_数据分析与工具脚本/商品库_v0.1/_maintenance/brand_alias.csv
-!13_数据分析与工具脚本/商品库_v0.1/_maintenance/package_unit.csv
-!13_数据分析与工具脚本/商品库_v0.1/_maintenance/keyword_rule.csv
 
 # Allow approved empty Excel templates（vault 结构资产 / 0 真实客户数据 / 单文件白名单）
 # 原则：保留 **/*.xlsx 全局忽略 / 仅显式白名单空模板
