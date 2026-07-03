@@ -1,5 +1,6 @@
 ---
 title: "有数DataVision：近20年来零售渠道的演变"
+summary: 反直觉破局：山姆通过"放弃"定义新战场(会员费+精简SKU+高质低价)，实现"供给决定需求"，难以复制的是这三者的闭环。
 source: https://mp.weixin.qq.com/s?__biz=MzI0NTc2MTU1MA==&mid=2247485231&idx=1&sn=f944a5a75e533a62fe6553eb8f34057c&chksm=e948d44ede3f5d582d11362f202c20b0b089fa2d44efdafe4d18d25f653a828039d5d4933965&cur_album_id=2702011527255883779&scene=189#wechat_redirect
 topic: retail
 targetVault: retail-knowledge-vault

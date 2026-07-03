@@ -1,6 +1,7 @@
 ---
 title: 12_行业研究
 version: v1.1
+summary: 14_外部案例与行业研究+1.1零售实践资产整合，涵盖外部案例、行业趋势、单品管理系列完整资源。
 status: active
 owner: 六哥
 created: 2026-05-04

@@ -1,3 +1,9 @@
+---
+title: Codex 收件箱
+summary: Codex 待执行任务队列，含供应商并表、三工具编码、知识库体检三类任务。
+status: draft
+---
+
 # Codex 收件箱
 
 ## ⏳ 待执行队列（Claude Code 登记 · 2026-06-22）

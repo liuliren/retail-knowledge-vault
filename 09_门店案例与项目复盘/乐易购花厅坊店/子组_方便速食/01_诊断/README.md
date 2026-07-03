@@ -1,6 +1,7 @@
 ---
 title: 子组_方便速食 / 01_诊断
 version: v0.1
+summary: 方便速食调改前诊断指南，POS 数据、56 SKU B 类识别、商品力客群分析。
 status: active
 owner: 六哥
 created: 2026-05-10

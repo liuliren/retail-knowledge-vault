@@ -1,5 +1,6 @@
 ---
 title: M-DEC-009 休食老品汰换的时间维度防误判(候选)
+summary: 汰换前用时间维度三查(缺货/衰退/售罄率)防误杀，堵现有滞销标准盲区。
 aliases: ["M-DEC-009"]
 version: v0.1
 status: candidate

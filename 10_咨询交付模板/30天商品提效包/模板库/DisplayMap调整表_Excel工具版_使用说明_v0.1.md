@@ -1,6 +1,7 @@
 ---
 title: DisplayMap调整表_Excel工具版_使用说明
 version: v0.1
+summary: DisplayMap调整表Excel使用说明，6Sheet/38字段/16下拉，陈列动作承接。
 status: draft
 document_type: tool_instruction
 audience: consultant

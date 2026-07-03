@@ -2,6 +2,7 @@
 title: 全量合并版 execute 前置方案 CODEX-Data-Merge-Full-001
 version: v0.1
 status: draft
+summary: 执行全量数据合并前26字段清单与6项最低门槛审查;不接真实数据不写回
 owner: 六哥
 created: 2026-06-22
 updated: 2026-06-22

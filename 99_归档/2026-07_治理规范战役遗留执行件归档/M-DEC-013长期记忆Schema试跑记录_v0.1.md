@@ -1,5 +1,6 @@
 ---
 title: M-DEC-013 长期记忆 Schema 试跑记录（Phase 0B 预演）
+summary: M-DEC长期记忆Schema v0.1.2试跑，共因排除与晋升门槛验证
 version: v0.1
 status: draft
 owner: 六哥

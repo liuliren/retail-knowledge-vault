@@ -1,5 +1,6 @@
 ---
 title: G06_战后复盘 AAR（战役完成 / 暂停 / 终止 SOP）
+summary: 战役完成/暂停/终止复盘AAR SOP，产出实战登记与SOP升级清单。
 version: v0.1
 status: draft
 owner: 六哥

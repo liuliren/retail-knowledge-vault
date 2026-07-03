@@ -2,6 +2,7 @@
 title: 花厅坊基础设施 6 表交付包 README v1.0.1
 version: v1.0.1
 status: active
+summary: "6表交付包索引：A-E表+引进表全生命周期闭环，使用SOP与反幻觉红线。"
 owner: 六哥
 created: 2026-05-07
 updated: 2026-05-07

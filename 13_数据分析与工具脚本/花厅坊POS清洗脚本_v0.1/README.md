@@ -1,6 +1,7 @@
 ---
 title: 花厅坊POS清洗脚本_v0.1.2
 version: v0.1.2
+summary: 13张输入数据（7张POS汇总+5张字典+1张匹配层）规范化为6张输出，dry-run预演与execute执行分离，异常率守门。
 status: draft
 quadrant: III
 owner: 六哥

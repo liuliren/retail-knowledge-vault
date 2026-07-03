@@ -1,6 +1,7 @@
 ---
 title: 子组_冲调 / 调改子组导航（占位）
 version: v0.1
+summary: 冲调子组导航：试点预案保留、5/30G05触发、4阶段流程、佳妮责任人。
 status: planned
 owner: 六哥
 responsible_staff: 佳妮

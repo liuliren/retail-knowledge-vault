@@ -30,7 +30,7 @@ fact_layer:
     - "Day 2 frontmatter 全文件升级"
     - "Day 3 双向打通 KB + G10 SOP"
 related:
-  - "[[CLAUDE.md]] §13.16-20 + §17.11+"
+  - "`CLAUDE.md` §13.16-20 + §17.11+"
   - "[[工程操作纪律手册_v1.0]]"
   - "[[反幻觉检查清单]] v1.2"
   - "[[G10_Memory治理审计]]（W20 创建占位）"
@@ -141,7 +141,7 @@ last_accessed: 2026-05-09
 hit_count: 12
 decay_score: 0.85
 vault_links:
-  - "[[CLAUDE.md]] §X"
+  - "`CLAUDE.md` §X"
 expires: 2027-05-09  # 强制 review 节点
 ```
 
@@ -239,7 +239,7 @@ vault KB 关键文件 §"memory 触发记录"段（新增）
 
 ## §8. 关联
 
-- [[CLAUDE.md]] §13.16-20 + §17.11+
+- `CLAUDE.md` §13.16-20 + §17.11+
 - [[工程操作纪律手册_v1.0]]
 - [[2026-05-09_vault全量审计与数据审计1月期机制_v1.0]]
 - [[反幻觉检查清单]] v1.2

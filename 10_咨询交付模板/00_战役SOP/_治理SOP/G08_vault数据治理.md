@@ -1,5 +1,6 @@
 ---
 title: G08 vault 数据治理 SOP v0.1（Oracle ACID 纪律 / 重推+倒推+链路追溯）
+summary: 数据进库强制治理SOP，重推/倒推验证，fact_layer标注，不一致列≥3假设。
 version: v0.1
 status: active
 owner: 六哥

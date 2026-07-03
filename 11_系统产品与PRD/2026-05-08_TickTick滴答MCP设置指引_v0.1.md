@@ -2,6 +2,7 @@
 title: TickTick / 滴答 MCP 设置指引 v0.1
 version: v0.1
 status: active
+summary: Claude Code对接TickTick MCP方案，推荐liadgez/ticktick-mcp-server，5步设置、OAuth授权、反幻觉红线。
 quadrant: III
 owner: 六哥
 created: 2026-05-08

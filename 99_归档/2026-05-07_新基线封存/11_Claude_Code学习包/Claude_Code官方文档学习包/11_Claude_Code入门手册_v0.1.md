@@ -1,6 +1,7 @@
 ---
 title: Claude Code 入门手册
 version: v0.1
+summary: 15章完整教材：心智模型、会话工作法、降本规则、30/60/90天升级路线。
 status: review
 owner: 六哥
 created: 2026-05-04

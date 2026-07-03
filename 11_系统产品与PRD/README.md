@@ -2,6 +2,7 @@
 title: 11_系统产品与PRD 目录说明
 version: v1.0
 status: active
+summary: 系统产品、PRD、字段字典、微信小程序、Claude Code开发提示词库，咨询业务产品化核心库。
 quadrant: III
 owner: 六哥
 created: 2026-05-01

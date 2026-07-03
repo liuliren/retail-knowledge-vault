@@ -1,6 +1,7 @@
 ---
 title: 30天商品提效包 README（产品入口）
 version: v0.1
+summary: 30天商品提效包产品入口，四件套交付链/商业模式/对外销售页规划。
 status: active
 owner: 六哥
 created: 2026-06-20

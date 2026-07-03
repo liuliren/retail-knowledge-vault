@@ -1,6 +1,7 @@
 ---
 title: Token 与额度控制规范
 version: v0.1
+summary: 三个月生存战核心SOP：11条降本纪律、反馈回路、反模式清单。
 status: review
 owner: 六哥
 created: 2026-05-04

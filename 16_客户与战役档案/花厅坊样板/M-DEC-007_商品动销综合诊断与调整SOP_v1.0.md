@@ -1,6 +1,7 @@
 ---
 title: M-DEC-007 商品动销综合诊断与调整 SOP v1.0
 version: v1.0
+summary: 商品动销诊断SOP:POS→七维交叉→分级→归因→调整的7步闭环。
 status: draft
 signoff_required: true
 signoff_note: "v1.0 draft 已具备完整 SOP 框架；升 active 须六哥填写 §7 战役验证记录 + §9 四项签字门后方可生效。"

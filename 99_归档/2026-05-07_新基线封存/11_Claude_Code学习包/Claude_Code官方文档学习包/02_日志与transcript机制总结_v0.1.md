@@ -1,6 +1,7 @@
 ---
 title: 日志与 transcript 机制总结
 version: v0.1
+summary: 会话全明文落盘位置与隐私护栏、/rewind回滚依赖、月度复盘蒸馏机制建议。
 status: review
 owner: 六哥
 created: 2026-05-04

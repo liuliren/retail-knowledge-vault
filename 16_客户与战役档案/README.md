@@ -1,6 +1,7 @@
 ---
 title: 16_客户与战役档案 目录说明
 version: v0.1
+summary: 战役档案中心定位说明，沉淀全周期治理（章程/进展/风险/决策/交付/AAR）。
 status: active
 owner: 六哥
 created: 2026-05-04

@@ -1,5 +1,6 @@
 ---
 title: 13_数据分析与工具脚本 目录说明
+summary: 工具脚本目录：Excel 诊断模板、数据清洗规则、条码匹配、自动化报告。
 version: v1.0
 status: active
 quadrant: III

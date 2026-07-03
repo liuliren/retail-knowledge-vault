@@ -1,5 +1,6 @@
 ---
 title: POS数据清洗与商品标准化规范_v0.1
+summary: POS数据清洗规范，11步流程、3类标准表、13异常类型、8条红线。
 version: v0.1
 status: draft
 quadrant: III

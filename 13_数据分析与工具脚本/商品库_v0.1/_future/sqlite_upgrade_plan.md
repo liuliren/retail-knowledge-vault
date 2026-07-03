@@ -1,5 +1,6 @@
 ---
 title: 商品库 SQLite 升级计划（Year 2+ 占位 / 不实施）
+summary: SQLite 升级计划，Year 2+ 评估，当前坚持 CSV+Markdown 白盒。
 version: v0.1
 status: draft
 owner: 六哥

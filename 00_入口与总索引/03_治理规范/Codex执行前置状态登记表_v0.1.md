@@ -1,6 +1,7 @@
 ---
 title: Codex 执行前置状态登记表
 version: v0.1
+summary: Codex execute 前置闸门登记表；方法/脚本/数据均就绪，卡点仅数据线与用户签字。
 status: active
 signoff: 六哥 2026-06-22（CODEX-Tools-Ready-Batch-012：登记 execute 前置闸门状态）
 owner: 六哥

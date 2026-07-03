@@ -1,6 +1,7 @@
 ---
 title: 14_刻意练习与成长
 version: v1.1
+summary: 刻意练习与成长模块导航，含客户验证日志（24h硬约束）与Onboarding路径。
 status: active
 owner: 六哥
 created: 2026-05-04

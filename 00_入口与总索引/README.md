@@ -1,6 +1,7 @@
 ---
 title: 00_入口与总索引 — vault 开机指针页
 version: v3.0
+summary: Vault 开机指针：RESUME→维基主页→知识树→概念定义→战场状态，极简导航，读完即跳转，不停留。
 status: active
 owner: 六哥
 created: 2026-05-01

@@ -1,3 +1,9 @@
+---
+title: 并行代理：同一文件单worker纪律
+summary: 同一文件同一条线限单worker，防并发写冲突覆盖
+status: draft
+---
+
 # 并行代理:同一文件单 worker 纪律
 
 **类型**:feedback · **定于** 2026-06-26(花厅坊数据底座连撞三次车后)

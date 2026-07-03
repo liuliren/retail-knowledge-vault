@@ -1,6 +1,7 @@
 ---
 title: "专访欧莱雅全球CEO：美这个生意的根本是什么？"
 source: https://mp.weixin.qq.com/s?__biz=MzIzNDYwMzM5Nw==&mid=2247536146&idx=1&sn=a01c3541aca886ebae209674cc1860c4&scene=21&poc_token=HFEEQWqj_bk1LytIgW4azVAeRZZjviFLHU0io0-U
+summary: "欧莱雅的护城河来自消费者信任与持续科学投入，而非并购策略；代表美妆行业的长期主义范式。"
 topic: retail
 targetVault: retail-knowledge-vault
 tags: [精读卡, 美妆行业, 长期主义]

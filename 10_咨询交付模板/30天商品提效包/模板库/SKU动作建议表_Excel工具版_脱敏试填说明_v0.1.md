@@ -1,6 +1,7 @@
 ---
 title: SKU动作建议表 Excel工具版 脱敏试填说明
 version: v0.1
+summary: SKU动作建议表脱敏试填验证，T03/G4A样板，10动作/10角色/11防线验证。
 status: draft
 owner: 六哥
 created: 2026-06-20

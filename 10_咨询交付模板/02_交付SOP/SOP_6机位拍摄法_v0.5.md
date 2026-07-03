@@ -1,5 +1,6 @@
 ---
 title: SOP_6机位拍摄法_v0.5
+summary: 6机位拍摄SOP标准化，M1-M6定义、机位标记、调改前后复拍对标。
 version: v0.5
 status: draft
 quadrant: sop

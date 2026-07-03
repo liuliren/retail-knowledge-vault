@@ -1,6 +1,7 @@
 ---
 title: Claude Code 使用手册（综合）
 version: v0.1
+summary: 分散机制收敛成日常决策树：五原则、15大主题、6高频决策树、操作禁忌。
 status: review
 owner: 六哥
 created: 2026-05-04

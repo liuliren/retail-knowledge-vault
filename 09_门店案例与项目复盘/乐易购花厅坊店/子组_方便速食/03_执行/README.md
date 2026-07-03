@@ -1,6 +1,7 @@
 ---
 title: 子组_方便速食 / 03_执行
 version: v0.1
+summary: 方便速食调改执行指南，调改时间线、陈列照片、调改前后对比、24h 复拍。
 status: active
 owner: 六哥
 created: 2026-05-10

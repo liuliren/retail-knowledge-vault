@@ -1,5 +1,6 @@
 ---
 title: 商品库变更日志
+summary: 商品库变更日志台账，追踪版本迭代、字段升级、新增文件、数据修正。
 status: draft
 created: 2026-05-09
 updated: 2026-05-09

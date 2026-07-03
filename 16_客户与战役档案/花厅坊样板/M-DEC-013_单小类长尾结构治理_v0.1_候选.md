@@ -1,5 +1,6 @@
 ---
 title: M-DEC-013 单小类长尾结构治理（C+D 尾部瘦身判据）
+summary: C+D约40%SKU仅产10%销额时的尾部瘦身判据；先过六桶防误杀。
 aliases: ["M-DEC-013"]
 version: v0.1
 status: candidate

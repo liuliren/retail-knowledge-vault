@@ -1,5 +1,6 @@
 ---
 title: "浑瑾观市 | 东升西落的AB面"
+summary: "中美估值重估空间：经济周期错位与科技竞争重置，长期资本回报率差限制收敛"
 source: "https://mp.weixin.qq.com/s/N6XbLiNKJBoRDeDz_TJ-sQ"
 topic: growth
 targetVault: David-Liu-Vault/growth

@@ -1,5 +1,6 @@
 ---
 title: Retail OS v2.0 选品/引进层（商业交付版·加法层）
+summary: Retail OS v2.0选品加法层，5步+4闸门槛+5铁律，与v1.0组成攻防闭环。
 version: v2.0
 status: active
 signoff: 六哥 2026-06-22（P0/P1-GOV-Batch-004：P0 active 签字门补齐·内容状态确认，不代表重新审定全文）

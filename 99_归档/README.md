@@ -1,5 +1,6 @@
 ---
 title: 99_归档 目录说明
+summary: 存放旧版本、已完成项目、废弃方案等不再活跃的内容，保留历史可追溯性。
 version: v1.0
 status: active
 owner: 六哥

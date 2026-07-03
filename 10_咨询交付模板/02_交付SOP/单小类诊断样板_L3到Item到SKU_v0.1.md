@@ -1,5 +1,6 @@
 ---
 title: 单小类诊断样板（L3→Item→SKU 可复制通用版）v1.0
+summary: 单小类诊断样板，POS→脱敏结构诊断→一页简报，3小类验证升active。
 version: v1.0
 status: active
 owner: 六哥

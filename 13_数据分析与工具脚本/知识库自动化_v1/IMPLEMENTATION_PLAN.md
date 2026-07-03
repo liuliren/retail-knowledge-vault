@@ -1,5 +1,6 @@
 ---
 title: Knowledge Vault Automation Implementation Plan
+summary: 知识库自动化6阶段实现蓝图，涵盖资产扫描、差异检测、流水线执行、仪表查询、调度部署。
 status: draft
 created: 2026-06-01
 updated: 2026-06-01

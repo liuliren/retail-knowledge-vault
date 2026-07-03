@@ -1,6 +1,7 @@
 ---
 title: 30天商品提效包 模板库 README（模板导航）
 version: v0.1
+summary: 30天商品提效包模板库导航，四件套交付链/统一口径/分级口径收口。
 status: active
 owner: 六哥
 created: 2026-06-20

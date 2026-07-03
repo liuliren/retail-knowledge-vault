@@ -1,6 +1,7 @@
 ---
 title: 03_客户报告模板（占位）
 version: v0.1
+summary: 客户报告模板目录占位，存放交付给客户的诊断报告/品类/陈列模板。
 status: draft
 owner: 六哥
 created: 2026-05-04

@@ -1,6 +1,7 @@
 ---
 title: "名创优品：会成为中国的Dollar General吗？或许它已经走上了另一条路"
 source: "https://mp.weixin.qq.com/s?__biz=MzI0NTc2MTU1MA==&mid=2247484757&idx=1&sn=160abe7df0e3db3fc7b09a9390ffeec7&chksm=e948d634de3f5f227ef01810f127d9b344a97505aa0ca04953b1650ddd9367a767d8d84f84e9&cur_album_id=2702011527255883779&scene=189#wechat_redirect"
+summary: "名创优品\"双轮驱动\"战略是极致性价比+IP情感内容，实现从渠道品牌向产品品牌升级。"
 topic: retail
 targetVault: retail-knowledge-vault
 tags: [精读卡, 名创优品, 全球化, 性价比, IP联名, 超级品牌]

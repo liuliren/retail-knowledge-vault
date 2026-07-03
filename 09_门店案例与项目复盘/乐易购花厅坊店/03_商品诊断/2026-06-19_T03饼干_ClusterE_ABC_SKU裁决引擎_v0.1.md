@@ -2,6 +2,7 @@
 title: T03饼干 Cluster E ABC SKU裁决引擎 v0.1
 version: v0.1
 status: active
+summary: T03饼干ABC裁决引擎：45A必保/67B观察/73C中13滞销+45误判校正；联动价格/陈列/库存5行动。
 owner: 六哥
 created: 2026-06-19
 updated: 2026-06-19

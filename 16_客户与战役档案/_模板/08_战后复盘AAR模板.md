@@ -1,6 +1,7 @@
 ---
 title: 战后复盘AAR模板
 version: v0.1
+summary: 战役战后复盘AAR模板，总结命题达成/方法论验证/改进项的结构化回顾。
 status: active
 owner: 六哥
 created: 2026-05-04

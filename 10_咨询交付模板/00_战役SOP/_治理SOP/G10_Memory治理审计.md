@@ -1,5 +1,6 @@
 ---
 title: G10 Memory 治理审计 SOP v0.1（vault 第 6 大支柱月度审计）
+summary: Memory治理月度审计，评分衰减、生命周期转换、token预算控制≤5K。
 version: v0.1
 status: active
 owner: 六哥

@@ -1,6 +1,7 @@
 ---
 title: 04_老板看板与凭证模板（占位）
 version: v0.1
+summary: 老板看板与凭证模板目录占位，存放月度看板/改造凭证/ROI凭证。
 status: draft
 owner: 六哥
 created: 2026-05-04

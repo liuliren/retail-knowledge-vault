@@ -1,6 +1,7 @@
 ---
 title: DisplayMap调整表_模板定义
 version: v0.1
+summary: DisplayMap调整表模板定义，5组38字段/12类陈列动作，诊断与执行桥梁。
 status: draft
 document_type: template_definition
 audience: consultant

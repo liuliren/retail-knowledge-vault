@@ -1,6 +1,7 @@
 ---
 title: "万豪比谁都 low，但他赢了。"
 source: https://mp.weixin.qq.com/s/L4ab1peyHr12_hB15NVGRg
+summary: "万豪用大众化定位、高离开成本与持续服务构建护城河，胜出不靠最优产品而靠无法离开的系统。"
 topic: retail
 targetVault: retail-knowledge-vault
 tags: [精读卡, 私域运营, 用户忠诚]

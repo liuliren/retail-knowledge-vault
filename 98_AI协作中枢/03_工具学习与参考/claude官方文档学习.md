@@ -1,3 +1,10 @@
+---
+title: Claude官方文档学习
+summary: Claude Code 官方文档学习笔记，涵盖内存、命令、权限、token等15大主题。
+status: draft
+source_type: reference
+---
+
 > **⚠️ 2026-06-30 注**：本文为 Claude 工具学习笔记（Reference 层，非零售方法论），存放在 `00_入口与总索引/` 位置有误，待 NAV-GOV-02 G05 迁移至 `98_AI协作中枢/`。当前只读保留，勿作零售知识库导航使用。
 
   **1. 官方文档学习范围**                                                 

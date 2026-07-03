@@ -1,3 +1,10 @@
+---
+title: Retail OS v1.0 升级为 SaaS 产品设计
+summary: Retail OS v1.0 向 SaaS 产品升级方案,系统产品化与多门店规模化。
+version: v1.0
+status: draft
+---
+
 # Retail OS v1.0 → SaaS产品级公司化设计升级文档
 
 ## 一、产品升级目标

@@ -1,6 +1,7 @@
 ---
 title: 2026-05-W19 vault 全量审计 punch list v1.0（P0 核心 15 文件 / 6 维评分）
 version: v1.0
+summary: W19 全量审计 punch list：P0 核心 15 文件 6 维评分（85.7/100）+ 3 重大升级 + W19 修订清单。
 status: active
 owner: 六哥
 created: 2026-05-09
@@ -19,7 +20,7 @@ fact_layer:
     - "W21-W22 P2 + 客户验证 + 跨业态复用评估"
 related:
   - "[[2026-05-09_vault全量审计与数据审计1月期机制_v1.0]]"
-  - "[[CLAUDE.md]]"
+  - "`CLAUDE.md`"
   - "[[2026-05-07_McKinsey审计报告_v1.0]]"
 ---
 
@@ -87,7 +88,7 @@ related:
 |---|---|---|
 | M | 18/20 | frontmatter 字段定义清晰 / fact_layer 4 元字段 MECE |
 | I | 19/20 | Audit Trail 完整 / 版本 v1.0→v1.3 演进可见 |
-| O | 19/20 | 字段标准 single source / 关联 [[CLAUDE.md]] §13.16-19 |
+| O | 19/20 | 字段标准 single source / 关联 `CLAUDE.md` §13.16-19 |
 | A | 17/20 | 模板可复用 / 但缺示例（理想 frontmatter 完整示例）|
 | T | 17/20 | OTA 迭代 / v1.3 fact_layer 5/9 加 |
 | AC | 18/20 | HHH 数据契约 / fact_layer 4 元字段对齐 Constitutional |
@@ -288,7 +289,7 @@ AC Anthropic   : 17.7 / 20
 ## §4. 关联
 
 - [[2026-05-09_vault全量审计与数据审计1月期机制_v1.0]]
-- [[CLAUDE.md]]
+- `CLAUDE.md`
 - [[反幻觉检查清单]]
 - [[数据一致性追溯案例库]]
 

@@ -1,6 +1,7 @@
 ---
 title: 02_零售企业生意诊断 目录说明
 version: v1.0
+summary: 生意诊断目录说明：诊断框架、清单、模型方法存放地；4D 诊断表和 5 分钟诊断卡已建；老板店长访谈提纲两项待补（P3）。
 status: active
 quadrant: II
 owner: 六哥

@@ -1,6 +1,7 @@
 ---
 title: G02_Query（知识被调用 SOP）
 version: v0.1
+summary: G02查证SOP：问题明确+列依据+跨文件检索+标链接+归档;反幻觉核心。
 status: draft
 owner: 六哥
 created: 2026-05-04

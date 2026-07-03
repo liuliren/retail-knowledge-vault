@@ -2,6 +2,7 @@
 title: 样板客户90天 full dry-run review CODEX-Full-DryRun-Review-001
 version: v0.1
 status: draft
+summary: 管线完好金矿候选19.9%C行偏宽,P75极分散,泛化确立,建议先抽样复核
 owner: 六哥
 created: 2026-06-23
 updated: 2026-06-23

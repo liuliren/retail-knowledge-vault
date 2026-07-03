@@ -1,6 +1,7 @@
 ---
 name: goldmine
 description: "_client_private/ 是 gitignored 客户私有区;goldmine 全链脚本/配置/明细已脱管入此,tracked 只留通用件"
+summary: goldmine脚本与客户配置脱管进_client_private(gitignored)，tracked仅留通用方法件
 metadata: 
   node_type: memory
   type: project

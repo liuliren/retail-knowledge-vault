@@ -2,6 +2,7 @@
 title: 报告类 Word 客户版 / PDF 规划
 version: v0.1
 status: draft
+summary: 报告三层转换规划：内部版→客户版→PDF，含术语改写10项与脱敏检查清单。
 owner: 六哥
 created: 2026-06-20
 updated: 2026-06-20

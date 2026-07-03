@@ -1,3 +1,9 @@
+---
+title: SYSTEM_RUNTIME 执行报告
+summary: Dispatcher+Evolution Engine执行:路由规则加载,Codex写入测试触发,3项改进建议。
+status: draft
+---
+
 # SYSTEM_RUNTIME 执行报告
 
 - 执行时间：2026-06-19

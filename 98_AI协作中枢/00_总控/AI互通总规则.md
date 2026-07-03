@@ -1,3 +1,9 @@
+---
+title: AI互通总规则
+summary: 本Vault多Agent(Claude Code/Codex/Obsidian)的协作规范与写入禁止事项。
+status: reference
+---
+
 # AI互通总规则
 
 ## 〇、宪法层级（2026-06-26 补·接上层治理）

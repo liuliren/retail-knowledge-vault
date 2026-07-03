@@ -1,3 +1,10 @@
+---
+title: Retail OS SaaS 系统架构设计 1.0
+summary: 零售 OS 系统 4 层架构(前端/应用/算法/数据),含 ABC 引擎与诊断工具链。
+version: v1.0
+status: draft
+---
+
 # Retail OS SaaS｜系统架构设计 1.0（整合版）
 
 ## 一、系统总体架构（4层架构）

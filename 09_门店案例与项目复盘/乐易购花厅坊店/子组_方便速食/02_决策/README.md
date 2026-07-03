@@ -1,6 +1,7 @@
 ---
 title: 子组_方便速食 / 02_决策
 version: v0.1
+summary: 方便速食调改决策导航，SKU 动作决策、排面释放方向、启明 sign off 闭环。
 status: active
 owner: 六哥
 created: 2026-05-10

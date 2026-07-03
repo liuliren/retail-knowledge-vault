@@ -1,6 +1,7 @@
 ---
 title: 客户验证日志 目录说明
 version: v0.1
+summary: 客户验证日志体系规范，24h硬约束，6段结构落地方法论真实检验。
 status: active
 owner: 六哥
 created: 2026-05-04

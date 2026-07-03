@@ -1,5 +1,6 @@
 ---
 title: vault 商品库主纲（v1.1 内完善 / 目录保留 v0.1）
+summary: 商品库主纲，连接客户数据、品类知识、经营判断，三层架构 8 步闭环。
 version: v1.1
 status: active
 owner: 六哥

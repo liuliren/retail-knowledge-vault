@@ -1,6 +1,7 @@
 ---
 title: 子组_糕点 / 调改子组导航（D 糕点扩品试点）
 version: v0.1
+summary: 糕点子组调改导航，D 糕点扩品试点，5/10 调改执行中，5/13-5/17 观察。
 status: active
 owner: 六哥
 responsible_staff: 佳妮

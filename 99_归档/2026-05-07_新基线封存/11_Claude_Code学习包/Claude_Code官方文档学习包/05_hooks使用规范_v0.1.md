@@ -1,6 +1,7 @@
 ---
 title: Hooks 使用规范
 version: v0.1
+summary: Hook机制、事件类型、安全红线、三个月内不开理由与未来开启候选。
 status: review
 owner: 六哥
 created: 2026-05-04

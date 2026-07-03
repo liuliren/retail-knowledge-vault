@@ -1,5 +1,6 @@
 ---
 title: 当前断点 RESUME（开机只读·≤300tokens）
+summary: 开机唯一导航文件，记上次到哪/下一步3条/活跃指针/parking。
 version: v2.1
 format: STATE-MACHINE
 protocol: Token-Limited Context Protocol v2.0（2026-06-30 启用）
@@ -9,6 +10,8 @@ updated: 2026-07-02
 ## STATE [2026-07-03 · KB-P1三轮+保密链收敛(三裁已下·脱敏/细则R1-5/GOV-001v0.2)·全hold push待签]
 
 new_0703:
+  - 🔧**KB升级Wave1完成(07-03·多线程Workflow·44agent·验收通过)**[计划=输出区/2026-07-03_零售知识库升级_彻底完成作战计划_待签_v0.1(六哥签:全批量/跳active正文)]: ①概念索引#26 SSOT归并23链(锚点逐字核验·不建页碎片·5待建candidate待签) ②summary#22批量589缺→21(~568补·YAML0破损·4真错=预存坏引号非batch) ③全库链路诊断:真bug清单45条(异名/缺版本后缀/skill误用wikilink/简写前缀·待Wave2机械修)。**597文件改动未commit**(建议作restore point)。⏭Wave2=status归位/版本同步/孤儿分诊/homeless建candidate/45真断链修/4预存坏frontmatter。🖊️待裁:两份经营指标字典SSOT竞争(23项vs33项)归并前必裁
+  - ✅**入口区链路健康收口(07-03·三线并行·Opus)**: 缺口#6真断链关闭。MOC 4裸ID互链修复+CLAUDE.md伪链108处→行内代码(38文件·batch-processor)+真断链外科6处(反幻觉规则异名/critique·lint-privacy→行内代码/M-DEC晋级机制`16_/`简写×4展开)。434断链三线分诊:真bug~120已全修;余量=概念页未原子化65(→#26建页候选·签字门)+路径全路径链18(**#25 lint误报·Obsidian可解析·勿改**)+跨库/pending。新增#25(lint脚本basename-only误报路径链·待升级)+#26(32概念未原子化·B1真孤儿21+B2内嵌11·建页待签)。[缺口总账v0.1已更]
   - 品类表验收框架v0.1第2轮批判审议✅=有条件放行(R1-R7必修:抽查算术不成立/中式糕点两stable上游打架/§5跳candidate违宪)·登缺口总账#24·修订后进第3轮 [输出区/2026-07-03_第2轮批判审议_品类表验收框架v0.1]
   - 缺口#4✅关闭(f0edf5a): 02/03/06/07/08五README指针化·06/07/08修05-04遗留module错位+死链·12新链0断链
   - ✅六哥三件套裁决已签(07-03·收敛执行授权,不扩审): P3-1动销回灌✅(207e712·工作区升v1.0.2恢复SSOT) · Phase3收敛✅+Phase4归档13/14✅全封板(d5f5eda·D档删4件+symlink留痕Ledger·治理draft 29→16) · 1件留置待裁:治理总控待决任务表(#12供应商能力库/#13禁用词无承接方,建议债务队列补两行再移) · 审计#14勘误2✅(_claude_context平反)

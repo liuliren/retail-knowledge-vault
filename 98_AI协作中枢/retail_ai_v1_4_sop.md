@@ -1,3 +1,10 @@
+---
+title: AI 零售三脑操作系统 v1.4 SOP
+summary: AI 三脑操作系统 v1.4 SOP,实现收件箱驱动的半自动协作(Claude/Codex/Obsidian)。
+version: v1.4
+status: draft
+---
+
 # AI零售三脑操作系统 v1.4 SOP
 
 ## 1. 系统概述

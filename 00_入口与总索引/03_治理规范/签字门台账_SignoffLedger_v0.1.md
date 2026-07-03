@@ -79,3 +79,7 @@ related:
 | 2026-07-03 | D档删除 | obsidian-codex-bridge symlink(→02_Codex·Codex验证日志明示无依赖) | 六哥(副本收敛裁决) | 僵尸模块清理;未被git追踪 |
 | 2026-07-03 | C档批量归档×2 | ①陈旧驾驶舱8件(00_总控5+04_作战指挥2+SYSTEM_RUNTIME整目录)→99_归档/2026-07_陈旧驾驶舱与三脑实验归档/ ②治理规范战役遗留执行件13件→99_归档/2026-07_治理规范战役遗留执行件归档/ | 六哥(P3/P4-3收敛执行授权·2026-07-03) | wikilink按basename解析不断;1件(治理总控待决任务表)因#12/#13未决项无承接方留置待裁;03_治理规范draft 29→16 |
 | 2026-07-03 | 已签件勘误2 | 审计报告P1-AUDIT-KB-Upgrade-002:#14误判_claude_context为僵尸→平反(handoff/compact功能依赖) | 六哥(副本收敛裁决P3-4) | 防后续Agent按#14误删功能目录 |
+| 2026-07-04 03:24 | PostToolUse监听 | apply-signoff.sh | system | 已触发落账监听 |
+| 2026-07-04 03:24 | PostToolUse监听 | apply-signoff.sh | system | 已触发落账监听 |
+| 2026-07-04 03:24 | D档删除 | /Users/davidliu/KnowledgeBase/retail-knowledge-vault/14_外部案例與行業研究 | 六哥(apply-signoff) | 清单: /private/tmp/claude-501/-Users-davidliu-Claude/63759687-5a4d-4a14-b1ed-88159e0fac9d/scratchpad/signoff_list.txt |
+| 2026-07-04 03:24 | PostToolUse监听 | apply-signoff.sh | system | 已触发落账监听 |

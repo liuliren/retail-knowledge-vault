@@ -1,5 +1,6 @@
 ---
 title: SKU 属性提取算法 v0.1
+summary: SKU 属性提取算法，规格 93%、品牌 99% 准确率，纯函数跨客户复用。
 aliases:
   - SKU属性提取算法_v0.1
 version: v0.1

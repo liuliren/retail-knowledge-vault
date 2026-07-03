@@ -1,5 +1,6 @@
 ---
 title: "浑瑾观市 | 地缘扰动下的产业主线与AI影响浅析"
+summary: "地缘冲突+AI并驱：能源自主与AI上游受益，市值下游→上游迁移中"
 source: "https://mp.weixin.qq.com/s/wvuf_nk4JID583g2yLQ58w"
 topic: growth
 targetVault: David-Liu-Vault/growth

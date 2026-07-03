@@ -2,6 +2,7 @@
 title: 周复盘表_Excel工具版_使用说明
 version: v0.1
 status: draft
+summary: 30天项目周复盘Excel工具版使用说明，6sheet/32列/16下拉，记录动作执行与有效性判断。
 document_type: tool_instruction
 audience: consultant
 client_safety: internal_only

@@ -2,6 +2,7 @@
 title: 门店商品动作RACI_模板定义
 version: v0.1
 status: draft
+summary: 门店商品动作RACI与组织机制，明确5角色责任与7天追踪+周复盘流程。
 source_type: template_definition
 priority: P0
 client_safety: internal_only

@@ -1,5 +1,6 @@
 ---
 title: 99_矛盾与待裁定（晟果咨询知识底座 v1.1）
+summary: 多版本矛盾裁定清单,6 组陈列分组逻辑、层位规则、数据权威性等 5 大矛盾点。
 version: v1.1
 status: active
 owner: 六哥

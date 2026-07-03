@@ -1,5 +1,6 @@
 ---
 title: 商品库维护 SOP v1.1（日常维护 + 错误处理 7 项 / 与 G11 月度审计互补）
+summary: 商品库日常维护 SOP，3 类入库、反哺、规则新增、错误处理 7 机制。
 version: v1.1
 status: active
 owner: 六哥

@@ -1,5 +1,6 @@
 ---
 title: G03 Lint 双链巡检脚本 v0.1（每周一仪式 / Karpathy LLM wiki maintainer）
+summary: 双链巡检脚本，8 维度扫描库健康，支持每周一仪式驱动治理。
 version: v0.1
 status: active
 quadrant: III

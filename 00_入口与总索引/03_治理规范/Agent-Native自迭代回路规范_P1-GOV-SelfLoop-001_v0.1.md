@@ -13,7 +13,7 @@ fact_layer: inferred
 source_attribution: "六哥2026-06-26元能力口述需求 · 设计简报SelfLoop-001 · Karpathy LLM-Wiki · M-DEC回路 · 90/10护城河三层视角 · KB-BUILD-001 token经济学"
 tags: [治理规范, 自迭代回路, 模型分层调度, Skill闭环, Skill孵化, 复盘迭代, LLM-Wiki, agent_rules]
 related:
-  - "[[CLAUDE.md]]"
+  - "`CLAUDE.md`"
   - "`Agent-Native自迭代回路规范_设计简报_P1-GOV-SelfLoop-001_v0.1`(已删·见SignoffLedger)"
   - "[[KB-BUILD-001_raw-wiki-agent_rules与token经济学范式_v0.1]]"
   - "[[M-DEC中层决策资产晋级机制_v0.1]]"
@@ -175,4 +175,4 @@ related:
 4. ✅ 动作台账落点 **`98_AI协作中枢/00_总控/_动作台账.csv`** 确认。
 
 ## 关联
-[[CLAUDE.md]] · `Agent-Native自迭代回路规范_设计简报_P1-GOV-SelfLoop-001_v0.1`(已删·见SignoffLedger) · [[KB-BUILD-001_raw-wiki-agent_rules与token经济学范式_v0.1]] · [[M-DEC中层决策资产晋级机制_v0.1]] · [[方便食品_单品类诊断卡_v0.1]] · [[_当前断点_RESUME]]
+`CLAUDE.md` · `Agent-Native自迭代回路规范_设计简报_P1-GOV-SelfLoop-001_v0.1`(已删·见SignoffLedger) · [[KB-BUILD-001_raw-wiki-agent_rules与token经济学范式_v0.1]] · [[M-DEC中层决策资产晋级机制_v0.1]] · [[方便食品_单品类诊断卡_v0.1]] · [[_当前断点_RESUME]]

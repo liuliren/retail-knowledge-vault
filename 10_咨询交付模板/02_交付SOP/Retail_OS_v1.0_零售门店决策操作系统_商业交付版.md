@@ -1,5 +1,6 @@
 ---
 title: Retail OS v1.1 零售门店决策操作系统（双案例验证版）
+summary: Retail OS门店商品决策系统，5步+ABC+误判4问+黄金位+价格带，7日落地。
 version: v1.1
 status: active
 signoff: 六哥 2026-06-22（P0/P1-GOV-Batch-004：P0 active 签字门补齐·内容状态确认，不代表重新审定全文）

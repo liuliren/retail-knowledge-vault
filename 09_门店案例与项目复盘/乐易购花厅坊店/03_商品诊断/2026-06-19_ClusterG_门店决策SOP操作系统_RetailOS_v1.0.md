@@ -1,6 +1,7 @@
 ---
 title: Cluster G 门店决策SOP操作系统 Retail OS v1.0
 version: v1.0
+summary: 门店决策 SOP 操作系统，5 步照做、A-F 六链决策、店员打印即用。
 status: active
 owner: 六哥
 created: 2026-06-19

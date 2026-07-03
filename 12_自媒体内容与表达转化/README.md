@@ -2,6 +2,7 @@
 title: 12_自媒体内容与表达转化
 version: v2.0
 status: active
+summary: 自媒体品牌建设主战场，方法论+选题+规范+内容模板，方法论→产品→案例变现的最后一环。
 owner: 六哥
 created: 2026-05-04
 updated: 2026-07-01

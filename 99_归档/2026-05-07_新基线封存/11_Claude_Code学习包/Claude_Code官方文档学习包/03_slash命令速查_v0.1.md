@@ -1,6 +1,7 @@
 ---
 title: Claude Code slash 命令速查
 version: v0.1
+summary: 18条内置slash命令、触发场景、高频决策树、日常快速翻阅表。
 status: review
 owner: 六哥
 created: 2026-05-04

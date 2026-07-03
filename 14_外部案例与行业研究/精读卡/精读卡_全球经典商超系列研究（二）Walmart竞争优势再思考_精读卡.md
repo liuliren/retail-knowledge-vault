@@ -1,6 +1,7 @@
 ---
 title: "全球经典商超系列研究（二）Walmart竞争优势再思考"
 source: https://finance.sina.com.cn/stock/stockzmt/2019-02-01/doc-ihqfskcp2270826.shtml
+summary: "Walmart天天低价(EDLP)的真正引擎是天天低成本(EDLC)；生鲜是线下对抗电商的品类锚。"
 topic: retail
 targetVault: retail-knowledge-vault
 tags: [精读卡, Walmart, 供应链成本管控, 生鲜护城河]

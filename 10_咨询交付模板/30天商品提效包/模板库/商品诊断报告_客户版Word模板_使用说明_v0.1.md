@@ -2,6 +2,7 @@
 title: 商品诊断报告_客户版Word模板_使用说明
 version: v0.1
 status: draft
+summary: 客户版诊断报告说明，内部17章→客户12章，删承诺词、去内部术语、客户可发送。
 document_type: tool_instruction
 audience: consultant
 client_safety: internal_only

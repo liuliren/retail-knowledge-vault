@@ -2,6 +2,7 @@
 title: 样板客户90天 full dry-run 审阅 CODEX-Full-DryRun-Execute-001
 version: v0.1
 status: draft
+summary: dry-run跑通脱敏完成,暴露毛利维C行全丙金矿检不出,需方法论评审
 owner: 六哥
 created: 2026-06-23
 updated: 2026-06-23

@@ -1,6 +1,7 @@
 ---
 title: 00_战役SOP 目录说明
 version: v0.1
+summary: 战役SOP体系：8客户SOP(销售-对外)+6治理SOP，Phase 0占位仅骨架，Phase 1跟实战回流。
 status: active
 owner: 六哥
 created: 2026-05-04

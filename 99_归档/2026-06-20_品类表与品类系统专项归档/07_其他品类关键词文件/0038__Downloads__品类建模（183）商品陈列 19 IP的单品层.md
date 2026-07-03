@@ -1,5 +1,6 @@
 ---
 title: 品类建模（183）商品陈列 19 IP的单品层
+summary: VMD三级中IP单品陈列层：秩序换效率的基础陈列法则
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247487719&idx=1&sn=eb10ac90d673888f36e36bdd6d725699&chksm=9b06a2d9ac712bcfd781b80b16a6dc8dada7e2f62a1a9a79f5237e83fc1fe87b3b18c9a13b3c&cur_album_id=4031476791054401544&scene=190#rd
 author:
   - "[[Clippings全量阅读台账_v0.1]]"

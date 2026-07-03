@@ -1,3 +1,10 @@
+---
+title: Codex 任务分发器
+summary: Codex事件驱动分发器：code→Codex、doc→Claude、state→Obsidian
+status: active
+module: 98_AI协作中枢/02_Codex
+---
+
 # Codex 任务分发器
 
 ## 系统模式
@@ -19,7 +26,7 @@
 
 | 任务来源 | 分类结果 | 执行状态 | 说明 |
 |---|---|---:|---|
-| `Codex收件箱.md` | 无未完成任务 | 已完成扫描 | 当前任务为“暂无” |
+| `Codex收件箱.md` | 无未完成任务 | 已完成扫描 | 当前任务为"暂无" |
 
 ## 分发结论
 

@@ -1,6 +1,7 @@
 ---
 title: G01_Ingest（原始素材进库 SOP）
 version: v0.1
+summary: G01进库SOP：素材进库+标元数据+分类+提取+14天WIP;敏感信息禁commit。
 status: draft
 owner: 六哥
 created: 2026-05-04

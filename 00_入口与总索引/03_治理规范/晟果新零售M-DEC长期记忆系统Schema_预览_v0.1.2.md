@@ -14,7 +14,7 @@ permission_level: internal_methodology
 client_safety: internal_only
 module: M-DEC长期记忆系统
 related:
-  - "[[CLAUDE.md]]"
+  - "`CLAUDE.md`"
   - "[[零售知识系统迭代方案_v3.0]]"
   - "[[晟果新零售科学零售Wiki知识体系治理方案_v1.0]]"
   - "[[晟果新零售科学零售术语口径统一表_预览_v0.1]]"
@@ -51,7 +51,7 @@ tags: [M-DEC, 长期记忆, schema, provenance, supersession, signoff, 科学零
 ## 2. 与现有治理体系的关系
 | 现有文件 / 机制 | 本 Schema 与其关系 |
 |---|---|
-| [[CLAUDE.md]] v2.2 | 执行宪法；本文件被其**引用**（不塞重） |
+| `CLAUDE.md` v2.2 | 执行宪法；本文件被其**引用**（不塞重） |
 | [[零售知识系统迭代方案_v2.0]] | 上位方案讲「为什么+路线+当前状态」；本文件讲「规矩」 |
 | [[晟果新零售科学零售Wiki知识体系治理方案_v1.0]] | 管全库治理；本文件管决策记忆闭环 |
 | 术语口径统一表 | 术语一律以 [[晟果新零售科学零售术语口径统一表_v1.0]] 为准 |

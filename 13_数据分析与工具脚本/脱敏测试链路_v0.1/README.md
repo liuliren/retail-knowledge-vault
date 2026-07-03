@@ -1,6 +1,7 @@
 ---
 title: 脱敏测试链路 v0.1
 version: v0.1
+summary: 客户商品D层裸值自动脱敏工具链，隔离条码/进价/供应商，支持品牌密度与毛利率档分析。
 status: candidate
 owner: 六哥
 created: 2026-06-25

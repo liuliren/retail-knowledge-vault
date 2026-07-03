@@ -1,6 +1,7 @@
 ---
 name: wps
 description: 花厅坊门店 .xls 多为 CDFV2/WPS 格式需 python-calamine 读；供应商/销售原始表在 99_原始素材，清洗合并表在 01_清洗输出
+summary: WPS格式.xls用calamine读;raw在99_原始素材(只读),清洗表在01_清洗输出
 metadata: 
   node_type: memory
   type: reference

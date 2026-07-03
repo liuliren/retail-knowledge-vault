@@ -2,6 +2,7 @@
 title: 样板客户全量数据现场导出接入清单 CODEX-Data-Merge-Full-001
 version: v0.1
 status: draft
+summary: 现场导出10类表26字段口径+脱敏红线,不接真实数据不触发execute
 owner: 六哥
 created: 2026-06-22
 updated: 2026-06-22

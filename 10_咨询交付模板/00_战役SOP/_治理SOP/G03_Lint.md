@@ -1,6 +1,7 @@
 ---
 title: G03_Lint（每周一次健康巡检 SOP）
 version: v0.1
+summary: G03体检SOP：周一30分扫孤立/矛盾/陈旧/WIP+仪表更新+红项决策;反假忙碌。
 status: draft
 owner: 六哥
 created: 2026-05-04

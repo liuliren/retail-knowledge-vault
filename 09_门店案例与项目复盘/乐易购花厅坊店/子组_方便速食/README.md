@@ -1,6 +1,7 @@
 ---
 title: 子组_方便速食 / 调改子组导航
 version: v0.1
+summary: 方便速食子组导航，当前复盘阶段，诊断决策执行复盘四阶段闭环。
 status: active
 owner: 六哥
 responsible_staff: 佳妮

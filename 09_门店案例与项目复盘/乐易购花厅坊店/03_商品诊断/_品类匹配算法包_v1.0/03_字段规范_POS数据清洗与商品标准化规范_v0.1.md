@@ -6,6 +6,7 @@ quadrant: III
 owner: 六哥
 created: 2026-05-03
 updated: 2026-05-03
+summary: POS数据清洗与商品标准化规范v0.1，11阶段SOP+字段字典+验收标准
 module: 10_咨询交付模板
 tags:
   - 咨询交付

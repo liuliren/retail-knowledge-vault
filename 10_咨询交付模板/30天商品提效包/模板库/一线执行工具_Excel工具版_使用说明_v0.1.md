@@ -1,6 +1,7 @@
 ---
 title: 一线执行工具_Excel工具版_使用说明
 version: v0.1
+summary: 一线执行工具Excel使用说明，5Sheet/今日动作/7天追踪/RACI/语言对照。
 status: draft
 source_type: tool_usage_guide
 priority: P1

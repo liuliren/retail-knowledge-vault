@@ -2,6 +2,7 @@
 title: 输出区资产分级表 P1-GOV-OutputArea-Tier-001
 version: v0.1
 status: draft
+summary: 输出区产物分级A-F,方法论v2.0已提升,余者留输出区或待确认
 owner: 六哥
 created: 2026-06-22
 updated: 2026-06-22

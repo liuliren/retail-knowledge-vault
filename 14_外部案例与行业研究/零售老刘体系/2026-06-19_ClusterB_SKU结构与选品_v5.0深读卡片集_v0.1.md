@@ -1,6 +1,7 @@
 ---
 title: Cluster B SKU结构与选品 v5.0 深读卡片集 v0.1
 version: v0.1
+summary: 选品9篇精读16条R-SKU规则(双峰/超低价必要/维持五类防误砍)，强证M-DEC-010。
 status: active
 owner: 六哥
 created: 2026-06-19

@@ -1,6 +1,7 @@
 ---
 title: M-DEC-005 错品类货架重建 SOP v0.1(候选 / 待 5/13 战役验证)
 version: v0.1
+summary: M-DEC-005：错品类货架重建 6 步 SOP（品类清理→货架重建）
 status: candidate_for_validation
 quadrant: IV
 owner: 六哥

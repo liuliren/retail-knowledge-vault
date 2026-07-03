@@ -2,6 +2,7 @@
 title: 商品诊断报告_Word模板_使用说明
 version: v0.1
 status: draft
+summary: 内部商品诊断报告Word模板使用说明，17章14表，脱敏示例与客户版生成路径。
 document_type: tool_instruction
 audience: consultant
 client_safety: internal_only

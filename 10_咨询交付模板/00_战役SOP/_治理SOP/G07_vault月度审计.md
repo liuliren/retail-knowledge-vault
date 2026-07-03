@@ -1,5 +1,6 @@
 ---
 title: G07 vault 月度审计 SOP v0.1（IBM 工程化纪律 / 6 维评分）
+summary: Vault月度深审，70文件6维评分(M/I/O/A/T/AC)，对标世界级咨询标准。
 version: v0.1
 status: active
 owner: 六哥

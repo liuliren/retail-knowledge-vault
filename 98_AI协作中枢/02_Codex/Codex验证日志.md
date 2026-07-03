@@ -1,3 +1,9 @@
+---
+title: Codex 验证日志
+summary: Codex 验证日志，确认文件写入读取与 AI 互通测试通过。
+status: draft
+---
+
 # Codex 验证日志
 
 ## 验证任务

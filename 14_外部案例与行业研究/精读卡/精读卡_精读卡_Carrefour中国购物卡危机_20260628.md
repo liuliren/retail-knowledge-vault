@@ -1,5 +1,6 @@
 ---
 title: "Retail chain Carrefour denies bankruptcy and withdrawal from China after consumer complaints over unusable shopping cards"
+summary: 家乐福储值卡故障触发信任挤兑：支付异常 + 社交媒体 = 加速死亡，社区超市会员卡需保证"随时可用、不限品类"。
 source: https://www.globaltimes.cn/page/202301/1283548.shtml
 topic: retail
 targetVault: retail-knowledge-vault

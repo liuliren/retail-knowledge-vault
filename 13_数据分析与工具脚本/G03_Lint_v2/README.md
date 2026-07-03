@@ -1,5 +1,6 @@
 ---
 title: G03_Lint v2 知识库自动体检脚本
+summary: Vault 自动体检脚本，扫描断链、孤儿、陈旧、权限等六查指标。
 version: v0.1
 status: active
 owner: Codex

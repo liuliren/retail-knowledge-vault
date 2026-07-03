@@ -1,5 +1,6 @@
 ---
 title: XLS 到 XLSX 批量转换工具 v0.1
+summary: XLS 到 XLSX 批量转换工具，支持字段结构探测，默认输出 /tmp。
 version: v0.1
 status: active
 quadrant: III

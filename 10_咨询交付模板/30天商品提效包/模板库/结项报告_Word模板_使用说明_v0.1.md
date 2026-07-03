@@ -2,6 +2,7 @@
 title: 结项报告_Word模板_使用说明
 version: v0.1
 status: draft
+summary: 结项报告Word模板说明，18章15表，承接周复盘结果，禁业绩承诺。
 document_type: tool_instruction
 audience: consultant
 client_safety: internal_only

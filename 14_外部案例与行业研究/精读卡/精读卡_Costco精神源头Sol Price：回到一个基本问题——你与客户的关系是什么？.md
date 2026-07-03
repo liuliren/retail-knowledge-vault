@@ -1,5 +1,6 @@
 ---
 title: "Costco精神源头Sol Price：回到一个基本问题——你与客户的关系是什么？"
+summary: 溯源Costco精神源头，论证零级关系（信任）而非规模/效率，才是商业护城河的根本。
 source: "https://mp.weixin.qq.com/s?__biz=MzI0NTc2MTU1MA==&mid=2247484645&idx=1&sn=58cb51cfe306ecd219a2dec5ec65ba65&chksm=e948d784de3f5e92d4a34542e6c9d1e5016dfc56bb8edd4c0dd521e25cc3cff3278d0bd56f1f&cur_album_id=2702011527255883779&scene=189#wechat_redirect"
 topic: retail
 targetVault: retail-knowledge-vault

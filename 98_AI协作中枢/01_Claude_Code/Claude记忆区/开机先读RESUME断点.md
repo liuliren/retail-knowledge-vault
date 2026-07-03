@@ -1,6 +1,7 @@
 ---
 name: startup-read-resume-breakpoint
 description: 重新切入时先读 _当前断点_RESUME.md 而非重读全库；收口时覆盖更新它
+summary: 开机必读_当前断点_RESUME.md而非重读全库，收口时覆盖更新
 metadata:
   node_type: memory
   type: feedback

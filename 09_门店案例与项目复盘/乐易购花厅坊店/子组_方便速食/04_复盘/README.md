@@ -1,6 +1,7 @@
 ---
 title: 子组_方便速食 / 04_复盘 ⭐ 当前阶段
 version: v0.1
+summary: 方便速食调改后 13 天复盘导航，数据分析、效果对比、方法论沉淀。
 status: active
 owner: 六哥
 created: 2026-05-10

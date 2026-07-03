@@ -2,6 +2,7 @@
 title: 源料归档建议表 P1-GOV-Source-Archive-001
 version: v0.1
 status: draft
+summary: 进化新思路3文件归档方案,V2方案+分析=源料冻存,prompt过程件不入库
 owner: 六哥
 created: 2026-06-22
 updated: 2026-06-22

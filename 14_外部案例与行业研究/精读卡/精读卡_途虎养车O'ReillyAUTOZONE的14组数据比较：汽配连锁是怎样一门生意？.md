@@ -1,5 +1,6 @@
 ---
 title: "途虎养车/O'Reilly/AUTOZONE的14组数据比较：汽配连锁是怎样一门生意？"
+summary: 汽配连锁14数据对比，供应链生意≠平台抽成，存量经济下防御性现金牛。
 source: https://mp.weixin.qq.com/s?__biz=MzI0NTc2MTU1MA==&mid=2247485253&idx=1&sn=4f16504f5438ebc45b2a53178da43b91&chksm=e948d424de3f5d32d623d21dc87f5864fdebfbac198f992ac2688941d11a7a75d3f789f204c8&cur_album_id=2702011527255883779&scene=189#wechat_redirect
 topic: retail
 targetVault: retail-knowledge-vault

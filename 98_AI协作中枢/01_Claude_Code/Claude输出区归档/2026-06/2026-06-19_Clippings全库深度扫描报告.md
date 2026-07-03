@@ -1,3 +1,9 @@
+---
+title: Clippings全库深度扫描报告
+summary: Clippings315篇内容地图(8系列·品类建模为核心枢纽)，含纲领清单与快速上手路径
+status: draft
+---
+
 # Clippings 全库深度扫描报告
 
 - 扫描时间：2026-06-19

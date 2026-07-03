@@ -1,3 +1,9 @@
+---
+title: Claude Code Memory Index
+summary: Claude规范记忆库(canonical)，记长期有效项目规则与用户偏好。
+status: reference
+---
+
 # Claude Code Memory Index
 
 这是 Claude Code 在本 Obsidian Vault 中的**唯一规范记忆库**(canonical)。

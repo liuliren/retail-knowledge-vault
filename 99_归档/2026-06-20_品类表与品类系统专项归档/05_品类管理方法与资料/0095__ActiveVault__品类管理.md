@@ -1,6 +1,7 @@
 ---
 title: 品类管理
 version: v0.1
+summary: 品类管理主定义：顾客任务驱动的 8 环完整闭环流程
 status: draft
 quadrant: I
 owner: 六哥

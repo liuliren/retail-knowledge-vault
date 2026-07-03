@@ -1,5 +1,6 @@
 ---
 title: M-DEC-010 休食小类价格带结构预警
+summary: 小类价格带结构量化预警；中价过密>70%临界，补位缺空段防内耗。
 version: v1.0
 status: active
 signoff: 六哥 2026-06-19（正文已载 active sign off；2026-06-22 P0/P1-GOV-Batch-004 补 frontmatter 字段）

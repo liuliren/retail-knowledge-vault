@@ -5,6 +5,7 @@ status: active
 owner: 六哥
 created: 2026-05-04
 updated: 2026-05-04
+summary: SKU品牌/规格提取算法v0.1，纯函数无外依赖，93%规格准确率
 module: 13_数据分析与工具脚本
 tags:
   - SKU提取算法

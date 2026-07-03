@@ -1,5 +1,6 @@
 ---
 title: 花厅坊样板（战役 #1）档案占位
+summary: 花厅坊战役#1档案占位中，真实开案待六哥决策后按步骤初始化。
 version: v0.0
 status: draft
 owner: 六哥

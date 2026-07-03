@@ -1,6 +1,7 @@
 ---
 title: 品类体系综合版 v1.2（晟果咨询知识结晶）
 version: v1.2
+summary: 品类体系 v1.2：3+1 架构、5 板块模板、顾客购买路径物理映射
 status: active
 owner: 六哥
 created: 2026-05-04

@@ -6,6 +6,7 @@ quadrant: III
 owner: 六哥
 created: 2026-05-04
 updated: 2026-05-04
+summary: POS清洗脚本v0.1.2的使用说明与用户决策10项记录
 module: 13_数据分析与工具脚本
 tags:
   - POS清洗

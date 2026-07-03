@@ -1,3 +1,9 @@
+---
+title: Codex 自愈记录
+summary: Codex 路径自愈检查记录，本轮路径结构健康，无修复需要。
+status: draft
+---
+
 # Codex 自愈记录
 
 ## 本轮自愈检查

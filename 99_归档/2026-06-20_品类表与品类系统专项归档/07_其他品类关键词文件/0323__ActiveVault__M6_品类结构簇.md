@@ -1,5 +1,6 @@
 ---
 title: M6 品类结构簇(模块卡)
+summary: 品类结构簇模块：小类=需求、RFM、经营属性聚类三大武器
 version: v0.2
 status: active
 quadrant: I

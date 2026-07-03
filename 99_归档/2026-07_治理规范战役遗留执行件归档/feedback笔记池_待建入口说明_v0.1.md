@@ -1,5 +1,6 @@
 ---
 title: feedback 笔记池 · 待建入口说明
+summary: feedback笔记池待建区，列14类悬空链接为前瞻链接非错误
 version: v0.1
 status: draft
 owner: 六哥

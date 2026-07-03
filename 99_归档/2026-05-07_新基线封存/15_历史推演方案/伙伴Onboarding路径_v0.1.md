@@ -1,6 +1,7 @@
 ---
 title: 伙伴 Onboarding 路径
 version: v0.1
+summary: 晟果三年事业期伙伴加入：5角色矩阵、30/60/90进入路径、RACI、质控双层。
 status: draft
 owner: 六哥
 created: 2026-05-04

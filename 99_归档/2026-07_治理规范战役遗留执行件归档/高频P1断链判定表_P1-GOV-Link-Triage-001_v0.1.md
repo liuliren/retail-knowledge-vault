@@ -2,6 +2,7 @@
 title: 高频 P1 断链判定表 P1-GOV-Link-Triage-001
 version: v0.1
 status: draft
+summary: 13个高频P1/P3断链判定:改引用6/封存6/暂缓2/补件0,仅判定不执行
 owner: 六哥
 created: 2026-06-22
 updated: 2026-06-22

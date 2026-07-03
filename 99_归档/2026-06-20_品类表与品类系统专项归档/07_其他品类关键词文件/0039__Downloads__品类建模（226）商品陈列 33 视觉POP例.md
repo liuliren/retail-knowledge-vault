@@ -1,5 +1,6 @@
 ---
 title: 品类建模（226）商品陈列 33 视觉POP例
+summary: VP/PP/IP三级POP运用语义与场景案例，沃尔玛等门店观察
 source: https://mp.weixin.qq.com/s?__biz=MzAwNjc5MzA0MQ==&mid=2247488180&idx=1&sn=0821deef1d7c17a92312515365491236&chksm=9b06a08aac71299cde32f8f51895ca2f7294d4a1fcde51a76fb3174e5e0026e978e651934b9a&cur_album_id=4031476791054401544&scene=189#wechat_redirect
 author:
   - "[[Clippings全量阅读台账_v0.1]]"

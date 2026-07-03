@@ -1,6 +1,7 @@
 ---
 title: SKU动作建议表 Excel工具版 使用说明
 version: v0.1
+summary: SKU动作建议表Excel使用说明，6Sheet/57列，顾问预填/店长执行分工。
 status: draft
 owner: 六哥
 created: 2026-06-20

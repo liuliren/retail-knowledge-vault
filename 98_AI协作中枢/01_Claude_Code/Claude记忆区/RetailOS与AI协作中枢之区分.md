@@ -1,5 +1,7 @@
 ---
 name: retailos-ai
+title: RetailOS与AI协作中枢之区分
+summary: RetailOS为真实门店决策系统(A-G)，与Obsidian+Claude+Codex协作中枢并非一回事。
 description: RetailOS 是真实门店决策业务系统，与 Obsidian+Claude+Codex 的 AI 协作中枢是两回事，勿混淆
 metadata: 
   node_type: memory

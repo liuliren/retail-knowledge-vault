@@ -1,6 +1,7 @@
 ---
 title: 03_商圈分析与客群调研 目录说明
 version: v1.0
+summary: 商圈客群目录说明：分析框架、调研模板、竞品分析方法；商圈标准框架和调研模板尚缺，P3 非急需，新客户前补齐。
 status: active
 quadrant: II
 owner: 六哥

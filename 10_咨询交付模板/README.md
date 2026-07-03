@@ -2,6 +2,7 @@
 title: 10_咨询交付模板 README
 version: v0.1
 status: active
+summary: 咨询交付模板区入口，含对外交付动作模板、SOP、报告骨架，30天商品提效包为P0.5商业化产品主要沉淀。
 owner: 六哥
 created: 2026-05-18
 updated: 2026-05-18

@@ -1,5 +1,6 @@
 ---
 title: CODEX-Full-DryRun-Execute-001 执行 Prompt
+summary: 90天脱敏表full dry-run执行Prompt，ABC九宫格库存验证
 version: v0.1
 status: draft
 owner: 六哥

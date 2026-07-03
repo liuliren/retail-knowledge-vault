@@ -1,6 +1,7 @@
 ---
 title: SKU动作建议表 模板定义
 version: v0.2
+summary: SKU动作建议表模板定义，8组字段/10动作/10角色/11误判防线，诊断执行桥。
 status: draft
 owner: 六哥
 created: 2026-06-20

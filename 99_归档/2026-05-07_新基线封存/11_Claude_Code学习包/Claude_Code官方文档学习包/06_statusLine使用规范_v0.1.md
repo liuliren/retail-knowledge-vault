@@ -1,6 +1,7 @@
 ---
 title: statusLine 使用规范
 version: v0.1
+summary: StatusLine JSON输入字段、适合展示内容、性能边界、推荐配置示例。
 status: review
 owner: 六哥
 created: 2026-05-04

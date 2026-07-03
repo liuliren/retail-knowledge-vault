@@ -1,6 +1,7 @@
 ---
 title: Subagents 使用规范
 version: v0.1
+summary: Subagent与fork区分、何时用、文件位置、工具白名单、本vault配置建议。
 status: review
 owner: 六哥
 created: 2026-05-04

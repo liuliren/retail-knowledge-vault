@@ -1,5 +1,6 @@
 ---
 title: CODEX-Execute-Decision-001 ABC口径与全量合并版预审
+summary: ABC三工具执行前置预审：4裁决§3.1一致、观察品系缺口、补数定口径后execute
 version: v0.1
 status: draft
 owner: 六哥

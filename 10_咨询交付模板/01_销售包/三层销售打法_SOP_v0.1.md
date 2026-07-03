@@ -1,5 +1,6 @@
 ---
 title: 三层销售打法_SOP_v0.1
+summary: 新客户销售三层SOP：首次见面建信任→3-7天看店有感试探→合作形式提议。
 version: v0.1.1
 status: draft
 quadrant: III

@@ -1,5 +1,6 @@
 ---
 title: Claude Code 项目级上下文管理协议 v1.0
+summary: Claude Code 上下文管理协议，4 层策略、阶段闸门、强制边界 11 条。
 version: v1.0
 status: active
 quadrant: III

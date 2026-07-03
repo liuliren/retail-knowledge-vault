@@ -1,5 +1,6 @@
 ---
 title: 商品库 embedding 升级计划（W30+ 占位 / 不实施）
+summary: embedding 升级计划，W30+ 评估，优先本地模型，LLM 候选推荐。
 version: v0.1
 status: draft
 owner: 六哥

@@ -1,3 +1,9 @@
+---
+title: Codex↔Obsidian 写入测试
+summary: Codex 与 Obsidian 互通测试，验证双向读写互联。
+status: draft
+---
+
 # Codex ↔ Obsidian 写入测试
 
 - timestamp: 2026-06-19 14:39:35 EDT

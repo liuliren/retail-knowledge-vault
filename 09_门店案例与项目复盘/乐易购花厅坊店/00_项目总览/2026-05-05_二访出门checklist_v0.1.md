@@ -1,6 +1,7 @@
 ---
 title: 2026-05-05 花厅坊二访 — 出门 A4 浓缩版 checklist v0.1
 version: v0.1
+summary: 二访出门 checklist：时序表（14:00-22:00）、P1-B 8 项核对、8 维度基线、30 秒找到率测试、5 分钟完成比、6 机位拍摄标准。
 status: active
 owner: 六哥
 created: 2026-05-05

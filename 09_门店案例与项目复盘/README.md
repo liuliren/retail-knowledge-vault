@@ -1,6 +1,7 @@
 ---
 title: 09_门店案例与项目复盘 目录说明
 version: v1.0
+summary: 门店案例目录说明：标准 8 子目录结构（00_总览→08_交付→99_原始素材），当前乐易购花厅坊店+破晓计划，每店完整项目链路存档。
 status: active
 quadrant: IV
 owner: 六哥
