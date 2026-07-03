@@ -1,5 +1,5 @@
 ---
-title: "LIDL："成功而精确地复制了ALDI几乎所有重要特征"（20组核心数据）"
+title: "LIDL：“成功而精确地复制了ALDI几乎所有重要特征”（20组核心数据）"
 source: "https://mp.weixin.qq.com/s?__biz=MzI0NTc2MTU1MA==&mid=2247485056&idx=1&sn=95fb6726a008e619e1b4d27f285eb1e1&chksm=e948d5e1de3f5cf720b43152329d73467c9af45a332f143364a7294968098b2b3a97a78d16c7&cur_album_id=2702011527255883779&scene=189#wechat_redirect"
 topic: retail
 targetVault: retail-knowledge-vault

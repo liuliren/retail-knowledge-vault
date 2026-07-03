@@ -1,5 +1,5 @@
 ---
-title: "硬折扣鼻祖ALDI/"无为而治意义上的极简主义是ALDI的核心特征""
+title: "硬折扣鼻祖ALDI/“无为而治意义上的极简主义是ALDI的核心特征”"
 source: https://mp.weixin.qq.com/s?__biz=MzI0NTc2MTU1MA==&mid=2247484459&idx=1&sn=e2c56b45f3e60a9634ec1c66528552b8&scene=21&poc_token=HKbyQGqj37K0FWekYqgZLMjbX34j4_HtINk07j33
 topic: retail
 targetVault: retail-knowledge-vault
