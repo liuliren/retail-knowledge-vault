@@ -25,6 +25,7 @@ updated: 2026-06-30
 | `/priceband` | priceband、跑价格带、价格带分析、毛利试算 |
 | `/posclean` | posclean、清洗POS、POS清洗、清洗数据、探查数据 |
 | `/mdcard` | mdcard、出图卡、配图卡、生成图片、带图 |
+| `/critique` | 批判审议、不断批判、魔鬼代言人、第2轮审议、批判这个 |
 
 **自动调用规则**：用户说出触发词 → 无需打 `/`，直接加载并执行对应 skill。
 

@@ -20,7 +20,9 @@
 !.claude/skills/
 .claude/skills/*
 !.claude/skills/compact/
-!.claude/skills/compact/SKILL.md
+!.claude/skills/critique/
+!.claude/skills/compact/
+!.claude/skills/critique/SKILL.md
 !.claude/skills/handoff/
 !.claude/skills/handoff/SKILL.md
 !.claude/skills/deep-read/

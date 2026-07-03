@@ -30,7 +30,7 @@ related:
 商品库未来承担 5 个角色（缺一不可）：
 
 1. **客户 SKU 标准化的目标库** — 客户原始 SKU 文本 → 匹配到标准品名 / 标准品类
-2. **V4.0 品类树的实例化数据层** — V4.0 是结构骨架 / 商品库是血肉实例
+2. **标准品类树（V6.0·SSOT）的实例化数据层** — V6.0 是结构骨架 / 商品库是血肉实例
 3. **顾问经验沉淀的规则库** — keyword_rule + brand_alias + package_unit 沉淀顾问判断
 4. **经营属性判断的知识库** — 品类角色 / 形象 / 流量 / 毛利 / 民生 / 端架适合性
 5. **四层匹配算法的持续学习底座** — 边建库 / 边匹配 / 边反哺 / 持续迭代
@@ -70,7 +70,7 @@ Layer A: 核心 SKU 库（精确 / Year 2 50,000+ 目标）
   → A_core_sku_seed.csv（W30+ seed 级 50-200 SKU 起步）
 
 Layer B: 品类骨架库（覆盖广 / 长尾兜底）⭐ 起步主战场
-  → B_category_skeleton.csv（W24 V4.0 308 L4 / 仅 v1.1 起步 3-5 样例）
+  → B_category_skeleton.csv（W24 铺设时锚 V4.0 308 L4·待按 V6.0 385 L4 重铺 / 仅 v1.1 起步 3-5 样例）
 
 Layer C: 客户独有 SKU 库（长尾 / 人工标注）
   → C_client_specific/<客户>_SKU_raw.csv + _SKU_mapped.csv（双层）
@@ -153,13 +153,13 @@ Layer C: 客户独有 SKU 库（长尾 / 人工标注）
 
 ---
 
-## §6. 与 V4.0 品类表的关系
+## §6. 与 V6.0 品类系统（SSOT）的关系
 
 ```
-V4.0 品类表（308 L4）= 结构骨架 / single source of truth
-商品库（A+B+C 三层）  = 实例血肉 / V4.0 的实例化
+V6.0 品类系统（68 L3/385 L4）= 结构骨架 / single source of truth（DEC-20260702-01·V4.0 已 deprecated）
+商品库（A+B+C 三层）  = 实例血肉 / V6.0 的实例化
 
-约束：商品库每个 SKU 必须有 category_l4_code FK 指向 V4.0
+约束：商品库每个 SKU 必须有 category_l4_code FK 指向 V6.0
 关系：1 对多（L4 → 多 SKU）
 ```
 
