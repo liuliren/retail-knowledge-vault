@@ -2,7 +2,7 @@
 title: 子组_大包装区 / 调改子组导航（占位）
 version: v0.1
 summary: 大包装区调改子组导航占位，M-DEC-002 瘦身比例决策框架，触发于冲调组后。
-status: planned
+status: active
 owner: 六哥
 created: 2026-05-10
 updated: 2026-05-10

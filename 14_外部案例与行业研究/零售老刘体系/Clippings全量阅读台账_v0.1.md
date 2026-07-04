@@ -1,7 +1,7 @@
 ---
 title: 老刘_Clippings 全量阅读台账 v0.1
 version: v0.1
-status: 历史索引（工程完结·只读不再维护）
+status: archived
 owner: 六哥
 created: 2026-06-19
 updated: 2026-06-26

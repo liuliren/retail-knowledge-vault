@@ -2,7 +2,7 @@
 title: 子组_调味 / 调改子组导航（占位）
 version: v0.1
 summary: 调味子组占位导航，健康度扫描 v0.5 已有，触发于方便速食后。
-status: planned
+status: active
 owner: 六哥
 responsible_staff: 高彬
 created: 2026-05-10

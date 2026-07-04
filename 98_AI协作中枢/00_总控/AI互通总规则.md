@@ -1,7 +1,7 @@
 ---
 title: AI互通总规则
 summary: 本Vault多Agent(Claude Code/Codex/Obsidian)的协作规范与写入禁止事项。
-status: reference
+status: active
 ---
 
 # AI互通总规则

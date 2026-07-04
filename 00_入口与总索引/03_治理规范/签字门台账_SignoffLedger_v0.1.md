@@ -83,3 +83,25 @@ related:
 | 2026-07-04 03:24 | PostToolUse监听 | apply-signoff.sh | system | 已触发落账监听 |
 | 2026-07-04 03:24 | D档删除 | /Users/davidliu/KnowledgeBase/retail-knowledge-vault/14_外部案例與行業研究 | 六哥(apply-signoff) | 清单: /private/tmp/claude-501/-Users-davidliu-Claude/63759687-5a4d-4a14-b1ed-88159e0fac9d/scratchpad/signoff_list.txt |
 | 2026-07-04 03:24 | PostToolUse监听 | apply-signoff.sh | system | 已触发落账监听 |
+
+### 2026-07-03 KB升级Wave2 · status词表归位签字(17件)
+
+| 日期 | 文件 | 状态变更 | 签字 | 理由 |
+|---|---|---|---|---|
+| 2026-07-03 | 内容消化台账_v0.1.md | live→active | 六哥 | status词表归位(A2·17件active等价值签字生效) |
+| 2026-07-03 | 2026-06-30_KB页全量索引与方法论目录_v1.0.md | reference→active | 六哥 | status词表归位(A2·17件active等价值签字生效) |
+| 2026-07-03 | 2026-06-30_T03饼干_商品诊断报告_花厅坊_v0.1.md | signed→active | 六哥 | status词表归位(A2·17件active等价值签字生效) |
+| 2026-07-03 | README.md | planned→active | 六哥 | status词表归位(A2·17件active等价值签字生效) |
+| 2026-07-03 | README.md | planned→active | 六哥 | status词表归位(A2·17件active等价值签字生效) |
+| 2026-07-03 | README.md | planned→active | 六哥 | status词表归位(A2·17件active等价值签字生效) |
+| 2026-07-03 | Clippings全量阅读台账_v0.1.md | 历史索引→archived | 六哥 | status词表归位(A2·17件active等价值签字生效) |
+| 2026-07-03 | AI互通总规则.md | reference→active | 六哥 | status词表归位(A2·17件active等价值签字生效) |
+| 2026-07-03 | 当前任务队列.md | reference→active | 六哥 | status词表归位(A2·17件active等价值签字生效) |
+| 2026-07-03 | Claude收件箱.md | reference→active | 六哥 | status词表归位(A2·17件active等价值签字生效) |
+| 2026-07-03 | MEMORY.md | reference→active | 六哥 | status词表归位(A2·17件active等价值签字生效) |
+| 2026-07-03 | 六哥自媒体内容生产库.md | reference→active | 六哥 | status词表归位(A2·17件active等价值签字生效) |
+| 2026-07-03 | 客户名对外使用须查授权链.md | reference→active | 六哥 | status词表归位(A2·17件active等价值签字生效) |
+| 2026-07-03 | 2026-06-19_P0-1_Clippings能力地图索引_v0.1.md | navigation-index→active | 六哥 | status词表归位(A2·17件active等价值签字生效) |
+| 2026-07-03 | 2026-06-19_RetailOS_V2.0_选品引进层_立项卡_v0.1.md | chartered→active | 六哥 | status词表归位(A2·17件active等价值签字生效) |
+| 2026-07-03 | 2026-06-22_CLAUDE_§1护城河三层叙事升级_草案_v0.1.md | adopted→active | 六哥 | status词表归位(A2·17件active等价值签字生效) |
+| 2026-07-03 | 2026-06-22_待决策项推进_决策简报_v0.1.md | signed→active | 六哥 | status词表归位(A2·17件active等价值签字生效) |

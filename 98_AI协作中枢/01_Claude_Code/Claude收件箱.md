@@ -1,7 +1,7 @@
 ---
 title: Claude收件箱
 summary: 测试任务占位。
-status: reference
+status: active
 ---
 
 # TEST TASK
