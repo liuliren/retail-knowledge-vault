@@ -64,3 +64,7 @@ status: active
 
 ---
 *MOC · retail-knowledge-vault/14 · 由 Agent 编译，六哥审阅*
+
+## 精读卡全量
+
+- [[精读卡索引_v1.0]] — 154 张精读卡统一入链索引
