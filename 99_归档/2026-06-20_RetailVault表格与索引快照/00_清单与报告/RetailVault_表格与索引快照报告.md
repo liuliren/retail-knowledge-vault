@@ -2,7 +2,7 @@
 title: Retail Vault 表格与索引快照报告
 version: v0.1
 summary: 2026-06-20生成的Vault工程索引快照：3247文件、1512 MD、508重复组统计。
-status: done
+status: deprecated
 owner: Codex
 created: 2026-06-20
 updated: 2026-06-20

@@ -1,7 +1,7 @@
 ---
 title: 战略源料归档 2026-06-22 进化新思路 README
 version: v0.1
-status: frozen
+status: archived
 owner: 六哥
 created: 2026-06-22
 updated: 2026-06-22
