@@ -23,6 +23,39 @@ BG, INK, MUTE, LINE = "#ffffff", "#1d1d1f", "#86868b", "#ebebf0"
 ACCENT, WARN = "#0a7d54", "#bf1d2c"
 CHIP_BG, CHIP_INK = "#f5f5f7", "#1d1d1f"
 
+# ── emoji/缺字形 → CJK 安全字符自动映射(防 PingFang 缺字形空框,免重渲) ──
+EMOJI_SAFE = {
+    "⭐": "★", "🌟": "★", "✨": "★",
+    "✅": "√", "☑": "√", "✔": "√", "✔️": "√",
+    "❌": "×", "✗": "×", "❎": "×",
+    "🟢": "●", "🟩": "●", "🔴": "●", "🟥": "●", "🟡": "●", "🟨": "●", "⚪": "○",
+    "⚠️": "！", "⚠": "！", "🚩": "▶", "📌": "·", "🎯": "◎", "⭐️": "★",
+    "▪️": "▪", "◾": "▪", "➡️": "→", "⬆️": "↑", "⬇️": "↓", "🔺": "▲", "🔻": "▼",
+    "①": "①", "🔑": "★",  # 保留圈码;钥匙→星
+}
+
+
+def _safe(s):
+    """把 emoji/缺字形替换成 CJK 字体保证有的字符,防渲染空框。"""
+    if not isinstance(s, str):
+        return s
+    for k, v in EMOJI_SAFE.items():
+        if k in s:
+            s = s.replace(k, v)
+    # 兜底:删掉高位 emoji 区段(U+1F000+ / 杂项符号)残留
+    return "".join(ch for ch in s if ord(ch) < 0x1F000)
+
+
+def _sanitize(obj):
+    """递归清洗 spec 内所有字符串。"""
+    if isinstance(obj, str):
+        return _safe(obj)
+    if isinstance(obj, list):
+        return [_sanitize(x) for x in obj]
+    if isinstance(obj, dict):
+        return {k: _sanitize(v) for k, v in obj.items()}
+    return obj
+
 
 def zh_font():
     for name in ("PingFang SC", "Hiragino Sans GB", "Heiti SC", "Arial Unicode MS"):
@@ -52,6 +85,7 @@ def _chip(ax, x, y, text):
 
 
 def render(spec, out):
+    spec = _sanitize(spec)  # emoji/缺字形自动替换,免因空框重渲
     plt.rcParams["font.family"] = zh_font()
     if spec.get("layout") == "hero":
         return render_hero(spec, out)
