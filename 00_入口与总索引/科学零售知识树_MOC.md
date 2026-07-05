@@ -191,3 +191,8 @@ SORT file.folder ASC
 | v0.1 | 2026-06-22 | 知识树 MOC 起步稿：L1理念→L2三力骨架→L3(M1-M8)→L4工具/SOP→L5决策交付，手动树全部 15 核心件 0 断链；附 Dataview 自动列件区块(治孤儿)+治理告警查询+看板方案。待装 Dataview 插件激活自动区块 |
 | v0.2 | 2026-06-30 | 接入9件新建文件：L4新增「全店与多店诊断工具组」4件（KB-DX-FULLSTORE-001/KB-ACTION-GUIDE-001/KB-MULTISTORE-001/KB-DX-TRAFFIC-001）+「全店诊断SOP」2件（全店诊断编排SOP/SOP-ACTION-PLAN-001）；L5 M-DEC行前插M-DEC-007，客户交付层追加全店经营诊断卡模板+多店综合诊断报告模板 |
 | v0.3 | 2026-07-01 | 第三波接入9个新文件：L4新增「诊断框架扩展组」2件（KB-STORE-OVERVIEW-001/KB-DX-DIMENSION-001）+「品类与单品状态机体系」2件（KB-CAT-STATE-001/KB-SKU-STATE-001）+「节令体系」1件（KB-SEASON-MATRIX-001）+「营销·流量·活动激活层」3件（KB-INSTORE-MKT-001/KB-ONLINE-TRAFFIC-001/KB-EVENT-ACTIVATION-001）；L4 SOP区追加「市调SOP」1件（SOP-MARKET-SURVEY-001） |
+
+## 2026-07-05 补链（孤儿治理 · 两个 stable 件脱孤）
+
+- [[M-DEC分类法_5D12C_v1.0]] — M-DEC 决策记忆的 5D12C 分类法（stable·此前无入口）
+- [[全品类品类系统基础方法论与三张表_v1.0]] — 品类系统三张表基础方法论（stable·此前无入口·Claude记忆区有精简副本待互指）
