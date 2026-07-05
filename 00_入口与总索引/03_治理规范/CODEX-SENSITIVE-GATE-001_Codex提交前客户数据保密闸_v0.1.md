@@ -2,7 +2,9 @@
 id: CODEX-SENSITIVE-GATE-001
 title: Codex 提交前客户数据保密闸
 version: v0.1
-status: draft
+status: superseded
+superseded_by: "[[SENSITIVE-GOV-001_客户数据脱敏与Git保密治理规范_v0.2]]"
+deprecated_reason: 机械判据并入v0.2§六执行层+§三checklist(关键词硬闸误报71.7%·漏两红线)·六哥2026-07-05签字(S3)
 owner: 六哥
 source_type: governance
 created: 2026-06-24

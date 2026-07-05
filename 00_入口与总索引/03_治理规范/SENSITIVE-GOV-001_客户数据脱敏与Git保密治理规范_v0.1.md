@@ -2,7 +2,9 @@
 id: SENSITIVE-GOV-001
 title: 客户数据脱敏与 Git 保密治理规范
 version: v0.1
-status: draft
+status: superseded
+superseded_by: "[[SENSITIVE-GOV-001_客户数据脱敏与Git保密治理规范_v0.2]]"
+deprecated_reason: 骨架由v0.2取代·细则(§4分级/§13脱敏规则等)仍被v0.2§八指针承接有效·六哥2026-07-05签字(S3)
 owner: 六哥零售 / 晟果新零售
 source_type: governance
 scope: retail-vault / AI协作 / Git同步 / 客户数据治理

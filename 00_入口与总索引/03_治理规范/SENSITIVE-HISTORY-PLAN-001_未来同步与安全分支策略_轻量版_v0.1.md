@@ -2,7 +2,9 @@
 id: SENSITIVE-HISTORY-PLAN-001
 title: 未来同步与安全分支策略（轻量版 · 不改写历史）
 version: v0.1
-status: draft
+status: superseded
+superseded_by: "[[SENSITIVE-GOV-001_客户数据脱敏与Git保密治理规范_v0.2]]"
+deprecated_reason: 两核心红线被P1-0裁决推翻60%条款已死·§8公开预案由v0.2承接·六哥2026-07-05签字(S3)
 owner: 六哥
 source_type: governance
 created: 2026-06-24

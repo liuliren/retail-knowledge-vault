@@ -105,3 +105,10 @@ related:
 | 2026-07-03 | 2026-06-19_RetailOS_V2.0_选品引进层_立项卡_v0.1.md | chartered→active | 六哥 | status词表归位(A2·17件active等价值签字生效) |
 | 2026-07-03 | 2026-06-22_CLAUDE_§1护城河三层叙事升级_草案_v0.1.md | adopted→active | 六哥 | status词表归位(A2·17件active等价值签字生效) |
 | 2026-07-03 | 2026-06-22_待决策项推进_决策简报_v0.1.md | signed→active | 六哥 | status词表归位(A2·17件active等价值签字生效) |
+| 2026-07-05 | SENSITIVE-GOV-001_客户数据脱敏与Git保密治理规范_v0.2.md | draft→active | 六哥 | 保密治理SSOT签字生效(S1-S4全过·审议债:轮2批判~95%待补跑·审计二轮裁决队列#7) |
+| 2026-07-05 | CODEX-SENSITIVE-GATE-001_Codex提交前客户数据保密闸_v0.1.md | draft→superseded | 六哥 | S3授权·机械判据并入GOV-001 v0.2§六+§三 |
+| 2026-07-05 | SENSITIVE-HISTORY-PLAN-001_未来同步与安全分支策略_轻量版_v0.1.md | draft→superseded | 六哥 | S3授权·核心红线被P1-0推翻·§8预案由v0.2承接 |
+| 2026-07-05 | SENSITIVE-GOV-001_客户数据脱敏与Git保密治理规范_v0.1.md | draft→superseded | 六哥 | S3授权·骨架由v0.2取代·细则经v0.2§八指针承接 |
+| 2026-07-05 | 品类表生成验收标准与评分框架_v0.3.md | draft→stable | 六哥 | 三轮审议齐(R1-R7+T1-T4全修·D1豁免/D2条件化已裁)·移05_落tracked |
+| 2026-07-05 | 60_archive/2026-07-05_孤儿归档批次/(23篇) | tracked→archived | 六哥 | 孤儿治理A类归档(审计二轮裁决队列#4·git mv留历史·批次说明在位·9篇active存疑跳过) |
+| 2026-07-05 | (授权) git push 解冻 | hold→授权push | 六哥 | 审计二轮裁决队列#7·须过GOV-001 v0.2§三checklist后执行 |
