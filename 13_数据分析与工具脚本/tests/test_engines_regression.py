@@ -55,3 +55,12 @@ def test_zclass_match_rate_semantics():
     reg = pd.DataFrame({"货号": ["A1", "A2", "A3"]})
     rate = sku.条码.isin(reg.货号).mean() * 100
     assert abs(rate - 66.7) < 0.1                  # 2/3 匹配 → 触发 <95% 警报口径
+
+def test_xlsx_truncation_alarm_only_for_xls():
+    """第四坑警报只对 .xls 生效; xlsx 无 65536 限不得误报(好家源 lessons 2026-07-06)。
+    直接断言 cmd_probe 源码中的守卫条件存在, 防止未来把 endswith('.xls') 判定删掉。"""
+    import inspect
+    pc = _load("pos_clean_t4", "POS清洗库_v0.1/pos_clean.py")
+    src = inspect.getsource(pc.cmd_probe)
+    assert ".xls\")" in src and "endswith" in src and "XLS_LIMIT" in src, \
+        "cmd_probe 截断警报必须带 .xls 后缀守卫(第四坑不适用xlsx)"

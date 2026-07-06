@@ -55,7 +55,9 @@ def cmd_probe(a):
         except Exception as e:
             print(f"{f[:48]:50s}{'ERR':>5}  {str(e)[:40]}")
             continue
-        trunc = "🔴" if len(rows) >= XLS_LIMIT else ""
+        # 第四坑只属 .xls(BIFF 65536 行硬上限); xlsx 无此限,报警反是误导
+        # (2026-07-06 好家源实跑 lessons: 14.5万行 xlsx 被误标🔴)
+        trunc = "🔴" if f.lower().endswith(".xls") and len(rows) >= XLS_LIMIT else ""
         period = ",".join(sorted({m.group() for r in rows[:8] for c in r
                                   for m in DATE_ANY.finditer(str(c))})[:2])
         print(f"{f[:48]:50s}{'ok':>5}{len(rows):8d}{trunc:>4}  {period}")
