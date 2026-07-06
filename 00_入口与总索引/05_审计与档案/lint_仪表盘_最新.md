@@ -1,6 +1,6 @@
 # G03_Lint v2 知识库体检仪表盘
 
-- 扫描时间：2026-07-05 22:11:19 EDT
+- 扫描时间：2026-07-05 22:13:27 EDT
 - Vault：`/Users/davidliu/KnowledgeBase/retail-knowledge-vault`
 - 扫描文件总数：1566
 - 排除目录：`.git, 99_归档, Clippings, worktrees, 13_数据分析与工具脚本/知识库自动化_v1/runtime`
@@ -21,7 +21,7 @@
 | supersession warning | 8 |
 | failed 记录 warning | 0 |
 | 核心知识缺 summary | 3 |
-| 非规范 status | 74 |
+| 非规范 status | 26 |
 
 ## 1. 断链查
 
@@ -227,20 +227,20 @@
 | 00_入口与总索引/03_治理规范/SENSITIVE-GOV-001_客户数据脱敏与Git保密治理规范_v0.1.md | superseded |
 | 00_入口与总索引/03_治理规范/SENSITIVE-HISTORY-PLAN-001_未来同步与安全分支策略_轻量版_v0.1.md | superseded |
 | 00_入口与总索引/03_治理规范/晟果新零售科学零售术语口径统一表_v1.0.md | superseded |
-| 00_入口与总索引/晟果零售知识库_维基主页_v1.0.md | stable |
-| 01_科学零售方法论/KB-CAT-DX-MISMATCH-001_销售陈列错配诊断_v0.1.md | stable |
-| 01_科学零售方法论/KB-CAT-ROLE-5WAY-001_五分法品类角色分配方法_v0.1.md | stable |
-| 01_科学零售方法论/KB-CAT-TIMEEFF-001_时间效率主轴评价指标体系_v0.1.md | stable |
-| 01_科学零售方法论/KB-CAT-ZONE-SOP-001_区域调改五步法_v0.1.md | stable |
-| 01_科学零售方法论/KB-DX-FRAMEWORK-001_社区生鲜超市品类诊断框架_v0.1.md | stable |
-| 01_科学零售方法论/KB-DX-MATH-001_零售数学诊断工具体系_v0.1.md | stable |
-| 01_科学零售方法论/KB-DX-QUESTION-001_诊断题库完整版_v0.1.md | stable |
-| 01_科学零售方法论/KB-DX-WIDTH-001_品类宽度诊断方法论_v0.1.md | stable |
-| 01_科学零售方法论/KB-FRESH-001_生鲜护城河经营方法论_v0.1.md | stable |
-| 01_科学零售方法论/KB-METHOD-CHAIN-001_晟果科学零售五层经营链_v0.1.md | stable |
-| 01_科学零售方法论/KB-METHOD-PCV-001_实践验证回流机制_v0.1.md | stable |
-| 01_科学零售方法论/KB-SELECTION-TOOLS-001_选品核心工具体系_v0.1.md | stable |
-| 01_科学零售方法论/KB-SHOPPER-TASK-001_购物任务图谱_v0.1.md | stable |
+| 05_品类管理与商品规划/N3.0_跨店标准主数据底座_结构与推理链_草案_v0.1.md | draft   # 草案待六哥裁定；签字后方可升 candidate（治理 §3②） |
+| 07_营销活动策划与实施/README.md | superseded |
+| 07_营销活动策划与实施/大湾区全年节庆节奏表_MC-GBA-05.md | superseded |
+| 09_门店案例与项目复盘/乐易购花厅坊店/03_商品诊断/2026-07-04_花厅坊W1料应用诊断草案_v0.1.md | 内部版收口（六哥 2026-07-04 授权推进） |
+| 09_门店案例与项目复盘/乐易购花厅坊店/03_商品诊断/花厅坊_3件立即动作_店长放行单_v0.1.md | draft（六哥 2026-07-04 授权推进 · 现场执行件） |
+| 09_门店案例与项目复盘/乐易购花厅坊店/03_商品诊断/花厅坊_下次到店采数清单_v0.1.md | draft（六哥 2026-07-04 授权推进 · 现场采数 checklist） |
+| 09_门店案例与项目复盘/乐易购花厅坊店/03_商品诊断/花厅坊_生鲜损耗每日登记表_可打印_v0.1.md | draft（批0 六哥 2026-07-04 授权部署 · 仅限内部诊断取数） |
+| 09_门店案例与项目复盘/乐易购花厅坊店/03_商品诊断/花厅坊_生鲜损耗登记SOP草案_v0.1.md | 批0 授权部署（六哥 2026-07-04）· 全文仍 draft |
+| 14_外部案例与行业研究/零售老刘体系/老刘批判重读_张力台账_running_v0.1.md | running |
+| 14_外部案例与行业研究/零售老刘体系/老刘批判重读_遗漏登记_running_v0.1.md | running |
+| 98_AI协作中枢/01_Claude_Code/Claude输出区/2026-06-27_M4首发成稿_方便食品长尾幻觉_v1.0.md | ready_to_publish_v1.1 |
+| 98_AI协作中枢/01_Claude_Code/Claude输出区/2026-07-02_P0-KB-Upgrade-Fix-003_执行报告_v0.1.md | done |
+| 98_AI协作中枢/01_Claude_Code/Claude输出区/2026-07-02_SG-SCI-RETAIL-6.1系统升级审计/审议第2轮/2026-07-02_T2修复对照表_KB-MULTISTORE-001.md | done |
+| 98_AI协作中枢/01_Claude_Code/Claude输出区/2026-07-02_SG-SCI-RETAIL-6.1系统升级审计/审议第2轮/2026-07-02_T3修复对照表_SOP-MARKET-SURVEY-001.md | done |
 
 > 规范枚举：draft / candidate / active / deprecated / archived。非规范值只报告，不自动改写。
 

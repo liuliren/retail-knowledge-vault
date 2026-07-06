@@ -45,7 +45,8 @@ SUPERSESSION_TARGET_KEYS = ("superseded_by", "replaced_by", "superseded_reason",
 FAILED_STATES = ("failed", "侥幸", "果差但决策稳", "blocked")
 FAILED_REASON_KEYS = ("failure_reason", "blocked_reason", "pending_reason", "superseded_reason", "lessons")
 FAILED_REASON_BODY = ("失败原因", "阻塞原因", "回填点", "下一步", "外因", "教训")
-CANONICAL_STATUSES = {"draft", "candidate", "active", "deprecated", "archived"}
+# 7 值定版(六哥2026-07-03签字·文档工程化标准§status);seed=draft合法别名(lint不报错)
+CANONICAL_STATUSES = {"draft", "review", "candidate", "active", "stable", "deprecated", "archived", "seed"}
 SUMMARY_REQUIRED_SOURCE_TYPES = {
     "method",
     "methodology",
