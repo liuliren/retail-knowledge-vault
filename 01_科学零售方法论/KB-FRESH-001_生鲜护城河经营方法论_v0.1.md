@@ -19,6 +19,7 @@ related:
   - "[[KB-CAT-ROLE-GBA-001_大湾区品类角色特化_v0.1]]"
   - "[[全品类品类系统基础方法论与三张表_v1.0]]"
   - "[[KB-RETAIL-KPI-001_零售经营KPI基准对照表_v0.1]]"
+  - "[[花厅坊_生鲜损耗登记SOP草案_v0.1]]"
 aliases:
   - "KB-FRESH-001"
 version: v0.1

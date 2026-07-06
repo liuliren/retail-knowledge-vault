@@ -231,7 +231,7 @@
 | 09_门店案例与项目复盘/乐易购花厅坊店/03_商品诊断/04_店长执行卡/花厅坊_生鲜损耗登记SOP草案_v0.1.md | 批0 授权部署（六哥 2026-07-04）· 全文仍 draft |
 | 14_外部案例与行业研究/零售老刘体系/老刘批判重读_张力台账_running_v0.1.md | running |
 | 14_外部案例与行业研究/零售老刘体系/老刘批判重读_遗漏登记_running_v0.1.md | running |
-| 98_AI协作中枢/01_Claude_Code/Claude输出区/2026-06-27_M4首发成稿_方便食品长尾幻觉_v1.0.md | ready_to_publish_v1.1 |
+| 12_自媒体内容与表达转化/06_成稿区/2026-06-27_M4首发成稿_方便食品长尾幻觉_v1.0.md | ready_to_publish_v1.1 |
 | 98_AI协作中枢/01_Claude_Code/Claude输出区/2026-07-02_P0-KB-Upgrade-Fix-003_执行报告_v0.1.md | done |
 | 98_AI协作中枢/01_Claude_Code/Claude输出区/2026-07-02_SG-SCI-RETAIL-6.1系统升级审计/审议第2轮/2026-07-02_T2修复对照表_KB-MULTISTORE-001.md | done |
 | 98_AI协作中枢/01_Claude_Code/Claude输出区/2026-07-02_SG-SCI-RETAIL-6.1系统升级审计/审议第2轮/2026-07-02_T3修复对照表_SOP-MARKET-SURVEY-001.md | done |
