@@ -1,6 +1,7 @@
 ---
 name: scan
 description: 每日定时扫新语料的固定任务引擎。扫描 Clippings/素材暂存里自上次以来新增的语料→逐条分类路由(短clip→ingest编译/长系列→深度精读队列/raw→冻结待ingest)→登台账→报六哥,不留孤儿。停在签字门。触发:语料巡检/扫新语料/今天有什么新输入/巡检语料/检查新clip/daily corpus scan。
+触发词: [scan, 语料巡检, 扫新语料, 今天有什么新输入, 检查新clip]
 allowed-tools: Bash, Read, Write, Edit
 ---
 

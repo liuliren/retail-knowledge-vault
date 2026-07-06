@@ -5,7 +5,9 @@
 from pathlib import Path
 
 # === 路径常量 ===
-VAULT_ROOT = Path("/Users/davidliu/KnowledgeBase/retail-knowledge-vault")
+import os
+# 优先环境变量,否则从本文件位置向上锚定 vault 根(config.py 在 13_数据分析与工具脚本/<pkg>/ 下两层)
+VAULT_ROOT = Path(os.environ.get("RETAIL_VAULT_ROOT", Path(__file__).resolve().parents[2]))
 PROJECT_ROOT = VAULT_ROOT / "09_门店案例与项目复盘/乐易购花厅坊店"
 RAW_DIR = PROJECT_ROOT / "99_原始素材"
 HISTORY_DIR = RAW_DIR / "项目历史过程文档"

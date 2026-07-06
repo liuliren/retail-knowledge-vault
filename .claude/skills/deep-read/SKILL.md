@@ -1,6 +1,7 @@
 ---
 name: deep-read
 description: 语料/素材逐字深度精读引擎(可自动续跑)。把一个长语料系列(如零售老刘321篇)逐批全文精读→出精读卡(核心论点+关键词+回填候选)→更进度表→更RESUME→精确commit。断点续传、节奏自适应、停在签字门。触发:深度精读/逐字精读/续读/接着读零售老刘/精读下一批/读语料/deep read。
+触发词: [deep-read, 深度精读, 续读, 接着读, 精读下一批, 读语料]
 allowed-tools: Bash, Read, Write, Edit
 ---
 

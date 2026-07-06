@@ -1,5 +1,6 @@
 ---
 description: Safe context compaction governance for long Claude Code sessions. Use when the session is long, after a commit, before /compact, before /clear, or when the user asks for context compression, compact, handoff, or session cleanup.
+触发词: [compact, 压缩上下文, 该compact了, context太长了]
 allowed-tools: Bash(git status:*), Bash(git log:*), Bash(git diff --check:*), Bash(git ls-files:*)
 ---
 

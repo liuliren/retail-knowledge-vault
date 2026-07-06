@@ -1,5 +1,6 @@
 ---
 description: Generate a structured handoff document and resume prompt before /compact or /clear. Use when compact recommends compact/clear, when the user asks for a "handoff", "交接", "新会话 prompt", "session summary", or when explicitly asked to prepare for a fresh Claude Code session.
+触发词: [handoff, 交接, 新会话prompt, 整理上下文]
 allowed-tools: Bash(git status:*), Bash(git log:*), Bash(git diff:*), Bash(ls:*), Read, Write
 ---
 
