@@ -36,6 +36,19 @@ def test_aggregate_diff_detects_orphan_category(tmp_path, monkeypatch):
     probs2 = trio.check_aggregate_diff(str(tmp_path), "DEMO-", covered_cats={"水产", "禽蛋"})
     assert not probs2                              # 全覆盖不误报
 
+def test_schema_single_source_of_truth():
+    """防漂移: 两引擎的关键列映射/口径常量必须来自 pos_schema(同一对象),
+    禁止未来有人在引擎内重新本地定义副本。"""
+    schema = _load("pos_schema", "pos_schema.py")  # 注册真名,引擎 import 命中同一模块
+    pc = _load("pos_clean_s", "POS清洗库_v0.1/pos_clean.py")
+    tr = _load("trio_s", "三件套引擎_v0.1/trio_engine.py")
+    for name in ("SALES_COLS", "ARCH_STD", "ARCH_ALT", "DATE_ROW_RE",
+                 "AGG_TABLE_RE", "EXCLUDE_BIGCLASS", "SYS_TOTAL_COL",
+                 "RECON_TOLERANCE_PCT"):
+        ref = getattr(schema, name)
+        assert getattr(pc, name) is ref, f"pos_clean.{name} 本地重定义,脱离 pos_schema"
+        assert getattr(tr, name) is ref, f"trio_engine.{name} 本地重定义,脱离 pos_schema"
+
 def test_zclass_match_rate_semantics():
     import pandas as pd
     sku = pd.DataFrame({"条码": ["A1", "A2", "B9"]})

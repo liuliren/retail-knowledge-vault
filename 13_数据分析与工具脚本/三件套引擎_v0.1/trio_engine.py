@@ -19,20 +19,14 @@
 首验: 花厅坊 2026.04-06, 19品类 15.2万行, 19/19 内部对账偏差 0.00% (2026-07-02)
 """
 import argparse, os, re, sys, csv
+from pathlib import Path
 import pandas as pd
 from python_calamine import CalamineWorkbook
 
-# ── 列映射: POS「商品-分部汇总」打印式报表(34列) ──
-SALES_COLS = {0: "行号", 2: "分店编码", 3: "分店名称", 5: "条码", 7: "品名", 9: "销售日期",
-              10: "销售数量", 13: "销售金额", 14: "退货数量", 16: "退货金额", 18: "赠送数量",
-              19: "赠送金额", 23: "自编码", 25: "单位", 26: "规格", 27: "类别编码",
-              28: "类别名称", 29: "经营方式", 31: "档案进价", 32: "进销差价"}
-DATE_RE = re.compile(r"^20\d{2}-\d{2}-\d{2}")
-# 档案表两种版式: 商品档案表(表头r2,紧凑列) / 其余五件(表头r3,标准列)
-ARCH_STD = {2: "货号", 3: "品名", 6: "类别名称", 8: "进货价", 9: "零售价",
-            11: "供应商", 15: "毛利率", 21: "停购日期"}
-ARCH_ALT = {1: "货号", 2: "品名", 3: "类别名称", 4: "进货价", 5: "零售价",
-            6: "供应商", 8: "毛利率", 13: "停购日期"}
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+# 列映射/口径常量单一定义处: ../pos_schema.py (改口径只改那里,两引擎共享)
+from pos_schema import (SALES_COLS, ARCH_STD, ARCH_ALT, DATE_ROW_RE, AGG_TABLE_RE,
+                        EXCLUDE_BIGCLASS, SYS_TOTAL_COL, RECON_TOLERANCE_PCT)
 
 
 def load_archive(archive_dir: str) -> pd.DataFrame:
@@ -69,7 +63,7 @@ def check_aggregate_diff(src, prefix, covered_cats):
     只报警不阻断; 类别列按表头含"类别名称"自动定位。"""
     import re as _re, os as _os
     aggs = [f for f in _os.listdir(src) if f.startswith(prefix) and f.endswith(".xls")
-            and _re.search(r"(生鲜|类别)汇总表", f)]
+            and AGG_TABLE_RE.search(f)]
     problems = []
     for f in aggs:
         try:
@@ -100,7 +94,7 @@ def check_aggregate_diff(src, prefix, covered_cats):
 def cmd_clean(a):
     """分品类销售 xls → 标准明细主表 csv, 逐表与系统合计行对账"""
     files = sorted(f for f in os.listdir(a.src) if f.startswith(a.prefix) and f.endswith("汇总表.xls")
-                   and "食品大类" not in f and not re.search(r"(生鲜|类别)汇总表", f))
+                   and EXCLUDE_BIGCLASS not in f and not AGG_TABLE_RE.search(f))
     os.makedirs(a.out, exist_ok=True)
     mp = os.path.join(a.out, a.master_name)
     ok = True
@@ -117,16 +111,16 @@ def cmd_clean(a):
                 cells = [str(x).strip() for x in r]
                 if any("合计" in x for x in cells[:4]):
                     try:
-                        sys_total = float(r[21])
+                        sys_total = float(r[SYS_TOTAL_COL])
                     except (ValueError, TypeError, IndexError):
                         pass
                     continue
-                if (len(cells) > 9 and re.match(r"^\d+\.?\d*$", cells[0]) and DATE_RE.match(cells[9])):
+                if (len(cells) > 9 and re.match(r"^\d+\.?\d*$", cells[0]) and DATE_ROW_RE.match(cells[9])):
                     w.writerow([cat] + [str(r[i]).strip() if i < len(r) else "" for i in list(SALES_COLS)[1:]])
                     n += 1
                     amt += float(r[13] or 0) - float(r[16] or 0)
             dev = None if not sys_total else (amt - sys_total) / sys_total * 100
-            flag = "✓" if dev is not None and abs(dev) <= 0.5 else "⚠️"
+            flag = "✓" if dev is not None and abs(dev) <= RECON_TOLERANCE_PCT else "⚠️"
             if flag == "⚠️":
                 ok = False
             print(f"{flag} {cat}: {n}行 净额{amt:,.0f} 系统合计{sys_total or 0:,.0f} 偏差{dev if dev is not None else 'N/A'}%")
