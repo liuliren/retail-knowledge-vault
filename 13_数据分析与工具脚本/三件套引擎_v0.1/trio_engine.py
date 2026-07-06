@@ -63,6 +63,40 @@ def load_archive(archive_dir: str) -> pd.DataFrame:
     return reg
 
 
+def check_aggregate_diff(src, prefix, covered_cats):
+    """第八坑防护(2026-07-06·lessons回码): 被排除的合集表(生鲜/类别汇总表)中
+    若存在分表未覆盖的类别 → 该类别销售会整体丢失(实证:禽蛋2293行/14.2万)。
+    只报警不阻断; 类别列按表头含"类别名称"自动定位。"""
+    import re as _re, os as _os
+    aggs = [f for f in _os.listdir(src) if f.startswith(prefix) and f.endswith(".xls")
+            and _re.search(r"(生鲜|类别)汇总表", f)]
+    problems = []
+    for f in aggs:
+        try:
+            rows = CalamineWorkbook.from_path(_os.path.join(src, f)).get_sheet_by_index(0).to_python()
+            col = None
+            for r in rows[:10]:
+                for i, c in enumerate(r):
+                    if "类别名称" in str(c):
+                        col = i; break
+                if col is not None: break
+            if col is None:
+                problems.append((f, "未定位到'类别名称'列,无法差集校验")); continue
+            agg_cats = {str(r[col]).strip() for r in rows
+                        if col < len(r) and str(r[col]).strip()
+                        and "类别" not in str(r[col]) and "合计" not in str(r[col])}
+            only = {c for c in agg_cats if not any(c in cov or cov in c for cov in covered_cats)}
+            if only:
+                problems.append((f, f"合集表独有类别(分表未覆盖·销售可能丢失): {sorted(only)}"))
+        except Exception as e:
+            problems.append((f, f"差集校验失败: {str(e)[:60]}"))
+    if problems:
+        print("\n🔴 第八坑警报(合集表类别差集):", file=sys.stderr)
+        for f, why in problems:
+            print(f"  {f}: {why}", file=sys.stderr)
+    return problems
+
+
 def cmd_clean(a):
     """分品类销售 xls → 标准明细主表 csv, 逐表与系统合计行对账"""
     files = sorted(f for f in os.listdir(a.src) if f.startswith(a.prefix) and f.endswith("汇总表.xls")
@@ -70,11 +104,13 @@ def cmd_clean(a):
     os.makedirs(a.out, exist_ok=True)
     mp = os.path.join(a.out, a.master_name)
     ok = True
+    covered_cats = set()
     with open(mp, "w", newline="") as fh:
         w = csv.writer(fh)
         w.writerow(["品类文件"] + list(SALES_COLS.values())[1:])
         for f in files:
             cat = re.sub(rf"^{re.escape(a.prefix)}|汇总表\.xls$", "", f)
+            covered_cats.add(cat)
             rows = CalamineWorkbook.from_path(os.path.join(a.src, f)).get_sheet_by_index(0).to_python()
             n, amt, sys_total = 0, 0.0, None
             for r in rows:
@@ -95,6 +131,7 @@ def cmd_clean(a):
                 ok = False
             print(f"{flag} {cat}: {n}行 净额{amt:,.0f} 系统合计{sys_total or 0:,.0f} 偏差{dev if dev is not None else 'N/A'}%")
     print(f"master → {mp}")
+    check_aggregate_diff(a.src, a.prefix, covered_cats)
     if not ok:
         print("⚠️ 存在对账偏差>0.5%的品类,数据可疑,判读前先查", file=sys.stderr)
 
@@ -123,6 +160,14 @@ def cmd_abcz(a, sku=None, reg=None):
         parts.append(g)
     sku = pd.concat(parts)
     active = reg[~reg.停购]
+    # Z类匹配防呆(2026-07-06·科学性漏洞回码): 档案"货号"直接isin销售"条码"——
+    # 两套编码体系若不一致(货号≠条码/自编码), 未匹配即被判Z, Z类会系统性虚增。
+    # 校验: 销售条码能回匹配到档案货号的比例<95% → 硬警报(不阻断,判读前必查)。
+    match_rate = sku.条码.isin(reg.货号).mean() * 100
+    if match_rate < 95:
+        print(f"\n🔴 Z类匹配警报: 销售条码↔档案货号 匹配率仅 {match_rate:.1f}% (<95%) — "
+              f"两套编码体系疑似不一致, Z类清单可能大量虚增, 判读前先核对编码口径(货号/条码/自编码)",
+              file=sys.stderr)
     z = active[~active.货号.isin(sku.条码)]
     os.makedirs(a.out, exist_ok=True)
     sku.to_csv(os.path.join(a.out, "ABCZ_SKU级.csv"), index=False)

@@ -1,0 +1,108 @@
+# 示例打分单 · 代号 DEMO · 全部数值为虚构演示数据, 非任何真实客户
+# (客户机密铁律: 示例不得使用真实客户数字)
+
+meta:
+  store_code: DEMO
+  date: 2026-07-06
+  scorer: 六哥
+  fresh_ratio: 0.52          # 虚构: 中高生鲜占比店, 触发§8校准
+  employee_mode: gray        # 虚构: 3名雇员, D6取5分
+
+dimensions:
+
+  D1:
+    items:
+      D1-1:
+        score: 2
+        evidence: C
+        note: "POS单源:尾部SKU占比偏高,A类陈列位未现场核验(虚构)"
+      D1-3:
+        score: 3
+        evidence: C
+        note: "POS价格分布:主流档偏密,高端档偏薄(虚构)"
+      D1-5:
+        score: 2
+        evidence: C
+        note: "POS:30天空销率超锚点(虚构)"
+
+  D2:
+    items:
+      D2-1:
+        score: 4
+        evidence: B
+        note: "POS f=52%+现场生鲜区人气交叉印证(虚构)"
+      D2-2:
+        score: 4
+        evidence: B
+        note: "现场见阶梯打折标签,打烊前肉柜基本清空(虚构)"
+      D2-3:
+        score: 5
+        evidence: B
+        note: "现场盘点:叶菜12种/猪肉三档齐/清远鸡在售(虚构)"
+      D2-4:
+        score: 3
+        evidence: C
+        note: "老板口头估叶菜损耗约一成,无台账(虚构)"
+
+  D3:
+    items:
+      D3-1:
+        score: 4
+        evidence: B
+        note: "走店+POS对照:仅个别品类错配(虚构)"
+      D3-2:
+        score: 3
+        evidence: B
+        note: "黄金层部分被促销品占位(虚构)"
+      D3-4:
+        score: 4
+        evidence: B
+        note: "端架多推季节品,一处放滞销(虚构)"
+
+  D4:
+    items:
+      D4-1:
+        score: 4
+        evidence: C
+        note: "POS单源:客单数环比上升,无客流设备(虚构)"
+      D4-2:
+        score: 4
+        evidence: C
+        note: "POS:增长为客数驱动,无危险信号(虚构)"
+      D4-3:
+        score: 2
+        evidence: C
+        note: "傍晚目测收银排队明显,排班未匹配高峰(虚构)"
+
+  D5:
+    items:
+      D5-1:
+        score: 3
+        evidence: C
+        note: "系统毛利率在基准带内,但进价可信度未核(虚构)"
+      D5-2:
+        score: 3
+        evidence: C
+        note: "系统推算周转接近账期,须取真实进货单据复核(虚构)"
+
+  D6:
+    items:
+      D6-2:
+        score: 4
+        evidence: B
+        note: "现场见剁肉/叶菜打理手法熟练,收银岗合格(虚构)"
+      D6-4:
+        score: 2
+        evidence: C
+        note: "访谈:生鲜加工仅一人会,存在单点依赖(虚构)"
+
+  D7:
+    items:
+      D7-2:
+        score: 3
+        evidence: B
+        note: "现场:服务态度好,高峰称重+收银叠加排队(虚构)"
+      D7-5:
+        score: 4
+        evidence: C
+        note: "老板能叫出多位常客及偏好(虚构)"
