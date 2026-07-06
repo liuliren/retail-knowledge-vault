@@ -2,7 +2,9 @@
 title: POS数据清洗与商品标准化规范_v0.1
 summary: POS数据清洗规范，11步流程、3类标准表、13异常类型、8条红线。
 version: v0.1
-status: draft
+status: deprecated
+deprecated_reason: 手工规范已被 posclean skill+POS清洗库v0.1 取代(Q3收编降层B-4·2026-07-07六哥裁·就地deprecated保入链)
+superseded_by: "POS清洗库_v0.1(13_数据分析与工具脚本)·posclean skill"
 quadrant: III
 owner: 六哥
 created: 2026-05-03
@@ -25,6 +27,8 @@ related:
   - "[[单品管理]]"
   - "[[购物任务图谱_v1.1]]"
 ---
+
+> ⚠️ **已废弃(2026-07-07 Q3收编降层B-4·六哥裁)**:手工规范已被 **posclean skill + POS清洗库 v0.1**(pos_clean.py·七坑防护)取代。新客户数据一律走脚本管道;本页仅存档参考,不得引用为执行依据。
 
 # POS 数据清洗与商品标准化规范
 

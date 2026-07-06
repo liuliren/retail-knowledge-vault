@@ -2,7 +2,9 @@
 id: KB-DELIVERY-POS-SOP-001
 title: POS 数据清洗与商品标准化 SOP v1.0（跨客户工程规范）
 version: v1.0
-status: candidate
+status: deprecated
+deprecated_reason: 手工流程已被 posclean skill+POS清洗库v0.1(七坑防护·pos_clean.py)取代;8原则已由脚本内化(Q3收编降层B-4·2026-07-07六哥裁·就地deprecated保入链)
+superseded_by: "POS清洗库_v0.1(13_数据分析与工具脚本)·posclean skill"
 owner: 六哥
 source_type: method
 created: 2026-06-25
@@ -19,6 +21,8 @@ tags:
   - 新客户接入
   - candidate
 ---
+
+> ⚠️ **已废弃(2026-07-07 Q3收编降层B-4·六哥裁)**:手工清洗流程已被 **posclean skill + POS清洗库 v0.1**(pos_clean.py·七坑防护·花厅坊/好家源两店实战)取代。新客户数据一律走脚本管道;本页仅存档参考,不得引用为执行依据。
 
 # POS 数据清洗与商品标准化 SOP v1.0
 
