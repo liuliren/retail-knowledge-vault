@@ -21,6 +21,8 @@ DEFAULT_EXCLUDES = {"99_归档", "Clippings", ".git", "worktrees"}
 AUTOMATION_RUNTIME = Path("13_数据分析与工具脚本/知识库自动化_v1/runtime")
 # 红线/越权检测豁免冻结源料与历史日志（只检测正式件，不误伤不可变源/留痕）
 SIGNOFF_AUDIT_EXCLUDES = ("99_原始素材", "Claude执行日志", "Codex执行日志")
+# Schema查(缺字段)豁免区: 冻结raw/外部参考/归档/系统配置不按正式件schema考核(六哥2026-07-06 D3裁)
+SCHEMA_EXEMPT_PREFIXES = ("99_原始素材", "14_外部案例与行业研究", "60_archive", ".claude", ".agents", "90_素材")
 FORMAL_ROOTS = ("01_", "04_", "09_", "10_", "16_")
 REQUIRED_FIELDS = ("title", "version", "status", "owner", "source_type")
 SIGNOFF_FIELDS = ("signoff", "signed", "signed_off")
@@ -46,7 +48,7 @@ FAILED_STATES = ("failed", "侥幸", "果差但决策稳", "blocked")
 FAILED_REASON_KEYS = ("failure_reason", "blocked_reason", "pending_reason", "superseded_reason", "lessons")
 FAILED_REASON_BODY = ("失败原因", "阻塞原因", "回填点", "下一步", "外因", "教训")
 # 7 值定版(六哥2026-07-03签字·文档工程化标准§status);seed=draft合法别名(lint不报错)
-CANONICAL_STATUSES = {"draft", "review", "candidate", "active", "stable", "deprecated", "archived", "seed"}
+CANONICAL_STATUSES = {"draft", "review", "candidate", "active", "stable", "deprecated", "archived", "seed", "delivered"}
 SUMMARY_REQUIRED_SOURCE_TYPES = {
     "method",
     "methodology",
@@ -312,6 +314,8 @@ def main() -> int:
 
     missing_fields: list[tuple[MarkdownDoc, list[str]]] = []
     for doc in docs:
+        if doc.rel.startswith(SCHEMA_EXEMPT_PREFIXES):
+            continue
         missing = [field for field in REQUIRED_FIELDS if not str(doc.frontmatter.get(field, "")).strip()]
         if missing:
             missing_fields.append((doc, missing))

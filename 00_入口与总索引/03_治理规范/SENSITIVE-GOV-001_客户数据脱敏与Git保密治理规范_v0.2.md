@@ -2,7 +2,8 @@
 id: P1-GOV-Sensitive-001
 title: 客户数据脱敏与 Git 保密治理规范（保密治理唯一口径 SSOT）
 version: v0.2
-status: active
+status: superseded
+superseded_by: "[[SENSITIVE-GOV-001_客户数据脱敏与Git保密治理规范_v0.3]]"
 signoff: 六哥 2026-07-05（S1认可SSOT骨架/S2接受push须过闸+授权措辞/S3授权superseded处置/S4 hook另立工程任务）
 审议轮次: 2
 审议债: 第2轮批判仅部分完成(限额中断~95%未补跑)·六哥签字生效并知悉此债·补跑如出必修项走v0.3修订

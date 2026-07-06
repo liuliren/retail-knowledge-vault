@@ -187,3 +187,6 @@ output/
 !.claude/skills/posclean/SKILL.md
 !.claude/skills/mdcard/
 !.claude/skills/mdcard/SKILL.md
+
+# GOV-001 v0.3 §一之三 本地词表永不入库
+.claude/客户代号注册表_LOCAL.txt

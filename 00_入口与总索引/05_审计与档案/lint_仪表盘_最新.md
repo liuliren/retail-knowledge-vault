@@ -1,33 +1,34 @@
 # G03_Lint v2 知识库体检仪表盘
 
-- 扫描时间：2026-07-06 02:08:57 EDT
+- 扫描时间：2026-07-06 02:35:37 EDT
 - Vault：`/Users/davidliu/KnowledgeBase/retail-knowledge-vault`
-- 扫描文件总数：1568
+- 扫描文件总数：1545
 - 排除目录：`.git, 99_归档, Clippings, worktrees, 13_数据分析与工具脚本/知识库自动化_v1/runtime`
 
 ## 顶部指标卡
 
 | 指标 | 数量 |
 |:--|:--|
-| 断链目标数 | 427 |
-| 孤儿文件数 | 15 |
-| active 无签字数 | 275 |
-| 缺字段文件数 | 979 |
+| 断链目标数 | 431 |
+| 孤儿文件数 | 16 |
+| active 无签字数 | 273 |
+| 缺字段文件数 | 389 |
 | 红线命中文件项 | 13 |
-| 版本不一致数 | 47 |
+| 版本不一致数 | 40 |
 | candidate 越权签字数 | 0 |
 | execute 前置登记表 | 存在·已声明阻断 |
 | provenance warning | 2 |
-| supersession warning | 8 |
+| supersession warning | 6 |
 | failed 记录 warning | 0 |
 | 核心知识缺 summary | 3 |
-| 非规范 status | 26 |
+| 非规范 status | 25 |
 
 ## 1. 断链查
 
 | 断链目标 | 引用数 | 引用文件数 | 示例引用文件 |
 |:--|:--|:--|:--|
 | 2026-05-04_知识库重构方案_v0.2_完整作战方案 | 48 | 25 | .claude/_镜像图.md; 00_入口与总索引/01_战略层/三回归仪表.md; 00_入口与总索引/01_战略层/品牌资产手册_v0.1.md |
+| 大湾区全年节庆节奏表_MC-GBA-05 | 21 | 13 | 00_入口与总索引/05_审计与档案/2026-05-07_封存断链清单_v1.0.md; 00_入口与总索引/05_审计与档案/版本更新记录.md; 00_入口与总索引/_wiki入口/科学零售wiki入口.md |
 | project_陈氏家族客户结构 | 21 | 13 | 00_入口与总索引/05_审计与档案/2026-05-09_vault反幻觉连环错误事件复盘_v0.1.md; 00_入口与总索引/05_审计与档案/2026-07-03_链接债清偿登记清单_v1.0.md; 00_入口与总索引/05_审计与档案/2026-07-04_链接债全面盘点与解决方案_v0.1.md |
 | 2026-05-07_休食SKU去留表_v0.1 | 18 | 8 | 00_入口与总索引/05_审计与档案/2026-05-07_封存断链清单_v1.0.md; 00_入口与总索引/05_审计与档案/2026-07-03_链接债清偿登记清单_v1.0.md; 09_门店案例与项目复盘/乐易购花厅坊店/00_项目总览/2026-05-07_休食专项作战手册_v0.1.md |
 | 2026-05-04_重构_Phase0_会话执行计划_v1.0 | 14 | 6 | 00_入口与总索引/05_审计与档案/2026-07-03_链接债清偿登记清单_v1.0.md; 00_入口与总索引/05_审计与档案/版本更新记录.md; 16_客户与战役档案/00_战役指挥板.md |
@@ -46,7 +47,6 @@
 | 客户名称对外使用授权链清单 | 7 | 5 | 00_入口与总索引/03_治理规范/签字门台账_SignoffLedger_v0.1.md; 10_咨询交付模板/多店综合诊断报告_模板_T-MULTISTORE-DX-001_v0.1.md; 98_AI协作中枢/01_Claude_Code/Claude记忆区/客户名对外使用须查授权链.md |
 | 2026-05-10_休食区其它品类调改作战手册_v0.2 | 7 | 4 | 00_入口与总索引/05_审计与档案/2026-07-03_链接债清偿登记清单_v1.0.md; 09_门店案例与项目复盘/乐易购花厅坊店/00_项目总览/2026-05-09_休食类调改规划诊断报告_v1.0_对内版.md; 09_门店案例与项目复盘/乐易购花厅坊店/00_项目总览/2026-05-09_休食类调改规划诊断报告_v1.0_对外版.md |
 | reference_花厅坊休食区8货架与5人组织架构 | 7 | 4 | 00_入口与总索引/05_审计与档案/2026-07-03_链接债清偿登记清单_v1.0.md; 09_门店案例与项目复盘/乐易购花厅坊店/00_项目总览/2026-05-27_花厅坊项目已确认事实登记表_v1.0.md; 09_门店案例与项目复盘/乐易购花厅坊店/05_陈列整改/2026-05-19_花厅坊陈列资源命名适配表_v1.0.md |
-| 2026-05-08_组织调整行动计划_v0 | 7 | 4 | 00_入口与总索引/05_审计与档案/2026-07-03_链接债清偿登记清单_v1.0.md; 15_刻意练习与成长/客户验证日志/2026-05/2026-05-08_启明_组织架构与权责利共识_v0.1.md; 16_客户与战役档案/花厅坊样板/2026-05-08_核心人员盘点_v0.1.md |
 
 ## 2. 孤儿查
 
@@ -67,6 +67,7 @@
 | 16_客户与战役档案/_模板/04_风险登记表模板.md | 风险登记表模板 |
 | 16_客户与战役档案/_模板/06_交付物清单模板.md | 交付物清单模板 |
 | 16_客户与战役档案/_模板/07_变更控制日志模板.md | 变更控制日志模板 |
+| 16_客户与战役档案/花厅坊样板/00_战役章程_战役2_W23-W35_draft_v0.1.md | 花厅坊战役#2 章程（W23-W35 · 8/31 交付冲刺） |
 
 ## 3. 状态查
 
@@ -83,7 +84,6 @@
 | 00_入口与总索引/04_作战指挥/Vault健康仪表.md | Vault健康仪表 | 六哥 | 是 |
 | 00_入口与总索引/04_作战指挥/常用模板入口.md | 常用模板入口 | 六哥 | 是 |
 | 00_入口与总索引/04_作战指挥/当前重点项目看板.md | 当前重点项目看板 | 六哥 | 是 |
-| 00_入口与总索引/04_作战指挥/战役指挥板.md | 战役指挥板 | 六哥 | 是 |
 | 00_入口与总索引/04_作战指挥/花厅坊判断前必读索引.md | 花厅坊判断前必读索引 | 六哥 | 是 |
 | 00_入口与总索引/05_审计与档案/2026-05-07_McKinsey审计报告_v1.0.md | 花厅坊知识库 McKinsey 工程化标准审计报告 v1.0 | 六哥 | 是 |
 | 00_入口与总索引/05_审计与档案/2026-05-07_vault升级方案_v2.0.md | 晟果 vault 升级方案 v2.0（6 大标准融合 + Karpathy 自然涌现 + 反哺迭代） | 六哥 | 是 |
@@ -92,31 +92,32 @@
 | 00_入口与总索引/05_审计与档案/2026-05-09_vault全量审计与数据审计1月期机制_v1.0.md | 2026-05-09 vault 全量审计与数据审计 1 月期机制 v1.0（晟果新零售顶级咨询治理纲领） | 六哥 | 是 |
 | 00_入口与总索引/05_审计与档案/2026-05-09_vault反幻觉连环错误事件复盘_v0.1.md | 2026-05-09 vault 反幻觉连环错误事件复盘 v0.1 | 六哥 | 是 |
 | 00_入口与总索引/05_审计与档案/2026-05-18_W20-Day7_vault全面治理审计_v0.1.md | 2026-05-18 W20-Day7 vault 全面治理审计 v0.1 | 六哥 | 是 |
+| 00_入口与总索引/05_审计与档案/2026-05-18_零售知识库接入校准记录_v0.1.md | 零售知识库接入校准记录 | 六哥 | 是 |
 
 ## 4. Schema 查
 
 | 文件 | 缺失字段 |
 |:--|:--|
-| .agents/skills/project-compact-governance/SKILL.md | title, version, status, owner, source_type |
-| .agents/skills/project-handoff/SKILL.md | title, version, status, owner, source_type |
-| .claude/skills/SKILL-INDEX.md | version, status, owner, source_type |
-| .claude/skills/abcz/SKILL.md | title, version, status, owner, source_type |
-| .claude/skills/compact/SKILL.md | title, version, status, owner, source_type |
-| .claude/skills/critique/SKILL.md | title, source_type |
-| .claude/skills/deep-read/SKILL.md | title, version, status, owner, source_type |
-| .claude/skills/diagnose/SKILL.md | title, status, owner, source_type |
-| .claude/skills/diagnose/_复盘台账.md | title, version, status, owner, source_type |
-| .claude/skills/draft/SKILL.md | title, status, owner, source_type |
-| .claude/skills/handoff/SKILL.md | title, version, status, owner, source_type |
-| .claude/skills/ingest/SKILL.md | title, version, owner, source_type |
-| .claude/skills/mdcard/SKILL.md | title, owner, source_type |
-| .claude/skills/mdcard/spec模板与样例.md | title, version, status, owner, source_type |
-| .claude/skills/merge/SKILL.md | title, owner, source_type |
-| .claude/skills/movement/SKILL.md | title, version, status, owner, source_type |
-| .claude/skills/posclean/SKILL.md | title, version, status, owner, source_type |
-| .claude/skills/priceband/SKILL.md | title, version, status, owner, source_type |
-| .claude/skills/promote/SKILL.md | title, status, owner, source_type |
-| .claude/skills/publish/SKILL.md | title, status, owner, source_type |
+| 00_入口与总索引/01_战略层/零售知识库底层宪章.md | source_type |
+| 00_入口与总索引/03_治理规范/2026-07-04_六宫格入CAT-ARCH架构_三轮审议记录_v1.0.md | source_type |
+| 00_入口与总索引/03_治理规范/Agent-Native自迭代回路规范_P1-GOV-SelfLoop-001_v0.1.md | source_type |
+| 00_入口与总索引/03_治理规范/产出路由矩阵_GOV-ROUTE-001_v0.1.md | owner, source_type |
+| 00_入口与总索引/03_治理规范/体系个人知识库与内容板块_方案_v0.1.md | source_type |
+| 00_入口与总索引/03_治理规范/审议backlog/审议卡_ABC结构比_v0.1.md | owner, source_type |
+| 00_入口与总索引/03_治理规范/审议backlog/审议卡_C1生鲜SKU公式失效边界_v0.1.md | owner, source_type |
+| 00_入口与总索引/03_治理规范/审议backlog/审议卡_MD命题4量化骨架与净品效第4信号_v0.1.md | owner, source_type |
+| 00_入口与总索引/03_治理规范/审议backlog/审议卡_SS分层红线_v0.1.md | owner, source_type |
+| 00_入口与总索引/03_治理规范/审议backlog/审议卡_全店诊断编排SOP_v0.1.md | owner, source_type |
+| 00_入口与总索引/03_治理规范/审议backlog/审议卡_单品动态状态机_v0.1.md | owner, source_type |
+| 00_入口与总索引/03_治理规范/审议backlog/审议卡_品类动态状态机_v0.1.md | owner, source_type |
+| 00_入口与总索引/03_治理规范/审议backlog/审议卡_场内营销体系_v0.1.md | owner, source_type |
+| 00_入口与总索引/03_治理规范/审议backlog/审议卡_市调工作流SOP_v0.1.md | owner, source_type |
+| 00_入口与总索引/03_治理规范/审议backlog/审议卡_晟果社区店型分类法_v0.1.md | owner, source_type |
+| 00_入口与总索引/03_治理规范/审议backlog/审议卡_活动组织与拉动_v0.1.md | owner, source_type |
+| 00_入口与总索引/03_治理规范/审议backlog/审议卡_生鲜包装双毛利基准_v0.1.md | owner, source_type |
+| 00_入口与总索引/03_治理规范/审议backlog/审议卡_空间坪效双分母架构_v0.1.md | owner, source_type |
+| 00_入口与总索引/03_治理规范/审议backlog/审议卡_类清晰验收与过度分类红线_v0.1.md | owner, source_type |
+| 00_入口与总索引/03_治理规范/审议backlog/审议卡_精读卡验收标准_v0.1.md | owner, source_type |
 
 ## 5. 敏感查（红线）
 
@@ -140,10 +141,8 @@
 
 | 文件 | 文件名版本 | frontmatter version |
 |:--|:--|:--|
-| 00_入口与总索引/03_治理规范/晟果新零售M-DEC长期记忆系统Schema_预览_v0.1.2.md | v0.1.2 | v0.1 |
 | 00_入口与总索引/05_审计与档案/2026-05-18_零售知识库接入校准记录_v0.1.md | v0.1 | v0.2 |
 | 00_入口与总索引/05_审计与档案/历史设计稿/2026-05-12_vault_v3.0顶层结构设计稿_v0.1.md | v0.1 | v0.5 |
-| 01_科学零售方法论/M-DEC/feedback/feedback_品类标准_大湾区品类表V4.0_唯一标准.md | v4.0 | v0.1 |
 | 01_科学零售方法论/数据与系统能力底座/2026-05-19_晟果新零售陈列资源命名治理规范_v1.0.md | v1.0 | v1.1 |
 | 01_科学零售方法论/科学零售知识体系/L4_决策规则层/2026-06-19_零售知识体系到M-DEC候选池_v0.1.md | v0.1 | v0.2 |
 | 04_商品诊断与商品力提升/RetailOS_v2.0_Scale评估报告_v0.1.md | v0.1 | v2.0 |
@@ -160,6 +159,8 @@
 | 09_门店案例与项目复盘/乐易购花厅坊店/03_商品诊断/_v1.0_交付包/2026-05-07_花厅坊休食商品基础表_v1.0.md | v1.0 | v1.0.1 |
 | 09_门店案例与项目复盘/乐易购花厅坊店/03_商品诊断/_v1.0_交付包/2026-05-07_花厅坊休食商品淘汰表_v1.0.md | v1.0 | v1.0.1 |
 | 09_门店案例与项目复盘/乐易购花厅坊店/05_陈列整改/2026-05-19_花厅坊陈列资源命名适配表_v1.0.md | v1.0 | v1.1 |
+| 10_咨询交付模板/02_交付SOP/Retail_OS_v1.0_零售门店决策操作系统_商业交付版.md | v1.0 | v1.1 |
+| 10_咨询交付模板/02_交付SOP/单小类诊断样板_L3到Item到SKU_v0.1.md | v0.1 | v1.0 |
 
 ## 7. candidate 越权签字查
 
@@ -191,8 +192,6 @@
 | 05_品类管理与商品规划/2026-05-09_品类表治理决议_v1.0.md | status=deprecated 但缺 superseded_by/replaced_by/被取代:: 目标 |
 | 08_经营分析与数据看板/D7复盘卡_v0.1.md | status=deprecated 但缺 superseded_by/replaced_by/被取代:: 目标 |
 | 09_门店案例与项目复盘/乐易购花厅坊店/00_项目总览/00_花厅坊调改进度看板.md | status=deprecated 但缺 superseded_by/replaced_by/被取代:: 目标 |
-| 60_archive/2026-07-05_孤儿归档批次/14_外部案例与行业研究/_Run2_质量报告.md | status=deprecated 但缺 superseded_by/replaced_by/被取代:: 目标 |
-| 60_archive/2026-07-05_孤儿归档批次/14_外部案例与行业研究/_Run3_质量报告.md | status=deprecated 但缺 superseded_by/replaced_by/被取代:: 目标 |
 
 > 弱检测：status=superseded/deprecated 但无 superseded_by/replaced_by/被取代:: 目标。warning。
 
@@ -220,11 +219,10 @@
 | 00_入口与总索引/03_治理规范/2026-07-04_六宫格入CAT-ARCH架构_三轮审议记录_v1.0.md | closed |
 | 00_入口与总索引/03_治理规范/CODEX-SENSITIVE-GATE-001_Codex提交前客户数据保密闸_v0.1.md | superseded |
 | 00_入口与总索引/03_治理规范/SENSITIVE-GOV-001_客户数据脱敏与Git保密治理规范_v0.1.md | superseded |
+| 00_入口与总索引/03_治理规范/SENSITIVE-GOV-001_客户数据脱敏与Git保密治理规范_v0.2.md | superseded |
 | 00_入口与总索引/03_治理规范/SENSITIVE-HISTORY-PLAN-001_未来同步与安全分支策略_轻量版_v0.1.md | superseded |
 | 00_入口与总索引/03_治理规范/晟果新零售科学零售术语口径统一表_v1.0.md | superseded |
 | 05_品类管理与商品规划/N3.0_跨店标准主数据底座_结构与推理链_草案_v0.1.md | draft   # 草案待六哥裁定；签字后方可升 candidate（治理 §3②） |
-| 07_营销活动策划与实施/README.md | superseded |
-| 07_营销活动策划与实施/大湾区全年节庆节奏表_MC-GBA-05.md | superseded |
 | 09_门店案例与项目复盘/乐易购花厅坊店/03_商品诊断/2026-07-04_花厅坊W1料应用诊断草案_v0.1.md | 内部版收口（六哥 2026-07-04 授权推进） |
 | 09_门店案例与项目复盘/乐易购花厅坊店/03_商品诊断/花厅坊_3件立即动作_店长放行单_v0.1.md | draft（六哥 2026-07-04 授权推进 · 现场执行件） |
 | 09_门店案例与项目复盘/乐易购花厅坊店/03_商品诊断/花厅坊_下次到店采数清单_v0.1.md | draft（六哥 2026-07-04 授权推进 · 现场采数 checklist） |
@@ -236,13 +234,14 @@
 | 98_AI协作中枢/01_Claude_Code/Claude输出区/2026-07-02_P0-KB-Upgrade-Fix-003_执行报告_v0.1.md | done |
 | 98_AI协作中枢/01_Claude_Code/Claude输出区/2026-07-02_SG-SCI-RETAIL-6.1系统升级审计/审议第2轮/2026-07-02_T2修复对照表_KB-MULTISTORE-001.md | done |
 | 98_AI协作中枢/01_Claude_Code/Claude输出区/2026-07-02_SG-SCI-RETAIL-6.1系统升级审计/审议第2轮/2026-07-02_T3修复对照表_SOP-MARKET-SURVEY-001.md | done |
+| 98_AI协作中枢/01_Claude_Code/Claude输出区/2026-07-02_晟果logo_暂定方案包_v0.8/README_设计标准_暂定_v0.8.md | 暂定方案(archived backup·非 stable) |
 
 > 规范枚举：draft / candidate / active / deprecated / archived。非规范值只报告，不自动改写。
 
 ## 阻断项
 
 - 阻断级：敏感查存在命中。需先复核并处理红线项。
-- warning 级（不阻断）：provenance 2 / supersession 8 / failed 0。
+- warning 级（不阻断）：provenance 2 / supersession 6 / failed 0。
 
 ## 运行说明
 

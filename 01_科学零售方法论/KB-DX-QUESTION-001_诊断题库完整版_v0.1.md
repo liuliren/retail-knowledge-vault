@@ -1,7 +1,8 @@
 ---
 id: KB-DX-QUESTION-001
 title: 社区生鲜超市品类诊断完整题库（M1–M6）
-status: stable
+status: candidate
+status_note: 原标stable但无signoff字段·宁降不代签(六哥2026-07-06 D4裁·补实证+签字后可复升)
 created: 2026-06-28
 source: retail-knowledge-vault/99_归档/2026-05-07_新基线封存/90_素材_全量/诊断题库_完整版_v1.md
 source_type: archive_ingest

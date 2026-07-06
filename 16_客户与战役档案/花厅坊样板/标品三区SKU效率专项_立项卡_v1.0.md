@@ -1,6 +1,6 @@
 ---
 title: 花厅坊标品三区SKU效率专项 立项卡 v0.1
-version: v0.1
+version: v1.0
 status: active
 signoff: 六哥 2026-07-02
 created: 2026-07-02

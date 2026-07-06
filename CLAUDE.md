@@ -110,7 +110,7 @@ status: active
 - **G12_SkillForge（动作孵化治理）** — 重复动作进 `_动作台账.csv`；同类 ≥3 次且过「步骤稳定 / 频率周期 / 输入同构」三判据 → 生成规则草稿 + 提示六哥是否孵化 Skill；≥10 次强制提示。**不自动建 skill（建=改系统=须签字）。** 详见 [[Agent-Native自迭代回路规范_P1-GOV-SelfLoop-001_v0.1]]。
 - **Skill 闭环铁律** — 任何 skill 跑完功能闭环须含「复盘 D + 迭代 E」两相，lessons 回写模板；缺则视为未闭环。
 - **Skill 上线铁律（2026-06-30）** — 新 skill 必过三项方可使用：① frontmatter 有 `触发词:` 字段；② `.claude/skills/SKILL-INDEX.md` 已追加对应行；③ `.gitignore` 已加白名单（需追踪时）。三项缺一 = 未完成，不得引用为可用命令。详见 [[SKILL-INDEX]]。
-- **模型分层调度（v2·五层·2026-07-05 六哥授权定版）** — `L0脚本(零token) > L1 Haiku批量(零判断) > L2 Sonnet代理(机械+轻判断) > L3 Fable主线程(判断相/编排/审计合成) > L4 Opus(过双门:结构必要+不可分解)`。判断相（裁决/签字背书/调改取舍/批判审议判定）**不得下放 L2 以下**（护城河红线）。配套限额纪律与代理护栏见 `Claude输出区/2026-07-05_模型合理使用方案_v1.0.md`（满级代理≤3并发/大fan-out先checkpoint/机械代理动作白名单/stable正文只许主线程改）。
+- **模型分层调度（v2·五层·2026-07-05 六哥授权定版）** — `L0脚本(零token) > L1 Haiku批量(零判断) > L2 Sonnet代理(机械+轻判断) > L3 Fable主线程(判断相/编排/审计合成) > L4 Opus(过双门:结构必要+不可分解)`。判断相（裁决/签字背书/调改取舍/批判审议判定）**不得下放 L2 以下**（护城河红线）。配套限额纪律与代理护栏见 [[模型合理使用方案_五层调度_v1.0]]（03_治理规范·2026-07-06 C3裁移入）（满级代理≤3并发/大fan-out先checkpoint/机械代理动作白名单/stable正文只许主线程改）。
 - 临时产出先入 `98_AI协作中枢/01_Claude_Code/Claude输出区/`，确认后再移正式目录。
 
 ---
@@ -208,6 +208,8 @@ status: active
 - [ ] 签字事件已 append 到 SignoffLedger
 
 > 落 SignoffLedger 格式：`| YYYY-MM-DD | 文件名 | 原状态→新状态 | 六哥 | 理由 |`
+
+**交付件例外轨（2026-07-06 六哥D1裁）**：客户交付件（E层/client_shareable）交付即入 `delivered` 终态，豁免 active 的『≥3案例实证』门槛（交付本身即实证）；仍须签字+落Ledger。
 
 ### 11.4 Wiki 知识树与看板（Obsidian 原生）· MOC `implemented` / Dataview `partially_implemented` / Kanban `optional`
 - **知识树**：`科学零售知识树_MOC.md`（已建）按 L1理念→L2骨架→L3(M1-M8)→L4工具/SOP→案例 挂全概念；Dataview 自动列件（依赖插件）；Graph view 作全景图。
