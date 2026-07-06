@@ -17,7 +17,7 @@ from pathlib import Path
 from typing import Iterable
 
 
-DEFAULT_EXCLUDES = {"99_归档", "Clippings", ".git"}
+DEFAULT_EXCLUDES = {"99_归档", "Clippings", ".git", "worktrees"}
 AUTOMATION_RUNTIME = Path("13_数据分析与工具脚本/知识库自动化_v1/runtime")
 # 红线/越权检测豁免冻结源料与历史日志（只检测正式件，不误伤不可变源/留痕）
 SIGNOFF_AUDIT_EXCLUDES = ("99_原始素材", "Claude执行日志", "Codex执行日志")
