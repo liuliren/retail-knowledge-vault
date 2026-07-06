@@ -24,7 +24,7 @@ tags:
 
 > **定位**:SKU 决策体系 → 门店执行体系 → **客户交付体系的最后一层封装**。不是分析工具,是**交付工具**。
 > **最高标准**:任何复杂 SKU 分析,都能在**1 页内被门店老板理解、3 分钟内知道"做什么"**。
-> 实现:skill `report-export`(`.claude/skills/report-export/` = SKILL.md + template.html + render.sh)。
+> 实现:skill `report-export`(**KnowledgeBase 根层** `/Users/davidliu/KnowledgeBase/.claude/skills/report-export/` = SKILL.md + template.html + render.sh;注意不在 retail vault 的 `.claude/skills/` 内)。〔勘误2026-07-06:原相对路径在 retail vault 内落空,BP-4 修正〕
 
 ## 1. 核心输出
 | 件 | 受众 | 用途 |
@@ -46,7 +46,7 @@ tags:
 ```
 数据/草案 → HTML 模板(template.html) → 无头 Chrome → PDF + PNG
 ```
-- 命令:`bash .claude/skills/report-export/render.sh <名>.html [输出目录] [png高度]`
+- 命令:`bash /Users/davidliu/KnowledgeBase/.claude/skills/report-export/render.sh <名>.html [输出目录] [png高度]`（skill 真身在 KnowledgeBase 根层）
 - **禁止**:LaTeX 复杂链路 / 重型报表系统 / 非可控渲染引擎。
 
 ## 4. 输入结构(input schema)
