@@ -1,15 +1,15 @@
 # G03_Lint v2 知识库体检仪表盘
 
-- 扫描时间：2026-07-06 02:35:37 EDT
+- 扫描时间：2026-07-06 02:44:42 EDT
 - Vault：`/Users/davidliu/KnowledgeBase/retail-knowledge-vault`
-- 扫描文件总数：1545
+- 扫描文件总数：1547
 - 排除目录：`.git, 99_归档, Clippings, worktrees, 13_数据分析与工具脚本/知识库自动化_v1/runtime`
 
 ## 顶部指标卡
 
 | 指标 | 数量 |
 |:--|:--|
-| 断链目标数 | 431 |
+| 断链目标数 | 432 |
 | 孤儿文件数 | 16 |
 | active 无签字数 | 273 |
 | 缺字段文件数 | 389 |
@@ -21,7 +21,7 @@
 | supersession warning | 6 |
 | failed 记录 warning | 0 |
 | 核心知识缺 summary | 3 |
-| 非规范 status | 25 |
+| 非规范 status | 26 |
 
 ## 1. 断链查
 
@@ -222,6 +222,7 @@
 | 00_入口与总索引/03_治理规范/SENSITIVE-GOV-001_客户数据脱敏与Git保密治理规范_v0.2.md | superseded |
 | 00_入口与总索引/03_治理规范/SENSITIVE-HISTORY-PLAN-001_未来同步与安全分支策略_轻量版_v0.1.md | superseded |
 | 00_入口与总索引/03_治理规范/晟果新零售科学零售术语口径统一表_v1.0.md | superseded |
+| 01_科学零售方法论/M-DEC/feedback/feedback_品类标准_大湾区品类表V4.0_唯一标准.md | superseded |
 | 05_品类管理与商品规划/N3.0_跨店标准主数据底座_结构与推理链_草案_v0.1.md | draft   # 草案待六哥裁定；签字后方可升 candidate（治理 §3②） |
 | 09_门店案例与项目复盘/乐易购花厅坊店/03_商品诊断/2026-07-04_花厅坊W1料应用诊断草案_v0.1.md | 内部版收口（六哥 2026-07-04 授权推进） |
 | 09_门店案例与项目复盘/乐易购花厅坊店/03_商品诊断/花厅坊_3件立即动作_店长放行单_v0.1.md | draft（六哥 2026-07-04 授权推进 · 现场执行件） |
@@ -234,7 +235,6 @@
 | 98_AI协作中枢/01_Claude_Code/Claude输出区/2026-07-02_P0-KB-Upgrade-Fix-003_执行报告_v0.1.md | done |
 | 98_AI协作中枢/01_Claude_Code/Claude输出区/2026-07-02_SG-SCI-RETAIL-6.1系统升级审计/审议第2轮/2026-07-02_T2修复对照表_KB-MULTISTORE-001.md | done |
 | 98_AI协作中枢/01_Claude_Code/Claude输出区/2026-07-02_SG-SCI-RETAIL-6.1系统升级审计/审议第2轮/2026-07-02_T3修复对照表_SOP-MARKET-SURVEY-001.md | done |
-| 98_AI协作中枢/01_Claude_Code/Claude输出区/2026-07-02_晟果logo_暂定方案包_v0.8/README_设计标准_暂定_v0.8.md | 暂定方案(archived backup·非 stable) |
 
 > 规范枚举：draft / candidate / active / deprecated / archived。非规范值只报告，不自动改写。
 

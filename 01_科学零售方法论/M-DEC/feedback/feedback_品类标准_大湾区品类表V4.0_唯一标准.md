@@ -2,7 +2,8 @@
 title: feedback_品类标准_大湾区品类表V4.0_唯一标准（占位 stub）
 summary: "记忆层反馈节点:大湾区品类表V4.0为品类划分唯一标准的纪律,待回填。"
 version: v4.0
-status: draft
+status: superseded
+superseded_by: "[[晟果新零售_品类系统V6_0_迭代升级审核版]]（2026-07-02 六哥签升SSOT）"
 type: concept_stub
 created: 2026-06-26
 module: 01_科学零售方法论/M-DEC/feedback
@@ -16,7 +17,7 @@ confidence: low
 fact_layer: pending
 ---
 
-# feedback_品类标准_大湾区品类表V4.0_唯一标准（占位 stub）
+# feedback_品类标准_大湾区品类表V4.0_唯一标准（占位 stub·⚠️已被取代：唯一标准=V6.0·2026-07-02签）
 
 > **占位说明**:本页为链接债止血而建,被引用 7 次,无实体页。
 

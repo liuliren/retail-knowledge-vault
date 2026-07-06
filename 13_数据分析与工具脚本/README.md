@@ -72,3 +72,8 @@ confidence: high
 ## 常用标签
 
 `#数据分析` `#Python` `#Excel` `#工具脚本` `#数据清洗` `#条码匹配` `#PowerQuery` `#自动化`
+
+## 工具引擎入口（2026-07-06 补链·消工具层孤儿）
+
+- [[POS清洗库_v0.1/README|POS清洗库 v0.1]] — pos_clean.py：probe体检→clean清洗→标准master（七坑防护）
+- [[三件套引擎_v0.1/README|三件套引擎 v0.1]] — trio：ABCZ+动销率+价格带毛利一条龙
