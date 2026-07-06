@@ -2,7 +2,9 @@
 id: MC-GBA-05
 title: 大湾区全年节庆节奏表
 version: v0.2
-status: draft
+status: superseded
+superseded_by: "[[大湾区社区生鲜节令营销日历_v0.1]]"
+deprecated_reason: 独有内容已并入节令营销日历v0.2（2026-07-05 merge），正本在07_营销活动策划
 owner: 六哥
 created: 2026-05-03
 module: 07_营销活动策划与实施
