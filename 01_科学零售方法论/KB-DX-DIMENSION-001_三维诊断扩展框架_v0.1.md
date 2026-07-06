@@ -1,6 +1,7 @@
 ---
 id: KB-DX-DIMENSION-001
 title: 三维诊断扩展框架（品类族 × 周期 × 节令）
+alignment: 四模块内部工具层(对外口径=四模块·映射表见KB-DX-FULLSTORE-001 §0.5·Q3收编降层 2026-07-07 六哥裁)
 status: draft
 version: v0.1
 created: 2026-07-01

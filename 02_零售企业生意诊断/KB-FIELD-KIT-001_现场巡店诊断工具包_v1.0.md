@@ -1,6 +1,7 @@
 ---
 id: KB-FIELD-KIT-001
 title: 现场巡店诊断工具包（拍摄规范 + 采集模板 + 7D打分卡·通用）
+alignment: 四模块内部工具层(对外口径=四模块·映射表见KB-DX-FULLSTORE-001 §0.5·Q3收编降层 2026-07-07 六哥裁)
 version: v1.0
 status: draft
 created: 2026-07-04

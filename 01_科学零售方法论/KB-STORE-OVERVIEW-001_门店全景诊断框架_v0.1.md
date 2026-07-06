@@ -1,6 +1,7 @@
 ---
 id: KB-STORE-OVERVIEW-001
 title: 门店全景诊断框架
+alignment: 四模块内部工具层(对外口径=四模块·映射表见KB-DX-FULLSTORE-001 §0.5·Q3收编降层 2026-07-07 六哥裁)
 status: draft
 version: v0.1
 created: 2026-07-01

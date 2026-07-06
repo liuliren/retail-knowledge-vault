@@ -1,6 +1,7 @@
 ---
 id: KB-MULTISTORE-001
 title: 多店比较评估框架（标准化 × 三桶分类 × 行业基准库 × 横向评分 × 资源分配 × 隐私护栏）
+alignment: 四模块内部工具层(对外口径=四模块·映射表见KB-DX-FULLSTORE-001 §0.5·Q3收编降层 2026-07-07 六哥裁)
 status: draft
 version: v0.1
 created: 2026-06-30
