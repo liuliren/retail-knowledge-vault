@@ -3,7 +3,8 @@ id: LONG-RUN-AGENT-001
 title: 长跑代理协议·晟果适配版(断点续跑/自动降级/模型路由/夜跑)
 version: v2.1
 status: draft
-审议轮次: 1
+审议轮次: 2
+审议记录: 第2轮魔鬼代言人已毕(2026-07-07·判定=需修后再审)——阻断1项(扩权令vs操作四档C档优先级冲突·属六哥裁决,第3轮前置)/应修5项(checker虚标已勘误§2;阈值不可观测/BLOCKED次数判据/夜跑白名单缝/验收复述,待修订版v2.2)/建议4项;发现全文见环日志所指审议报告
 owner: 六哥
 created: 2026-07-07
 module: 98_AI协作中枢/00_总控
@@ -38,7 +39,8 @@ tags: [长跑代理, 断点续跑, 协议, 状态机, draft, 待审议]
 | PLAN.md | 输出区方案件(如整合计划/固化方案)+plan mode | ✅生效 |
 | RESUME.md | `00_总控/_当前断点_RESUME.md`(≤300token STATE格式) | ✅生效 |
 | CHANGELOG.md | git commit(指定路径提交铁律)+环运行日志 | ✅生效 |
-| VALIDATION.md | 验收铁律(代理✅≠完成,抽验≥3处grep/ls级)+机械checker | ✅生效 |
+| VALIDATION.md | 验收铁律(代理✅≠完成,抽验≥3处grep/ls级) | ✅生效 |
+| (同上·脚本层) | 机械checker脚本化(P3-3) | 🔄in_progress,**未建成**(第2轮审议应修-2勘误:原误标✅) |
 | DECISION_LOG.md | SignoffLedger + M-DEC 决策卡 | ✅生效 |
 | Agent Roles(4角色) | 五层模型调度 v2(L0脚本>L1 Haiku>L2 Sonnet>L3 Fable主线程>L4 Opus双门) | ✅已签,**以本库为准**(v2.0 让 Opus 常规做架构=违反 L4 双门,弃) |
 | Nightly Runner | ScheduleWakeup 链式心跳(已实战)→ §6 升格为夜跑规程 | 🆕本协议补 |
