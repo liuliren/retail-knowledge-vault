@@ -36,6 +36,7 @@ related:
   - "[[KB-SEASON-MATRIX-001_大湾区节令品类影响矩阵_v0.1]]"
   - "[[KB-ACTION-GUIDE-001_诊断行动指导体系_v0.1]]"
   - "[[KB-DX-FULLSTORE-001_全店7D诊断框架2.0_v0.1]]"
+version: v0.1
 ---
 
 > ⚠️ **status: draft · 审议轮次 2/3**。本页含"铁律/必须/不得"字样，触发《标准审议铁律》。签字前不具约束力，不得被其他 Agent 或文件引用为执行依据。待六哥完成三轮论证后升 candidate/active。

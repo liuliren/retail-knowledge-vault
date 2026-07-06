@@ -60,6 +60,7 @@ links_to:
   - KB-FRESH-001
 aliases:
   - "KB-RETAIL-CINV-001_消費投资与行业研究"
+version: v0.1
 ---
 
 # 消費投资与行业研究

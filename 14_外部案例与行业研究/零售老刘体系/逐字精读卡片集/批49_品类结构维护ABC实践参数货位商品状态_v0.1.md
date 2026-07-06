@@ -6,6 +6,7 @@ summary: 品类结构维护纪律(每半年/至少1年梳理·小店精简400-50
 client_safety: external_reference
 confidence: high
 tags: [逐字精读, 零售老刘, 品类结构维护, ABC实践参数, 双ABC, 货位配置, 货位商品状态, 粒度预算]
+version: v0.1
 ---
 
 # 逐字精读卡片集 · 批49 品类结构维护·ABC实践参数·货位商品状态

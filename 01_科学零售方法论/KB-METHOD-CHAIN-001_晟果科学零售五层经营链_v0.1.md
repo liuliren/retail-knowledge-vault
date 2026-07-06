@@ -17,6 +17,7 @@ related:
   - "[[KB-DX-WIDTH-001_品类宽度诊断方法论_v0.1]]"
 aliases:
   - "KB-METHOD-CHAIN-001"
+version: v0.1
 ---
 
 ## 核心论点（总公式）

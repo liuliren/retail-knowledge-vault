@@ -4,6 +4,7 @@ status: draft
 review_backlog_item: 8
 batch: B2
 created: 2026-07-04
+version: v0.1
 ---
 
 # 审议卡 · 市调工作流 SOP（SOP-MARKET-SURVEY-001）

@@ -15,6 +15,7 @@ related:
   - "[[KB-SELECTION-TOOLS-001_选品核心工具体系_v0.1]]"
   - "[[KB-METHOD-CHAIN-001_晟果科学零售五层经营链_v0.1]]"
   - "[[KB-CAT-DX-MISMATCH-001_销售陈列错配诊断_v0.1]]"
+version: v0.1
 ---
 
 ## 核心论点

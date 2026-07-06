@@ -4,6 +4,7 @@ status: draft
 review_backlog_item: 2
 batch: B1
 created: 2026-07-04
+version: v0.1
 ---
 
 # 审议卡 · ABC 结构比

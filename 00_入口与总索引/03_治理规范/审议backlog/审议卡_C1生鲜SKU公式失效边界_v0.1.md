@@ -4,6 +4,7 @@ status: draft
 review_backlog_item: 5
 batch: B1
 created: 2026-07-04
+version: v0.1
 ---
 
 # 审议卡 · C1 生鲜/社区 SKU 公式失效边界

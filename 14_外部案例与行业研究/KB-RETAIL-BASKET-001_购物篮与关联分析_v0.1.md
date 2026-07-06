@@ -15,6 +15,7 @@ links_to:
   - KB-CAT-TIMEEFF-001
   - KB-DX-MATH-001
   - KB-METHOD-CHAIN-001
+version: v0.1
 ---
 
 # 购物篮与关联分析

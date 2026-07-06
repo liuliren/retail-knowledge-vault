@@ -41,6 +41,7 @@ links_to:
   - KB-DX-FRAMEWORK-001
 aliases:
   - "KB-RETAIL-BMODEL-001_零售商业模式谱系"
+version: v0.1
 ---
 
 # 零售商业模式谱系

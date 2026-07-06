@@ -14,6 +14,7 @@ related:
   - "[[KB-CAT-ZONE-SOP-001_区域调改五步法_v0.1]]"
 aliases:
   - "KB-DISPLAY-BRAND-001_品牌陈列_v0.1"
+version: v0.1
 ---
 
 ## 核心论点

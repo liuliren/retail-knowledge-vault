@@ -2,6 +2,7 @@
 title: 零售决策系统 × Clippings 知识体系 — 对照论证报告 v0.1
 summary: 三维度系统gap分析:缺知识调用/决策模型/数据接入三层,8项补完建议。
 status: draft
+version: v0.1
 ---
 
 # 零售决策系统 × Clippings 知识体系 — 对照论证报告 v0.1

@@ -21,6 +21,7 @@ related:
   - "[[KB-RETAIL-KPI-001_零售经营KPI基准对照表_v0.1]]"
 aliases:
   - "KB-FRESH-001"
+version: v0.1
 ---
 
 ## 核心论点

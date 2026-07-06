@@ -41,6 +41,7 @@ links_to:
   - KB-DX-FRAMEWORK-001
 aliases:
   - "KB-RETAIL-PRODUCT-001_商品力研究"
+version: v0.1
 ---
 
 # 商品力研究

@@ -6,6 +6,7 @@ created: 2026-07-02
 signoff: 六哥 2026-07-02
 client_safety: internal_only
 summary: 9类产出→目标目录的确定性映射表，消除归档靠人脑裁量
+version: v0.1
 ---
 
 # 产出路由矩阵 · GOV-ROUTE-001

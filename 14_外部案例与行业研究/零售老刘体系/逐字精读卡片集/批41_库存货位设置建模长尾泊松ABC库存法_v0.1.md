@@ -6,6 +6,7 @@ summary: 货位三级设置+满陈列=再订货点；货位BAY建模四运用；
 client_safety: external_reference
 confidence: high
 tags: [逐字精读, 零售老刘, 库存管理, 货位, 泊松分布, ABC库存法, 长尾, 安全库存]
+version: v0.1
 ---
 
 # 逐字精读卡片集 · 批41 货位设置·建模运用·长尾泊松·库存优化能力·ABC库存法

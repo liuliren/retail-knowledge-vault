@@ -15,6 +15,7 @@ related:
   - "[[KB-DX-WIDTH-001_品类宽度诊断方法论_v0.1]]"
   - "[[KB-SKU-ROLE-001_SKU四维角色体系_v0.1]]"
   - "[[KB-SELECTION-TOOLS-001_选品核心工具体系_v0.1]]"
+version: v0.1
 ---
 
 ## 核心论点

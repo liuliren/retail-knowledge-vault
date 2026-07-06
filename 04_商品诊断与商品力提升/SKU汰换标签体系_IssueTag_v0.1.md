@@ -7,6 +7,7 @@ client_safety: internal_methodology
 summary: 把"为什么撤"做成9标签×4类的可归类标签体系;核心是selection_guardrail"撤品⇄选品"镜像规则——每撤一款收紧一条选品门槛。
 aliases: [IssueTag, SKU汰换标签, 汰换理由标签体系, 撤品标签]
 tags: [type/methodology, 商品力, 选品, 7D诊断, 汰换, SKU标签]
+version: v0.1
 ---
 
 # SKU 汰换标签体系(IssueTag)v0.1

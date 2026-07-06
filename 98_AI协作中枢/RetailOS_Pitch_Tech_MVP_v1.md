@@ -2,6 +2,7 @@
 title: RetailOS Pitch Tech MVP v1.0
 summary: 零售 OS SaaS 融资级 Pitch，含商业故事、产品架构、技术拆解与 MVP 蓝图。
 status: draft
+version: v1
 ---
 
 # Retail OS SaaS｜融资级Pitch Deck + 商业故事 + 技术拆解 + MVP开发蓝图 v1.0

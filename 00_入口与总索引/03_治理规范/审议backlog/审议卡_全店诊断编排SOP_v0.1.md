@@ -4,6 +4,7 @@ status: draft
 review_backlog_item: 9
 batch: B2
 created: 2026-07-04
+version: v0.1
 ---
 
 # 审议卡 · 全店诊断编排 SOP

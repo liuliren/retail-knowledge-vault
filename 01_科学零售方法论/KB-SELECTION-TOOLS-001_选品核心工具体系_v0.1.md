@@ -20,6 +20,7 @@ related:
 aliases:
   - "KB-SELECTION-TOOLS-001_选品核心工具_v0.1"
   - "KB-SELECTION-TOOLS-001"
+version: v0.1
 ---
 
 ## 核心论点

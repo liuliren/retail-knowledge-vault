@@ -12,6 +12,7 @@ related:
   - "[[KB-SELECTION-TOOLS-001_选品核心工具体系_v0.1]]"
   - "[[KB-METHOD-4TACTICS-001_四大战术动作总框架_v0.1]]"
   - "[[KB-DX-WIDTH-001_品类宽度诊断方法论_v0.1]]"
+version: v0.1
 ---
 
 ## 1. 核心论点（结论先行）

@@ -15,6 +15,7 @@ related:
   - "[[KB-ZONE-SNACK-ROLE-001_休食区区域级角色定位说明书（通用模板）_v0.1]]"
 aliases:
   - "KB-CAT-TIMEEFF-001_时节效率路由_v0.1"
+version: v0.1
 ---
 
 ## 核心论点

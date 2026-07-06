@@ -27,6 +27,7 @@ links_to:
   - KB-DX-WIDTH-001
   - KB-SELECTION-TOOLS-001
 summary: 商品组合不是选品清单而是闭环业务系统——结构占比是经营水平的视觉化，SKU由宏观经济结构传导决定，价值层禁止越层，商品表是神经中枢。
+version: v0.1
 ---
 
 # 商品组合与品类结构

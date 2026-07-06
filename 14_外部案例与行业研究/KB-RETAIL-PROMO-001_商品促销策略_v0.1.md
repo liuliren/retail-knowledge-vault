@@ -13,6 +13,7 @@ links_to:
   - KB-METHOD-4TACTICS-001
   - KB-SKU-ROLE-001
 summary: 有效促销本质是精准价值交换；增量利润公式为正是前提；引流品/利润品搭配+客群分层（新客/老客/流失客）替代大水漫灌打折
+version: v0.1
 ---
 
 # 商品促销策略

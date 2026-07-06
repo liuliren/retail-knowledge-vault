@@ -5,6 +5,7 @@ owner: 六哥
 status: active
 summary: 知识库全部已注册 Skill 的分类索引、功能说明与使用场景。
 tags: [skills, 索引, AI操作层]
+version: v0.1
 ---
 
 # Skills 全清单 v0.1

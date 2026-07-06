@@ -39,6 +39,7 @@ related:
   - "[[52周MD]]"
 aliases:
   - "KB-EVENT-ACTIVATION-001"
+version: v0.1
 ---
 
 # 活动组织与拉动

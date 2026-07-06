@@ -15,6 +15,7 @@ related:
   - "[[KB-CAT-DX-MISMATCH-001_销售陈列错配诊断_v0.1]]"
   - "[[KB-DISPLAY-BRAND-001_品牌墙设计方法_v0.1]]"
   - "[[KB-CAT-ROLE-GBA-001_大湾区品类角色特化_v0.1]]"
+version: v0.1
 ---
 
 ## 核心论点

@@ -4,6 +4,7 @@ status: draft
 review_backlog_item: 1
 batch: B1
 created: 2026-07-04
+version: v0.1
 ---
 
 # 审议卡 · SS 分层红线

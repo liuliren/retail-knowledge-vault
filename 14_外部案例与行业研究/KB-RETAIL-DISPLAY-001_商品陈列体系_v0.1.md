@@ -22,6 +22,7 @@ links_to:
   - KB-CAT-CDT-001
   - KB-CAT-DX-MISMATCH-001
   - KB-CAT-TIMEEFF-001
+version: v0.1
 ---
 
 # 商品陈列体系

@@ -13,6 +13,7 @@ related:
   - "[[KB-CAT-ROLE-5WAY-001_五分法品类角色分配方法_v0.1]]"
   - "[[KB-SELECTION-TOOLS-001_选品核心工具体系_v0.1]]"
   - "[[KB-CONCEPT-GOODS-001_商品完备性与顾客需求层_v0.1]]"
+version: v0.1
 ---
 
 ## 核心论点

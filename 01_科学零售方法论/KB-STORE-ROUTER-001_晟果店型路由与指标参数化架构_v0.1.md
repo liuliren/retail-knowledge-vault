@@ -20,6 +20,7 @@ aliases:
   - KB-STORE-ROUTER-001
   - 店型路由架构
   - 指标参数化架构
+version: v0.1
 ---
 
 # 晟果店型路由与指标参数化架构 v0.2

@@ -16,6 +16,7 @@ related:
   - "[[KB-SHOPPER-TASK-001_购物任务图谱_v0.1]]"
 aliases:
   - "KB-CONCEPT-GOODS-001"
+version: v0.1
 ---
 
 ## 核心论点

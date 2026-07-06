@@ -7,6 +7,7 @@ created: 2026-06-26
 client_safety: client_confidential
 summary: 库存订货优化包首样板任务契约;方便食品为首品类;数据从库存积压报表+销售流水生成;剔负库存异常
 tags: [type/spec, 任务契约, 库存订货优化包, 花厅坊样板, 数量管理]
+version: v0.1
 ---
 
 # 花厅坊库存订货样板 · Task Charter v0.1

@@ -15,6 +15,7 @@ related:
   - "[[KB-CAT-DX-MISMATCH-001_销售陈列错配诊断_v0.1]]"
   - "[[KB-CAT-TIMEEFF-001_时间效率主轴评价指标体系_v0.1]]"
   - "[[KB-DX-FRAMEWORK-001_社区生鲜超市品类诊断框架_v0.1]]"
+version: v0.1
 ---
 
 ## 核心论点

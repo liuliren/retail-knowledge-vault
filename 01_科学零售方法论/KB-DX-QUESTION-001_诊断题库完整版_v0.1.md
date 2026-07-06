@@ -13,6 +13,7 @@ related:
   - "[[KB-METHOD-CHAIN-001_晟果科学零售五层经营链_v0.1]]"
   - "[[KB-SHOPPER-TASK-001_购物任务图谱_v0.1]]"
   - "[[KB-FRESH-001_生鲜护城河经营方法论_v0.1]]"
+version: v0.1
 ---
 
 # 核心论点

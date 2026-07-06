@@ -13,6 +13,7 @@ related:
   - "[[KB-GBA-TPOS-001_大湾区TPOS本地化_v0.1]]"
   - "[[KB-CAT-ROLE-5WAY-001_五分法品类角色分配方法_v0.1]]"
   - "[[KB-DX-FRAMEWORK-001_社区生鲜超市品类诊断框架_v0.1]]"
+version: v0.1
 ---
 
 ## 1. 核心论点（结论先行）

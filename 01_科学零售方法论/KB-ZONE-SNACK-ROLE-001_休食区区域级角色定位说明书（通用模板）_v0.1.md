@@ -18,6 +18,7 @@ related:
   - "[[KB-GBA-TPOS-001_大湾区TPOS本地化_v0.1]]"
 aliases:
   - "KB-ZONE-SNACK-ROLE-001"
+version: v0.1
 ---
 
 ## 文件定位

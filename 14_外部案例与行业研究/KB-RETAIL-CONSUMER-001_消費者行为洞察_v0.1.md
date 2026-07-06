@@ -38,6 +38,7 @@ aliases:
   - "KB-RETAIL-CONSUMER-001_消費者行为洞察"
   - "KB-RETAIL-CONSUMER-001_消费者行为洞察"
   - "KB-RETAIL-CONSUMER-001_消费者行为洞察_v0.1"
+version: v0.1
 ---
 
 # 消費者行为洞察

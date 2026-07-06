@@ -16,6 +16,7 @@ links_to:
   - KB-FRESH-001
   - KB-DX-FRAMEWORK-001
 summary: 库存是产供销系统性失衡结果；IR系数驱动订货决策；净需求在每个流程节点逐层丧失；15%黄金分割提供无MRP系统时的容错边界
+version: v0.1
 ---
 
 # 库存管理

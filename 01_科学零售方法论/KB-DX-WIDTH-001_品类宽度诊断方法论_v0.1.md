@@ -16,6 +16,7 @@ related:
   - "[[KB-CAT-ROLE-5WAY-001_五分法品类角色分配方法_v0.1]]"
 aliases:
   - "KB-DX-WIDTH-001_五态宽度诊断_v0.1"
+version: v0.1
 ---
 
 ## 核心论点

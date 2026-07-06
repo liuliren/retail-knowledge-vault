@@ -6,6 +6,7 @@ summary: 生鲜订货建模:⭐小类内ABC(非全场·全场C小类A不可淘)/
 client_safety: external_reference
 confidence: high
 tags: [逐字精读, 零售老刘, 库存建模, 生鲜订货, 小类内ABC, 生活场景选品, 满陈列, 补货配货]
+version: v0.1
 ---
 
 # 逐字精读卡片集 · 批45 生鲜订货建模 · 小类内ABC · 生活场景选品
