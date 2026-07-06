@@ -1,7 +1,7 @@
 ---
 id: KB-SCALE-EVAL-001
 title: Retail OS v2.0 · Scale 评估报告 v0.1（跨店稳定性 + 复制力 + 产品化判断）
-version: v2.0
+version: v0.1
 status: candidate
 owner: 六哥
 source_type: scale_assessment

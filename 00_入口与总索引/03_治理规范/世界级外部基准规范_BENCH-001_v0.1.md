@@ -2,7 +2,8 @@
 id: P1-GOV-Benchmark-001
 title: 世界级外部基准规范（四锚：DORA/一致性审计/咨询Ready/MDM）
 version: v0.3
-status: draft
+status: stable
+signoff: 六哥 2026-07-06（终签=D2·三轮审议齐）
 审议轮次: 3/3 齐（轮2 R7-R12 + 轮3 T4-T6 已修入·待六哥终签升 stable）
 owner: 六哥
 created: 2026-07-06
