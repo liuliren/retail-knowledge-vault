@@ -12,14 +12,14 @@ permission_level: internal_methodology
 client_safety: internal_only
 tags: [Agent-Native, skill, 蒸馏, 护城河, M-DEC, 资产瘦身, 注意力, 艾逗笔, idoubi, source]
 related:
-  - "[[单小类诊断样板_L3到Item到SKU_v0.1]]"
+  - "[[单小类诊断样板_L3到Item到SKU_v1.0]]"
   - "[[M-DEC-013_单小类长尾结构治理_v0.1_候选]]"
   - "[[CLAUDE.md]]"
   - "[[M2_选品配置簇]]"
 ---
 
 > **一句话摘要**：把艾逗笔（idoubi）9 条 Agent-Native 启发逐条落到「六哥零售」真实资产上，核心三动作=修 M-DEC 长期记忆层(B) / 资产瘦身审计(A) / 护城河三层叙事(C)；最锋利的提醒是「少即是多 + 注意力红线」——主线只有花厅坊 150 天一条。
-> **冻结说明**：本文为 source，存进即冻结，仅可补摘要行与标签。编译产物（应用映射）见 [[单小类诊断样板_L3到Item到SKU_v0.1]] §8 与本库 CLAUDE.md 草案，不在本源内改写。
+> **冻结说明**：本文为 source，存进即冻结，仅可补摘要行与标签。编译产物（应用映射）见 [[单小类诊断样板_L3到Item到SKU_v1.0]] §8 与本库 CLAUDE.md 草案，不在本源内改写。
 
 ---
 

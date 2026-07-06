@@ -22,7 +22,7 @@ fact_layer:
     - "'供得上'闸需门店补主供应商数据;选品Cluster与M-DEC编号待六哥分配(candidate);具体候选单品由采购填"
 source_attribution: 晟果新零售科学零售IP;封装零售老刘选品配置方法论(external_reference);三轮实跑验证;对外交付件
 related:
-  - "[[Retail_OS_v1.0_零售门店决策操作系统_商业交付版]]"
+  - "[[Retail_OS_v1.1_零售门店决策操作系统_商业交付版]]"
   - "[[2026-06-19_RetailOS_V2.0_选品引进层_M2规则草案_v0.2]]"
 tags: [晟果新零售, RetailOS, V2.0, 选品引进层, 加法层, 交付产品, 一页纸SOP, 可售卖, 打印版]
 ---
