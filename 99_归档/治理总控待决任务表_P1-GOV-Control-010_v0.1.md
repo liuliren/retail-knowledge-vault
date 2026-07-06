@@ -2,7 +2,9 @@
 summary: 治理工程总控待决任务表,汇总各治理线待办与归属
 title: 治理总控待决任务表 P1-GOV-Control-010
 version: v0.1
-status: draft
+status: archived
+archived_date: 2026-07-05
+archived_reason: 使命完成·唯余#12/#13已移入债务台账DEBT-48/49(六哥2026-07-05确认C档移入归档)
 owner: 六哥
 created: 2026-06-22
 updated: 2026-06-22
