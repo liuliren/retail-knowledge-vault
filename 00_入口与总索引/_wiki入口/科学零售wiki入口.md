@@ -290,7 +290,7 @@ Step 1: 读 memory
   - [[feedback_engineering_standards_5_pillars]] ⭐（顶层标准）
   - [[feedback_mvp_first_validate_in_practice]]（MVP 优先）
   - [[feedback_world_class_consulting_standard]]（咨询品质）
-  - [[project_花厅坊战役]] ⭐（战役状态指针）
+  - project_花厅坊战役（memory页未建）⭐ 战役状态见 [[战役指挥板]]
 
 Step 2: 读 vault 仪表
   - [[战役指挥板]] / [[当前重点项目看板]] / [[Vault健康仪表]] / [[三回归仪表]]
