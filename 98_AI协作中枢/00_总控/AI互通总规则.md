@@ -7,7 +7,7 @@ status: active
 # AI互通总规则
 
 ## 〇、宪法层级（2026-06-26 补·接上层治理）
-本规则属 L2 执行层,在以下层级之下:**全局 `/Users/CLAUDE.md`(红线) > `David-Liu-Vault` 总库宪章 > 本库《[[零售知识库底层宪章]]》‖ `[[retail-knowledge-vault/CLAUDE|retail CLAUDE.md v2.4]]` > 本规则/单次 Prompt**。冲突按"全局红线 > vault宪章 > 子库细则 > Prompt"裁决。本库继承总库宪章,保持科学零售专业自治。
+本规则属 L2 执行层,在以下层级之下:**全局 `/Users/CLAUDE.md`(红线) > `David-Liu-Vault` 总库宪章 > 本库《[[零售知识库底层宪章]]》‖ `[[CLAUDE|retail CLAUDE.md v2.4]]` > 本规则/单次 Prompt**。冲突按"全局红线 > vault宪章 > 子库细则 > Prompt"裁决。本库继承总库宪章,保持科学零售专业自治。
 
 ## 一、总原则
 

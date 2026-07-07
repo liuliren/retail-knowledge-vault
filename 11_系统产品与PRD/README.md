@@ -74,3 +74,12 @@ confidence: high
 ## 常用标签
 
 `#PRD` `#系统产品` `#数字化` `#字段字典` `#小程序` `#AI工具` `#ClaudeCode`
+
+---
+
+## 相关补登（孤儿挂链）
+> 以下文件此前无入链，挂入本目录索引以纳入知识网：
+- [[2026-05-08_TickTick滴答MCP设置指引_v0.1]]（TickTick MCP 设置指引）
+- [[RetailOS产品文档/Retail_OS_SaaS_Architecture_v1.0|Retail_OS_SaaS_Architecture_v1.0]]（RetailOS SaaS 架构）
+- [[RetailOS产品文档/Retail_OS_v1_upgrade|Retail_OS_v1_upgrade]]（RetailOS v1 升级方案）
+- [[RetailOS产品文档/retail_ai_v1_4_sop|retail_ai_v1_4_sop]]（Retail AI v1.4 SOP）

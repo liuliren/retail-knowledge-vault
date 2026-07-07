@@ -102,7 +102,7 @@ P="$HOME/.claude/skills/gstack/make-pdf/dist/pdf"
 - 🚫 红线:复盘提炼是判断相,不下放给脚本/Sonnet 代判;Sonnet 只做"落字改模板"的机械动作。
 
 ## 复用资产
-- 脱敏+分析:[[脱敏测试链路_v0.1]](sanitize.py / analyze.py)。
+- 脱敏+分析:[[13_数据分析与工具脚本/脱敏测试链路_v0.1/README|脱敏测试链路_v0.1]](sanitize.py / analyze.py)。
 - 诊断卡结构:[[报告导出系统_report-export_v1.0]]。
 - 渲染:make-pdf(gstack)。
 
