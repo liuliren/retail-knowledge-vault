@@ -133,7 +133,11 @@ def cmd_clean(a):
 def _load_sku(master):
     m = pd.read_csv(master, dtype={"条码": str, "类别编码": str})
     for c in ["销售数量", "销售金额", "退货数量", "退货金额", "进销差价"]:
-        m[c] = pd.to_numeric(m[c], errors="coerce").fillna(0)
+        raw = pd.to_numeric(m[c], errors="coerce")
+        n_bad = raw.isna().sum() - m[c].isna().sum()  # 排除本来就是空值的行,只数"转换失败"的脏值
+        if n_bad > 0:
+            print(f"⚠️ 字段「{c}」有 {n_bad} 行非数值内容(如文字/乱码)被当作0处理,判读前先核实这些行", file=sys.stderr)
+        m[c] = raw.fillna(0)
     m["净额"] = m.销售金额 - m.退货金额
     m["净量"] = m.销售数量 - m.退货数量
     sku = m.groupby("条码").agg(品名=("品名", "first"), 大品类=("品类文件", "first"),

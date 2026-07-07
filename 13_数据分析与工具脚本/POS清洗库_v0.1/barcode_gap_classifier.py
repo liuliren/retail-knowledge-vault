@@ -52,11 +52,13 @@ def ean13_valid(code: str) -> bool:
 
 
 def j1_structural_hit(code: str) -> bool:
-    """J1: 码长<=8 的短自编码,或13位且前2位前缀落20-29区间 → H1结构候选。"""
+    """J1: 码长<=8 的短自编码,或13位且前2位前缀落20-29区间 → H1结构候选。仅对纯数字码判定,非数字内容(如中文/字母混杂)一律不命中。"""
+    if not code.isdigit():
+        return False
     n = len(code)
     if n <= J1_SHORT_LEN:
         return True
-    if n == 13 and code[:2].isdigit() and J1_PREFIX_LO <= int(code[:2]) <= J1_PREFIX_HI:
+    if n == 13 and J1_PREFIX_LO <= int(code[:2]) <= J1_PREFIX_HI:
         return True
     return False
 
