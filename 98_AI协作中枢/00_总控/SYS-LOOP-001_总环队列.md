@@ -52,6 +52,7 @@ tags: [总环, 队列, 系统提升]
 - [x] P4-1 SKILL-INDEX 全量盘点 ✅07-07(17个已注册skill盘点·9个无D+E闭环相:compact/deep-read/draft/handoff/merge/promote/publish/review/scan;三件套系+critique/mdcard100%达标;diagnose触发词字段小瑕疵;根层SKILL-INDEX过期引用已不存在路径)
 - [x] P4-2 输出区规划 ✅07-07(滞留巡检抓真反例:规则⑦"_待签字"后缀集合过窄,实际有_待裁决/_待发/_待审议等多种同义变体未覆盖,明日07-08批文件将大量误报——已提前登记进GOV-LINT-OutputArea-002下轮审议)
 - [x] P4-3 缺失skill识别 ✅07-07(候选①"四维/四路只读审计"套路已过G12≥3次门槛,强候选可提示孵化如`/audit-kb`;候选②③首跑作业包/两力实测工具包仅1次实例,继续观察计次)
+- [x] P4-3b fixloop skill落地 ✅07-07(六哥直接指导子代理·候选①提前孵化实例:.claude/skills/fixloop/·上线三件套齐全·status:candidate未自升active·验证三件套3/3过)⏸六哥签字启用(candidate→active)
 
 ## P7 · 多场景压力验证(六哥 2026-07-07 令:多测试多验证冲世界级分数)
 - [ ] P7-1 业态外推压测:便利店型/折扣店型/纯生鲜型场景调用(验证失效条件段真的能拦截误用)
