@@ -19,7 +19,7 @@ confidence: high
 quadrant: III
 client_safety: internal_only
 related:
-  - "[[花厅坊POS清洗脚本_v0.1]]"
+  - "[[13_数据分析与工具脚本/花厅坊POS清洗脚本_v0.1/README|花厅坊POS清洗脚本_v0.1]]"
   - "[[POS数据清洗与商品标准化规范_v0.1]]"
   - "[[99_归档/2026-05-07_新基线封存/90_素材_全量/2026-05-04_知识库重构方案_v0.2_完整作战方案|2026-05-04_知识库重构方案_v0.2_完整作战方案（已归档）]]"
 ---
@@ -201,7 +201,7 @@ save_brands("共享库_v0.2", extractor.brand_extractor.known_brands)
 
 ### 关联上游
 - [[POS数据清洗与商品标准化规范_v0.1]]（SOP 上游）
-- [[花厅坊POS清洗脚本_v0.1]] / config.py（消费方）
+- [[13_数据分析与工具脚本/花厅坊POS清洗脚本_v0.1/README|花厅坊POS清洗脚本_v0.1]] / config.py（消费方）
 
 ### 关联下游
 - 商品主数据骨架库 v0.x（Phase 2 起跨客户共享库）
