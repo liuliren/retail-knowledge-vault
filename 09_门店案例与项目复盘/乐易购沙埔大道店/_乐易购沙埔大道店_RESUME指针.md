@@ -1,18 +1,18 @@
 ---
-title: 乐易购沙浦大道店 RESUME指针
+title: 乐易购沙埔大道店 RESUME指针
 version: v0.1
 status: active
 owner: 六哥
 created: 2026-07-07
-module: 09_门店案例与项目复盘/乐易购沙浦大道店
+module: 09_门店案例与项目复盘/乐易购沙埔大道店
 source_type: resume_pointer
 client_safety: client_confidential
 fact_layer: pending
-summary: 沙浦大道项目状态指针，当前=开档骨架已建，等首批数据
-tags: [沙浦大道, RESUME, 指针]
+summary: 沙埔大道项目状态指针，当前=开档骨架已建，等首批数据
+tags: [沙埔大道, RESUME, 指针]
 ---
 
-# 乐易购沙浦大道店 · 项目状态
+# 乐易购沙埔大道店 · 项目状态
 
 ## STATE [2026-07-07 · 开档骨架已建·等数据]
 
