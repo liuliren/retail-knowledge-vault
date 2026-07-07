@@ -104,6 +104,9 @@ def classify_gaps(sales_df: pd.DataFrame, registry_df: pd.DataFrame) -> pd.DataF
 
     window_start = sales_df["日期"].min()
     window_end = sales_df["日期"].max()
+    window_days = (window_end - window_start).days if pd.notna(window_start) and pd.notna(window_end) else 0
+    if window_days < 2 * J4_EDGE_DAYS:
+        print(f"⚠️ 数据窗口仅{window_days}天(J4边缘判据需要至少{2*J4_EDGE_DAYS}天才有意义),J4首末销日期判据在本次结果中不可靠,'疑似新品未建档'/'疑似已清档'子类型请人工复核", file=sys.stderr)
     late_th = window_end - pd.Timedelta(days=J4_EDGE_DAYS)
     early_th = window_start + pd.Timedelta(days=J4_EDGE_DAYS)
 
