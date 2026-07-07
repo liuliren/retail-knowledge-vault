@@ -181,7 +181,11 @@ def canonical_link_target(raw: str) -> str:
     target = raw.split("|", 1)[0].split("#", 1)[0].strip()
     target = target.replace("\\", "/")
     if "/" in target:
-        target = Path(target).stem
+        # NOTE: use basename split, not Path(...).stem — Path.stem strips
+        # everything after the LAST dot, which corrupts filenames that
+        # contain a literal "." in a version segment (e.g. "..._v0.1_候选"),
+        # turning a valid full-path link into a false-positive broken link.
+        target = target.rsplit("/", 1)[-1]
     if target.endswith(".md"):
         target = target[:-3]
     return target.strip()
