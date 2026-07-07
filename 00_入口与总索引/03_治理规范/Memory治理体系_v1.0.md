@@ -1,6 +1,8 @@
 ---
 summary: vault记忆层治理体系:子目录化+生命周期+评分,防记忆膨胀
 title: vault Memory 治理体系 v1.0（第 6 大治理支柱 / W20 落地方案）
+aliases:
+  - Memory治理体系
 version: v1.0
 status: active
 signoff:
