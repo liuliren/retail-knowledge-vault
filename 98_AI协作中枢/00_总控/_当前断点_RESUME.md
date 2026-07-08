@@ -21,10 +21,10 @@ done_0708晚场里程碑:
 
 next3:
   1. 六哥三格子(开课/小票/发文)——系统侧无阻塞,全部人工动作
-  2. 待裁小项: 准则文件名_draft后缀改名(C档) / P0-2 hook魔数commit授权 / 上轮7dirty处置 / mdcard引擎品牌色参数化(登记)
+  2. 待裁小项: 准则文件名_draft后缀改名(C档) / P0-2 hook魔数commit授权 / mdcard引擎品牌色参数化(登记)
   3. 8月主线: 花厅坊结项=陪跑首案例→AAR全收口→007四门→009第二单(checker首用)
 
-边界: 上轮dirty7件+fixloop+handoff未动未混入,下会话不得默认清理须单独授权
+边界: ~~上轮dirty7件+fixloop+handoff~~ **已由G-01治理批次收口commit(2026-07-08·04604ec+9c0dc32)**,内容零修改纯transaction recovery,不再是待处置项
 
 pointers:
   - 行话准则(stable)=[03_治理规范/对外呈现层零售行话准则_draft_v0.1(文件名待改)] · 审议报告×2同目录
