@@ -1,9 +1,10 @@
 ---
 title: 跨会话 ingest 收口方案
 version: v0.1
-status: draft
+status: executed
 owner: 六哥
 created: 2026-07-08
+executed_date: 2026-07-08
 module: 00_入口与总索引/05_审计与档案
 source_type: governance_plan
 client_safety: internal_only
@@ -43,3 +44,13 @@ related:
 
 ## 5. 何时执行
 建议与次日裁决 #6 合并：明早六哥先问并行会话拿清单 → 本方案按批走 A/B/C → 一次 commit 收口。**本方案文件本身不动任何债务文件。**
+
+## 6. 执行记录（2026-07-08 收口）
+六批全部走 **A 补收口**（含 #3，六哥裁定「未被 RetailOS 取代，独立保留」，非 quarantine/删除）：
+1. KB-CONCEPT-PRODMIX-001 → 挂 [[科学零售知识树_MOC]] + 登台账
+2. KB-CAT-HSMATRIX-001 → 挂 [[科学零售知识树_MOC]] + 登台账
+3. 社区超市商品经营决策系统MVP历史设计索引 → 六哥裁定未被取代 → 更新正文裁定说明 + 挂 [[RetailOS（门店决策操作系统 · 概念主页）]] 前身条目 + 登台账
+4. 六哥零售圈_社群冷启动方案与竞品情报 → 挂 [[晟果新零售变现体系总控_MOC]] L6 + 登台账
+5. SRC-20260707_即时零售行业深度报告 → 挂 [[精读卡索引_v1.0]] 新增券商研报节 + 登台账
+6. `12_/01_选题库.md`（+22行追加）→ 随批一并 commit，非独立路由
+D-08 收口完成，RESUME 遗留项相应清除。
