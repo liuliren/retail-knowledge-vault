@@ -94,9 +94,11 @@ def render(spec, out):
     rows = table.get("rows", [])
     tlines = _wrap(spec.get("title", ""), 24)
     ntr = (len(tiles) + 3) // 4 if tiles else 0
+    plines = _wrap(spec.get("punch", ""), 40) if spec.get("punch") else []
     h = (1.35 + (0.34 if spec.get("kicker") else 0) + 0.68 * len(tlines)
          + (0.42 if spec.get("subtitle") else 0) + ntr * 2.05
          + (0.78 * (len(rows) + 1) + 0.6 if rows else 0)
+         + (0.5 * len(plines) + 0.2 if plines else 0)
          + (0.34 if spec.get("note") else 0) + (0.5 if spec.get("source") else 0.15))
     fig = plt.figure(figsize=(10.8, h), dpi=150)
     fig.patch.set_facecolor(BG)
@@ -149,6 +151,11 @@ def render(spec, out):
             for j, cell in enumerate(r):
                 ax.text(xs[j], y, str(cell), fontsize=13, color=col, va="center",
                         fontweight="bold" if j == 0 else "normal")
+    if plines:  # 收尾钩子(standard布局)
+        y -= 0.5
+        for tl in plines:
+            ax.text(0.62, y, tl, fontsize=17, fontweight="bold", color=ACCENT, va="center")
+            y -= 0.5
     if spec.get("note"):
         ax.text(0.62, 0.66, "注: " + spec["note"], fontsize=9.5, color=MUTE, va="center")
     if spec.get("source"):
