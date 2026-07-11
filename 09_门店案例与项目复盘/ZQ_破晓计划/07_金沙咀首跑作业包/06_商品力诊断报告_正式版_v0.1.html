@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>金沙咀店 商品力诊断报告（测试版）</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"PingFang SC","Microsoft YaHei",sans-serif; color:#1a1a1a; width:794px; padding:32px 36px; background:#fff; }
+  .hdr { display:flex; justify-content:space-between; align-items:flex-end; border-bottom:3px solid #1f6feb; padding-bottom:10px; }
+  .hdr .t { font-size:22px; font-weight:800; }
+  .hdr .t small { display:block; font-size:13px; color:#666; font-weight:500; margin-top:3px; }
+  .hdr .m { font-size:12px; color:#888; text-align:right; }
+  .confirm { background:#eef6ff; border-left:6px solid #1f6feb; border-radius:6px; padding:12px 16px; margin:14px 0; font-size:12.5px; color:#243b53; line-height:1.6; }
+  .concl { background:#fff5f0; border-left:6px solid #e8590c; border-radius:6px; padding:16px 18px; margin:14px 0; font-size:18px; font-weight:800; line-height:1.55; }
+  .concl b { color:#e8590c; }
+  h2 { font-size:15px; margin:20px 0 8px; padding-left:9px; border-left:5px solid #1f6feb; }
+  table { width:100%; border-collapse:collapse; font-size:12.5px; }
+  th,td { border:1px solid #d8dee4; padding:6px 8px; text-align:left; }
+  th { background:#f0f4f9; font-weight:700; }
+  td.c { text-align:center; }
+  .light { font-size:14px; }
+  .kpi { display:flex; gap:8px; margin:10px 0 4px; flex-wrap:wrap; }
+  .kpi div { flex:1; min-width:130px; background:#f6f8fa; border-radius:6px; padding:9px; text-align:center; }
+  .kpi b { display:block; font-size:19px; color:#1f6feb; }
+  .kpi b.bad { color:#cf1322; }
+  .kpi span { font-size:10.5px; color:#666; }
+  .dir td:first-child { font-weight:700; white-space:nowrap; width:74px; }
+  .step { background:#f0fdf4; border:1px solid #b7eb8f; border-radius:6px; padding:10px 14px; margin-top:6px; font-size:12.5px; line-height:1.7; }
+  .step b { color:#237804; }
+  .evid { list-style:none; margin:6px 0; }
+  .evid li { margin-bottom:8px; padding:8px 10px; background:#fafbfc; border:1px solid #e4e8ee; border-radius:5px; font-size:12.5px; line-height:1.6; }
+  .tag { display:inline-block; font-size:10px; padding:1px 6px; border-radius:10px; margin-left:6px; font-weight:700; }
+  .tag.c { background:#fff1e6; color:#c1440e; }
+  .tag.pending { background:#f0f0f0; color:#666; }
+  .warn { margin-top:14px; background:#fffbe6; border:1px solid #ffe58f; border-radius:6px; padding:10px 14px; font-size:12px; color:#614700; line-height:1.6; }
+  .ft { margin-top:18px; border-top:1px solid #eee; padding-top:8px; font-size:11px; color:#999; display:flex; justify-content:space-between; }
+</style>
+</head>
+<body>
+  <div class="hdr">
+    <div class="t">金沙咀店 · 商品力诊断报告（测试版）<small>品类结构与外在陈列结构初判 · 好家源三店系列之一</small></div>
+    <div class="m">晟果新零售咨询<br>2026-07-07 · 测试版<br>内部测试件</div>
+  </div>
+
+  <div class="confirm">本报告对应"商品力"模块——品类结构与外在陈列结构；如您原意确指"组织力"〔人员/权责/排班〕，请指出，我们另出。</div>
+
+  <div class="concl">金沙咀体量三店最小（净销83.2万），却是<b>综合毛利率最高（18.1%）、客单价降幅最浅（−1.9%）</b>的店——本轮核心任务不是"找问题"，而是<b>萃取水果/猪肉/叶菜的定价打法与连带话术</b>，反向输出给富城/顺景；本店汰换动作可后置，不必单独立项。</div>
+
+  <div class="kpi">
+    <div><b>23+</b><span>已识别柜组数(TOP营收+长尾清单)</span></div>
+    <div><b>64.7%</b><span>动销率（居中）</span></div>
+    <div><b>35%</b><span>Z类占在册（居中·1,497个）</span></div>
+    <div><b>48%</b><span>C类尾部占比（&lt;20元/90天）</span></div>
+    <div><b>96.3%</b><span>条码匹配率 ✅过防呆线</span></div>
+  </div>
+
+  <h2>① 各柜组结构 · 红黄绿</h2>
+  <table>
+    <tr><th>柜组</th><th class="c">占比/规模</th><th class="c">灯</th><th>问题 / 动作</th></tr>
+    <tr><td>水果柜</td><td class="c">19.8%净销</td><td class="c light">🟢</td><td>毛利17.5%三店唯一健康，萃取定价打法输出富城/顺景</td></tr>
+    <tr><td>猪肉柜</td><td class="c">14.4%净销</td><td class="c light">🟢</td><td>毛利29.7%三店最高，生鲜头柜健康</td></tr>
+    <tr><td>叶菜柜</td><td class="c">11.4%净销</td><td class="c light">🟢</td><td>毛利23.1%三店最高</td></tr>
+    <tr><td>烟酒柜</td><td class="c">10.1%净销</td><td class="c light">🟡</td><td>净销8.4万高于水产+副食品+面点+酱料总和，需核是否烟草证刚需还是结构失衡</td></tr>
+    <tr><td>散装柜</td><td class="c">7.1%净销</td><td class="c light">🟢</td><td>毛利14.0%健康，优于顺景（9.7%）</td></tr>
+    <tr><td>家居用品柜</td><td class="c">204动销SKU仅0.58万</td><td class="c light">🟡</td><td>C类100%全尾部，但绝对规模三店最小，可后置处理</td></tr>
+    <tr><td>熟食柜</td><td class="c">结构性不存在（非缺位）</td><td class="c light">🟡</td><td>300㎡天花板下是否值得开设需先算坪效，不宜对标大店缺口逻辑</td></tr>
+    <tr><td>糖饼/休闲小食柜</td><td class="c">175/192动销SKU仅0.86/1.00万</td><td class="c light">🟢</td><td>连带区偏弱但绝对规模小，优先级最低</td></tr>
+  </table>
+
+  <h2>② 外在陈列结构初判（C级 · 待现场验证）</h2>
+  <ul class="evid">
+    <li>300㎡店A类是否占黄金位（小店动线短，理论上更容易做到）<span class="tag pending">pending·现场</span></li>
+    <li>五态宽度空缺是否受限于面积本身，而非管理问题<span class="tag pending">pending·现场</span></li>
+    <li>熟食/内衣袜柜结构性不存在，需现场区分"不该有"vs"该有未有"两种情形<span class="tag c">inferred·C级</span></li>
+    <li>烟酒占比偏高（10.1%）是否挤占生鲜陈列空间<span class="tag pending">pending·现场</span></li>
+    <li>客单价最稳（−1.9%）背后的连带陈列/收银动作值得复制到富城/顺景<span class="tag c">inferred·待萃取</span></li>
+  </ul>
+
+  <h2>③ 三个调改方向</h2>
+  <table class="dir">
+    <tr><td>✅ 保留</td><td>水果/猪肉/叶菜三大生鲜头柜（毛利结构三店最健康，合计占比45.6%），散装柜</td></tr>
+    <tr><td>🔻 压缩</td><td>家居用品柜（绝对规模小，后置处理），文体/厨房用品柜近全C尾</td></tr>
+    <tr><td>📦 清理</td><td>Z类1,497个（占35%）可与富城/顺景同批次处理（口径已跑通）；C尾&lt;20元718个建议本轮不单独立项，随两店动作后视精力跟进</td></tr>
+  </table>
+
+  <h2>④ 门店执行建议（现场验证清单）</h2>
+  <div class="step">
+    <b>第一步 · 标角色</b>：现场记录收银连带话术/陈列细节——客单价−1.9%三店最稳的成功因子来自哪里<br>
+    <b>第二步 · 排排队</b>：核实烟酒柜占比10.1%是否为烟草证经营刚需，若为结构失衡，评估释放排面补生鲜或连带区宽度<br>
+    <b>第三步 · 动手 + 看效果</b>：萃取的连带清单反向输出给富城/顺景休食/糖饼连带区；汰换动作与老板店内例行巡检合并执行
+  </div>
+
+  <div class="warn">
+    ⚠️ <b>防误杀提示</b>：低销 ≠ 该砍。生鲜柜C类为品种轮换常态非汰换对象，本店水果/叶菜毛利三店最高尤须慎动；烟酒柜需先核专营刚需性质再判尾部去留。<br>
+    <b>fact_layer边界</b>：observed=店级基线/增长质量/柜组净销毛利（源POS单源汇总）；inferred=生鲜占比口径、熟食"结构性不存在"判断、烟酒占比偏高成因；pending=Z类1,497个柜组归属、300㎡是否需独立诊断基准。全部结论为C级预判，须现场交叉验证后方可对外定论。
+  </div>
+
+  <div class="ft"><span>晟果新零售咨询 · 六哥零售</span><span>2026-07-07 · 内部测试件 · client_confidential</span></div>
+</body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>鼎湖坑口/湖景店 · 会议共识稿 · 晟果新零售</title>
+<style>
+  :root{
+    --g:#17372B;      /* 晟果墨绿 主色 */
+    --o:#E8611C;      /* 成果橙 强调 ≤10% */
+    --bg:#FAF7F2;     /* 暖纸白 */
+    --card:#fff;
+    --line:#E8E2D8;
+    --sub:#6B6B6B;
+    --ink:#1C1C1C;
+    --paper:#F5EFE5;
+    --dim:#BFB7A8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",sans-serif;
+    background:#0d1a14;color:var(--ink);overflow:hidden;
+  }
+  .mono{font-family:"IBM Plex Mono","SF Mono",Menlo,monospace;}
+
+  /* 舞台 */
+  .deck{position:fixed;inset:0;}
+  .slide{
+    position:absolute;inset:0;opacity:0;visibility:hidden;
+    transition:opacity .4s ease;
+    display:flex;flex-direction:column;
+    padding:6vh 7vw;
+  }
+  .slide.on{opacity:1;visibility:visible;}
+  .slide.light{background:var(--bg);color:var(--ink);}
+  .slide.dark{background:var(--g);color:var(--paper);}
+
+  /* 顶栏 */
+  .top{display:flex;align-items:center;gap:12px;font-size:1.05vh;letter-spacing:.06em;}
+  .top .brandmark{width:2.6vh;height:2.6vh;flex:none;}
+  .top .who{font-weight:800;letter-spacing:.14em;}
+  .light .top{color:var(--sub);}
+  .dark .top{color:var(--dim);}
+  .top .doc{margin-left:auto;}
+
+  .kicker{font-size:1.35vh;letter-spacing:.35em;color:var(--o);font-weight:800;margin-top:auto;}
+  .dark .kicker{color:var(--o);}
+
+  h1{font-size:5.4vh;font-weight:900;line-height:1.22;margin-top:1.4vh;letter-spacing:.01em;}
+  h2{font-size:3.8vh;font-weight:900;line-height:1.28;margin-top:1.2vh;}
+  .lead{font-size:1.9vh;line-height:1.95;margin-top:1.6vh;max-width:62ch;}
+  .light .lead{color:var(--sub);}
+  .dark .lead{color:var(--dim);}
+  em{font-style:normal;color:var(--o);font-weight:800;}
+  .light b, h1 b, h2 b{color:var(--g);}
+  .dark b{color:#fff;}
+
+  .body{flex:1;display:flex;flex-direction:column;justify-content:center;margin:2vh 0;}
+
+  /* 页脚 */
+  .foot{display:flex;align-items:center;gap:10px;font-size:1.15vh;letter-spacing:.1em;}
+  .light .foot{color:var(--sub);}
+  .dark .foot{color:var(--dim);}
+  .foot .slogan{margin-left:auto;font-weight:700;letter-spacing:.2em;color:var(--o);}
+  .pageno{font-weight:700;}
+
+  /* 通用组件 */
+  .rows{display:flex;flex-direction:column;gap:1.6vh;}
+  .row{display:flex;gap:1.8vh;align-items:flex-start;}
+  .num{flex:none;width:4.2vh;height:4.2vh;border-radius:50%;border:2px solid var(--o);
+       color:var(--o);font-weight:900;font-size:1.9vh;display:flex;align-items:center;justify-content:center;}
+  .row .txt{font-size:2vh;line-height:1.75;padding-top:.5vh;}
+  .row .txt .t1{font-weight:800;font-size:2.3vh;}
+  .light .row .txt .t2{color:var(--sub);}
+  .dark .row .txt .t2{color:var(--dim);}
+  .row .txt .t2{font-size:1.7vh;margin-top:.3vh;}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8vh;}
+  .cards.c2{grid-template-columns:repeat(2,1fr);}
+  .cell{
+    background:var(--card);border:1px solid var(--line);border-radius:1.4vh;
+    padding:2.4vh 2.2vh;display:flex;flex-direction:column;gap:.8vh;
+    box-shadow:0 1vh 2.6vh rgba(23,55,43,.08);
+  }
+  .cell .tag{font-size:1.25vh;letter-spacing:.18em;font-weight:800;color:var(--o);}
+  .cell .h{font-size:2.3vh;font-weight:900;color:var(--g);line-height:1.35;}
+  .cell .p{font-size:1.6vh;line-height:1.85;color:var(--sub);}
+  .cell .q{font-size:1.55vh;line-height:1.8;color:var(--ink);border-top:1px dashed var(--line);padding-top:1vh;margin-top:.4vh;}
+  .cell .q b{color:var(--g);}
+
+  /* 待填框 */
+  .fill{
+    display:inline-flex;align-items:center;justify-content:center;
+    min-width:8ch;height:3.6vh;padding:0 1.4vh;margin:0 .3ch;
+    border:1.5px dashed var(--o);border-radius:.7vh;
+    color:var(--o);font-weight:700;font-size:1.6vh;letter-spacing:.08em;
+    background:rgba(232,97,28,.05);vertical-align:middle;
+  }
+  .fill.sm{min-width:5ch;height:3vh;font-size:1.4vh;}
+
+  /* 压力测试表 */
+  .stress{width:100%;border-collapse:collapse;background:var(--card);
+          border-radius:1.4vh;overflow:hidden;box-shadow:0 1vh 2.6vh rgba(23,55,43,.08);}
+  .stress th,.stress td{padding:1.8vh 1.6vh;border-bottom:1px solid var(--line);text-align:center;}
+  .stress thead th{background:var(--g);color:var(--paper);font-size:1.6vh;letter-spacing:.06em;font-weight:800;}
+  .stress tbody th{text-align:left;color:var(--sub);font-weight:700;font-size:1.6vh;white-space:nowrap;}
+  .stress tbody td{font-size:1.7vh;}
+  .stress .eq td{background:#FBF3EC;font-weight:800;}
+  .stress .eq td .fill{border-style:solid;}
+
+  /* 地图实锤 */
+  .mapgrid{display:grid;grid-template-columns:1.15fr 1fr;gap:2.4vh;align-items:stretch;}
+  .maplist{display:flex;flex-direction:column;gap:1.3vh;}
+  .poi{display:flex;align-items:center;gap:1.4vh;background:var(--card);border:1px solid var(--line);
+       border-radius:1.1vh;padding:1.4vh 1.8vh;box-shadow:0 .8vh 2vh rgba(23,55,43,.06);}
+  .poi .dist{flex:none;width:8.5ch;font-weight:800;color:var(--g);font-size:1.55vh;}
+  .poi .nm{flex:1;font-size:1.75vh;font-weight:700;}
+  .poi .sc{flex:none;font-weight:900;font-size:1.9vh;}
+  .poi .sc.bad{color:var(--o);}
+  .poi .sc.ok{color:var(--g);}
+  .poi .note{flex:none;font-size:1.35vh;color:var(--sub);width:11ch;text-align:right;}
+  .insight{background:var(--g);color:var(--paper);border-radius:1.6vh;padding:2.8vh 2.6vh;
+           display:flex;flex-direction:column;justify-content:center;gap:1.4vh;}
+  .insight .k{font-size:1.35vh;letter-spacing:.3em;color:var(--o);font-weight:800;}
+  .insight .big{font-size:2.8vh;font-weight:900;line-height:1.5;}
+  .insight .big em{color:var(--o);}
+  .insight .sm{font-size:1.55vh;color:var(--dim);line-height:1.85;}
+
+  /* 路径三选 */
+  .paths{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8vh;}
+  .path{background:var(--card);border:1px solid var(--line);border-radius:1.4vh;padding:2.2vh 2vh;
+        display:flex;flex-direction:column;gap:1vh;box-shadow:0 1vh 2.6vh rgba(23,55,43,.08);}
+  .path .lab{display:flex;align-items:center;gap:1vh;}
+  .path .lab .L{width:3.4vh;height:3.4vh;border-radius:.8vh;background:var(--g);color:#fff;
+                font-weight:900;font-size:1.9vh;display:flex;align-items:center;justify-content:center;}
+  .path .lab .nm{font-size:2vh;font-weight:900;color:var(--g);}
+  .path .line{font-size:1.5vh;line-height:1.7;}
+  .path .line .k{color:var(--sub);font-weight:700;margin-right:.6ch;}
+  .path.reco{border:2px solid var(--o);}
+  .path.reco .L{background:var(--o);}
+  .seq{margin-top:2.2vh;background:#FBF3EC;border:1px dashed var(--o);border-radius:1.2vh;
+       padding:1.8vh 2.2vh;font-size:1.85vh;line-height:1.9;}
+  .seq b{color:var(--o);}
+
+  /* 清单 */
+  .checklist{display:grid;grid-template-columns:repeat(2,1fr);gap:1.3vh 3vh;}
+  .chk{display:flex;align-items:flex-start;gap:1.2vh;font-size:1.85vh;line-height:1.6;}
+  .chk .box{flex:none;width:2.4vh;height:2.4vh;border:2px solid var(--g);border-radius:.5vh;margin-top:.3vh;}
+  .chk b{color:var(--g);}
+  .chk .s{color:var(--sub);font-size:1.5vh;}
+
+  /* 认证章 + 承诺 */
+  .signrow{display:flex;align-items:center;gap:2.2vh;margin-top:auto;
+           background:rgba(245,239,229,.06);border:1px solid rgba(245,239,229,.18);
+           border-radius:1.4vh;padding:2.4vh 2.8vh;}
+  .signrow svg{width:7vh;height:7vh;flex:none;}
+  .signrow .l1{font-size:2.4vh;font-weight:900;color:#fff;letter-spacing:.04em;}
+  .signrow .l2{font-size:1.55vh;color:var(--dim);margin-top:.8vh;line-height:1.8;max-width:52ch;}
+
+  /* 封面 */
+  .cover-wrap{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1vh;}
+  .cover-logo{width:15vh;height:15vh;margin-bottom:1vh;}
+  .cover-co{font-size:2.2vh;font-weight:900;letter-spacing:.16em;color:#fff;}
+  .cover-sl{font-size:1.5vh;letter-spacing:.24em;color:var(--o);font-weight:700;margin-top:.6vh;}
+
+  /* 导航 */
+  .nav{position:fixed;bottom:2.4vh;right:3vw;display:flex;gap:1vh;z-index:20;}
+  .nav button{width:4.6vh;height:4.6vh;border:none;border-radius:50%;cursor:pointer;
+              background:rgba(23,55,43,.5);color:#fff;font-size:2.2vh;backdrop-filter:blur(4px);
+              display:flex;align-items:center;justify-content:center;transition:background .2s;}
+  .nav button:hover{background:var(--o);}
+  .progress{position:fixed;top:0;left:0;height:.5vh;background:var(--o);z-index:20;transition:width .4s;}
+  .hint{position:fixed;bottom:2.6vh;left:3vw;font-size:1.2vh;color:rgba(255,255,255,.35);z-index:20;letter-spacing:.1em;}
+</style>
+</head>
+<body>
+
+<div class="progress" id="prog"></div>
+<div class="deck" id="deck">
+
+  <!-- 1 封面 -->
+  <section class="slide dark on">
+    <div class="top">
+      <svg class="brandmark" viewBox="0 0 100 100"><circle cx="50" cy="48" r="28" fill="none" stroke="#F5EFE5" stroke-width="3.5"/><circle cx="50" cy="60" r="9" fill="#E8611C"/></svg>
+      <span class="who">晟果新零售</span>
+      <span class="doc mono">MTG-2026-07 · 鼎湖坑口/湖景店</span>
+    </div>
+    <div class="cover-wrap">
+      <svg class="cover-logo" viewBox="0 0 100 100"><circle cx="50" cy="48" r="28" fill="none" stroke="#F5EFE5" stroke-width="3.5"/><circle cx="50" cy="60" r="9" fill="#E8611C"/></svg>
+      <div class="kicker" style="margin-top:0">会议共识稿 · CONSENSUS DRAFT</div>
+      <h1>鼎湖坑口 / 湖景店<br>今天先<em>把问题对齐</em>,不急着定方案</h1>
+      <div class="lead">这不是一份"宏伟蓝图"。今天我们只做三件事:把问题问对、看清眼前的市场事实、列清楚接下来一起要补的数据。</div>
+    </div>
+    <div class="foot">
+      <span>六哥零售 · 晟果新零售出品</span>
+      <span class="slogan">科学零售,成果为证</span>
+    </div>
+  </section>
+
+  <!-- 2 今天这场会 -->
+  <section class="slide light">
+    <div class="top">
+      <svg class="brandmark" viewBox="0 0 100 100"><circle cx="50" cy="48" r="28" fill="none" stroke="#17372B" stroke-width="3.5"/><circle cx="50" cy="60" r="9" fill="#E8611C"/></svg>
+      <span class="who" style="color:var(--g)">晟果新零售</span>
+      <span class="doc mono">01 / 今天这场会</span>
+    </div>
+    <div class="body">
+      <div class="kicker">先说清楚 · 今天不做什么</div>
+      <h2>今天<b>不定方案、不逼选择</b>。<br>我们一起做三件事就够了。</h2>
+      <div class="rows" style="margin-top:3vh">
+        <div class="row"><div class="num">1</div><div class="txt"><div class="t1">把问题问对</div><div class="t2">现在真正要回答的,不是"开哪家店",而是"这套系统能不能盈利、瓶颈在哪"。</div></div></div>
+        <div class="row"><div class="num">2</div><div class="txt"><div class="t1">看清眼前的事实</div><div class="t2">地图和竞争格局已经给了几条实锤——先看它们,再谈想法。</div></div></div>
+        <div class="row"><div class="num">3</div><div class="txt"><div class="t1">列清要补的数据</div><div class="t2">哪些数只有你们手里有——今天当场点出来,会后一起补齐。</div></div></div>
+      </div>
+    </div>
+    <div class="foot"><span>晟果新零售</span><span class="pageno mono">02 / 08</span></div>
+  </section>
+
+  <!-- 3 先把问题问对 -->
+  <section class="slide light">
+    <div class="top">
+      <svg class="brandmark" viewBox="0 0 100 100"><circle cx="50" cy="48" r="28" fill="none" stroke="#17372B" stroke-width="3.5"/><circle cx="50" cy="60" r="9" fill="#E8611C"/></svg>
+      <span class="who" style="color:var(--g)">晟果新零售</span>
+      <span class="doc mono">02 / 把问题问对</span>
+    </div>
+    <div class="body">
+      <div class="kicker">重构问题</div>
+      <h2>问题问错,再多的方案都是白费。</h2>
+      <div class="cards c2" style="margin-top:3vh">
+        <div class="cell" style="border-left:6px solid var(--sub)">
+          <div class="tag" style="color:var(--sub)">如果这样问 ✕</div>
+          <div class="h" style="color:var(--sub)">"坑口这家新店,该怎么开?"</div>
+          <div class="p">默认了"再开一家"是对的。可 10 家店里已经有一半在亏——先问"要不要开",答案可能会不一样。</div>
+        </div>
+        <div class="cell" style="border-left:6px solid var(--o)">
+          <div class="tag">应该这样问 ✓</div>
+          <div class="h">"这套系统,到底靠什么赚钱?<br>瓶颈在哪一环?"</div>
+          <div class="p">先把盈利结构看穿,新店只是这套系统的一个出口,不是起点。</div>
+        </div>
+      </div>
+      <div class="seq" style="margin-top:2.4vh">
+        <b>一句待验证的判断:</b>大概率不是"毛利低",而是"毛利结构单一"——收入几乎全靠零售卖货一条腿。<span style="color:var(--sub);font-size:1.5vh">(是不是这样,今天用你们的数字一起验。)</span>
+      </div>
+    </div>
+    <div class="foot"><span>晟果新零售</span><span class="pageno mono">03 / 08</span></div>
+  </section>
+
+  <!-- 4 三个结构问号 -->
+  <section class="slide light">
+    <div class="top">
+      <svg class="brandmark" viewBox="0 0 100 100"><circle cx="50" cy="48" r="28" fill="none" stroke="#17372B" stroke-width="3.5"/><circle cx="50" cy="60" r="9" fill="#E8611C"/></svg>
+      <span class="who" style="color:var(--g)">晟果新零售</span>
+      <span class="doc mono">03 / 三个结构问号</span>
+    </div>
+    <div class="body">
+      <div class="kicker">现状 · 这些是问号,不是结论</div>
+      <h2>如果系统真有瓶颈,大概率藏在这三处。</h2>
+      <div class="cards" style="margin-top:3vh">
+        <div class="cell">
+          <div class="tag">问号 A · 商品</div>
+          <div class="h">SKU 有没有<br>标准和分级?</div>
+          <div class="p">还是靠老板经验选品?哪些该留、哪些该砍,有没有一把可复用的尺子。</div>
+          <div class="q"><b>今天要确认:</b>现在选品/汰换,靠人还是靠规则?</div>
+        </div>
+        <div class="cell">
+          <div class="tag">问号 B · 门店</div>
+          <div class="h">门店模型<br>是不是一团?</div>
+          <div class="p">从小店到大店面积跨度很大,如果每家都是一套打法,就没有"可复制"这回事。</div>
+          <div class="q"><b>今天要确认:</b>10 家店能归成几种模型?</div>
+        </div>
+        <div class="cell">
+          <div class="tag">问号 C · 供应链</div>
+          <div class="h">批发和零售<br>打通了吗?</div>
+          <div class="p">有仓、有车队、有批发底子——但这套后端,有没有真正变成门店的成本优势。</div>
+          <div class="q"><b>今天要确认:</b>后端优势,有没有落到货架价格上?</div>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span>晟果新零售</span><span class="pageno mono">04 / 08</span></div>
+  </section>
+
+  <!-- 5 地图实锤 -->
+  <section class="slide light">
+    <div class="top">
+      <svg class="brandmark" viewBox="0 0 100 100"><circle cx="50" cy="48" r="28" fill="none" stroke="#17372B" stroke-width="3.5"/><circle cx="50" cy="60" r="9" fill="#E8611C"/></svg>
+      <span class="who" style="color:var(--g)">晟果新零售</span>
+      <span class="doc mono">04 / 地图给的实锤</span>
+    </div>
+    <div class="body">
+      <div class="kicker">这一页全是事实 · 不是推测</div>
+      <h2>眼前的市场,已经指了一个方向。</h2>
+      <div class="mapgrid" style="margin-top:2.4vh">
+        <div class="maplist">
+          <div class="poi"><span class="dist mono">258 m</span><span class="nm">家乐福(富力·尚悦居店)</span><span class="sc bad">3.4</span><span class="note">近邻 · 明显跑不动</span></div>
+          <div class="poi"><span class="dist mono">654 m</span><span class="nm">鼎购生活超市(春天花园店)</span><span class="sc ok">4.2</span><span class="note">中型 · 还行</span></div>
+          <div class="poi"><span class="dist mono">757 m</span><span class="nm">龙福购物超市</span><span class="sc ok">4.3</span><span class="note">中型 · 还行</span></div>
+          <div class="poi"><span class="dist mono">周边</span><span class="nm">士多 / 便利店(立洋、英姐、容容…)</span><span class="sc" style="color:var(--sub)">高密度</span><span class="note">一片紫色购物车</span></div>
+          <div class="poi" style="border:2px solid var(--o)"><span class="dist mono">簇内</span><span class="nm">好家源(万福店)· 你们自己的店</span><span class="sc" style="color:var(--g)">在场</span><span class="note">已在这个圈里</span></div>
+        </div>
+        <div class="insight">
+          <div class="k">读出来的缺口</div>
+          <div class="big">最近的大对手,恰恰是<em>那家跑不动的家乐福</em>。</div>
+          <div class="sm">缺口不是"再摆一个更大的箱子靠走量",而是——用<b style="color:#fff">生鲜做锐利差异化</b>,正面吃掉 258 米外那家 3.4 分的店;必要时,围绕强店做收敛。</div>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span>晟果新零售 · 数据来源:公开地图 POI</span><span class="pageno mono">05 / 08</span></div>
+  </section>
+
+  <!-- 6 压力测试(待填) -->
+  <section class="slide light">
+    <div class="top">
+      <svg class="brandmark" viewBox="0 0 100 100"><circle cx="50" cy="48" r="28" fill="none" stroke="#17372B" stroke-width="3.5"/><circle cx="50" cy="60" r="9" fill="#E8611C"/></svg>
+      <span class="who" style="color:var(--g)">晟果新零售</span>
+      <span class="doc mono">05 / 2000㎡ 压力测试</span>
+    </div>
+    <div class="body">
+      <div class="kicker">量级越大,越要先算账 · 数字当场填</div>
+      <h2>2000㎡ 这个盘子,先做一次盈亏压力测试。</h2>
+      <table class="stress" style="margin-top:2.4vh">
+        <thead>
+          <tr><th style="text-align:left">口径</th><th>保守档</th><th>基准档</th><th>扩张档</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>日销(万/天)</th><td><span class="fill sm">待填</span></td><td><span class="fill sm">待填</span></td><td><span class="fill sm">待填</span></td></tr>
+          <tr><th>综合毛利率(%)</th><td><span class="fill sm">待填</span></td><td><span class="fill sm">待填</span></td><td><span class="fill sm">待填</span></td></tr>
+          <tr><th>月毛利(万)</th><td><span class="fill sm">= ?</span></td><td><span class="fill sm">= ?</span></td><td><span class="fill sm">= ?</span></td></tr>
+          <tr><th>月刚性成本(万)<br><span style="font-weight:400;font-size:1.3vh;color:var(--sub)">人力+损耗+水电+机会成本</span></th><td><span class="fill sm">待填</span></td><td><span class="fill sm">待填</span></td><td><span class="fill sm">待填</span></td></tr>
+          <tr class="eq"><th>能不能打平?</th><td><span class="fill">待验</span></td><td><span class="fill">待验</span></td><td><span class="fill">待验</span></td></tr>
+        </tbody>
+      </table>
+      <div class="lead" style="margin-top:1.8vh">这些数字,今天由你们当场填——<b>我不替你们猜</b>。这正是晟果的规矩:讲不清、算不实的结论,我们不签字。填完这张表,方向自然浮出来。</div>
+    </div>
+    <div class="foot"><span>晟果新零售</span><span class="pageno mono">06 / 08</span></div>
+  </section>
+
+  <!-- 7 三条路径 · 今天不选 -->
+  <section class="slide light">
+    <div class="top">
+      <svg class="brandmark" viewBox="0 0 100 100"><circle cx="50" cy="48" r="28" fill="none" stroke="#17372B" stroke-width="3.5"/><circle cx="50" cy="60" r="9" fill="#E8611C"/></svg>
+      <span class="who" style="color:var(--g)">晟果新零售</span>
+      <span class="doc mono">06 / 三条路径</span>
+    </div>
+    <div class="body">
+      <div class="kicker">摆出来对齐 · 今天不做选择</div>
+      <h2>路摆在桌上,但今天先不选。</h2>
+      <div class="paths" style="margin-top:2.4vh">
+        <div class="path">
+          <div class="lab"><span class="L">A</span><span class="nm">继续开店</span></div>
+          <div class="line"><span class="k">前提</span>系统已能盈利</div>
+          <div class="line"><span class="k">风险</span>亏损结构被放大</div>
+          <div class="line"><span class="k">待验</span>现有店真实盈亏</div>
+        </div>
+        <div class="path">
+          <div class="lab"><span class="L">B</span><span class="nm">收敛 · 小而美</span></div>
+          <div class="line"><span class="k">前提</span>愿意关停/整合弱店</div>
+          <div class="line"><span class="k">风险</span>短期营收下滑</div>
+          <div class="line"><span class="k">待验</span>哪几家该关/该并</div>
+        </div>
+        <div class="path reco">
+          <div class="lab"><span class="L">C</span><span class="nm">生鲜差异化重定位</span></div>
+          <div class="line"><span class="k">前提</span>生鲜能做出锐度</div>
+          <div class="line"><span class="k">风险</span>对运营要求高</div>
+          <div class="line"><span class="k">待验</span>生鲜/熟食真实毛利</div>
+        </div>
+      </div>
+      <div class="seq">
+        <b>建议的次序(供讨论):</b>先补数据 → 做完压力测试 → 再从 <b>B / C</b> 里选,或组合。<span style="color:var(--sub);font-size:1.5vh">A 只有在系统已确认盈利时才成立。</span>
+      </div>
+    </div>
+    <div class="foot"><span>晟果新零售</span><span class="pageno mono">07 / 08</span></div>
+  </section>
+
+  <!-- 8 今天的产出 = 待补清单 -->
+  <section class="slide dark">
+    <div class="top">
+      <svg class="brandmark" viewBox="0 0 100 100"><circle cx="50" cy="48" r="28" fill="none" stroke="#F5EFE5" stroke-width="3.5"/><circle cx="50" cy="60" r="9" fill="#E8611C"/></svg>
+      <span class="who">晟果新零售</span>
+      <span class="doc mono">07 / 今天的产出</span>
+    </div>
+    <div class="body" style="justify-content:flex-start">
+      <div class="kicker">会议结论 = 一张待补清单</div>
+      <h2 style="color:#fff">今天不带走一个方案,<br>带走一张<em>一起要补齐的数据清单</em>。</h2>
+      <div class="checklist" style="margin-top:2.6vh">
+        <div class="chk"><span class="box"></span><div><b>2–3 家店真实日销区间</b><div class="s">赚钱店 / 打平店 / 亏损店各取样</div></div></div>
+        <div class="chk"><span class="box"></span><div><b>生鲜 · 熟食毛利结构</b><div class="s">分清"流量品"和"利润品"</div></div></div>
+        <div class="chk"><span class="box"></span><div><b>10 店盈亏名单</b><div class="s">2 赚 / 2 平 / 5–6 亏,逐店落实</div></div></div>
+        <div class="chk"><span class="box"></span><div><b>坑口店物业与刚性成本</b><div class="s">哪怕自有,也要算机会成本</div></div></div>
+        <div class="chk"><span class="box"></span><div><b>批发盘子现状</b><div class="s">仓/车队/账期,能力边界在哪</div></div></div>
+        <div class="chk"><span class="box"></span><div><b>选品与汰换现在怎么做</b><div class="s">靠人,还是已有规则</div></div></div>
+      </div>
+      <div class="signrow">
+        <svg viewBox="0 0 100 100"><g stroke="#F5EFE5" stroke-width="3.5" stroke-linecap="round"><line x1="50" y1="30" x2="50" y2="22"/><line x1="64.1" y1="35.9" x2="69.8" y2="30.2"/><line x1="70" y1="50" x2="78" y2="50"/><line x1="64.1" y1="64.1" x2="69.8" y2="69.8"/><line x1="50" y1="70" x2="50" y2="78"/><line x1="35.9" y1="64.1" x2="30.2" y2="69.8"/><line x1="30" y1="50" x2="22" y2="50"/><line x1="35.9" y1="35.9" x2="30.2" y2="30.2"/></g><circle cx="50" cy="50" r="9" fill="#E8611C"/></svg>
+        <div>
+          <div class="l1">每一个建议,都敢签字。</div>
+          <div class="l2">今天这页没有签字——因为数据还没补齐。数补齐了,我才敢在方案上落笔。这就是我们一起把这件事做实的方式。</div>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span>六哥零售 · 晟果新零售出品</span><span class="slogan">科学零售,成果为证</span></div>
+  </section>
+
+</div>
+
+<div class="nav">
+  <button id="prev" aria-label="上一页">‹</button>
+  <button id="next" aria-label="下一页">›</button>
+</div>
+<div class="hint">← → 翻页 · 或点击右下按钮 · F11 全屏投屏</div>
+
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+  const prog=document.getElementById('prog');
+  function show(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach((s,k)=>s.classList.toggle('on',k===i));
+    prog.style.width=((i+1)/slides.length*100)+'%';
+  }
+  document.getElementById('next').onclick=()=>show(i+1);
+  document.getElementById('prev').onclick=()=>show(i-1);
+  document.addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();show(i+1);}
+    if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(i-1);}
+    if(e.key==='Home')show(0);
+    if(e.key==='End')show(slides.length-1);
+  });
+  show(0);
+</script>
+</body>
+</html>

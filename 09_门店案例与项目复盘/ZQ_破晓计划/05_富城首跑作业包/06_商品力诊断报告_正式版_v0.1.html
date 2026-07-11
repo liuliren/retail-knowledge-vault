@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>富城店 商品力诊断报告（测试版）</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"PingFang SC","Microsoft YaHei",sans-serif; color:#1a1a1a; width:794px; padding:32px 36px; background:#fff; }
+  .hdr { display:flex; justify-content:space-between; align-items:flex-end; border-bottom:3px solid #1f6feb; padding-bottom:10px; }
+  .hdr .t { font-size:22px; font-weight:800; }
+  .hdr .t small { display:block; font-size:13px; color:#666; font-weight:500; margin-top:3px; }
+  .hdr .m { font-size:12px; color:#888; text-align:right; }
+  .confirm { background:#eef6ff; border-left:6px solid #1f6feb; border-radius:6px; padding:12px 16px; margin:14px 0; font-size:12.5px; color:#243b53; line-height:1.6; }
+  .concl { background:#fff5f0; border-left:6px solid #e8590c; border-radius:6px; padding:16px 18px; margin:14px 0; font-size:18px; font-weight:800; line-height:1.55; }
+  .concl b { color:#e8590c; }
+  h2 { font-size:15px; margin:20px 0 8px; padding-left:9px; border-left:5px solid #1f6feb; }
+  table { width:100%; border-collapse:collapse; font-size:12.5px; }
+  th,td { border:1px solid #d8dee4; padding:6px 8px; text-align:left; }
+  th { background:#f0f4f9; font-weight:700; }
+  td.c { text-align:center; }
+  .light { font-size:14px; }
+  .kpi { display:flex; gap:8px; margin:10px 0 4px; flex-wrap:wrap; }
+  .kpi div { flex:1; min-width:130px; background:#f6f8fa; border-radius:6px; padding:9px; text-align:center; }
+  .kpi b { display:block; font-size:19px; color:#1f6feb; }
+  .kpi b.bad { color:#cf1322; }
+  .kpi span { font-size:10.5px; color:#666; }
+  .dir td:first-child { font-weight:700; white-space:nowrap; width:74px; }
+  .step { background:#f0fdf4; border:1px solid #b7eb8f; border-radius:6px; padding:10px 14px; margin-top:6px; font-size:12.5px; line-height:1.7; }
+  .step b { color:#237804; }
+  .evid { list-style:none; margin:6px 0; }
+  .evid li { margin-bottom:8px; padding:8px 10px; background:#fafbfc; border:1px solid #e4e8ee; border-radius:5px; font-size:12.5px; line-height:1.6; }
+  .tag { display:inline-block; font-size:10px; padding:1px 6px; border-radius:10px; margin-left:6px; font-weight:700; }
+  .tag.c { background:#fff1e6; color:#c1440e; }
+  .tag.pending { background:#f0f0f0; color:#666; }
+  .warn { margin-top:14px; background:#fffbe6; border:1px solid #ffe58f; border-radius:6px; padding:10px 14px; font-size:12px; color:#614700; line-height:1.6; }
+  .ft { margin-top:18px; border-top:1px solid #eee; padding-top:8px; font-size:11px; color:#999; display:flex; justify-content:space-between; }
+</style>
+</head>
+<body>
+  <div class="hdr">
+    <div class="t">富城店 · 商品力诊断报告（测试版）<small>品类结构与外在陈列结构初判 · 好家源三店系列之一</small></div>
+    <div class="m">晟果新零售咨询<br>2026-07-07 · 测试版<br>内部测试件</div>
+  </div>
+
+  <div class="confirm">本报告对应"商品力"模块——品类结构与外在陈列结构；如您原意确指"组织力"〔人员/权责/排班〕，请指出，我们另出。</div>
+
+  <div class="concl">富城客流涨了 31.6%，客单价却跌了 <b>8.3%（三店最深）</b>，同时 <b>Z类占42%、动销率58.2%均三店最差</b>——问题最集中，样板性价比最高：先清 4,086 个 Z 类档案、再诊休闲小食/糖饼连带区陈列错配，第一刀落在此。</div>
+
+  <div class="kpi">
+    <div><b>22+</b><span>已识别柜组数(TOP营收+长尾清单)</span></div>
+    <div><b class="bad">58.2%</b><span>动销率 🔴三店最低</span></div>
+    <div><b class="bad">42%</b><span>Z类占在册 🔴三店最高（4,086个）</span></div>
+    <div><b>47%</b><span>C类尾部占比（&lt;20元/90天）</span></div>
+    <div><b>97.6%</b><span>条码匹配率 ✅过防呆线</span></div>
+  </div>
+
+  <h2>① 各柜组结构 · 红黄绿</h2>
+  <table>
+    <tr><th>柜组</th><th class="c">占比/规模</th><th class="c">灯</th><th>问题 / 动作</th></tr>
+    <tr><td>猪肉柜</td><td class="c">12.8%净销</td><td class="c light">🟢</td><td>毛利22.4%，生鲜头柜健康</td></tr>
+    <tr><td>叶菜柜</td><td class="c">12.7%净销</td><td class="c light">🟢</td><td>毛利15.8%，健康</td></tr>
+    <tr><td>水果柜</td><td class="c">12.7%净销</td><td class="c light">🟡</td><td>毛利12.5%低于叶菜，疑损耗/定价，待现场核</td></tr>
+    <tr><td>粮油柜</td><td class="c">9.7%净销</td><td class="c light">🟢</td><td>毛利4.8%引流定价，确认是否有意为之</td></tr>
+    <tr><td>家居用品柜</td><td class="c">647在册（全店最多）仅2.4万</td><td class="c light">🔴</td><td>C类275个100%全尾部，非食长尾重灾区，缩排面第一候选</td></tr>
+    <tr><td>休闲小食柜</td><td class="c">431动销SKU仅2.6万(占比1.2%)</td><td class="c light">🔴</td><td>连带区宽而不产出，与客单−8.3%直接互证，先诊陈列再汰品</td></tr>
+    <tr><td>熟食柜</td><td class="c">≈0（仅1个动销SKU）</td><td class="c light">🔴</td><td>大湾区烧腊/熟食特化缺位，1000㎡社区店结构性空缺，现场核是否外租未入POS</td></tr>
+    <tr><td>糖饼柜</td><td class="c">332动销SKU仅2.5万</td><td class="c light">🟡</td><td>与休食同属连带区弱产出</td></tr>
+  </table>
+
+  <h2>② 外在陈列结构初判（C级 · 待现场验证）</h2>
+  <ul class="evid">
+    <li>A类是否占全店黄金位<span class="tag pending">pending·现场</span></li>
+    <li>五态宽度空缺盘点——全店品类宽度是否有结构性缺口<span class="tag pending">pending·现场</span></li>
+    <li>休食/糖饼柜排面陈列与动销的错配核实——疑连带区宽而不产出<span class="tag c">inferred·C级</span></li>
+    <li>Z类42%现场核因（档案未清 / 停购未删 / 条码变更 / 季节品）<span class="tag pending">pending·现场</span></li>
+    <li>客单价−8.3%的现场归因（收银台前区陈列 / 连带动线 / 促销结构）<span class="tag pending">pending·现场</span></li>
+  </ul>
+
+  <h2>③ 三个调改方向</h2>
+  <table class="dir">
+    <tr><td>✅ 保留</td><td>猪肉/土猪（毛利37.2%差异化）/叶菜三柜，粮油引流定价柜</td></tr>
+    <tr><td>🔻 压缩</td><td>家居用品柜（647在册全店最多）+ 休闲小食 + 糖饼三柜非食/弱连带长尾</td></tr>
+    <tr><td>📦 清理</td><td>Z类4,086个（占42%三店最高）优先梳理"档案在货已无"部分；C尾&lt;20元1,472个待现场角色闸后分批清退</td></tr>
+  </table>
+
+  <h2>④ 门店执行建议（现场验证清单）</h2>
+  <div class="step">
+    <b>第一步 · 标角色</b>：走店核实熟食柜是否外租/联营未入POS——若非，1000㎡社区店理应补位烧腊特化<br>
+    <b>第二步 · 排排队</b>：现场核实休食/糖饼柜排面陈列与动线位置（收银台前区），而非急着砍SKU<br>
+    <b>第三步 · 动手 + 看效果</b>：Z类4,086个先分"档案在货已无"纯系统清理，家居用品柜缩排面同步执行，7天观察客单价与客诉反馈
+  </div>
+
+  <div class="warn">
+    ⚠️ <b>防误杀提示</b>：低销 ≠ 该砍。生鲜柜C类为品种轮换常态非汰换对象；酱料等结构性宽度品类不因低销一刀切，须过角色闸；冲饮柜7月反季，勿在淡季误杀。<br>
+    <b>fact_layer边界</b>：observed=店级基线/增长质量/柜组净销毛利（源POS单源汇总）；inferred=生鲜占比口径、休食弱=客单降主因、熟食缺位=结构空缺；pending=Z类4,086个柜组归属、水果毛利倒挂成因、费用/净利数据。全部结论为C级预判，须现场交叉验证后方可对外定论。
+  </div>
+
+  <div class="ft"><span>晟果新零售咨询 · 六哥零售</span><span>2026-07-07 · 内部测试件 · client_confidential</span></div>
+</body>
+</html>

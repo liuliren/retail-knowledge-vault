@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<!-- 好家源·经营底盘诊断报告 测试版｜复用 report-export template.html 的CSS class体系，重排为长报告结构。仅供六哥内部看格式效果，非对客户交付件。 -->
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"PingFang SC","Microsoft YaHei",sans-serif; color:#1a1a1a; width:794px; padding:32px 36px; background:#fff; }
+  .hdr { display:flex; justify-content:space-between; align-items:flex-end; border-bottom:3px solid #1f6feb; padding-bottom:10px; }
+  .hdr .t { font-size:22px; font-weight:800; }
+  .hdr .t small { display:block; font-size:13px; color:#666; font-weight:500; margin-top:3px; }
+  .hdr .m { font-size:12px; color:#888; text-align:right; }
+  .concl { background:#fff5f0; border-left:6px solid #e8590c; border-radius:6px; padding:16px 18px; margin:18px 0; font-size:18px; font-weight:800; line-height:1.5; }
+  .concl b { color:#e8590c; }
+  h2 { font-size:15px; margin:22px 0 8px; padding-left:9px; border-left:5px solid #1f6feb; }
+  h3 { font-size:13.5px; margin:14px 0 6px; color:#1f6feb; }
+  table { width:100%; border-collapse:collapse; font-size:12.5px; margin-bottom:6px; }
+  th,td { border:1px solid #d8dee4; padding:6px 8px; text-align:left; }
+  th { background:#f0f4f9; font-weight:700; }
+  td.c { text-align:center; }
+  .light { font-size:14px; }
+  .kpi { display:flex; gap:10px; margin:8px 0 4px; }
+  .kpi div { flex:1; background:#f6f8fa; border-radius:6px; padding:9px; text-align:center; }
+  .kpi b { display:block; font-size:19px; color:#1f6feb; }
+  .kpi span { font-size:11px; color:#666; }
+  .step { background:#f0fdf4; border:1px solid #b7eb8f; border-radius:6px; padding:10px 14px; margin-top:6px; font-size:13px; line-height:1.7; }
+  .step b { color:#237804; }
+  .warn { margin-top:14px; background:#fffbe6; border:1px solid #ffe58f; border-radius:6px; padding:12px 16px; font-size:12.5px; color:#614700; line-height:1.65; }
+  .warn.top { margin-top:16px; border:2px solid #fa8c16; background:#fff7e6; font-size:13.5px; font-weight:600; }
+  .tag { display:inline-block; font-size:10.5px; font-weight:700; border-radius:3px; padding:1px 6px; margin-left:6px; }
+  .tag.observed { background:#e6f4ea; color:#237804; border:1px solid #b7eb8f; }
+  .tag.inferred { background:#fff7e6; color:#ad6800; border:1px solid #ffd591; }
+  .tag.pending { background:#fff1f0; color:#a8071a; border:1px solid #ffa39e; }
+  .store-block { border:1px solid #e2e8f0; border-radius:8px; padding:12px 14px; margin-bottom:10px; }
+  .store-block h3 { margin-top:0; }
+  .ft { margin-top:22px; border-top:1px solid #eee; padding-top:8px; font-size:11px; color:#999; display:flex; justify-content:space-between; }
+</style>
+</head>
+<body>
+  <div class="hdr">
+    <div class="t">好家源项目 · 经营底盘诊断报告<small>三店（顺景 / 富城 / 金沙咀）· D5全店经营总诊断 · POS衍生数据预览版</small></div>
+    <div class="m">晟果新零售咨询<br>2026-07-07 · 测试版 v0.1<br>内部测试件 · 非对客户交付</div>
+  </div>
+
+  <!-- 顶部醒目数据边界声明 -->
+  <div class="warn top">
+    ⚠️ <b>数据边界声明（请先读）</b>：本报告是基于当前可得数据（POS 衍生：净销 / 毛利率 / 动销率等）的「经营底盘」诊断<b>预览版</b>，用于测试报告格式效果，<b>非正式交付件</b>。
+    好家源项目当前<b>没有</b>获取财务数据，费用率、净利率、真实坪效/人效（成本口径）、现金周转天数等经营底盘核心指标<b>暂无法计算</b>，本报告不填、不猜、不估。
+    以下内容严格区分 <span class="tag observed">observed</span>（POS直接观测）/ <span class="tag inferred">inferred</span>（推断，需现场验证）/ <span class="tag pending">pending</span>（无数据，待客户提供）三层，
+    正式版须客户提供财务数据后由六哥现场核实校准，方可对外定论。
+  </div>
+
+  <!-- KPI 总览 -->
+  <div class="kpi">
+    <div><b>1,015.4万</b><span>三店90天净销合计</span></div>
+    <div><b>13.4~18.1%</b><span>三店综合毛利率区间</span></div>
+    <div><b>58.2~66.5%</b><span>三店动销率区间</span></div>
+    <div><b>0 / 4</b><span>经营底盘核心指标已得（费用/净利/坪效人效成本口径/现金周转）</span></div>
+  </div>
+
+  <h2>① 三店经营底盘·可得信号对比表（90天 · 2026-04~06）</h2>
+  <table>
+    <tr><th>指标</th><th class="c">顺景</th><th class="c">富城</th><th class="c">金沙咀</th><th>判读</th></tr>
+    <tr><td>净销（占三店比）</td><td class="c">706.8万（69.6%）</td><td class="c">225.4万（22.2%）</td><td class="c">83.2万（8.2%）</td><td>体量与健康度反挂 <span class="tag observed">observed</span></td></tr>
+    <tr><td>综合毛利率</td><td class="c">13.4% 🔴最低</td><td class="c">16.0% 居中</td><td class="c">18.1% ✅最高</td><td>越大店毛利率越低 <span class="tag observed">observed</span></td></tr>
+    <tr><td>毛利额估算（净销×毛利率）</td><td class="c">≈94.7万</td><td class="c">≈36.1万</td><td class="c">≈15.1万</td><td>仅为销售端毛利额，未扣任何费用 <span class="tag inferred">inferred</span></td></tr>
+    <tr><td>动销率</td><td class="c">66.5% ✅最高</td><td class="c">58.2% 🔴最低</td><td class="c">64.7% 居中</td><td>富城档案含水量最高 <span class="tag observed">observed</span></td></tr>
+    <tr><td>销售坪效（元/㎡/日，收入口径）</td><td class="c">23.1</td><td class="c">23.9</td><td class="c">≈29.0 ✅最高</td><td>仅收入/面积，非扣成本后真坪效 <span class="tag inferred">inferred</span></td></tr>
+    <tr><td>人效线索（元/人/日，参考）</td><td class="c">≈1,480（50人）</td><td class="c">≈1,086（22人）</td><td class="c">≈966（9人）</td><td>未核兼岗/排班，仅为线索非结论 <span class="tag pending">pending</span></td></tr>
+    <tr><td>费用率 / 净利率</td><td class="c" colspan="3" style="text-align:center;color:#a8071a;">无数据</td><td>需客户提供损益表 <span class="tag pending">pending</span></td></tr>
+    <tr><td>现金周转天数</td><td class="c" colspan="3" style="text-align:center;color:#a8071a;">无数据</td><td>需客户提供应付/存货周转数据 <span class="tag pending">pending</span></td></tr>
+  </table>
+
+  <h2>② 分店经营底盘·初步判读（POS单源 · C级证据）</h2>
+
+  <div class="store-block">
+    <h3>顺景——体量最大，但毛利率与数据可信度均待修 <span class="tag observed">观测</span><span class="tag pending">底盘pending</span></h3>
+    <p>顺景净销占三店近七成（706.8万），但综合毛利率三店最低（13.4%），且条码匹配率94.8%唯一跌破95%防呆线（498个未匹配条码疑似散称码/外租区混入）——<b>在费用/净利数据到位前，顺景的经营底盘不能仅凭"毛利率最低"下结论，必须先核实498个条码去向，因为若这部分是外租区商品混入口径，13.4%这个毛利率数字本身就不可信</b>。So-What：顺景经营底盘诊断的第一步不是找费用数据，而是先修数据可信度这道门。</p>
+  </div>
+
+  <div class="store-block">
+    <h3>富城——毛利率居中，但已现"增收不增利"信号 <span class="tag observed">观测</span><span class="tag pending">底盘pending</span></h3>
+    <p>富城净销225.4万（三店二店），毛利率16.0%居中，客流+31.6%但客单价−8.3%（三店最深降幅），日均销售仅+20.7%——<b>销售额增长的成色明显弱于客流增长，这是"增收不增利"的早期信号，但能否坐实为经营底盘问题（费用是否也同步上升、净利是否被侵蚀），必须等费用数据到位才能判断</b>，当前只能算作运营力（连带承接）问题的旁证。So-What：优先走店核实客单价漏水的费用侧影响，而非直接套用毛利率判经营健康度。</p>
+  </div>
+
+  <div class="store-block">
+    <h3>金沙咀——毛利率与坪效均三店最优，但体量小、经营底盘同样未知 <span class="tag observed">观测</span><span class="tag pending">底盘pending</span></h3>
+    <p>金沙咀净销仅83.2万（三店最小），但综合毛利率18.1%三店最高、销售坪效≈29.0元/㎡/日三店最高、客单价降幅−1.9%三店最浅——<b>销售端信号全面最优，但300㎡小店的固定费用摊销比例通常远高于大店，"销售端最健康"不等于"经营底盘最健康"，两者在费用数据补齐前不能划等号</b>。So-What：金沙咀恰恰是最需要费用数据校准的店——如果房租/人力占比过高，销售端的优势可能被费用端完全抵消。</p>
+  </div>
+
+  <h2>③ 待补全清单——需客户提供后方可完成经营底盘诊断</h2>
+  <table>
+    <tr><th>字段</th><th>为什么需要</th><th>客户需提供什么</th></tr>
+    <tr><td>费用率（房租/人力/水电/损耗等）</td><td>经营底盘核心指标，判断毛利是否被费用吃掉的唯一依据；三店毛利率13.4%~18.1%的差异若不看费用率，无法判断谁真正"更赚钱"</td><td>近3~6个月损益表（分店，最低要求：房租/人力两大项分店拆分）</td></tr>
+    <tr><td>净利率</td><td>经营底盘的最终结论指标；本报告目前只能到"毛利率"层，无法回答"三店谁真正赚钱"</td><td>分店净利润数据或可折算净利率的损益口径</td></tr>
+    <tr><td>真实坪效（扣成本后，元/㎡/日）</td><td>当前表中的"坪效"仅为销售额/面积，未扣任何费用，容易误导——尤其金沙咀300㎡若房租占比高，真实坪效可能不再是三店最优</td><td>分店面积对应的房租/物业费数据</td></tr>
+    <tr><td>真实人效（扣兼岗后，元/人/日）</td><td>当前人效为在编人数简单折算，未核实兼岗/排班，三店人数（50/22/9）差异巨大，简单相除会失真</td><td>分店实际排班表、兼岗情况、人力成本</td></tr>
+    <tr><td>现金周转天数（存货周转+应付账期）</td><td>经营底盘另一核心维度，判断资金压力；三店体量差7倍以上，周转结构大概率不同，但目前完全无法评估</td><td>存货周转数据 / 供应商应付账期约定</td></tr>
+    <tr><td>损耗率</td><td>直接影响真实毛利率，尤其顺景水果/散装柜已现毛利倒挂线索，损耗率数据可交叉验证是"定价问题"还是"损耗问题"</td><td>分店损耗记账数据（若有单独损耗台账）</td></tr>
+  </table>
+
+  <div class="warn">
+    ⚠️ <b>方法论边界重申</b>：本报告不是"经营底盘诊断的简化版"，而是"经营底盘诊断的前置观测层"——它诚实地只呈现POS能看到的部分（销售/毛利率/动销），并明确标出6项待补字段。
+    这是咨询报告事实基分层纪律（observed / inferred / pending）在测试件上的体现：讲不清推理的结论不下，没有数据的字段不填。正式版经营底盘诊断报告须待客户提供上述财务数据、并经六哥现场核实交叉验证后方可对外交付。
+  </div>
+
+  <div class="ft"><span>晟果新零售咨询 · 六哥零售 · 好家源项目（破晓计划）</span><span>2026-07-07 · 内部测试件 · 非对客户交付 · client_confidential</span></div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>顺景店 商品力诊断报告（测试版）</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"PingFang SC","Microsoft YaHei",sans-serif; color:#1a1a1a; width:794px; padding:32px 36px; background:#fff; }
+  .hdr { display:flex; justify-content:space-between; align-items:flex-end; border-bottom:3px solid #1f6feb; padding-bottom:10px; }
+  .hdr .t { font-size:22px; font-weight:800; }
+  .hdr .t small { display:block; font-size:13px; color:#666; font-weight:500; margin-top:3px; }
+  .hdr .m { font-size:12px; color:#888; text-align:right; }
+  .confirm { background:#eef6ff; border-left:6px solid #1f6feb; border-radius:6px; padding:12px 16px; margin:14px 0; font-size:12.5px; color:#243b53; line-height:1.6; }
+  .concl { background:#fff5f0; border-left:6px solid #e8590c; border-radius:6px; padding:16px 18px; margin:14px 0; font-size:18px; font-weight:800; line-height:1.55; }
+  .concl b { color:#e8590c; }
+  h2 { font-size:15px; margin:20px 0 8px; padding-left:9px; border-left:5px solid #1f6feb; }
+  table { width:100%; border-collapse:collapse; font-size:12.5px; }
+  th,td { border:1px solid #d8dee4; padding:6px 8px; text-align:left; }
+  th { background:#f0f4f9; font-weight:700; }
+  td.c { text-align:center; }
+  .light { font-size:14px; }
+  .kpi { display:flex; gap:8px; margin:10px 0 4px; flex-wrap:wrap; }
+  .kpi div { flex:1; min-width:130px; background:#f6f8fa; border-radius:6px; padding:9px; text-align:center; }
+  .kpi b { display:block; font-size:19px; color:#1f6feb; }
+  .kpi b.bad { color:#cf1322; }
+  .kpi span { font-size:10.5px; color:#666; }
+  .dir td:first-child { font-weight:700; white-space:nowrap; width:74px; }
+  .step { background:#f0fdf4; border:1px solid #b7eb8f; border-radius:6px; padding:10px 14px; margin-top:6px; font-size:12.5px; line-height:1.7; }
+  .step b { color:#237804; }
+  .evid { list-style:none; margin:6px 0; }
+  .evid li { margin-bottom:8px; padding:8px 10px; background:#fafbfc; border:1px solid #e4e8ee; border-radius:5px; font-size:12.5px; line-height:1.6; }
+  .tag { display:inline-block; font-size:10px; padding:1px 6px; border-radius:10px; margin-left:6px; font-weight:700; }
+  .tag.c { background:#fff1e6; color:#c1440e; }
+  .tag.pending { background:#f0f0f0; color:#666; }
+  .warn { margin-top:14px; background:#fffbe6; border:1px solid #ffe58f; border-radius:6px; padding:10px 14px; font-size:12px; color:#614700; line-height:1.6; }
+  .ft { margin-top:18px; border-top:1px solid #eee; padding-top:8px; font-size:11px; color:#999; display:flex; justify-content:space-between; }
+</style>
+</head>
+<body>
+  <div class="hdr">
+    <div class="t">顺景店 · 商品力诊断报告（测试版）<small>品类结构与外在陈列结构初判 · 好家源三店系列之一</small></div>
+    <div class="m">晟果新零售咨询<br>2026-07-07 · 测试版<br>内部测试件</div>
+  </div>
+
+  <div class="confirm">本报告对应"商品力"模块——品类结构与外在陈列结构；如您原意确指"组织力"〔人员/权责/排班〕，请指出，我们另出。</div>
+
+  <div class="concl">顺景体量三店最大（净销 706.8 万，占三店 69.6%），但<b>条码匹配率 94.8% 三店唯一跌破防呆线</b>——先核 498 个未匹配条码去向，再谈品类结构裁定；确认后，<b>家居用品柜（1,563 个动销 SKU 仅卖 7.54 万）</b>是全店最大非食长尾，缩排面为第一优先动作。</div>
+
+  <div class="kpi">
+    <div><b>25+</b><span>已识别柜组数(TOP营收+长尾清单)</span></div>
+    <div><b>66.5%</b><span>动销率（三店最高）</span></div>
+    <div><b>34%</b><span>Z类占在册（绝对量三店最大·4,586个）</span></div>
+    <div><b>51%</b><span>C类尾部占比（&lt;20元/90天）</span></div>
+    <div><b class="bad">94.8%</b><span>条码匹配率 🔴唯一跌破95%防呆线</span></div>
+  </div>
+
+  <h2>① 各柜组结构 · 红黄绿</h2>
+  <table>
+    <tr><th>柜组</th><th class="c">占比/规模</th><th class="c">灯</th><th>问题 / 动作</th></tr>
+    <tr><td>猪肉柜</td><td class="c">24.1%净销</td><td class="c light">🟢</td><td>毛利20.4%，生鲜头柜健康，全店第一大柜，保留扩展</td></tr>
+    <tr><td>叶菜柜</td><td class="c">14.1%净销</td><td class="c light">🟡</td><td>毛利11.2%反低于水果，与富城相反，疑口径/损耗差异，待现场核</td></tr>
+    <tr><td>水果柜</td><td class="c">13.3%净销</td><td class="c light">🟡</td><td>毛利12.5%，与富城水果毛利同一水平，疑损耗/定价问题</td></tr>
+    <tr><td>散装柜</td><td class="c">9.4%净销</td><td class="c light">🔴</td><td>毛利9.7%三店最低，疑称重/定价问题，优先核价而非砍品</td></tr>
+    <tr><td>家居用品柜</td><td class="c">1,563动销SKU仅7.54万</td><td class="c light">🔴</td><td>全店最大非食长尾，C尾949个（占C类88%），缩排面第一候选</td></tr>
+    <tr><td>内衣/袜柜</td><td class="c">411动销SKU仅1.77万</td><td class="c light">🔴</td><td>C尾319个占78%，可与家居用品柜同区整体处理</td></tr>
+    <tr><td>熟食柜</td><td class="c">≈0（仅2个动销SKU）</td><td class="c light">🔴</td><td>3200㎡大店理应有独立烧腊档口而未见，现场核是否外租/联营未入POS</td></tr>
+    <tr><td>粮油柜</td><td class="c">5.9%净销</td><td class="c light">🟢</td><td>引流定价，与三店民生盘逻辑一致，确认是否有意为之</td></tr>
+    <tr><td>文体/厨房用品/纺织品拖鞋等杂货柜</td><td class="c">长尾C尾合计约354个</td><td class="c light">🟡</td><td>非核心品类，缩排面候选，可与家居用品柜同区处理</td></tr>
+  </table>
+
+  <h2>② 外在陈列结构初判（C级 · 待现场验证）</h2>
+  <ul class="evid">
+    <li>A类是否占全店黄金位<span class="tag pending">pending·现场</span></li>
+    <li>3200㎡大店五态宽度是否比富城/金沙咀更宽（面积大理论应更宽）<span class="tag c">inferred·C级</span></li>
+    <li>家居用品柜1,563个SKU现场排面占比核实——是否宽而不砍到该砍的位置<span class="tag pending">pending·现场</span></li>
+    <li>94.8%匹配缺口成因（疑散称码/外租区商品混入库存表口径）优先核实——不核实此项，任何品类结构判断可能失真<span class="tag c">inferred·C级</span></li>
+    <li>面积超出方法论500–2000㎡锚定区间（3200㎡+外租600），SKU目标数/特化基准套用前须先裁是否拆两套诊断基准<span class="tag pending">pending·六哥裁</span></li>
+  </ul>
+
+  <h2>③ 三个调改方向</h2>
+  <table class="dir">
+    <tr><td>✅ 保留</td><td>猪肉/叶菜/水果三大生鲜头柜（合计占比51.5%净销），粮油引流定价柜</td></tr>
+    <tr><td>🔻 压缩</td><td>家居用品/内衣袜/文体/厨房用品四柜非食长尾（C尾合计1,655个）；散装柜先核价后动品</td></tr>
+    <tr><td>📦 清理</td><td>Z类4,586个先排除498个匹配缺口干扰、确认"档案在货已无"部分再清理；C尾&lt;20元3,160个待现场角色闸后分批清退</td></tr>
+  </table>
+
+  <h2>④ 门店执行建议（现场验证清单）</h2>
+  <div class="step">
+    <b>第一步 · 标角色</b>：先核实498个未匹配条码去向（疑散称码/外租区商品混入）——核实前，顺景任何Z类/ABCZ数字不进入最终裁决<br>
+    <b>第二步 · 排排队</b>：散装柜称重记账流程现场复核（与匹配缺口高度同源），同时核实熟食柜是否外租/联营未入POS<br>
+    <b>第三步 · 动手 + 看效果</b>：家居用品/内衣袜等非食长尾柜现场排面占比核实后，分批缩排面，7天观察动销与客诉反馈
+  </div>
+
+  <div class="warn">
+    ⚠️ <b>防误杀提示</b>：低销 ≠ 该砍。生鲜柜C类为品种轮换常态非汰换对象；民生必备与结构性宽度品种（如酱料柜）不因低销一刀切，须过角色闸。<br>
+    <b>fact_layer边界</b>：observed=店级基线/增长质量/柜组净销毛利（源POS单源汇总）；inferred=生鲜占比口径、熟食缺位归因、散装毛利倒挂归因；pending=498个未匹配条码成因、Z类柜组归属、是否需拆两套诊断基准。全部结论为C级预判，须现场交叉验证后方可对外定论。
+  </div>
+
+  <div class="ft"><span>晟果新零售咨询 · 六哥零售</span><span>2026-07-07 · 内部测试件 · client_confidential</span></div>
+</body>
+</html>
