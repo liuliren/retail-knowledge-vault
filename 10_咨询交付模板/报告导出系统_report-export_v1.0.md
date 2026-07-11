@@ -2,7 +2,8 @@
 id: KB-DELIVERY-REPORT-EXPORT-001
 title: 零售诊断报告导出系统 report-export v1.0
 version: v1.0
-status: candidate
+status: active
+signoff: 六哥 2026-07-08（追认既成事实：2026-07-06/07已产出好家源3店正式客户PDF，candidate→active补签；边界=按输出形态分工，mdcard管内部/店方快卡PNG，report-export管正式客户交付PDF+PNG）
 owner: 六哥
 source_type: method
 created: 2026-06-25
@@ -17,7 +18,7 @@ tags:
   - 诊断卡
   - report-export
   - 客户交付
-  - candidate
+  - active
 ---
 
 # 零售诊断报告导出系统 report-export v1.0
@@ -77,6 +78,14 @@ tags:
 
 ## 8. 扩展(parking lot,未做)
 自动周报系统(多门店 + M-DEC自动写入 + PDF批量)· 调改前后对比卡 · SKU趋势图 · 店长执行清单自动生成。
+
+## 9. 存放纪律(2026-07-08 补·随 candidate→active 一并定)
+**问题**：`output_ledger.csv` 实测记录显示,已产出的好家源3店正式诊断PDF当时落在 `Claude输出区/`（另有4份中间验证产物落在 `/tmp/report_export_test`、`/tmp/tpl_verify`，已因清理丢失，非最终交付件，损失可接受）,**未归位到客户目录**,重启/清理即可能丢失,且台账路径会变死链。
+**规则**：出图后须归位到 `09_门店案例与项目复盘/{客户项目}/`(参照 [[mdcard]] 存放规范的同目录原则);`/tmp` 只作渲染中间态,不作终态存放。
+**已处理(2026-07-08)**：好家源三店正式PDF已归位——经营底盘诊断报告→`09_门店案例与项目复盘/ZQ_破晓计划/09_经营底盘诊断报告_v0.1.*`；三店商品力诊断报告→各自`05/06/07_XX首跑作业包/06_商品力诊断报告_正式版_v0.1.*`（"好家源"实为ZQ_破晓计划项目下三店代号，非独立客户目录，六哥口令「需要」后执行）。
+
+## 10. 与 mdcard 的边界(2026-07-08 卡片生成模块审计裁决)
+**裁决**：按输出形态分工,不合并、不互相替代。`mdcard`(matplotlib)=**内部/店方快卡**(PNG·微信直发·L0-L4全场景);`report-export`(Playwright)=**正式客户交付**(PDF+PNG·要装订/邮件/正式汇报的场合)。详见 [[2026-07-08_卡片生成模块全面审计与升级方案_draft_v0.1]]。
 
 ## 关联
 [[SKU角色层与目的品保护机制_v0.1.6]] · [[单品管理]] · [[佐罗Zero宪章_ZERO-CHARTER-001_v0.2]]（§4 媒体/交付 App）· skill `report-export`

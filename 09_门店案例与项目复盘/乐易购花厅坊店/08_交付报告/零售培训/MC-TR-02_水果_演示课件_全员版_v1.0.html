@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>商品知识 · 水果 · 演示课件 v1.0</title>
+<style>
+  :root{
+    --ink:#14211b;--ink-soft:#536158;--paper:#f3eee1;--paper2:#fffdf7;
+    --green:#1c6647;--green-d:#0f4630;--green-br:#2f9c6a;--jade:#d6ebde;--jade-line:#b2d4bd;
+    --red:#dc4527;--amber:#eea529;--gold:#f6c352;--shadow:0 16px 40px rgba(15,40,28,.18);
+    --sans:"PingFang SC","Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC",system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{font-family:var(--sans);color:var(--ink);letter-spacing:-.005em;background:
+    radial-gradient(1200px 700px at 82% -12%,rgba(246,195,82,.12),transparent 58%),
+    radial-gradient(900px 600px at -12% 112%,rgba(28,102,71,.10),transparent 55%),var(--paper);overflow:hidden}
+  .tag{position:relative;background:var(--paper2);border:2px solid var(--jade-line);border-radius:16px;box-shadow:var(--shadow);padding:20px 18px}
+  .tag::before{content:"";position:absolute;top:10px;left:50%;transform:translateX(-50%);width:26px;height:8px;border-radius:6px;background:var(--paper);border:2px solid var(--jade-line)}
+  .deck{position:relative;width:100vw;height:100vh}
+  .slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;padding:5vh clamp(26px,6vw,108px) 11vh;opacity:0}
+  .slide.active{display:flex;opacity:1}
+  .kicker{display:inline-flex;align-self:flex-start;font-weight:900;letter-spacing:.13em;font-size:.74rem;color:var(--green-d);background:var(--jade);padding:6px 14px;border-radius:999px;margin-bottom:14px}
+  .eyebrow{font-weight:900;letter-spacing:.2em;font-size:.8rem;color:var(--green);margin-bottom:12px}
+  h1{font-size:clamp(2.3rem,6vw,5rem);line-height:1.0;font-weight:900;letter-spacing:-.03em}
+  h2{font-size:clamp(1.6rem,3.5vw,2.9rem);font-weight:900;line-height:1.1;letter-spacing:-.02em}
+  .sub{font-size:clamp(.95rem,1.5vw,1.28rem);color:var(--ink-soft);margin-top:14px;font-weight:600;max-width:1040px}
+  .big{font-size:clamp(1.2rem,2.3vw,1.9rem);font-weight:800;letter-spacing:-.01em}
+  .anim{opacity:0}
+  @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+  @keyframes drop{0%{opacity:0;transform:translateY(-40px) rotate(-3deg)}60%{transform:translateY(4px) rotate(1deg)}100%{opacity:1;transform:none}}
+  @keyframes deal{from{opacity:0;transform:translateY(36px) rotate(6deg) scale(.93)}to{opacity:1;transform:none}}
+  @keyframes pop{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:none}}
+  .slide.active .anim{animation:rise .5s cubic-bezier(.2,.85,.25,1) both;animation-delay:calc(var(--d,0)*.07s)}
+  .slide.active .a-drop{animation:drop .55s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--d,0)*.09s)}
+  .slide.active .a-deal{animation:deal .46s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--d,0)*.08s)}
+  .slide.active .a-pop{animation:pop .42s cubic-bezier(.2,1.5,.4,1) both;animation-delay:calc(var(--d,0)*.06s)}
+  .grid{display:grid;gap:14px;margin-top:20px}
+  .g5{grid-template-columns:repeat(5,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:1fr 1fr}
+  .tag h3{font-size:clamp(1rem,1.55vw,1.35rem);font-weight:900;margin:2px 0 4px}
+  .tag p{color:var(--ink-soft);font-size:.92rem;font-weight:600;line-height:1.4}
+  .num{font-size:.74rem;font-weight:900;color:var(--green);letter-spacing:.08em}
+  .oracle{background:linear-gradient(145deg,var(--green),var(--green-d));color:#fff;border-radius:18px;padding:22px 26px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .oracle::after{content:"";position:absolute;left:0;top:0;bottom:0;width:8px;background:var(--gold)}
+  .oracle .t{font-size:clamp(1.2rem,2.4vw,2.1rem);font-weight:900;line-height:1.35}
+  .band{margin-top:36px;position:relative;height:9px;background:linear-gradient(90deg,var(--green),var(--amber),var(--red));border-radius:999px}
+  .dot{position:absolute;top:50%;transform:translate(-50%,-50%);text-align:center}
+  .dot b{display:block;width:20px;height:20px;border-radius:50%;background:#fff;border:4px solid var(--ink);margin:0 auto}
+  .dot span{display:block;margin-top:10px;font-weight:900;white-space:nowrap;font-size:.95rem}.dot small{display:block;color:var(--ink-soft);font-weight:700}
+  .board{margin-top:14px;background:var(--paper2);border:2px solid var(--jade-line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+  table{width:100%;border-collapse:collapse}
+  th,td{padding:8px 13px;text-align:left;border-bottom:1px solid var(--jade-line);font-size:clamp(.8rem,1.2vw,1rem);vertical-align:top}
+  th{background:var(--green);color:#fff;font-weight:900}
+  tr:last-child td{border-bottom:none}tbody tr:nth-child(even){background:rgba(214,235,222,.4)}
+  td b{color:var(--green-d)}
+  .killslide{align-items:center;text-align:center}
+  .yield{display:flex;flex-direction:column;gap:8px;margin-top:16px}
+  .ybar{display:flex;align-items:center;gap:12px}
+  .ybar .lab{width:140px;font-weight:800;font-size:.95rem}
+  .ybar .track{flex:1;height:26px;background:var(--jade);border-radius:7px;overflow:hidden}
+  .ybar .fill{height:100%;background:linear-gradient(90deg,var(--green),var(--green-br));border-radius:7px}
+  .ybar .pct{width:90px;font-weight:900;color:var(--green-d);font-size:.92rem}
+  .hud{position:fixed;bottom:0;left:0;right:0;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;z-index:30;pointer-events:none}
+  .brand{font-weight:900;color:var(--green);font-size:.82rem;letter-spacing:.04em}
+  .nav{display:flex;gap:10px;align-items:center;pointer-events:auto}
+  .nav button{border:none;background:var(--green);color:#fff;width:44px;height:44px;border-radius:50%;font-size:1.25rem;cursor:pointer;box-shadow:var(--shadow);transition:.15s}
+  .nav button:hover{background:var(--green-br);transform:translateY(-2px)}.nav button:disabled{opacity:.3}
+  .counter{font-weight:900;color:var(--ink-soft);min-width:62px;text-align:center;font-variant-numeric:tabular-nums}
+  .progress{position:fixed;top:0;left:0;height:5px;background:linear-gradient(90deg,var(--amber),var(--gold));width:0;z-index:40;transition:width .4s}
+  .hint{position:fixed;top:12px;right:16px;font-size:.74rem;color:var(--ink-soft);font-weight:700;z-index:30;opacity:.78}
+  @media (max-width:820px){.g5,.g4,.g3,.g2{grid-template-columns:1fr 1fr}th,td{padding:6px 8px;font-size:.76rem}.ybar .lab{width:96px}}
+  @media (prefers-reduced-motion:reduce){.slide.active .anim,.slide.active .a-drop,.slide.active .a-deal,.slide.active .a-pop{animation:none!important;opacity:1!important;transform:none!important}.progress{transition:none}}
+</style>
+</head>
+<body>
+<div class="progress" id="prog"></div>
+<div class="hint">← → 翻页 · 空格下一页</div>
+<div class="deck" id="deck">
+
+  <section class="slide killslide" style="align-items:flex-start;text-align:left">
+    <div class="kicker anim" style="--d:0">乐易购 · 全员商品知识培训</div>
+    <h1 class="anim" style="--d:1">商品知识 · 水果</h1>
+    <div class="big anim" style="--d:2">熟了追着烂、讲眼力——平价招客,精品撑场面</div>
+    <div class="sub anim" style="--d:3">演示课件 v1.0　·　MC-TR-02　·　六哥零售丨晟果咨询</div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow anim" style="--d:0">先记这句</div>
+    <div class="oracle a-drop" style="--d:0"><div class="t">挑成熟度、看品相、分好级、认产地;<br>挑能放几天的,精品撑场面。</div></div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker anim" style="--d:0">员工要懂的水果知识 · 一共这几块</div>
+    <h2 class="anim" style="--d:0">水果商品知识体系</h2>
+    <div class="grid g4">
+      <div class="tag a-pop" style="--d:0"><div class="num">① 认货</div><h3>看货四看</h3><p>成熟度·品相·分级·产地</p></div>
+      <div class="tag a-pop" style="--d:1"><div class="num">② 品质</div><h3>分类鉴别+成熟度</h3><p>好坏怎么看、能放几天</p></div>
+      <div class="tag a-pop" style="--d:2"><div class="num">③ 品类</div><h3>水果×场景</h3><p>日常/时令/送礼拜神</p></div>
+      <div class="tag a-pop" style="--d:3"><div class="num">④ 陈列</div><h3>分区摆放</h3><p>日常/时令/精品/拜神/果切</p></div>
+      <div class="tag a-pop" style="--d:4"><div class="num">⑤ 实操</div><h3>分级+损耗+称重</h3><p>精品正品处理、秤准</p></div>
+      <div class="tag a-pop" style="--d:5"><div class="num">⑥ 服务</div><h3>推荐话术</h3><p>送礼/拜神/糖水/时令</p></div>
+      <div class="tag a-pop" style="--d:6"><div class="num">⑦ 安全</div><h3>卫生+损耗</h3><p>不售霉变、果切卫生</p></div>
+      <div class="tag a-pop" style="--d:7"><div class="num">⑧ 全年</div><h3>广佛52周MD</h3><p>跟着时令和节卖</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker anim" style="--d:0">水果什么脾气</div>
+    <div class="grid g4">
+      <div class="tag a-pop" style="--d:0;border-color:var(--red)"><h3>熟了追着烂</h3><p>过熟两天烂一半</p></div>
+      <div class="tag a-pop" style="--d:1"><h3>怕磕碰</h3><p>压伤一碰就坏、损耗高</p></div>
+      <div class="tag a-pop" style="--d:2"><h3>时令性强</h3><p>当造才靓才便宜</p></div>
+      <div class="tag a-pop" style="--d:3"><h3>双重身份</h3><p>平价招客 + 精品赚钱</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker anim" style="--d:0">大湾区(广佛)顾客要什么</div>
+    <div class="grid g4">
+      <div class="tag a-deal" style="--d:0"><h3>岭南时令果</h3><p>荔枝/龙眼/黄皮/芒果/木瓜——当造王牌</p></div>
+      <div class="tag a-deal" style="--d:1"><h3>送礼·拜神</h3><p>车厘子礼盒;苹果橙桔香蕉(寓意)</p></div>
+      <div class="tag a-deal" style="--d:2"><h3>糖水/炖品配</h3><p>木瓜、雪梨、马蹄</p></div>
+      <div class="tag a-deal" style="--d:3"><h3>日常鲜食</h3><p>苹果/橙/香蕉/提子/梨</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker anim" style="--d:0">① 认货 · 看货四看</div>
+    <div class="grid g4">
+      <div class="tag a-pop" style="--d:0"><div class="num">看1</div><h3>看成熟度</h3><p>挑还能放几天的,不是越熟越好</p></div>
+      <div class="tag a-pop" style="--d:1"><div class="num">看2</div><h3>看品相</h3><p>磕碰、霉斑、压伤、裂果</p></div>
+      <div class="tag a-pop" style="--d:2"><div class="num">看3</div><h3>看规格分级</h3><p>大小匀、好分价</p></div>
+      <div class="tag a-pop" style="--d:3"><div class="num">看4</div><h3>认产地品种</h3><p>同名不同品种差价大(荔枝品种)</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker anim" style="--d:0">② 品质 · 分类看好坏</div>
+    <h2 class="anim" style="--d:0">不同果,看不同地方</h2>
+    <div class="board anim" style="--d:1"><table>
+      <thead><tr><th>类别</th><th>好(才收)</th><th>坏(拒/降价/下架)</th></tr></thead>
+      <tbody>
+        <tr><td><b>仁果</b>(苹果/梨)</td><td>皮亮、有重量、果蒂新鲜</td><td>磕碰褐变、软、皱皮</td></tr>
+        <tr><td><b>柑橘</b>(橙/桔/柚)</td><td>皮色匀、压手有水分</td><td>轻飘失水、软斑、霉</td></tr>
+        <tr><td><b>岭南</b>(荔枝/龙眼)</td><td>壳色鲜、果蒂无蛀</td><td>壳褐发黑、漏水发酸</td></tr>
+        <tr><td><b>浆果</b>(提子/草莓)</td><td>果粉完整、果梗青、不脱粒</td><td>脱粒、出水霉、梗枯</td></tr>
+        <tr><td><b>瓜类</b>(西瓜/蜜瓜)</td><td>拍声脆、瓜蒂新鲜</td><td>软、裂、瓜蒂枯</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker anim" style="--d:0">② 品质 · 成熟度(水果命门)</div>
+    <h2 class="anim" style="--d:0">挑"还能放几天"的,别贪熟</h2>
+    <div class="grid g3">
+      <div class="tag a-deal" style="--d:0;border-color:var(--red)"><h3>不是越熟越好</h3><p>进太熟两天烂一半;要留出货架期</p></div>
+      <div class="tag a-deal" style="--d:1"><h3>能后熟的</h3><p>香蕉/芒果/木瓜进货偏生,分批催熟上</p></div>
+      <div class="tag a-deal" style="--d:2"><h3>不再熟的</h3><p>荔枝/提子/草莓采后不再熟,进货要刚好</p></div>
+    </div>
+    <div class="sub anim" style="--d:3">看成熟度 = 控损耗的第一关。</div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker anim" style="--d:0">③ 品类 · 日常鲜食果 × 怎么卖</div>
+    <div class="board anim" style="--d:1"><table>
+      <thead><tr><th>果</th><th>怎么卖/谁买</th></tr></thead>
+      <tbody>
+        <tr><td>苹果、橙</td><td>家庭常备、拜神、走量;耐放</td></tr>
+        <tr><td>香蕉</td><td>大众日常;进青一点能放</td></tr>
+        <tr><td>提子(青/红)</td><td>小孩爱吃、待客;易脱粒勤翻</td></tr>
+        <tr><td>梨</td><td>日常、炖雪梨润燥</td></tr>
+      </tbody>
+    </table></div>
+    <div class="sub anim" style="--d:2">日常果=引流走量,平价、保供、新鲜。</div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker anim" style="--d:0">③ 品类 · 岭南时令佳果 × 怎么卖</div>
+    <div class="board anim" style="--d:1"><table>
+      <thead><tr><th>果</th><th>当造/怎么推</th></tr></thead>
+      <tbody>
+        <tr><td><b>荔枝</b>(妃子笑/桂味/糯米糍)</td><td>5–7月夏季王牌,主推走量;现到现卖</td></tr>
+        <tr><td>龙眼(石硖/储良)</td><td>7–8月;鲜食</td></tr>
+        <tr><td>黄皮、杨梅</td><td>初夏当造,本地特色</td></tr>
+        <tr><td>芒果、木瓜、菠萝</td><td>热带果,可后熟,木瓜兼糖水</td></tr>
+      </tbody>
+    </table></div>
+    <div class="sub anim" style="--d:2">时令果当造期主推,过季就撤;"今早到的,甜"最好卖。</div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker anim" style="--d:0">③ 品类 · 送礼·拜神·糖水配 × 场景</div>
+    <div class="board anim" style="--d:1"><table>
+      <thead><tr><th>场景</th><th>推什么</th></tr></thead>
+      <tbody>
+        <tr><td><b>送礼</b></td><td>车厘子礼盒、进口提子、苹果橙礼盒——高毛利撑场面</td></tr>
+        <tr><td><b>拜神/节庆</b></td><td>苹果(平安)、橙桔(大吉)、香蕉(招)、菠萝(旺)</td></tr>
+        <tr><td><b>糖水/炖品</b></td><td>木瓜、雪梨、马蹄(配糖水/炖)</td></tr>
+        <tr><td><b>年节</b></td><td>砂糖橘/年桔(大吉大利)、车厘子礼盒</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker anim" style="--d:0">④ 陈列 · 分区摆放</div>
+    <h2 class="anim" style="--d:0">分级分场景、轻拿轻放、勤挑拣</h2>
+    <div class="grid g5">
+      <div class="tag a-deal" style="--d:0"><h3>日常果区</h3><p>走量平价、量大堆头</p></div>
+      <div class="tag a-deal" style="--d:1"><h3>时令果区</h3><p>当造主推、显眼好位、"今早到"</p></div>
+      <div class="tag a-deal" style="--d:2"><h3>精品/礼盒区</h3><p>进口车厘子、礼盒,独立好位</p></div>
+      <div class="tag a-deal" style="--d:3"><h3>拜神/节庆区</h3><p>苹果橙桔、年桔,节令前置</p></div>
+      <div class="tag a-deal" style="--d:4;border-color:var(--amber)"><h3>果切区</h3><p>现切现卖、冷藏、当日清</p></div>
+    </div>
+    <div class="sub anim" style="--d:5">通用:轻拿轻放防磕碰、勤挑烂果、价签对位、先进先出。</div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker anim" style="--d:0">⑤ 实操 · 分级与损耗</div>
+    <h2 class="anim" style="--d:0">一批果分级卖,比混卖赚</h2>
+    <div class="yield">
+      <div class="ybar a-pop" style="--d:0"><div class="lab">精品(好位高价)</div><div class="track"><div class="fill" style="width:25%"></div></div><div class="pct">提价</div></div>
+      <div class="ybar a-pop" style="--d:1"><div class="lab">正品(走量)</div><div class="track"><div class="fill" style="width:55%"></div></div><div class="pct">主力</div></div>
+      <div class="ybar a-pop" style="--d:2"><div class="lab">处理品(降价快清)</div><div class="track"><div class="fill" style="width:12%;background:var(--amber)"></div></div><div class="pct">快清</div></div>
+      <div class="ybar a-pop" style="--d:3"><div class="lab">损耗(报损)</div><div class="track"><div class="fill" style="width:8%;background:var(--red)"></div></div><div class="pct">压最低</div></div>
+    </div>
+    <div class="sub anim" style="--d:4"><b>可售率 = 卖出 ÷ 进货。</b> 分级好、勤挑拣、临期快清,损耗就低。<small style="color:var(--red)">(示意,以门店实测为准)</small></div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker anim" style="--d:0">⑤ 实操 · 称重与计价</div>
+    <h2 class="anim" style="--d:0">按斤/按个/按盒,秤准价当造</h2>
+    <div class="grid g4">
+      <div class="tag a-pop" style="--d:0"><h3>多种卖法</h3><p>称重/按个/按盒(礼盒)/按提</p></div>
+      <div class="tag a-pop" style="--d:1"><h3>秤要准</h3><p>每天校准归零、称净重</p></div>
+      <div class="tag a-pop" style="--d:2"><h3>价当造</h3><p>时令果价波动,价签跟市</p></div>
+      <div class="tag a-pop" style="--d:3"><h3>当面看</h3><p>看清秤,防短秤投诉</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker anim" style="--d:0">⑥ 服务 · 顾客问啥、推啥</div>
+    <h2 class="anim" style="--d:0">把场景变成会推荐</h2>
+    <div class="board anim" style="--d:1"><table>
+      <thead><tr><th>顾客说</th><th>员工推</th></tr></thead>
+      <tbody>
+        <tr><td>"买来送礼"</td><td>车厘子礼盒 / 进口提子 / 苹果橙礼盒</td></tr>
+        <tr><td>"拜神用"</td><td>苹果、橙、桔、香蕉(寓意齐全)</td></tr>
+        <tr><td>"煲糖水/炖"</td><td>木瓜、雪梨、马蹄</td></tr>
+        <tr><td>"小孩吃"</td><td>提子、香蕉、草莓</td></tr>
+        <tr><td>(荔枝季)</td><td>"今早到的桂味,甜!"主推当造</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker anim" style="--d:0">⑦ 安全 · 卫生与损耗</div>
+    <div class="grid g4">
+      <div class="tag a-pop" style="--d:0;border-color:var(--red)"><h3>不售霉变</h3><p>浆果/荔枝易坏,霉变立即下架</p></div>
+      <div class="tag a-pop" style="--d:1"><h3>果切卫生</h3><p>现切现卖、冷藏、当日清</p></div>
+      <div class="tag a-pop" style="--d:2"><h3>催熟合规</h3><p>合规催熟、不滥用</p></div>
+      <div class="tag a-pop" style="--d:3"><h3>过熟就处理</h3><p>降价快清/下架报损,不私自处理</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker anim" style="--d:0">⑤ 水果干啥活儿</div>
+    <h2 class="anim" style="--d:0">平价招客 + 精品撑场面(双角色)</h2>
+    <div class="big anim" style="--d:1">日常果保供走量;精品/进口/礼盒做毛利、显档次</div>
+    <div class="band">
+      <div class="dot a-pop" style="left:12%;--d:0"><b></b><span>日常果</span><small>低·招客</small></div>
+      <div class="dot a-pop" style="left:50%;--d:1"><b></b><span>当造时令果</span><small>中·走量</small></div>
+      <div class="dot a-pop" style="left:88%;--d:2"><b></b><span>精品/进口/礼盒</span><small>高·撑场面</small></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker anim" style="--d:0">⑧ 全年怎么卖 · 广佛52周MD</div>
+    <h2 class="anim" style="--d:0">跟着时令和节走</h2>
+    <div class="board anim" style="--d:1"><table>
+      <thead><tr><th>时段</th><th>主推</th><th>场景</th></tr></thead>
+      <tbody>
+        <tr><td>1–2月 年前·春节</td><td>砂糖橘/年桔、苹果橙(大吉)、车厘子礼盒、草莓</td><td>年货/拜年</td></tr>
+        <tr><td>3–4月 春</td><td>草莓尾、枇杷、菠萝、清明拜神果</td><td>春果/清明</td></tr>
+        <tr><td>5–6月 夏初</td><td><b>荔枝季开场</b>(妃子笑→桂味)、杨梅、西瓜、龙眼起</td><td>荔枝王牌</td></tr>
+        <tr><td>7–8月 盛夏</td><td>荔枝龙眼旺、芒果、黄皮、瓜类、提子</td><td>消暑当造</td></tr>
+        <tr><td>9–10月 秋·中秋</td><td>中秋礼盒果/柚子、葡萄、梨、苹果、石榴</td><td>中秋送礼</td></tr>
+        <tr><td>11–12月 秋冬</td><td>砂糖橘/沙糖桔/橙旺、苹果、进口提子车厘子起、冬枣</td><td>柑橘季/年货</td></tr>
+      </tbody>
+    </table></div>
+    <div class="sub anim" style="--d:2">夏荔枝当王、秋柚冬橘、年节砂糖橘车厘子礼盒、四季拜神果常备。</div>
+  </section>
+
+  <section class="slide killslide">
+    <div class="eyebrow anim" style="--d:0">一整套记下来</div>
+    <div class="oracle a-drop" style="--d:0;max-width:1000px;margin:6px auto"><div class="t" style="font-size:clamp(1.1rem,2.2vw,1.8rem)">认货 · 品质成熟度 · 品类场景 · 分区陈列 · 分级损耗称重 · 推荐话术 · 安全损耗 · 全年MD</div></div>
+    <h2 class="anim" style="--d:2;margin-top:24px">果挑得准、分得好,损耗低又卖得贵</h2>
+    <div class="sub anim" style="--d:3;text-align:center">六哥零售丨晟果咨询 · MC-TR-02 水果 演示课件 v1.0 · 全员版</div>
+  </section>
+
+</div>
+
+<div class="hud">
+  <div class="brand">六哥零售 · 水果商品知识 v1.0</div>
+  <div class="nav"><button id="prev">‹</button><div class="counter" id="counter">1 / 19</div><button id="next">›</button></div>
+</div>
+
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide')),i=0,n=slides.length;
+  var prog=document.getElementById('prog'),counter=document.getElementById('counter'),prev=document.getElementById('prev'),next=document.getElementById('next');
+  function show(k){i=Math.max(0,Math.min(n-1,k));slides.forEach(function(s,x){s.classList.toggle('active',x===i)});prog.style.width=(i/(n-1)*100)+'%';counter.textContent=(i+1)+' / '+n;prev.disabled=(i===0);next.disabled=(i===n-1);}
+  function go(d){show(i+d);}
+  next.onclick=function(){go(1)};prev.onclick=function(){go(-1)};
+  document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(1)}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(-1)}else if(e.key==='Home')show(0);else if(e.key==='End')show(n-1)});
+  var x0=null;document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  document.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50)go(dx<0?1:-1);x0=null},{passive:true});
+  show(0);
+})();
+</script>
+</body>
+</html>

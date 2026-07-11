@@ -2,10 +2,12 @@
 title: vault 商品库主纲（v1.1 内完善 / 目录保留 v0.1）
 summary: 商品库主纲，连接客户数据、品类知识、经营判断，三层架构 8 步闭环。
 version: v1.1
-status: active
+status: dormant（2026-07-08 六哥裁决冻结）
+frozen_reason: "自2026-05-09后两个月零实质使用（仅机械批处理touch）；B_category_skeleton.csv标注source_type=v4_skeleton，与README §6声明的V6.0 SSOT关系不符（数据未随V4.0→V6.0迁移重铺）；全库grep确认无任何脚本/skill实际读取本目录，花厅坊等真实客户诊断走独立路径未经过此层"
+reactivate_trigger: "第3个客户签约后，若跨客户SKU匹配/复用成本成为真实痛点，再评估重启并重铺V6.0数据"
 owner: 六哥
 created: 2026-05-09
-updated: 2026-05-09
+updated: 2026-07-08
 module: 13_数据分析与工具脚本/商品库_v0.1
 quadrant: I
 client_safety: internal_only
@@ -156,9 +158,11 @@ Layer C: 客户独有 SKU 库（长尾 / 人工标注）
 
 ## §6. 与 V6.0 品类系统（SSOT）的关系
 
+> ⚠️ **2026-07-08 核查发现**：本节所述"V6.0 SSOT"关系为**声明与实际数据不符**——`B_category_skeleton.csv` 逐行标注 `source_type: v4_skeleton`，样例数据从未随 V4.0→V6.0 迁移重铺。本目录已冻结（见 frontmatter），重启前须先重铺 V6.0 数据，不得直接引用本节声明为当前状态。
+
 ```
 V6.0 品类系统（68 L3/385 L4）= 结构骨架 / single source of truth（DEC-20260702-01·V4.0 已 deprecated）
-商品库（A+B+C 三层）  = 实例血肉 / V6.0 的实例化
+商品库（A+B+C 三层）  = 实例血肉 / V6.0 的实例化（⚠️ 现状：样例数据仍为 v4_skeleton，未对齐）
 
 约束：商品库每个 SKU 必须有 category_l4_code FK 指向 V6.0
 关系：1 对多（L4 → 多 SKU）

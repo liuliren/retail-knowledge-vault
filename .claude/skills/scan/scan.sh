@@ -10,9 +10,11 @@ VAULT="/Users/davidliu/KnowledgeBase/retail-knowledge-vault"
 MARKER_DIR="$VAULT/98_AI协作中枢/04_执行日志"
 MARKER="$MARKER_DIR/_语料巡检_last_marker"
 # 监视目录（新语料落点）。要扩展就加路径。
+# 2026-07-10 修正:retail 库内 Clippings/ 已于 2026-06-26(B案)退役,新语料统一进系统级中枢
+# /Users/davidliu/KnowledgeBase/Clippings/零售/(见退役目录里的 _已迁移_README.md)；
+# 旧的 "$VAULT/90_素材暂存与待整理" 路径已不存在(vault 结构调整后消失),一并移除。
 WATCH=(
-  "$VAULT/Clippings"
-  "$VAULT/90_素材暂存与待整理"
+  "$HOME/KnowledgeBase/Clippings/零售"
 )
 
 mkdir -p "$MARKER_DIR"

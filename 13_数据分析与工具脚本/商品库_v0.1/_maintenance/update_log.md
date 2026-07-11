@@ -23,3 +23,4 @@ tags:
 | 2026-05-09 | v1.1 | 样例填充 | B/A/raw/mapped 各 3-5 样例（共 ~25 行 / 不大规模填充）| Claude | v1.1 边界 |
 | 2026-05-09 | v1.1 | CSV 跟踪修正 | .gitignore 加 6 条精确白名单 / 结构层 CSV 上 git / raw/mapped 仍忽略 | Claude | dc8cf98 commit |
 | 2026-05-09 | v1.1 后续建议入库 | 文档治理 | CSV 跟踪修正后 6 条建议分级入库（P0×2 / P1×2 / P2×2）：补充客户数据 git 安全边界（README §4.1 / 02 §3.4-3.5）+ 跨设备同步规则（03 §7）+ embedding 文件评估项（embedding_plan §5.5）+ _anonymized/ Year 2+ 预留（sqlite_upgrade_plan §5.5）+ G11 v0.3 候选检查项（G11 §6.5）。**不启动 W23+ 数据接入 / 不导入真实客户数据** | 6 哥+Claude | W19 后续建议入库 |
+| 2026-07-08 | v1.1 → dormant | 状态冻结 | 六哥裁决冻结：两个月零实质使用、B_category_skeleton.csv 未随 V6.0 迁移（仍 v4_skeleton）、全库无脚本/skill 实际读取本目录。status 改 dormant，README §6 加不符声明警示，设第3客户签约后的重启触发条件 | 六哥+Claude（99_归档补课精读工程发现） | 2026-07-08 夜间精读全量签字清单 P0-1 |
