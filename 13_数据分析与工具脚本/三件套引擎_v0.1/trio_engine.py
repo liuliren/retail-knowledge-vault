@@ -130,8 +130,8 @@ def cmd_clean(a):
         print("⚠️ 存在对账偏差>0.5%的品类,数据可疑,判读前先查", file=sys.stderr)
 
 
-def _load_sku(master):
-    m = pd.read_csv(master, dtype={"条码": str, "类别编码": str})
+def _load_sku_legacy(m):
+    """老格式(分品类汇总表 master.csv): 条码/销售数量/退货数量/退货金额/进销差价 齐全"""
     for c in ["销售数量", "销售金额", "退货数量", "退货金额", "进销差价"]:
         raw = pd.to_numeric(m[c], errors="coerce")
         n_bad = raw.isna().sum() - m[c].isna().sum()  # 排除本来就是空值的行,只数"转换失败"的脏值
@@ -145,6 +145,46 @@ def _load_sku(master):
         销售天数=("销售日期", "nunique"), 差价=("进销差价", "sum"),
         经营方式=("经营方式", "first")).reset_index()
     return sku[sku.净额 > 0]
+
+
+def _load_sku_store_flow(m):
+    """全店流水表 master.csv(2026-07-12 D2新增格式): 货号/销售方式/进价金额 取代
+    老格式的 条码/退货数量退货金额/进销差价——字段不对应,不是简单改列名,须重算口径:
+    - 退货行数量/金额本身已是负数,赠送行销售金额恒为0 → 净额=sum(销售金额)直接成立,不用再减
+    - 净量刻意排除赠送数量(与老口径"销售数量-退货数量"对齐,赠送不应拉低客单价分母)
+    - 差价(毛利额)= 销售金额-进价金额 逐行算后求和,近似替代老格式现成的"进销差价"字段
+    - 经营方式字段本表没有,不瞎猜替代,留空并警告(避免用商品类别冒充,误导判读)"""
+    for c in ["数量", "销售金额", "进价金额"]:
+        raw = pd.to_numeric(m[c], errors="coerce")
+        n_bad = raw.isna().sum() - m[c].isna().sum()
+        if n_bad > 0:
+            print(f"⚠️ 字段「{c}」有 {n_bad} 行非数值内容(如文字/乱码)被当作0处理,判读前先核实这些行", file=sys.stderr)
+        m[c] = raw.fillna(0)
+    print("⚠️ 全店流水表无「经营方式」字段,本次输出该列留空;「差价」为销售金额-进价金额近似值,非老格式原生「进销差价」\n"
+          "⚠️ 「大品类」本次用「类别名称」(小类)代填——「商品类别」编码在本表内深度不一致(2/4/6位混杂,"
+          "同一个'01'前缀同时罩住蔬菜和肉类),不能安全截取成大类;「品类文件」在本格式下=日期批次,"
+          "更不能当品类用。priceband 这次出的是小类级别,不是大类,粒度比预期细,判读前留意。",
+          file=sys.stderr)
+    is_gift = m.销售方式.astype(str).str.strip().eq("赠送")
+    m["净额"] = m.销售金额
+    m["净量"] = m.数量.where(~is_gift, 0.0)
+    m["差价"] = m.销售金额 - m.进价金额
+    m["销售日期"] = pd.to_datetime(pd.to_numeric(m["销售时间"], errors="coerce"),
+                                  unit="D", origin="1899-12-30").dt.date.astype(str)
+    sku = m.groupby("货号").agg(品名=("品名", "first"), 大品类=("类别名称", "first"),
+        小类=("类别名称", "first"), 净额=("净额", "sum"), 净量=("净量", "sum"),
+        销售天数=("销售日期", "nunique"), 差价=("差价", "sum")).reset_index()
+    sku["经营方式"] = ""
+    return sku.rename(columns={"货号": "条码"})[lambda d: d.净额 > 0]
+
+
+def _load_sku(master):
+    cols = pd.read_csv(master, nrows=0).columns
+    if "条码" in cols:
+        return _load_sku_legacy(pd.read_csv(master, dtype={"条码": str, "类别编码": str}))
+    if "货号" in cols and "销售方式" in cols:
+        return _load_sku_store_flow(pd.read_csv(master, dtype={"货号": str}))
+    sys.exit(f"未识别 master.csv 格式(既无「条码」也无「货号+销售方式」组合列): {master}")
 
 
 def cmd_abcz(a, sku=None, reg=None):

@@ -29,7 +29,8 @@ from python_calamine import CalamineWorkbook
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from pos_schema import (SALES_COLS, ARCH_STD, ARCH_ALT, DATE_ROW_RE, AGG_TABLE_RE,
-                        EXCLUDE_BIGCLASS, SYS_TOTAL_COL, RECON_TOLERANCE_PCT)
+                        EXCLUDE_BIGCLASS, SYS_TOTAL_COL, RECON_TOLERANCE_PCT,
+                        STORE_FLOW_HEADER_SIG, STORE_FLOW_AMT_COL)
 
 DATE_ANY = re.compile(r"20\d{2}[-/.年]\d{1,2}([-/.月]\d{1,2})?")
 XLS_LIMIT = 65536
@@ -97,6 +98,46 @@ def check_aggregate_diff(src, prefix, covered_cats):
     return problems
 
 
+def _detect_named_header(rows, sig, scan=10):
+    """扫描前几行,找同时含全部 sig 关键词的表头行(按列名取数,不认位置)。
+    命中返回 (表头行号, {列名:列序号}, 去重保序列名列表);未命中返回 (None, None, None)
+    ——留给调用方判断"退回位置映射(老格式)"还是"报未知版式"。"""
+    for i, r in enumerate(rows[:scan]):
+        names = [str(c).strip() for c in r]
+        if sig.issubset({n for n in names if n}):
+            colmap, ordered, seen = {}, [], set()
+            for j, name in enumerate(names):
+                if name and name not in colmap:
+                    colmap[name] = j
+                if name and name not in seen:
+                    seen.add(name); ordered.append(name)
+            return i, colmap, ordered
+    return None, None, None
+
+
+def _sales_named_header(rows, hdr_i, colmap, ordered, cat, w):
+    """按列名取数分支(如全店流水表): 单号列含'合计'取系统合计, 含'小计'跳过,
+    行号列为正数视为数据行。返回 (n行, 净额, 系统合计)。"""
+    c_billno, c_amt, c_no = colmap["单号"], colmap[STORE_FLOW_AMT_COL], colmap["行号"]
+    n, amt, sys_total = 0, 0.0, None
+    for r in rows[hdr_i + 1:]:
+        billno = str(r[c_billno]).strip() if c_billno < len(r) else ""
+        if "合计" in billno:
+            try:
+                sys_total = float(r[c_amt])
+            except (ValueError, TypeError, IndexError):
+                pass
+            continue
+        if "小计" in billno:
+            continue
+        no = r[c_no] if c_no < len(r) else None
+        if isinstance(no, (int, float)) and no > 0:
+            w.writerow([cat] + [str(r[colmap[name]]).strip() if colmap[name] < len(r) else "" for name in ordered])
+            n += 1
+            amt += float(r[c_amt] or 0)
+    return n, amt, sys_total
+
+
 def cmd_sales(a):
     files = sorted(f for f in os.listdir(a.src) if f.startswith(a.prefix)
                    and f.endswith(".xls") and EXCLUDE_BIGCLASS not in f
@@ -107,9 +148,9 @@ def cmd_sales(a):
     mp = os.path.join(a.out, a.master_name)
     bad = []
     covered_cats = set()
+    profile, profile_cols = None, None  # 本批次一旦定型(legacy/named_header)必须全程一致
     with open(mp, "w", newline="") as fh:
         w = csv.writer(fh)
-        w.writerow(["品类文件"] + list(SALES_COLS.values())[1:])
         for f in files:
             fp = os.path.join(a.src, f)
             if not magic_ok(fp):
@@ -119,19 +160,35 @@ def cmd_sales(a):
             rows = CalamineWorkbook.from_path(fp).get_sheet_by_index(0).to_python()
             if len(rows) >= XLS_LIMIT:
                 bad.append((f, f"疑似{XLS_LIMIT}行截断"))
-            n, amt, sys_total = 0, 0.0, None
-            for r in rows:
-                cells = [str(x).strip() for x in r]
-                if any("合计" in x for x in cells[:4]):
-                    try:
-                        sys_total = float(r[SYS_TOTAL_COL])
-                    except (ValueError, TypeError, IndexError):
-                        pass
-                    continue
-                if len(cells) > 9 and re.match(r"^\d+\.?\d*$", cells[0]) and DATE_ROW_RE.match(cells[9]):
-                    w.writerow([cat] + [str(r[i]).strip() if i < len(r) else "" for i in list(SALES_COLS)[1:]])
-                    n += 1
-                    amt += float(r[13] or 0) - float(r[16] or 0)
+
+            hdr_i, colmap, ordered = _detect_named_header(rows, STORE_FLOW_HEADER_SIG)
+            if colmap:
+                if profile is None:
+                    profile, profile_cols = "named_header", ordered
+                    w.writerow(["品类文件"] + profile_cols)
+                elif profile != "named_header" or ordered != profile_cols:
+                    bad.append((f, "表头版式与本批次不一致(混了不同报表格式),跳过·需人工核对")); continue
+                n, amt, sys_total = _sales_named_header(rows, hdr_i, colmap, ordered, cat, w)
+            else:
+                if profile is None:
+                    profile = "legacy"
+                    w.writerow(["品类文件"] + list(SALES_COLS.values())[1:])
+                elif profile != "legacy":
+                    bad.append((f, "未识别出已知表头版式,且本批次已定型为带表头版式,跳过·需人工核对")); continue
+                n, amt, sys_total = 0, 0.0, None
+                for r in rows:
+                    cells = [str(x).strip() for x in r]
+                    if any("合计" in x for x in cells[:4]):
+                        try:
+                            sys_total = float(r[SYS_TOTAL_COL])
+                        except (ValueError, TypeError, IndexError):
+                            pass
+                        continue
+                    if len(cells) > 9 and re.match(r"^\d+\.?\d*$", cells[0]) and DATE_ROW_RE.match(cells[9]):
+                        w.writerow([cat] + [str(r[i]).strip() if i < len(r) else "" for i in list(SALES_COLS)[1:]])
+                        n += 1
+                        amt += float(r[13] or 0) - float(r[16] or 0)
+
             dev = None if not sys_total else (amt - sys_total) / sys_total * 100
             flag = "✓" if dev is not None and abs(dev) <= RECON_TOLERANCE_PCT else "⚠️"
             if flag == "⚠️":
